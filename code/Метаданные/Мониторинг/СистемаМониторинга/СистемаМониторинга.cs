@@ -8,7 +8,7 @@ using NsgSoft.Common;
 
 
 
-namespace TT.Метаданные.Мониторинг
+namespace TechControl.Метаданные.Мониторинг
 {
     
     public partial class СистемаМониторинга

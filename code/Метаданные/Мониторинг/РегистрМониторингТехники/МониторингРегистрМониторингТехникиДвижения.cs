@@ -8,7 +8,7 @@ using NsgSoft.Common;
 
 
 
-namespace TT.Метаданные._SystemTables
+namespace TechControl.Метаданные._SystemTables
 {
     
     public partial class МониторингРегистрМониторингТехникиДвижения

@@ -5,7 +5,7 @@ using NsgSoft.DataObjects;
 using NsgSoft.Common;
 
 
-namespace TT.Метаданные.Сервис
+namespace TechControl.Метаданные.Сервис
 {
     
     public partial class ВидыДвижений

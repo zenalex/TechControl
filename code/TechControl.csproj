@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2022.2.17.1</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
+    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -39,15 +39,33 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NsgSoft.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=447db94fe98f10d5, processorArchitecture=MSIL" />
-    <Reference Include="NsgSoft.Database, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1052027ec3662bec, processorArchitecture=MSIL" />
-    <Reference Include="NsgSoft.DataObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=591c2a9ad26eb48c, processorArchitecture=MSIL" />
-    <Reference Include="NsgSoft.Design, Version=1.0.0.0, Culture=neutral, PublicKeyToken=357d6bf8a0d3c594, processorArchitecture=MSIL" />
-    <Reference Include="NsgSoft.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d35134a89d12ecbc, processorArchitecture=MSIL" />
-    <Reference Include="NsgSoft.ReportBase, Version=2007.1.0.0, Culture=neutral, PublicKeyToken=e64ccc7712425ed2, processorArchitecture=MSIL" />
-    <Reference Include="NsgSoft.ReportBuilder, Version=2007.1.0.0, Culture=neutral, PublicKeyToken=c0645ec7baa77cae, processorArchitecture=MSIL" />
-    <Reference Include="NsgSoft.ReportControls, Version=2007.1.0.0, Culture=neutral, PublicKeyToken=42cc63b36f026e05, processorArchitecture=MSIL" />
-    <Reference Include="NsgSoft.ReportEditor, Version=2007.1.0.0, Culture=neutral, PublicKeyToken=cb3af7bb7cd76ba3, processorArchitecture=MSIL" />
+    <Reference Include="NsgSoft.Common">
+      <HintPath>..\..\..\..\svn\Releases\NsgSoft.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.Database">
+      <HintPath>..\..\..\..\svn\Releases\NsgSoft.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.DataObjects">
+      <HintPath>..\..\..\..\svn\Releases\NsgSoft.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.Design">
+      <HintPath>..\..\..\..\svn\Releases\NsgSoft.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.Forms">
+      <HintPath>..\..\..\..\svn\Releases\NsgSoft.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.ReportBase">
+      <HintPath>..\..\..\..\svn\Releases\NsgSoft.ReportBase.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.ReportBuilder">
+      <HintPath>..\..\..\..\svn\Releases\NsgSoft.ReportBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.ReportControls">
+      <HintPath>..\..\..\..\svn\Releases\NsgSoft.ReportControls.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.ReportEditor">
+      <HintPath>..\..\..\..\svn\Releases\NsgSoft.ReportEditor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -55,7 +73,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.0.1.0, Culture=neutral, PublicKeyToken=62f73409a54f6052, processorArchitecture=MSIL" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\..\..\..\svn\Releases\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -80,6 +100,7 @@
     </Compile>
     <Compile Include="NsgLogo.cs">
       <NsgOwnerGuid>6b96e818-0212-4542-90b3-d84d13a8d015</NsgOwnerGuid>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="NsgLogo.designer.cs">
       <NsgOwnerGuid>6b96e818-0212-4542-90b3-d84d13a8d015</NsgOwnerGuid>
@@ -87,6 +108,7 @@
     </Compile>
     <Compile Include="MainForm.cs">
       <NsgOwnerGuid>6b96e818-0212-4542-90b3-d84d13a8d015</NsgOwnerGuid>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <NsgOwnerGuid>6b96e818-0212-4542-90b3-d84d13a8d015</NsgOwnerGuid>

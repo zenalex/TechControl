@@ -1,4 +1,4 @@
-namespace TT
+namespace TechControl
 {
     partial class NsgLogo
     {

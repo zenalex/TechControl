@@ -7,7 +7,7 @@ using NsgSoft.Common;
 
 
 
-namespace TT.Метаданные
+namespace TechControl.Метаданные
 {
     public partial class Метаданные
     {

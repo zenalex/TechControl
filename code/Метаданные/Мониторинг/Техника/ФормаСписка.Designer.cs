@@ -1,6 +1,6 @@
 using NsgSoft.Forms;
 using NsgSoft.DataObjects;
-namespace TT.Метаданные.Мониторинг
+namespace TechControl.Метаданные.Мониторинг
 
 {
     

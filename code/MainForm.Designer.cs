@@ -3,7 +3,7 @@ using NsgSoft.DataObjects;
 using System;
 using NsgSoft.Database;
 using System.Configuration;
-namespace TT
+namespace TechControl
 {
     partial class MainForm : NsgMainForm
     {

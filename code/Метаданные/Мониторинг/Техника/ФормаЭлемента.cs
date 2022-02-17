@@ -12,7 +12,7 @@ using NsgSoft.Forms;
 
 
 
-namespace TT.Метаданные.Мониторинг
+namespace TechControl.Метаданные.Мониторинг
 {
     
     public partial class ТехникаФормаЭлемента

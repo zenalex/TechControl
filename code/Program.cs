@@ -9,7 +9,7 @@ using NsgSoft.Common;
 using NsgSoft.Forms;
 using NsgSoft.Design;
 
-namespace TT
+namespace TechControl
 {
     public static class Program
     {
@@ -43,7 +43,7 @@ namespace TT
 				NsgThread thread = new NsgThread();
 				thread.DoWork += new NsgThread.NsgDoWorkEventHandler(delegate
 				{
-					NsgConfiguration cfg = new TT.Конфигурация();
+					NsgConfiguration cfg = new TechControl.Конфигурация();
 					Form logoForm = NsgSettings.GetLogoForm();
 					NsgSettings.Regime = NsgViewTypes.RunTime;
 					dbServ = new NsgDatabaseGUIService(cfg, logoForm);

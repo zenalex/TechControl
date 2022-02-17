@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using NsgSoft.Design;
 
-namespace TT
+namespace TechControl
 {
     public partial class NsgLogo : NsgBaseLogoForm
     {
