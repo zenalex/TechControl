@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.2.17.1</ProductVersion>
+    <ProductVersion>2022.2.17.2</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -417,6 +417,28 @@
     <Compile Include="Метаданные\Мониторинг\РегистрМониторингТехники\МониторингРегистрМониторингТехникиДвижения.Строка.cs">
       <NsgOwnerGuid>26c45bd5-cbe2-4896-bb5c-84c768417eb9</NsgOwnerGuid>
       <NsgOwnerName>МониторингРегистрМониторингТехникиДвижения</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СлужебныеСправочники\ПользователиСервисов\ПользователиСервисов.NsgInit.cs">
+      <NsgOwnerGuid>8045e21b-919d-4366-bf40-8a42bdb08242</NsgOwnerGuid>
+      <NsgOwnerName>ПользователиСервисов</NsgOwnerName>
+      <DependentUpon>ПользователиСервисов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\ПользователиСервисов\ПользователиСервисов.cs">
+      <NsgOwnerGuid>8045e21b-919d-4366-bf40-8a42bdb08242</NsgOwnerGuid>
+      <NsgOwnerName>ПользователиСервисов</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СлужебныеСправочники\ТокенПользователя\ТокенПользователя.NsgInit.cs">
+      <NsgOwnerGuid>8fc3557d-e173-4eca-9594-d1d81f9bc2b5</NsgOwnerGuid>
+      <NsgOwnerName>ТокенПользователя</NsgOwnerName>
+      <DependentUpon>ТокенПользователя.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\ТокенПользователя\ТокенПользователя.cs">
+      <NsgOwnerGuid>8fc3557d-e173-4eca-9594-d1d81f9bc2b5</NsgOwnerGuid>
+      <NsgOwnerName>ТокенПользователя</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
