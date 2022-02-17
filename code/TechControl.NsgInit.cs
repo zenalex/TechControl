@@ -11,11 +11,11 @@ using NsgSoft.Common;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TT")]
+[assembly: AssemblyTitle("TechControl")]
 [assembly: AssemblyDescription("New Configuration")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Unknown Developer ©  2011")]
-[assembly: AssemblyProduct("TT")]
+[assembly: AssemblyProduct("TechControl")]
 [assembly: AssemblyCopyright("Unknown Developer ©  2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -37,11 +37,11 @@ using NsgSoft.Common;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("2022.2.17.0")]
-[assembly: AssemblyFileVersion("2022.2.17.0")]
+[assembly: AssemblyVersion("2022.2.17.1")]
+[assembly: AssemblyFileVersion("2022.2.17.1")]
 [assembly: NsgAssemblyAttribute(NsgAssemblyTypes.Configuration)]
 
-namespace TT
+namespace TechControl
 {
     [NsgSoft.Common.NsgConfigurationClass()]
     public partial class Конфигурация : NsgConfiguration
@@ -67,15 +67,15 @@ namespace TT
 	Type = NsgSoft.DataObjects.NsgConfigurationTypes.Base;
 	Guid = NsgService.StringToGuid("6b96e818-0212-4542-90b3-d84d13a8d015");
 	DatabaseManagerNames = "";
-	Name = "TT";
+	Name = "TechControl";
 	Description = "New Configuration";
 	Copyright = "Unknown Developer ©  2011";
-	Version = "2022.2.17.0";
+	Version = "2022.2.17.1";
 	MetaDataList = new NsgSoft.DataObjects.NsgMetaData[]{};
 	
 
             
-            __Метаданные = TT.Метаданные.Метаданные.Новый();
+            __Метаданные = TechControl.Метаданные.Метаданные.Новый();
             AddMetaData(__Метаданные);
             NsgSoft.DataObjects.NsgSettings.Regime = NsgSoft.Common.NsgViewTypes.RunTime;
         }

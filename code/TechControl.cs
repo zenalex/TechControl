@@ -14,7 +14,7 @@ using NsgSoft.Common;
 
 
 
-namespace TT
+namespace TechControl
 {
     public partial class Конфигурация
 	{
