@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.2.18.3" CodeLang="ru" name="TechControl" description="New Configuration" copyright="Unknown Developer ©  2011" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.2.18.4" CodeLang="ru" name="TechControl" description="New Configuration" copyright="Unknown Developer ©  2011" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.2.18.3" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.2.18.3;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.2.18.4" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.2.18.4;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -861,8 +861,8 @@
             </container>
             <container name="НомерДокумента">
               <afield name="Сервис.КорректировкаРегистра" mask="НомерДокумента" />
-              <afield name="Сервис.СервернаяЗадача" mask="НомерДокумента" />
               <afield name="Мониторинг.ФормированиеСмены" mask="НомерДокумента" />
+              <afield name="Сервис.СервернаяЗадача" mask="НомерДокумента" />
             </container>
             <container name="Индекс">
               <afield name="Сервис.КорректировкаРегистра" mask="Индекс" />
@@ -1673,7 +1673,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="79972624-907a-4c8e-90e7-d28044a8589f" type="NsgDataImage" editoraccess="Full" name="Фотография" visible="true" description="Фотография" field="Fotografija" index="None" subtype="Common" nullAllow="True" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" stretch="False" minsize="{Width=10, Height=10}" maxsize="{Width=2000, Height=2000}">
+            <NsgSimpleObject Guid="ef80a216-4664-4ef3-a306-7c0cabb4d66f" type="NsgDataTypedReference" editoraccess="Full" name="Фотография" visible="true" description="Фотография" field="Fotografija" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Картинки">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -2267,14 +2267,14 @@
             <container name="Наименование" />
             <container name="Адрес" />
             <container name="Заказчик" />
+            <container name="СобственностьТехники" />
+            <container name="ГраницаОбъектаМониторинга" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="СобственностьТехники" />
-            <container name="ГраницаОбъектаМониторинга" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2381,13 +2381,13 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="Наименование" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Наименование" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2486,12 +2486,12 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="ДатаДокумента" />
+            <container name="Комментарий" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
-            <container name="ДатаДокумента" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="Комментарий" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -2506,6 +2506,15 @@
             <presentation lang="(Default)" value="{Наименование}" />
           </NsgLanguageString>
           <ObjectList>
+            <NsgSimpleObject Guid="3345b586-4fac-41f6-97d6-929f41107995" type="NsgDataUntypedReference" editoraccess="Limited" name="Владелец" visible="true" description="Владелец" field="_Owner" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="Владелец" />
+              </NsgLanguageString>
+              <NsgObjectsFilter filter_type="List">
+                <param name="Мониторинг.Объекты" />
+                <param name="Мониторинг.Техника" />
+              </NsgObjectsFilter>
+            </NsgSimpleObject>
             <NsgSimpleObject Guid="01f293e1-f5bc-4388-885b-841ab7ba076e" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
@@ -2560,15 +2569,6 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="3345b586-4fac-41f6-97d6-929f41107995" type="NsgDataUntypedReference" editoraccess="Limited" name="Владелец" visible="true" description="Владелец" field="_Owner" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="Владелец" />
-              </NsgLanguageString>
-              <NsgObjectsFilter filter_type="List">
-                <param name="Мониторинг.Объекты" />
-                <param name="Мониторинг.Техника" />
-              </NsgObjectsFilter>
-            </NsgSimpleObject>
             <NsgSimpleObject Guid="3348b2ed-dd15-42fc-a26d-0f60ff3588d6" type="NsgDataForm" editoraccess="Full" name="ФормаЭлемента" visible="true" description="Форма элемента" field="FormaEHlementa" index="None" subtype="ElementForm" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" class="TechControl.Метаданные.Мониторинг.КартинкиФормаЭлемента">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
@@ -2581,14 +2581,14 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="Наименование" />
+            <container name="Картинка" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Наименование" />
-            <container name="Картинка" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -3162,13 +3162,13 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="ОбъектСообщения" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="ОбъектСообщения" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -3373,11 +3373,7 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
-            <container name="ПрефиксКода" />
-            <container name="НомерКода" />
             <container name="ДатаДокумента" />
-            <container name="Индекс" />
-            <container name="ДокументОснование" />
             <container name="ДатаЗапускаЗадания" />
             <container name="ДатаНачалаИсполнения" />
             <container name="ДатаОкончанияИсполнения" />
@@ -3390,6 +3386,10 @@
             <container name="ПользовательДляУведомления" />
             <container name="КоличествоПопыток" />
             <container name="Настройки" />
+            <container name="ПрефиксКода" />
+            <container name="НомерКода" />
+            <container name="Индекс" />
+            <container name="ДокументОснование" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
