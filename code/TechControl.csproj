@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.2.18.0</ProductVersion>
+    <ProductVersion>2022.2.18.3</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -12,7 +12,7 @@
     <AssemblyName>TechControl</AssemblyName>
     <StartupObject>
     </StartupObject>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -29,6 +29,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,44 +39,50 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NsgSoft.Common">
-      <HintPath>..\..\..\..\svn\Releases\NsgSoft.Common.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Common.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.Database">
-      <HintPath>..\..\..\..\svn\Releases\NsgSoft.Database.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Database.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.DataObjects">
-      <HintPath>..\..\..\..\svn\Releases\NsgSoft.DataObjects.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.DataObjects.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.Design">
-      <HintPath>..\..\..\..\svn\Releases\NsgSoft.Design.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Design.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.Forms">
-      <HintPath>..\..\..\..\svn\Releases\NsgSoft.Forms.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.FormsComponents">
+      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.FormsComponents.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.ReportBase">
-      <HintPath>..\..\..\..\svn\Releases\NsgSoft.ReportBase.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBase.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.ReportBuilder">
-      <HintPath>..\..\..\..\svn\Releases\NsgSoft.ReportBuilder.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBuilder.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.ReportControls">
-      <HintPath>..\..\..\..\svn\Releases\NsgSoft.ReportControls.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportControls.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.ReportEditor">
-      <HintPath>..\..\..\..\svn\Releases\NsgSoft.ReportEditor.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WeifenLuo.WinFormsUI.Docking">
-      <HintPath>..\..\..\..\svn\Releases\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -87,6 +94,44 @@
   </Target>
   -->
   <ItemGroup>
+    <Compile Include="AuthorizationBehavior.cs" />
+    <Compile Include="AuthorizationMessageInspector.cs" />
+    <Compile Include="Connected Services\ServiceReferenceAuthorization\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReferenceControllerStistics\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReferenceDataOnlineSensors\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReferenceDataOnline\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReferenceTrackPeriods\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReferenceUnitsSpic\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReferenceValidationNavigation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectTypeId.cs" />
     <Compile Include="TechControl.NsgInit.cs">
       <NsgOwnerGuid>6b96e818-0212-4542-90b3-d84d13a8d015</NsgOwnerGuid>
       <NsgOwnerName>TechControl</NsgOwnerName>
@@ -118,6 +163,7 @@
     <None Include="app.config">
       <NsgOwnerGuid>6b96e818-0212-4542-90b3-d84d13a8d015</NsgOwnerGuid>
     </None>
+    <Compile Include="TokenRepository.cs" />
     <Compile Include="Метаданные\Метаданные.NsgInit.cs">
       <NsgOwnerGuid>2dbd2646-52ef-4d89-8d8e-ef1f94e39426</NsgOwnerGuid>
       <NsgOwnerName>Метаданные</NsgOwnerName>
@@ -418,6 +464,184 @@
       <NsgOwnerGuid>26c45bd5-cbe2-4896-bb5c-84c768417eb9</NsgOwnerGuid>
       <NsgOwnerName>МониторингРегистрМониторингТехникиДвижения</NsgOwnerName>
     </Compile>
+    <None Include="Connected Services\ServiceReferenceAuthorization\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceAuthorization\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceAuthorization\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceAuthorization\SpicAuthorizationService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceAuthorization\TechControl.ServiceReferenceAuthorization.SpicAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceControllerStistics\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceControllerStistics\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceControllerStistics\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceControllerStistics\soap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceControllerStistics\soap4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceControllerStistics\SpicStatisticsControllerService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceControllerStistics\TechControl.ServiceReferenceControllerStistics.SpicStatisticsChunkInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceControllerStistics\TechControl.ServiceReferenceControllerStistics.SpicStatisticsOperationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceControllerStistics\TechControl.ServiceReferenceControllerStistics.SpicStatisticsSessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\soap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\soap4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\soap5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\SpicOnlineDataWithSensorsService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\TechControl.ServiceReferenceDataOnlineSensors.SpicOnlineDataWithSensorsOperationState.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\TechControl.ServiceReferenceDataOnlineSensors.SpicOnlineDataWithSensorsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\TechControl.ServiceReferenceDataOnlineSensors.SpicOnlineDataWithSensorsSubscriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnline\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnline\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnline\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnline\soap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnline\soap4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnline\soap5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnline\SpicOnlineDataService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceDataOnline\TechControl.ServiceReferenceDataOnline.SpicOnlineDataOperationState.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnline\TechControl.ServiceReferenceDataOnline.SpicOnlineDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceDataOnline\TechControl.ServiceReferenceDataOnline.SpicOnlineDataSubscriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\soap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\soap4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\soap5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\soap6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\SpicTrackPeriodsMileageStatisticsService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\TechControl.ServiceReferenceTrackPeriods.SpicAddonStatisticsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\TechControl.ServiceReferenceTrackPeriods.SpicTrackPeriodsMileageStatisticsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\soap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\soap4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\soap5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\SpicUnitsService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\TechControl.ServiceReferenceUnitsSpic.SpicPetrolTankCollectionDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\TechControl.ServiceReferenceUnitsSpic.SpicUnit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\TechControl.ServiceReferenceUnitsSpic.SpicUnitCollectionDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\soap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\soap4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\soap5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\soap6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\SpicNavigationValidationStatisticsService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\TechControl.ServiceReferenceValidationNavigation.SpicAddonStatisticsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\TechControl.ServiceReferenceValidationNavigation.SpicNavigationValidationStatisticsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\СлужебныеСправочники\ПользователиСервисов\ПользователиСервисов.NsgInit.cs">
@@ -461,6 +685,434 @@
     <Compile Include="Метаданные\Мониторинг\Объекты\Объекты.cs">
       <NsgOwnerGuid>07d20ec3-3801-403d-805e-3d5bfd3eedbc</NsgOwnerGuid>
       <NsgOwnerName>Объекты</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ПолучениеДанныхСПИК\ПолучениеДанныхСПИК.NsgInit.cs">
+      <NsgOwnerGuid>c319148e-2197-4e21-85bd-70d09526193d</NsgOwnerGuid>
+      <NsgOwnerName>ПолучениеДанныхСПИК</NsgOwnerName>
+      <DependentUpon>ПолучениеДанныхСПИК.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ПолучениеДанныхСПИК\ПолучениеДанныхСПИК.cs">
+      <NsgOwnerGuid>c319148e-2197-4e21-85bd-70d09526193d</NsgOwnerGuid>
+      <NsgOwnerName>ПолучениеДанныхСПИК</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ПолучениеДанныхСПИК\Форма.Designer.cs">
+      <NsgOwnerGuid>c319148e-2197-4e21-85bd-70d09526193d</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ПолучениеДанныхСПИК\Форма.cs">
+      <NsgOwnerGuid>c319148e-2197-4e21-85bd-70d09526193d</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\ПолучениеДанныхСПИК\Форма.resx">
+      <NsgOwnerGuid>c319148e-2197-4e21-85bd-70d09526193d</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\СобственностьТехники\СобственностьТехники.NsgInit.cs">
+      <NsgOwnerGuid>df2f17b4-a0b2-4947-903d-1fa614d6e414</NsgOwnerGuid>
+      <NsgOwnerName>СобственностьТехники</NsgOwnerName>
+      <DependentUpon>СобственностьТехники.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\СобственностьТехники\СобственностьТехники.cs">
+      <NsgOwnerGuid>df2f17b4-a0b2-4947-903d-1fa614d6e414</NsgOwnerGuid>
+      <NsgOwnerName>СобственностьТехники</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИстории\ФиксацияИстории.NsgInit.cs">
+      <NsgOwnerGuid>50f5855e-3b81-4250-92da-357300f0a02d</NsgOwnerGuid>
+      <NsgOwnerName>ФиксацияИстории</NsgOwnerName>
+      <DependentUpon>ФиксацияИстории.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИстории\ФиксацияИстории.cs">
+      <NsgOwnerGuid>50f5855e-3b81-4250-92da-357300f0a02d</NsgOwnerGuid>
+      <NsgOwnerName>ФиксацияИстории</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Контрагент\Контрагент.NsgInit.cs">
+      <NsgOwnerGuid>db34431e-a7fe-44ea-9092-d1d01193ec1f</NsgOwnerGuid>
+      <NsgOwnerName>Контрагент</NsgOwnerName>
+      <DependentUpon>Контрагент.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Контрагент\Контрагент.cs">
+      <NsgOwnerGuid>db34431e-a7fe-44ea-9092-d1d01193ec1f</NsgOwnerGuid>
+      <NsgOwnerName>Контрагент</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИстории\МониторингФиксацияИсторииДвижения.NsgInit.cs">
+      <NsgOwnerGuid>7a77dbbb-133b-4cc9-8771-edf3dac64a5a</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФиксацияИсторииДвижения</NsgOwnerName>
+      <DependentUpon>МониторингФиксацияИсторииДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИстории\МониторингФиксацияИсторииДвижения.cs">
+      <NsgOwnerGuid>7a77dbbb-133b-4cc9-8771-edf3dac64a5a</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФиксацияИсторииДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИстории\МониторингФиксацияИсторииДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>7a77dbbb-133b-4cc9-8771-edf3dac64a5a</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФиксацияИсторииДвижения</NsgOwnerName>
+      <DependentUpon>МониторингФиксацияИсторииДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИстории\МониторингФиксацияИсторииДвижения.Строка.cs">
+      <NsgOwnerGuid>7a77dbbb-133b-4cc9-8771-edf3dac64a5a</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФиксацияИсторииДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\ФормированиеСмены.NsgInit.cs">
+      <NsgOwnerGuid>3db50703-a1f1-4356-9a40-8923864558c0</NsgOwnerGuid>
+      <NsgOwnerName>ФормированиеСмены</NsgOwnerName>
+      <DependentUpon>ФормированиеСмены.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\ФормированиеСмены.cs">
+      <NsgOwnerGuid>3db50703-a1f1-4356-9a40-8923864558c0</NsgOwnerGuid>
+      <NsgOwnerName>ФормированиеСмены</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Картинки\Картинки.NsgInit.cs">
+      <NsgOwnerGuid>3be3cf62-104f-4102-8c1a-fba6a67c3de9</NsgOwnerGuid>
+      <NsgOwnerName>Картинки</NsgOwnerName>
+      <DependentUpon>Картинки.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Картинки\Картинки.cs">
+      <NsgOwnerGuid>3be3cf62-104f-4102-8c1a-fba6a67c3de9</NsgOwnerGuid>
+      <NsgOwnerName>Картинки</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Картинки\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>3be3cf62-104f-4102-8c1a-fba6a67c3de9</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Картинки\ФормаЭлемента.cs">
+      <NsgOwnerGuid>3be3cf62-104f-4102-8c1a-fba6a67c3de9</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Картинки\ФормаЭлемента.resx">
+      <NsgOwnerGuid>3be3cf62-104f-4102-8c1a-fba6a67c3de9</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\МониторингФормированиеСменыТаблица.NsgInit.cs">
+      <NsgOwnerGuid>81e3ed68-bce4-4540-af88-d50e80b0ad5e</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФормированиеСменыТаблица</NsgOwnerName>
+      <DependentUpon>МониторингФормированиеСменыТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\МониторингФормированиеСменыТаблица.cs">
+      <NsgOwnerGuid>81e3ed68-bce4-4540-af88-d50e80b0ad5e</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФормированиеСменыТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\МониторингФормированиеСменыТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>81e3ed68-bce4-4540-af88-d50e80b0ad5e</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФормированиеСменыТаблица</NsgOwnerName>
+      <DependentUpon>МониторингФормированиеСменыТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\МониторингФормированиеСменыТаблица.Строка.cs">
+      <NsgOwnerGuid>81e3ed68-bce4-4540-af88-d50e80b0ad5e</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФормированиеСменыТаблица</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceAuthorization\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceControllerStistics\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceDataOnlineSensors\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceDataOnline\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceTrackPeriods\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceUnitsSpic\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceValidationNavigation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceAuthorization\soap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceAuthorization\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceAuthorization\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceAuthorization\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceValidationNavigation\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceDataOnline\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceDataOnline\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceDataOnline\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceDataOnlineSensors\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceTrackPeriods\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceControllerStistics\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceControllerStistics\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceControllerStistics\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceUnitsSpic\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Сервис\РазрешениеОперацииПользователя\РазрешениеОперацииПользователя.NsgInit.cs">
+      <NsgOwnerGuid>dc5e589b-d5f1-4f1b-a138-9324e3661252</NsgOwnerGuid>
+      <NsgOwnerName>РазрешениеОперацииПользователя</NsgOwnerName>
+      <DependentUpon>РазрешениеОперацииПользователя.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\РазрешениеОперацииПользователя\РазрешениеОперацииПользователя.cs">
+      <NsgOwnerGuid>dc5e589b-d5f1-4f1b-a138-9324e3661252</NsgOwnerGuid>
+      <NsgOwnerName>РазрешениеОперацииПользователя</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ТипСообщения\ТипСообщения.NsgInit.cs">
+      <NsgOwnerGuid>f513ce64-bad3-4753-ac2f-f33bae3a348e</NsgOwnerGuid>
+      <NsgOwnerName>ТипСообщения</NsgOwnerName>
+      <DependentUpon>ТипСообщения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ТипСообщения\ТипСообщения.cs">
+      <NsgOwnerGuid>f513ce64-bad3-4753-ac2f-f33bae3a348e</NsgOwnerGuid>
+      <NsgOwnerName>ТипСообщения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\Приоритет\Приоритет.NsgInit.cs">
+      <NsgOwnerGuid>0b9afe9d-4236-4c8f-9329-1067afb503e3</NsgOwnerGuid>
+      <NsgOwnerName>Приоритет</NsgOwnerName>
+      <DependentUpon>Приоритет.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\Приоритет\Приоритет.cs">
+      <NsgOwnerGuid>0b9afe9d-4236-4c8f-9329-1067afb503e3</NsgOwnerGuid>
+      <NsgOwnerName>Приоритет</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ТипЗадачиНаСервере\ТипЗадачиНаСервере.NsgInit.cs">
+      <NsgOwnerGuid>dfe82d7d-892a-4ebd-8f24-ce146d2911a8</NsgOwnerGuid>
+      <NsgOwnerName>ТипЗадачиНаСервере</NsgOwnerName>
+      <DependentUpon>ТипЗадачиНаСервере.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ТипЗадачиНаСервере\ТипЗадачиНаСервере.cs">
+      <NsgOwnerGuid>dfe82d7d-892a-4ebd-8f24-ce146d2911a8</NsgOwnerGuid>
+      <NsgOwnerName>ТипЗадачиНаСервере</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ДействияПользователей\ДействияПользователей.NsgInit.cs">
+      <NsgOwnerGuid>4e676272-86fc-454a-8862-e7820705bfb9</NsgOwnerGuid>
+      <NsgOwnerName>ДействияПользователей</NsgOwnerName>
+      <DependentUpon>ДействияПользователей.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ДействияПользователей\ДействияПользователей.cs">
+      <NsgOwnerGuid>4e676272-86fc-454a-8862-e7820705bfb9</NsgOwnerGuid>
+      <NsgOwnerName>ДействияПользователей</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ДействиеЭлементаМеню\ДействиеЭлементаМеню.NsgInit.cs">
+      <NsgOwnerGuid>75ffe021-9433-4762-b0c7-4bc50a3fae40</NsgOwnerGuid>
+      <NsgOwnerName>ДействиеЭлементаМеню</NsgOwnerName>
+      <DependentUpon>ДействиеЭлементаМеню.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ДействиеЭлементаМеню\ДействиеЭлементаМеню.cs">
+      <NsgOwnerGuid>75ffe021-9433-4762-b0c7-4bc50a3fae40</NsgOwnerGuid>
+      <NsgOwnerName>ДействиеЭлементаМеню</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\Пользователи\РолиПользователя.NsgInit.cs">
+      <NsgOwnerGuid>034873ff-6529-408f-85f2-be13396ab04c</NsgOwnerGuid>
+      <NsgOwnerName>РолиПользователя</NsgOwnerName>
+      <DependentUpon>РолиПользователя.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\Пользователи\РолиПользователя.cs">
+      <NsgOwnerGuid>034873ff-6529-408f-85f2-be13396ab04c</NsgOwnerGuid>
+      <NsgOwnerName>РолиПользователя</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\Пользователи\РолиПользователя.Строка.NsgInit.cs">
+      <NsgOwnerGuid>034873ff-6529-408f-85f2-be13396ab04c</NsgOwnerGuid>
+      <NsgOwnerName>РолиПользователя</NsgOwnerName>
+      <DependentUpon>РолиПользователя.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\Пользователи\РолиПользователя.Строка.cs">
+      <NsgOwnerGuid>034873ff-6529-408f-85f2-be13396ab04c</NsgOwnerGuid>
+      <NsgOwnerName>РолиПользователя</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\РольПользователяМеню\ТаблицаРолиМенюПользователя.NsgInit.cs">
+      <NsgOwnerGuid>af2194fd-105a-46a2-be54-b4b46f766d52</NsgOwnerGuid>
+      <NsgOwnerName>ТаблицаРолиМенюПользователя</NsgOwnerName>
+      <DependentUpon>ТаблицаРолиМенюПользователя.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\РольПользователяМеню\ТаблицаРолиМенюПользователя.cs">
+      <NsgOwnerGuid>af2194fd-105a-46a2-be54-b4b46f766d52</NsgOwnerGuid>
+      <NsgOwnerName>ТаблицаРолиМенюПользователя</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\РольПользователяМеню\ТаблицаРолиМенюПользователя.Строка.NsgInit.cs">
+      <NsgOwnerGuid>af2194fd-105a-46a2-be54-b4b46f766d52</NsgOwnerGuid>
+      <NsgOwnerName>ТаблицаРолиМенюПользователя</NsgOwnerName>
+      <DependentUpon>ТаблицаРолиМенюПользователя.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\РольПользователяМеню\ТаблицаРолиМенюПользователя.Строка.cs">
+      <NsgOwnerGuid>af2194fd-105a-46a2-be54-b4b46f766d52</NsgOwnerGuid>
+      <NsgOwnerName>ТаблицаРолиМенюПользователя</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\РольПользователяМеню\РольПользователяМеню.NsgInit.cs">
+      <NsgOwnerGuid>ee7283b8-d5a5-47d9-bf36-55612f093050</NsgOwnerGuid>
+      <NsgOwnerName>РольПользователяМеню</NsgOwnerName>
+      <DependentUpon>РольПользователяМеню.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\РольПользователяМеню\РольПользователяМеню.cs">
+      <NsgOwnerGuid>ee7283b8-d5a5-47d9-bf36-55612f093050</NsgOwnerGuid>
+      <NsgOwnerName>РольПользователяМеню</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\НастройкиПользователей\НастройкиПользователей.NsgInit.cs">
+      <NsgOwnerGuid>fac69e11-9411-4b22-be8e-5cb031965416</NsgOwnerGuid>
+      <NsgOwnerName>НастройкиПользователей</NsgOwnerName>
+      <DependentUpon>НастройкиПользователей.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\НастройкиПользователей\НастройкиПользователей.cs">
+      <NsgOwnerGuid>fac69e11-9411-4b22-be8e-5cb031965416</NsgOwnerGuid>
+      <NsgOwnerName>НастройкиПользователей</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\НастройкиПользователей\НастройкиПользователей.Строка.NsgInit.cs">
+      <NsgOwnerGuid>fac69e11-9411-4b22-be8e-5cb031965416</NsgOwnerGuid>
+      <NsgOwnerName>НастройкиПользователей</NsgOwnerName>
+      <DependentUpon>НастройкиПользователей.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\НастройкиПользователей\НастройкиПользователей.Строка.cs">
+      <NsgOwnerGuid>fac69e11-9411-4b22-be8e-5cb031965416</NsgOwnerGuid>
+      <NsgOwnerName>НастройкиПользователей</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\СписокСообщений\СписокСообщений.NsgInit.cs">
+      <NsgOwnerGuid>7a4d540a-c954-48ea-a685-6aa6c9240e5f</NsgOwnerGuid>
+      <NsgOwnerName>СписокСообщений</NsgOwnerName>
+      <DependentUpon>СписокСообщений.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\СписокСообщений\СписокСообщений.cs">
+      <NsgOwnerGuid>7a4d540a-c954-48ea-a685-6aa6c9240e5f</NsgOwnerGuid>
+      <NsgOwnerName>СписокСообщений</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\Пользователи\Пользователи.NsgInit.cs">
+      <NsgOwnerGuid>ffe6bf09-fabd-4222-9c49-62163ad6a753</NsgOwnerGuid>
+      <NsgOwnerName>Пользователи</NsgOwnerName>
+      <DependentUpon>Пользователи.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\Пользователи\Пользователи.cs">
+      <NsgOwnerGuid>ffe6bf09-fabd-4222-9c49-62163ad6a753</NsgOwnerGuid>
+      <NsgOwnerName>Пользователи</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ОбновленияСистемы\ОбновленияСистемы.NsgInit.cs">
+      <NsgOwnerGuid>80907529-0b46-430e-accd-d7e6f0cc0b81</NsgOwnerGuid>
+      <NsgOwnerName>ОбновленияСистемы</NsgOwnerName>
+      <DependentUpon>ОбновленияСистемы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ОбновленияСистемы\ОбновленияСистемы.cs">
+      <NsgOwnerGuid>80907529-0b46-430e-accd-d7e6f0cc0b81</NsgOwnerGuid>
+      <NsgOwnerName>ОбновленияСистемы</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ЭлементМенюПользователя\ЭлементМенюПользователя.NsgInit.cs">
+      <NsgOwnerGuid>de632cec-17be-4bdf-9063-8357c4a1d068</NsgOwnerGuid>
+      <NsgOwnerName>ЭлементМенюПользователя</NsgOwnerName>
+      <DependentUpon>ЭлементМенюПользователя.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ЭлементМенюПользователя\ЭлементМенюПользователя.cs">
+      <NsgOwnerGuid>de632cec-17be-4bdf-9063-8357c4a1d068</NsgOwnerGuid>
+      <NsgOwnerName>ЭлементМенюПользователя</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\СервернаяЗадача\СервернаяЗадача.NsgInit.cs">
+      <NsgOwnerGuid>46723407-7523-484a-bfe4-e97a53da4a90</NsgOwnerGuid>
+      <NsgOwnerName>СервернаяЗадача</NsgOwnerName>
+      <DependentUpon>СервернаяЗадача.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\СервернаяЗадача\СервернаяЗадача.cs">
+      <NsgOwnerGuid>46723407-7523-484a-bfe4-e97a53da4a90</NsgOwnerGuid>
+      <NsgOwnerName>СервернаяЗадача</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ЭлементМенюПользователя\ТаблицаЭлементаМенюПользователя.NsgInit.cs">
+      <NsgOwnerGuid>8139821e-02ee-46b1-ab5c-07bf005e358c</NsgOwnerGuid>
+      <NsgOwnerName>ТаблицаЭлементаМенюПользователя</NsgOwnerName>
+      <DependentUpon>ТаблицаЭлементаМенюПользователя.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ЭлементМенюПользователя\ТаблицаЭлементаМенюПользователя.cs">
+      <NsgOwnerGuid>8139821e-02ee-46b1-ab5c-07bf005e358c</NsgOwnerGuid>
+      <NsgOwnerName>ТаблицаЭлементаМенюПользователя</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ЭлементМенюПользователя\ТаблицаЭлементаМенюПользователя.Строка.NsgInit.cs">
+      <NsgOwnerGuid>8139821e-02ee-46b1-ab5c-07bf005e358c</NsgOwnerGuid>
+      <NsgOwnerName>ТаблицаЭлементаМенюПользователя</NsgOwnerName>
+      <DependentUpon>ТаблицаЭлементаМенюПользователя.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ЭлементМенюПользователя\ТаблицаЭлементаМенюПользователя.Строка.cs">
+      <NsgOwnerGuid>8139821e-02ee-46b1-ab5c-07bf005e358c</NsgOwnerGuid>
+      <NsgOwnerName>ТаблицаЭлементаМенюПользователя</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ПраваПользователей\ПраваПользователей.NsgInit.cs">
+      <NsgOwnerGuid>e3508c04-4d63-486e-a4f5-d4842befb3d3</NsgOwnerGuid>
+      <NsgOwnerName>ПраваПользователей</NsgOwnerName>
+      <DependentUpon>ПраваПользователей.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ПраваПользователей\ПраваПользователей.cs">
+      <NsgOwnerGuid>e3508c04-4d63-486e-a4f5-d4842befb3d3</NsgOwnerGuid>
+      <NsgOwnerName>ПраваПользователей</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ПраваПользователей\СервисПраваПользователейДвижения.NsgInit.cs">
+      <NsgOwnerGuid>79d6bfde-f12b-4897-ad7f-182b46fdfd45</NsgOwnerGuid>
+      <NsgOwnerName>СервисПраваПользователейДвижения</NsgOwnerName>
+      <DependentUpon>СервисПраваПользователейДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ПраваПользователей\СервисПраваПользователейДвижения.cs">
+      <NsgOwnerGuid>79d6bfde-f12b-4897-ad7f-182b46fdfd45</NsgOwnerGuid>
+      <NsgOwnerName>СервисПраваПользователейДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ПраваПользователей\СервисПраваПользователейДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>79d6bfde-f12b-4897-ad7f-182b46fdfd45</NsgOwnerGuid>
+      <NsgOwnerName>СервисПраваПользователейДвижения</NsgOwnerName>
+      <DependentUpon>СервисПраваПользователейДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Сервис\ПраваПользователей\СервисПраваПользователейДвижения.Строка.cs">
+      <NsgOwnerGuid>79d6bfde-f12b-4897-ad7f-182b46fdfd45</NsgOwnerGuid>
+      <NsgOwnerName>СервисПраваПользователейДвижения</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>

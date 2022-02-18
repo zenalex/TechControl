@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SpicOnlineDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://login.scout-gps.ru/spic/OnlineDataService/soap?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://login.scout-gps.ru/spic/OnlineDataService/soap?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://login.scout-gps.ru/spic/OnlineDataService/soap?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.SpicOnlineData.Contracts" />
+      <xsd:import schemaLocation="http://login.scout-gps.ru/spic/OnlineDataService/soap?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://login.scout-gps.ru/spic/OnlineDataService/soap?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Infrastructure.Data" />
+      <xsd:import schemaLocation="http://login.scout-gps.ru/spic/OnlineDataService/soap?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.SpicNavigationFiltrationStat" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISpicSoapOnlineDataService_Subscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subscribe" />
+  </wsdl:message>
+  <wsdl:message name="ISpicSoapOnlineDataService_Subscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpicSoapOnlineDataService_Unsubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Unsubscribe" />
+  </wsdl:message>
+  <wsdl:message name="ISpicSoapOnlineDataService_Unsubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpicSoapOnlineDataService_GetOnlineData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineData" />
+  </wsdl:message>
+  <wsdl:message name="ISpicSoapOnlineDataService_GetOnlineData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISpicSoapOnlineDataService">
+    <wsdl:operation name="Subscribe">
+      <wsdl:input wsam:Action="http://tempuri.org/ISpicSoapOnlineDataService/Subscribe" message="tns:ISpicSoapOnlineDataService_Subscribe_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ISpicSoapOnlineDataService/SubscribeResponse" message="tns:ISpicSoapOnlineDataService_Subscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <wsdl:input wsam:Action="http://tempuri.org/ISpicSoapOnlineDataService/Unsubscribe" message="tns:ISpicSoapOnlineDataService_Unsubscribe_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ISpicSoapOnlineDataService/UnsubscribeResponse" message="tns:ISpicSoapOnlineDataService_Unsubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineData">
+      <wsdl:input wsam:Action="http://tempuri.org/ISpicSoapOnlineDataService/GetOnlineData" message="tns:ISpicSoapOnlineDataService_GetOnlineData_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ISpicSoapOnlineDataService/GetOnlineDataResponse" message="tns:ISpicSoapOnlineDataService_GetOnlineData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISpicSoapOnlineDataService" type="tns:ISpicSoapOnlineDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Subscribe">
+      <soap:operation soapAction="http://tempuri.org/ISpicSoapOnlineDataService/Subscribe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <soap:operation soapAction="http://tempuri.org/ISpicSoapOnlineDataService/Unsubscribe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineData">
+      <soap:operation soapAction="http://tempuri.org/ISpicSoapOnlineDataService/GetOnlineData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SpicOnlineDataService">
+    <wsdl:port name="BasicHttpBinding_ISpicSoapOnlineDataService" binding="tns:BasicHttpBinding_ISpicSoapOnlineDataService">
+      <soap:address location="http://login.scout-gps.ru/spic/OnlineDataService/soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

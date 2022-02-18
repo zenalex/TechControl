@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scout.Platform.Components.Frontend.Spic.Units.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scout.Platform.Components.Frontend.Spic.Units.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SpicPetrolTankCollectionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SpicPetrolTankDtos" nillable="true" type="tns:ArrayOfSpicPetrolTankDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicPetrolTankCollectionDto" nillable="true" type="tns:SpicPetrolTankCollectionDto" />
+  <xs:complexType name="ArrayOfSpicPetrolTankDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpicPetrolTankDto" nillable="true" type="tns:SpicPetrolTankDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpicPetrolTankDto" nillable="true" type="tns:ArrayOfSpicPetrolTankDto" />
+  <xs:complexType name="SpicPetrolTankDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaxValue" type="xs:double" />
+      <xs:element minOccurs="0" name="SensorPort" nillable="true" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicPetrolTankDto" nillable="true" type="tns:SpicPetrolTankDto" />
+</xs:schema>

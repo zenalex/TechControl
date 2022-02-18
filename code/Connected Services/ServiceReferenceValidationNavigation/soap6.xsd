@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.SpicNavigationFiltrationStat" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.SpicNavigationFiltrationStat" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfSpicNavigationPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpicNavigationPoint" nillable="true" type="tns:SpicNavigationPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpicNavigationPoint" nillable="true" type="tns:ArrayOfSpicNavigationPoint" />
+  <xs:complexType name="SpicNavigationPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsNavigationValid" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navigation" nillable="true" type="tns:SpicNavigation" />
+      <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicNavigationPoint" nillable="true" type="tns:SpicNavigationPoint" />
+  <xs:complexType name="SpicNavigation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AltitudeMeters" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Angle" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="HardwareValidation" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="tns:SpicLocation" />
+      <xs:element minOccurs="0" name="NavigationSystemType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SatellitesCount" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Speed" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicNavigation" nillable="true" type="tns:SpicNavigation" />
+  <xs:complexType name="SpicLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicLocation" nillable="true" type="tns:SpicLocation" />
+</xs:schema>

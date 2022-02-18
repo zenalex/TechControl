@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.SpicOnlineDataWithSensors.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.SpicOnlineDataWithSensors.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://login.scout-gps.ru/spic/OnlineDataWithSensorsService/soap?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://login.scout-gps.ru/spic/OnlineDataWithSensorsService/soap?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://login.scout-gps.ru/spic/OnlineDataWithSensorsService/soap?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Infrastructure.Data" />
+  <xs:import schemaLocation="http://login.scout-gps.ru/spic/OnlineDataWithSensorsService/soap?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.SpicNavigationFiltrationStat" />
+  <xs:complexType name="SpicOnlineDataWithSensorsSubscriptionRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SensorTypes" nillable="true" type="q1:ArrayOfunsignedShort" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UnitIds" nillable="true" type="q2:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicOnlineDataWithSensorsSubscriptionRequest" nillable="true" type="tns:SpicOnlineDataWithSensorsSubscriptionRequest" />
+  <xs:complexType name="SpicOnlineDataWithSensorsSubscriptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" nillable="true" type="tns:SpicOnlineDataWithSensorsSessionId" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="tns:SpicOnlineDataWithSensorsOperationState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicOnlineDataWithSensorsSubscriptionResponse" nillable="true" type="tns:SpicOnlineDataWithSensorsSubscriptionResponse" />
+  <xs:complexType name="SpicOnlineDataWithSensorsSessionId">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicOnlineDataWithSensorsSessionId" nillable="true" type="tns:SpicOnlineDataWithSensorsSessionId" />
+  <xs:complexType name="SpicOnlineDataWithSensorsOperationState">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ErrorCodes" nillable="true" type="q3:ArrayOfint" />
+      <xs:element minOccurs="0" name="Status" type="tns:SpicOnlineDataWithSensorsOperationStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicOnlineDataWithSensorsOperationState" nillable="true" type="tns:SpicOnlineDataWithSensorsOperationState" />
+  <xs:complexType name="SpicOnlineDataWithSensorsOperationStatus">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicOnlineDataWithSensorsOperationStatus" nillable="true" type="tns:SpicOnlineDataWithSensorsOperationStatus" />
+  <xs:complexType name="SpicOnlineDataWithSensorsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OnlineDataWithSensorsCollection" nillable="true" type="tns:SpicOnlineDataWithSensorsCollection" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="tns:SpicOnlineDataWithSensorsOperationState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicOnlineDataWithSensorsResponse" nillable="true" type="tns:SpicOnlineDataWithSensorsResponse" />
+  <xs:complexType name="SpicOnlineDataWithSensorsCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataCollection" nillable="true" type="tns:ArrayOfSpicOnlineDataWithSensors" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Targets" nillable="true" type="q4:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicOnlineDataWithSensorsCollection" nillable="true" type="tns:SpicOnlineDataWithSensorsCollection" />
+  <xs:complexType name="ArrayOfSpicOnlineDataWithSensors">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpicOnlineDataWithSensors" nillable="true" type="tns:SpicOnlineDataWithSensors" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpicOnlineDataWithSensors" nillable="true" type="tns:ArrayOfSpicOnlineDataWithSensors" />
+  <xs:complexType name="SpicOnlineDataWithSensors">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConnectionDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Infrastructure.Data" minOccurs="0" name="DeviceId" type="q5:SpicDeviceId" />
+      <xs:element minOccurs="0" name="IsNavigationValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastMessageTime" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.SpicNavigationFiltrationStat" minOccurs="0" name="Navigation" nillable="true" type="q6:SpicNavigation" />
+      <xs:element minOccurs="0" name="NavigationTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Sensors" nillable="true" type="tns:ArrayOfSpicSensor" />
+      <xs:element minOccurs="0" name="TotalMessages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicOnlineDataWithSensors" nillable="true" type="tns:SpicOnlineDataWithSensors" />
+  <xs:complexType name="ArrayOfSpicSensor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpicSensor" nillable="true" type="tns:SpicSensor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpicSensor" nillable="true" type="tns:ArrayOfSpicSensor" />
+  <xs:complexType name="SpicSensor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SensorNumber" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="SensorType" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="SensorValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicSensor" nillable="true" type="tns:SpicSensor" />
+</xs:schema>

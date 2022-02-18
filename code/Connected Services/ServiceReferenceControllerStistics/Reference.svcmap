@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a720dce3-0271-4b4b-920c-bbca4ed0e72d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://login.scout-gps.ru:8081/spic/StatisticsController/soap?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="soap.xsd" MetadataType="Schema" ID="a6fd6436-696c-424e-ad28-08ae12566fdc" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/StatisticsController/soap?xsd=xsd0" />
+    <MetadataFile FileName="soap1.xsd" MetadataType="Schema" ID="d27fd362-7063-4a01-9061-41e2386e5b04" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/StatisticsController/soap?xsd=xsd4" />
+    <MetadataFile FileName="soap2.xsd" MetadataType="Schema" ID="db4f3ef1-14c5-4d03-a967-8032ea8c54a5" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/StatisticsController/soap?xsd=xsd3" />
+    <MetadataFile FileName="SpicStatisticsControllerService.wsdl" MetadataType="Wsdl" ID="7d98967c-2c74-47ab-9a1b-7e72309e10b4" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/StatisticsController/soap?wsdl" />
+    <MetadataFile FileName="soap3.xsd" MetadataType="Schema" ID="9397036f-d093-40b9-8016-b9f424e0e67b" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/StatisticsController/soap?xsd=xsd1" />
+    <MetadataFile FileName="soap4.xsd" MetadataType="Schema" ID="fb4658b4-b30a-48cc-a085-10b4c176ba81" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/StatisticsController/soap?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

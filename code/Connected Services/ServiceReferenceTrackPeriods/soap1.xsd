@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.TrackPeriodsMileageStat" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.TrackPeriodsMileageStat" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://login.scout-gps.ru:8081/spic/trackPeriodsMileage/soap?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.Concrete" />
+  <xs:import schemaLocation="http://login.scout-gps.ru:8081/spic/trackPeriodsMileage/soap?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://login.scout-gps.ru:8081/spic/trackPeriodsMileage/soap?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Infrastructure.Data" />
+  <xs:import schemaLocation="http://login.scout-gps.ru:8081/spic/trackPeriodsMileage/soap?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.SpicTrackPeriodStat" />
+  <xs:complexType name="SpicTrackPeriodsMileageStatisticsResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.Concrete" minOccurs="0" name="ChunkInfo" nillable="true" type="q1:SpicStatisticsChunkInfo" />
+      <xs:element minOccurs="0" name="Statistics" nillable="true" type="tns:SpicTrackPeriodsMileageStatistics" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicTrackPeriodsMileageStatisticsResult" nillable="true" type="tns:SpicTrackPeriodsMileageStatisticsResult" />
+  <xs:complexType name="SpicTrackPeriodsMileageStatistics">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BreakDuration" type="ser:duration" />
+      <xs:element minOccurs="0" name="BreakMileageKm" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxSpeedKmh" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MinSpeedKmh" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MovementDuration" type="ser:duration" />
+      <xs:element minOccurs="0" name="MovementMileageKm" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ParkingDuration" type="ser:duration" />
+      <xs:element minOccurs="0" name="PeriodsMileage" nillable="true" type="tns:ArrayOfSpicTrackPeriodMileage" />
+      <xs:element minOccurs="0" name="TotalDuration" type="ser:duration" />
+      <xs:element minOccurs="0" name="TotalMileageKm" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="WorkTimeMileageKm" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicTrackPeriodsMileageStatistics" nillable="true" type="tns:SpicTrackPeriodsMileageStatistics" />
+  <xs:complexType name="ArrayOfSpicTrackPeriodMileage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpicTrackPeriodMileage" nillable="true" type="tns:SpicTrackPeriodMileage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpicTrackPeriodMileage" nillable="true" type="tns:ArrayOfSpicTrackPeriodMileage" />
+  <xs:complexType name="SpicTrackPeriodMileage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AverageSpeedKmh" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxSpeedKmh" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MileageKm" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MinSpeedKmh" nillable="true" type="xs:double" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Infrastructure.Data" minOccurs="0" name="Period" nillable="true" type="q2:SpicDateTimeRange" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.SpicTrackPeriodStat" minOccurs="0" name="Type" nillable="true" type="q3:SpicTrackPeriodType" />
+      <xs:element minOccurs="0" name="WorkTimeMileageKm" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicTrackPeriodMileage" nillable="true" type="tns:SpicTrackPeriodMileage" />
+</xs:schema>
