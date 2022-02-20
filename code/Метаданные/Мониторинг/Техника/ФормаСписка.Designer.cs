@@ -65,7 +65,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.ТипТС = new TechControl.Метаданные.Мониторинг.ТипТС.ColumnDescriptor();
             this.ГодВыпуска = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ГосНомер = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.Подрядчик = new TechControl.Метаданные.Мониторинг.Контрагент.ColumnDescriptor();
+            this.Подрядчик = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Фотография = new NsgSoft.Forms.NsgColumnDescriptor();
             this.Номер = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.IdСкаут = new NsgSoft.Forms.NsgColumnDescriptor.String();
@@ -605,8 +605,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Подрядчик.Caption = "Подрядчик";
             this.Подрядчик.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
             this.Подрядчик.Name = "Подрядчик";
-            this.Подрядчик.NSGType = typeof(TechControl.Метаданные.Мониторинг.Контрагент);
-            this.Подрядчик.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Контрагент);
+            this.Подрядчик.NSGType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
+            this.Подрядчик.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
             this.Подрядчик.SearchCondition.OwnerComponent = this.Подрядчик;
             this.Подрядчик.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -730,7 +730,7 @@ namespace TechControl.Метаданные.Мониторинг
         private ТипТС.ColumnDescriptor ТипТС;
         private NsgColumnDescriptor.String ГодВыпуска;
         private NsgColumnDescriptor.String ГосНомер;
-        private Контрагент.ColumnDescriptor Подрядчик;
+        private Контрагенты.ColumnDescriptor Подрядчик;
         private NsgColumnDescriptor Фотография;
         private NsgColumnDescriptor.String Номер;
         private NsgColumnDescriptor.String IdСкаут;

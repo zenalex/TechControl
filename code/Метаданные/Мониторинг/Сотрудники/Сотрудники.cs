@@ -11,7 +11,7 @@ using NsgSoft.Common;
 namespace TechControl.Метаданные.Мониторинг
 {
     
-    public partial class Контрагент
+    public partial class Сотрудники
     {
         #region Данные
         #endregion //Данные
