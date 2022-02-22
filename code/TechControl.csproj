@@ -1190,4 +1190,42 @@
       <NsgOwnerName>СтатусТехники</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаПерсонал.NsgInit.cs">
+      <NsgOwnerGuid>6fb73fff-fe32-43cf-ba88-1f94aeff7aa0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаПерсонал</NsgOwnerName>
+      <DependentUpon>МониторингОбъектыТаблицаПерсонал.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаПерсонал.cs">
+      <NsgOwnerGuid>6fb73fff-fe32-43cf-ba88-1f94aeff7aa0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаПерсонал</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаПерсонал.Строка.NsgInit.cs">
+      <NsgOwnerGuid>6fb73fff-fe32-43cf-ba88-1f94aeff7aa0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаПерсонал</NsgOwnerName>
+      <DependentUpon>МониторингОбъектыТаблицаПерсонал.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаПерсонал.Строка.cs">
+      <NsgOwnerGuid>6fb73fff-fe32-43cf-ba88-1f94aeff7aa0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаПерсонал</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТехника.NsgInit.cs">
+      <NsgOwnerGuid>12f0f4cb-dc26-49e8-ac30-c89da8dd6b9c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаТехника</NsgOwnerName>
+      <DependentUpon>МониторингОбъектыТаблицаТехника.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТехника.cs">
+      <NsgOwnerGuid>12f0f4cb-dc26-49e8-ac30-c89da8dd6b9c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаТехника</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТехника.Строка.NsgInit.cs">
+      <NsgOwnerGuid>12f0f4cb-dc26-49e8-ac30-c89da8dd6b9c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаТехника</NsgOwnerName>
+      <DependentUpon>МониторингОбъектыТаблицаТехника.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТехника.Строка.cs">
+      <NsgOwnerGuid>12f0f4cb-dc26-49e8-ac30-c89da8dd6b9c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаТехника</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>
