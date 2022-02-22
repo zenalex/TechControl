@@ -1126,4 +1126,33 @@
       <NsgOwnerName>Сотрудники</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\РежимыРаботы\РежимыРаботы.NsgInit.cs">
+      <NsgOwnerGuid>8b823161-133b-44cd-95c8-543c94c21569</NsgOwnerGuid>
+      <NsgOwnerName>РежимыРаботы</NsgOwnerName>
+      <DependentUpon>РежимыРаботы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РежимыРаботы\РежимыРаботы.cs">
+      <NsgOwnerGuid>8b823161-133b-44cd-95c8-543c94c21569</NsgOwnerGuid>
+      <NsgOwnerName>РежимыРаботы</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ШтатныеРасписания\ШтатныеРасписания.NsgInit.cs">
+      <NsgOwnerGuid>29a55aa8-1f80-4a47-981f-efb9c23fb86c</NsgOwnerGuid>
+      <NsgOwnerName>ШтатныеРасписания</NsgOwnerName>
+      <DependentUpon>ШтатныеРасписания.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ШтатныеРасписания\ШтатныеРасписания.cs">
+      <NsgOwnerGuid>29a55aa8-1f80-4a47-981f-efb9c23fb86c</NsgOwnerGuid>
+      <NsgOwnerName>ШтатныеРасписания</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Должности\Должности.NsgInit.cs">
+      <NsgOwnerGuid>b2e03c9f-8023-41b8-a72c-9480fb619b20</NsgOwnerGuid>
+      <NsgOwnerName>Должности</NsgOwnerName>
+      <DependentUpon>Должности.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Должности\Должности.cs">
+      <NsgOwnerGuid>b2e03c9f-8023-41b8-a72c-9480fb619b20</NsgOwnerGuid>
+      <NsgOwnerName>Должности</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>
