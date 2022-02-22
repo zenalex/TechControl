@@ -1505,6 +1505,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="c85c7767-9db7-4bb4-8ebc-74f5ded3a9ac" type="NsgDataTypedReference" editoraccess="Full" name="Сотрудники" visible="true" description="Сотрудники" field="Sotrudniki" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Сотрудники">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="05ff7720-caff-4265-8858-3040948c452c" type="NsgDataTypedReference" editoraccess="Full" name="Объекты" visible="true" description="Объекты" field="Obekty" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Объекты">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="26c45bd5-cbe2-4896-bb5c-84c768417eb9" type="NsgDataTable" editoraccess="Full" name="МониторингРегистрМониторингТехникиДвижения" visible="true" description="Мониторинг регистр мониторинг техники движения" group="_SystemTables" table="_tab_MonitoringRegistrMo" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="RegisterCharacteristicsTable" registerPeriod="None" registerPeriodCount="1">
@@ -1564,6 +1574,16 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="d7be2ed9-7fca-49af-82ef-435898c1758a" type="NsgDataFloat" editoraccess="Full" name="Широта" visible="true" description="Широта" field="SHirota" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="c85c7767-9db7-4bb4-8ebc-74f5ded3a9ac" type="NsgDataTypedReference" editoraccess="Full" name="Сотрудники" visible="true" description="Сотрудники" field="Sotrudniki" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Сотрудники">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="05ff7720-caff-4265-8858-3040948c452c" type="NsgDataTypedReference" editoraccess="Full" name="Объекты" visible="true" description="Объекты" field="Obekty" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Объекты">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
