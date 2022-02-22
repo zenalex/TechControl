@@ -1179,4 +1179,15 @@
       <NsgOwnerName>ТипСобственности</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\СтатусТехники\СтатусТехники.NsgInit.cs">
+      <NsgOwnerGuid>80f700cc-034d-4349-a7aa-ab9f1381aa2c</NsgOwnerGuid>
+      <NsgOwnerName>СтатусТехники</NsgOwnerName>
+      <DependentUpon>СтатусТехники.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\СтатусТехники\СтатусТехники.cs">
+      <NsgOwnerGuid>80f700cc-034d-4349-a7aa-ab9f1381aa2c</NsgOwnerGuid>
+      <NsgOwnerName>СтатусТехники</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>

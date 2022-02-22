@@ -1698,6 +1698,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="f7b61854-3f4b-4253-a4e5-84436ec850e0" type="NsgDataEnumReference" editoraccess="Full" name="Статус" visible="true" description="Статус" field="Status" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="СтатусТехники">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -1721,6 +1726,7 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
+            <container name="Статус" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2226,6 +2232,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="82b3fc61-5e0d-41de-a844-8d7bc4f49cd6" type="NsgDataBoolean" editoraccess="Full" name="Включен" visible="true" description="Включен" field="Vkljuchen" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -2238,13 +2249,14 @@
             <container name="КонецРабочейСмены" />
             <container name="Фирма" />
             <container name="РежимРаботы" />
+            <container name="Договор" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Договор" />
+            <container name="Включен" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4637,6 +4649,36 @@
             <container name="Собственный" />
             <container name="Аренда" />
             <container name="Неизвестно" />
+          </Containers>
+        </NsgMultipleObject>
+        <NsgMultipleObject Guid="80f700cc-034d-4349-a7aa-ab9f1381aa2c" type="NsgDataEnum" editoraccess="Full" name="СтатусТехники" visible="true" description="Статус техники" group="Мониторинг" table="_enum_StatusTekhniki" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False">
+          <NsgLanguageString type="presentation">
+            <presentation lang="(Default)" value="" />
+          </NsgLanguageString>
+          <NsgLanguageString type="valuemask">
+            <presentation lang="(Default)" value="{Представление}" />
+          </NsgLanguageString>
+          <ObjectList>
+            <NsgSimpleObject Guid="88d30c54-204c-4434-b65b-6455109952d5" type="NsgDataEnumElement" editoraccess="Full" name="ВРемонте" visible="true" description="ВРемонте" field="VRemonte" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="1">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="f7183e98-1983-4d30-ae72-8c4414837066" type="NsgDataEnumElement" editoraccess="Full" name="Сломан" visible="true" description="Сломан" field="Sloman" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="2">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="5e98bf7e-28a9-423e-888d-5c130bffd9c4" type="NsgDataEnumElement" editoraccess="Full" name="ВРаботе" visible="true" description="ВРаботе" field="VRabote" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+          </ObjectList>
+          <Containers>
+            <container name="ВРемонте" />
+            <container name="Сломан" />
+            <container name="ВРаботе" />
           </Containers>
         </NsgMultipleObject>
       </ObjectList>
