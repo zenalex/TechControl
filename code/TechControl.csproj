@@ -1146,4 +1146,35 @@
       <NsgOwnerName>Должности</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\РежимыРаботы\МониторингРежимыРаботыТаблицаГрафик.NsgInit.cs">
+      <NsgOwnerGuid>5b76beb8-0f1f-481a-9451-f4c3126624a9</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРежимыРаботыТаблицаГрафик</NsgOwnerName>
+      <DependentUpon>МониторингРежимыРаботыТаблицаГрафик.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РежимыРаботы\МониторингРежимыРаботыТаблицаГрафик.cs">
+      <NsgOwnerGuid>5b76beb8-0f1f-481a-9451-f4c3126624a9</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРежимыРаботыТаблицаГрафик</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РежимыРаботы\МониторингРежимыРаботыТаблицаГрафик.Строка.NsgInit.cs">
+      <NsgOwnerGuid>5b76beb8-0f1f-481a-9451-f4c3126624a9</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРежимыРаботыТаблицаГрафик</NsgOwnerName>
+      <DependentUpon>МониторингРежимыРаботыТаблицаГрафик.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РежимыРаботы\МониторингРежимыРаботыТаблицаГрафик.Строка.cs">
+      <NsgOwnerGuid>5b76beb8-0f1f-481a-9451-f4c3126624a9</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРежимыРаботыТаблицаГрафик</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ДеньНедели\ДеньНедели.NsgInit.cs">
+      <NsgOwnerGuid>745a7094-96b8-44f4-be8c-ce87cbde8744</NsgOwnerGuid>
+      <NsgOwnerName>ДеньНедели</NsgOwnerName>
+      <DependentUpon>ДеньНедели.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ДеньНедели\ДеньНедели.cs">
+      <NsgOwnerGuid>745a7094-96b8-44f4-be8c-ce87cbde8744</NsgOwnerGuid>
+      <NsgOwnerName>ДеньНедели</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>
