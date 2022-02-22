@@ -1717,6 +1717,7 @@
             <container name="НормативныйРасходТоплива" />
             <container name="ОбъемТопливногоБака" />
             <container name="Примечание" />
+            <container name="Статус" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -1726,7 +1727,6 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
-            <container name="Статус" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -1796,6 +1796,11 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="67040a39-f79b-42da-bdec-e204a057f09d" type="NsgDataEnumReference" editoraccess="Limited" name="СостояниеДокумента" visible="true" description="Состояние документа" field="_State" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Сервис" refname="СостоянияОбъекта">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="c1b19c2d-f7fe-4ab1-b48f-a7a6c0f1a695" type="NsgDataTypedReference" editoraccess="Full" name="Марка" visible="true" description="Марка" field="Marka" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Марка">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -2250,13 +2255,13 @@
             <container name="Фирма" />
             <container name="РежимРаботы" />
             <container name="Договор" />
+            <container name="Включен" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Включен" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4674,11 +4679,17 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="adf6aed9-8414-4d78-bf77-7d149e70abdd" type="NsgDataEnumElement" editoraccess="Full" name="НеРаботает" visible="true" description="Не работает" field="NeRabotaet" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="3">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ВРемонте" />
             <container name="Сломан" />
             <container name="ВРаботе" />
+            <container name="НеРаботает" />
           </Containers>
         </NsgMultipleObject>
       </ObjectList>
