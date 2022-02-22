@@ -666,15 +666,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\Фирмы\Фирмы.NsgInit.cs">
-      <NsgOwnerGuid>d79052cd-906c-494c-9499-78e49bee9ae7</NsgOwnerGuid>
-      <NsgOwnerName>Фирмы</NsgOwnerName>
-      <DependentUpon>Фирмы.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Фирмы\Фирмы.cs">
-      <NsgOwnerGuid>d79052cd-906c-494c-9499-78e49bee9ae7</NsgOwnerGuid>
-      <NsgOwnerName>Фирмы</NsgOwnerName>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\Мониторинг\Объекты\Объекты.NsgInit.cs">
