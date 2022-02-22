@@ -2242,21 +2242,6 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="bfc90601-cf41-414a-b025-af471a3a1290" type="NsgDataInteger" editoraccess="Full" name="МашинВРемонте" visible="true" description="Машин ВРемонте" field="MashinVRemonte" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="4b7f6824-86e7-4969-9fba-06e2ca288b9f" type="NsgDataInteger" editoraccess="Full" name="МашинСломано" visible="true" description="Машин сломано" field="MashinSlomano" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="91fb0e9d-fc4a-4751-97b4-7b6c2eb6ab6b" type="NsgDataInteger" editoraccess="Full" name="МашинВРаботе" visible="true" description="Машин ВРаботе" field="MashinVRabote" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -2277,9 +2262,6 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="МашинВРемонте" />
-            <container name="МашинСломано" />
-            <container name="МашинВРаботе" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
