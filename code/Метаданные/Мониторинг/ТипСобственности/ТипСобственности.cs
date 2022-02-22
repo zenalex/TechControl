@@ -8,7 +8,7 @@ using NsgSoft.Common;
 namespace TechControl.Метаданные.Мониторинг
 {
     
-    public partial class СобственностьТехники
+    public partial class ТипСобственности
 	{
 		#region Данные
 		#endregion //Данные

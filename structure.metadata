@@ -1710,6 +1710,8 @@
             <container name="Номер" />
             <container name="IdСкаут" />
             <container name="НормативныйРасходТоплива" />
+            <container name="ОбъемТопливногоБака" />
+            <container name="Примечание" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -1719,8 +1721,6 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
-            <container name="ОбъемТопливногоБака" />
-            <container name="Примечание" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2186,7 +2186,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="f62cd67a-f7b4-4b96-8ae4-0908bf8d0a3d" type="NsgDataEnumReference" editoraccess="Full" name="СобственностьТехники" visible="true" description="Собственность техники" field="SobstvennostTekhniki" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="СобственностьТехники">
+            <NsgSimpleObject Guid="f7f10b9e-3ec5-476a-b1e3-9fd1e861784c" type="NsgDataEnumReference" editoraccess="Full" name="СобственностьТехники" visible="true" description="Собственность техники" field="SobstvennostTekhniki" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="ТипСобственности">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -2221,6 +2221,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="3616a987-735a-45f8-ab82-5e1309c6fc38" type="NsgDataString" editoraccess="Full" name="Договор" visible="true" description="Договор" field="Dogovor" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -2239,6 +2244,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="Договор" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2562,36 +2568,6 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers />
-        </NsgMultipleObject>
-        <NsgMultipleObject Guid="df2f17b4-a0b2-4947-903d-1fa614d6e414" type="NsgDataEnum" editoraccess="Full" name="СобственностьТехники" visible="true" description="Перечисление" group="Мониторинг" table="_enum_SobstvennostTekhniki" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False">
-          <NsgLanguageString type="presentation">
-            <presentation lang="(Default)" value="" />
-          </NsgLanguageString>
-          <NsgLanguageString type="valuemask">
-            <presentation lang="(Default)" value="{Представление}" />
-          </NsgLanguageString>
-          <ObjectList>
-            <NsgSimpleObject Guid="b532973c-0fce-4618-bb62-dd575005502e" type="NsgDataEnumElement" editoraccess="Full" name="Неизвестно" visible="true" description="Неизвестно" field="Neizvestno" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="b0951cdc-021d-4ba5-a31a-da7b09159019" type="NsgDataEnumElement" editoraccess="Full" name="Собственный" visible="true" description="Собственный" field="Sobstvennyij" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="1">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="0f6c4670-fb8f-4f45-9a1a-32fd762e817b" type="NsgDataEnumElement" editoraccess="Full" name="Аренда" visible="true" description="Аренда" field="Arenda" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="2">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-          </ObjectList>
-          <Containers>
-            <container name="Неизвестно" />
-            <container name="Собственный" />
-            <container name="Аренда" />
-          </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="4e676272-86fc-454a-8862-e7820705bfb9" type="NsgDataRegistrationJournal" editoraccess="Limited" name="ДействияПользователей" visible="true" description="Действия пользователей" group="Сервис" table="RegistrationJournal" useFullTextIndex="true" visibleadminonly="false">
           <NsgLanguageString type="presentation">
@@ -4117,27 +4093,27 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="748a8713-3e24-4ff6-ba5a-e5d801b80951" type="NsgDataString" editoraccess="Full" name="Адрес" visible="true" description="Адрес" field="Adres" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="100">
+            <NsgSimpleObject Guid="b750d330-f33e-42ef-bfbd-efa94acfae6a" type="NsgDataString" editoraccess="Full" name="Адрес" visible="true" description="Адрес" field="Adres" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="100">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="a6c090ab-978f-4c63-90e7-ef42126bebbf" type="NsgDataBoolean" editoraccess="Full" name="ЯвляетсяНашейФирмой" visible="true" description="Является нашей фирмой" field="JAvljaetsjaNashei" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+            <NsgSimpleObject Guid="324620ea-e83c-471f-b184-dcf9d0bdf5d3" type="NsgDataBoolean" editoraccess="Full" name="ЯвляетсяНашейФирмой" visible="true" description="Является нашей фирмой" field="JAvljaetsjaNashei" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="7f62bcb0-35e7-4d86-9486-ab78079b4447" type="NsgDataBoolean" editoraccess="Full" name="ЯвляетсяПодрядчиком" visible="true" description="Является подрядчиком" field="JAvljaetsjaPodrja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+            <NsgSimpleObject Guid="ba73a8ae-3430-420d-96e0-28beb8286e9d" type="NsgDataBoolean" editoraccess="Full" name="ЯвляетсяПодрядчиком" visible="true" description="Является подрядчиком" field="JAvljaetsjaPodrja" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="c9cb1871-2151-4e34-aab9-41f73ef0ed41" type="NsgDataBoolean" editoraccess="Full" name="ЯвляетсяЗаказчиком" visible="true" description="Является заказчиком" field="JAvljaetsjaZakazc" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+            <NsgSimpleObject Guid="0c596bc2-e1af-4dd7-908b-cb1ed03cf68f" type="NsgDataBoolean" editoraccess="Full" name="ЯвляетсяЗаказчиком" visible="true" description="Является заказчиком" field="JAvljaetsjaZakazc" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="3304e808-01d5-422b-9531-745297aaac03" type="NsgDataBoolean" editoraccess="Full" name="ЯвляетсяПоставщикомТоплива" visible="true" description="Является поставщиком топлива" field="JAvljaetsjaPostav" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+            <NsgSimpleObject Guid="3ea5387e-4719-47af-81e7-e64a739c3cb2" type="NsgDataBoolean" editoraccess="Full" name="ЯвляетсяПоставщикомТоплива" visible="true" description="Является поставщиком топлива" field="JAvljaetsjaPostav" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -4407,17 +4383,17 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="a14d979e-9ae6-4454-9fae-00ed6f631aae" type="NsgDataTypedReference" editoraccess="Full" name="РежимРаботы" visible="true" description="Режим работы" field="RezhimRaboty" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="РежимыРаботы">
+            <NsgSimpleObject Guid="65d92887-9e6a-494c-b67c-af4461b151c9" type="NsgDataTypedReference" editoraccess="Full" name="РежимРаботы" visible="true" description="Режим работы" field="RezhimRaboty" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="РежимыРаботы">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="f2b17c66-24d6-4427-aed0-a1e0237d8712" type="NsgDataString" editoraccess="Full" name="Описание" visible="true" description="Описание" field="Opisanie" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
+            <NsgSimpleObject Guid="c4f7e728-4f8f-4ffc-96c8-e3e69eefd0c7" type="NsgDataString" editoraccess="Full" name="Описание" visible="true" description="Описание" field="Opisanie" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="0f82346b-e8a2-4812-b560-f52db431234b" type="NsgDataBoolean" editoraccess="Full" name="ЯвляетсяСтаршимПоОбъекту" visible="true" description="Является старшим по объекту" field="JAvljaetsjaStarsh" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+            <NsgSimpleObject Guid="28951385-fd92-4521-9a8f-16da7f7f3d94" type="NsgDataBoolean" editoraccess="Full" name="ЯвляетсяСтаршимПоОбъекту" visible="true" description="Является старшим по объекту" field="JAvljaetsjaStarsh" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -4631,6 +4607,36 @@
             <container name="Суббота" />
             <container name="Воскресенье" />
             <container name="Понедельник" />
+          </Containers>
+        </NsgMultipleObject>
+        <NsgMultipleObject Guid="1223222b-45cc-4ef5-9e62-e0fdb951cab4" type="NsgDataEnum" editoraccess="Full" name="ТипСобственности" visible="true" description="Перечисление" group="Мониторинг" table="_enum_TipSobstvennosti" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False">
+          <NsgLanguageString type="presentation">
+            <presentation lang="(Default)" value="" />
+          </NsgLanguageString>
+          <NsgLanguageString type="valuemask">
+            <presentation lang="(Default)" value="{Представление}" />
+          </NsgLanguageString>
+          <ObjectList>
+            <NsgSimpleObject Guid="855f3446-a828-4c64-9dd5-4f4fbfc85017" type="NsgDataEnumElement" editoraccess="Full" name="Собственный" visible="true" description="Собственный" field="Sobstvennyij" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="1">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="9e14e0c9-4e36-422b-913a-4d806148351b" type="NsgDataEnumElement" editoraccess="Full" name="Аренда" visible="true" description="Аренда" field="Arenda" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="2">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="26850b8c-7d91-4c42-8021-2c441eb697a8" type="NsgDataEnumElement" editoraccess="Full" name="Неизвестно" visible="true" description="Неизвестно" field="Neizvestno" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+          </ObjectList>
+          <Containers>
+            <container name="Собственный" />
+            <container name="Аренда" />
+            <container name="Неизвестно" />
           </Containers>
         </NsgMultipleObject>
       </ObjectList>

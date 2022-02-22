@@ -703,15 +703,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\СобственностьТехники\СобственностьТехники.NsgInit.cs">
-      <NsgOwnerGuid>df2f17b4-a0b2-4947-903d-1fa614d6e414</NsgOwnerGuid>
-      <NsgOwnerName>СобственностьТехники</NsgOwnerName>
-      <DependentUpon>СобственностьТехники.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\СобственностьТехники\СобственностьТехники.cs">
-      <NsgOwnerGuid>df2f17b4-a0b2-4947-903d-1fa614d6e414</NsgOwnerGuid>
-      <NsgOwnerName>СобственностьТехники</NsgOwnerName>
-    </Compile>
     <Compile Include="Метаданные\Мониторинг\ФиксацияИстории\ФиксацияИстории.NsgInit.cs">
       <NsgOwnerGuid>50f5855e-3b81-4250-92da-357300f0a02d</NsgOwnerGuid>
       <NsgOwnerName>ФиксацияИстории</NsgOwnerName>
@@ -1175,6 +1166,17 @@
     <Compile Include="Метаданные\Мониторинг\ДеньНедели\ДеньНедели.cs">
       <NsgOwnerGuid>745a7094-96b8-44f4-be8c-ce87cbde8744</NsgOwnerGuid>
       <NsgOwnerName>ДеньНедели</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ТипСобственности\ТипСобственности.NsgInit.cs">
+      <NsgOwnerGuid>1223222b-45cc-4ef5-9e62-e0fdb951cab4</NsgOwnerGuid>
+      <NsgOwnerName>ТипСобственности</NsgOwnerName>
+      <DependentUpon>ТипСобственности.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ТипСобственности\ТипСобственности.cs">
+      <NsgOwnerGuid>1223222b-45cc-4ef5-9e62-e0fdb951cab4</NsgOwnerGuid>
+      <NsgOwnerName>ТипСобственности</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
