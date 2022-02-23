@@ -2448,6 +2448,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="62c6280a-0a90-4f9a-9c6b-6b9d869787ee" type="NsgDataForm" editoraccess="Full" name="ФормаЭлемента" visible="true" description="Форма элемента" field="FormaEHlementa" index="None" subtype="ElementForm" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" class="TechControl.Метаданные.Мониторинг.ФормированиеСменыФормаЭлемента">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
