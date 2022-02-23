@@ -1243,4 +1243,19 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Объекты\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>07d20ec3-3801-403d-805e-3d5bfd3eedbc</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\ФормаЭлемента.cs">
+      <NsgOwnerGuid>07d20ec3-3801-403d-805e-3d5bfd3eedbc</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Объекты\ФормаЭлемента.resx">
+      <NsgOwnerGuid>07d20ec3-3801-403d-805e-3d5bfd3eedbc</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
