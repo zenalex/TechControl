@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="02234789-d43f-49f7-a599-aba79d0006bd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://login.scout-gps.ru:8081/spic/MotorModes/soap?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SpicMotorModesStatisticsService.wsdl" MetadataType="Wsdl" ID="5f5345b9-1093-4a51-8d63-dafa9c600237" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/MotorModes/soap?wsdl" />
+    <MetadataFile FileName="soap.xsd" MetadataType="Schema" ID="f9b077e4-b7a0-4f1b-9871-cae93b6a76e9" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/MotorModes/soap?xsd=xsd1" />
+    <MetadataFile FileName="soap1.xsd" MetadataType="Schema" ID="5683d884-95ad-4899-a1a8-0c7064f3fa97" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/MotorModes/soap?xsd=xsd0" />
+    <MetadataFile FileName="soap2.xsd" MetadataType="Schema" ID="9b41d569-d930-44c4-b05f-eb68ba245f9b" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/MotorModes/soap?xsd=xsd5" />
+    <MetadataFile FileName="soap3.xsd" MetadataType="Schema" ID="d7e5232f-344e-4712-b56f-079db5cc5176" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/MotorModes/soap?xsd=xsd2" />
+    <MetadataFile FileName="soap4.xsd" MetadataType="Schema" ID="297d9fed-6cf9-43e3-8463-932d3e38721f" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/MotorModes/soap?xsd=xsd3" />
+    <MetadataFile FileName="soap5.xsd" MetadataType="Schema" ID="91291262-c5b8-46fd-ba8a-523dfa725015" SourceId="1" SourceUrl="http://login.scout-gps.ru:8081/spic/MotorModes/soap?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

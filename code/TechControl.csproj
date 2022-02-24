@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.2.24.0</ProductVersion>
+    <ProductVersion>2022.2.24.1</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -115,6 +115,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReferenceDataOnline\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReferenceMotorModes\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -561,6 +566,31 @@
     <None Include="Connected Services\ServiceReferenceDataOnline\TechControl.ServiceReferenceDataOnline.SpicOnlineDataSubscriptionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReferenceMotorModes\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceMotorModes\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceMotorModes\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceMotorModes\soap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceMotorModes\soap4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceMotorModes\soap5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceMotorModes\SpicMotorModesStatisticsService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceMotorModes\TechControl.ServiceReferenceMotorModes.SpicAddonStatisticsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceMotorModes\TechControl.ServiceReferenceMotorModes.SpicMotorModesStatisticsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReferenceTrackPeriods\soap.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -670,6 +700,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceMotorModes\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\Мониторинг\Объекты\Объекты.NsgInit.cs">
@@ -801,6 +832,7 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceControllerStistics\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceDataOnlineSensors\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceDataOnline\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceMotorModes\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceTrackPeriods\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceUnitsSpic\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceValidationNavigation\" />
@@ -1261,5 +1293,43 @@
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceMotorModes\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceMotorModes\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\МониторирнгТехники\МониторирнгТехники.NsgInit.cs">
+      <NsgOwnerGuid>8e3ded9a-dc41-4ab9-8f79-774f3c64fa8a</NsgOwnerGuid>
+      <NsgOwnerName>МониторирнгТехники</NsgOwnerName>
+      <DependentUpon>МониторирнгТехники.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\МониторирнгТехники\МониторирнгТехники.cs">
+      <NsgOwnerGuid>8e3ded9a-dc41-4ab9-8f79-774f3c64fa8a</NsgOwnerGuid>
+      <NsgOwnerName>МониторирнгТехники</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\МониторирнгТехники\МониторингМониторирнгТехникиДвижения.NsgInit.cs">
+      <NsgOwnerGuid>2918c0a5-0482-48af-a6d2-9c14352396d3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингМониторирнгТехникиДвижения</NsgOwnerName>
+      <DependentUpon>МониторингМониторирнгТехникиДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\МониторирнгТехники\МониторингМониторирнгТехникиДвижения.cs">
+      <NsgOwnerGuid>2918c0a5-0482-48af-a6d2-9c14352396d3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингМониторирнгТехникиДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\МониторирнгТехники\МониторингМониторирнгТехникиДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>2918c0a5-0482-48af-a6d2-9c14352396d3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингМониторирнгТехникиДвижения</NsgOwnerName>
+      <DependentUpon>МониторингМониторирнгТехникиДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\МониторирнгТехники\МониторингМониторирнгТехникиДвижения.Строка.cs">
+      <NsgOwnerGuid>2918c0a5-0482-48af-a6d2-9c14352396d3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингМониторирнгТехникиДвижения</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>

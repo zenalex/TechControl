@@ -18,6 +18,8 @@ using TechControl.ServiceReferenceDataOnlineSensors;
 using TechControl.ServiceReferenceTrackPeriods;
 using TechControl.ServiceReferenceUnitsSpic;
 using TechControl.ServiceReferenceValidationNavigation;
+using TechControl.Метаданные._SystemTables;
+using TechControl.ServiceReferenceMotorModes;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -43,6 +45,7 @@ namespace TechControl.Метаданные.Мониторинг
             SpicSoapOnlineDataWithSensorsServiceClient _dataServiceSensorClient = new SpicSoapOnlineDataWithSensorsServiceClient();
             SpicSoapNavigationValidationStatisticsServiceClient _navigationValidationClient = new SpicSoapNavigationValidationStatisticsServiceClient();
             SpicSoapTrackPeriodsMileageStatisticsServiceClient _specificStatisticsClient = new SpicSoapTrackPeriodsMileageStatisticsServiceClient();
+            SpicSoapMotorModesStatisticsServiceClient _motorModesClient = new SpicSoapMotorModesStatisticsServiceClient();
 
             // добавляем поведение авторизации перед связью с конечной точкой 
             _client.Endpoint.Behaviors.Add(new AuthorizationBehavior());
@@ -51,12 +54,94 @@ namespace TechControl.Метаданные.Мониторинг
             _dataServiceSensorClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
             _navigationValidationClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
             _specificStatisticsClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
+            _motorModesClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
 
             //Получить количество доступных объектов мониторинга.
             var unitsCount = _client.GetAllUnitsCount();
 
             List<string> listModel = new List<string>();
             List<string> listBrand = new List<string>();
+            List<int> listUnitID = new List<int>();
+
+            //Создание запроса.
+            var request = new SpicObjectsChunkRequest { Offset = 0, Count = unitsCount };
+            var units = _client.GetAllUnitsPaged(request);
+            foreach(var unit in units.Units)
+            {
+                listUnitID.Add(unit.UnitId);
+            }
+
+            Dictionary<int, List<SpicMotorModesStatistics>> idStatistic = new Dictionary<int, List<SpicMotorModesStatistics>>();
+            List<int> listHavy = new List<int>();
+            foreach (var id in listUnitID)
+            {
+                //создаем запрос сессии статистик
+                var statisticsSessionRequest = new SpicStatisticsSessionRequest
+                {
+                    Period = new ServiceReferenceControllerStistics.SpicDateTimeRange
+                    {
+                        Begin = DateTime.Now.AddDays(-1).Date,
+                        End = DateTime.Now
+                    },
+
+                    TargetObject = new SpicObjectIdentity
+                    {
+                        ObjectTypeId = ObjectTypeId.Vehicle,
+                        ObjectId = id
+                    }
+                };
+
+                //отправляем запрос и получаем сессию
+                var statisticsSession = _statisticsClient.StartStatisticsSession(statisticsSessionRequest).Session;
+                // на самом деле, это один и тот же контракт, но его нужно пересоздать  
+                var motorModesStatisticsSession = new ServiceReferenceMotorModes.SpicStatisticsSession
+                {
+                    StatisticsSessionId = statisticsSession.StatisticsSessionId,
+                };
+
+                // добавляем запрос на построение статистики  
+                _motorModesClient.AddStatisticsRequest(motorModesStatisticsSession);
+                // запускаем построение  
+                _statisticsClient.StartBuild(statisticsSession);
+
+                var statisticsListPeriodsMileage = new List<SpicMotorModesStatistics>();
+                SpicMotorModesStatisticsResult statisticsResponse;
+
+                // выполняем, пока не получим последнюю порцию статистик  
+                do
+                {
+                    // ждем, пока порция статистик построится  
+                    do
+                    {
+                        statisticsResponse = _motorModesClient.GetStatistics(motorModesStatisticsSession);
+                    }
+                    while (statisticsResponse.ChunkInfo.Status.Value == "Processing");
+
+                    statisticsListPeriodsMileage.Add(statisticsResponse.Statistics);
+                    var length = statisticsResponse.Statistics.Periods.Length;
+
+                    if (length > 1)
+                    {
+                        if (statisticsResponse.Statistics.Periods[length - 1].Period.End > DateTime.Now.Date && statisticsResponse.Statistics.Periods[length - 1].IsActiveWork)
+                        {
+                            if (!listHavy.Contains(id))
+                                listHavy.Add(id);
+                        }
+                    }
+
+                    if (!idStatistic.ContainsKey(id))
+                    {
+                        idStatistic.Add(id, statisticsListPeriodsMileage);
+                    }
+
+                    // заказываем следующую порцию статистики  
+                    _statisticsClient.BuildNextChunk(statisticsSession);
+                }
+                while (!statisticsResponse.ChunkInfo.IsFinalChunk);
+
+                // закрываем сессию построения статистик  
+                _statisticsClient.StopStatisticsSession(statisticsSession);
+            }
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
             string dataAuth = "grant_type=password&username=skvortsov@titan002.ru&password=skvortsov@titan002.ru&locale=ru&client_id=8b1fd704-096e-42d6-9ba5-6d98980e7cd1&client_secret=scout-online";
@@ -68,6 +153,7 @@ namespace TechControl.Метаданные.Мониторинг
             var outputResultOnlineData = await RequestAsync(onlineDataUrl, string.Empty, false, deserializeJsonAuth.access_token);
             var deserializeJsonResult = JsonConvert.DeserializeObject<Result>(outputResultOnlineData);
 
+            var рег = МониторирнгТехники.Новый();
             foreach (var data in deserializeJsonResult.data)
             {
                 var online = data.onlineData;
@@ -76,10 +162,10 @@ namespace TechControl.Метаданные.Мониторинг
                 var cmpTech = new NsgCompare().Add(Техника.Names.Наименование, unit.name);
                 cmpTech.Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
                 var techIsReal = Техника.Новый().FindAll(cmpTech);
+                var tech = Техника.Новый();
 
                 if (techIsReal.Length == 0)
                 {
-                    var tech = Техника.Новый();
                     tech.New();
                     tech.IdСкаут = $"{unit.id}";
                     tech.ГосНомер = unit.stateNumber;
@@ -146,52 +232,40 @@ namespace TechControl.Метаданные.Мониторинг
                     }
 
                     tech.Post();
-
-                    var рег = РегистрМониторингТехники.Новый();
-                    рег.New();
-
-                    if (online.isEngineWorking == null)
-                        рег.РаботаетДвигатель = false;
-                    else
-                        рег.РаботаетДвигатель = (bool)online.isEngineWorking;
-
-                    if (online.fuelLevel == null)
-                        рег.ТекущееКолвоТоплива = 0;
-                    else
-                        рег.ТекущееКолвоТоплива = (decimal)online.fuelLevel;
-
-                    рег.Техника = tech;
-                    рег.ТекущаяСкорость = (decimal)online.speed;
-                    рег.Долгота = (decimal)online.longitude;
-                    рег.Широта = (decimal)online.latitude;
-
-                    рег.AddMovement();
-                    рег.Post();
                 }
                 else
+                    tech = techIsReal[0];
+
+                рег.New();
+
+                if (online.isEngineWorking == null)
+                    рег.РаботаетДвигатель = false;
+                else
+                    рег.РаботаетДвигатель = (bool)online.isEngineWorking;
+
+                if (online.fuelLevel == null)
+                    рег.ТекущееКолвоТоплива = 0;
+                else
+                    рег.ТекущееКолвоТоплива = (decimal)online.fuelLevel;
+
+                рег.Техника = tech;
+                рег.ТекущаяСкорость = (decimal)online.speed;
+                рег.Долгота = (decimal)online.longitude;
+                рег.Широта = (decimal)online.latitude;
+
+                рег.ПодНагрузкой = false;
+                foreach (var id in listHavy)
                 {
-                    var рег = РегистрМониторингТехники.Новый();
-                    рег.Техника = techIsReal[0];
-                    рег.GetRests();
-                    рег.Edit();
-
-                    if (online.isEngineWorking == null)
-                        рег.РаботаетДвигатель = false;
-                    else
-                        рег.РаботаетДвигатель = (bool)online.isEngineWorking;
-
-                    if (online.fuelLevel == null)
-                        рег.ТекущееКолвоТоплива = 0;
-                    else
-                        рег.ТекущееКолвоТоплива = (decimal)online.fuelLevel;
-
-                    рег.ТекущаяСкорость = (decimal)online.speed;
-                    рег.Долгота = (decimal)online.longitude;
-                    рег.Широта = (decimal)online.latitude;
-
-                    рег.Post();
+                    if (unit.id == id)
+                    {
+                        рег.ПодНагрузкой = true;
+                        break;
+                    }
                 }
+
+                рег.AddMovement();
             }
+            рег.Post();
         }
 
         protected override void OnCreateReportCompleted(NsgBackgroundWorker nsgBackgroundReporter, System.ComponentModel.RunWorkerCompletedEventArgs e)
