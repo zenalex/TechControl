@@ -28,6 +28,7 @@ namespace TechControl.Метаданные.Мониторинг
             var рег = ФиксацияИстории.Новый();
             рег.New();
             рег.Объект = this.Объект;
+            рег.Время = DateTime.Now;
             foreach (var i in this.Таблица.Rows)
             {
                 рег.Сотрудник = i.Сотрудник;
