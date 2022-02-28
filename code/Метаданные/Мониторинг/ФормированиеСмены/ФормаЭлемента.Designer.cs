@@ -658,7 +658,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgLabel1.ConfigurationName = "";
             this.nsgLabel1.FullName = "";
             this.nsgLabel1.IsInitialized = false;
-            this.nsgLabel1.Location = new System.Drawing.Point(21, 9);
+            this.nsgLabel1.Location = new System.Drawing.Point(21, 13);
             this.nsgLabel1.MetaDataName = "";
             this.nsgLabel1.Name = "nsgLabel1";
             this.nsgLabel1.Requsite = "";
@@ -824,7 +824,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgLabel2.ConfigurationName = "";
             this.nsgLabel2.FullName = "";
             this.nsgLabel2.IsInitialized = false;
-            this.nsgLabel2.Location = new System.Drawing.Point(517, 9);
+            this.nsgLabel2.Location = new System.Drawing.Point(517, 13);
             this.nsgLabel2.MetaDataName = "";
             this.nsgLabel2.Name = "nsgLabel1";
             this.nsgLabel2.Requsite = "";
@@ -868,7 +868,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgLabel4.ConfigurationName = "";
             this.nsgLabel4.FullName = "";
             this.nsgLabel4.IsInitialized = false;
-            this.nsgLabel4.Location = new System.Drawing.Point(21, 40);
+            this.nsgLabel4.Location = new System.Drawing.Point(21, 44);
             this.nsgLabel4.MetaDataName = "";
             this.nsgLabel4.Name = "nsgLabel1";
             this.nsgLabel4.Requsite = "";
@@ -912,7 +912,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgLabel5.ConfigurationName = "";
             this.nsgLabel5.FullName = "";
             this.nsgLabel5.IsInitialized = false;
-            this.nsgLabel5.Location = new System.Drawing.Point(413, 40);
+            this.nsgLabel5.Location = new System.Drawing.Point(413, 44);
             this.nsgLabel5.MetaDataName = "";
             this.nsgLabel5.Name = "nsgLabel1";
             this.nsgLabel5.Requsite = "";
@@ -956,7 +956,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgLabel6.ConfigurationName = "";
             this.nsgLabel6.FullName = "";
             this.nsgLabel6.IsInitialized = false;
-            this.nsgLabel6.Location = new System.Drawing.Point(265, 9);
+            this.nsgLabel6.Location = new System.Drawing.Point(265, 13);
             this.nsgLabel6.MetaDataName = "";
             this.nsgLabel6.Name = "nsgLabel1";
             this.nsgLabel6.Requsite = "";
