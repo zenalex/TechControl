@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.2.24.1</ProductVersion>
+    <ProductVersion>2022.2.28.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -115,6 +115,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReferenceDataOnline\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReferenceFDStat\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -566,6 +571,34 @@
     <None Include="Connected Services\ServiceReferenceDataOnline\TechControl.ServiceReferenceDataOnline.SpicOnlineDataSubscriptionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReferenceFDStat\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceFDStat\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceFDStat\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceFDStat\soap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceFDStat\soap4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceFDStat\soap5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceFDStat\soap6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReferenceFDStat\SpicFuelingDefuelingStatisticsService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceFDStat\TechControl.ServiceReferenceFDStat.SpicAddonStatisticsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceFDStat\TechControl.ServiceReferenceFDStat.SpicFuelingDefuelingStatisticsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReferenceMotorModes\soap.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -832,6 +865,7 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceControllerStistics\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceDataOnlineSensors\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceDataOnline\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceFDStat\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceMotorModes\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceTrackPeriods\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceUnitsSpic\" />
@@ -1330,6 +1364,200 @@
     <Compile Include="Метаданные\Мониторинг\МониторирнгТехники\МониторингМониторирнгТехникиДвижения.Строка.cs">
       <NsgOwnerGuid>2918c0a5-0482-48af-a6d2-9c14352396d3</NsgOwnerGuid>
       <NsgOwnerName>МониторингМониторирнгТехникиДвижения</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceFDStat\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceFDStat\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceFDStat\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\ОтработанноеВремяТехники.NsgInit.cs">
+      <NsgOwnerGuid>99c00b69-7ca5-4959-986a-a41da27b57d0</NsgOwnerGuid>
+      <NsgOwnerName>ОтработанноеВремяТехники</NsgOwnerName>
+      <DependentUpon>ОтработанноеВремяТехники.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\ОтработанноеВремяТехники.cs">
+      <NsgOwnerGuid>99c00b69-7ca5-4959-986a-a41da27b57d0</NsgOwnerGuid>
+      <NsgOwnerName>ОтработанноеВремяТехники</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\МониторингОтработанноеВремяТехникиТаблица.NsgInit.cs">
+      <NsgOwnerGuid>ab85dfac-f155-4e2e-af9a-8ad0f937fedf</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОтработанноеВремяТехникиТаблица</NsgOwnerName>
+      <DependentUpon>МониторингОтработанноеВремяТехникиТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\МониторингОтработанноеВремяТехникиТаблица.cs">
+      <NsgOwnerGuid>ab85dfac-f155-4e2e-af9a-8ad0f937fedf</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОтработанноеВремяТехникиТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\МониторингОтработанноеВремяТехникиТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>ab85dfac-f155-4e2e-af9a-8ad0f937fedf</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОтработанноеВремяТехникиТаблица</NsgOwnerName>
+      <DependentUpon>МониторингОтработанноеВремяТехникиТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\МониторингОтработанноеВремяТехникиТаблица.Строка.cs">
+      <NsgOwnerGuid>ab85dfac-f155-4e2e-af9a-8ad0f937fedf</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОтработанноеВремяТехникиТаблица</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\РегистрОтработанногоВремени\РегистрОтработанногоВремени.NsgInit.cs">
+      <NsgOwnerGuid>48c89720-3172-47b1-bcaf-a3d635d3cb53</NsgOwnerGuid>
+      <NsgOwnerName>РегистрОтработанногоВремени</NsgOwnerName>
+      <DependentUpon>РегистрОтработанногоВремени.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрОтработанногоВремени\РегистрОтработанногоВремени.cs">
+      <NsgOwnerGuid>48c89720-3172-47b1-bcaf-a3d635d3cb53</NsgOwnerGuid>
+      <NsgOwnerName>РегистрОтработанногоВремени</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрОтработанногоВремени\МониторингРегистрОтработанногоВремениДвижения.NsgInit.cs">
+      <NsgOwnerGuid>cc74a27d-cba2-44c3-8504-eb7c7daf260d</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрОтработанногоВремениДвижения</NsgOwnerName>
+      <DependentUpon>МониторингРегистрОтработанногоВремениДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрОтработанногоВремени\МониторингРегистрОтработанногоВремениДвижения.cs">
+      <NsgOwnerGuid>cc74a27d-cba2-44c3-8504-eb7c7daf260d</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрОтработанногоВремениДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрОтработанногоВремени\МониторингРегистрОтработанногоВремениДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>cc74a27d-cba2-44c3-8504-eb7c7daf260d</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрОтработанногоВремениДвижения</NsgOwnerName>
+      <DependentUpon>МониторингРегистрОтработанногоВремениДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрОтработанногоВремени\МониторингРегистрОтработанногоВремениДвижения.Строка.cs">
+      <NsgOwnerGuid>cc74a27d-cba2-44c3-8504-eb7c7daf260d</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрОтработанногоВремениДвижения</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\ФормаСписка.Designer.cs">
+      <NsgOwnerGuid>99c00b69-7ca5-4959-986a-a41da27b57d0</NsgOwnerGuid>
+      <DependentUpon>ФормаСписка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\ФормаСписка.cs">
+      <NsgOwnerGuid>99c00b69-7ca5-4959-986a-a41da27b57d0</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\ФормаСписка.resx">
+      <NsgOwnerGuid>99c00b69-7ca5-4959-986a-a41da27b57d0</NsgOwnerGuid>
+      <DependentUpon>ФормаСписка.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>99c00b69-7ca5-4959-986a-a41da27b57d0</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\ФормаЭлемента.cs">
+      <NsgOwnerGuid>99c00b69-7ca5-4959-986a-a41da27b57d0</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\ОтработанноеВремяТехники\ФормаЭлемента.resx">
+      <NsgOwnerGuid>99c00b69-7ca5-4959-986a-a41da27b57d0</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления.NsgInit.cs">
+      <NsgOwnerGuid>1fffc539-794e-4975-a852-5a47ecffd5f1</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗакрытиеСменыНакопления.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления.cs">
+      <NsgOwnerGuid>1fffc539-794e-4975-a852-5a47ecffd5f1</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления.Строка.NsgInit.cs">
+      <NsgOwnerGuid>1fffc539-794e-4975-a852-5a47ecffd5f1</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗакрытиеСменыНакопления.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления.Строка.cs">
+      <NsgOwnerGuid>1fffc539-794e-4975-a852-5a47ecffd5f1</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтчетЗакрытиеСмены\ОтчетЗакрытиеСмены.NsgInit.cs">
+      <NsgOwnerGuid>fc456d0f-e0fb-4b78-b4b2-451fb6b420d0</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетЗакрытиеСмены</NsgOwnerName>
+      <DependentUpon>ОтчетЗакрытиеСмены.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтчетЗакрытиеСмены\ОтчетЗакрытиеСмены.cs">
+      <NsgOwnerGuid>fc456d0f-e0fb-4b78-b4b2-451fb6b420d0</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетЗакрытиеСмены</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтчетЗакрытиеСмены\Форма.Designer.cs">
+      <NsgOwnerGuid>fc456d0f-e0fb-4b78-b4b2-451fb6b420d0</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтчетЗакрытиеСмены\Форма.cs">
+      <NsgOwnerGuid>fc456d0f-e0fb-4b78-b4b2-451fb6b420d0</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\ОтчетЗакрытиеСмены\Форма.resx">
+      <NsgOwnerGuid>fc456d0f-e0fb-4b78-b4b2-451fb6b420d0</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмены\ЗакрытиеСмены.NsgInit.cs">
+      <NsgOwnerGuid>b9e3f94b-ccb6-4ede-a669-1c557c3921a0</NsgOwnerGuid>
+      <NsgOwnerName>ЗакрытиеСмены</NsgOwnerName>
+      <DependentUpon>ЗакрытиеСмены.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмены\ЗакрытиеСмены.cs">
+      <NsgOwnerGuid>b9e3f94b-ccb6-4ede-a669-1c557c3921a0</NsgOwnerGuid>
+      <NsgOwnerName>ЗакрытиеСмены</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления_1.NsgInit.cs">
+      <NsgOwnerGuid>308f3212-c03c-416f-a4b7-51b14bf13545</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления_1</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗакрытиеСменыНакопления_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления_1.cs">
+      <NsgOwnerGuid>308f3212-c03c-416f-a4b7-51b14bf13545</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления_1.Строка.NsgInit.cs">
+      <NsgOwnerGuid>308f3212-c03c-416f-a4b7-51b14bf13545</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления_1</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗакрытиеСменыНакопления_1.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления_1.Строка.cs">
+      <NsgOwnerGuid>308f3212-c03c-416f-a4b7-51b14bf13545</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыДвижения.NsgInit.cs">
+      <NsgOwnerGuid>6220b09b-386d-4ed2-aaa9-b2f37c2399c0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыДвижения</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗакрытиеСменыДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыДвижения.cs">
+      <NsgOwnerGuid>6220b09b-386d-4ed2-aaa9-b2f37c2399c0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>6220b09b-386d-4ed2-aaa9-b2f37c2399c0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыДвижения</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗакрытиеСменыДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыДвижения.Строка.cs">
+      <NsgOwnerGuid>6220b09b-386d-4ed2-aaa9-b2f37c2399c0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗакрытиеСменыДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\РегистрЗакрытиеСмены.NsgInit.cs">
+      <NsgOwnerGuid>25547e60-b3e0-45df-900e-1ab407fb308a</NsgOwnerGuid>
+      <NsgOwnerName>РегистрЗакрытиеСмены</NsgOwnerName>
+      <DependentUpon>РегистрЗакрытиеСмены.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\РегистрЗакрытиеСмены.cs">
+      <NsgOwnerGuid>25547e60-b3e0-45df-900e-1ab407fb308a</NsgOwnerGuid>
+      <NsgOwnerName>РегистрЗакрытиеСмены</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>

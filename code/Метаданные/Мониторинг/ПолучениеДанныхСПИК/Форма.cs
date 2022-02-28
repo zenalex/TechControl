@@ -20,6 +20,7 @@ using TechControl.ServiceReferenceUnitsSpic;
 using TechControl.ServiceReferenceValidationNavigation;
 using TechControl.Метаданные._SystemTables;
 using TechControl.ServiceReferenceMotorModes;
+using TechControl.ServiceReferenceFDStat;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -46,6 +47,7 @@ namespace TechControl.Метаданные.Мониторинг
             SpicSoapNavigationValidationStatisticsServiceClient _navigationValidationClient = new SpicSoapNavigationValidationStatisticsServiceClient();
             SpicSoapTrackPeriodsMileageStatisticsServiceClient _specificStatisticsClient = new SpicSoapTrackPeriodsMileageStatisticsServiceClient();
             SpicSoapMotorModesStatisticsServiceClient _motorModesClient = new SpicSoapMotorModesStatisticsServiceClient();
+            SpicSoapFuelingDefuelingStatisticsServiceClient _fuelDefuelStatisticClient = new SpicSoapFuelingDefuelingStatisticsServiceClient();
 
             // добавляем поведение авторизации перед связью с конечной точкой 
             _client.Endpoint.Behaviors.Add(new AuthorizationBehavior());
@@ -55,6 +57,7 @@ namespace TechControl.Метаданные.Мониторинг
             _navigationValidationClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
             _specificStatisticsClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
             _motorModesClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
+            _fuelDefuelStatisticClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
 
             //Получить количество доступных объектов мониторинга.
             var unitsCount = _client.GetAllUnitsCount();
@@ -71,8 +74,9 @@ namespace TechControl.Метаданные.Мониторинг
                 listUnitID.Add(unit.UnitId);
             }
 
-            Dictionary<int, List<SpicMotorModesStatistics>> idStatistic = new Dictionary<int, List<SpicMotorModesStatistics>>();
-            List<int> listHavy = new List<int>();
+            Dictionary<int, List<SpicFuelingDefuelingStatistics>> idStatistic = new Dictionary<int, List<SpicFuelingDefuelingStatistics>>();
+            Dictionary<int, List<SpicMotorModesStatistics>> idStatisticMotorModes = new Dictionary<int, List<SpicMotorModesStatistics>> ();
+
             foreach (var id in listUnitID)
             {
                 //создаем запрос сессии статистик
@@ -94,18 +98,27 @@ namespace TechControl.Метаданные.Мониторинг
                 //отправляем запрос и получаем сессию
                 var statisticsSession = _statisticsClient.StartStatisticsSession(statisticsSessionRequest).Session;
                 // на самом деле, это один и тот же контракт, но его нужно пересоздать  
+                var fuelDefuelStatisticsSession = new ServiceReferenceFDStat.SpicStatisticsSession
+                {
+                    StatisticsSessionId = statisticsSession.StatisticsSessionId,
+                };
+                // добавляем запрос на построение статистики  
+                _fuelDefuelStatisticClient.AddStatisticsRequest(fuelDefuelStatisticsSession);
+
                 var motorModesStatisticsSession = new ServiceReferenceMotorModes.SpicStatisticsSession
                 {
                     StatisticsSessionId = statisticsSession.StatisticsSessionId,
                 };
-
-                // добавляем запрос на построение статистики  
                 _motorModesClient.AddStatisticsRequest(motorModesStatisticsSession);
+
                 // запускаем построение  
                 _statisticsClient.StartBuild(statisticsSession);
 
-                var statisticsListPeriodsMileage = new List<SpicMotorModesStatistics>();
-                SpicMotorModesStatisticsResult statisticsResponse;
+                var statisticsListFuelDefuel = new List<SpicFuelingDefuelingStatistics>();
+                SpicFuelingDefuelingStatisticsResult statisticsResponse;
+
+                var statisticsListMotorModes = new List<SpicMotorModesStatistics>();
+                SpicMotorModesStatisticsResult statisticsResponseMotorModes;
 
                 // выполняем, пока не получим последнюю порцию статистик  
                 do
@@ -113,25 +126,26 @@ namespace TechControl.Метаданные.Мониторинг
                     // ждем, пока порция статистик построится  
                     do
                     {
-                        statisticsResponse = _motorModesClient.GetStatistics(motorModesStatisticsSession);
+                        statisticsResponse = _fuelDefuelStatisticClient.GetStatistics(fuelDefuelStatisticsSession);
+                        statisticsResponseMotorModes = _motorModesClient.GetStatistics(motorModesStatisticsSession);
                     }
-                    while (statisticsResponse.ChunkInfo.Status.Value == "Processing");
+                    while (statisticsResponse.ChunkInfo.Status.Value == "Processing" || statisticsResponseMotorModes.ChunkInfo.Status.Value == "Processing");
 
-                    statisticsListPeriodsMileage.Add(statisticsResponse.Statistics);
-                    var length = statisticsResponse.Statistics.Periods.Length;
+                    if (statisticsResponse.Statistics == null)
+                        break;
 
-                    if (length > 1)
-                    {
-                        if (statisticsResponse.Statistics.Periods[length - 1].Period.End > DateTime.Now.Date && statisticsResponse.Statistics.Periods[length - 1].IsActiveWork)
-                        {
-                            if (!listHavy.Contains(id))
-                                listHavy.Add(id);
-                        }
-                    }
+                    statisticsListFuelDefuel.Add(statisticsResponse.Statistics);
+
+                    statisticsListMotorModes.Add(statisticsResponseMotorModes.Statistics);
 
                     if (!idStatistic.ContainsKey(id))
                     {
-                        idStatistic.Add(id, statisticsListPeriodsMileage);
+                        idStatistic.Add(id, statisticsListFuelDefuel);
+                    }
+
+                    if (!idStatisticMotorModes.ContainsKey(id))
+                    {
+                        idStatisticMotorModes.Add(id, statisticsListMotorModes);
                     }
 
                     // заказываем следующую порцию статистики  
@@ -153,9 +167,10 @@ namespace TechControl.Метаданные.Мониторинг
             var outputResultOnlineData = await RequestAsync(onlineDataUrl, string.Empty, false, deserializeJsonAuth.access_token);
             var deserializeJsonResult = JsonConvert.DeserializeObject<Result>(outputResultOnlineData);
 
-            var рег = МониторирнгТехники.Новый();
             foreach (var data in deserializeJsonResult.data)
             {
+                var рег = МониторирнгТехники.Новый();
+
                 var online = data.onlineData;
                 var unit = data.unit;
 
@@ -253,19 +268,40 @@ namespace TechControl.Метаданные.Мониторинг
                 рег.Долгота = (decimal)online.longitude;
                 рег.Широта = (decimal)online.latitude;
 
-                рег.ПодНагрузкой = false;
-                foreach (var id in listHavy)
-                {
-                    if (unit.id == id)
-                    {
-                        рег.ПодНагрузкой = true;
-                        break;
-                    }
-                }
-
                 рег.AddMovement();
+                рег.Post();
+
+                //var докОтработанноеВремяТехники = ОтработанноеВремяТехники.Новый();
+                //докОтработанноеВремяТехники.New();
+                //докОтработанноеВремяТехники.Таблица.Техника = tech;
+                //foreach(var id in idStatistic)
+                //{
+                //    if (unit.id == id.Key)
+                //    {
+                //        foreach(var value in id.Value)
+                //        {
+                //            докОтработанноеВремяТехники.Таблица.НачальныйЗапасТоплива = (decimal)value.BeginFuelVolumeL;
+                //            докОтработанноеВремяТехники.Таблица.КонечныйЗапасТоплива = (decimal)value.BeginFuelVolumeL;
+                //            докОтработанноеВремяТехники.Таблица.КоличествоЗаправок = value.DefuelingCount;
+                //        }
+                //    }
+                //}
+
+                //foreach (var id in idStatisticMotorModes)
+                //{
+                //    if (unit.id == id.Key)
+                //    {
+                //        foreach (var value in id.Value)
+                //        {
+                //            докОтработанноеВремяТехники.Таблица.ДлительностьРаботы = value.EngineActiveWorkHours;
+                //            докОтработанноеВремяТехники.Таблица.ДатаНачалаРаботы = tech;
+                //            докОтработанноеВремяТехники.Таблица.ДатаОкончанияРаботы = tech;
+                //        }
+                //    }
+                //}
+                //докОтработанноеВремяТехники.Post();
+
             }
-            рег.Post();
         }
 
         protected override void OnCreateReportCompleted(NsgBackgroundWorker nsgBackgroundReporter, System.ComponentModel.RunWorkerCompletedEventArgs e)
