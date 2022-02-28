@@ -16,9 +16,9 @@ using NsgSoft.Common;
 
 namespace TechControl.Метаданные._SystemTables
 {
-    public partial class МониторингРегистрЗакрытиеСменыДвижения
+    public partial class МониторингРегистрСменДвижения
 {
-    [NsgTypeName("NsgDataTableRow", Guid = "6220b09b-386d-4ed2-aaa9-b2f37c2399c0")]
+    [NsgTypeName("NsgDataTableRow", Guid = "6ef34d43-0ca9-4814-b277-8776e98ebd8c")]
     public partial class Строка : NsgSoft.DataObjects.NsgDataTableRow
     {
         #region Данные
@@ -70,7 +70,7 @@ namespace TechControl.Метаданные._SystemTables
         #region Инициализация
         public static Строка Новый()
         {
-            NsgBaseObject obj = CreateByGuid(NsgService.StringToGuid("6220b09b-386d-4ed2-aaa9-b2f37c2399c0"));
+            NsgBaseObject obj = CreateByGuid(NsgService.StringToGuid("6ef34d43-0ca9-4814-b277-8776e98ebd8c"));
             if (obj == null)
                 obj = new Строка();
             return obj as Строка;
@@ -209,6 +209,28 @@ namespace TechControl.Метаданные._SystemTables
             }
             
             /// <summary>
+            /// Сотрудник
+            /// </summary>
+            public static String Сотрудник
+            {
+                get
+                {
+                    return "Сотрудник";
+                }
+            }
+            
+            /// <summary>
+            /// Отработанное время
+            /// </summary>
+            public static String ОтработанноеВремя
+            {
+                get
+                {
+                    return "ОтработанноеВремя";
+                }
+            }
+            
+            /// <summary>
             /// Сумма
             /// </summary>
             public static String Сумма
@@ -216,17 +238,6 @@ namespace TechControl.Метаданные._SystemTables
                 get
                 {
                     return "Сумма";
-                }
-            }
-            
-            /// <summary>
-            /// Время
-            /// </summary>
-            public static String Время
-            {
-                get
-                {
-                    return "Время";
                 }
             }
             
@@ -242,7 +253,7 @@ namespace TechControl.Метаданные._SystemTables
                 if (descriptor == null)
                 {
                     descriptor = new NsgMultipleObjectDescriptor();
-                    descriptor.Name = "МониторингРегистрЗакрытиеСменыДвижения";
+                    descriptor.Name = "МониторингРегистрСменДвижения";
                     descriptor.GroupName = "_SystemTables";
                 }
                 return descriptor;
@@ -304,7 +315,7 @@ namespace TechControl.Метаданные._SystemTables
         /// </summary>
         [NsgView(NsgViewTypes.DesignTime)]
         [NsgTypeName("NsgReferencedObject")]
-        [NsgReferentsFilterAttribute("Сервис.КорректировкаРегистра")]
+        [NsgReferentsFilterAttribute("Сервис.КорректировкаРегистра,Мониторинг.ФормированиеСмены,Мониторинг.ЗакрытиеСмены")]
         public NsgSoft.DataObjects.NsgReferencedObject Владелец
         {
             get
@@ -420,6 +431,46 @@ namespace TechControl.Метаданные._SystemTables
         }
         
         /// <summary>
+        /// Сотрудник
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataDictionary")]
+        
+        public Мониторинг.Сотрудники Сотрудник
+        {
+            get
+            {
+				 NsgDataTypedReference __Сотрудник = ObjectList["Сотрудник"] as NsgDataTypedReference;
+                 return (Мониторинг.Сотрудники)__Сотрудник.Referent;
+            }
+            set
+            {
+                NsgDataTypedReference __Сотрудник = ObjectList["Сотрудник"] as NsgDataTypedReference;
+                __Сотрудник.Referent = value;
+            }
+        }
+        
+        /// <summary>
+        /// Отработанное время
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataFloat")]
+        
+        public System.Decimal ОтработанноеВремя
+        {
+            get
+            {
+				 NsgDataFloat __ОтработанноеВремя = ObjectList["ОтработанноеВремя"] as NsgDataFloat;
+                 return (System.Decimal)__ОтработанноеВремя.Value;
+            }
+            set
+            {
+                NsgDataFloat __ОтработанноеВремя = ObjectList["ОтработанноеВремя"] as NsgDataFloat;
+                __ОтработанноеВремя.Value = value;
+            }
+        }
+        
+        /// <summary>
         /// Сумма
         /// </summary>
         [NsgView(NsgViewTypes.DesignTime)]
@@ -436,26 +487,6 @@ namespace TechControl.Метаданные._SystemTables
             {
                 NsgDataFloat __Сумма = ObjectList["Сумма"] as NsgDataFloat;
                 __Сумма.Value = value;
-            }
-        }
-        
-        /// <summary>
-        /// Время
-        /// </summary>
-        [NsgView(NsgViewTypes.DesignTime)]
-        [NsgTypeName("NsgDataDateTime")]
-        
-        public System.DateTime Время
-        {
-            get
-            {
-				 NsgDataDateTime __Время = ObjectList["Время"] as NsgDataDateTime;
-                 return (System.DateTime)__Время.Value;
-            }
-            set
-            {
-                NsgDataDateTime __Время = ObjectList["Время"] as NsgDataDateTime;
-                __Время.Value = value;
             }
         }
         

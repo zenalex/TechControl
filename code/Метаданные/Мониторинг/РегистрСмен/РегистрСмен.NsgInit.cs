@@ -14,36 +14,48 @@ using NsgSoft.Common;
 // Этот файл создается автоматически, все изменения будут потеряны. //
 // ================================================================ //
 
-namespace TechControl.Метаданные._SystemTables
+namespace TechControl.Метаданные.Мониторинг
 {
     
-    [NsgTypeName("NsgDataTable", Guid = "6220b09b-386d-4ed2-aaa9-b2f37c2399c0")]
-    public partial class МониторингРегистрЗакрытиеСменыДвижения : NsgSoft.DataObjects.NsgDataTable
+    [NsgTypeName("NsgDataRegister", Guid = "1c279ec7-39ba-441f-ab93-ab3b7a1075f0")]
+    public partial class РегистрСмен : NsgSoft.DataObjects.NsgDataRegister
     {
         #region Данные
-        #region Данные NsgSoft.DataObjects.NsgDataTable
+        #region Данные NsgSoft.DataObjects.NsgDataRegister
         
 
 
 
 
-        #endregion // Данные NsgSoft.DataObjects.NsgDataTable
+        #endregion // Данные NsgSoft.DataObjects.NsgDataRegister
 
         #endregion // Данные
 
         #region Конструкторы 
-        #region Конструкторы NsgSoft.DataObjects.NsgDataTable
+        #region Конструкторы NsgSoft.DataObjects.NsgDataRegister
+        
+
+        /// <summary>
+        /// Конструктор для проведения документов, передается проводимый документ.
+        /// </summary>
+        public static РегистрСмен Новый(NsgDataDocument document)
+        {
+            NsgBaseObject obj = CreateByGuid(NsgService.StringToGuid("1c279ec7-39ba-441f-ab93-ab3b7a1075f0"));
+            if (obj == null)
+                obj = new РегистрСмен();
+            (obj as РегистрСмен).Document = document;
+            return obj as РегистрСмен;
+        }
         
 
 
 
-
-        #endregion // Конструкторы NsgSoft.DataObjects.NsgDataTable
+        #endregion // Конструкторы NsgSoft.DataObjects.NsgDataRegister
 
         /// <summary>
         /// Создание объекта
         /// </summary>
-        protected МониторингРегистрЗакрытиеСменыДвижения()
+        protected РегистрСмен()
             : base()
         {
         }
@@ -51,7 +63,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <summary>
         ///  Создание объекта Clone.
         /// </summary>
-        protected МониторингРегистрЗакрытиеСменыДвижения(NsgObject obj)
+        protected РегистрСмен(NsgObject obj)
             : base(obj)
         {
         }
@@ -59,12 +71,12 @@ namespace TechControl.Метаданные._SystemTables
         #endregion // Конструкторы 
 
         #region Инициализация
-        public static МониторингРегистрЗакрытиеСменыДвижения Новый()
+        public static РегистрСмен Новый()
         {
-            NsgBaseObject obj = CreateByGuid(NsgService.StringToGuid("6220b09b-386d-4ed2-aaa9-b2f37c2399c0"));
+            NsgBaseObject obj = CreateByGuid(NsgService.StringToGuid("1c279ec7-39ba-441f-ab93-ab3b7a1075f0"));
             if (obj == null)
-                obj = new МониторингРегистрЗакрытиеСменыДвижения();
-            return obj as МониторингРегистрЗакрытиеСменыДвижения;
+                obj = new РегистрСмен();
+            return obj as РегистрСмен;
         }
 
         /// <summary>
@@ -76,13 +88,13 @@ namespace TechControl.Метаданные._SystemTables
 			if (NsgSettings.Regime == NsgSoft.Common.NsgViewTypes.Load)
                 base.CreatePreDefinedFields();
 			#endregion //необходимые операции до создания реквизитов и заполнения полей
-			#region начало инициализации NsgSoft.DataObjects.NsgDataTable
+			#region начало инициализации NsgSoft.DataObjects.NsgDataRegister
 			
 
 
 
 
-			#endregion //начало инициализации NsgSoft.DataObjects.NsgDataTable
+			#endregion //начало инициализации NsgSoft.DataObjects.NsgDataRegister
 			
 			#region создание System.Guid Идентификатор
 			{  
@@ -111,7 +123,7 @@ namespace TechControl.Метаданные._SystemTables
 	Идентификатор.Description = "Идентификатор";
 	Идентификатор.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.ReadOnly;
 	Идентификатор.GroupName = "";
-	Идентификатор.Guid = NsgService.StringToGuid("92830646-b641-4296-9c96-1125777e5373");
+	Идентификатор.Guid = NsgService.StringToGuid("479d2395-e191-4351-a201-c1dd0a1f0d1a");
 	
 				if (!ObjectList.Contains("Идентификатор"))
                     ObjectList.Add(Идентификатор);
@@ -149,12 +161,132 @@ namespace TechControl.Метаданные._SystemTables
 	Автоинкремент.Description = "Автоинкремент";
 	Автоинкремент.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Hidden;
 	Автоинкремент.GroupName = "";
-	Автоинкремент.Guid = NsgService.StringToGuid("4a256451-e723-4fe6-bba9-39995411789d");
+	Автоинкремент.Guid = NsgService.StringToGuid("a3e1e569-6e33-487c-b421-7693708ad1c9");
 	
 				if (!ObjectList.Contains("Автоинкремент"))
                     ObjectList.Add(Автоинкремент);
 			}
 			#endregion //создание System.Int64 Автоинкремент
+			
+			#region создание _SystemTables.МониторингРегистрСменДвижения Движения
+			{  
+                NsgRegisterTable Движения = null;
+				if (ObjectList.Contains("Движения"))
+                    Движения = ObjectList["Движения"] as NsgRegisterTable;
+                else
+                    Движения = new NsgRegisterTable();
+	//NsgRegisterTable
+	Движения.IsLoadedFromDll = true;
+	Движения.Name = "Движения";
+	Движения.RegisterPeriod = NsgSoft.Common.NsgPeriod.None;
+	Движения.RegisterPeriodCount = 1;
+	Движения.ReferentGroup = "_SystemTables";
+	Движения.ReferentName = "МониторингРегистрСменДвижения";
+	Движения.SaveInDatabase = false;
+	Движения.OwnerName = "";
+	Движения.AllowEmptyOwner = false;
+	Движения.StringFormat = "";
+	Движения.SubType = NsgSoft.Common.NsgRekvisitSubType.TabMovement;
+	Движения.IncludeInPredefined = false;
+	Движения.PeriodicType = NsgSoft.Database.PeriodicTypes.None;
+	Движения.Required = false;
+	Движения.EmptyValue = "";
+	Движения.NullAllow = false;
+	Движения.IndexType = NsgSoft.Database.NsgRekvisitIndexType.None;
+	Движения.FieldName = "Dvizhenija";
+	Движения.InformMetaDataOnValueChanged = false;
+	Движения.Visible = true;
+	Движения.Presentation = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
+		 new System.Object[]{""});
+	Движения.Description = "Движения";
+	Движения.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.NonRemovable;
+	Движения.GroupName = "";
+	Движения.Guid = NsgService.StringToGuid("16044e6f-a029-4cb7-b69d-67a7ec7a05ce");
+	
+				if (!ObjectList.Contains("Движения"))
+                    ObjectList.Add(Движения);
+			}
+			#endregion //создание _SystemTables.МониторингРегистрСменДвижения Движения
+			
+			#region создание _SystemTables.МониторингРегистрСменНакопления Накопления
+			{  
+                NsgRegisterTable Накопления = null;
+				if (ObjectList.Contains("Накопления"))
+                    Накопления = ObjectList["Накопления"] as NsgRegisterTable;
+                else
+                    Накопления = new NsgRegisterTable();
+	//NsgRegisterTable
+	Накопления.IsLoadedFromDll = true;
+	Накопления.Name = "Накопления";
+	Накопления.RegisterPeriod = NsgSoft.Common.NsgPeriod.None;
+	Накопления.RegisterPeriodCount = 1;
+	Накопления.ReferentGroup = "_SystemTables";
+	Накопления.ReferentName = "МониторингРегистрСменНакопления";
+	Накопления.SaveInDatabase = false;
+	Накопления.OwnerName = "";
+	Накопления.AllowEmptyOwner = false;
+	Накопления.StringFormat = "";
+	Накопления.SubType = NsgSoft.Common.NsgRekvisitSubType.TabAccumulate;
+	Накопления.IncludeInPredefined = false;
+	Накопления.PeriodicType = NsgSoft.Database.PeriodicTypes.None;
+	Накопления.Required = false;
+	Накопления.EmptyValue = "";
+	Накопления.NullAllow = false;
+	Накопления.IndexType = NsgSoft.Database.NsgRekvisitIndexType.None;
+	Накопления.FieldName = "Nakoplenija";
+	Накопления.InformMetaDataOnValueChanged = false;
+	Накопления.Visible = true;
+	Накопления.Presentation = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
+		 new System.Object[]{""});
+	Накопления.Description = "Накопления";
+	Накопления.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.NonRemovable;
+	Накопления.GroupName = "";
+	Накопления.Guid = NsgService.StringToGuid("9d47eabc-4dbe-4760-a7f9-12ec5323363d");
+	
+				if (!ObjectList.Contains("Накопления"))
+                    ObjectList.Add(Накопления);
+			}
+			#endregion //создание _SystemTables.МониторингРегистрСменНакопления Накопления
+			
+			#region создание _SystemTables.МониторингРегистрСменНакопления_1 Накопления_1
+			{  
+                NsgRegisterTable Накопления_1 = null;
+				if (ObjectList.Contains("Накопления_1"))
+                    Накопления_1 = ObjectList["Накопления_1"] as NsgRegisterTable;
+                else
+                    Накопления_1 = new NsgRegisterTable();
+	//NsgRegisterTable
+	Накопления_1.IsLoadedFromDll = true;
+	Накопления_1.Name = "Накопления_1";
+	Накопления_1.RegisterPeriod = NsgSoft.Common.NsgPeriod.Month;
+	Накопления_1.RegisterPeriodCount = 1;
+	Накопления_1.ReferentGroup = "_SystemTables";
+	Накопления_1.ReferentName = "МониторингРегистрСменНакопления_1";
+	Накопления_1.SaveInDatabase = false;
+	Накопления_1.OwnerName = "";
+	Накопления_1.AllowEmptyOwner = false;
+	Накопления_1.StringFormat = "";
+	Накопления_1.SubType = NsgSoft.Common.NsgRekvisitSubType.TabAccumulate;
+	Накопления_1.IncludeInPredefined = false;
+	Накопления_1.PeriodicType = NsgSoft.Database.PeriodicTypes.None;
+	Накопления_1.Required = false;
+	Накопления_1.EmptyValue = "";
+	Накопления_1.NullAllow = false;
+	Накопления_1.IndexType = NsgSoft.Database.NsgRekvisitIndexType.None;
+	Накопления_1.FieldName = "Nakoplenija_1";
+	Накопления_1.InformMetaDataOnValueChanged = false;
+	Накопления_1.Visible = true;
+	Накопления_1.Presentation = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
+		 new System.Object[]{""});
+	Накопления_1.Description = "Накопления_1";
+	Накопления_1.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
+	Накопления_1.GroupName = "";
+	Накопления_1.Guid = NsgService.StringToGuid("c438bc61-6649-4dcb-9a6e-d32b32b9734f");
+	
+				if (!ObjectList.Contains("Накопления_1"))
+                    ObjectList.Add(Накопления_1);
+			}
+			#endregion //создание _SystemTables.МониторингРегистрСменНакопления_1 Накопления_1
 			
 			#region создание NsgSoft.DataObjects.NsgReferencedObject Владелец
 			{  
@@ -166,7 +298,7 @@ namespace TechControl.Метаданные._SystemTables
 	//NsgDataUntypedReference
 	Владелец.IsLoadedFromDll = true;
 	Владелец.FilterTypeForConfigurator = NsgSoft.DataObjects.NsgFiltration.List;
-	Владелец.FilterForConfigurator = "Сервис.КорректировкаРегистра";
+	Владелец.FilterForConfigurator = "Сервис.КорректировкаРегистра,Мониторинг.ФормированиеСмены,Мониторинг.ЗакрытиеСмены";
 	Владелец.ReferentName = "";
 	Владелец.ReferentGroup = "";
 	Владелец.TypeSelectorName = "";
@@ -190,47 +322,12 @@ namespace TechControl.Метаданные._SystemTables
 	Владелец.Description = "Владелец";
 	Владелец.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.ReadOnly;
 	Владелец.GroupName = "";
-	Владелец.Guid = NsgService.StringToGuid("0455bbae-9d07-4546-9b83-6c1d8ee369b6");
+	Владелец.Guid = NsgService.StringToGuid("85aed618-82f1-461f-8dd0-54e55242847c");
 	
 				if (!ObjectList.Contains("Владелец"))
                     ObjectList.Add(Владелец);
 			}
 			#endregion //создание NsgSoft.DataObjects.NsgReferencedObject Владелец
-			
-			#region создание System.DateTime ДатаДокумента
-			{  
-                NsgDataDateTime ДатаДокумента = null;
-				if (ObjectList.Contains("ДатаДокумента"))
-                    ДатаДокумента = ObjectList["ДатаДокумента"] as NsgDataDateTime;
-                else
-                    ДатаДокумента = new NsgDataDateTime();
-	//NsgDataDateTime
-	ДатаДокумента.IsLoadedFromDll = true;
-	ДатаДокумента.Format = NsgSoft.Common.NsgDateTimeFormat.DateTime;
-	ДатаДокумента.StringFormat = "";
-	ДатаДокумента.SubType = NsgSoft.Common.NsgRekvisitSubType.Common;
-	ДатаДокумента.IncludeInPredefined = false;
-	ДатаДокумента.PeriodicType = NsgSoft.Database.PeriodicTypes.None;
-	ДатаДокумента.Required = false;
-	ДатаДокумента.EmptyValue = "";
-	ДатаДокумента.NullAllow = false;
-	ДатаДокумента.IndexType = NsgSoft.Database.NsgRekvisitIndexType.Sort;
-	ДатаДокумента.FieldName = "_Date";
-	ДатаДокумента.SaveInDatabase = true;
-	ДатаДокумента.InformMetaDataOnValueChanged = false;
-	ДатаДокумента.Visible = true;
-	ДатаДокумента.Name = "ДатаДокумента";
-	ДатаДокумента.Presentation = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
-		 new System.Object[]{""});
-	ДатаДокумента.Description = "Дата документа";
-	ДатаДокумента.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Hidden;
-	ДатаДокумента.GroupName = "";
-	ДатаДокумента.Guid = NsgService.StringToGuid("d01d467c-4580-494d-9c19-cf10e8db59f0");
-	
-				if (!ObjectList.Contains("ДатаДокумента"))
-                    ObjectList.Add(ДатаДокумента);
-			}
-			#endregion //создание System.DateTime ДатаДокумента
 			
 			#region создание Сервис.ВидыДвижений ВидДвижения
 			{  
@@ -263,12 +360,47 @@ namespace TechControl.Метаданные._SystemTables
 	ВидДвижения.Description = "Вид движения";
 	ВидДвижения.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.ReadOnly;
 	ВидДвижения.GroupName = "";
-	ВидДвижения.Guid = NsgService.StringToGuid("26cd8d1f-c294-4202-abaf-6c6aaf69fd03");
+	ВидДвижения.Guid = NsgService.StringToGuid("cd38f66e-016d-4680-b7c0-73c117fa9de4");
 	
 				if (!ObjectList.Contains("ВидДвижения"))
                     ObjectList.Add(ВидДвижения);
 			}
 			#endregion //создание Сервис.ВидыДвижений ВидДвижения
+			
+			#region создание System.DateTime ДатаДокумента
+			{  
+                NsgDataDateTime ДатаДокумента = null;
+				if (ObjectList.Contains("ДатаДокумента"))
+                    ДатаДокумента = ObjectList["ДатаДокумента"] as NsgDataDateTime;
+                else
+                    ДатаДокумента = new NsgDataDateTime();
+	//NsgDataDateTime
+	ДатаДокумента.IsLoadedFromDll = true;
+	ДатаДокумента.Format = NsgSoft.Common.NsgDateTimeFormat.DateTime;
+	ДатаДокумента.StringFormat = "";
+	ДатаДокумента.SubType = NsgSoft.Common.NsgRekvisitSubType.Common;
+	ДатаДокумента.IncludeInPredefined = false;
+	ДатаДокумента.PeriodicType = NsgSoft.Database.PeriodicTypes.None;
+	ДатаДокумента.Required = false;
+	ДатаДокумента.EmptyValue = "";
+	ДатаДокумента.NullAllow = false;
+	ДатаДокумента.IndexType = NsgSoft.Database.NsgRekvisitIndexType.Sort;
+	ДатаДокумента.FieldName = "_Date";
+	ДатаДокумента.SaveInDatabase = true;
+	ДатаДокумента.InformMetaDataOnValueChanged = false;
+	ДатаДокумента.Visible = true;
+	ДатаДокумента.Name = "ДатаДокумента";
+	ДатаДокумента.Presentation = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
+		 new System.Object[]{""});
+	ДатаДокумента.Description = "Дата документа";
+	ДатаДокумента.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.ReadOnly;
+	ДатаДокумента.GroupName = "";
+	ДатаДокумента.Guid = NsgService.StringToGuid("1fb3ab9c-62db-4a3b-aa1e-61faff49e8f0");
+	
+				if (!ObjectList.Contains("ДатаДокумента"))
+                    ObjectList.Add(ДатаДокумента);
+			}
+			#endregion //создание System.DateTime ДатаДокумента
 			
 			#region создание System.Boolean Активность
 			{  
@@ -302,7 +434,7 @@ namespace TechControl.Метаданные._SystemTables
 	Активность.Description = "Активность";
 	Активность.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Hidden;
 	Активность.GroupName = "";
-	Активность.Guid = NsgService.StringToGuid("215ad065-4d99-43c2-aa1e-26c016b3d8af");
+	Активность.Guid = NsgService.StringToGuid("9d1357c5-7675-4261-be65-1b6bf6485c1e");
 	
 				if (!ObjectList.Contains("Активность"))
                     ObjectList.Add(Активность);
@@ -343,7 +475,7 @@ namespace TechControl.Метаданные._SystemTables
 	Техника.Description = "Техника";
 	Техника.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
 	Техника.GroupName = "";
-	Техника.Guid = NsgService.StringToGuid("24ec25d4-eaec-4ada-9706-7a74f43711fa");
+	Техника.Guid = NsgService.StringToGuid("319284d7-d695-460c-8b84-c6e2a585c60a");
 	
 				if (!ObjectList.Contains("Техника"))
                     ObjectList.Add(Техника);
@@ -384,12 +516,92 @@ namespace TechControl.Метаданные._SystemTables
 	Объект.Description = "Объект";
 	Объект.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
 	Объект.GroupName = "";
-	Объект.Guid = NsgService.StringToGuid("7e0cf6e7-810c-4579-915b-c8affe404eb9");
+	Объект.Guid = NsgService.StringToGuid("8b6584fe-c91d-4b57-9c51-d4887054c4eb");
 	
 				if (!ObjectList.Contains("Объект"))
                     ObjectList.Add(Объект);
 			}
 			#endregion //создание Мониторинг.Объекты Объект
+			
+			#region создание System.Decimal ОтработанноеВремя
+			{  
+                NsgDataFloat ОтработанноеВремя = null;
+				if (ObjectList.Contains("ОтработанноеВремя"))
+                    ОтработанноеВремя = ObjectList["ОтработанноеВремя"] as NsgDataFloat;
+                else
+                    ОтработанноеВремя = new NsgDataFloat();
+	//NsgDataFloat
+	ОтработанноеВремя.IsLoadedFromDll = true;
+	ОтработанноеВремя.Precision = 2;
+	ОтработанноеВремя.HideZero = true;
+	ОтработанноеВремя.DefaultValue = 0M;
+	ОтработанноеВремя.MinValue = -100000000000000000M;
+	ОтработанноеВремя.MaxValue = 100000000000000000M;
+	ОтработанноеВремя.UseCalculator = true;
+	ОтработанноеВремя.StringFormat = "";
+	ОтработанноеВремя.SubType = NsgSoft.Common.NsgRekvisitSubType.Resource;
+	ОтработанноеВремя.IncludeInPredefined = false;
+	ОтработанноеВремя.PeriodicType = NsgSoft.Database.PeriodicTypes.None;
+	ОтработанноеВремя.Required = false;
+	ОтработанноеВремя.EmptyValue = "";
+	ОтработанноеВремя.NullAllow = false;
+	ОтработанноеВремя.IndexType = NsgSoft.Database.NsgRekvisitIndexType.None;
+	ОтработанноеВремя.FieldName = "OtrabotannoeVremja";
+	ОтработанноеВремя.InformMetaDataOnValueChanged = false;
+	ОтработанноеВремя.Visible = true;
+	ОтработанноеВремя.Name = "ОтработанноеВремя";
+	ОтработанноеВремя.Presentation = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
+		 new System.Object[]{""});
+	ОтработанноеВремя.Description = "Отработанное время";
+	ОтработанноеВремя.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
+	ОтработанноеВремя.GroupName = "";
+	ОтработанноеВремя.Guid = NsgService.StringToGuid("6d648d86-c440-4e2e-82be-335c6a6c8d52");
+	
+				if (!ObjectList.Contains("ОтработанноеВремя"))
+                    ObjectList.Add(ОтработанноеВремя);
+			}
+			#endregion //создание System.Decimal ОтработанноеВремя
+			
+			#region создание Мониторинг.Сотрудники Сотрудник
+			{  
+                NsgDataTypedReference Сотрудник = null;
+				if (ObjectList.Contains("Сотрудник"))
+                    Сотрудник = ObjectList["Сотрудник"] as NsgDataTypedReference;
+                else
+                    Сотрудник = new NsgDataTypedReference();
+	//NsgDataTypedReference
+	Сотрудник.IsLoadedFromDll = true;
+	Сотрудник.ReferentGroup = "Мониторинг";
+	Сотрудник.ReferentName = "Сотрудники";
+	Сотрудник.SaveInDatabase = true;
+	Сотрудник.OwnerName = "";
+	Сотрудник.AllowEmptyOwner = false;
+	Сотрудник.StringFormat = "";
+	Сотрудник.SubType = NsgSoft.Common.NsgRekvisitSubType.Dimension;
+	Сотрудник.IncludeInPredefined = false;
+	Сотрудник.PeriodicType = NsgSoft.Database.PeriodicTypes.None;
+	Сотрудник.Required = false;
+	Сотрудник.EmptyValue = "";
+	Сотрудник.NullAllow = false;
+	Сотрудник.IndexType = NsgSoft.Database.NsgRekvisitIndexType.Sort;
+	Сотрудник.FieldName = "Sotrudnik";
+	Сотрудник.RegisterDistributionType = NsgSoft.DataObjects.NsgRegisterDistributionType.Filter;
+	Сотрудник.CharacteristicCompareType = NsgSoft.Database.NsgComparison.Equal;
+	Сотрудник.CharactericticWeight = 1;
+	Сотрудник.InformMetaDataOnValueChanged = false;
+	Сотрудник.Visible = true;
+	Сотрудник.Name = "Сотрудник";
+	Сотрудник.Presentation = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
+		 new System.Object[]{""});
+	Сотрудник.Description = "Сотрудник";
+	Сотрудник.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
+	Сотрудник.GroupName = "";
+	Сотрудник.Guid = NsgService.StringToGuid("c0552db6-8abe-4443-88d4-43ca8627f6b7");
+	
+				if (!ObjectList.Contains("Сотрудник"))
+                    ObjectList.Add(Сотрудник);
+			}
+			#endregion //создание Мониторинг.Сотрудники Сотрудник
 			
 			#region создание System.Decimal Сумма
 			{  
@@ -423,84 +635,48 @@ namespace TechControl.Метаданные._SystemTables
 	Сумма.Description = "Сумма";
 	Сумма.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
 	Сумма.GroupName = "";
-	Сумма.Guid = NsgService.StringToGuid("64c94dd1-0ade-4b6e-949b-59e92fbcf7ca");
+	Сумма.Guid = NsgService.StringToGuid("a79c9253-1047-44b0-812d-8bb7a4d345ad");
 	
 				if (!ObjectList.Contains("Сумма"))
                     ObjectList.Add(Сумма);
 			}
 			#endregion //создание System.Decimal Сумма
 			
-			#region создание System.DateTime Время
-			{  
-                NsgDataDateTime Время = null;
-				if (ObjectList.Contains("Время"))
-                    Время = ObjectList["Время"] as NsgDataDateTime;
-                else
-                    Время = new NsgDataDateTime();
-	//NsgDataDateTime
-	Время.IsLoadedFromDll = true;
-	Время.Format = NsgSoft.Common.NsgDateTimeFormat.DateTime;
-	Время.StringFormat = "";
-	Время.SubType = NsgSoft.Common.NsgRekvisitSubType.Property;
-	Время.IncludeInPredefined = false;
-	Время.PeriodicType = NsgSoft.Database.PeriodicTypes.None;
-	Время.Required = false;
-	Время.EmptyValue = "";
-	Время.NullAllow = false;
-	Время.IndexType = NsgSoft.Database.NsgRekvisitIndexType.None;
-	Время.FieldName = "Vremja";
-	Время.SaveInDatabase = true;
-	Время.InformMetaDataOnValueChanged = false;
-	Время.Visible = true;
-	Время.Name = "Время";
-	Время.Presentation = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
-		 new System.Object[]{""});
-	Время.Description = "Время";
-	Время.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
-	Время.GroupName = "";
-	Время.Guid = NsgService.StringToGuid("ae5807ed-7159-40ef-8425-46bc29fee6f5");
-	
-				if (!ObjectList.Contains("Время"))
-                    ObjectList.Add(Время);
-			}
-			#endregion //создание System.DateTime Время
-			
 
 			#region заполнение полей класса
-				//NsgDataTable
+				//NsgDataRegister
 	IsLoadedFromDll = true;
-	OwnerFullName = "Мониторинг.РегистрЗакрытиеСмены";
-	RegisterPeriod = NsgSoft.Common.NsgPeriod.None;
-	RegisterPeriodCount = 1;
-	TableSubType = NsgSoft.Common.NsgTableSubType.RegisterMovementTable;
-	EntityType = NsgSoft.DataObjects.NsgInterfacedObject.EntityTypes.Object;
-	Name = "МониторингРегистрЗакрытиеСменыДвижения";
+	SearchFieldName = "";
+	RegisterType = NsgSoft.DataObjects.NsgRegisterType.Accummulate;
+	QuantityName = "";
+	HandlingWarnings = NsgSoft.DataObjects.NsgHandlingWarnings.None;
+	Name = "РегистрСмен";
 	Visible = true;
-	Guid = NsgService.StringToGuid("6220b09b-386d-4ed2-aaa9-b2f37c2399c0");
+	Guid = NsgService.StringToGuid("1c279ec7-39ba-441f-ab93-ab3b7a1075f0");
 	DefaultSortingName = "";
 	DefaultElementFormName = "";
 	DefaultListFormName = "";
 	ValueMask = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
 		 new System.Object[]{"{Представление}"});
 	SearchType = NsgSoft.Database.NsgComparison.Contain;
-	SearchFieldName = "Идентификатор";
 	DatabaseName = "";
 	VisibleAdminOnly = false;
-	TableName = "_tab_MonitoringRegistrZa";
+	TableName = "_reg_RegistrSmen";
 	Presentation = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
 		 new System.Object[]{""});
-	Description = "Мониторинг регистр закрытие смены движения";
+	Description = "Регистр смен";
 	EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
-	GroupName = "_SystemTables";
-	
+	GroupName = "Мониторинг";
+	ConnectAdditionalTables();
+
 			#endregion //заполнение полей класса
-			#region окончание инициализации NsgSoft.DataObjects.NsgDataTable
+			#region окончание инициализации NsgSoft.DataObjects.NsgDataRegister
 			
 
 
 
 
-			#endregion //окончание инициализации NsgSoft.DataObjects.NsgDataTable
+			#endregion //окончание инициализации NsgSoft.DataObjects.NsgDataRegister
 
 			#region необходимые операции после создания реквизитов и заполнения полей
 			// внести в кэш полей
@@ -511,7 +687,7 @@ namespace TechControl.Метаданные._SystemTables
         #endregion // Инициализация
 
         #region Имена
-        public new partial class Names// :NsgSoft.DataObjects.NsgDataTable.Names
+        public new partial class Names// :NsgSoft.DataObjects.NsgDataRegister.Names
         {
             
             /// <summary>
@@ -537,6 +713,39 @@ namespace TechControl.Метаданные._SystemTables
             }
             
             /// <summary>
+            /// Движения
+            /// </summary>
+            public static String Движения
+            {
+                get
+                {
+                    return "Движения";
+                }
+            }
+            
+            /// <summary>
+            /// Накопления
+            /// </summary>
+            public static String Накопления
+            {
+                get
+                {
+                    return "Накопления";
+                }
+            }
+            
+            /// <summary>
+            /// Накопления_1
+            /// </summary>
+            public static String Накопления_1
+            {
+                get
+                {
+                    return "Накопления_1";
+                }
+            }
+            
+            /// <summary>
             /// Владелец
             /// </summary>
             public static String Владелец
@@ -548,17 +757,6 @@ namespace TechControl.Метаданные._SystemTables
             }
             
             /// <summary>
-            /// Дата документа
-            /// </summary>
-            public static String ДатаДокумента
-            {
-                get
-                {
-                    return "ДатаДокумента";
-                }
-            }
-            
-            /// <summary>
             /// Вид движения
             /// </summary>
             public static String ВидДвижения
@@ -566,6 +764,17 @@ namespace TechControl.Метаданные._SystemTables
                 get
                 {
                     return "ВидДвижения";
+                }
+            }
+            
+            /// <summary>
+            /// Дата документа
+            /// </summary>
+            public static String ДатаДокумента
+            {
+                get
+                {
+                    return "ДатаДокумента";
                 }
             }
             
@@ -603,6 +812,28 @@ namespace TechControl.Метаданные._SystemTables
             }
             
             /// <summary>
+            /// Отработанное время
+            /// </summary>
+            public static String ОтработанноеВремя
+            {
+                get
+                {
+                    return "ОтработанноеВремя";
+                }
+            }
+            
+            /// <summary>
+            /// Сотрудник
+            /// </summary>
+            public static String Сотрудник
+            {
+                get
+                {
+                    return "Сотрудник";
+                }
+            }
+            
+            /// <summary>
             /// Сумма
             /// </summary>
             public static String Сумма
@@ -610,17 +841,6 @@ namespace TechControl.Метаданные._SystemTables
                 get
                 {
                     return "Сумма";
-                }
-            }
-            
-            /// <summary>
-            /// Время
-            /// </summary>
-            public static String Время
-            {
-                get
-                {
-                    return "Время";
                 }
             }
             
@@ -636,8 +856,8 @@ namespace TechControl.Метаданные._SystemTables
                 if (descriptor == null)
                 {
                     descriptor = new NsgMultipleObjectDescriptor();
-                    descriptor.Name = "МониторингРегистрЗакрытиеСменыДвижения";
-                    descriptor.GroupName = "_SystemTables";
+                    descriptor.Name = "РегистрСмен";
+                    descriptor.GroupName = "Мониторинг";
                 }
                 return descriptor;
             }
@@ -649,7 +869,7 @@ namespace TechControl.Метаданные._SystemTables
 
         public static string GetFullName()
         {
-            return "_SystemTables.МониторингРегистрЗакрытиеСменыДвижения";
+            return "Мониторинг.РегистрСмен";
         }
 
         
@@ -694,11 +914,71 @@ namespace TechControl.Метаданные._SystemTables
         }
         
         /// <summary>
+        /// Движения
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataTable")]
+        
+        public _SystemTables.МониторингРегистрСменДвижения Движения
+        {
+            get
+            {
+				 NsgRegisterTable __Движения = ObjectList["Движения"] as NsgRegisterTable;
+                 return (_SystemTables.МониторингРегистрСменДвижения)__Движения.Referent;
+            }
+            set
+            {
+                NsgRegisterTable __Движения = ObjectList["Движения"] as NsgRegisterTable;
+                __Движения.Referent = value;
+            }
+        }
+        
+        /// <summary>
+        /// Накопления
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataTable")]
+        
+        public _SystemTables.МониторингРегистрСменНакопления Накопления
+        {
+            get
+            {
+				 NsgRegisterTable __Накопления = ObjectList["Накопления"] as NsgRegisterTable;
+                 return (_SystemTables.МониторингРегистрСменНакопления)__Накопления.Referent;
+            }
+            set
+            {
+                NsgRegisterTable __Накопления = ObjectList["Накопления"] as NsgRegisterTable;
+                __Накопления.Referent = value;
+            }
+        }
+        
+        /// <summary>
+        /// Накопления_1
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataTable")]
+        
+        public _SystemTables.МониторингРегистрСменНакопления_1 Накопления_1
+        {
+            get
+            {
+				 NsgRegisterTable __Накопления_1 = ObjectList["Накопления_1"] as NsgRegisterTable;
+                 return (_SystemTables.МониторингРегистрСменНакопления_1)__Накопления_1.Referent;
+            }
+            set
+            {
+                NsgRegisterTable __Накопления_1 = ObjectList["Накопления_1"] as NsgRegisterTable;
+                __Накопления_1.Referent = value;
+            }
+        }
+        
+        /// <summary>
         /// Владелец
         /// </summary>
         [NsgView(NsgViewTypes.DesignTime)]
         [NsgTypeName("NsgReferencedObject")]
-        [NsgReferentsFilterAttribute("Сервис.КорректировкаРегистра")]
+        [NsgReferentsFilterAttribute("Сервис.КорректировкаРегистра,Мониторинг.ФормированиеСмены,Мониторинг.ЗакрытиеСмены")]
         public NsgSoft.DataObjects.NsgReferencedObject Владелец
         {
             get
@@ -710,26 +990,6 @@ namespace TechControl.Метаданные._SystemTables
             {
                 NsgDataUntypedReference __Владелец = ObjectList["Владелец"] as NsgDataUntypedReference;
                 __Владелец.Referent = value;
-            }
-        }
-        
-        /// <summary>
-        /// Дата документа
-        /// </summary>
-        [NsgView(NsgViewTypes.DesignTime)]
-        [NsgTypeName("NsgDataDateTime")]
-        
-        public System.DateTime ДатаДокумента
-        {
-            get
-            {
-				 NsgDataDateTime __ДатаДокумента = ObjectList["ДатаДокумента"] as NsgDataDateTime;
-                 return (System.DateTime)__ДатаДокумента.Value;
-            }
-            set
-            {
-                NsgDataDateTime __ДатаДокумента = ObjectList["ДатаДокумента"] as NsgDataDateTime;
-                __ДатаДокумента.Value = value;
             }
         }
         
@@ -750,6 +1010,26 @@ namespace TechControl.Метаданные._SystemTables
             {
                 NsgDataEnumReference __ВидДвижения = ObjectList["ВидДвижения"] as NsgDataEnumReference;
                 __ВидДвижения.Referent = value;
+            }
+        }
+        
+        /// <summary>
+        /// Дата документа
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataDateTime")]
+        
+        public System.DateTime ДатаДокумента
+        {
+            get
+            {
+				 NsgDataDateTime __ДатаДокумента = ObjectList["ДатаДокумента"] as NsgDataDateTime;
+                 return (System.DateTime)__ДатаДокумента.Value;
+            }
+            set
+            {
+                NsgDataDateTime __ДатаДокумента = ObjectList["ДатаДокумента"] as NsgDataDateTime;
+                __ДатаДокумента.Value = value;
             }
         }
         
@@ -814,6 +1094,46 @@ namespace TechControl.Метаданные._SystemTables
         }
         
         /// <summary>
+        /// Отработанное время
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataFloat")]
+        
+        public System.Decimal ОтработанноеВремя
+        {
+            get
+            {
+				 NsgDataFloat __ОтработанноеВремя = ObjectList["ОтработанноеВремя"] as NsgDataFloat;
+                 return (System.Decimal)__ОтработанноеВремя.Value;
+            }
+            set
+            {
+                NsgDataFloat __ОтработанноеВремя = ObjectList["ОтработанноеВремя"] as NsgDataFloat;
+                __ОтработанноеВремя.Value = value;
+            }
+        }
+        
+        /// <summary>
+        /// Сотрудник
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataDictionary")]
+        
+        public Мониторинг.Сотрудники Сотрудник
+        {
+            get
+            {
+				 NsgDataTypedReference __Сотрудник = ObjectList["Сотрудник"] as NsgDataTypedReference;
+                 return (Мониторинг.Сотрудники)__Сотрудник.Referent;
+            }
+            set
+            {
+                NsgDataTypedReference __Сотрудник = ObjectList["Сотрудник"] as NsgDataTypedReference;
+                __Сотрудник.Referent = value;
+            }
+        }
+        
+        /// <summary>
         /// Сумма
         /// </summary>
         [NsgView(NsgViewTypes.DesignTime)]
@@ -833,29 +1153,9 @@ namespace TechControl.Метаданные._SystemTables
             }
         }
         
-        /// <summary>
-        /// Время
-        /// </summary>
-        [NsgView(NsgViewTypes.DesignTime)]
-        [NsgTypeName("NsgDataDateTime")]
-        
-        public System.DateTime Время
-        {
-            get
-            {
-				 NsgDataDateTime __Время = ObjectList["Время"] as NsgDataDateTime;
-                 return (System.DateTime)__Время.Value;
-            }
-            set
-            {
-                NsgDataDateTime __Время = ObjectList["Время"] as NsgDataDateTime;
-                __Время.Value = value;
-            }
-        }
-        
 
         
-        #region Свойства NsgSoft.DataObjects.NsgDataTable
+        #region Свойства NsgSoft.DataObjects.NsgDataRegister
         
 
 
@@ -863,203 +1163,23 @@ namespace TechControl.Метаданные._SystemTables
         
 
 
-        #endregion // Свойства NsgSoft.DataObjects.NsgDataTable
+        #endregion // Свойства NsgSoft.DataObjects.NsgDataRegister
 
         #endregion // Свойства
 
         #region Методы
-        #region Методы NsgSoft.DataObjects.NsgDataTable
-        
-
-        /// <summary>
-        /// Добавить новую строку в таблицу
-        /// </summary>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка NewRow()
-        {
-            return newRow(null) as МониторингРегистрЗакрытиеСменыДвижения.Строка;
-        }
-
-        /// <summary>
-        /// создание строки таблицы
-        /// </summary>
-        protected override NsgDataTableRow newRow(NsgDataTableRow row)
-        {
-            if (row == null)
-                row = new МониторингРегистрЗакрытиеСменыДвижения.Строка(this);
-            return base.newRow(row) as МониторингРегистрЗакрытиеСменыДвижения.Строка;
-        }
-
-        /// <summary>
-        /// Добавить новую строку в таблицу путем копирования переданной строки
-        /// </summary>
-        public МониторингРегистрЗакрытиеСменыДвижения.Строка NewRow(МониторингРегистрЗакрытиеСменыДвижения.Строка inRow)
-        {
-            МониторингРегистрЗакрытиеСменыДвижения.Строка row = inRow.Clone as МониторингРегистрЗакрытиеСменыДвижения.Строка;
-            return base.newRow(row) as МониторингРегистрЗакрытиеСменыДвижения.Строка;
-        }
-
-
-        /// <summary>
-        /// Получить строку таблицы по номеру
-        /// </summary>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка GetRow(int rowNumber)
-        {
-            return base.GetRow(rowNumber) as МониторингРегистрЗакрытиеСменыДвижения.Строка;
-        }
-
-        /// <summary>
-        /// Возвращает новую строку таблицы, но в саму таблицу ее не включает (эталонная строка)
-        /// </summary>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка GetEtalonRow()
-        {
-            МониторингРегистрЗакрытиеСменыДвижения.Строка row = new МониторингРегистрЗакрытиеСменыДвижения.Строка(this);
-            row.MetaData = MetaData;
-            return row;
-        }
-
-        private МониторингРегистрЗакрытиеСменыДвижения.Строка[] convertRowsArray(NsgDataTableRow[] array)
-        {
-            МониторингРегистрЗакрытиеСменыДвижения.Строка[] res = new МониторингРегистрЗакрытиеСменыДвижения.Строка[array.Length];
-            array.CopyTo(res, 0);
-            return res;
-        }
-
-
-        #region Поиск строк. Перегруженные методы.
-        /// <summary>
-        /// Метод поиска одной строки в таблице по значению Tag
-        /// </summary>
-        /// <param name="compare">Критерии поиска.</param>
-        /// <returns>Найденные строки.</returns>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка FindRowByTag(object Tag)
-        {
-            return base.FindRowByTag(Tag) as МониторингРегистрЗакрытиеСменыДвижения.Строка;
-        }
-
-        /// <summary>
-        /// Метод поиска строк в таблице по значению Tag
-        /// </summary>
-        /// <param name="compare">Критерии поиска.</param>
-        /// <returns>Найденные строки.</returns>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка[] FindRowsByTag(object Tag)
-        {
-            return convertRowsArray(base.FindRowsByTag(Tag));
-        }
-
-        /// <summary>
-        /// Метод поиска одной строки в таблице, соответствующих заданным параметрам.
-        /// </summary>
-        /// <param name="compare">Критерии поиска.</param>
-        /// <returns>Найденные строки.</returns>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка FindRow(NsgCompare compare)
-        {
-            return base.FindRow(compare) as МониторингРегистрЗакрытиеСменыДвижения.Строка;
-        }
-
-        /// <summary>
-        /// Метод поиска одной строки в таблице по значению конкретного поля.
-        /// </summary>
-        /// <param name="inName">Имя колонки.</param>
-        /// <param name="inValue">Значение поля.</param>
-        /// <returns>Найденные строки.</returns>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка FindRow(string inName, object inValue)
-        {
-            return base.FindRow(inName, inValue) as МониторингРегистрЗакрытиеСменыДвижения.Строка;
-        }
-
-        /// <summary>
-        /// Метод поиска одной строки в таблице по значению конкретного предопределенного поля.
-        /// </summary>
-        /// <param name="inName">Имя колонки.</param>
-        /// <param name="inValue">Значение поля.</param>
-        /// <returns>Найденные строки.</returns>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка FindRow(NsgDataFixedFields inName, object inValue)
-        {
-            return base.FindRow(inName, inValue) as МониторингРегистрЗакрытиеСменыДвижения.Строка;
-        }
-
-        /// <summary>
-        /// Метод поиска строк в таблице, соответствующих заданным параметрам.
-        /// </summary>
-        /// <param name="compare">Критерии поиска.</param>
-        /// <returns>Найденные строки.</returns>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка[] FindRows(NsgCompare compare)
-        {
-            return convertRowsArray(base.FindRows(compare));
-        }
-
-        /// <summary>
-        /// Метод поиска строк в таблице по значению конкретного поля.
-        /// </summary>
-        /// <param name="inName">Имя колонки.</param>
-        /// <param name="inValue">Значение поля.</param>
-        /// <returns>Найденные строки.</returns>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка[] FindRows(string inName, object inValue)
-        {
-            return convertRowsArray(base.FindRows(inName, inValue));
-        }
-
-        /// <summary>
-        /// Метод поиска строк в таблице по значению конкретного предопределенного поля.
-        /// </summary>
-        /// <param name="inName">Имя колонки.</param>
-        /// <param name="inValue">Значение поля.</param>
-        /// <returns>Найденные строки.</returns>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка[] FindRows(NsgDataFixedFields inName, object inValue)
-        {
-            return convertRowsArray(base.FindRows(inName, inValue));
-        }
-
-        /// <summary>
-        /// Метод получения курсора на выборку документов.
-        /// </summary>
-        public  NsgVirtualCursor<МониторингРегистрЗакрытиеСменыДвижения> GetNewVirtualCursor()
-        {
-            return base.GetNewVirtualCursor<МониторингРегистрЗакрытиеСменыДвижения>();
-        }
-
-        /// <summary>
-        /// Получить все строки таблицы с учетом наложенного фильтра. Для получения всех сьтрок без учета фильтра используется свойство AllRows
-        /// </summary>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка[] Rows
-        {
-            get
-            {
-                return convertRowsArray(base.Rows);
-            }
-        }
-
-        /// <summary>
-        /// Получить все строки таблицы без учето наложенного фильтра. Для получения всех сьтрок с учетом фильтра используется свойство Rows
-        /// </summary>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка[] AllRows
-        {
-            get
-            {
-                return convertRowsArray(base.AllRows);
-            }
-        }
-
-        /// <summary>
-        /// Получить строку таблицы
-        /// </summary>
-        /// <param name="inName">Идентификатор строки.</param>
-        /// <returns>Найденные строки.</returns>
-        public new МониторингРегистрЗакрытиеСменыДвижения.Строка GetRow(Guid inID)
-        {
-            return base.GetRow(inID) as МониторингРегистрЗакрытиеСменыДвижения.Строка;
-        }
-        #endregion
+        #region Методы NsgSoft.DataObjects.NsgDataRegister
         
 
 
 
-        #endregion // Методы NsgSoft.DataObjects.NsgDataTable
+
+        #endregion // Методы NsgSoft.DataObjects.NsgDataRegister
 
         #region Методы NsgMultipleObject
-        private МониторингРегистрЗакрытиеСменыДвижения[] convertArray(NsgMultipleObject[] array)
+        private РегистрСмен[] convertArray(NsgMultipleObject[] array)
         {
-            МониторингРегистрЗакрытиеСменыДвижения[] res = new МониторингРегистрЗакрытиеСменыДвижения[array.Length];
+            РегистрСмен[] res = new РегистрСмен[array.Length];
             array.CopyTo(res, 0);
             return res;
         }
@@ -1074,7 +1194,7 @@ namespace TechControl.Метаданные._SystemTables
         /// </remarks>
         /// <param name="compare">Параметры запроса.</param>
         /// <returns>Список найденных объектов.</returns>
-        public new virtual МониторингРегистрЗакрытиеСменыДвижения[] FindAll(NsgCompare compare)
+        public new virtual РегистрСмен[] FindAll(NsgCompare compare)
         {
             return convertArray(base.FindAll(compare));
         }
@@ -1091,7 +1211,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <param name="sorting">Параметры сортировки.</param>
         /// <param name="paramAll">Параметры запроса.</param>
         /// <returns>Список найденных объектов.</returns>
-        public new virtual МониторингРегистрЗакрытиеСменыДвижения[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, NsgCompare compare)
+        public new virtual РегистрСмен[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, NsgCompare compare)
         {
             return convertArray(base.FindAll(ref count, row_start, sorting, compare));
         }
@@ -1110,7 +1230,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <param name="inName">Имя реквизита.</param>
         /// <param name="inValue">Значение для поиска. Условие поиска - полное совпадение.</param>
         /// <returns>Список найденных объектов.</returns>
-        public new virtual МониторингРегистрЗакрытиеСменыДвижения[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, string inName, object inValue)
+        public new virtual РегистрСмен[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, string inName, object inValue)
         {
             return convertArray(base.FindAll(ref count, row_start, sorting, inName, inValue));
         }
@@ -1129,7 +1249,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <param name="inName">Идентификатор реквизита.</param>
         /// <param name="inValue">Значение для поиска. Условие поиска - полное совпадение.</param>
         /// <returns>Список найденных объектов.</returns>
-        public new virtual МониторингРегистрЗакрытиеСменыДвижения[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, NsgDataFixedFields inName,
+        public new virtual РегистрСмен[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, NsgDataFixedFields inName,
             object inValue)
         {
             return convertArray(base.FindAll(ref count, row_start, sorting, inName, inValue));
@@ -1140,7 +1260,7 @@ namespace TechControl.Метаданные._SystemTables
         {
             get
             {
-                return new МониторингРегистрЗакрытиеСменыДвижения(this as NsgObject);
+                return new РегистрСмен(this as NsgObject);
             }
         }
 
@@ -1155,7 +1275,7 @@ namespace TechControl.Метаданные._SystemTables
             public ColumnDescriptor()
                 : base()
             {
-                base.NSGType = typeof(МониторингРегистрЗакрытиеСменыДвижения);
+                base.NSGType = typeof(РегистрСмен);
             }
 
 			/// <summary>
@@ -1163,11 +1283,11 @@ namespace TechControl.Метаданные._SystemTables
 			/// </summary>
 			[Browsable(false)]
 			[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-			public new МониторингРегистрЗакрытиеСменыДвижения Value
+			public new РегистрСмен Value
             {
                 get
                 {
-                    return (МониторингРегистрЗакрытиеСменыДвижения)base.Value;
+                    return (РегистрСмен)base.Value;
                 }
                 set
                 {
@@ -1182,7 +1302,7 @@ namespace TechControl.Метаданные._SystemTables
             {
                 get
                 {
-                    return "s_NsgDataTable";
+                    return "s_NsgDataRegister";
                 }
             }
         }

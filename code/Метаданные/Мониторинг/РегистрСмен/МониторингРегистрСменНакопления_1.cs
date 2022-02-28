@@ -8,10 +8,10 @@ using NsgSoft.Common;
 
 
 
-namespace TechControl.Метаданные.Мониторинг
+namespace TechControl.Метаданные._SystemTables
 {
     
-    public partial class РегистрЗакрытиеСмены
+    public partial class МониторингРегистрСменНакопления_1
     {
         #region Данные
         #endregion //Данные

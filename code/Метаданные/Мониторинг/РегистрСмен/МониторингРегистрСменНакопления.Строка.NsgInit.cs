@@ -16,9 +16,9 @@ using NsgSoft.Common;
 
 namespace TechControl.Метаданные._SystemTables
 {
-    public partial class МониторингРегистрЗакрытиеСменыНакопления
+    public partial class МониторингРегистрСменНакопления
 {
-    [NsgTypeName("NsgDataTableRow", Guid = "1fffc539-794e-4975-a852-5a47ecffd5f1")]
+    [NsgTypeName("NsgDataTableRow", Guid = "a92839c7-7766-4720-b758-d7a9db705754")]
     public partial class Строка : NsgSoft.DataObjects.NsgDataTableRow
     {
         #region Данные
@@ -70,7 +70,7 @@ namespace TechControl.Метаданные._SystemTables
         #region Инициализация
         public static Строка Новый()
         {
-            NsgBaseObject obj = CreateByGuid(NsgService.StringToGuid("1fffc539-794e-4975-a852-5a47ecffd5f1"));
+            NsgBaseObject obj = CreateByGuid(NsgService.StringToGuid("a92839c7-7766-4720-b758-d7a9db705754"));
             if (obj == null)
                 obj = new Строка();
             return obj as Строка;
@@ -154,6 +154,28 @@ namespace TechControl.Метаданные._SystemTables
             }
             
             /// <summary>
+            /// Сотрудник
+            /// </summary>
+            public static String Сотрудник
+            {
+                get
+                {
+                    return "Сотрудник";
+                }
+            }
+            
+            /// <summary>
+            /// Отработанное время
+            /// </summary>
+            public static String ОтработанноеВремя
+            {
+                get
+                {
+                    return "ОтработанноеВремя";
+                }
+            }
+            
+            /// <summary>
             /// Сумма
             /// </summary>
             public static String Сумма
@@ -176,7 +198,7 @@ namespace TechControl.Метаданные._SystemTables
                 if (descriptor == null)
                 {
                     descriptor = new NsgMultipleObjectDescriptor();
-                    descriptor.Name = "МониторингРегистрЗакрытиеСменыНакопления";
+                    descriptor.Name = "МониторингРегистрСменНакопления";
                     descriptor.GroupName = "_SystemTables";
                 }
                 return descriptor;
@@ -250,6 +272,46 @@ namespace TechControl.Метаданные._SystemTables
             {
                 NsgDataTypedReference __Техника = ObjectList["Техника"] as NsgDataTypedReference;
                 __Техника.Referent = value;
+            }
+        }
+        
+        /// <summary>
+        /// Сотрудник
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataDictionary")]
+        
+        public Мониторинг.Сотрудники Сотрудник
+        {
+            get
+            {
+				 NsgDataTypedReference __Сотрудник = ObjectList["Сотрудник"] as NsgDataTypedReference;
+                 return (Мониторинг.Сотрудники)__Сотрудник.Referent;
+            }
+            set
+            {
+                NsgDataTypedReference __Сотрудник = ObjectList["Сотрудник"] as NsgDataTypedReference;
+                __Сотрудник.Referent = value;
+            }
+        }
+        
+        /// <summary>
+        /// Отработанное время
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataFloat")]
+        
+        public System.Decimal ОтработанноеВремя
+        {
+            get
+            {
+				 NsgDataFloat __ОтработанноеВремя = ObjectList["ОтработанноеВремя"] as NsgDataFloat;
+                 return (System.Decimal)__ОтработанноеВремя.Value;
+            }
+            set
+            {
+                NsgDataFloat __ОтработанноеВремя = ObjectList["ОтработанноеВремя"] as NsgDataFloat;
+                __ОтработанноеВремя.Value = value;
             }
         }
         

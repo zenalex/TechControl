@@ -10,7 +10,7 @@ using NsgSoft.Common;
 
 namespace TechControl.Метаданные._SystemTables
 {
-    public partial class МониторингРегистрЗакрытиеСменыДвижения
+    public partial class МониторингРегистрСменНакопления_1
 {
     public partial class Строка
     {

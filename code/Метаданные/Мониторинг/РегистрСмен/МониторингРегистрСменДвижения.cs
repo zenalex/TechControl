@@ -11,7 +11,7 @@ using NsgSoft.Common;
 namespace TechControl.Метаданные._SystemTables
 {
     
-    public partial class МониторингРегистрЗакрытиеСменыДвижения
+    public partial class МониторингРегистрСменДвижения
     {
         #region Данные
         #endregion //Данные
