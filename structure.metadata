@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.2.28.0" CodeLang="ru" name="TechControl" description="New Configuration" copyright="Unknown Developer ©  2011" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.2.28.1" CodeLang="ru" name="TechControl" description="New Configuration" copyright="Unknown Developer ©  2011" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.2.28.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.2.28.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.2.28.1" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.2.28.1;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -2379,6 +2379,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="47008960-7924-406f-9ddf-a879fc8cd3dc" type="NsgDataDateTime" editoraccess="Limited" name="Дата" visible="true" description="Дата документа" field="_Date" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="Дата документа" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="c84b69be-ce58-4eca-8bf8-9f497908f95e" type="NsgDataDateTime" editoraccess="Limited" name="КонецПериода" visible="true" description="Конец периода" field="_DateEnd" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers />
         </NsgMultipleObject>
@@ -2602,7 +2612,7 @@
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
-        <NsgMultipleObject Guid="50f5855e-3b81-4250-92da-357300f0a02d" type="NsgDataCharacteristics" editoraccess="Full" name="ФиксацияИстории" visible="true" description="ФиксацияИстория" group="Мониторинг" table="_reg_FiksacijaIstorii" useFullTextIndex="false" visibleadminonly="false" registerType="Characteristics" HandlingWarnings="0" dateDependence="false">
+        <NsgMultipleObject Guid="50f5855e-3b81-4250-92da-357300f0a02d" type="NsgDataCharacteristics" editoraccess="Full" name="ФиксацияИстории" visible="true" description="ФиксацияИстория" group="Мониторинг" table="_reg_FiksacijaIstorii" useFullTextIndex="false" visibleadminonly="false" registerType="Characteristics" HandlingWarnings="0" dateDependence="true">
           <NsgLanguageString type="presentation">
             <presentation lang="(Default)" value="" />
           </NsgLanguageString>
@@ -2655,6 +2665,16 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="845fb94d-e155-41fd-9a80-c998a3ec6494" type="NsgDataDateTime" editoraccess="Full" name="Время" visible="true" description="Время" field="Vremja" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="47008960-7924-406f-9ddf-a879fc8cd3dc" type="NsgDataDateTime" editoraccess="Limited" name="Дата" visible="true" description="Дата документа" field="_Date" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="Дата документа" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="c84b69be-ce58-4eca-8bf8-9f497908f95e" type="NsgDataDateTime" editoraccess="Limited" name="КонецПериода" visible="true" description="Конец периода" field="_DateEnd" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
