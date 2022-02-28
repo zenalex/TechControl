@@ -1560,4 +1560,19 @@
       <NsgOwnerName>РегистрЗакрытиеСмены</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмены\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>b9e3f94b-ccb6-4ede-a669-1c557c3921a0</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмены\ФормаЭлемента.cs">
+      <NsgOwnerGuid>b9e3f94b-ccb6-4ede-a669-1c557c3921a0</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\ЗакрытиеСмены\ФормаЭлемента.resx">
+      <NsgOwnerGuid>b9e3f94b-ccb6-4ede-a669-1c557c3921a0</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
