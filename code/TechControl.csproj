@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.2.28.0</ProductVersion>
+    <ProductVersion>2022.3.1.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -1465,24 +1465,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления.NsgInit.cs">
-      <NsgOwnerGuid>1fffc539-794e-4975-a852-5a47ecffd5f1</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления</NsgOwnerName>
-      <DependentUpon>МониторингРегистрЗакрытиеСменыНакопления.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления.cs">
-      <NsgOwnerGuid>1fffc539-794e-4975-a852-5a47ecffd5f1</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления.Строка.NsgInit.cs">
-      <NsgOwnerGuid>1fffc539-794e-4975-a852-5a47ecffd5f1</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления</NsgOwnerName>
-      <DependentUpon>МониторингРегистрЗакрытиеСменыНакопления.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления.Строка.cs">
-      <NsgOwnerGuid>1fffc539-794e-4975-a852-5a47ecffd5f1</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления</NsgOwnerName>
-    </Compile>
     <Compile Include="Метаданные\Мониторинг\ОтчетЗакрытиеСмены\ОтчетЗакрытиеСмены.NsgInit.cs">
       <NsgOwnerGuid>fc456d0f-e0fb-4b78-b4b2-451fb6b420d0</NsgOwnerGuid>
       <NsgOwnerName>ОтчетЗакрытиеСмены</NsgOwnerName>
@@ -1514,51 +1496,6 @@
       <NsgOwnerGuid>b9e3f94b-ccb6-4ede-a669-1c557c3921a0</NsgOwnerGuid>
       <NsgOwnerName>ЗакрытиеСмены</NsgOwnerName>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления_1.NsgInit.cs">
-      <NsgOwnerGuid>308f3212-c03c-416f-a4b7-51b14bf13545</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления_1</NsgOwnerName>
-      <DependentUpon>МониторингРегистрЗакрытиеСменыНакопления_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления_1.cs">
-      <NsgOwnerGuid>308f3212-c03c-416f-a4b7-51b14bf13545</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления_1</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления_1.Строка.NsgInit.cs">
-      <NsgOwnerGuid>308f3212-c03c-416f-a4b7-51b14bf13545</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления_1</NsgOwnerName>
-      <DependentUpon>МониторингРегистрЗакрытиеСменыНакопления_1.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыНакопления_1.Строка.cs">
-      <NsgOwnerGuid>308f3212-c03c-416f-a4b7-51b14bf13545</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыНакопления_1</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыДвижения.NsgInit.cs">
-      <NsgOwnerGuid>6220b09b-386d-4ed2-aaa9-b2f37c2399c0</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыДвижения</NsgOwnerName>
-      <DependentUpon>МониторингРегистрЗакрытиеСменыДвижения.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыДвижения.cs">
-      <NsgOwnerGuid>6220b09b-386d-4ed2-aaa9-b2f37c2399c0</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыДвижения</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыДвижения.Строка.NsgInit.cs">
-      <NsgOwnerGuid>6220b09b-386d-4ed2-aaa9-b2f37c2399c0</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыДвижения</NsgOwnerName>
-      <DependentUpon>МониторингРегистрЗакрытиеСменыДвижения.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\МониторингРегистрЗакрытиеСменыДвижения.Строка.cs">
-      <NsgOwnerGuid>6220b09b-386d-4ed2-aaa9-b2f37c2399c0</NsgOwnerGuid>
-      <NsgOwnerName>МониторингРегистрЗакрытиеСменыДвижения</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\РегистрЗакрытиеСмены.NsgInit.cs">
-      <NsgOwnerGuid>25547e60-b3e0-45df-900e-1ab407fb308a</NsgOwnerGuid>
-      <NsgOwnerName>РегистрЗакрытиеСмены</NsgOwnerName>
-      <DependentUpon>РегистрЗакрытиеСмены.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\РегистрЗакрытиеСмены\РегистрЗакрытиеСмены.cs">
-      <NsgOwnerGuid>25547e60-b3e0-45df-900e-1ab407fb308a</NsgOwnerGuid>
-      <NsgOwnerName>РегистрЗакрытиеСмены</NsgOwnerName>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмены\ФормаЭлемента.Designer.cs">
@@ -1574,5 +1511,101 @@
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Тарифы\Тарифы.NsgInit.cs">
+      <NsgOwnerGuid>2dfe9156-8aa8-4b1c-a023-01d22594cc78</NsgOwnerGuid>
+      <NsgOwnerName>Тарифы</NsgOwnerName>
+      <DependentUpon>Тарифы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Тарифы\Тарифы.cs">
+      <NsgOwnerGuid>2dfe9156-8aa8-4b1c-a023-01d22594cc78</NsgOwnerGuid>
+      <NsgOwnerName>Тарифы</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТарифы.NsgInit.cs">
+      <NsgOwnerGuid>603b57bb-a4fb-4ffc-8120-83a40154b2fe</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТарифы</NsgOwnerName>
+      <DependentUpon>МониторингТехникаТарифы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТарифы.cs">
+      <NsgOwnerGuid>603b57bb-a4fb-4ffc-8120-83a40154b2fe</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТарифы</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТарифы.Строка.NsgInit.cs">
+      <NsgOwnerGuid>603b57bb-a4fb-4ffc-8120-83a40154b2fe</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТарифы</NsgOwnerName>
+      <DependentUpon>МониторингТехникаТарифы.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТарифы.Строка.cs">
+      <NsgOwnerGuid>603b57bb-a4fb-4ffc-8120-83a40154b2fe</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТарифы</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменНакопления.NsgInit.cs">
+      <NsgOwnerGuid>a92839c7-7766-4720-b758-d7a9db705754</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменНакопления</NsgOwnerName>
+      <DependentUpon>МониторингРегистрСменНакопления.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменНакопления.cs">
+      <NsgOwnerGuid>a92839c7-7766-4720-b758-d7a9db705754</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменНакопления.Строка.NsgInit.cs">
+      <NsgOwnerGuid>a92839c7-7766-4720-b758-d7a9db705754</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменНакопления</NsgOwnerName>
+      <DependentUpon>МониторингРегистрСменНакопления.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменНакопления.Строка.cs">
+      <NsgOwnerGuid>a92839c7-7766-4720-b758-d7a9db705754</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\РегистрСмен.NsgInit.cs">
+      <NsgOwnerGuid>1c279ec7-39ba-441f-ab93-ab3b7a1075f0</NsgOwnerGuid>
+      <NsgOwnerName>РегистрСмен</NsgOwnerName>
+      <DependentUpon>РегистрСмен.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\РегистрСмен.cs">
+      <NsgOwnerGuid>1c279ec7-39ba-441f-ab93-ab3b7a1075f0</NsgOwnerGuid>
+      <NsgOwnerName>РегистрСмен</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменНакопления_1.NsgInit.cs">
+      <NsgOwnerGuid>9093fba0-9bb6-49bf-902d-0f2b69f83298</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменНакопления_1</NsgOwnerName>
+      <DependentUpon>МониторингРегистрСменНакопления_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменНакопления_1.cs">
+      <NsgOwnerGuid>9093fba0-9bb6-49bf-902d-0f2b69f83298</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменНакопления_1.Строка.NsgInit.cs">
+      <NsgOwnerGuid>9093fba0-9bb6-49bf-902d-0f2b69f83298</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменНакопления_1</NsgOwnerName>
+      <DependentUpon>МониторингРегистрСменНакопления_1.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменНакопления_1.Строка.cs">
+      <NsgOwnerGuid>9093fba0-9bb6-49bf-902d-0f2b69f83298</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменДвижения.NsgInit.cs">
+      <NsgOwnerGuid>6ef34d43-0ca9-4814-b277-8776e98ebd8c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменДвижения</NsgOwnerName>
+      <DependentUpon>МониторингРегистрСменДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменДвижения.cs">
+      <NsgOwnerGuid>6ef34d43-0ca9-4814-b277-8776e98ebd8c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>6ef34d43-0ca9-4814-b277-8776e98ebd8c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменДвижения</NsgOwnerName>
+      <DependentUpon>МониторингРегистрСменДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрСмен\МониторингРегистрСменДвижения.Строка.cs">
+      <NsgOwnerGuid>6ef34d43-0ca9-4814-b277-8776e98ebd8c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрСменДвижения</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
