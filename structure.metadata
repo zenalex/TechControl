@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <NsgConfiguration version="2022.3.1.2" CodeLang="ru" name="TechControl" description="New Configuration" copyright="Unknown Developer ©  2011" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
     <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.3.1.2" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.3.1.2;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -1751,6 +1753,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="17a55261-7cb9-4d32-918d-73de98f13081" type="NsgDataTableReference" editoraccess="Full" name="Тарифы" visible="true" description="Тарифы" field="Tarify" index="None" subtype="Tables" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="_SystemTables" refname="МониторингТехникаТарифы">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -2305,6 +2312,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="a71926e2-285e-4282-b629-fd8cdca0dc20" type="NsgDataTypedReference" editoraccess="Full" name="Руководитель" visible="true" description="Руководитель" field="Rukovoditel" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Сотрудники">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -2319,6 +2331,7 @@
             <container name="РежимРаботы" />
             <container name="Договор" />
             <container name="Включен" />
+            <container name="Руководитель" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -2501,12 +2514,18 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="50b1c53e-1d48-4e5f-a7e7-45fc7752c2ea" type="NsgDataTypedReference" editoraccess="Full" name="Тариф" visible="true" description="Тариф" field="Tarif" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Тарифы">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
             <container name="Комментарий" />
             <container name="Объект" />
             <container name="Ответственный" />
+            <container name="Тариф" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
@@ -5722,6 +5741,139 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers />
+        </NsgMultipleObject>
+        <NsgMultipleObject Guid="2dfe9156-8aa8-4b1c-a023-01d22594cc78" type="NsgDataDictionary" editoraccess="Full" name="Тарифы" visible="true" description="Тарифы" group="Мониторинг" table="_dic_Tarify" searchfield="Наименование" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="false">
+          <NsgLanguageString type="presentation">
+            <presentation lang="(Default)" value="" />
+          </NsgLanguageString>
+          <NsgLanguageString type="valuemask">
+            <presentation lang="(Default)" value="{Наименование}" />
+          </NsgLanguageString>
+          <ObjectList>
+            <NsgSimpleObject Guid="927763d1-a410-4222-ac15-28c4d7edec73" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="4eda7990-22b6-4339-a3e1-121f08e3693d" type="NsgDataInteger" editoraccess="Hidden" name="Автоинкремент" visible="true" description="Автоинкремент" field="_AutoInc" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="c8614696-b650-4a3d-929c-58aabc5e067a" type="NsgDataBoolean" editoraccess="Limited" name="ЭтоГруппа" visible="true" description="Это группа" field="_IsFolder" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="24369e2a-519f-4585-a60c-15c07ad8eb66" type="NsgDataGuid" editoraccess="Limited" name="ИдентификаторРодителя" visible="true" description="Идентификатор родителя" field="_ParentID" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="6e35cf7c-9e9a-470e-88cf-cb7da5265879" type="NsgDataByte" editoraccess="Limited" name="Уровень" visible="true" description="Уровень" field="_Level" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="f483246f-d0cd-41bd-b044-62d365933314" type="NsgDataString" editoraccess="Limited" name="ПрефиксКода" visible="true" description="Префикс кода" field="_CodePrefix" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="10">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="8184d438-7acb-4c2e-b4e0-b90005fd338c" type="NsgDataInteger" editoraccess="Limited" name="НомерКода" visible="true" description="Номер кода" field="_CodeNumber" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="788a86cf-45e0-4a06-847a-655ebeaab4ce" type="NsgDataVirtualObject" editoraccess="Limited" name="Код" visible="true" description="Код элемента справочника" field="_Code" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+              <Fields>
+                <field name="ПрефиксКода" />
+                <field name="НомерКода" />
+              </Fields>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="fdebf411-3c2b-4810-b5d2-808566b4b742" type="NsgDataString" editoraccess="Full" name="Наименование" visible="true" description="Наименование элемента справочника" field="Naimenovanie" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="true" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="b71e8ff6-a139-4534-a7aa-efaa6f467785" type="NsgDataEnumReference" editoraccess="Limited" name="СостояниеДокумента" visible="true" description="Состояние документа" field="_State" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Сервис" refname="СостоянияОбъекта">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="90716f06-0c3f-4cb8-8de0-786b350a39c8" type="NsgDataFloat" editoraccess="Full" name="Стоимость" visible="true" description="Стоимость" field="Stoimost" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+          </ObjectList>
+          <Containers>
+            <container name="Наименование" />
+            <container name="Стоимость" />
+            <container name="ЭтоГруппа" />
+            <container name="ИдентификаторРодителя" />
+            <container name="Уровень" />
+            <container name="ПрефиксКода" />
+            <container name="НомерКода" />
+            <container name="СостояниеДокумента" />
+          </Containers>
+          <DataInterfaces />
+        </NsgMultipleObject>
+        <NsgMultipleObject Guid="603b57bb-a4fb-4ffc-8120-83a40154b2fe" type="NsgDataTable" editoraccess="Full" name="МониторингТехникаТарифы" visible="true" description="Мониторинг техника тарифы" group="_SystemTables" table="_tab_MonitoringTekhnikaT" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="TablePart" registerPeriod="None" registerPeriodCount="0">
+          <NsgLanguageString type="presentation">
+            <presentation lang="(Default)" value="" />
+          </NsgLanguageString>
+          <NsgLanguageString type="valuemask">
+            <presentation lang="(Default)" value="{Представление}" />
+          </NsgLanguageString>
+          <ObjectList>
+            <NsgSimpleObject Guid="d656778c-feac-46e2-9b77-4b02a004dd4c" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="07885b84-7e2a-486d-a9bc-f80453c17c11" type="NsgDataInteger" editoraccess="Hidden" name="Автоинкремент" visible="true" description="Автоинкремент" field="_AutoInc" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="d3f448cd-dc5f-4b94-b4bc-8a17347a682d" type="NsgDataUntypedReference" editoraccess="ReadOnly" name="Владелец" visible="true" description="Владелец" field="_Owner" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+              <NsgObjectsFilter filter_type="List">
+                <param name="Мониторинг.Техника" />
+              </NsgObjectsFilter>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="c7c04a0c-22d1-4405-a8a7-01fb9dbc92cd" type="NsgDataInteger" editoraccess="Hidden" name="НомерСтроки" visible="true" description="Номер строки" field="_RowNumber" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="b80431b4-0802-4312-906c-00b6611561b2" type="NsgDataTypedReference" editoraccess="Full" name="Тариф" visible="true" description="Тариф" field="Tarif" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Тарифы">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="1c42577f-81ec-4e05-a4fa-d7231174193a" type="NsgDataFloat" editoraccess="Full" name="Стоимость" visible="true" description="Стоимость" field="Stoimost" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="629b7fb0-7311-4ed1-9895-fd1fd5717a19" type="NsgDataBoolean" editoraccess="Full" name="ИспользоватьПоУмолчанию" visible="true" description="Использовать по умолчанию" field="IspolzovatPoUmolc" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+          </ObjectList>
+          <Containers>
+            <container name="Тариф" />
+            <container name="Стоимость" />
+            <container name="ИспользоватьПоУмолчанию" />
+          </Containers>
         </NsgMultipleObject>
       </ObjectList>
     </NsgMetaData>
