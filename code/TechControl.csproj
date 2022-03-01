@@ -1577,4 +1577,33 @@
       <NsgOwnerName>МониторингРегистрСменДвижения</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Тарифы\Тарифы.NsgInit.cs">
+      <NsgOwnerGuid>2dfe9156-8aa8-4b1c-a023-01d22594cc78</NsgOwnerGuid>
+      <NsgOwnerName>Тарифы</NsgOwnerName>
+      <DependentUpon>Тарифы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Тарифы\Тарифы.cs">
+      <NsgOwnerGuid>2dfe9156-8aa8-4b1c-a023-01d22594cc78</NsgOwnerGuid>
+      <NsgOwnerName>Тарифы</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТарифы.NsgInit.cs">
+      <NsgOwnerGuid>603b57bb-a4fb-4ffc-8120-83a40154b2fe</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТарифы</NsgOwnerName>
+      <DependentUpon>МониторингТехникаТарифы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТарифы.cs">
+      <NsgOwnerGuid>603b57bb-a4fb-4ffc-8120-83a40154b2fe</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТарифы</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТарифы.Строка.NsgInit.cs">
+      <NsgOwnerGuid>603b57bb-a4fb-4ffc-8120-83a40154b2fe</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТарифы</NsgOwnerName>
+      <DependentUpon>МониторингТехникаТарифы.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТарифы.Строка.cs">
+      <NsgOwnerGuid>603b57bb-a4fb-4ffc-8120-83a40154b2fe</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТарифы</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>
