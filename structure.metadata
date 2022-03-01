@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.2.28.1" CodeLang="ru" name="TechControl" description="New Configuration" copyright="Unknown Developer ©  2011" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.3.1.2" CodeLang="ru" name="TechControl" description="New Configuration" copyright="Unknown Developer ©  2011" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.2.28.1" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.2.28.1;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.3.1.2" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.3.1.2;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -2622,6 +2622,16 @@
             <presentation lang="(Default)" value="{Представление}" />
           </NsgLanguageString>
           <ObjectList>
+            <NsgSimpleObject Guid="47008960-7924-406f-9ddf-a879fc8cd3dc" type="NsgDataDateTime" editoraccess="Limited" name="Дата" visible="true" description="Дата документа" field="_Date" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="Дата документа" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="c84b69be-ce58-4eca-8bf8-9f497908f95e" type="NsgDataDateTime" editoraccess="Limited" name="КонецПериода" visible="true" description="Конец периода" field="_DateEnd" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
             <NsgSimpleObject Guid="fa9b6323-9425-4284-aec6-4367afeb2962" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
@@ -2667,16 +2677,6 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="845fb94d-e155-41fd-9a80-c998a3ec6494" type="NsgDataDateTime" editoraccess="Full" name="Время" visible="true" description="Время" field="Vremja" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="47008960-7924-406f-9ddf-a879fc8cd3dc" type="NsgDataDateTime" editoraccess="Limited" name="Дата" visible="true" description="Дата документа" field="_Date" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="Дата документа" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="c84b69be-ce58-4eca-8bf8-9f497908f95e" type="NsgDataDateTime" editoraccess="Limited" name="КонецПериода" visible="true" description="Конец периода" field="_DateEnd" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -5082,7 +5082,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="ce2cab2a-fd02-488d-80a7-75f6ce0645eb" type="NsgDataDateTime" editoraccess="Full" name="ДлительностьРаботы" visible="true" description="Длительность работы" field="DlitelnostRaboty" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+            <NsgSimpleObject Guid="223406fc-dfc8-4a64-b566-dd1974973168" type="NsgDataFloat" editoraccess="Full" name="ДлительностьРаботы" visible="true" description="Длительность работы" field="DlitelnostRaboty" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -5107,6 +5107,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="55558f1a-b11d-4785-802b-8c40ba014584" type="NsgDataFloat" editoraccess="Full" name="общийОбъемЗаправленногоТоплива" visible="true" description="общий объем заправленного топлива" field="obschiijObemZapra" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Техника" />
@@ -5116,6 +5121,7 @@
             <container name="НачальныйЗапасТоплива" />
             <container name="КонечныйЗапасТоплива" />
             <container name="КоличествоЗаправок" />
+            <container name="общийОбъемЗаправленногоТоплива" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="99c00b69-7ca5-4959-986a-a41da27b57d0" type="NsgDataDocument" editoraccess="Full" name="ОтработанноеВремяТехники" visible="true" description="Документ" group="Мониторинг" table="_doc_OtrabotannoeVremjaT" searchfield="_Code" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" NumberPeriod="None" HandleWithoutTransaction="False" usecommonjournal="true">
@@ -5155,7 +5161,7 @@
                 <field name="НомерКода" />
               </Fields>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="45c21cb9-ab67-4fa3-a030-0bedfd0b790a" type="NsgDataDateTime" editoraccess="Limited" name="ДатаДокумента" visible="true" description="Дата документа" field="_Date" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+            <NsgSimpleObject Guid="45c21cb9-ab67-4fa3-a030-0bedfd0b790a" type="NsgDataDateTime" editoraccess="Limited" name="ДатаДокумента" visible="true" description="Дата документа" field="_Date" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="Date">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="Дата документа" />
               </NsgLanguageString>
@@ -5182,11 +5188,6 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="1b3e2cae-792b-404f-8f65-85fefe0b373a" type="NsgDataTableReference" editoraccess="Full" name="Таблица" visible="true" description="Таблица" field="Tablica" index="None" subtype="Tables" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="_SystemTables" refname="МониторингОтработанноеВремяТехникиТаблица">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="41626a51-8f75-4f50-852d-9bf17a43ae1b" type="NsgDataForm" editoraccess="Full" name="ФормаСписка" visible="true" description="Форма списка" field="FormaSpiska" index="None" subtype="ListForm" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" class="TechControl.Метаданные.Мониторинг.ОтработанноеВремяТехникиФормаСписка">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -5256,7 +5257,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="e7ac1b8f-00c1-4177-9230-b3225df5de11" type="NsgDataDateTime" editoraccess="Full" name="ДлительностьРаботы" visible="true" description="Длительность работы" field="DlitelnostRaboty" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+            <NsgSimpleObject Guid="cb3e3ca1-93ab-46c5-94b7-1d059ca80efd" type="NsgDataFloat" editoraccess="Full" name="ДлительностьРаботы" visible="true" description="Длительность работы" field="DlitelnostRaboty" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -5267,6 +5268,11 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="668d0c9b-1969-4b35-aeda-47e078186904" type="NsgDataDateTime" editoraccess="Full" name="ДатаНачалаРаботы" visible="true" description="Дата начала работы" field="DataNachalaRaboty" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="03a3b1e0-d19a-4e2c-ad05-dacc40fdd4c8" type="NsgDataFloat" editoraccess="Full" name="общийОбъемЗаправленногоТоплива" visible="true" description="общий объем заправленного топлива" field="obschiijObemZapra" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -5325,17 +5331,22 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="e7ac1b8f-00c1-4177-9230-b3225df5de11" type="NsgDataDateTime" editoraccess="Full" name="ДлительностьРаботы" visible="true" description="Длительность работы" field="DlitelnostRaboty" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
             <NsgSimpleObject Guid="ff8b0576-2f85-4145-a5fd-44da83b31afa" type="NsgDataDateTime" editoraccess="Full" name="ДатаОкончанияРаботы" visible="true" description="Дата окончания работы" field="DataOkonchanijaRa" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="668d0c9b-1969-4b35-aeda-47e078186904" type="NsgDataDateTime" editoraccess="Full" name="ДатаНачалаРаботы" visible="true" description="Дата начала работы" field="DataNachalaRaboty" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="cb3e3ca1-93ab-46c5-94b7-1d059ca80efd" type="NsgDataFloat" editoraccess="Full" name="ДлительностьРаботы" visible="true" description="Длительность работы" field="DlitelnostRaboty" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="03a3b1e0-d19a-4e2c-ad05-dacc40fdd4c8" type="NsgDataFloat" editoraccess="Full" name="общийОбъемЗаправленногоТоплива" visible="true" description="общий объем заправленного топлива" field="obschiijObemZapra" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
