@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.3.1.3</ProductVersion>
+    <ProductVersion>2022.3.1.4</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -1604,6 +1604,26 @@
     <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТарифы.Строка.cs">
       <NsgOwnerGuid>603b57bb-a4fb-4ffc-8120-83a40154b2fe</NsgOwnerGuid>
       <NsgOwnerName>МониторингТехникаТарифы</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифы.NsgInit.cs">
+      <NsgOwnerGuid>cccd9497-6899-48ef-beac-258402bb32a6</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаТарифы</NsgOwnerName>
+      <DependentUpon>МониторингОбъектыТаблицаТарифы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифы.cs">
+      <NsgOwnerGuid>cccd9497-6899-48ef-beac-258402bb32a6</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаТарифы</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифы.Строка.NsgInit.cs">
+      <NsgOwnerGuid>cccd9497-6899-48ef-beac-258402bb32a6</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаТарифы</NsgOwnerName>
+      <DependentUpon>МониторингОбъектыТаблицаТарифы.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифы.Строка.cs">
+      <NsgOwnerGuid>cccd9497-6899-48ef-beac-258402bb32a6</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаТарифы</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
