@@ -1626,4 +1626,28 @@
       <NsgOwnerName>МониторингОбъектыТаблицаТарифы</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ОтчетАрендаПоМесяцам\ОтчетАрендаПоМесяцам.NsgInit.cs">
+      <NsgOwnerGuid>f5143a1f-0bda-424a-8c42-8d68d2d769e0</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетАрендаПоМесяцам</NsgOwnerName>
+      <DependentUpon>ОтчетАрендаПоМесяцам.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтчетАрендаПоМесяцам\ОтчетАрендаПоМесяцам.cs">
+      <NsgOwnerGuid>f5143a1f-0bda-424a-8c42-8d68d2d769e0</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетАрендаПоМесяцам</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтчетАрендаПоМесяцам\Форма.Designer.cs">
+      <NsgOwnerGuid>f5143a1f-0bda-424a-8c42-8d68d2d769e0</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ОтчетАрендаПоМесяцам\Форма.cs">
+      <NsgOwnerGuid>f5143a1f-0bda-424a-8c42-8d68d2d769e0</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\ОтчетАрендаПоМесяцам\Форма.resx">
+      <NsgOwnerGuid>f5143a1f-0bda-424a-8c42-8d68d2d769e0</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
