@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
 using TechControl.Метаданные._SystemTables;
+using System.Linq;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -35,6 +36,9 @@ namespace TechControl.Метаданные.Мониторинг
             nsgVisualMultipleObject.Data.BeginUpdateData();
             nsgVisualMultipleObject.Data.MemoryTable.Clear();
             string ЗАКАЗЧИК = РегистрСмен.Names.Объект + '.' + Объекты.Names.Заказчик;
+            var ov = РегистрСмен.Новый().GetCirculate(nsgPeriodPicker1.Period.Begin, nsgPeriodPicker1.Period.End, NsgSoft.Common.NsgPeriod.Day, null,
+                NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit,
+                РегистрСмен.Names.Владелец);
             foreach (var i in all)
             {
                 //foreach (var j in i.Таблица.Rows)
@@ -60,7 +64,9 @@ namespace TechControl.Метаданные.Мониторинг
                     row[Итого_].Value = тариф[Тарифы.Names.Стоимость].ToDecimal() * i[РегистрСмен.Names.ОтработанноеВремя].ToDecimal();
                     for (int day = 1; day <= 31; day++)
                     {
-                        row[$"{day}"].Value = 0;
+                        var vlR = ov.Rows.FirstOrDefault(z => z[РегистрСмен.Names.Владелец].ToReferent() == вл &&
+                            z[РегистрСмен.Names.ДатаДокумента].ToDateTime().Day == day);
+                        row[$"{day}"].Value = vlR?[РегистрСмен.Names.ОтработанноеВремя].Value ?? 0;
                     }
                     //row[СтоимостьАрендыИтого_].Value = 
                     row.Post();
