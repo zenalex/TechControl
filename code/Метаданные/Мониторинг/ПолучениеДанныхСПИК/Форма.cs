@@ -1,27 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Newtonsoft.Json;
+using NsgSoft.Common;
 using NsgSoft.Database;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 using TechControl.ServiceReferenceControllerStistics;
 using TechControl.ServiceReferenceDataOnline;
 using TechControl.ServiceReferenceDataOnlineSensors;
+using TechControl.ServiceReferenceFDStat;
+using TechControl.ServiceReferenceMotorModes;
 using TechControl.ServiceReferenceTrackPeriods;
 using TechControl.ServiceReferenceUnitsSpic;
 using TechControl.ServiceReferenceValidationNavigation;
-using TechControl.Метаданные._SystemTables;
-using TechControl.ServiceReferenceMotorModes;
-using TechControl.ServiceReferenceFDStat;
-using NsgSoft.Common;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -81,184 +75,6 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 listUnitID.Add(unit.UnitId);
                 unitIDName.Add(unit.UnitId, unit.Name);
-            }
-
-            Dictionary<int, List<SpicFuelingDefuelingStatistics>> idStatisticsFuelDefuel = new Dictionary<int, List<SpicFuelingDefuelingStatistics>>();
-            Dictionary<int, List<SpicMotorModesStatistics>> idStatisticsMotorModes = new Dictionary<int, List<SpicMotorModesStatistics>>();
-
-            var date = nsgPeriodPicker1.Period.Begin.Date;
-
-            while (date <= NsgService.EndOfDay(nsgPeriodPicker1.Period.End))
-            {
-                var cmpОтработанноеВремя = new NsgCompare().Add(ОтработанноеВремяТехники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
-                cmpОтработанноеВремя.Add(ОтработанноеВремяТехники.Names.ДатаДокумента, date.Date, NsgComparison.GreaterOrEqual);
-                cmpОтработанноеВремя.Add(ОтработанноеВремяТехники.Names.ДатаДокумента, NsgService.EndOfDay(date), NsgComparison.LessOrEqual);
-                var отработанноеВремя = ОтработанноеВремяТехники.Новый().FindAll(cmpОтработанноеВремя);
-                bool такоеВремяЕсть = false;
-
-                if (отработанноеВремя.Length > 0)
-                {
-                    такоеВремяЕсть = true;
-                }
-
-                var докОтработанноеВремяТехники = ОтработанноеВремяТехники.Новый();
-                if (!такоеВремяЕсть)
-                {
-                    докОтработанноеВремяТехники.New();
-                    докОтработанноеВремяТехники.ДатаДокумента = date;
-                }
-                else
-                {
-                    докОтработанноеВремяТехники = отработанноеВремя[0];
-                    докОтработанноеВремяТехники.Edit();
-                }
-
-                foreach (var id in listUnitID)
-                {
-                    //создаем запрос сессии статистик
-                    var statisticsSessionRequest = new SpicStatisticsSessionRequest
-                    {
-                        Period = new ServiceReferenceControllerStistics.SpicDateTimeRange
-                        {
-                            Begin = date,
-                            End = NsgService.EndOfDay(date)
-                        },
-
-                        TargetObject = new SpicObjectIdentity
-                        {
-                            ObjectTypeId = ObjectTypeId.Vehicle,
-                            ObjectId = id
-                        }
-                    };
-
-                    //отправляем запрос и получаем сессию
-                    var statisticsSession = _statisticsClient.StartStatisticsSession(statisticsSessionRequest).Session;
-                    // на самом деле, это один и тот же контракт, но его нужно пересоздать  
-                    var fuelDefuelStatisticsSession = new ServiceReferenceFDStat.SpicStatisticsSession
-                    {
-                        StatisticsSessionId = statisticsSession.StatisticsSessionId,
-                    };
-                    // добавляем запрос на построение статистики  
-                    _fuelDefuelStatisticClient.AddStatisticsRequest(fuelDefuelStatisticsSession);
-
-                    var motorModesStatisticsSession = new ServiceReferenceMotorModes.SpicStatisticsSession
-                    {
-                        StatisticsSessionId = statisticsSession.StatisticsSessionId,
-                    };
-                    _motorModesClient.AddStatisticsRequest(motorModesStatisticsSession);
-
-                    // запускаем построение  
-                    _statisticsClient.StartBuild(statisticsSession);
-
-                    var statisticsListFuelDefuel = new List<SpicFuelingDefuelingStatistics>();
-                    SpicFuelingDefuelingStatisticsResult statisticsResponseFuelDefuel;
-
-                    var statisticsListMotorModes = new List<SpicMotorModesStatistics>();
-                    SpicMotorModesStatisticsResult statisticsResponseMotorModes;
-
-                    // выполняем, пока не получим последнюю порцию статистик  
-                    do
-                    {
-                        // ждем, пока порция статистик построится  
-                        do
-                        {
-                            statisticsResponseFuelDefuel = _fuelDefuelStatisticClient.GetStatistics(fuelDefuelStatisticsSession);
-                            statisticsResponseMotorModes = _motorModesClient.GetStatistics(motorModesStatisticsSession);
-                        }
-                        while (statisticsResponseFuelDefuel.ChunkInfo.Status.Value == "Processing" && statisticsResponseMotorModes.ChunkInfo.Status.Value == "Processing");
-
-                        var fuelDefuel = statisticsResponseFuelDefuel.Statistics;
-                        var motorModes = statisticsResponseMotorModes.Statistics;
-
-                        if (fuelDefuel == null || motorModes == null)
-                            break;
-
-                        DateTime beginDate = new DateTime();
-                        DateTime endDate = new DateTime();
-                        foreach (var period in motorModes.Periods)
-                        {
-                            if (period.IsIgnitionOn)
-                            {
-                                beginDate = period.Period.Begin;
-                                break;
-                            }
-                        }
-
-                        var length = motorModes.Periods.Length;
-                        for (var i = 1; i <= length; i++)
-                        {
-                            if (!motorModes.Periods[length - i].IsIgnitionOn)
-                            {
-                                endDate = motorModes.Periods[length - i].Period.End;
-                                break;
-                            }
-                        }
-
-                        var cmpTech = new NsgCompare().Add(Техника.Names.IdСкаут, id);
-                        cmpTech.Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
-                        var tech = Техника.Новый().FindAll(cmpTech);
-                        if (tech.Length > 0)
-                        {
-                            var beginFuelVolumeL = fuelDefuel.BeginFuelVolumeL;
-                            var endFuelVolumeL = fuelDefuel.EndFuelVolumeL;
-                            var totalVolumeOfFuelFilled = fuelDefuel.DefuelingTotalVolumeL;
-                            var durationOfWork = (motorModes.EngineActiveWorkHours + motorModes.EngineIdleHours).TotalHours;
-
-                            if (такоеВремяЕсть)
-                            {
-                                докОтработанноеВремяТехники.Таблица.DeleteAll();
-                            }
-
-                            var row = докОтработанноеВремяТехники.Таблица.NewRow();
-                            row.Техника = tech[0];
-
-                            if (beginFuelVolumeL != null)
-                                row.НачальныйЗапасТоплива = (decimal)fuelDefuel.BeginFuelVolumeL;
-                            else
-                                row.НачальныйЗапасТоплива = 0;
-
-                            if (endFuelVolumeL != null)
-                                row.КонечныйЗапасТоплива = (decimal)fuelDefuel.EndFuelVolumeL;
-                            else
-                                row.КонечныйЗапасТоплива = 0;
-
-                            if (totalVolumeOfFuelFilled != null)
-                                row.общийОбъемЗаправленногоТоплива = (decimal)totalVolumeOfFuelFilled;
-                            else
-                                row.общийОбъемЗаправленногоТоплива = 0;
-
-                            row.КоличествоЗаправок = fuelDefuel.DefuelingCount;
-                            row.ДлительностьРаботы = (decimal)durationOfWork;
-                            row.ДатаНачалаРаботы = beginDate;
-                            row.ДатаОкончанияРаботы = endDate;
-                            row.Post();
-                        }
-
-                        statisticsListFuelDefuel.Add(statisticsResponseFuelDefuel.Statistics);
-
-                        statisticsListMotorModes.Add(statisticsResponseMotorModes.Statistics);
-
-                        // заказываем следующую порцию статистики  
-                        _statisticsClient.BuildNextChunk(statisticsSession);
-                    }
-                    while (!statisticsResponseFuelDefuel.ChunkInfo.IsFinalChunk && !statisticsResponseMotorModes.ChunkInfo.IsFinalChunk);
-
-                    if (!idStatisticsFuelDefuel.ContainsKey(id))
-                    {
-                        idStatisticsFuelDefuel.Add(id, statisticsListFuelDefuel);
-                    }
-
-                    if (!idStatisticsMotorModes.ContainsKey(id))
-                    {
-                        idStatisticsMotorModes.Add(id, statisticsListMotorModes);
-                    }
-
-                    // закрываем сессию построения статистик  
-                    _statisticsClient.StopStatisticsSession(statisticsSession);
-                }
-                докОтработанноеВремяТехники.Post();
-                докОтработанноеВремяТехники.Handle();
-                date = new DateTime(date.Year, date.Month, date.AddDays(1).Day);
             }
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
@@ -373,6 +189,213 @@ namespace TechControl.Метаданные.Мониторинг
 
                 рег.AddMovement();
                 рег.Post();
+            }
+
+            var date = nsgPeriodPicker1.Period.Begin.Date;
+
+            Dictionary<DateTime, Dictionary<string, List<SpicFuelingDefuelingStatistics>>> dayStatisticFuelDefuel = new Dictionary<DateTime, Dictionary<string, List<SpicFuelingDefuelingStatistics>>>();
+            Dictionary<DateTime, Dictionary<string, List<SpicMotorModesStatistics>>> dayStatisticMotorModes = new Dictionary<DateTime, Dictionary<string, List<SpicMotorModesStatistics>>>();
+            Dictionary<string, List<SpicFuelingDefuelingStatistics>> statisticFuelDefuel = new Dictionary<string, List<SpicFuelingDefuelingStatistics>>();
+            Dictionary<string, List<SpicMotorModesStatistics>> statisticMotorModes = new Dictionary<string, List<SpicMotorModesStatistics>>();
+
+            while (date <= NsgService.EndOfDay(nsgPeriodPicker1.Period.End))
+            {                
+                var cmpОтработанноеВремя = new NsgCompare().Add(ОтработанноеВремяТехники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+                cmpОтработанноеВремя.Add(ОтработанноеВремяТехники.Names.ДатаДокумента, date.Date, NsgComparison.GreaterOrEqual);
+                cmpОтработанноеВремя.Add(ОтработанноеВремяТехники.Names.ДатаДокумента, NsgService.EndOfDay(date), NsgComparison.LessOrEqual);
+                var отработанноеВремя = ОтработанноеВремяТехники.Новый().FindAll(cmpОтработанноеВремя);
+                bool такоеВремяЕсть = false;
+
+                if (отработанноеВремя.Length > 0)
+                {
+                    такоеВремяЕсть = true;
+                }
+
+                var докОтработанноеВремяТехники = ОтработанноеВремяТехники.Новый();
+                if (!такоеВремяЕсть)
+                {
+                    докОтработанноеВремяТехники.New();
+                    докОтработанноеВремяТехники.ДатаДокумента = date;
+                }
+                else
+                {
+                    докОтработанноеВремяТехники = отработанноеВремя[0];
+                    докОтработанноеВремяТехники.Edit();
+                    докОтработанноеВремяТехники.Таблица.DeleteAll();
+                }
+
+                try
+                {
+                    foreach (var id in unitIDName)
+                    {
+                        NsgSettings.MainForm.ShowMessage($"запрос статистики {id}") ;
+                        //создаем запрос сессии статистик
+                        var statisticsSessionRequest = new SpicStatisticsSessionRequest
+                        {
+                            Period = new ServiceReferenceControllerStistics.SpicDateTimeRange
+                            {
+                                Begin = date,
+                                End = NsgService.EndOfDay(date)
+                            },
+
+                            TargetObject = new SpicObjectIdentity
+                            {
+                                ObjectTypeId = ObjectTypeId.Vehicle,
+                                ObjectId = id.Key
+                            }
+                        };
+
+                        //отправляем запрос и получаем сессию
+                        var statisticsSession = _statisticsClient.StartStatisticsSession(statisticsSessionRequest).Session;
+                        // на самом деле, это один и тот же контракт, но его нужно пересоздать  
+                        var fuelDefuelStatisticsSession = new ServiceReferenceFDStat.SpicStatisticsSession
+                        {
+                            StatisticsSessionId = statisticsSession.StatisticsSessionId,
+                        };
+                        // добавляем запрос на построение статистики  
+                        _fuelDefuelStatisticClient.AddStatisticsRequest(fuelDefuelStatisticsSession);
+
+                        var motorModesStatisticsSession = new ServiceReferenceMotorModes.SpicStatisticsSession
+                        {
+                            StatisticsSessionId = statisticsSession.StatisticsSessionId,
+                        };
+                        _motorModesClient.AddStatisticsRequest(motorModesStatisticsSession);
+
+                        // запускаем построение  
+                        _statisticsClient.StartBuild(statisticsSession);
+
+                        var statisticsListFuelDefuel = new List<SpicFuelingDefuelingStatistics>();
+                        SpicFuelingDefuelingStatisticsResult statisticsResponseFuelDefuel;
+
+                        var statisticsListMotorModes = new List<SpicMotorModesStatistics>();
+                        SpicMotorModesStatisticsResult statisticsResponseMotorModes;
+
+                        // выполняем, пока не получим последнюю порцию статистик  
+                        do
+                        {
+                            // ждем, пока порция статистик построится  
+                            do
+                            {
+                                statisticsResponseFuelDefuel = _fuelDefuelStatisticClient.GetStatistics(fuelDefuelStatisticsSession);
+                                statisticsResponseMotorModes = _motorModesClient.GetStatistics(motorModesStatisticsSession);
+
+                                var fuelDefuel = statisticsResponseFuelDefuel.Statistics;
+                                var motorModes = statisticsResponseMotorModes.Statistics;
+
+                                double? beginFuelVolumeL = 0;
+                                double? endFuelVolumeL = 0;
+                                double? totalVolumeOfFuelFilled = 0;
+                                double countFueling = 0;
+
+                                var cmpTech = new NsgCompare().Add(Техника.Names.IdСкаут, id.Key);
+                                cmpTech.Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+                                var tech = Техника.Новый().FindAll(cmpTech);
+
+                                if (tech.Length > 0)
+                                {
+                                    DateTime beginDate = new DateTime();
+                                    DateTime endDate = new DateTime();
+                                    double durationOfWork = 0;
+                                    if (motorModes != null)
+                                    {
+                                        foreach (var period in motorModes.Periods)
+                                        {
+                                            if (period.IsIgnitionOn)
+                                            {
+                                                beginDate = period.Period.Begin;
+                                                break;
+                                            }
+                                        }
+
+                                        var length = motorModes.Periods.Length;
+                                        for (var i = 1; i <= length; i++)
+                                        {
+                                            if (motorModes.Periods[length - i].IsIgnitionOn)
+                                            {
+                                                endDate = motorModes.Periods[length - i].Period.End;
+                                                break;
+                                            }
+                                        }
+
+                                        durationOfWork = motorModes.EngineOnHours.TotalHours;
+                                    }
+
+                                    if (fuelDefuel != null)
+                                    {
+                                        if (tech.Length > 0)
+                                        {
+                                            beginFuelVolumeL = fuelDefuel.BeginFuelVolumeL;
+                                            endFuelVolumeL = fuelDefuel.EndFuelVolumeL;
+                                            totalVolumeOfFuelFilled = fuelDefuel.FuelingTotalVolumeL;
+                                            countFueling = fuelDefuel.FuelingCount;
+                                        }
+                                    }
+
+                                    if (fuelDefuel != null || motorModes != null)
+                                    {
+                                        var row = докОтработанноеВремяТехники.Таблица.NewRow();
+                                        row.Техника = tech[0];
+                                        row.НачальныйЗапасТоплива = (decimal)(beginFuelVolumeL == null ? 0 : beginFuelVolumeL);
+                                        row.КонечныйЗапасТоплива = (decimal)(endFuelVolumeL == null ? 0 : endFuelVolumeL);
+                                        row.общийОбъемЗаправленногоТоплива = (decimal)(totalVolumeOfFuelFilled == null ? 0 : totalVolumeOfFuelFilled);
+                                        row.КоличествоЗаправок = (decimal)countFueling;
+                                        row.ДлительностьРаботы = (decimal)durationOfWork;
+                                        row.ДатаНачалаРаботы = beginDate;
+                                        row.ДатаОкончанияРаботы = endDate;
+                                        row.Post();
+                                    }
+                                }
+                                else
+                                {
+                                    NsgSettings.MainForm.ShowMessage("Техника не найдена");
+                                }
+                            }
+                            while (statisticsResponseFuelDefuel.ChunkInfo.Status.Value == "Processing" && statisticsResponseMotorModes.ChunkInfo.Status.Value == "Processing");
+
+                            if (statisticsResponseFuelDefuel.Statistics != null)
+                                statisticsListFuelDefuel.Add(statisticsResponseFuelDefuel.Statistics);
+                            if (statisticsResponseMotorModes.Statistics != null)
+                                statisticsListMotorModes.Add(statisticsResponseMotorModes.Statistics);
+                                //    break;
+
+                                // заказываем следующую порцию статистики  
+                                _statisticsClient.BuildNextChunk(statisticsSession);
+                        }
+                        while (!statisticsResponseFuelDefuel.ChunkInfo.IsFinalChunk && !statisticsResponseMotorModes.ChunkInfo.IsFinalChunk);
+
+                        if (!statisticFuelDefuel.ContainsKey(id.Value))
+                            statisticFuelDefuel.Add(id.Value, statisticsListFuelDefuel);
+                        else
+                            statisticFuelDefuel[id.Value] = statisticsListFuelDefuel;
+
+                        if (!statisticMotorModes.ContainsKey(id.Value))
+                            statisticMotorModes.Add(id.Value, statisticsListMotorModes);
+                        else
+                            statisticMotorModes[id.Value] = statisticsListMotorModes;
+
+                        // закрываем сессию построения статистик  
+                        _statisticsClient.StopStatisticsSession(statisticsSession);
+                    }
+
+                    if (!dayStatisticFuelDefuel.ContainsKey(date))
+                        dayStatisticFuelDefuel.Add(date, statisticFuelDefuel);
+                    else
+                        dayStatisticFuelDefuel[date] = statisticFuelDefuel;
+
+                    if (!dayStatisticMotorModes.ContainsKey(date))
+                        dayStatisticMotorModes.Add(date, statisticMotorModes);
+                    else
+                        dayStatisticMotorModes[date] = statisticMotorModes;
+
+                    докОтработанноеВремяТехники.Post();
+                    докОтработанноеВремяТехники.Handle();
+                }
+                catch (Exception ee)
+                {
+                    NsgSettings.MainForm.ShowMessage("Ошибка " + ee);
+                    докОтработанноеВремяТехники.Cancel();
+                }
+                date = new DateTime(date.Year, date.Month, date.AddDays(1).Day);
             }
         }
 
