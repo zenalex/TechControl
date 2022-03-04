@@ -355,7 +355,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource2);
             this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource3);
             this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource4);
-            this.nsgReport1.ReportGuid = "70dd213c2d1d4b419c53e501417bb04b";
+            this.nsgReport1.ReportGuid = "77fca2c12a5446e6baaa8ce8c71eb602";
             this.nsgReport1.ReportLoaded = true;
             this.nsgReport1.ReportName = "Отчет";
             this.nsgReport1.ReportSource = resources.GetString("nsgReport1.ReportSource");

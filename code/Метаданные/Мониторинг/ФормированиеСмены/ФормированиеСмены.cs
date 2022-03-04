@@ -25,6 +25,25 @@ namespace TechControl.Метаданные.Мониторинг
         #region Методы
         protected override bool Handling()
         {
+            List<Техника> t = new List<Техника>();
+            bool error = false;
+            StringBuilder ts = new StringBuilder();
+            foreach (var i in this.Таблица.Rows)
+            {
+                if (t.Contains(i.Техника))
+                {
+                    error = true;
+                    ts.Append('\n' + i.Техника.ToString());
+                }
+                t.Add(i.Техника);
+            }
+            if (error)
+            {
+                NsgSettings.MainForm.ShowMessage($"Техника не должна встречаться более одного раза:" + ts.ToString(),
+                    System.Windows.Forms.MessageBoxIcon.Error);
+                return false;
+            }
+
             //Get rest по ФиксацияИстории на дату документа - тик. Оттуда берем время работы. Если статус в работе не менялся в ФиксацияИстории пишем старое время.
             //в РегистрСмен пишем время в работе 
             var рег = ФиксацияИстории.Новый();
@@ -47,7 +66,9 @@ namespace TechControl.Метаданные.Мониторинг
                     if (предСтатусТехники == СтатусТехники.ВРаботе)
                     {
                         var предВремя = рег.Время;
-                        рег.Время = i.Время;
+                        рег.Время = i.Время.Date == NsgService.MinDate ?
+                            this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date)) :
+                            i.Время;
                         регСмены.Объект = this.Объект;
                         регСмены.Сотрудник = i.Сотрудник;
                         регСмены.Техника = i.Техника;
@@ -59,7 +80,9 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 else
                 {
-                    рег.Время = i.Время;
+                    рег.Время = i.Время.Date == NsgService.MinDate ?
+                        this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date)) :
+                        i.Время;
                 }
                 рег.AddMovement();
             }
