@@ -42,7 +42,7 @@ namespace TechControl.Метаданные.Мониторинг
             dims.Remove(Время_.Caption);
 
             var рс = РегистрСмен.Новый();
-            var all = рс.GetCirculate(nsgPeriodPicker1.Period.Begin, nsgPeriodPicker1.Period.End, NsgSoft.Common.NsgPeriod.Day, null,
+            var all = рс.GetCirculate(nsgPeriodPicker1.Period.Begin, nsgPeriodPicker1.Period.End, NsgSoft.Common.NsgPeriod.Day, nsgObjectFilter1.Compare,
                 NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit, new[] { РегистрСмен.Names.Объект },
                 dims.ToArray());
             vmoГруппы.Data.BeginUpdateData();
