@@ -36,8 +36,8 @@ namespace TechControl.Метаданные.Мониторинг
             //var all = рс.FindAll(new NsgCompare());
             string ЗАКАЗЧИК = РегистрСмен.Names.Объект + '.' + Объекты.Names.Заказчик;
             var dims = nsgGroupsList1.GetAllItems();
-            dims.Add(РегистрСмен.Names.Владелец);
-            dims.Add(РегистрСмен.Names.Техника);
+            dims.Add(ФиксацияИстории.Names.Владелец);
+            dims.Add(ФиксацияИстории.Names.Техника);
             dims.Remove(Арендатор_.Caption);
             dims.Remove(Время_.Caption);
 
@@ -45,6 +45,13 @@ namespace TechControl.Метаданные.Мониторинг
             var all = рс.GetCirculate(nsgPeriodPicker1.Period.Begin, nsgPeriodPicker1.Period.End, NsgSoft.Common.NsgPeriod.Day, nsgObjectFilter1.Compare,
                 NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit, new[] { РегистрСмен.Names.Объект },
                 dims.ToArray());
+            //var рс = ФиксацияИстории.Новый();
+            //var all = рс.GetRests(nsgPeriodPicker1.Period.End, nsgObjectFilter1.Compare,
+            //    new List<string> { ФиксацияИстории.Names.Объект },
+            //    dims.ToArray());
+            //var all = рс.GetCirculate(nsgPeriodPicker1.Period.Begin, nsgPeriodPicker1.Period.End, NsgSoft.Common.NsgPeriod.Day, nsgObjectFilter1.Compare,
+            //    NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit, new[] { ФиксацияИстории.Names.Объект },
+            //    dims.ToArray());
             vmoГруппы.Data.BeginUpdateData();
             vmoГруппы.Data.MemoryTable.Clear();
             nsgVisualMultipleObject.Data.BeginUpdateData();
@@ -65,6 +72,9 @@ namespace TechControl.Метаданные.Мониторинг
                     //row[СтоимостьВЧас_].Value =  i[ФормированиеСмены.Names.Тариф + '.' + Тарифы.Names.Стоимость].Value;
                     //row[Итого_].Value = i[ФормированиеСмены.Names.Тариф + '.' + Тарифы.Names.Стоимость].Value;
                     ////row[СтоимостьАрендыИтого_].Value = null;
+                    //var fnd = фи.GetRests(new NsgCompare()
+                    //    .Add(ФиксацияИстории.Names.Владелец, i[РегистрСмен.Names.Владелец].Value)
+                    //    .Add(ФиксацияИстории.Names.Техника, i[РегистрСмен.Names.Техника].Value));
                     DateTime dateTime = i[NsgSoft.Common.NsgDataFixedFields._Period].ToDateTime();
                     ФормированиеСмены вл = i[РегистрСмен.Names.Владелец].ToReferent() as ФормированиеСмены;
                     Тарифы тариф = вл[ФормированиеСмены.Names.Тариф].ToReferent() as Тарифы;
