@@ -74,7 +74,8 @@ namespace TechControl.Метаданные.Мониторинг
                     row[Наименование_].Value = i[РегистрСмен.Names.Техника + '.' + Техника.Names.Наименование].Value;
                     row[ГНомер_].Value = i[РегистрСмен.Names.Техника + '.' + Техника.Names.ГосНомер].Value;
                     row[СтоимостьВЧас_].Value = тариф[Тарифы.Names.Стоимость].Value;
-                    row[Время_].Value = new NsgDateTimePeriod(NsgService.BeginOfMonth(dateTime.Date), NsgService.EndOfMonth(dateTime.Date)).ToString();
+                    row[Время_].Value = NsgService.BeginOfMonth(dateTime);
+                    row[ВремяСтрока_].Value = new NsgDateTimePeriod(NsgService.BeginOfMonth(dateTime), NsgService.EndOfMonth(dateTime)).ToString();
                     decimal itogo = 0;
                     decimal stArItogo = 0;
                     for (int day = 1; day <= 31; day++)
