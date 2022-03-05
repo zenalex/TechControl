@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.3.1.4</ProductVersion>
+    <ProductVersion>2022.3.5.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -1474,26 +1474,26 @@
       <DependentUpon>Форма.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмены\ЗакрытиеСмены.NsgInit.cs">
+    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмен\ЗакрытиеСмен.NsgInit.cs">
       <NsgOwnerGuid>b9e3f94b-ccb6-4ede-a669-1c557c3921a0</NsgOwnerGuid>
-      <NsgOwnerName>ЗакрытиеСмены</NsgOwnerName>
-      <DependentUpon>ЗакрытиеСмены.cs</DependentUpon>
+      <NsgOwnerName>ЗакрытиеСмен</NsgOwnerName>
+      <DependentUpon>ЗакрытиеСмен.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмены\ЗакрытиеСмены.cs">
+    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмен\ЗакрытиеСмен.cs">
       <NsgOwnerGuid>b9e3f94b-ccb6-4ede-a669-1c557c3921a0</NsgOwnerGuid>
-      <NsgOwnerName>ЗакрытиеСмены</NsgOwnerName>
+      <NsgOwnerName>ЗакрытиеСмен</NsgOwnerName>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмены\ФормаЭлемента.Designer.cs">
+    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмен\ФормаЭлемента.Designer.cs">
       <NsgOwnerGuid>b9e3f94b-ccb6-4ede-a669-1c557c3921a0</NsgOwnerGuid>
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмены\ФормаЭлемента.cs">
+    <Compile Include="Метаданные\Мониторинг\ЗакрытиеСмен\ФормаЭлемента.cs">
       <NsgOwnerGuid>b9e3f94b-ccb6-4ede-a669-1c557c3921a0</NsgOwnerGuid>
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="Метаданные\Мониторинг\ЗакрытиеСмены\ФормаЭлемента.resx">
+    <EmbeddedResource Include="Метаданные\Мониторинг\ЗакрытиеСмен\ФормаЭлемента.resx">
       <NsgOwnerGuid>b9e3f94b-ccb6-4ede-a669-1c557c3921a0</NsgOwnerGuid>
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>

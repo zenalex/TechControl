@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using NsgSoft.Common;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
 
@@ -22,16 +23,6 @@ namespace TechControl.Метаданные.Мониторинг
         {
             InitializeComponent();
 		}
-
-		#region #Comments_Data# NsgSoft.Forms.NsgReportForm
-		
-		#endregion //#Comments_Data# NsgSoft.Forms.NsgReportForm
-
-		#region #Comments_Constructors# NsgSoft.Forms.NsgReportForm
-		
-		#endregion //#Comments_Constructors# NsgSoft.Forms.NsgReportForm
-
-		#region #Comments_Methods# NsgSoft.Forms.NsgReportForm
 		
         protected override void OnBeforeCreateReport(NsgBackgroundWorker nsgBackgroundReporter)
         {
@@ -47,14 +38,22 @@ namespace TechControl.Метаданные.Мониторинг
         {
             base.OnCreateReportCompleted(nsgBackgroundReporter, e);
         }
-        
-		#endregion //#Comments_Methods# NsgSoft.Forms.NsgReportForm
 
-		#region #Comments_Properties# NsgSoft.Forms.NsgReportForm
-		
-		#endregion //#Comments_Properties# NsgSoft.Forms.NsgReportForm
-
-	}
+        private void nsgButton1_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            ФиксацияИстории фи = ФиксацияИстории.Новый();
+            DateTime dt = NsgService.BeginOfDay(nsgPeriodPicker1.Period.Begin);
+            var a = фи.GetRests(new NsgCompare().Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе));
+            фи.New();
+            do
+            {
+                //
+                //var o = a.Filter(new NsgCompare().Add(ФиксацияИстории.Names.Время, ))
+                dt = dt.AddDays(1);
+            }
+            while (dt < nsgPeriodPicker1.Period.End);
+        }
+    }
     
 
 
