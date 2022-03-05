@@ -8,10 +8,7 @@ using System.Windows.Forms;
 using NsgSoft.Common;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
-
-
-
-
+using TechControl.Метаданные._SystemTables;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -41,64 +38,63 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void nsgButton1_AsyncClick(object sender, DoWorkEventArgs e)
         {
-            //ФиксацияИстории рег = ФиксацияИстории.Новый();
-            //ЗакрытиеСмены зс = ЗакрытиеСмены.Новый();
-            //DateTime dt = NsgService.BeginOfDay(nsgPeriodPicker1.Period.Begin);
-            //var a = фи.GetRests(new NsgCompare().Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе));
-            //var na = фи.GetRests(new NsgCompare().Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе, NsgSoft.Database.NsgComparison.NotEqual));
-            //фи.New();
-            //do
-            //{
-            //    //
-            //    a.Filter(new NsgCompare().Add(ФиксацияИстории.Names.Время, new NsgDateTimePeriod(dt, dt.AddDays(1))));
-            //    зс.New();
-            //    dt = dt.AddDays(1);
+            МониторингФормированиеСменыТаблица т = МониторингФормированиеСменыТаблица.Новый();
+            var tall = т.GetAll();
+            ФиксацияИстории фи = ФиксацияИстории.Новый();
+            ЗакрытиеСмены зс = ЗакрытиеСмены.Новый();
+            var рс = РегистрСмен.Новый();
+            DateTime dt = NsgService.BeginOfDay(nsgPeriodPicker1.Period.Begin);
+            //var all = рс.FindAll(new NsgCompare());
+            //foreach (var i in all)
+            {
+                //if (i.Владелец is ФормированиеСмены фс)
+                //{
+                //    var _dt = NsgService.MinDate;
+                //    foreach (var j in фс.Таблица.Rows)
+                //    {
+                //        //_dt = j[МониторингФормированиеСменыТаблица.Names.Время]
+                //    }
+                //}
+                //var na = фи.GetRests(new NsgCompare().Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе, NsgSoft.Database.NsgComparison.NotEqual));
+                //фи.New();
+                do
+                {
+                    var a = фи.GetRests(dt, new NsgCompare().Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе));
+                    //a.Filter(new NsgCompare().Add(ФиксацияИстории.Names.Время, new NsgDateTimePeriod(dt, dt.AddDays(1))));
+                    dt = dt.AddDays(1);
+                    foreach (var i in a.Rows)
+                    {
+                        //зс.New();
+                        //зс.ДокументОснование = i[ФиксацияИстории.Names.Владелец].ToReferent();
+                        //зс.Время = dt.AddTicks(-1);
+                        //зс.Техника = i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
+                        //зс.Объект = i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
+                        //зс.Post();
+                        //зс.Handle();
+                        ////зс.
+                        фи.New();
+                        рс.New();
+                        рс.Техника = фи.Техника = i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
+                        рс.Объект = фи.Объект = i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
+                        рс.Сотрудник = фи.Сотрудник = i[ФиксацияИстории.Names.Сотрудник].ToReferent() as Сотрудники;
+                        фи.Дата = фи.Время = dt.AddTicks(-1);
+                        фи.СтатусТехники = СтатусТехники.НеРаботает;
+                        фи.AddMovement();
+                        var предВремя = i[ФиксацияИстории.Names.Дата].ToDateTime();
+                        рс.ОтработанноеВремя = (предВремя == NsgService.MinDate) ? 0 : (decimal)(фи.Время - предВремя).TotalHours;
+                        //рс.Сумма = this.Тариф.Стоимость * регСмены.ОтработанноеВремя;
+                        рс.ВидДвижения = Сервис.ВидыДвижений.Расход;
+                        рс.AddMovement();
+                        рс.Post();
 
-            //    //Get rest по ФиксацияИстории на дату документа - тик. Оттуда берем время работы. Если статус в работе не менялся в ФиксацияИстории пишем старое время.
-            //    //в РегистрСмен пишем время в работе 
-            //    рег.New();
-            //    рег.Объект = this.Объект;
-
-            //    var регСмены = РегистрСмен.Новый();
-            //    регСмены.New();
-            //    регСмены.Document = this;
-
-            //    foreach (var i in this.Таблица.Rows)
-            //    {
-            //        рег.Сотрудник = i.Сотрудник;
-            //        рег.Техника = i.Техника;
-            //        рег.GetRest(this.ДатаДокумента.AddTicks(-1));
-            //        var предСтатусТехники = рег.СтатусТехники.Clone as СтатусТехники;
-            //        рег.СтатусТехники = i.СтатусТехники;
-            //        if (i.СтатусТехники != СтатусТехники.ВРаботе)
-            //        {
-            //            if (предСтатусТехники == СтатусТехники.ВРаботе)
-            //            {
-            //                var предВремя = рег.Время;
-            //                рег.Время = i.Время.Date == NsgService.MinDate ?
-            //                    this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date)) :
-            //                    i.Время;
-            //                регСмены.Объект = this.Объект;
-            //                регСмены.Сотрудник = i.Сотрудник;
-            //                регСмены.Техника = i.Техника;
-            //                регСмены.ОтработанноеВремя = (предВремя == NsgService.MinDate) ? 0 : (decimal)(рег.Время - предВремя).TotalHours;
-            //                регСмены.Сумма = this.Тариф.Стоимость * регСмены.ОтработанноеВремя;
-            //                регСмены.ВидДвижения = Сервис.ВидыДвижений.Расход;
-            //                регСмены.AddMovement();
-            //            }
-            //        }
-            //        else
-            //        {
-            //            рег.Время = i.Время.Date == NsgService.MinDate ?
-            //                this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date)) :
-            //                i.Время;
-            //        }
-            //        рег.AddMovement();
-            //    }
-            //    if (регСмены.MovementTable.Count > 0 && !регСмены.Post()) return false;
-            //    return рег.Post();
-            //}
-            //while (dt < nsgPeriodPicker1.Period.End);
+                        фи.Дата = фи.Время = dt;
+                        фи.СтатусТехники = СтатусТехники.ВРаботе;
+                        фи.AddMovement();
+                        фи.Post();
+                    }
+                }
+                while (dt < nsgPeriodPicker1.Period.End);
+            }
         }
     }
     
