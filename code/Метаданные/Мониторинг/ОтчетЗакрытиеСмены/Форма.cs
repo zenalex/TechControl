@@ -45,6 +45,7 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 var endOfDay = NsgService.EndOfDay(dt);
                 var a = фи.GetRests(endOfDay, new NsgCompare().Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе));
+                    //.CollapseToNewTable(new[] { ФиксацияИстории.Names.Объект }, null);
                 foreach (var i in a.Rows)
                 {
                     зс.New();

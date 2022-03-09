@@ -311,7 +311,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgGroupsList1.Name = "NsgGroupsList";
             this.nsgGroupsList1.NsgRemoveMasterComponent = true;
             this.nsgGroupsList1.SetReport = this.nsgReport1;
-            this.nsgGroupsList1.SetTitle = "title";
+            this.nsgGroupsList1.SetTitle = "Группировка";
             this.nsgGroupsList1.Size = new System.Drawing.Size(300, 364);
             this.nsgGroupsList1.TabIndex = 0;
             // 
@@ -347,7 +347,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource2);
             this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource3);
             this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource4);
-            this.nsgReport1.ReportGuid = "339d6c1724b346258c238cb0381a3a9f";
+            this.nsgReport1.ReportGuid = "0add65fe99f94654a4c629d6dbe526c8";
             this.nsgReport1.ReportLoaded = true;
             this.nsgReport1.ReportName = "Отчет";
             this.nsgReport1.ReportSource = resources.GetString("nsgReport1.ReportSource");
@@ -993,18 +993,18 @@ namespace TechControl.Метаданные.Мониторинг
         protected Сотрудники.ColumnDescriptor Сотрудник_ф;
         protected NsgSoft.Forms.NsgIGridView.NsgObjectFilter nsgObjectFilter1;
         protected NsgSoft.ReportBuilder.NsgReport nsgReport1;
-        protected NsgSoft.ReportBuilder.NsgReportDataSource nsgReportDataSource;
         protected NsgColumnDescriptor.DateTime Время_;
         protected NsgPeriodPicker nsgPeriodPicker1;
         private NsgVisualMultipleObject vmoГруппы;
         private NsgVisualMultipleObject vmoФильтр;
         protected Техника.ColumnDescriptor Техника_;
-        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsГруппы;
-        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsШапка;
-        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsФильтр;
-        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource1;
-        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource2;
-        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource3;
-        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource4;
+        private NsgSoft.ReportBuilder.NsgReportDataSource nsgReportDataSource;
+        private NsgSoft.ReportBuilder.NsgReportDataSource rdsГруппы;
+        private NsgSoft.ReportBuilder.NsgReportDataSource rdsШапка;
+        private NsgSoft.ReportBuilder.NsgReportDataSource rdsФильтр;
+        private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource1;
+        private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource2;
+        private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource3;
+        private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource4;
     }
 }
