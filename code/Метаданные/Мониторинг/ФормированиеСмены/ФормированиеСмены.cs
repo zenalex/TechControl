@@ -67,9 +67,12 @@ namespace TechControl.Метаданные.Мониторинг
                     //if (предСтатусТехники == СтатусТехники.ВРаботе)
                     {
                         var предВремя = рег.Время;
-                        рег.Дата = рег.Время = i.Время.Date == NsgService.MinDate ?
-                            this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date)) :
-                            i.Время;
+                        //рег.Дата = рег.Время = i.Время.Date == NsgService.MinDate ?
+                        //    this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date)) :
+                        //    i.Время;
+                        рег.Дата = рег.Время = i.Время == NsgService.MinDate ?
+                            this.ДатаДокумента :
+                            this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
                         регСмены.ДатаДокумента = рег.Время;
                         регСмены.Объект = this.Объект;
                         регСмены.Сотрудник = i.Сотрудник;
@@ -82,9 +85,12 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 else
                 {
-                    рег.Дата = рег.Время = i.Время.Date == NsgService.MinDate ?
-                        this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date)) :
-                        i.Время;
+                    //рег.Дата = рег.Время = i.Время.Date == NsgService.MinDate ?
+                    //    this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date)) :
+                    //    i.Время;
+                    рег.Дата = рег.Время = i.Время == NsgService.MinDate ?
+                        this.ДатаДокумента :
+                        this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
                 }
                 //рег.Дата = рег.КонецПериода = рег.Время;
                 рег.Владелец = this;

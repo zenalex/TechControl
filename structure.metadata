@@ -2875,7 +2875,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="d35fc63a-3aed-45c9-9565-875c861d99f0" type="NsgDataDateTime" editoraccess="Full" name="Время" visible="true" description="Время" field="Vremja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+            <NsgSimpleObject Guid="d35fc63a-3aed-45c9-9565-875c861d99f0" type="NsgDataDateTime" editoraccess="Full" name="Время" visible="true" description="Время" field="Vremja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="Time">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>

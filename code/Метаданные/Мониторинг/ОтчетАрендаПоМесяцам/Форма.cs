@@ -50,9 +50,10 @@ namespace TechControl.Метаданные.Мониторинг
                 //foreach (var j in i.Таблица.Rows)
                 {
                     DateTime dateTime = i[NsgSoft.Common.NsgDataFixedFields._Period].ToDateTime();
+                    Техника техника = i[РегистрСмен.Names.Техника].ToReferent() as Техника;
                     NsgCompare cmp = new NsgCompare()
                         .Add(Объект_.Name, i[РегистрСмен.Names.Объект].Value)
-                        .Add(Наименование_.Name, i[РегистрСмен.Names.Техника + '.' + Техника.Names.Наименование].Value)
+                        .Add(Наименование_.Name, техника.Наименование)
                         .Add(Время_.Name, NsgService.BeginOfMonth(dateTime));
                     var row = nsgVisualMultipleObject.Data.MemoryTable.FindRow(cmp);
                     if (row == null)
@@ -61,8 +62,9 @@ namespace TechControl.Метаданные.Мониторинг
                     row[Арендатор_].Value = i[ЗАКАЗЧИК].Value;
                     row[Объект_].Value = i[РегистрСмен.Names.Объект].Value;
                     row[Тариф_].Value = тариф;
-                    row[Наименование_].Value = i[РегистрСмен.Names.Техника + '.' + Техника.Names.Наименование].Value;
-                    row[ГНомер_].Value = i[РегистрСмен.Names.Техника + '.' + Техника.Names.ГосНомер].Value;
+                    row[Техника_].Value = техника;
+                    row[Наименование_].Value = техника.Наименование;
+                    row[ГНомер_].Value = техника.ГосНомер;
                     //row[СтоимостьВЧас_].Value = тариф[Тарифы.Names.Стоимость].Value;
                     row[Время_].Value = NsgService.BeginOfMonth(dateTime);
                     row[ВремяСтрока_].Value = new NsgDateTimePeriod(NsgService.BeginOfMonth(dateTime), NsgService.EndOfMonth(dateTime)).ToString();
