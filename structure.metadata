@@ -2375,6 +2375,7 @@
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
                 <param name="Мониторинг.ФормированиеСмены" />
+                <param name="Мониторинг.ЗакрытиеСмены" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="5c48b0c1-773d-4eb2-b2ed-75dfd2635b63" type="NsgDataTypedReference" editoraccess="Full" name="Техника" visible="true" description="Техника" field="Tekhnika" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Техника">
@@ -2682,6 +2683,7 @@
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
                 <param name="Мониторинг.ФормированиеСмены" />
+                <param name="Мониторинг.ЗакрытиеСмены" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="a5148e24-a335-42af-b75d-268c787767d0" type="NsgDataEnumReference" editoraccess="Full" name="СтатусТехники" visible="true" description="Статус техники" field="StatusTekhniki" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="СтатусТехники">
@@ -5966,6 +5968,7 @@
           </DataInterfaces>
           <Registers>
             <register name="Мониторинг.РегистрСмен" regime="Write" />
+            <register name="Мониторинг.ФиксацияИстории" regime="Write" />
           </Registers>
         </NsgMultipleObject>
       </ObjectList>

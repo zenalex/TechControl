@@ -38,63 +38,26 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void nsgButton1_AsyncClick(object sender, DoWorkEventArgs e)
         {
-            МониторингФормированиеСменыТаблица т = МониторингФормированиеСменыТаблица.Новый();
-            var tall = т.GetAll();
             ФиксацияИстории фи = ФиксацияИстории.Новый();
             ЗакрытиеСмены зс = ЗакрытиеСмены.Новый();
-            var рс = РегистрСмен.Новый();
             DateTime dt = NsgService.BeginOfDay(nsgPeriodPicker1.Period.Begin);
-            //var all = рс.FindAll(new NsgCompare());
-            //foreach (var i in all)
+            do
             {
-                //if (i.Владелец is ФормированиеСмены фс)
-                //{
-                //    var _dt = NsgService.MinDate;
-                //    foreach (var j in фс.Таблица.Rows)
-                //    {
-                //        //_dt = j[МониторингФормированиеСменыТаблица.Names.Время]
-                //    }
-                //}
-                //var na = фи.GetRests(new NsgCompare().Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе, NsgSoft.Database.NsgComparison.NotEqual));
-                //фи.New();
-                do
+                var endOfDay = NsgService.EndOfDay(dt);
+                var a = фи.GetRests(endOfDay, new NsgCompare().Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе));
+                foreach (var i in a.Rows)
                 {
-                    var a = фи.GetRests(dt, new NsgCompare().Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе));
-                    //a.Filter(new NsgCompare().Add(ФиксацияИстории.Names.Время, new NsgDateTimePeriod(dt, dt.AddDays(1))));
+                    зс.New();
+                    зс.ДокументОснование = i[ФиксацияИстории.Names.Владелец].ToReferent();
+                    зс.ДатаДокумента = зс.Время = endOfDay;
+                    зс.Техника = i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
+                    зс.Объект = i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
+                    зс.Post();
+                    зс.Handle();
                     dt = dt.AddDays(1);
-                    foreach (var i in a.Rows)
-                    {
-                        //зс.New();
-                        //зс.ДокументОснование = i[ФиксацияИстории.Names.Владелец].ToReferent();
-                        //зс.Время = dt.AddTicks(-1);
-                        //зс.Техника = i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
-                        //зс.Объект = i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
-                        //зс.Post();
-                        //зс.Handle();
-                        ////зс.
-                        фи.New();
-                        рс.New();
-                        рс.Техника = фи.Техника = i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
-                        рс.Объект = фи.Объект = i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
-                        рс.Сотрудник = фи.Сотрудник = i[ФиксацияИстории.Names.Сотрудник].ToReferent() as Сотрудники;
-                        фи.Дата = фи.Время = dt.AddTicks(-1);
-                        фи.СтатусТехники = СтатусТехники.НеРаботает;
-                        фи.AddMovement();
-                        var предВремя = i[ФиксацияИстории.Names.Дата].ToDateTime();
-                        рс.ОтработанноеВремя = (предВремя == NsgService.MinDate) ? 0 : (decimal)(фи.Время - предВремя).TotalHours;
-                        //рс.Сумма = this.Тариф.Стоимость * регСмены.ОтработанноеВремя;
-                        рс.ВидДвижения = Сервис.ВидыДвижений.Расход;
-                        рс.AddMovement();
-                        рс.Post();
-
-                        фи.Дата = фи.Время = dt;
-                        фи.СтатусТехники = СтатусТехники.ВРаботе;
-                        фи.AddMovement();
-                        фи.Post();
-                    }
                 }
-                while (dt < nsgPeriodPicker1.Period.End);
             }
+            while (dt < nsgPeriodPicker1.Period.End);
         }
     }
     
