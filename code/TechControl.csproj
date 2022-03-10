@@ -1957,4 +1957,19 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Заправка\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>6a0edca0-2e61-46c1-9a06-b7cea491674d</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Заправка\ФормаЭлемента.cs">
+      <NsgOwnerGuid>6a0edca0-2e61-46c1-9a06-b7cea491674d</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Заправка\ФормаЭлемента.resx">
+      <NsgOwnerGuid>6a0edca0-2e61-46c1-9a06-b7cea491674d</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
