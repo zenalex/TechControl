@@ -1796,4 +1796,139 @@
       <NsgOwnerName>МониторингРегистрПоставокТопливаДвижения</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ТипТС\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>b1c69a7a-281a-4a1b-bafa-0665a44b64f6</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ТипТС\ФормаЭлемента.cs">
+      <NsgOwnerGuid>b1c69a7a-281a-4a1b-bafa-0665a44b64f6</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\ТипТС\ФормаЭлемента.resx">
+      <NsgOwnerGuid>b1c69a7a-281a-4a1b-bafa-0665a44b64f6</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Тарифы\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>2dfe9156-8aa8-4b1c-a023-01d22594cc78</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Тарифы\ФормаЭлемента.cs">
+      <NsgOwnerGuid>2dfe9156-8aa8-4b1c-a023-01d22594cc78</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Тарифы\ФормаЭлемента.resx">
+      <NsgOwnerGuid>2dfe9156-8aa8-4b1c-a023-01d22594cc78</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Сотрудники\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>f786c300-0c59-4ced-9998-affd2704a408</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Сотрудники\ФормаЭлемента.cs">
+      <NsgOwnerGuid>f786c300-0c59-4ced-9998-affd2704a408</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Сотрудники\ФормаЭлемента.resx">
+      <NsgOwnerGuid>f786c300-0c59-4ced-9998-affd2704a408</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\СистемаМониторинга\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>0ef0b85b-1da6-4056-bea8-4d3b1f6452cb</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\СистемаМониторинга\ФормаЭлемента.cs">
+      <NsgOwnerGuid>0ef0b85b-1da6-4056-bea8-4d3b1f6452cb</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\СистемаМониторинга\ФормаЭлемента.resx">
+      <NsgOwnerGuid>0ef0b85b-1da6-4056-bea8-4d3b1f6452cb</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\РежимыРаботы\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>8b823161-133b-44cd-95c8-543c94c21569</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РежимыРаботы\ФормаЭлемента.cs">
+      <NsgOwnerGuid>8b823161-133b-44cd-95c8-543c94c21569</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\РежимыРаботы\ФормаЭлемента.resx">
+      <NsgOwnerGuid>8b823161-133b-44cd-95c8-543c94c21569</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Модель\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>d4871a0b-8327-4ba7-850c-ae5cafb2b05e</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Модель\ФормаЭлемента.cs">
+      <NsgOwnerGuid>d4871a0b-8327-4ba7-850c-ae5cafb2b05e</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Модель\ФормаЭлемента.resx">
+      <NsgOwnerGuid>d4871a0b-8327-4ba7-850c-ae5cafb2b05e</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Марка\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>dfba4c3c-685a-4296-98f4-a85fae574aa6</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Марка\ФормаЭлемента.cs">
+      <NsgOwnerGuid>dfba4c3c-685a-4296-98f4-a85fae574aa6</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Марка\ФормаЭлемента.resx">
+      <NsgOwnerGuid>dfba4c3c-685a-4296-98f4-a85fae574aa6</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Контрагенты\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>db34431e-a7fe-44ea-9092-d1d01193ec1f</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Контрагенты\ФормаЭлемента.cs">
+      <NsgOwnerGuid>db34431e-a7fe-44ea-9092-d1d01193ec1f</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Контрагенты\ФормаЭлемента.resx">
+      <NsgOwnerGuid>db34431e-a7fe-44ea-9092-d1d01193ec1f</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Должности\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>b2e03c9f-8023-41b8-a72c-9480fb619b20</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Должности\ФормаЭлемента.cs">
+      <NsgOwnerGuid>b2e03c9f-8023-41b8-a72c-9480fb619b20</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Должности\ФормаЭлемента.resx">
+      <NsgOwnerGuid>b2e03c9f-8023-41b8-a72c-9480fb619b20</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
