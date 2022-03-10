@@ -13,16 +13,16 @@ namespace TechControl.Метаданные.Мониторинг
     
     public partial class ФормированиеСмены
     {
-        #region Данные
-        #endregion //Данные
+        protected override List<Guid> BasePost()
+        {
+            foreach (var i in this.Таблица.Rows)
+            {
+                i.Время = this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
+                i.Post();
+            }
+            return base.BasePost();
+        }
 
-        #region Конструкторы
-        #endregion //Конструкторы
-
-        #region Свойства
-        #endregion //Свойства
-
-        #region Методы
         protected override bool Handling()
         {
             List<Техника> t = new List<Техника>();
@@ -90,7 +90,6 @@ namespace TechControl.Метаданные.Мониторинг
             рег.Владелец = this;
             return рег.Post();
         }
-        #endregion //Методы
     }
 
 }
