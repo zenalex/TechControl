@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.3.5.0</ProductVersion>
+    <ProductVersion>2022.3.10.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -1649,5 +1649,151 @@
       <DependentUpon>Форма.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокНакопления.NsgInit.cs">
+      <NsgOwnerGuid>b657fa62-1ade-46a5-b308-3f9b89332cb7</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокНакопления</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗаправокНакопления.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокНакопления.cs">
+      <NsgOwnerGuid>b657fa62-1ade-46a5-b308-3f9b89332cb7</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокНакопления.Строка.NsgInit.cs">
+      <NsgOwnerGuid>b657fa62-1ade-46a5-b308-3f9b89332cb7</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокНакопления</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗаправокНакопления.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокНакопления.Строка.cs">
+      <NsgOwnerGuid>b657fa62-1ade-46a5-b308-3f9b89332cb7</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокНакопления_1.NsgInit.cs">
+      <NsgOwnerGuid>d68da288-d7d5-4f05-8b97-c8bb07323b83</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокНакопления_1</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗаправокНакопления_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокНакопления_1.cs">
+      <NsgOwnerGuid>d68da288-d7d5-4f05-8b97-c8bb07323b83</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокНакопления_1.Строка.NsgInit.cs">
+      <NsgOwnerGuid>d68da288-d7d5-4f05-8b97-c8bb07323b83</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокНакопления_1</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗаправокНакопления_1.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокНакопления_1.Строка.cs">
+      <NsgOwnerGuid>d68da288-d7d5-4f05-8b97-c8bb07323b83</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Заправка\Заправка.NsgInit.cs">
+      <NsgOwnerGuid>6a0edca0-2e61-46c1-9a06-b7cea491674d</NsgOwnerGuid>
+      <NsgOwnerName>Заправка</NsgOwnerName>
+      <DependentUpon>Заправка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Заправка\Заправка.cs">
+      <NsgOwnerGuid>6a0edca0-2e61-46c1-9a06-b7cea491674d</NsgOwnerGuid>
+      <NsgOwnerName>Заправка</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаНакопления.NsgInit.cs">
+      <NsgOwnerGuid>de917379-2eee-42d5-b9d9-ad46033e96b1</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаНакопления</NsgOwnerName>
+      <DependentUpon>МониторингРегистрПоставокТопливаНакопления.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаНакопления.cs">
+      <NsgOwnerGuid>de917379-2eee-42d5-b9d9-ad46033e96b1</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаНакопления.Строка.NsgInit.cs">
+      <NsgOwnerGuid>de917379-2eee-42d5-b9d9-ad46033e96b1</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаНакопления</NsgOwnerName>
+      <DependentUpon>МониторингРегистрПоставокТопливаНакопления.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаНакопления.Строка.cs">
+      <NsgOwnerGuid>de917379-2eee-42d5-b9d9-ad46033e96b1</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\РегистрЗаправок.NsgInit.cs">
+      <NsgOwnerGuid>e83d6078-e603-4cf1-a79c-0d20210fe521</NsgOwnerGuid>
+      <NsgOwnerName>РегистрЗаправок</NsgOwnerName>
+      <DependentUpon>РегистрЗаправок.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\РегистрЗаправок.cs">
+      <NsgOwnerGuid>e83d6078-e603-4cf1-a79c-0d20210fe521</NsgOwnerGuid>
+      <NsgOwnerName>РегистрЗаправок</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ПоставкаТоплива\ПоставкаТоплива.NsgInit.cs">
+      <NsgOwnerGuid>8d085e80-f63d-4835-85e9-a52591e05b54</NsgOwnerGuid>
+      <NsgOwnerName>ПоставкаТоплива</NsgOwnerName>
+      <DependentUpon>ПоставкаТоплива.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ПоставкаТоплива\ПоставкаТоплива.cs">
+      <NsgOwnerGuid>8d085e80-f63d-4835-85e9-a52591e05b54</NsgOwnerGuid>
+      <NsgOwnerName>ПоставкаТоплива</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаНакопления_1.NsgInit.cs">
+      <NsgOwnerGuid>c639eb0a-34cd-484f-b0d6-5732c88fcf37</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаНакопления_1</NsgOwnerName>
+      <DependentUpon>МониторингРегистрПоставокТопливаНакопления_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаНакопления_1.cs">
+      <NsgOwnerGuid>c639eb0a-34cd-484f-b0d6-5732c88fcf37</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаНакопления_1.Строка.NsgInit.cs">
+      <NsgOwnerGuid>c639eb0a-34cd-484f-b0d6-5732c88fcf37</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаНакопления_1</NsgOwnerName>
+      <DependentUpon>МониторингРегистрПоставокТопливаНакопления_1.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаНакопления_1.Строка.cs">
+      <NsgOwnerGuid>c639eb0a-34cd-484f-b0d6-5732c88fcf37</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокДвижения.NsgInit.cs">
+      <NsgOwnerGuid>df7e25d9-1207-42f5-8347-d40f2b9805e0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокДвижения</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗаправокДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокДвижения.cs">
+      <NsgOwnerGuid>df7e25d9-1207-42f5-8347-d40f2b9805e0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>df7e25d9-1207-42f5-8347-d40f2b9805e0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокДвижения</NsgOwnerName>
+      <DependentUpon>МониторингРегистрЗаправокДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрЗаправок\МониторингРегистрЗаправокДвижения.Строка.cs">
+      <NsgOwnerGuid>df7e25d9-1207-42f5-8347-d40f2b9805e0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрЗаправокДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\РегистрПоставокТоплива.NsgInit.cs">
+      <NsgOwnerGuid>197cd2d4-17a3-4600-ba47-d98ada071329</NsgOwnerGuid>
+      <NsgOwnerName>РегистрПоставокТоплива</NsgOwnerName>
+      <DependentUpon>РегистрПоставокТоплива.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\РегистрПоставокТоплива.cs">
+      <NsgOwnerGuid>197cd2d4-17a3-4600-ba47-d98ada071329</NsgOwnerGuid>
+      <NsgOwnerName>РегистрПоставокТоплива</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаДвижения.NsgInit.cs">
+      <NsgOwnerGuid>a3be69a8-1bc6-47ba-8e12-b7f2b04a6a55</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаДвижения</NsgOwnerName>
+      <DependentUpon>МониторингРегистрПоставокТопливаДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаДвижения.cs">
+      <NsgOwnerGuid>a3be69a8-1bc6-47ba-8e12-b7f2b04a6a55</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>a3be69a8-1bc6-47ba-8e12-b7f2b04a6a55</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаДвижения</NsgOwnerName>
+      <DependentUpon>МониторингРегистрПоставокТопливаДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрПоставокТоплива\МониторингРегистрПоставокТопливаДвижения.Строка.cs">
+      <NsgOwnerGuid>a3be69a8-1bc6-47ba-8e12-b7f2b04a6a55</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрПоставокТопливаДвижения</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
