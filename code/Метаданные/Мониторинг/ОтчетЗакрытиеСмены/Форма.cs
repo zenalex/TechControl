@@ -44,19 +44,23 @@ namespace TechControl.Метаданные.Мониторинг
             do
             {
                 var endOfDay = NsgService.EndOfDay(dt);
-                var a = фи.GetRests(endOfDay, new NsgCompare().Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе));
-                    //.CollapseToNewTable(new[] { ФиксацияИстории.Names.Объект }, null);
+                var a = фи.GetRests(endOfDay, new NsgCompare().Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе))
+                    .CollapseToNewTable(new[] { ФиксацияИстории.Names.Объект }, null);
                 foreach (var i in a.Rows)
                 {
-                    зс.New();
-                    //зс.ДокументОснование = i[ФиксацияИстории.Names.Владелец].ToReferent();
-                    зс.ДатаДокумента = зс.Время = endOfDay;
-                    зс.Техника = i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
-                    зс.Объект = i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
-                    зс.Post();
+                    var объект = i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
+                    if (!зс.Find(new NsgCompare()
+                        .Add(ЗакрытиеСмены.Names.Объект, объект)
+                        .Add(ЗакрытиеСмены.Names.ДатаДокумента, endOfDay)))
+                    {
+                        зс.New();
+                        зс.ДатаДокумента = зс.Время = endOfDay;
+                        зс.Объект = объект;
+                        зс.Post();
+                    }    
                     зс.Handle();
-                    dt = dt.AddDays(1);
                 }
+                dt = dt.AddDays(1);
             }
             while (dt < nsgPeriodPicker1.Period.End);
         }
