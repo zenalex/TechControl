@@ -45,34 +45,44 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Common">
+    <Reference Include="NsgSoft.Common, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=447db94fe98f10d5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Common.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Database">
+    <Reference Include="NsgSoft.Database, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=1052027ec3662bec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Database.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.DataObjects">
+    <Reference Include="NsgSoft.DataObjects, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=591c2a9ad26eb48c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.DataObjects.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Design">
+    <Reference Include="NsgSoft.Design, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=357d6bf8a0d3c594, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Design.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Forms">
+    <Reference Include="NsgSoft.Forms, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=d35134a89d12ecbc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.FormsComponents">
+    <Reference Include="NsgSoft.FormsComponents, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=21ed4c4f34baace2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.FormsComponents.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportBase">
+    <Reference Include="NsgSoft.ReportBase, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=e64ccc7712425ed2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBase.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportBuilder">
+    <Reference Include="NsgSoft.ReportBuilder, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=c0645ec7baa77cae, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBuilder.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportControls">
+    <Reference Include="NsgSoft.ReportControls, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=42cc63b36f026e05, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportControls.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportEditor">
+    <Reference Include="NsgSoft.ReportEditor, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=cb3af7bb7cd76ba3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -84,7 +94,8 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=62f73409a54f6052, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -1927,6 +1938,21 @@
     </Compile>
     <EmbeddedResource Include="Метаданные\Мониторинг\Должности\ФормаЭлемента.resx">
       <NsgOwnerGuid>b2e03c9f-8023-41b8-a72c-9480fb619b20</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ПоставкаТоплива\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>8d085e80-f63d-4835-85e9-a52591e05b54</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ПоставкаТоплива\ФормаЭлемента.cs">
+      <NsgOwnerGuid>8d085e80-f63d-4835-85e9-a52591e05b54</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\ПоставкаТоплива\ФормаЭлемента.resx">
+      <NsgOwnerGuid>8d085e80-f63d-4835-85e9-a52591e05b54</NsgOwnerGuid>
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
