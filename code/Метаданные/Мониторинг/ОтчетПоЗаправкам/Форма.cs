@@ -62,7 +62,7 @@ namespace TechControl.Метаданные.Мониторинг
                     Техника техника = i[РегистрЗаправок.Names.Техника].ToReferent() as Техника;
                     NsgCompare cmp = new NsgCompare()
                         .Add(Объект_.Name, i[РегистрЗаправок.Names.Объект].Value)
-                        .Add(Техника_.Name, техника.Наименование)
+                        .Add(Техника_.Name, техника)
                         .Add(Время_.Name, NsgService.BeginOfMonth(dateTime));
                     var row = nsgVisualMultipleObject.Data.MemoryTable.FindRow(cmp);
                     if (row == null)
