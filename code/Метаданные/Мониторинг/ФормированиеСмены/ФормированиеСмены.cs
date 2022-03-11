@@ -18,6 +18,7 @@ namespace TechControl.Метаданные.Мониторинг
             foreach (var i in this.Таблица.Rows)
             {
                 i.Время = this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
+                if (i.НомерСмены < 0 || i.НомерСмены > 3) i.НомерСмены = 0;
                 i.Post();
             }
             return base.BasePost();
