@@ -88,7 +88,7 @@ namespace TechControl.Метаданные.Мониторинг
                         {
                             row[$"{day}"].Value = row[$"{day}"].ToDecimal() + i[РегистрПоставокТоплива.Names.ОбъемТоплива].ToDebit();
                             itogo += i[РегистрПоставокТоплива.Names.ОбъемТоплива].ToDebit();
-                            stArItogo += /*тариф[Тарифы.Names.Стоимость].ToDecimal() **/ i[РегистрПоставокТоплива.Names.ОбъемТоплива].ToDebit();
+                            //stArItogo += /*тариф[Тарифы.Names.Стоимость].ToDecimal() **/ i[РегистрПоставокТоплива.Names.ОбъемТоплива].ToDebit();
                         }
                         else
                         {
