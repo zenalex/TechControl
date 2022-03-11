@@ -138,9 +138,9 @@ namespace TechControl.Метаданные.Мониторинг
             this.panelButtonReportForm.Controls.Add(this.printButton);
             this.panelButtonReportForm.Controls.Add(this.btnCreateReport);
             this.panelButtonReportForm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 397);
+            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 396);
             this.panelButtonReportForm.Name = "panelButtonReportForm";
-            this.panelButtonReportForm.Size = new System.Drawing.Size(966, 30);
+            this.panelButtonReportForm.Size = new System.Drawing.Size(984, 30);
             this.panelButtonReportForm.TabIndex = 0;
             // 
             // printButton
@@ -152,7 +152,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.printButton.ButtonText = "Печать";
             this.printButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.printButton.ImageKey = "Print";
-            this.printButton.Location = new System.Drawing.Point(946, 0);
+            this.printButton.Location = new System.Drawing.Point(964, 0);
             this.printButton.Name = "printButton";
             this.printButton.ShowImage = false;
             this.printButton.ShowText = false;
@@ -246,7 +246,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgObjectFilter1.Regime = NsgSoft.Forms.NsgIGridView.NsgObjectFilter.Regimes.Filter;
             this.nsgObjectFilter1.RekvisitCaption = "Имя Фильтра";
             this.nsgObjectFilter1.SaveSettings = true;
-            this.nsgObjectFilter1.Size = new System.Drawing.Size(660, 397);
+            this.nsgObjectFilter1.Size = new System.Drawing.Size(678, 396);
             this.nsgObjectFilter1.SourceObject = this.vmoФильтр;
             this.nsgObjectFilter1.TabIndex = 0;
             this.nsgObjectFilter1.ValueCaption = "Фильтр";
@@ -310,13 +310,13 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgGroupsList1.BackColor = System.Drawing.SystemColors.Control;
             this.nsgGroupsList1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nsgGroupsList1.DisableComponents = ((System.Collections.Generic.List<string>)(resources.GetObject("nsgGroupsList1.DisableComponents")));
-            this.nsgGroupsList1.Location = new System.Drawing.Point(666, 33);
+            this.nsgGroupsList1.Location = new System.Drawing.Point(684, 33);
             this.nsgGroupsList1.MinimumSize = new System.Drawing.Size(290, 150);
             this.nsgGroupsList1.Name = "NsgGroupsList";
             this.nsgGroupsList1.NsgRemoveMasterComponent = true;
             this.nsgGroupsList1.SetReport = this.nsgReport1;
             this.nsgGroupsList1.SetTitle = "Группировка";
-            this.nsgGroupsList1.Size = new System.Drawing.Size(300, 364);
+            this.nsgGroupsList1.Size = new System.Drawing.Size(300, 363);
             this.nsgGroupsList1.TabIndex = 0;
             // 
             // nsgReport1
@@ -440,7 +440,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgPeriodPicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nsgPeriodPicker1.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.nsgPeriodPicker1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgPeriodPicker1.Location = new System.Drawing.Point(666, 0);
+            this.nsgPeriodPicker1.Location = new System.Drawing.Point(684, 0);
             this.nsgPeriodPicker1.MinimumSize = new System.Drawing.Size(2, 4);
             this.nsgPeriodPicker1.Name = "NsgPeriodPicker";
             this.nsgPeriodPicker1.Size = new System.Drawing.Size(300, 27);
@@ -930,7 +930,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BlockShowReport = false;
-            this.ClientSize = new System.Drawing.Size(966, 447);
+            this.ClientSize = new System.Drawing.Size(984, 446);
             this.Controls.Add(this.nsgPeriodPicker1);
             this.Controls.Add(this.nsgGroupsList1);
             this.Controls.Add(this.nsgObjectFilter1);
@@ -1017,7 +1017,6 @@ namespace TechControl.Метаданные.Мониторинг
         protected Объекты.ColumnDescriptor Объект_ф;
         protected Сотрудники.ColumnDescriptor Сотрудник_ф;
         protected NsgSoft.Forms.NsgIGridView.NsgObjectFilter nsgObjectFilter1;
-        protected NsgSoft.ReportBuilder.NsgReport nsgReport1;
         protected NsgColumnDescriptor.DateTime Время_;
         protected NsgPeriodPicker nsgPeriodPicker1;
         private NsgVisualMultipleObject vmoГруппы;
@@ -1033,5 +1032,6 @@ namespace TechControl.Метаданные.Мониторинг
         private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource4;
         protected NsgColumnDescriptor.Int64 НомерСмены_;
         protected NsgColumnDescriptor.String СменаСтрока_;
+        private NsgSoft.ReportBuilder.NsgReport nsgReport1;
     }
 }
