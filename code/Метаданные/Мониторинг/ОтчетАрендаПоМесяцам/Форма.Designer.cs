@@ -97,6 +97,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Арендатор_ = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Тариф_ = new TechControl.Метаданные.Мониторинг.Тарифы.ColumnDescriptor();
             this.Техника_ = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
+            this.СменаСтрока_ = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.НомерСмены_ = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -217,6 +219,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ВремяСтрока_);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Время_);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Техника_);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.НомерСмены_);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.СменаСтрока_);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
             this.nsgVisualMultipleObject.MetaDataName = "";
@@ -347,7 +351,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource2);
             this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource3);
             this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource4);
-            this.nsgReport1.ReportGuid = "0add65fe99f94654a4c629d6dbe526c8";
+            this.nsgReport1.ReportGuid = "88033f5ac63d4be99f01f2e5eb2fc7d8";
             this.nsgReport1.ReportLoaded = true;
             this.nsgReport1.ReportName = "Отчет";
             this.nsgReport1.ReportSource = resources.GetString("nsgReport1.ReportSource");
@@ -896,6 +900,27 @@ namespace TechControl.Метаданные.Мониторинг
             this.Техника_.SearchCondition.OwnerComponent = this.Техника_;
             this.Техника_.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // СменаСтрока_
+            // 
+            this.СменаСтрока_.Caption = "СменаСтрока";
+            this.СменаСтрока_.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.СменаСтрока_.Name = "СменаСтрока";
+            this.СменаСтрока_.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.СменаСтрока_.PropertyType = typeof(string);
+            this.СменаСтрока_.SearchCondition.OwnerComponent = this.СменаСтрока_;
+            this.СменаСтрока_.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // НомерСмены_
+            // 
+            this.НомерСмены_.CalcTotal = false;
+            this.НомерСмены_.Caption = "НомерСмены";
+            this.НомерСмены_.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.НомерСмены_.Name = "НомерСмены";
+            this.НомерСмены_.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.НомерСмены_.PropertyType = typeof(long);
+            this.НомерСмены_.SearchCondition.OwnerComponent = this.НомерСмены_;
+            this.НомерСмены_.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // ОтчетАрендаПоМесяцамФорма
             // 
             this.AllowDrop = true;
@@ -1006,5 +1031,7 @@ namespace TechControl.Метаданные.Мониторинг
         private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource2;
         private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource3;
         private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource4;
+        protected NsgColumnDescriptor.Int64 НомерСмены_;
+        protected NsgColumnDescriptor.String СменаСтрока_;
     }
 }

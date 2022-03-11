@@ -29,6 +29,7 @@ namespace TechControl.Метаданные.Мониторинг
                 регистрСмен.New();
                 регистрСмен.Техника = фиксацияИстории.Техника = i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
                 регистрСмен.Объект = фиксацияИстории.Объект = i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
+                регистрСмен.НомерСмены = фиксацияИстории.НомерСмены = i[ФиксацияИстории.Names.НомерСмены].ToInt();
                 decimal price;
                 if (i[ФиксацияИстории.Names.Владелец].ToReferent() is ФормированиеСмены docFS)
                 {
@@ -54,6 +55,7 @@ namespace TechControl.Метаданные.Мониторинг
 
                 фиксацияИстории.Техника = i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
                 фиксацияИстории.Объект = i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
+                фиксацияИстории.НомерСмены = i[ФиксацияИстории.Names.НомерСмены].ToInt();
                 фиксацияИстории.Дата = фиксацияИстории.Время = NsgService.BeginOfDay(this.ДатаДокумента.AddDays(1));
                 фиксацияИстории.Тариф = i[ФиксацияИстории.Names.Тариф].ToReferent() as Тарифы;
                 фиксацияИстории.СтатусТехники = СтатусТехники.ВРаботе;
@@ -65,6 +67,7 @@ namespace TechControl.Метаданные.Мониторинг
                 var all = регистрСмен.GetCirculate(this.Время.AddSeconds(1), NsgService.MaxDate, new NsgCompare()
                     .Add(РегистрСмен.Names.Объект, фиксацияИстории.Объект)
                     .Add(РегистрСмен.Names.Сотрудник, i[ФиксацияИстории.Names.Сотрудник].ToReferent() as Сотрудники)
+                    .Add(РегистрСмен.Names.НомерСмены, i[ФиксацияИстории.Names.НомерСмены].ToInt())
                     .Add(РегистрСмен.Names.Техника, фиксацияИстории.Техника), NsgRegisterResult.Debit | NsgRegisterResult.Credit,
                     РегистрСмен.Names.Владелец);
                 if (all.Count > 0)
@@ -96,6 +99,7 @@ namespace TechControl.Метаданные.Мониторинг
                 var all = регистрСмен.GetCirculate(this.Время.AddSeconds(1), NsgService.MaxDate, new NsgCompare()
                     .Add(РегистрСмен.Names.Объект, фиксацияИстории.Объект)
                     .Add(РегистрСмен.Names.Сотрудник, i[ФиксацияИстории.Names.Сотрудник].ToReferent() as Сотрудники)
+                    .Add(РегистрСмен.Names.НомерСмены, i[ФиксацияИстории.Names.НомерСмены].ToInt())
                     .Add(РегистрСмен.Names.Техника, i[ФиксацияИстории.Names.Техника].Value), NsgRegisterResult.Debit | NsgRegisterResult.Credit,
                     РегистрСмен.Names.Владелец);
                 if (all.Count > 0)
