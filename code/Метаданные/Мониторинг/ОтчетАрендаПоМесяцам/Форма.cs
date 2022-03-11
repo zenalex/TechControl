@@ -36,6 +36,13 @@ namespace TechControl.Метаданные.Мониторинг
             dims.Add(ФиксацияИстории.Names.Сотрудник);
             dims.Remove(Арендатор_.Caption);
             dims.Remove(Время_.Caption);
+            for (int i = 0; i < dims.Count; i++)
+            {
+                if (dims[i] == "Смена")
+                {
+                    dims[i] = НомерСмены_.Name;
+                }
+            }
 
             var рс = РегистрСмен.Новый();
             var all = рс.GetCirculate(nsgPeriodPicker1.Period.Begin, nsgPeriodPicker1.Period.End, NsgSoft.Common.NsgPeriod.Day, nsgObjectFilter1.Compare,
@@ -58,10 +65,18 @@ namespace TechControl.Метаданные.Мониторинг
                     var row = nsgVisualMultipleObject.Data.MemoryTable.FindRow(cmp);
                     if (row == null)
                     row = nsgVisualMultipleObject.Data.MemoryTable.NewRow();
-                    Тарифы тариф = Тарифы.Новый();//вл[ФормированиеСмены.Names.Тариф].ToReferent() as Тарифы;
                     row[Арендатор_].Value = i[ЗАКАЗЧИК].Value;
-                    row[Объект_].Value = i[РегистрСмен.Names.Объект].Value;
+                    Тарифы тариф = Тарифы.Новый();//вл[ФормированиеСмены.Names.Тариф].ToReferent() as Тарифы;
                     row[Тариф_].Value = тариф;
+                    Объекты объект = i[РегистрСмен.Names.Объект].ToReferent() as Объекты;
+                    row[Объект_].Value = объект;
+                    int номерСмены = (int)i[РегистрСмен.Names.НомерСмены].ToInt();
+                    row[НомерСмены_].Value = номерСмены;
+                    row[СменаСтрока_].Value = "Смена " + номерСмены;
+                    //foreach (МониторингРежимыРаботыТаблицаГрафик.Строка строкаГрафика in объект.РежимРаботы.ТаблицаГрафик.Rows)
+                    //{
+                    //    if (строкаГрафика.)
+                    //}
                     row[Техника_].Value = техника;
                     row[Наименование_].Value = техника.Наименование;
                     row[ГНомер_].Value = техника.ГосНомер;

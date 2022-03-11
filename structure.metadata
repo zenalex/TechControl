@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.3.10.0" CodeLang="ru" name="TechControl" description="New Configuration" copyright="Unknown Developer ©  2011" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.3.11.0" CodeLang="ru" name="TechControl" description="New Configuration" copyright="Unknown Developer ©  2011" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.3.10.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.3.10.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.3.11.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.3.11.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -2454,6 +2454,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="070d62dc-b08d-4b76-8a51-b722a32b1ecc" type="NsgDataInteger" editoraccess="Full" name="НомерСмены" visible="true" description="Номер смены" field="NomerSmeny" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-10000000000000000000" maxValue="10000000000000000000">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers />
         </NsgMultipleObject>
@@ -2757,6 +2762,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="070d62dc-b08d-4b76-8a51-b722a32b1ecc" type="NsgDataInteger" editoraccess="Full" name="НомерСмены" visible="true" description="Номер смены" field="NomerSmeny" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="dc5e589b-d5f1-4f1b-a138-9324e3661252" type="NsgDataEnum" editoraccess="Deprecated" name="РазрешениеОперацииПользователя" visible="false" description="Разрешение операции пользователя" group="Сервис" table="UserOperationAccess" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False">
@@ -2931,6 +2941,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="7a0cacac-815e-420c-ae33-5c7a85ac61a6" type="NsgDataInteger" editoraccess="Full" name="НомерСмены" visible="true" description="Номер смены" field="NomerSmeny" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Техника" />
@@ -2938,6 +2953,7 @@
             <container name="СтатусТехники" />
             <container name="Время" />
             <container name="Тариф" />
+            <container name="НомерСмены" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="ffe6bf09-fabd-4222-9c49-62163ad6a753" type="NsgDataDictionary" editoraccess="Limited" name="Пользователи" visible="true" description="Пользователи" group="Сервис" table="UserDictionary" searchfield="Наименование" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="false">
@@ -4800,6 +4816,41 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="c393e480-2642-46cf-ab23-e37ba3c32055" type="NsgDataDateTime" editoraccess="Full" name="ВремяОкончанияСмены1" visible="true" description="Время окончания смены1" field="VremjaOkonchanija" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="9628f27b-bddc-4aef-825e-0758950a1475" type="NsgDataDateTime" editoraccess="Full" name="ВремяНачалаСмены2" visible="true" description="Время начала смены2" field="VremjaNachalaSmeny2" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="c238f978-89c4-45ef-950d-4244c6dfd01f" type="NsgDataDateTime" editoraccess="Full" name="ВремяНачалаСмены3" visible="true" description="Время начала смены3" field="VremjaNachalaSmeny3" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="1bee1f82-6e86-4a1b-b414-3e525fa324ee" type="NsgDataDateTime" editoraccess="Full" name="ВремяОкончанияСмены2" visible="true" description="Время окончания смены2" field="VremjaOkonchanija1" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="ead39fe1-af65-4d8e-b1e3-f165c263446a" type="NsgDataDateTime" editoraccess="Full" name="ВремяОкончанияСмены3" visible="true" description="Время окончания смены3" field="VremjaOkonchanija2" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="55dcd644-8b0c-4d83-afc5-3019f650c49e" type="NsgDataInteger" editoraccess="Full" name="КоличествоСмен" visible="true" description="Количество смен" field="KolichestvoSmen" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="dcdc7770-787b-4479-89fa-663a6e294319" type="NsgDataDateTime" editoraccess="Full" name="ВремяНачалаСмены1" visible="true" description="Время начала смены1" field="VremjaNachalaSmeny1" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДеньНедели" />
@@ -4807,6 +4858,13 @@
             <container name="ВремяКонцаРабочегоДня" />
             <container name="ВремяНачалаПерерыва" />
             <container name="ВремяКонцаПерерыва" />
+            <container name="ВремяОкончанияСмены1" />
+            <container name="ВремяНачалаСмены2" />
+            <container name="ВремяНачалаСмены3" />
+            <container name="ВремяОкончанияСмены2" />
+            <container name="ВремяОкончанияСмены3" />
+            <container name="КоличествоСмен" />
+            <container name="ВремяНачалаСмены1" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="745a7094-96b8-44f4-be8c-ce87cbde8744" type="NsgDataEnum" editoraccess="Full" name="ДеньНедели" visible="true" description="Перечисление" group="Мониторинг" table="_enum_DenNedeli" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False">
@@ -5493,6 +5551,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="54d59ba9-868b-4a9c-ad8e-759989b63875" type="NsgDataInteger" editoraccess="Full" name="НомерСмены" visible="true" description="Номер смены" field="NomerSmeny" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-10000000000000000000" maxValue="10000000000000000000">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers />
         </NsgMultipleObject>
@@ -5579,6 +5642,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="54d59ba9-868b-4a9c-ad8e-759989b63875" type="NsgDataInteger" editoraccess="Full" name="НомерСмены" visible="true" description="Номер смены" field="NomerSmeny" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" registerDistributionType="Filter" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="9093fba0-9bb6-49bf-902d-0f2b69f83298" type="NsgDataTable" editoraccess="Full" name="МониторингРегистрСменНакопления_1" visible="true" description="Мониторинг регистр смен накопления_1" group="_SystemTables" table="_tab_MonitoringRegistrSm1" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="RegisterAccumTable" registerPeriod="Month" registerPeriodCount="1">
@@ -5620,6 +5688,11 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="a79c9253-1047-44b0-812d-8bb7a4d345ad" type="NsgDataFloat" editoraccess="Full" name="Сумма" visible="true" description="Сумма" field="Summa" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="54d59ba9-868b-4a9c-ad8e-759989b63875" type="NsgDataInteger" editoraccess="Full" name="НомерСмены" visible="true" description="Номер смены" field="NomerSmeny" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-10000000000000000000" maxValue="10000000000000000000">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -5716,6 +5789,11 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="a79c9253-1047-44b0-812d-8bb7a4d345ad" type="NsgDataFloat" editoraccess="Full" name="Сумма" visible="true" description="Сумма" field="Summa" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="54d59ba9-868b-4a9c-ad8e-759989b63875" type="NsgDataInteger" editoraccess="Full" name="НомерСмены" visible="true" description="Номер смены" field="NomerSmeny" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-10000000000000000000" maxValue="10000000000000000000">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>

@@ -78,6 +78,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.Тариф = new TechControl.Метаданные.Мониторинг.Тарифы.ColumnDescriptor();
             this.nsgLabel3 = new NsgSoft.Forms.NsgLabel();
             this.nsgInput3 = new NsgSoft.Forms.NsgInput();
+            this.bЗаполнить = new NsgSoft.Design.NsgButton();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -103,6 +104,7 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bЗаполнить)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -218,7 +220,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.panelButtons.AllowDrop = true;
             this.panelButtons.Controls.Add(this.nsgToolStrip2);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(0, 337);
+            this.panelButtons.Location = new System.Drawing.Point(0, 380);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Size = new System.Drawing.Size(857, 30);
             this.panelButtons.TabIndex = 2;
@@ -1027,9 +1029,9 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.nsgInput3.BackColor = System.Drawing.SystemColors.Window;
             this.nsgInput3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput3.ConfigurationName = "";
+            this.nsgInput3.ConfigurationName = "TechControl";
             this.nsgInput3.DisableLeaveControlEvent = false;
-            this.nsgInput3.FullName = "Тариф";
+            this.nsgInput3.FullName = "Мониторинг.ФормированиеСмены.Тариф";
             this.nsgInput3.FullTextSearch = false;
             this.nsgInput3.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput3.IsButton = false;
@@ -1038,7 +1040,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput3.Location = new System.Drawing.Point(638, 40);
             this.nsgInput3.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput3.Mask = "";
-            this.nsgInput3.MetaDataName = "";
+            this.nsgInput3.MetaDataName = "Метаданные";
             this.nsgInput3.MinimumSize = new System.Drawing.Size(4, 20);
             this.nsgInput3.Name = "NsgInput";
             this.nsgInput3.ObjectImages = null;
@@ -1053,6 +1055,20 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput3.TabIndex = 22;
             this.nsgInput3.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // bЗаполнить
+            // 
+            this.bЗаполнить.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bЗаполнить.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bЗаполнить.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bЗаполнить.Location = new System.Drawing.Point(781, 63);
+            this.bЗаполнить.Name = "NsgButton";
+            this.bЗаполнить.Size = new System.Drawing.Size(75, 25);
+            this.bЗаполнить.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.bЗаполнить.TabIndex = 24;
+            this.bЗаполнить.Text = "Заполнить";
+            this.bЗаполнить.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bЗаполнить.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.bЗаполнить_AsyncClick);
+            // 
             // ФормированиеСменыФормаЭлемента
             // 
             this.AllowDrop = true;
@@ -1062,6 +1078,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(857, 410);
+            this.Controls.Add(this.bЗаполнить);
             this.Controls.Add(this.nsgLabel3);
             this.Controls.Add(this.nsgInput3);
             this.Controls.Add(this.nsgIGrid1);
@@ -1099,6 +1116,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.Controls.SetChildIndex(this.nsgIGrid1, 0);
             this.Controls.SetChildIndex(this.nsgInput3, 0);
             this.Controls.SetChildIndex(this.nsgLabel3, 0);
+            this.Controls.SetChildIndex(this.bЗаполнить, 0);
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).EndInit();
@@ -1126,6 +1144,7 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bЗаполнить)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1151,7 +1170,6 @@ namespace TechControl.Метаданные.Мониторинг
         protected Сотрудники.ColumnDescriptor Сотрудник;
         protected СтатусТехники.ColumnDescriptor СтатусТехники;
         protected NsgColumnDescriptor.DateTime Время;
-        private NsgIGrid nsgIGrid1;
         private NsgVisualMultipleObject vmoТаблица;
         protected NsgColumnDescriptor.Guid Идентификатор;
         protected NsgColumnDescriptor.Int64 Автоинкремент;
@@ -1169,5 +1187,7 @@ namespace TechControl.Метаданные.Мониторинг
         protected Тарифы.ColumnDescriptor Тариф;
         protected NsgLabel nsgLabel3;
         protected NsgInput nsgInput3;
+        protected NsgSoft.Design.NsgButton bЗаполнить;
+        protected NsgIGrid nsgIGrid1;
     }
 }

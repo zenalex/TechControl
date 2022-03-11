@@ -19,7 +19,6 @@ namespace TechControl.Метаданные.Мониторинг
             фиксацияИстории.New();
             фиксацияИстории.Владелец = this;
             фиксацияИстории.Объект = this.Объект;
-            //фиксацияИстории.Техника = this.Техника;
             var allRests = фиксацияИстории.GetRests(this.Время,
                 new NsgCompare().Add(ФиксацияИстории.Names.Объект, this.Объект).Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе));
             foreach (var i in allRests.Rows)
@@ -28,12 +27,13 @@ namespace TechControl.Метаданные.Мониторинг
                 РегистрСмен регистрСмен = РегистрСмен.Новый(this);
                 фиксацияИстории.New();
                 регистрСмен.New();
-                регистрСмен.Техника = фиксацияИстории.Техника = /*this.Техника;*/ i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
-                регистрСмен.Объект = фиксацияИстории.Объект = /*this.Объект;*/ i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
+                регистрСмен.Техника = фиксацияИстории.Техника = i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
+                регистрСмен.Объект = фиксацияИстории.Объект = i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
+                регистрСмен.НомерСмены = фиксацияИстории.НомерСмены = i[ФиксацияИстории.Names.НомерСмены].ToInt();
                 decimal price;
-                if (i[ФиксацияИстории.Names.Владелец].ToReferent() is ФормированиеСмены doc)
+                if (i[ФиксацияИстории.Names.Владелец].ToReferent() is ФормированиеСмены docFS)
                 {
-                    price = doc.Тариф.Стоимость;
+                    price = docFS.Тариф.Стоимость;
                 }
                 else
                 {
@@ -46,7 +46,6 @@ namespace TechControl.Метаданные.Мониторинг
                 фиксацияИстории.СтатусТехники = СтатусТехники.НеРаботает;
                 фиксацияИстории.Владелец = this;
                 фиксацияИстории.AddMovement();
-                //фиксацияИстории.Post();
 
                 регистрСмен.ОтработанноеВремя = (предВремя == NsgService.MinDate) ? 0 : (decimal)(фиксацияИстории.Время - предВремя).TotalHours;
                 регистрСмен.Сумма = price * регистрСмен.ОтработанноеВремя;
@@ -54,17 +53,66 @@ namespace TechControl.Метаданные.Мониторинг
                 регистрСмен.AddMovement();
                 регистрСмен.Post();
 
-                //фиксацияИстории.New();
-                фиксацияИстории.Техника = /*this.Техника;*/ i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
-                фиксацияИстории.Объект = /*this.Объект;*/ i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
+                фиксацияИстории.Техника = i[ФиксацияИстории.Names.Техника].ToReferent() as Техника;
+                фиксацияИстории.Объект = i[ФиксацияИстории.Names.Объект].ToReferent() as Объекты;
+                фиксацияИстории.НомерСмены = i[ФиксацияИстории.Names.НомерСмены].ToInt();
                 фиксацияИстории.Дата = фиксацияИстории.Время = NsgService.BeginOfDay(this.ДатаДокумента.AddDays(1));
                 фиксацияИстории.Тариф = i[ФиксацияИстории.Names.Тариф].ToReferent() as Тарифы;
                 фиксацияИстории.СтатусТехники = СтатусТехники.ВРаботе;
                 фиксацияИстории.Владелец = this;
                 фиксацияИстории.AddMovement();
                 фиксацияИстории.Post();
+
+                регистрСмен.New();
+                var all = регистрСмен.GetCirculate(this.Время.AddSeconds(1), NsgService.MaxDate, new NsgCompare()
+                    .Add(РегистрСмен.Names.Объект, фиксацияИстории.Объект)
+                    .Add(РегистрСмен.Names.Сотрудник, i[ФиксацияИстории.Names.Сотрудник].ToReferent() as Сотрудники)
+                    .Add(РегистрСмен.Names.НомерСмены, i[ФиксацияИстории.Names.НомерСмены].ToInt())
+                    .Add(РегистрСмен.Names.Техника, фиксацияИстории.Техника), NsgRegisterResult.Debit | NsgRegisterResult.Credit,
+                    РегистрСмен.Names.Владелец);
+                if (all.Count > 0)
+                {
+                    NsgDataDocument fs = all.Rows[0][РегистрСмен.Names.Владелец].ToReferent() as NsgDataDocument;
+                    foreach (var docRow in all.Rows)
+                    {
+                        var doc = docRow[РегистрСмен.Names.Владелец].ToReferent() as NsgDataDocument;
+                        if (doc.DateTime < fs.DateTime) fs = doc;
+                    }
+                    fs.Handle();
+                }
             }
             return true;
+        }
+
+        public override void Unhandle()
+        {
+            base.Unhandle();
+            РегистрСмен регистрСмен = РегистрСмен.Новый();
+            var фиксацияИстории = ФиксацияИстории.Новый();
+            фиксацияИстории.New();
+            фиксацияИстории.Объект = this.Объект;
+            var allRests = фиксацияИстории.GetRests(this.Время,
+                new NsgCompare().Add(ФиксацияИстории.Names.Объект, this.Объект).Add(ФиксацияИстории.Names.СтатусТехники, СтатусТехники.ВРаботе));
+            foreach (var i in allRests.Rows)
+            {
+                регистрСмен.New();
+                var all = регистрСмен.GetCirculate(this.Время.AddSeconds(1), NsgService.MaxDate, new NsgCompare()
+                    .Add(РегистрСмен.Names.Объект, фиксацияИстории.Объект)
+                    .Add(РегистрСмен.Names.Сотрудник, i[ФиксацияИстории.Names.Сотрудник].ToReferent() as Сотрудники)
+                    .Add(РегистрСмен.Names.НомерСмены, i[ФиксацияИстории.Names.НомерСмены].ToInt())
+                    .Add(РегистрСмен.Names.Техника, i[ФиксацияИстории.Names.Техника].Value), NsgRegisterResult.Debit | NsgRegisterResult.Credit,
+                    РегистрСмен.Names.Владелец);
+                if (all.Count > 0)
+                {
+                    NsgDataDocument fs = all.Rows[0][РегистрСмен.Names.Владелец].ToReferent() as NsgDataDocument;
+                    foreach (var docRow in all.Rows)
+                    {
+                        var doc = docRow[РегистрСмен.Names.Владелец].ToReferent() as NsgDataDocument;
+                        if (doc.DateTime < fs.DateTime) fs = doc;
+                    }
+                    fs.Handle();
+                }
+            }
         }
     }
 
