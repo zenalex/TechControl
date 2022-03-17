@@ -2038,4 +2038,33 @@
       <NsgOwnerName>ГруппыДолжностей</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\СтатусСотрудника\СтатусСотрудника.NsgInit.cs">
+      <NsgOwnerGuid>647de465-addc-4048-9670-33bacd6ed726</NsgOwnerGuid>
+      <NsgOwnerName>СтатусСотрудника</NsgOwnerName>
+      <DependentUpon>СтатусСотрудника.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\СтатусСотрудника\СтатусСотрудника.cs">
+      <NsgOwnerGuid>647de465-addc-4048-9670-33bacd6ed726</NsgOwnerGuid>
+      <NsgOwnerName>СтатусСотрудника</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\МониторингФормированиеСменыТаблицаПерсонал.NsgInit.cs">
+      <NsgOwnerGuid>a43feca3-3aff-4153-b0a9-5a51b1d4dfc0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФормированиеСменыТаблицаПерсонал</NsgOwnerName>
+      <DependentUpon>МониторингФормированиеСменыТаблицаПерсонал.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\МониторингФормированиеСменыТаблицаПерсонал.cs">
+      <NsgOwnerGuid>a43feca3-3aff-4153-b0a9-5a51b1d4dfc0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФормированиеСменыТаблицаПерсонал</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\МониторингФормированиеСменыТаблицаПерсонал.Строка.NsgInit.cs">
+      <NsgOwnerGuid>a43feca3-3aff-4153-b0a9-5a51b1d4dfc0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФормированиеСменыТаблицаПерсонал</NsgOwnerName>
+      <DependentUpon>МониторингФормированиеСменыТаблицаПерсонал.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\МониторингФормированиеСменыТаблицаПерсонал.Строка.cs">
+      <NsgOwnerGuid>a43feca3-3aff-4153-b0a9-5a51b1d4dfc0</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФормированиеСменыТаблицаПерсонал</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>
