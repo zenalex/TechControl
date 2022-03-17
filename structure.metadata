@@ -4982,22 +4982,27 @@
             <presentation lang="(Default)" value="{Представление}" />
           </NsgLanguageString>
           <ObjectList>
-            <NsgSimpleObject Guid="88d30c54-204c-4434-b65b-6455109952d5" type="NsgDataEnumElement" editoraccess="Full" name="ВРемонте" visible="true" description="ВРемонте" field="VRemonte" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="1">
+            <NsgSimpleObject Guid="88d30c54-204c-4434-b65b-6455109952d5" type="NsgDataEnumElement" editoraccess="Full" name="ВРемонте" visible="true" description="ВРемонте" field="VRemonte" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="2">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="f7183e98-1983-4d30-ae72-8c4414837066" type="NsgDataEnumElement" editoraccess="Full" name="Сломан" visible="true" description="Сломан" field="Sloman" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="2">
+            <NsgSimpleObject Guid="f7183e98-1983-4d30-ae72-8c4414837066" type="NsgDataEnumElement" editoraccess="Full" name="Сломан" visible="true" description="Сломан" field="Sloman" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="3">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="5e98bf7e-28a9-423e-888d-5c130bffd9c4" type="NsgDataEnumElement" editoraccess="Full" name="ВРаботе" visible="true" description="ВРаботе" field="VRabote" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
+            <NsgSimpleObject Guid="5e98bf7e-28a9-423e-888d-5c130bffd9c4" type="NsgDataEnumElement" editoraccess="Full" name="ВРаботе" visible="true" description="ВРаботе" field="VRabote" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="1">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="adf6aed9-8414-4d78-bf77-7d149e70abdd" type="NsgDataEnumElement" editoraccess="Full" name="НеРаботает" visible="true" description="Не работает" field="NeRabotaet" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="3">
+            <NsgSimpleObject Guid="adf6aed9-8414-4d78-bf77-7d149e70abdd" type="NsgDataEnumElement" editoraccess="Full" name="НеРаботает" visible="true" description="Не работает" field="NeRabotaet" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="4">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="8b3326db-ccd7-44c9-bfe3-59d16de26b90" type="NsgDataEnumElement" editoraccess="Full" name="НетДанных" visible="true" description="Нет данных" field="NetDannykh" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -5008,6 +5013,7 @@
             <container name="Сломан" />
             <container name="ВРаботе" />
             <container name="НеРаботает" />
+            <container name="НетДанных" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="6fb73fff-fe32-43cf-ba88-1f94aeff7aa0" type="NsgDataTable" editoraccess="Full" name="МониторингОбъектыТаблицаПерсонал" visible="true" description="Мониторинг объекты таблица сотрудники" group="_SystemTables" table="_tab_MonitoringObektyTab" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="TablePart" registerPeriod="None" registerPeriodCount="0">
