@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.3.11.0</ProductVersion>
+    <ProductVersion>2022.3.17.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -2017,5 +2017,25 @@
       <DependentUpon>Форма.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ГруппыСпецТехники\ГруппыСпецТехники.NsgInit.cs">
+      <NsgOwnerGuid>21529712-8785-4ebe-86d3-59936e877ae2</NsgOwnerGuid>
+      <NsgOwnerName>ГруппыСпецТехники</NsgOwnerName>
+      <DependentUpon>ГруппыСпецТехники.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ГруппыСпецТехники\ГруппыСпецТехники.cs">
+      <NsgOwnerGuid>21529712-8785-4ebe-86d3-59936e877ae2</NsgOwnerGuid>
+      <NsgOwnerName>ГруппыСпецТехники</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ГруппыДолжностей\ГруппыДолжностей.NsgInit.cs">
+      <NsgOwnerGuid>18057bf2-50e9-4d0c-bc3a-ec0cbfa12cea</NsgOwnerGuid>
+      <NsgOwnerName>ГруппыДолжностей</NsgOwnerName>
+      <DependentUpon>ГруппыДолжностей.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ГруппыДолжностей\ГруппыДолжностей.cs">
+      <NsgOwnerGuid>18057bf2-50e9-4d0c-bc3a-ec0cbfa12cea</NsgOwnerGuid>
+      <NsgOwnerName>ГруппыДолжностей</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
