@@ -49,6 +49,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.СостояниеДокумента = new TechControl.Метаданные.Сервис.СостоянияОбъекта.ColumnDescriptor();
             this.Марка = new TechControl.Метаданные.Мониторинг.Марка.ColumnDescriptor();
             this.Родитель = new TechControl.Метаданные.Мониторинг.Модель.ColumnDescriptor();
+            this.nsgInput2 = new NsgSoft.Forms.NsgInput();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -67,6 +69,7 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.documentStructure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -182,7 +185,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.panelButtons.AllowDrop = true;
             this.panelButtons.Controls.Add(this.nsgToolStrip2);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(0, 380);
+            this.panelButtons.Location = new System.Drawing.Point(0, 337);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Size = new System.Drawing.Size(741, 30);
             this.panelButtons.TabIndex = 2;
@@ -347,7 +350,7 @@ namespace TechControl.Метаданные.Мониторинг
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 25);
+            this.label1.Location = new System.Drawing.Point(21, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 9;
@@ -357,18 +360,18 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.nsgInput1.BackColor = System.Drawing.SystemColors.Window;
             this.nsgInput1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput1.ConfigurationName = "";
+            this.nsgInput1.ConfigurationName = "TechControl";
             this.nsgInput1.DisableLeaveControlEvent = false;
-            this.nsgInput1.FullName = "Наименование";
+            this.nsgInput1.FullName = "Мониторинг.Модель.Наименование";
             this.nsgInput1.FullTextSearch = false;
             this.nsgInput1.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput1.IsButton = false;
-            this.nsgInput1.IsInitialized = false;
+            this.nsgInput1.IsInitialized = true;
             this.nsgInput1.IsPassword = false;
             this.nsgInput1.Location = new System.Drawing.Point(110, 18);
             this.nsgInput1.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput1.Mask = "";
-            this.nsgInput1.MetaDataName = "";
+            this.nsgInput1.MetaDataName = "Метаданные";
             this.nsgInput1.MinimumSize = new System.Drawing.Size(4, 20);
             this.nsgInput1.Name = "NsgInput";
             this.nsgInput1.ObjectImages = null;
@@ -535,6 +538,45 @@ namespace TechControl.Метаданные.Мониторинг
             this.Родитель.SearchCondition.OwnerComponent = this.Родитель;
             this.Родитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // nsgInput2
+            // 
+            this.nsgInput2.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput2.ConfigurationName = "";
+            this.nsgInput2.DisableLeaveControlEvent = false;
+            this.nsgInput2.FullName = "Марка";
+            this.nsgInput2.FullTextSearch = false;
+            this.nsgInput2.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput2.IsButton = false;
+            this.nsgInput2.IsInitialized = true;
+            this.nsgInput2.IsPassword = false;
+            this.nsgInput2.Location = new System.Drawing.Point(110, 48);
+            this.nsgInput2.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput2.Mask = "";
+            this.nsgInput2.MetaDataName = "";
+            this.nsgInput2.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput2.Name = "NsgInput";
+            this.nsgInput2.ObjectImages = null;
+            this.nsgInput2.ObjectIndex = null;
+            this.nsgInput2.ObjectStrings = null;
+            this.nsgInput2.Requsite = "Марка";
+            this.nsgInput2.SearchFieldName = "";
+            this.nsgInput2.ShowMultipleObjectInComboBox = false;
+            this.nsgInput2.ShowRowCount = 10;
+            this.nsgInput2.Size = new System.Drawing.Size(194, 20);
+            this.nsgInput2.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput2.TabIndex = 12;
+            this.nsgInput2.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(64, 51);
+            this.label2.Name = "label1";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Марка:";
+            // 
             // МодельФормаЭлемента
             // 
             this.AllowDrop = true;
@@ -544,6 +586,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(741, 410);
+            this.Controls.Add(this.nsgInput2);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.nsgInput1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelButtons);
@@ -559,6 +603,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Controls.SetChildIndex(this.panelButtons, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.nsgInput1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.nsgInput2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).EndInit();
@@ -579,6 +625,7 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.documentStructure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,5 +648,7 @@ namespace TechControl.Метаданные.Мониторинг
         protected Модель.ColumnDescriptor Родитель;
         private System.Windows.Forms.Label label1;
         protected NsgInput nsgInput1;
+        protected NsgInput nsgInput2;
+        protected System.Windows.Forms.Label label2;
     }
 }

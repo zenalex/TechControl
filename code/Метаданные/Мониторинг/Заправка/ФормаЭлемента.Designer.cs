@@ -674,7 +674,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput3.SearchFieldName = "";
             this.nsgInput3.ShowMultipleObjectInComboBox = false;
             this.nsgInput3.ShowRowCount = 10;
-            this.nsgInput3.Size = new System.Drawing.Size(130, 20);
+            this.nsgInput3.Size = new System.Drawing.Size(225, 20);
             this.nsgInput3.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput3.TabIndex = 18;
             this.nsgInput3.VerticalAlignment = System.Drawing.StringAlignment.Center;
@@ -704,7 +704,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput4.SearchFieldName = "";
             this.nsgInput4.ShowMultipleObjectInComboBox = false;
             this.nsgInput4.ShowRowCount = 10;
-            this.nsgInput4.Size = new System.Drawing.Size(130, 20);
+            this.nsgInput4.Size = new System.Drawing.Size(225, 20);
             this.nsgInput4.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput4.TabIndex = 19;
             this.nsgInput4.VerticalAlignment = System.Drawing.StringAlignment.Center;
@@ -734,7 +734,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput5.SearchFieldName = "";
             this.nsgInput5.ShowMultipleObjectInComboBox = false;
             this.nsgInput5.ShowRowCount = 10;
-            this.nsgInput5.Size = new System.Drawing.Size(130, 20);
+            this.nsgInput5.Size = new System.Drawing.Size(225, 20);
             this.nsgInput5.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput5.TabIndex = 20;
             this.nsgInput5.VerticalAlignment = System.Drawing.StringAlignment.Center;
@@ -780,6 +780,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput7.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput7.IsButton = false;
             this.nsgInput7.IsInitialized = true;
+            this.nsgInput7.IsMultiline = true;
             this.nsgInput7.IsPassword = false;
             this.nsgInput7.Location = new System.Drawing.Point(146, 190);
             this.nsgInput7.Margin = new System.Windows.Forms.Padding(0);
@@ -794,7 +795,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput7.SearchFieldName = "";
             this.nsgInput7.ShowMultipleObjectInComboBox = false;
             this.nsgInput7.ShowRowCount = 10;
-            this.nsgInput7.Size = new System.Drawing.Size(309, 20);
+            this.nsgInput7.Size = new System.Drawing.Size(309, 68);
             this.nsgInput7.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput7.TabIndex = 22;
             this.nsgInput7.VerticalAlignment = System.Drawing.StringAlignment.Center;

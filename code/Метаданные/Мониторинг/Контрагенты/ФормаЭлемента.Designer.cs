@@ -60,6 +60,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput3 = new NsgSoft.Forms.NsgInput();
             this.nsgInput4 = new NsgSoft.Forms.NsgInput();
             this.nsgInput5 = new NsgSoft.Forms.NsgInput();
+            this.nsgInput6 = new NsgSoft.Forms.NsgInput();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -82,6 +84,7 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -550,7 +553,7 @@ namespace TechControl.Метаданные.Мониторинг
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 16);
+            this.label1.Location = new System.Drawing.Point(24, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 9;
@@ -567,7 +570,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput1.IsButton = false;
             this.nsgInput1.IsInitialized = true;
             this.nsgInput1.IsPassword = false;
-            this.nsgInput1.Location = new System.Drawing.Point(119, 41);
+            this.nsgInput1.Location = new System.Drawing.Point(119, 69);
             this.nsgInput1.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput1.Mask = "";
             this.nsgInput1.MetaDataName = "Метаданные";
@@ -618,7 +621,7 @@ namespace TechControl.Метаданные.Мониторинг
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 48);
+            this.label2.Location = new System.Drawing.Point(14, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 12;
@@ -627,7 +630,7 @@ namespace TechControl.Метаданные.Мониторинг
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 74);
+            this.label3.Location = new System.Drawing.Point(45, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 13;
@@ -636,7 +639,7 @@ namespace TechControl.Метаданные.Мониторинг
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 104);
+            this.label4.Location = new System.Drawing.Point(52, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 14;
@@ -645,7 +648,7 @@ namespace TechControl.Метаданные.Мониторинг
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(0, 131);
+            this.label5.Location = new System.Drawing.Point(0, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 13);
             this.label5.TabIndex = 15;
@@ -662,7 +665,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput3.IsButton = false;
             this.nsgInput3.IsInitialized = true;
             this.nsgInput3.IsPassword = false;
-            this.nsgInput3.Location = new System.Drawing.Point(119, 67);
+            this.nsgInput3.Location = new System.Drawing.Point(119, 96);
             this.nsgInput3.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput3.Mask = "";
             this.nsgInput3.MetaDataName = "Метаданные";
@@ -691,7 +694,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput4.IsButton = false;
             this.nsgInput4.IsInitialized = true;
             this.nsgInput4.IsPassword = false;
-            this.nsgInput4.Location = new System.Drawing.Point(119, 97);
+            this.nsgInput4.Location = new System.Drawing.Point(119, 125);
             this.nsgInput4.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput4.Mask = "";
             this.nsgInput4.MetaDataName = "Метаданные";
@@ -720,7 +723,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput5.IsButton = false;
             this.nsgInput5.IsInitialized = true;
             this.nsgInput5.IsPassword = false;
-            this.nsgInput5.Location = new System.Drawing.Point(119, 124);
+            this.nsgInput5.Location = new System.Drawing.Point(119, 152);
             this.nsgInput5.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput5.Mask = "";
             this.nsgInput5.MetaDataName = "Метаданные";
@@ -738,6 +741,45 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput5.TabIndex = 18;
             this.nsgInput5.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // nsgInput6
+            // 
+            this.nsgInput6.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput6.ConfigurationName = "";
+            this.nsgInput6.DisableLeaveControlEvent = false;
+            this.nsgInput6.FullName = "Адрес";
+            this.nsgInput6.FullTextSearch = false;
+            this.nsgInput6.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput6.IsButton = false;
+            this.nsgInput6.IsInitialized = true;
+            this.nsgInput6.IsPassword = false;
+            this.nsgInput6.Location = new System.Drawing.Point(119, 39);
+            this.nsgInput6.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput6.Mask = "";
+            this.nsgInput6.MetaDataName = "";
+            this.nsgInput6.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput6.Name = "NsgInput";
+            this.nsgInput6.ObjectImages = null;
+            this.nsgInput6.ObjectIndex = null;
+            this.nsgInput6.ObjectStrings = null;
+            this.nsgInput6.Requsite = "Адрес";
+            this.nsgInput6.SearchFieldName = "";
+            this.nsgInput6.ShowMultipleObjectInComboBox = false;
+            this.nsgInput6.ShowRowCount = 10;
+            this.nsgInput6.Size = new System.Drawing.Size(427, 20);
+            this.nsgInput6.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput6.TabIndex = 20;
+            this.nsgInput6.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(69, 43);
+            this.label6.Name = "label1";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Адрес:";
+            // 
             // КонтрагентыФормаЭлемента
             // 
             this.AllowDrop = true;
@@ -747,6 +789,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(741, 410);
+            this.Controls.Add(this.nsgInput6);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.nsgInput5);
             this.Controls.Add(this.nsgInput4);
             this.Controls.Add(this.nsgInput3);
@@ -778,6 +822,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Controls.SetChildIndex(this.nsgInput3, 0);
             this.Controls.SetChildIndex(this.nsgInput4, 0);
             this.Controls.SetChildIndex(this.nsgInput5, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.nsgInput6, 0);
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).EndInit();
@@ -802,6 +848,7 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -835,5 +882,7 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgInput nsgInput3;
         protected NsgInput nsgInput4;
         protected NsgInput nsgInput5;
+        protected NsgInput nsgInput6;
+        protected System.Windows.Forms.Label label6;
     }
 }

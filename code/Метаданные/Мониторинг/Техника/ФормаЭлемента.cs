@@ -8,15 +8,9 @@ using System.Windows.Forms;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
 
-
-
-
-
 namespace TechControl.Метаданные.Мониторинг
 {
-    
     public partial class ТехникаФормаЭлемента
-
     {
         public ТехникаФормаЭлемента()
         {
@@ -40,6 +34,4 @@ namespace TechControl.Метаданные.Мониторинг
         #endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
     }
     
-
-
 }
