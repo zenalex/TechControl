@@ -23,6 +23,12 @@ namespace TechControl.Метаданные.Мониторинг
         #endregion //Свойства
 
         #region Методы
+        protected override List<Guid> BasePost()
+        {
+            Сумма = Цена * ОбъемТоплива;
+            return base.BasePost();
+        }
+
         protected override bool Handling()
         {
             РегистрПоставокТоплива регистрЗаправок = РегистрПоставокТоплива.Новый(this);
@@ -32,6 +38,8 @@ namespace TechControl.Метаданные.Мониторинг
             регистрЗаправок.Объект = this.Объект;
             регистрЗаправок.Поставщик = this.Поставщик;
             регистрЗаправок.ОбъемТоплива = this.ОбъемТоплива;
+            регистрЗаправок.Цена = this.Цена;
+            регистрЗаправок.Сумма = this.Сумма;
             регистрЗаправок.AddMovement();
             return регистрЗаправок.Post();
         }
