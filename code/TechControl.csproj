@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.3.25.0</ProductVersion>
+    <ProductVersion>2022.3.25.1</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -2065,6 +2065,26 @@
     <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\МониторингФормированиеСменыТаблицаПерсонал.Строка.cs">
       <NsgOwnerGuid>a43feca3-3aff-4153-b0a9-5a51b1d4dfc0</NsgOwnerGuid>
       <NsgOwnerName>МониторингФормированиеСменыТаблицаПерсонал</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ВидОперацииЗаправки\ВидОперацииЗаправки.NsgInit.cs">
+      <NsgOwnerGuid>487e357b-cc2b-4d47-b0ac-6b8f822d2802</NsgOwnerGuid>
+      <NsgOwnerName>ВидОперацииЗаправки</NsgOwnerName>
+      <DependentUpon>ВидОперацииЗаправки.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ВидОперацииЗаправки\ВидОперацииЗаправки.cs">
+      <NsgOwnerGuid>487e357b-cc2b-4d47-b0ac-6b8f822d2802</NsgOwnerGuid>
+      <NsgOwnerName>ВидОперацииЗаправки</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ИсточникиЗаправки\ИсточникиЗаправки.NsgInit.cs">
+      <NsgOwnerGuid>70d5fc1a-4827-4762-b40d-f4747dc4b890</NsgOwnerGuid>
+      <NsgOwnerName>ИсточникиЗаправки</NsgOwnerName>
+      <DependentUpon>ИсточникиЗаправки.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ИсточникиЗаправки\ИсточникиЗаправки.cs">
+      <NsgOwnerGuid>70d5fc1a-4827-4762-b40d-f4747dc4b890</NsgOwnerGuid>
+      <NsgOwnerName>ИсточникиЗаправки</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
