@@ -4708,13 +4708,13 @@
             <container name="ЯвляетсяСтаршимПоОбъекту" />
             <container name="ГруппаДолжностей" />
             <container name="ОператорСпецТехники" />
+            <container name="Роль" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Роль" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -5914,6 +5914,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="fea3be74-a53c-4b6e-b76b-6b26a651f0c4" type="NsgDataInteger" editoraccess="Full" name="ИконкаТарифа" visible="true" description="Иконка тарифа" field="IkonkaTarifa" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -5924,6 +5929,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ИконкаТарифа" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
