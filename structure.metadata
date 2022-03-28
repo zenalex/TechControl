@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.3.28.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.3.28.1" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.3.28.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.3.28.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.3.28.1" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.3.28.1;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -1808,6 +1808,7 @@
             <container name="Примечание" />
             <container name="Статус" />
             <container name="ТипСобственности" />
+            <container name="ГруппаСпецТехники" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -1817,7 +1818,6 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
-            <container name="ГруппаСпецТехники" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4695,6 +4695,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="9b661eef-ebef-4974-b063-ddd4249dff6d" type="NsgDataEnumReference" editoraccess="Full" name="Роль" visible="true" description="Роль" field="Rol" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Роль">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -4702,13 +4707,14 @@
             <container name="Описание" />
             <container name="ЯвляетсяСтаршимПоОбъекту" />
             <container name="ГруппаДолжностей" />
+            <container name="ОператорСпецТехники" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="ОператорСпецТехники" />
+            <container name="Роль" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -7194,6 +7200,30 @@
           <Containers>
             <container name="ПоставщикТоплива" />
             <container name="СобственныеЗапасы" />
+          </Containers>
+        </NsgMultipleObject>
+        <NsgMultipleObject Guid="659b8b4a-54ab-43c1-8649-8018d1dd671e" type="NsgDataEnum" editoraccess="Full" name="Роль" visible="true" description="Перечисление" group="Мониторинг" table="_enum_Rol" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False">
+          <NsgLanguageString type="presentation">
+            <presentation lang="(Default)" value="" />
+          </NsgLanguageString>
+          <NsgLanguageString type="valuemask">
+            <presentation lang="(Default)" value="{Представление}" />
+          </NsgLanguageString>
+          <ObjectList>
+            <NsgSimpleObject Guid="82c5ee9a-b130-427e-9f21-65594a3a254f" type="NsgDataEnumElement" editoraccess="Full" name="Разнорабочий" visible="true" description="Разнорабочий" field="Raznorabochiij" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="1">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="f4fe7e73-97f5-4297-80de-f204993cf1fa" type="NsgDataEnumElement" editoraccess="Full" name="ОператорСпецТехники" visible="true" description="Оператор спец техники" field="OperatorSpecTekhniki" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+          </ObjectList>
+          <Containers>
+            <container name="Разнорабочий" />
+            <container name="ОператорСпецТехники" />
           </Containers>
         </NsgMultipleObject>
       </ObjectList>
