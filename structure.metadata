@@ -2273,6 +2273,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="68249440-944b-4dc0-aaa4-e8bd179c7437" type="NsgDataTypedReference" editoraccess="Full" name="ПоставщикТоплива" visible="true" description="Поставщик топлива" field="PostavschikTopliva" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Контрагенты">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -2295,6 +2300,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ПоставщикТоплива" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>

@@ -38,6 +38,14 @@ namespace TechControl.Метаданные.Мониторинг
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nsgInput2 = new NsgSoft.Forms.NsgInput();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nsgInput3 = new NsgSoft.Forms.NsgInput();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nsgInput4 = new NsgSoft.Forms.NsgInput();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nsgInput5 = new NsgSoft.Forms.NsgInput();
+            this.label6 = new System.Windows.Forms.Label();
+            this.nsgInput6 = new NsgSoft.Forms.NsgInput();
             this.Идентификатор = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
             this.Автоинкремент = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ЭтоГруппа = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
@@ -52,16 +60,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Описание = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ЯвляетсяСтаршимПоОбъекту = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.ГруппаДолжностей = new TechControl.Метаданные.Мониторинг.ГруппыДолжностей.ColumnDescriptor();
-            this.ГруппаСпецТехники = new TechControl.Метаданные.Мониторинг.ГруппыСпецТехники.ColumnDescriptor();
+            this.Роль = new TechControl.Метаданные.Мониторинг.Роль.ColumnDescriptor();
             this.Родитель = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
-            this.label3 = new System.Windows.Forms.Label();
-            this.nsgInput3 = new NsgSoft.Forms.NsgInput();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nsgInput4 = new NsgSoft.Forms.NsgInput();
-            this.label5 = new System.Windows.Forms.Label();
-            this.nsgInput5 = new NsgSoft.Forms.NsgInput();
-            this.label6 = new System.Windows.Forms.Label();
-            this.nsgInput6 = new NsgSoft.Forms.NsgInput();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -359,7 +359,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Описание);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ЯвляетсяСтаршимПоОбъекту);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ГруппаДолжностей);
-            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ГруппаСпецТехники);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.Роль);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Родитель);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.MetaDataName = "Метаданные";
@@ -442,6 +442,162 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput2.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput2.TabIndex = 12;
             this.nsgInput2.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(392, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(166, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Является старшим по объекту:";
+            // 
+            // nsgInput3
+            // 
+            this.nsgInput3.BackColor = System.Drawing.SystemColors.Control;
+            this.nsgInput3.ConfigurationName = "TechControl";
+            this.nsgInput3.DisableLeaveControlEvent = false;
+            this.nsgInput3.FullName = "Мониторинг.Должности.ЯвляетсяСтаршимПоОбъекту";
+            this.nsgInput3.FullTextSearch = false;
+            this.nsgInput3.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput3.IsButton = false;
+            this.nsgInput3.IsInitialized = true;
+            this.nsgInput3.IsPassword = false;
+            this.nsgInput3.Location = new System.Drawing.Point(561, 9);
+            this.nsgInput3.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput3.Mask = "";
+            this.nsgInput3.MetaDataName = "Метаданные";
+            this.nsgInput3.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput3.Name = "NsgInput";
+            this.nsgInput3.ObjectImages = null;
+            this.nsgInput3.ObjectIndex = null;
+            this.nsgInput3.ObjectStrings = null;
+            this.nsgInput3.Requsite = "ЯвляетсяСтаршимПоОбъекту";
+            this.nsgInput3.SearchFieldName = "";
+            this.nsgInput3.ShowMultipleObjectInComboBox = false;
+            this.nsgInput3.ShowRowCount = 10;
+            this.nsgInput3.Size = new System.Drawing.Size(18, 20);
+            this.nsgInput3.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput3.TabIndex = 13;
+            this.nsgInput3.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Группа должностей:";
+            // 
+            // nsgInput4
+            // 
+            this.nsgInput4.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput4.ConfigurationName = "TechControl";
+            this.nsgInput4.DisableLeaveControlEvent = false;
+            this.nsgInput4.FullName = "Мониторинг.Должности.ГруппаДолжностей";
+            this.nsgInput4.FullTextSearch = false;
+            this.nsgInput4.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput4.IsButton = false;
+            this.nsgInput4.IsInitialized = true;
+            this.nsgInput4.IsPassword = false;
+            this.nsgInput4.Location = new System.Drawing.Point(124, 69);
+            this.nsgInput4.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput4.Mask = "";
+            this.nsgInput4.MetaDataName = "Метаданные";
+            this.nsgInput4.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput4.Name = "NsgInput";
+            this.nsgInput4.ObjectImages = null;
+            this.nsgInput4.ObjectIndex = null;
+            this.nsgInput4.ObjectStrings = null;
+            this.nsgInput4.Requsite = "ГруппаДолжностей";
+            this.nsgInput4.SearchFieldName = "";
+            this.nsgInput4.ShowMultipleObjectInComboBox = false;
+            this.nsgInput4.ShowRowCount = 10;
+            this.nsgInput4.Size = new System.Drawing.Size(247, 20);
+            this.nsgInput4.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput4.TabIndex = 15;
+            this.nsgInput4.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Роль:";
+            // 
+            // nsgInput5
+            // 
+            this.nsgInput5.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput5.ConfigurationName = "TechControl";
+            this.nsgInput5.DisableLeaveControlEvent = false;
+            this.nsgInput5.FullName = "Мониторинг.Должности.Роль";
+            this.nsgInput5.FullTextSearch = false;
+            this.nsgInput5.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput5.IsButton = false;
+            this.nsgInput5.IsInitialized = true;
+            this.nsgInput5.IsPassword = false;
+            this.nsgInput5.Location = new System.Drawing.Point(124, 99);
+            this.nsgInput5.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput5.Mask = "";
+            this.nsgInput5.MetaDataName = "Метаданные";
+            this.nsgInput5.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput5.Name = "NsgInput";
+            this.nsgInput5.ObjectImages = null;
+            this.nsgInput5.ObjectIndex = null;
+            this.nsgInput5.ObjectStrings = null;
+            this.nsgInput5.Requsite = "Роль";
+            this.nsgInput5.SearchFieldName = "";
+            this.nsgInput5.ShowMultipleObjectInComboBox = false;
+            this.nsgInput5.ShowRowCount = 10;
+            this.nsgInput5.Size = new System.Drawing.Size(247, 20);
+            this.nsgInput5.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput5.TabIndex = 17;
+            this.nsgInput5.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 131);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Описание:";
+            // 
+            // nsgInput6
+            // 
+            this.nsgInput6.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput6.ConfigurationName = "TechControl";
+            this.nsgInput6.DisableLeaveControlEvent = false;
+            this.nsgInput6.FullName = "Мониторинг.Должности.Описание";
+            this.nsgInput6.FullTextSearch = false;
+            this.nsgInput6.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput6.IsButton = false;
+            this.nsgInput6.IsInitialized = true;
+            this.nsgInput6.IsMultiline = true;
+            this.nsgInput6.IsPassword = false;
+            this.nsgInput6.Location = new System.Drawing.Point(14, 149);
+            this.nsgInput6.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput6.Mask = "";
+            this.nsgInput6.MetaDataName = "Метаданные";
+            this.nsgInput6.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput6.Name = "NsgInput";
+            this.nsgInput6.ObjectImages = null;
+            this.nsgInput6.ObjectIndex = null;
+            this.nsgInput6.ObjectStrings = null;
+            this.nsgInput6.Requsite = "Описание";
+            this.nsgInput6.SearchFieldName = "";
+            this.nsgInput6.ShowMultipleObjectInComboBox = false;
+            this.nsgInput6.ShowRowCount = 10;
+            this.nsgInput6.Size = new System.Drawing.Size(565, 42);
+            this.nsgInput6.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput6.TabIndex = 19;
+            this.nsgInput6.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // Идентификатор
             // 
@@ -606,16 +762,16 @@ namespace TechControl.Метаданные.Мониторинг
             this.ГруппаДолжностей.SearchCondition.OwnerComponent = this.ГруппаДолжностей;
             this.ГруппаДолжностей.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // ГруппаСпецТехники
+            // Роль
             // 
-            this.ГруппаСпецТехники.AutoGenerated = true;
-            this.ГруппаСпецТехники.Caption = "ГруппаСпецТехники";
-            this.ГруппаСпецТехники.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ГруппаСпецТехники.Name = "ГруппаСпецТехники";
-            this.ГруппаСпецТехники.NSGType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
-            this.ГруппаСпецТехники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
-            this.ГруппаСпецТехники.SearchCondition.OwnerComponent = this.ГруппаСпецТехники;
-            this.ГруппаСпецТехники.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Роль.AutoGenerated = true;
+            this.Роль.Caption = "Роль";
+            this.Роль.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Роль.Name = "Роль";
+            this.Роль.NSGType = typeof(TechControl.Метаданные.Мониторинг.Роль);
+            this.Роль.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Роль);
+            this.Роль.SearchCondition.OwnerComponent = this.Роль;
+            this.Роль.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // Родитель
             // 
@@ -627,162 +783,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.Родитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Должности);
             this.Родитель.SearchCondition.OwnerComponent = this.Родитель;
             this.Родитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(392, 12);
-            this.label3.Name = "label1";
-            this.label3.Size = new System.Drawing.Size(166, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Является старшим по объекту:";
-            // 
-            // nsgInput3
-            // 
-            this.nsgInput3.BackColor = System.Drawing.SystemColors.Control;
-            this.nsgInput3.ConfigurationName = "TechControl";
-            this.nsgInput3.DisableLeaveControlEvent = false;
-            this.nsgInput3.FullName = "Мониторинг.Должности.ЯвляетсяСтаршимПоОбъекту";
-            this.nsgInput3.FullTextSearch = false;
-            this.nsgInput3.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput3.IsButton = false;
-            this.nsgInput3.IsInitialized = true;
-            this.nsgInput3.IsPassword = false;
-            this.nsgInput3.Location = new System.Drawing.Point(561, 9);
-            this.nsgInput3.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput3.Mask = "";
-            this.nsgInput3.MetaDataName = "Метаданные";
-            this.nsgInput3.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput3.Name = "NsgInput";
-            this.nsgInput3.ObjectImages = null;
-            this.nsgInput3.ObjectIndex = null;
-            this.nsgInput3.ObjectStrings = null;
-            this.nsgInput3.Requsite = "ЯвляетсяСтаршимПоОбъекту";
-            this.nsgInput3.SearchFieldName = "";
-            this.nsgInput3.ShowMultipleObjectInComboBox = false;
-            this.nsgInput3.ShowRowCount = 10;
-            this.nsgInput3.Size = new System.Drawing.Size(18, 20);
-            this.nsgInput3.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput3.TabIndex = 13;
-            this.nsgInput3.VerticalAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 72);
-            this.label4.Name = "label1";
-            this.label4.Size = new System.Drawing.Size(109, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Группа должностей:";
-            // 
-            // nsgInput4
-            // 
-            this.nsgInput4.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput4.ConfigurationName = "TechControl";
-            this.nsgInput4.DisableLeaveControlEvent = false;
-            this.nsgInput4.FullName = "Мониторинг.Должности.ГруппаДолжностей";
-            this.nsgInput4.FullTextSearch = false;
-            this.nsgInput4.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput4.IsButton = false;
-            this.nsgInput4.IsInitialized = true;
-            this.nsgInput4.IsPassword = false;
-            this.nsgInput4.Location = new System.Drawing.Point(124, 69);
-            this.nsgInput4.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput4.Mask = "";
-            this.nsgInput4.MetaDataName = "Метаданные";
-            this.nsgInput4.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput4.Name = "NsgInput";
-            this.nsgInput4.ObjectImages = null;
-            this.nsgInput4.ObjectIndex = null;
-            this.nsgInput4.ObjectStrings = null;
-            this.nsgInput4.Requsite = "ГруппаДолжностей";
-            this.nsgInput4.SearchFieldName = "";
-            this.nsgInput4.ShowMultipleObjectInComboBox = false;
-            this.nsgInput4.ShowRowCount = 10;
-            this.nsgInput4.Size = new System.Drawing.Size(247, 20);
-            this.nsgInput4.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput4.TabIndex = 15;
-            this.nsgInput4.VerticalAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 102);
-            this.label5.Name = "label1";
-            this.label5.Size = new System.Drawing.Size(112, 13);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Группа спецтехники:";
-            // 
-            // nsgInput5
-            // 
-            this.nsgInput5.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput5.ConfigurationName = "TechControl";
-            this.nsgInput5.DisableLeaveControlEvent = false;
-            this.nsgInput5.FullName = "Мониторинг.Должности.ГруппаСпецТехники";
-            this.nsgInput5.FullTextSearch = false;
-            this.nsgInput5.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput5.IsButton = false;
-            this.nsgInput5.IsInitialized = true;
-            this.nsgInput5.IsPassword = false;
-            this.nsgInput5.Location = new System.Drawing.Point(124, 99);
-            this.nsgInput5.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput5.Mask = "";
-            this.nsgInput5.MetaDataName = "Метаданные";
-            this.nsgInput5.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput5.Name = "NsgInput";
-            this.nsgInput5.ObjectImages = null;
-            this.nsgInput5.ObjectIndex = null;
-            this.nsgInput5.ObjectStrings = null;
-            this.nsgInput5.Requsite = "ГруппаСпецТехники";
-            this.nsgInput5.SearchFieldName = "";
-            this.nsgInput5.ShowMultipleObjectInComboBox = false;
-            this.nsgInput5.ShowRowCount = 10;
-            this.nsgInput5.Size = new System.Drawing.Size(247, 20);
-            this.nsgInput5.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput5.TabIndex = 17;
-            this.nsgInput5.VerticalAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 131);
-            this.label6.Name = "label1";
-            this.label6.Size = new System.Drawing.Size(60, 13);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Описание:";
-            // 
-            // nsgInput6
-            // 
-            this.nsgInput6.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput6.ConfigurationName = "TechControl";
-            this.nsgInput6.DisableLeaveControlEvent = false;
-            this.nsgInput6.FullName = "Мониторинг.Должности.Описание";
-            this.nsgInput6.FullTextSearch = false;
-            this.nsgInput6.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput6.IsButton = false;
-            this.nsgInput6.IsInitialized = true;
-            this.nsgInput6.IsMultiline = true;
-            this.nsgInput6.IsPassword = false;
-            this.nsgInput6.Location = new System.Drawing.Point(14, 149);
-            this.nsgInput6.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput6.Mask = "";
-            this.nsgInput6.MetaDataName = "Метаданные";
-            this.nsgInput6.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput6.Name = "NsgInput";
-            this.nsgInput6.ObjectImages = null;
-            this.nsgInput6.ObjectIndex = null;
-            this.nsgInput6.ObjectStrings = null;
-            this.nsgInput6.Requsite = "Описание";
-            this.nsgInput6.SearchFieldName = "";
-            this.nsgInput6.ShowMultipleObjectInComboBox = false;
-            this.nsgInput6.ShowRowCount = 10;
-            this.nsgInput6.Size = new System.Drawing.Size(565, 42);
-            this.nsgInput6.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput6.TabIndex = 19;
-            this.nsgInput6.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // ДолжностиФормаЭлемента
             // 
@@ -863,22 +863,6 @@ namespace TechControl.Метаданные.Мониторинг
         private System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Label label2;
         protected NsgInput nsgInput2;
-        protected NsgColumnDescriptor.Guid Идентификатор;
-        protected NsgColumnDescriptor.Int64 Автоинкремент;
-        protected NsgColumnDescriptor.Boolean ЭтоГруппа;
-        protected NsgColumnDescriptor.Guid ИдентификаторРодителя;
-        protected NsgColumnDescriptor.Byte Уровень;
-        protected NsgColumnDescriptor.String ПрефиксКода;
-        protected NsgColumnDescriptor.Int64 НомерКода;
-        protected NsgColumnDescriptor.String Код;
-        protected NsgColumnDescriptor.String Наименование;
-        protected Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
-        protected РежимыРаботы.ColumnDescriptor РежимРаботы;
-        protected NsgColumnDescriptor.String Описание;
-        protected NsgColumnDescriptor.Boolean ЯвляетсяСтаршимПоОбъекту;
-        protected ГруппыДолжностей.ColumnDescriptor ГруппаДолжностей;
-        protected ГруппыСпецТехники.ColumnDescriptor ГруппаСпецТехники;
-        protected Должности.ColumnDescriptor Родитель;
         protected System.Windows.Forms.Label label3;
         protected NsgInput nsgInput3;
         protected System.Windows.Forms.Label label4;
@@ -887,5 +871,21 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgInput nsgInput5;
         protected System.Windows.Forms.Label label6;
         protected NsgInput nsgInput6;
+        private NsgColumnDescriptor.Guid Идентификатор;
+        private NsgColumnDescriptor.Int64 Автоинкремент;
+        private NsgColumnDescriptor.Boolean ЭтоГруппа;
+        private NsgColumnDescriptor.Guid ИдентификаторРодителя;
+        private NsgColumnDescriptor.Byte Уровень;
+        private NsgColumnDescriptor.String ПрефиксКода;
+        private NsgColumnDescriptor.Int64 НомерКода;
+        private NsgColumnDescriptor.String Код;
+        private NsgColumnDescriptor.String Наименование;
+        private Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
+        private РежимыРаботы.ColumnDescriptor РежимРаботы;
+        private NsgColumnDescriptor.String Описание;
+        private NsgColumnDescriptor.Boolean ЯвляетсяСтаршимПоОбъекту;
+        private ГруппыДолжностей.ColumnDescriptor ГруппаДолжностей;
+        private Роль.ColumnDescriptor Роль;
+        protected Должности.ColumnDescriptor Родитель;
     }
 }
