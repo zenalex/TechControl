@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.3.31.0</ProductVersion>
+    <ProductVersion>2022.4.4.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -2096,6 +2096,35 @@
     <Compile Include="Метаданные\Мониторинг\Роль\Роль.cs">
       <NsgOwnerGuid>659b8b4a-54ab-43c1-8649-8018d1dd671e</NsgOwnerGuid>
       <NsgOwnerName>Роль</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ТипСистемыСлежения\ТипСистемыСлежения.NsgInit.cs">
+      <NsgOwnerGuid>52a672f1-644a-4a72-b3e3-475beead7260</NsgOwnerGuid>
+      <NsgOwnerName>ТипСистемыСлежения</NsgOwnerName>
+      <DependentUpon>ТипСистемыСлежения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ТипСистемыСлежения\ТипСистемыСлежения.cs">
+      <NsgOwnerGuid>52a672f1-644a-4a72-b3e3-475beead7260</NsgOwnerGuid>
+      <NsgOwnerName>ТипСистемыСлежения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаСистемыСлежения.NsgInit.cs">
+      <NsgOwnerGuid>592b29d3-7e53-4e6a-afa5-8b4239e064d3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаСистемыСлежения</NsgOwnerName>
+      <DependentUpon>МониторингТехникаСистемыСлежения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаСистемыСлежения.cs">
+      <NsgOwnerGuid>592b29d3-7e53-4e6a-afa5-8b4239e064d3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаСистемыСлежения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаСистемыСлежения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>592b29d3-7e53-4e6a-afa5-8b4239e064d3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаСистемыСлежения</NsgOwnerName>
+      <DependentUpon>МониторингТехникаСистемыСлежения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаСистемыСлежения.Строка.cs">
+      <NsgOwnerGuid>592b29d3-7e53-4e6a-afa5-8b4239e064d3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаСистемыСлежения</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
