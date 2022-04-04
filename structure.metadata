@@ -5944,11 +5944,17 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="b9f13a44-e6d3-4074-a6bf-37180b811675" type="NsgDataTypedReference" editoraccess="Full" name="ГруппаСпецТехники" visible="true" description="Группа спец техники" field="GruppaSpecTekhniki" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="ГруппыСпецТехники">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Тариф" />
             <container name="Стоимость" />
             <container name="ИспользоватьПоУмолчанию" />
+            <container name="ГруппаСпецТехники" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="f5143a1f-0bda-424a-8c42-8d68d2d769e0" type="NsgReportObject" editoraccess="Full" name="ОтчетАрендаПоМесяцам" visible="true" description="Аренда по месяцам" group="Мониторинг" table="_report_OtchetArendaPoMe" useFullTextIndex="true" visibleadminonly="false">
