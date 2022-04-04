@@ -62,16 +62,18 @@ namespace TechControl.Метаданные.Мониторинг
             this.СостояниеДокумента = new TechControl.Метаданные.Сервис.СостоянияОбъекта.ColumnDescriptor();
             this.Марка = new TechControl.Метаданные.Мониторинг.Марка.ColumnDescriptor();
             this.Модель = new TechControl.Метаданные.Мониторинг.Модель.ColumnDescriptor();
-            this.ТипТС = new TechControl.Метаданные.Мониторинг.ТипТС.ColumnDescriptor();
             this.ГодВыпуска = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ГосНомер = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Подрядчик = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
-            this.Фотография = new NsgSoft.Forms.NsgColumnDescriptor();
             this.Номер = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.IdСкаут = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.НормативныйРасходТоплива = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.КонецРабочейСмены = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.НачалоРабочейСмены = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ОбъемТопливногоБака = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.Примечание = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.Статус = new TechControl.Метаданные.Мониторинг.СтатусТехники.ColumnDescriptor();
+            this.Тарифы = new TechControl.Метаданные._SystemTables.МониторингТехникаТарифы.ColumnDescriptor();
+            this.ТипСобственности = new TechControl.Метаданные.Мониторинг.ТипСобственности.ColumnDescriptor();
+            this.ГруппаСпецТехники = new TechControl.Метаданные.Мониторинг.ГруппыСпецТехники.ColumnDescriptor();
+            this.СистемыСлежения = new TechControl.Метаданные._SystemTables.МониторингТехникаСистемыСлежения.ColumnDescriptor();
             this.Родитель = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid1)).BeginInit();
@@ -91,16 +93,18 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.СостояниеДокумента);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Марка);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Модель);
-            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ТипТС);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ГодВыпуска);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ГосНомер);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Подрядчик);
-            this.nsgVisualMultipleObject.Columns.Collection.Add(this.Фотография);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Номер);
-            this.nsgVisualMultipleObject.Columns.Collection.Add(this.IdСкаут);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.НормативныйРасходТоплива);
-            this.nsgVisualMultipleObject.Columns.Collection.Add(this.КонецРабочейСмены);
-            this.nsgVisualMultipleObject.Columns.Collection.Add(this.НачалоРабочейСмены);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ОбъемТопливногоБака);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.Примечание);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.Статус);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.Тарифы);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ТипСобственности);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ГруппаСпецТехники);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.СистемыСлежения);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Родитель);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.MetaDataName = "Метаданные";
@@ -126,6 +130,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn1.DateFormat = null;
+            nsgIGridColumn1.ImportedFromVMO = false;
             nsgIGridColumn1.InitiateRowEdit = true;
             nsgIGridColumn1.Name = "IdСкаут";
             nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -142,6 +147,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn2.DateFormat = null;
+            nsgIGridColumn2.ImportedFromVMO = false;
             nsgIGridColumn2.InitiateRowEdit = true;
             nsgIGridColumn2.Name = "Код";
             nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -159,6 +165,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn3.DateFormat = null;
+            nsgIGridColumn3.ImportedFromVMO = false;
             nsgIGridColumn3.InitiateRowEdit = true;
             nsgIGridColumn3.Name = "Наименование";
             nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -175,6 +182,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn4.DateFormat = null;
+            nsgIGridColumn4.ImportedFromVMO = false;
             nsgIGridColumn4.InitiateRowEdit = true;
             nsgIGridColumn4.Name = "СостояниеДокумента";
             nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -192,6 +200,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn5.DateFormat = null;
+            nsgIGridColumn5.ImportedFromVMO = false;
             nsgIGridColumn5.InitiateRowEdit = true;
             nsgIGridColumn5.Name = "Марка";
             nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -208,6 +217,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn6.DateFormat = null;
+            nsgIGridColumn6.ImportedFromVMO = false;
             nsgIGridColumn6.InitiateRowEdit = true;
             nsgIGridColumn6.Name = "Модель";
             nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -224,6 +234,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn7.DateFormat = null;
+            nsgIGridColumn7.ImportedFromVMO = false;
             nsgIGridColumn7.InitiateRowEdit = true;
             nsgIGridColumn7.Name = "ТипТС";
             nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -240,6 +251,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn8.DateFormat = null;
+            nsgIGridColumn8.ImportedFromVMO = false;
             nsgIGridColumn8.InitiateRowEdit = true;
             nsgIGridColumn8.Name = "ГодВыпуска";
             nsgIGridColumn8.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -257,6 +269,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn9.DateFormat = null;
+            nsgIGridColumn9.ImportedFromVMO = false;
             nsgIGridColumn9.InitiateRowEdit = true;
             nsgIGridColumn9.Name = "ГосНомер";
             nsgIGridColumn9.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -273,6 +286,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn10.DateFormat = null;
+            nsgIGridColumn10.ImportedFromVMO = false;
             nsgIGridColumn10.InitiateRowEdit = true;
             nsgIGridColumn10.Name = "Подрядчик";
             nsgIGridColumn10.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -290,6 +304,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn11.DateFormat = null;
+            nsgIGridColumn11.ImportedFromVMO = false;
             nsgIGridColumn11.InitiateRowEdit = true;
             nsgIGridColumn11.Name = "Фотография";
             nsgIGridColumn11.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -307,6 +322,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn12.DateFormat = null;
+            nsgIGridColumn12.ImportedFromVMO = false;
             nsgIGridColumn12.InitiateRowEdit = true;
             nsgIGridColumn12.Name = "Номер";
             nsgIGridColumn12.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -323,6 +339,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn13.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn13.DateFormat = null;
+            nsgIGridColumn13.ImportedFromVMO = false;
             nsgIGridColumn13.InitiateRowEdit = true;
             nsgIGridColumn13.Name = "НормативныйРасходТоплива";
             nsgIGridColumn13.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -339,6 +356,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn14.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn14.DateFormat = null;
+            nsgIGridColumn14.ImportedFromVMO = false;
             nsgIGridColumn14.InitiateRowEdit = true;
             nsgIGridColumn14.Name = "КонецРабочейСмены";
             nsgIGridColumn14.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -355,6 +373,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn15.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn15.DateFormat = null;
+            nsgIGridColumn15.ImportedFromVMO = false;
             nsgIGridColumn15.InitiateRowEdit = true;
             nsgIGridColumn15.Name = "НачалоРабочейСмены";
             nsgIGridColumn15.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -371,6 +390,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn16.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn16.DateFormat = null;
+            nsgIGridColumn16.ImportedFromVMO = false;
             nsgIGridColumn16.InitiateRowEdit = true;
             nsgIGridColumn16.Name = "Родитель";
             nsgIGridColumn16.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -566,17 +586,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.Модель.SearchCondition.OwnerComponent = this.Модель;
             this.Модель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // ТипТС
-            // 
-            this.ТипТС.AutoGenerated = true;
-            this.ТипТС.Caption = "ТипТС";
-            this.ТипТС.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
-            this.ТипТС.Name = "ТипТС";
-            this.ТипТС.NSGType = typeof(TechControl.Метаданные.Мониторинг.ТипТС);
-            this.ТипТС.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ТипТС);
-            this.ТипТС.SearchCondition.OwnerComponent = this.ТипТС;
-            this.ТипТС.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
             // ГодВыпуска
             // 
             this.ГодВыпуска.AutoGenerated = true;
@@ -610,17 +619,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.Подрядчик.SearchCondition.OwnerComponent = this.Подрядчик;
             this.Подрядчик.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Фотография
-            // 
-            this.Фотография.AutoGenerated = true;
-            this.Фотография.Caption = "Фотография";
-            this.Фотография.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
-            this.Фотография.Name = "Фотография";
-            this.Фотография.NSGType = typeof(NsgSoft.DataObjects.NsgDataImage);
-            this.Фотография.PropertyType = typeof(System.Drawing.Image);
-            this.Фотография.SearchCondition.OwnerComponent = this.Фотография;
-            this.Фотография.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
             // Номер
             // 
             this.Номер.AutoGenerated = true;
@@ -631,17 +629,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.Номер.PropertyType = typeof(string);
             this.Номер.SearchCondition.OwnerComponent = this.Номер;
             this.Номер.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // IdСкаут
-            // 
-            this.IdСкаут.AutoGenerated = true;
-            this.IdСкаут.Caption = "IdСкаут";
-            this.IdСкаут.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
-            this.IdСкаут.Name = "IdСкаут";
-            this.IdСкаут.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
-            this.IdСкаут.PropertyType = typeof(string);
-            this.IdСкаут.SearchCondition.OwnerComponent = this.IdСкаут;
-            this.IdСкаут.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // НормативныйРасходТоплива
             // 
@@ -655,27 +642,85 @@ namespace TechControl.Метаданные.Мониторинг
             this.НормативныйРасходТоплива.SearchCondition.OwnerComponent = this.НормативныйРасходТоплива;
             this.НормативныйРасходТоплива.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // КонецРабочейСмены
+            // ОбъемТопливногоБака
             // 
-            this.КонецРабочейСмены.AutoGenerated = true;
-            this.КонецРабочейСмены.Caption = "КонецРабочейСмены";
-            this.КонецРабочейСмены.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
-            this.КонецРабочейСмены.Name = "КонецРабочейСмены";
-            this.КонецРабочейСмены.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.КонецРабочейСмены.PropertyType = typeof(System.DateTime);
-            this.КонецРабочейСмены.SearchCondition.OwnerComponent = this.КонецРабочейСмены;
-            this.КонецРабочейСмены.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.ОбъемТопливногоБака.AutoGenerated = true;
+            this.ОбъемТопливногоБака.CalcTotal = false;
+            this.ОбъемТопливногоБака.Caption = "ОбъемТопливногоБака";
+            this.ОбъемТопливногоБака.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
+            this.ОбъемТопливногоБака.Name = "ОбъемТопливногоБака";
+            this.ОбъемТопливногоБака.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ОбъемТопливногоБака.PropertyType = typeof(decimal);
+            this.ОбъемТопливногоБака.SearchCondition.OwnerComponent = this.ОбъемТопливногоБака;
+            this.ОбъемТопливногоБака.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // НачалоРабочейСмены
+            // Примечание
             // 
-            this.НачалоРабочейСмены.AutoGenerated = true;
-            this.НачалоРабочейСмены.Caption = "НачалоРабочейСмены";
-            this.НачалоРабочейСмены.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
-            this.НачалоРабочейСмены.Name = "НачалоРабочейСмены";
-            this.НачалоРабочейСмены.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.НачалоРабочейСмены.PropertyType = typeof(System.DateTime);
-            this.НачалоРабочейСмены.SearchCondition.OwnerComponent = this.НачалоРабочейСмены;
-            this.НачалоРабочейСмены.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Примечание.AutoGenerated = true;
+            this.Примечание.Caption = "Примечание";
+            this.Примечание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
+            this.Примечание.Name = "Примечание";
+            this.Примечание.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.Примечание.PropertyType = typeof(string);
+            this.Примечание.SearchCondition.OwnerComponent = this.Примечание;
+            this.Примечание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Статус
+            // 
+            this.Статус.AutoGenerated = true;
+            this.Статус.Caption = "Статус";
+            this.Статус.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
+            this.Статус.Name = "Статус";
+            this.Статус.NSGType = typeof(TechControl.Метаданные.Мониторинг.СтатусТехники);
+            this.Статус.PropertyType = typeof(TechControl.Метаданные.Мониторинг.СтатусТехники);
+            this.Статус.SearchCondition.OwnerComponent = this.Статус;
+            this.Статус.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Тарифы
+            // 
+            this.Тарифы.AutoGenerated = true;
+            this.Тарифы.Caption = "Тарифы";
+            this.Тарифы.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
+            this.Тарифы.Name = "Тарифы";
+            this.Тарифы.NSGType = typeof(TechControl.Метаданные._SystemTables.МониторингТехникаТарифы);
+            this.Тарифы.PropertyType = typeof(TechControl.Метаданные._SystemTables.МониторингТехникаТарифы);
+            this.Тарифы.SearchCondition.OwnerComponent = this.Тарифы;
+            this.Тарифы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Тарифы.Visible = false;
+            // 
+            // ТипСобственности
+            // 
+            this.ТипСобственности.AutoGenerated = true;
+            this.ТипСобственности.Caption = "ТипСобственности";
+            this.ТипСобственности.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
+            this.ТипСобственности.Name = "ТипСобственности";
+            this.ТипСобственности.NSGType = typeof(TechControl.Метаданные.Мониторинг.ТипСобственности);
+            this.ТипСобственности.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ТипСобственности);
+            this.ТипСобственности.SearchCondition.OwnerComponent = this.ТипСобственности;
+            this.ТипСобственности.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ГруппаСпецТехники
+            // 
+            this.ГруппаСпецТехники.AutoGenerated = true;
+            this.ГруппаСпецТехники.Caption = "ГруппаСпецТехники";
+            this.ГруппаСпецТехники.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
+            this.ГруппаСпецТехники.Name = "ГруппаСпецТехники";
+            this.ГруппаСпецТехники.NSGType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
+            this.ГруппаСпецТехники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
+            this.ГруппаСпецТехники.SearchCondition.OwnerComponent = this.ГруппаСпецТехники;
+            this.ГруппаСпецТехники.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // СистемыСлежения
+            // 
+            this.СистемыСлежения.AutoGenerated = true;
+            this.СистемыСлежения.Caption = "СистемыСлежения";
+            this.СистемыСлежения.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectBaseForm);
+            this.СистемыСлежения.Name = "СистемыСлежения";
+            this.СистемыСлежения.NSGType = typeof(TechControl.Метаданные._SystemTables.МониторингТехникаСистемыСлежения);
+            this.СистемыСлежения.PropertyType = typeof(TechControl.Метаданные._SystemTables.МониторингТехникаСистемыСлежения);
+            this.СистемыСлежения.SearchCondition.OwnerComponent = this.СистемыСлежения;
+            this.СистемыСлежения.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.СистемыСлежения.Visible = false;
             // 
             // Родитель
             // 
@@ -716,28 +761,30 @@ namespace TechControl.Метаданные.Мониторинг
         #endregion
 
         protected NsgColumnDescriptor.Guid Идентификатор;
-        private NsgColumnDescriptor.Int64 Автоинкремент;
-        private NsgColumnDescriptor.Boolean ЭтоГруппа;
-        private NsgColumnDescriptor.Guid ИдентификаторРодителя;
-        private NsgColumnDescriptor.Byte Уровень;
-        private NsgColumnDescriptor.String ПрефиксКода;
-        private NsgColumnDescriptor.Int64 НомерКода;
-        private NsgColumnDescriptor.String Код;
-        private NsgColumnDescriptor.String Наименование;
-        private Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
-        private Марка.ColumnDescriptor Марка;
-        private Модель.ColumnDescriptor Модель;
-        private ТипТС.ColumnDescriptor ТипТС;
-        private NsgColumnDescriptor.String ГодВыпуска;
-        private NsgColumnDescriptor.String ГосНомер;
-        private Контрагенты.ColumnDescriptor Подрядчик;
-        private NsgColumnDescriptor Фотография;
-        private NsgColumnDescriptor.String Номер;
-        private NsgColumnDescriptor.String IdСкаут;
-        private NsgColumnDescriptor.Decimal НормативныйРасходТоплива;
-        private NsgColumnDescriptor.DateTime КонецРабочейСмены;
-        private NsgColumnDescriptor.DateTime НачалоРабочейСмены;
+        protected NsgColumnDescriptor.Int64 Автоинкремент;
+        protected NsgColumnDescriptor.Boolean ЭтоГруппа;
+        protected NsgColumnDescriptor.Guid ИдентификаторРодителя;
+        protected NsgColumnDescriptor.Byte Уровень;
+        protected NsgColumnDescriptor.String ПрефиксКода;
+        protected NsgColumnDescriptor.Int64 НомерКода;
+        protected NsgColumnDescriptor.String Код;
+        protected NsgColumnDescriptor.String Наименование;
+        protected Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
+        protected Марка.ColumnDescriptor Марка;
+        protected Модель.ColumnDescriptor Модель;
+        protected NsgColumnDescriptor.String ГодВыпуска;
+        protected NsgColumnDescriptor.String ГосНомер;
+        protected Контрагенты.ColumnDescriptor Подрядчик;
+        protected NsgColumnDescriptor.String Номер;
+        protected NsgColumnDescriptor.Decimal НормативныйРасходТоплива;
+        protected NsgColumnDescriptor.Decimal ОбъемТопливногоБака;
+        protected NsgColumnDescriptor.String Примечание;
+        protected СтатусТехники.ColumnDescriptor Статус;
+        protected _SystemTables.МониторингТехникаТарифы.ColumnDescriptor Тарифы;
+        protected ТипСобственности.ColumnDescriptor ТипСобственности;
+        protected ГруппыСпецТехники.ColumnDescriptor ГруппаСпецТехники;
+        protected _SystemTables.МониторингТехникаСистемыСлежения.ColumnDescriptor СистемыСлежения;
         protected Техника.ColumnDescriptor Родитель;
-        protected NsgIGrid nsgIGrid1;
+        private NsgIGrid nsgIGrid1;
     }
 }

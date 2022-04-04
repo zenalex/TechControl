@@ -341,15 +341,6 @@
       <NsgOwnerGuid>dfba4c3c-685a-4296-98f4-a85fae574aa6</NsgOwnerGuid>
       <NsgOwnerName>Марка</NsgOwnerName>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\ТипТС\ТипТС.NsgInit.cs">
-      <NsgOwnerGuid>b1c69a7a-281a-4a1b-bafa-0665a44b64f6</NsgOwnerGuid>
-      <NsgOwnerName>ТипТС</NsgOwnerName>
-      <DependentUpon>ТипТС.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\ТипТС\ТипТС.cs">
-      <NsgOwnerGuid>b1c69a7a-281a-4a1b-bafa-0665a44b64f6</NsgOwnerGuid>
-      <NsgOwnerName>ТипТС</NsgOwnerName>
-    </Compile>
     <Compile Include="Метаданные\_SystemTables\PeriodicTable\PeriodicTable.NsgInit.cs">
       <NsgOwnerGuid>44c5e4d7-ae74-4c81-9544-03b294646ac4</NsgOwnerGuid>
       <NsgOwnerName>PeriodicTable</NsgOwnerName>
@@ -1808,19 +1799,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\ТипТС\ФормаЭлемента.Designer.cs">
-      <NsgOwnerGuid>b1c69a7a-281a-4a1b-bafa-0665a44b64f6</NsgOwnerGuid>
-      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\ТипТС\ФормаЭлемента.cs">
-      <NsgOwnerGuid>b1c69a7a-281a-4a1b-bafa-0665a44b64f6</NsgOwnerGuid>
-      <SubType>Form</SubType>
-    </Compile>
-    <EmbeddedResource Include="Метаданные\Мониторинг\ТипТС\ФормаЭлемента.resx">
-      <NsgOwnerGuid>b1c69a7a-281a-4a1b-bafa-0665a44b64f6</NsgOwnerGuid>
-      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\Мониторинг\Тарифы\ФормаЭлемента.Designer.cs">

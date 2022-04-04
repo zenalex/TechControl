@@ -74,18 +74,18 @@ namespace TechControl.Метаданные.Мониторинг
             this.СостояниеДокумента = new TechControl.Метаданные.Сервис.СостоянияОбъекта.ColumnDescriptor();
             this.Марка = new TechControl.Метаданные.Мониторинг.Марка.ColumnDescriptor();
             this.Модель = new TechControl.Метаданные.Мониторинг.Модель.ColumnDescriptor();
-            this.ТипТС = new TechControl.Метаданные.Мониторинг.ТипТС.ColumnDescriptor();
             this.ГодВыпуска = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ГосНомер = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Подрядчик = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Номер = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.IdСкаут = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.НормативныйРасходТоплива = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.ОбъемТопливногоБака = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Примечание = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Статус = new TechControl.Метаданные.Мониторинг.СтатусТехники.ColumnDescriptor();
             this.Тарифы = new TechControl.Метаданные._SystemTables.МониторингТехникаТарифы.ColumnDescriptor();
             this.ТипСобственности = new TechControl.Метаданные.Мониторинг.ТипСобственности.ColumnDescriptor();
+            this.ГруппаСпецТехники = new TechControl.Метаданные.Мониторинг.ГруппыСпецТехники.ColumnDescriptor();
+            this.СистемыСлежения = new TechControl.Метаданные._SystemTables.МониторингТехникаСистемыСлежения.ColumnDescriptor();
             this.Родитель = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
@@ -390,18 +390,18 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.СостояниеДокумента);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Марка);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Модель);
-            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ТипТС);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ГодВыпуска);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ГосНомер);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Подрядчик);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Номер);
-            this.nsgVisualMultipleObject.Columns.Collection.Add(this.IdСкаут);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.НормативныйРасходТоплива);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ОбъемТопливногоБака);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Примечание);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Статус);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Тарифы);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ТипСобственности);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ГруппаСпецТехники);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.СистемыСлежения);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Родитель);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.MetaDataName = "Метаданные";
@@ -909,7 +909,7 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(377, 209);
-            this.label13.Name = "label9";
+            this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(74, 13);
             this.label13.TabIndex = 33;
             this.label13.Text = "Год выпуска:";
@@ -918,9 +918,9 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.nsgInput14.BackColor = System.Drawing.SystemColors.Window;
             this.nsgInput14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput14.ConfigurationName = "";
+            this.nsgInput14.ConfigurationName = "TechControl";
             this.nsgInput14.DisableLeaveControlEvent = false;
-            this.nsgInput14.FullName = "ТипСобственности";
+            this.nsgInput14.FullName = "Мониторинг.Техника.ТипСобственности";
             this.nsgInput14.FullTextSearch = false;
             this.nsgInput14.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput14.IsButton = false;
@@ -929,7 +929,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput14.Location = new System.Drawing.Point(527, 239);
             this.nsgInput14.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput14.Mask = "";
-            this.nsgInput14.MetaDataName = "";
+            this.nsgInput14.MetaDataName = "Метаданные";
             this.nsgInput14.MinimumSize = new System.Drawing.Size(4, 20);
             this.nsgInput14.Name = "NsgInput";
             this.nsgInput14.ObjectImages = null;
@@ -948,7 +948,7 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(377, 246);
-            this.label14.Name = "label9";
+            this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(108, 13);
             this.label14.TabIndex = 35;
             this.label14.Text = "Тип собственности:";
@@ -1094,17 +1094,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.Модель.SearchCondition.OwnerComponent = this.Модель;
             this.Модель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // ТипТС
-            // 
-            this.ТипТС.AutoGenerated = true;
-            this.ТипТС.Caption = "ТипТС";
-            this.ТипТС.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ТипТС.Name = "ТипТС";
-            this.ТипТС.NSGType = typeof(TechControl.Метаданные.Мониторинг.ТипТС);
-            this.ТипТС.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ТипТС);
-            this.ТипТС.SearchCondition.OwnerComponent = this.ТипТС;
-            this.ТипТС.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
             // ГодВыпуска
             // 
             this.ГодВыпуска.AutoGenerated = true;
@@ -1148,17 +1137,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.Номер.PropertyType = typeof(string);
             this.Номер.SearchCondition.OwnerComponent = this.Номер;
             this.Номер.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // IdСкаут
-            // 
-            this.IdСкаут.AutoGenerated = true;
-            this.IdСкаут.Caption = "IdСкаут";
-            this.IdСкаут.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.IdСкаут.Name = "IdСкаут";
-            this.IdСкаут.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
-            this.IdСкаут.PropertyType = typeof(string);
-            this.IdСкаут.SearchCondition.OwnerComponent = this.IdСкаут;
-            this.IdСкаут.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // НормативныйРасходТоплива
             // 
@@ -1228,6 +1206,29 @@ namespace TechControl.Метаданные.Мониторинг
             this.ТипСобственности.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ТипСобственности);
             this.ТипСобственности.SearchCondition.OwnerComponent = this.ТипСобственности;
             this.ТипСобственности.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ГруппаСпецТехники
+            // 
+            this.ГруппаСпецТехники.AutoGenerated = true;
+            this.ГруппаСпецТехники.Caption = "ГруппаСпецТехники";
+            this.ГруппаСпецТехники.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ГруппаСпецТехники.Name = "ГруппаСпецТехники";
+            this.ГруппаСпецТехники.NSGType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
+            this.ГруппаСпецТехники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
+            this.ГруппаСпецТехники.SearchCondition.OwnerComponent = this.ГруппаСпецТехники;
+            this.ГруппаСпецТехники.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // СистемыСлежения
+            // 
+            this.СистемыСлежения.AutoGenerated = true;
+            this.СистемыСлежения.Caption = "СистемыСлежения";
+            this.СистемыСлежения.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.СистемыСлежения.Name = "СистемыСлежения";
+            this.СистемыСлежения.NSGType = typeof(TechControl.Метаданные._SystemTables.МониторингТехникаСистемыСлежения);
+            this.СистемыСлежения.PropertyType = typeof(TechControl.Метаданные._SystemTables.МониторингТехникаСистемыСлежения);
+            this.СистемыСлежения.SearchCondition.OwnerComponent = this.СистемыСлежения;
+            this.СистемыСлежения.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.СистемыСлежения.Visible = false;
             // 
             // Родитель
             // 
@@ -1382,7 +1383,8 @@ namespace TechControl.Метаданные.Мониторинг
         protected System.Windows.Forms.Label label13;
         protected NsgInput nsgInput14;
         protected System.Windows.Forms.Label label14;
-        protected NsgColumnDescriptor.Guid Идентификатор;
+        protected System.Windows.Forms.Label label11;
+        private NsgColumnDescriptor.Guid Идентификатор;
         private NsgColumnDescriptor.Int64 Автоинкремент;
         private NsgColumnDescriptor.Boolean ЭтоГруппа;
         private NsgColumnDescriptor.Guid ИдентификаторРодителя;
@@ -1394,19 +1396,18 @@ namespace TechControl.Метаданные.Мониторинг
         private Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
         private Марка.ColumnDescriptor Марка;
         private Модель.ColumnDescriptor Модель;
-        private ТипТС.ColumnDescriptor ТипТС;
         private NsgColumnDescriptor.String ГодВыпуска;
         private NsgColumnDescriptor.String ГосНомер;
         private Контрагенты.ColumnDescriptor Подрядчик;
         private NsgColumnDescriptor.String Номер;
-        private NsgColumnDescriptor.String IdСкаут;
         private NsgColumnDescriptor.Decimal НормативныйРасходТоплива;
         private NsgColumnDescriptor.Decimal ОбъемТопливногоБака;
         private NsgColumnDescriptor.String Примечание;
         private СтатусТехники.ColumnDescriptor Статус;
         private _SystemTables.МониторингТехникаТарифы.ColumnDescriptor Тарифы;
         private ТипСобственности.ColumnDescriptor ТипСобственности;
+        private ГруппыСпецТехники.ColumnDescriptor ГруппаСпецТехники;
+        private _SystemTables.МониторингТехникаСистемыСлежения.ColumnDescriptor СистемыСлежения;
         protected Техника.ColumnDescriptor Родитель;
-        protected System.Windows.Forms.Label label11;
     }
 }
