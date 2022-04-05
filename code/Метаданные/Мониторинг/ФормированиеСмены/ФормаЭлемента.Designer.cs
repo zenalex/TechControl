@@ -1350,6 +1350,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.bЗаполнить.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.bЗаполнить.Location = new System.Drawing.Point(771, 40);
             this.bЗаполнить.Name = "NsgButton";
+            this.bЗаполнить.ReadOnlyProvider = this.nsgVisualMultipleObject;
             this.bЗаполнить.Size = new System.Drawing.Size(75, 25);
             this.bЗаполнить.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
             this.bЗаполнить.TabIndex = 24;
