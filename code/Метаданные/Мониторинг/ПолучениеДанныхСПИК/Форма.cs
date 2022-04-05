@@ -16,6 +16,7 @@ using TechControl.ServiceReferenceMotorModes;
 using TechControl.ServiceReferenceTrackPeriods;
 using TechControl.ServiceReferenceUnitsSpic;
 using TechControl.ServiceReferenceValidationNavigation;
+using TechControl.Метаданные._SystemTables;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -92,7 +93,7 @@ namespace TechControl.Метаданные.Мониторинг
                 var online = data.onlineData;
                 var unit = data.unit;
 
-                var cmpTech = new NsgCompare().Add(Техника.Names.Наименование, unit.name);
+                var cmpTech = new NsgCompare().Add(Техника.Names.СистемыСлежения + "." + МониторингТехникаСистемыСлежения.Names.ИдентификаторСистемыСлежения, unit.id);
                 cmpTech.Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
                 var techIsReal = Техника.Новый().FindAll(cmpTech);
                 var tech = Техника.Новый();
@@ -100,9 +101,10 @@ namespace TechControl.Метаданные.Мониторинг
                 if (techIsReal.Length == 0)
                 {
                     tech.New();
-                    tech.IdСкаут = $"{unit.id}";
                     tech.ГосНомер = unit.stateNumber;
                     tech.Наименование = unit.name;
+                    tech.СистемыСлежения.ИдентификаторСистемыСлежения = $"{unit.id}";
+                    tech.СистемыСлежения.ТипСистемыСлежения = ТипСистемыСлежения.Скаут;
 
                     var model = unit.model;
                     var brand = unit.brand;
@@ -148,20 +150,20 @@ namespace TechControl.Метаданные.Мониторинг
 
                     if (type != null)
                     {
-                        var cmpType = new NsgCompare().Add(ТипТС.Names.Наименование, type);
-                        cmpType.Add(ТипТС.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
-                        var такойТипЕсть = ТипТС.Новый().FindAll(cmpType);
+                        var cmpType = new NsgCompare().Add(ГруппыСпецТехники.Names.Наименование, type);
+                        cmpType.Add(ГруппыСпецТехники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+                        var такойТипЕсть = ГруппыСпецТехники.Новый().FindAll(cmpType);
                         if (такойТипЕсть.Length == 0)
                         {
-                            var модельНовая = ТипТС.Новый();
+                            var модельНовая = ГруппыСпецТехники.Новый();
                             модельНовая.New();
                             модельНовая.Наименование = type;
                             модельНовая.Post();
 
-                            tech.ТипТС = модельНовая;
+                            tech.ГруппаСпецТехники = модельНовая;
                         }
                         else
-                            tech.ТипТС = такойТипЕсть[0];
+                            tech.ГруппаСпецТехники = такойТипЕсть[0];
                     }
 
                     tech.Post();
@@ -182,11 +184,22 @@ namespace TechControl.Метаданные.Мониторинг
                 else
                     рег.ТекущееКолвоТоплива = (decimal)online.fuelLevel;
 
-                рег.Техника = tech;
-                рег.ТекущаяСкорость = (decimal)online.speed;
-                рег.Долгота = (decimal)online.longitude;
-                рег.Широта = (decimal)online.latitude;
+                if (online.speed == null)
+                    рег.ТекущаяСкорость = 0;
+                else
+                    рег.ТекущаяСкорость = (decimal)online.speed;
 
+                if (online.longitude == null)
+                    рег.Долгота = 0;
+                else
+                    рег.Долгота = (decimal)online.longitude;
+
+                if (online.latitude == null)
+                    рег.Широта = 0;
+                else
+                    рег.Широта = (decimal)online.latitude;
+
+                рег.Техника = tech;
                 рег.AddMovement();
                 рег.Post();
             }
@@ -199,7 +212,7 @@ namespace TechControl.Метаданные.Мониторинг
             Dictionary<string, List<SpicMotorModesStatistics>> statisticMotorModes = new Dictionary<string, List<SpicMotorModesStatistics>>();
 
             while (date <= NsgService.EndOfDay(nsgPeriodPicker1.Period.End))
-            {                
+            {
                 var cmpОтработанноеВремя = new NsgCompare().Add(ОтработанноеВремяТехники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
                 cmpОтработанноеВремя.Add(ОтработанноеВремяТехники.Names.ДатаДокумента, date.Date, NsgComparison.GreaterOrEqual);
                 cmpОтработанноеВремя.Add(ОтработанноеВремяТехники.Names.ДатаДокумента, NsgService.EndOfDay(date), NsgComparison.LessOrEqual);
@@ -228,7 +241,7 @@ namespace TechControl.Метаданные.Мониторинг
                 {
                     foreach (var id in unitIDName)
                     {
-                        NsgSettings.MainForm.ShowMessage($"запрос статистики {id}") ;
+                        NsgSettings.MainForm.ShowMessage($"запрос статистики {id}");
                         //создаем запрос сессии статистик
                         var statisticsSessionRequest = new SpicStatisticsSessionRequest
                         {
@@ -287,7 +300,7 @@ namespace TechControl.Метаданные.Мониторинг
                                 double? totalVolumeOfFuelFilled = 0;
                                 double countFueling = 0;
 
-                                var cmpTech = new NsgCompare().Add(Техника.Names.IdСкаут, id.Key);
+                                var cmpTech = new NsgCompare().Add(Техника.Names.СистемыСлежения + "." + МониторингТехникаСистемыСлежения.Names.ИдентификаторСистемыСлежения, id.Key);
                                 cmpTech.Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
                                 var tech = Техника.Новый().FindAll(cmpTech);
 
@@ -356,10 +369,10 @@ namespace TechControl.Метаданные.Мониторинг
                                 statisticsListFuelDefuel.Add(statisticsResponseFuelDefuel.Statistics);
                             if (statisticsResponseMotorModes.Statistics != null)
                                 statisticsListMotorModes.Add(statisticsResponseMotorModes.Statistics);
-                                //    break;
+                            //    break;
 
-                                // заказываем следующую порцию статистики  
-                                _statisticsClient.BuildNextChunk(statisticsSession);
+                            // заказываем следующую порцию статистики  
+                            _statisticsClient.BuildNextChunk(statisticsSession);
                         }
                         while (!statisticsResponseFuelDefuel.ChunkInfo.IsFinalChunk && !statisticsResponseMotorModes.ChunkInfo.IsFinalChunk);
 
@@ -395,7 +408,11 @@ namespace TechControl.Метаданные.Мониторинг
                     NsgSettings.MainForm.ShowMessage("Ошибка " + ee);
                     докОтработанноеВремяТехники.Cancel();
                 }
-                date = new DateTime(date.Year, date.Month, date.AddDays(1).Day);
+
+                if (date.Day == DateTime.DaysInMonth(date.Year, date.Month))
+                    date = new DateTime(date.Year, date.AddMonths(1).Month, date.AddDays(1).Day);
+                else
+                    date = new DateTime(date.Year, date.Month, date.AddDays(1).Day);
             }
         }
 
@@ -493,17 +510,17 @@ namespace TechControl.Метаданные.Мониторинг
         public int unitId { get; set; }
         public int status { get; set; }
         public int parkingStatus { get; set; }
-        public DateTime date { get; set; }
-        public int satellitesNumber { get; set; }
-        public double speed { get; set; }
+        public DateTime? date { get; set; }
+        public int? satellitesNumber { get; set; }
+        public double? speed { get; set; }
         public double? fuelLevel { get; set; }
         public bool? isEngineWorking { get; set; }
         public string address { get; set; }
         public object driverName { get; set; }
         public int driverId { get; set; }
-        public double latitude { get; set; }
-        public double longitude { get; set; }
-        public double angle { get; set; }
+        public double? latitude { get; set; }
+        public double? longitude { get; set; }
+        public double? angle { get; set; }
     }
 
     public class Datum
