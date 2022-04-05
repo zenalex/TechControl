@@ -1716,6 +1716,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="227f44da-1a1b-4574-b492-771b0c28fafa" type="NsgDataInteger" editoraccess="Full" name="Иконка" visible="true" description="Иконка" field="Ikonka" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -1740,6 +1745,7 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
+            <container name="Иконка" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -7394,11 +7400,6 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="f89a9365-d39d-4de8-aab7-41e9759281d3" type="NsgDataTypedReference" editoraccess="Full" name="Фото" visible="true" description="Фото" field="Foto" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Картинки">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
             <NsgSimpleObject Guid="5cb0e969-93f9-407b-9827-076cb2d003e7" type="NsgDataTypedReference" editoraccess="Full" name="КатегорияСпецодежды" visible="true" description="Категория спецодежды" field="KategorijaSpecode" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СпециальнаяОдежда" refname="КатегорииСпецодежды">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
@@ -7419,7 +7420,6 @@
             <container name="СостояниеДокумента" />
             <container name="Наименование" />
             <container name="СрокЭксплуатацииМес" />
-            <container name="Фото" />
             <container name="КатегорияСпецодежды" />
             <container name="ВидСпецодежды" />
           </Containers>
@@ -7761,7 +7761,9 @@
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
           </DataInterfaces>
-          <Registers />
+          <Registers>
+            <register name="СпециальнаяОдежда.УчетСпецодежды" regime="Write" />
+          </Registers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="6dfacf50-c810-4563-a789-7df5aa167d7b" type="NsgDataDictionary" editoraccess="Full" name="Размеры" visible="true" description="Размер" group="СпециальнаяОдежда" table="_dic_Razmery" searchfield="Наименование" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="false">
           <NsgLanguageString type="presentation">
@@ -8059,6 +8061,7 @@
               </NsgLanguageString>
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
+                <param name="СпециальнаяОдежда.ПеремещениеСпецодежды" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="4eba67a5-5973-4106-b378-8102b58bc574" type="NsgDataDateTime" editoraccess="Hidden" name="ДатаДокумента" visible="true" description="Дата документа" field="_Date" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
@@ -8255,6 +8258,7 @@
               </NsgLanguageString>
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
+                <param name="СпециальнаяОдежда.ПеремещениеСпецодежды" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="18de06f8-c458-43f2-8e5d-5f4c91c339d9" type="NsgDataEnumReference" editoraccess="ReadOnly" name="ВидДвижения" visible="true" description="Вид движения" field="_Sign" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Сервис" refname="ВидыДвижений">

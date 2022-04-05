@@ -184,7 +184,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             this.panelButtons.AllowDrop = true;
             this.panelButtons.Controls.Add(this.nsgToolStrip2);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(0, 380);
+            this.panelButtons.Location = new System.Drawing.Point(0, 337);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Size = new System.Drawing.Size(741, 30);
             this.panelButtons.TabIndex = 2;
@@ -508,18 +508,18 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             // 
             this.nsgInput1.BackColor = System.Drawing.SystemColors.Window;
             this.nsgInput1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput1.ConfigurationName = "";
+            this.nsgInput1.ConfigurationName = "TechControl";
             this.nsgInput1.DisableLeaveControlEvent = false;
-            this.nsgInput1.FullName = "Наименование";
+            this.nsgInput1.FullName = "СпециальнаяОдежда.Размеры.Наименование";
             this.nsgInput1.FullTextSearch = false;
             this.nsgInput1.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput1.IsButton = false;
-            this.nsgInput1.IsInitialized = false;
+            this.nsgInput1.IsInitialized = true;
             this.nsgInput1.IsPassword = false;
             this.nsgInput1.Location = new System.Drawing.Point(123, 30);
             this.nsgInput1.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput1.Mask = "";
-            this.nsgInput1.MetaDataName = "";
+            this.nsgInput1.MetaDataName = "Метаданные";
             this.nsgInput1.MinimumSize = new System.Drawing.Size(4, 20);
             this.nsgInput1.Name = "NsgInput";
             this.nsgInput1.ObjectImages = null;
@@ -529,7 +529,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             this.nsgInput1.SearchFieldName = "";
             this.nsgInput1.ShowMultipleObjectInComboBox = false;
             this.nsgInput1.ShowRowCount = 10;
-            this.nsgInput1.Size = new System.Drawing.Size(161, 20);
+            this.nsgInput1.Size = new System.Drawing.Size(362, 20);
             this.nsgInput1.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput1.TabIndex = 11;
             this.nsgInput1.VerticalAlignment = System.Drawing.StringAlignment.Center;
@@ -538,18 +538,18 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             // 
             this.nsgInput2.BackColor = System.Drawing.SystemColors.Window;
             this.nsgInput2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput2.ConfigurationName = "";
+            this.nsgInput2.ConfigurationName = "TechControl";
             this.nsgInput2.DisableLeaveControlEvent = false;
-            this.nsgInput2.FullName = "ВидСпецодежды";
+            this.nsgInput2.FullName = "СпециальнаяОдежда.Размеры.ВидСпецодежды";
             this.nsgInput2.FullTextSearch = false;
             this.nsgInput2.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput2.IsButton = false;
-            this.nsgInput2.IsInitialized = false;
+            this.nsgInput2.IsInitialized = true;
             this.nsgInput2.IsPassword = false;
             this.nsgInput2.Location = new System.Drawing.Point(123, 77);
             this.nsgInput2.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput2.Mask = "";
-            this.nsgInput2.MetaDataName = "";
+            this.nsgInput2.MetaDataName = "Метаданные";
             this.nsgInput2.MinimumSize = new System.Drawing.Size(4, 20);
             this.nsgInput2.Name = "NsgInput";
             this.nsgInput2.ObjectImages = null;
@@ -559,7 +559,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             this.nsgInput2.SearchFieldName = "";
             this.nsgInput2.ShowMultipleObjectInComboBox = false;
             this.nsgInput2.ShowRowCount = 10;
-            this.nsgInput2.Size = new System.Drawing.Size(161, 20);
+            this.nsgInput2.Size = new System.Drawing.Size(324, 20);
             this.nsgInput2.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput2.TabIndex = 12;
             this.nsgInput2.VerticalAlignment = System.Drawing.StringAlignment.Center;

@@ -614,7 +614,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput1.SearchFieldName = "";
             this.nsgInput1.ShowMultipleObjectInComboBox = false;
             this.nsgInput1.ShowRowCount = 10;
-            this.nsgInput1.Size = new System.Drawing.Size(226, 20);
+            this.nsgInput1.Size = new System.Drawing.Size(288, 20);
             this.nsgInput1.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput1.TabIndex = 16;
             this.nsgInput1.VerticalAlignment = System.Drawing.StringAlignment.Center;
