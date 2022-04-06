@@ -29,6 +29,7 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 ЭтоИтоговыйДокумент.Value = true;
             }
+            nsgInput7_ValueChanged(nsgInput7, false);
         }
 
         private void bЗаполнить_AsyncClick(object sender, DoWorkEventArgs e)
