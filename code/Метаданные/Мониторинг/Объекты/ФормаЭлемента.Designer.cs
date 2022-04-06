@@ -54,28 +54,10 @@ namespace TechControl.Метаданные.Мониторинг
             NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor6 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             this.nsgIGrid1 = new NsgSoft.Forms.NsgIGrid();
             this.vmoПерсонал = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Идентификатор_vmoПерсонал = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
-            this.Автоинкремент_vmoПерсонал = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Владелец = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
-            this.НомерСтроки = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
             this.nsgIGrid2 = new NsgSoft.Forms.NsgIGrid();
             this.vmoТехника = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Идентификатор_vmoТехника = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
-            this.Автоинкремент_vmoТехника = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Владелец_vmoТехника = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
-            this.НомерСтроки_vmoТехника = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Техника = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             this.nsgIGrid3 = new NsgSoft.Forms.NsgIGrid();
             this.vmoТарифы = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Идентификатор_vmoТарифы = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
-            this.Автоинкремент_vmoТарифы = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Владелец_vmoТарифы = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
-            this.НомерСтроки_vmoТарифы = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Тариф = new TechControl.Метаданные.Мониторинг.Тарифы.ColumnDescriptor();
-            this.Стоимость = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.ИспользоватьПоУмолчанию = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
-            this.ГруппаСпецТехники = new TechControl.Метаданные.Мониторинг.ГруппыСпецТехники.ColumnDescriptor();
             this.nsgInput1 = new NsgSoft.Forms.NsgInput();
             this.nsgLabel1 = new NsgSoft.Forms.NsgLabel();
             this.nsgLabel2 = new NsgSoft.Forms.NsgLabel();
@@ -133,6 +115,24 @@ namespace TechControl.Метаданные.Мониторинг
             this.ТаблицаТарифы = new TechControl.Метаданные._SystemTables.МониторингОбъектыТаблицаТарифы.ColumnDescriptor();
             this.ПоставщикТоплива_nsgVisualMultipleObject = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Родитель = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
+            this.Идентификатор_vmoПерсонал = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
+            this.Автоинкремент_vmoПерсонал = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Владелец = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
+            this.НомерСтроки = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Идентификатор_vmoТехника = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
+            this.Автоинкремент_vmoТехника = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Владелец_vmoТехника = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
+            this.НомерСтроки_vmoТехника = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Техника = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
+            this.Идентификатор_vmoТарифы = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
+            this.Автоинкремент_vmoТарифы = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Владелец_vmoТарифы = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
+            this.НомерСтроки_vmoТарифы = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Тариф = new TechControl.Метаданные.Мониторинг.Тарифы.ColumnDescriptor();
+            this.Стоимость = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ИспользоватьПоУмолчанию = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
+            this.ГруппаСпецТехники = new TechControl.Метаданные.Мониторинг.ГруппыСпецТехники.ColumnDescriptor();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -559,66 +559,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoПерсонал.MasterComponent = this.nsgVisualMultipleObject;
             this.vmoПерсонал.Binding = nsgMasterDetailBinding1;
             // 
-            // Идентификатор_vmoПерсонал
-            // 
-            this.Идентификатор_vmoПерсонал.AutoGenerated = true;
-            this.Идентификатор_vmoПерсонал.Caption = "Идентификатор";
-            this.Идентификатор_vmoПерсонал.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Идентификатор_vmoПерсонал.Name = "Идентификатор";
-            this.Идентификатор_vmoПерсонал.NSGType = typeof(NsgSoft.DataObjects.NsgDataGuid);
-            this.Идентификатор_vmoПерсонал.PropertyType = typeof(System.Guid);
-            this.Идентификатор_vmoПерсонал.SearchCondition.OwnerComponent = this.Идентификатор_vmoПерсонал;
-            this.Идентификатор_vmoПерсонал.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.Идентификатор_vmoПерсонал.Visible = false;
-            // 
-            // Автоинкремент_vmoПерсонал
-            // 
-            this.Автоинкремент_vmoПерсонал.AutoGenerated = true;
-            this.Автоинкремент_vmoПерсонал.CalcTotal = false;
-            this.Автоинкремент_vmoПерсонал.Caption = "Автоинкремент";
-            this.Автоинкремент_vmoПерсонал.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Автоинкремент_vmoПерсонал.Name = "Автоинкремент";
-            this.Автоинкремент_vmoПерсонал.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.Автоинкремент_vmoПерсонал.PropertyType = typeof(long);
-            this.Автоинкремент_vmoПерсонал.SearchCondition.OwnerComponent = this.Автоинкремент_vmoПерсонал;
-            this.Автоинкремент_vmoПерсонал.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.Автоинкремент_vmoПерсонал.Visible = false;
-            // 
-            // Владелец
-            // 
-            this.Владелец.AutoGenerated = true;
-            this.Владелец.Caption = "Владелец";
-            this.Владелец.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Владелец.Name = "Владелец";
-            this.Владелец.NSGType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
-            this.Владелец.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
-            this.Владелец.SearchCondition.OwnerComponent = this.Владелец;
-            this.Владелец.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // НомерСтроки
-            // 
-            this.НомерСтроки.AutoGenerated = true;
-            this.НомерСтроки.CalcTotal = false;
-            this.НомерСтроки.Caption = "НомерСтроки";
-            this.НомерСтроки.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.НомерСтроки.Name = "НомерСтроки";
-            this.НомерСтроки.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.НомерСтроки.PropertyType = typeof(long);
-            this.НомерСтроки.SearchCondition.OwnerComponent = this.НомерСтроки;
-            this.НомерСтроки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.НомерСтроки.Visible = false;
-            // 
-            // Сотрудник
-            // 
-            this.Сотрудник.AutoGenerated = true;
-            this.Сотрудник.Caption = "Сотрудник";
-            this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
-            this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
             // nsgIGrid2
             // 
             this.nsgIGrid2.Action = NsgSoft.DataObjects.FormShowMode.None;
@@ -715,66 +655,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoТехника.MasterComponent = this.nsgVisualMultipleObject;
             this.vmoТехника.Binding = nsgMasterDetailBinding2;
             // 
-            // Идентификатор_vmoТехника
-            // 
-            this.Идентификатор_vmoТехника.AutoGenerated = true;
-            this.Идентификатор_vmoТехника.Caption = "Идентификатор";
-            this.Идентификатор_vmoТехника.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Идентификатор_vmoТехника.Name = "Идентификатор";
-            this.Идентификатор_vmoТехника.NSGType = typeof(NsgSoft.DataObjects.NsgDataGuid);
-            this.Идентификатор_vmoТехника.PropertyType = typeof(System.Guid);
-            this.Идентификатор_vmoТехника.SearchCondition.OwnerComponent = this.Идентификатор_vmoТехника;
-            this.Идентификатор_vmoТехника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.Идентификатор_vmoТехника.Visible = false;
-            // 
-            // Автоинкремент_vmoТехника
-            // 
-            this.Автоинкремент_vmoТехника.AutoGenerated = true;
-            this.Автоинкремент_vmoТехника.CalcTotal = false;
-            this.Автоинкремент_vmoТехника.Caption = "Автоинкремент";
-            this.Автоинкремент_vmoТехника.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Автоинкремент_vmoТехника.Name = "Автоинкремент";
-            this.Автоинкремент_vmoТехника.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.Автоинкремент_vmoТехника.PropertyType = typeof(long);
-            this.Автоинкремент_vmoТехника.SearchCondition.OwnerComponent = this.Автоинкремент_vmoТехника;
-            this.Автоинкремент_vmoТехника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.Автоинкремент_vmoТехника.Visible = false;
-            // 
-            // Владелец_vmoТехника
-            // 
-            this.Владелец_vmoТехника.AutoGenerated = true;
-            this.Владелец_vmoТехника.Caption = "Владелец";
-            this.Владелец_vmoТехника.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Владелец_vmoТехника.Name = "Владелец";
-            this.Владелец_vmoТехника.NSGType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
-            this.Владелец_vmoТехника.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
-            this.Владелец_vmoТехника.SearchCondition.OwnerComponent = this.Владелец_vmoТехника;
-            this.Владелец_vmoТехника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // НомерСтроки_vmoТехника
-            // 
-            this.НомерСтроки_vmoТехника.AutoGenerated = true;
-            this.НомерСтроки_vmoТехника.CalcTotal = false;
-            this.НомерСтроки_vmoТехника.Caption = "НомерСтроки";
-            this.НомерСтроки_vmoТехника.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.НомерСтроки_vmoТехника.Name = "НомерСтроки";
-            this.НомерСтроки_vmoТехника.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.НомерСтроки_vmoТехника.PropertyType = typeof(long);
-            this.НомерСтроки_vmoТехника.SearchCondition.OwnerComponent = this.НомерСтроки_vmoТехника;
-            this.НомерСтроки_vmoТехника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.НомерСтроки_vmoТехника.Visible = false;
-            // 
-            // Техника
-            // 
-            this.Техника.AutoGenerated = true;
-            this.Техника.Caption = "Техника";
-            this.Техника.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Техника.Name = "Техника";
-            this.Техника.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника.SearchCondition.OwnerComponent = this.Техника;
-            this.Техника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
             // nsgIGrid3
             // 
             this.nsgIGrid3.Action = NsgSoft.DataObjects.FormShowMode.None;
@@ -791,7 +671,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn5.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn5.DateFormat = null;
-            nsgIGridColumn5.ImportedFromVMO = false;
             nsgIGridColumn5.InitiateRowEdit = true;
             nsgIGridColumn5.Name = "Владелец";
             nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -806,11 +685,11 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn6.AutoResize = true;
             nsgIGridColumn6.Caption = "";
             nsgIGridColumn6.ChangedProperties = new string[] {
-        "Visible"};
+        "Visible",
+        "Index"};
             nsgIGridColumn6.DateFormat = null;
-            nsgIGridColumn6.ImportedFromVMO = false;
             nsgIGridColumn6.InitiateRowEdit = true;
-            nsgIGridColumn6.Name = "ТипТС";
+            nsgIGridColumn6.Name = "ГруппаСпецТехники";
             nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn6.Root = this.nsgIGrid3.Columns.Collection;
             nsgIGridColumn6.SortDirection = NsgSoft.Database.NsgSortDirection.None;
@@ -822,9 +701,9 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn7.AutoResize = true;
             nsgIGridColumn7.Caption = "";
             nsgIGridColumn7.ChangedProperties = new string[] {
-        "Visible"};
+        "Visible",
+        "Index"};
             nsgIGridColumn7.DateFormat = null;
-            nsgIGridColumn7.ImportedFromVMO = false;
             nsgIGridColumn7.InitiateRowEdit = true;
             nsgIGridColumn7.Name = "Тариф";
             nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -838,9 +717,9 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn8.AutoResize = true;
             nsgIGridColumn8.Caption = "";
             nsgIGridColumn8.ChangedProperties = new string[] {
-        "Visible"};
+        "Visible",
+        "Index"};
             nsgIGridColumn8.DateFormat = null;
-            nsgIGridColumn8.ImportedFromVMO = false;
             nsgIGridColumn8.InitiateRowEdit = true;
             nsgIGridColumn8.Name = "Стоимость";
             nsgIGridColumn8.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -854,9 +733,9 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn9.AutoResize = true;
             nsgIGridColumn9.Caption = "";
             nsgIGridColumn9.ChangedProperties = new string[] {
-        "Visible"};
+        "Visible",
+        "Index"};
             nsgIGridColumn9.DateFormat = null;
-            nsgIGridColumn9.ImportedFromVMO = false;
             nsgIGridColumn9.InitiateRowEdit = true;
             nsgIGridColumn9.Name = "ИспользоватьПоУмолчанию";
             nsgIGridColumn9.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -923,100 +802,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoТарифы.Columns.Collection.Add(this.ГруппаСпецТехники);
             this.vmoТарифы.MasterComponent = this.nsgVisualMultipleObject;
             this.vmoТарифы.Binding = nsgMasterDetailBinding3;
-            // 
-            // Идентификатор_vmoТарифы
-            // 
-            this.Идентификатор_vmoТарифы.AutoGenerated = true;
-            this.Идентификатор_vmoТарифы.Caption = "Идентификатор";
-            this.Идентификатор_vmoТарифы.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Идентификатор_vmoТарифы.Name = "Идентификатор";
-            this.Идентификатор_vmoТарифы.NSGType = typeof(NsgSoft.DataObjects.NsgDataGuid);
-            this.Идентификатор_vmoТарифы.PropertyType = typeof(System.Guid);
-            this.Идентификатор_vmoТарифы.SearchCondition.OwnerComponent = this.Идентификатор_vmoТарифы;
-            this.Идентификатор_vmoТарифы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.Идентификатор_vmoТарифы.Visible = false;
-            // 
-            // Автоинкремент_vmoТарифы
-            // 
-            this.Автоинкремент_vmoТарифы.AutoGenerated = true;
-            this.Автоинкремент_vmoТарифы.CalcTotal = false;
-            this.Автоинкремент_vmoТарифы.Caption = "Автоинкремент";
-            this.Автоинкремент_vmoТарифы.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Автоинкремент_vmoТарифы.Name = "Автоинкремент";
-            this.Автоинкремент_vmoТарифы.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.Автоинкремент_vmoТарифы.PropertyType = typeof(long);
-            this.Автоинкремент_vmoТарифы.SearchCondition.OwnerComponent = this.Автоинкремент_vmoТарифы;
-            this.Автоинкремент_vmoТарифы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.Автоинкремент_vmoТарифы.Visible = false;
-            // 
-            // Владелец_vmoТарифы
-            // 
-            this.Владелец_vmoТарифы.AutoGenerated = true;
-            this.Владелец_vmoТарифы.Caption = "Владелец";
-            this.Владелец_vmoТарифы.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Владелец_vmoТарифы.Name = "Владелец";
-            this.Владелец_vmoТарифы.NSGType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
-            this.Владелец_vmoТарифы.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
-            this.Владелец_vmoТарифы.SearchCondition.OwnerComponent = this.Владелец_vmoТарифы;
-            this.Владелец_vmoТарифы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // НомерСтроки_vmoТарифы
-            // 
-            this.НомерСтроки_vmoТарифы.AutoGenerated = true;
-            this.НомерСтроки_vmoТарифы.CalcTotal = false;
-            this.НомерСтроки_vmoТарифы.Caption = "НомерСтроки";
-            this.НомерСтроки_vmoТарифы.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.НомерСтроки_vmoТарифы.Name = "НомерСтроки";
-            this.НомерСтроки_vmoТарифы.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.НомерСтроки_vmoТарифы.PropertyType = typeof(long);
-            this.НомерСтроки_vmoТарифы.SearchCondition.OwnerComponent = this.НомерСтроки_vmoТарифы;
-            this.НомерСтроки_vmoТарифы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.НомерСтроки_vmoТарифы.Visible = false;
-            // 
-            // Тариф
-            // 
-            this.Тариф.AutoGenerated = true;
-            this.Тариф.Caption = "Тариф";
-            this.Тариф.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Тариф.Name = "Тариф";
-            this.Тариф.NSGType = typeof(TechControl.Метаданные.Мониторинг.Тарифы);
-            this.Тариф.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Тарифы);
-            this.Тариф.SearchCondition.OwnerComponent = this.Тариф;
-            this.Тариф.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Стоимость
-            // 
-            this.Стоимость.AutoGenerated = true;
-            this.Стоимость.CalcTotal = false;
-            this.Стоимость.Caption = "Стоимость";
-            this.Стоимость.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Стоимость.Name = "Стоимость";
-            this.Стоимость.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
-            this.Стоимость.PropertyType = typeof(decimal);
-            this.Стоимость.SearchCondition.OwnerComponent = this.Стоимость;
-            this.Стоимость.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ИспользоватьПоУмолчанию
-            // 
-            this.ИспользоватьПоУмолчанию.AutoGenerated = true;
-            this.ИспользоватьПоУмолчанию.Caption = "ИспользоватьПоУмолчанию";
-            this.ИспользоватьПоУмолчанию.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ИспользоватьПоУмолчанию.Name = "ИспользоватьПоУмолчанию";
-            this.ИспользоватьПоУмолчанию.NSGType = typeof(NsgSoft.DataObjects.NsgDataBoolean);
-            this.ИспользоватьПоУмолчанию.PropertyType = typeof(bool);
-            this.ИспользоватьПоУмолчанию.SearchCondition.OwnerComponent = this.ИспользоватьПоУмолчанию;
-            this.ИспользоватьПоУмолчанию.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ГруппаСпецТехники
-            // 
-            this.ГруппаСпецТехники.AutoGenerated = true;
-            this.ГруппаСпецТехники.Caption = "ГруппаСпецТехники";
-            this.ГруппаСпецТехники.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ГруппаСпецТехники.Name = "ГруппаСпецТехники";
-            this.ГруппаСпецТехники.NSGType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
-            this.ГруппаСпецТехники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
-            this.ГруппаСпецТехники.SearchCondition.OwnerComponent = this.ГруппаСпецТехники;
-            this.ГруппаСпецТехники.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // nsgInput1
             // 
@@ -1978,6 +1763,220 @@ namespace TechControl.Метаданные.Мониторинг
             this.Родитель.SearchCondition.OwnerComponent = this.Родитель;
             this.Родитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // Идентификатор_vmoПерсонал
+            // 
+            this.Идентификатор_vmoПерсонал.AutoGenerated = true;
+            this.Идентификатор_vmoПерсонал.Caption = "Идентификатор";
+            this.Идентификатор_vmoПерсонал.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Идентификатор_vmoПерсонал.Name = "Идентификатор";
+            this.Идентификатор_vmoПерсонал.NSGType = typeof(NsgSoft.DataObjects.NsgDataGuid);
+            this.Идентификатор_vmoПерсонал.PropertyType = typeof(System.Guid);
+            this.Идентификатор_vmoПерсонал.SearchCondition.OwnerComponent = this.Идентификатор_vmoПерсонал;
+            this.Идентификатор_vmoПерсонал.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Идентификатор_vmoПерсонал.Visible = false;
+            // 
+            // Автоинкремент_vmoПерсонал
+            // 
+            this.Автоинкремент_vmoПерсонал.AutoGenerated = true;
+            this.Автоинкремент_vmoПерсонал.CalcTotal = false;
+            this.Автоинкремент_vmoПерсонал.Caption = "Автоинкремент";
+            this.Автоинкремент_vmoПерсонал.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Автоинкремент_vmoПерсонал.Name = "Автоинкремент";
+            this.Автоинкремент_vmoПерсонал.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.Автоинкремент_vmoПерсонал.PropertyType = typeof(long);
+            this.Автоинкремент_vmoПерсонал.SearchCondition.OwnerComponent = this.Автоинкремент_vmoПерсонал;
+            this.Автоинкремент_vmoПерсонал.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Автоинкремент_vmoПерсонал.Visible = false;
+            // 
+            // Владелец
+            // 
+            this.Владелец.AutoGenerated = true;
+            this.Владелец.Caption = "Владелец";
+            this.Владелец.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Владелец.Name = "Владелец";
+            this.Владелец.NSGType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец.SearchCondition.OwnerComponent = this.Владелец;
+            this.Владелец.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // НомерСтроки
+            // 
+            this.НомерСтроки.AutoGenerated = true;
+            this.НомерСтроки.CalcTotal = false;
+            this.НомерСтроки.Caption = "НомерСтроки";
+            this.НомерСтроки.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.НомерСтроки.Name = "НомерСтроки";
+            this.НомерСтроки.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.НомерСтроки.PropertyType = typeof(long);
+            this.НомерСтроки.SearchCondition.OwnerComponent = this.НомерСтроки;
+            this.НомерСтроки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.НомерСтроки.Visible = false;
+            // 
+            // Сотрудник
+            // 
+            this.Сотрудник.AutoGenerated = true;
+            this.Сотрудник.Caption = "Сотрудник";
+            this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Сотрудник.Name = "Сотрудник";
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
+            this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Идентификатор_vmoТехника
+            // 
+            this.Идентификатор_vmoТехника.AutoGenerated = true;
+            this.Идентификатор_vmoТехника.Caption = "Идентификатор";
+            this.Идентификатор_vmoТехника.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Идентификатор_vmoТехника.Name = "Идентификатор";
+            this.Идентификатор_vmoТехника.NSGType = typeof(NsgSoft.DataObjects.NsgDataGuid);
+            this.Идентификатор_vmoТехника.PropertyType = typeof(System.Guid);
+            this.Идентификатор_vmoТехника.SearchCondition.OwnerComponent = this.Идентификатор_vmoТехника;
+            this.Идентификатор_vmoТехника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Идентификатор_vmoТехника.Visible = false;
+            // 
+            // Автоинкремент_vmoТехника
+            // 
+            this.Автоинкремент_vmoТехника.AutoGenerated = true;
+            this.Автоинкремент_vmoТехника.CalcTotal = false;
+            this.Автоинкремент_vmoТехника.Caption = "Автоинкремент";
+            this.Автоинкремент_vmoТехника.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Автоинкремент_vmoТехника.Name = "Автоинкремент";
+            this.Автоинкремент_vmoТехника.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.Автоинкремент_vmoТехника.PropertyType = typeof(long);
+            this.Автоинкремент_vmoТехника.SearchCondition.OwnerComponent = this.Автоинкремент_vmoТехника;
+            this.Автоинкремент_vmoТехника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Автоинкремент_vmoТехника.Visible = false;
+            // 
+            // Владелец_vmoТехника
+            // 
+            this.Владелец_vmoТехника.AutoGenerated = true;
+            this.Владелец_vmoТехника.Caption = "Владелец";
+            this.Владелец_vmoТехника.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Владелец_vmoТехника.Name = "Владелец";
+            this.Владелец_vmoТехника.NSGType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец_vmoТехника.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец_vmoТехника.SearchCondition.OwnerComponent = this.Владелец_vmoТехника;
+            this.Владелец_vmoТехника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // НомерСтроки_vmoТехника
+            // 
+            this.НомерСтроки_vmoТехника.AutoGenerated = true;
+            this.НомерСтроки_vmoТехника.CalcTotal = false;
+            this.НомерСтроки_vmoТехника.Caption = "НомерСтроки";
+            this.НомерСтроки_vmoТехника.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.НомерСтроки_vmoТехника.Name = "НомерСтроки";
+            this.НомерСтроки_vmoТехника.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.НомерСтроки_vmoТехника.PropertyType = typeof(long);
+            this.НомерСтроки_vmoТехника.SearchCondition.OwnerComponent = this.НомерСтроки_vmoТехника;
+            this.НомерСтроки_vmoТехника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.НомерСтроки_vmoТехника.Visible = false;
+            // 
+            // Техника
+            // 
+            this.Техника.AutoGenerated = true;
+            this.Техника.Caption = "Техника";
+            this.Техника.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Техника.Name = "Техника";
+            this.Техника.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника.SearchCondition.OwnerComponent = this.Техника;
+            this.Техника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Идентификатор_vmoТарифы
+            // 
+            this.Идентификатор_vmoТарифы.AutoGenerated = true;
+            this.Идентификатор_vmoТарифы.Caption = "Идентификатор";
+            this.Идентификатор_vmoТарифы.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Идентификатор_vmoТарифы.Name = "Идентификатор";
+            this.Идентификатор_vmoТарифы.NSGType = typeof(NsgSoft.DataObjects.NsgDataGuid);
+            this.Идентификатор_vmoТарифы.PropertyType = typeof(System.Guid);
+            this.Идентификатор_vmoТарифы.SearchCondition.OwnerComponent = this.Идентификатор_vmoТарифы;
+            this.Идентификатор_vmoТарифы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Идентификатор_vmoТарифы.Visible = false;
+            // 
+            // Автоинкремент_vmoТарифы
+            // 
+            this.Автоинкремент_vmoТарифы.AutoGenerated = true;
+            this.Автоинкремент_vmoТарифы.CalcTotal = false;
+            this.Автоинкремент_vmoТарифы.Caption = "Автоинкремент";
+            this.Автоинкремент_vmoТарифы.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Автоинкремент_vmoТарифы.Name = "Автоинкремент";
+            this.Автоинкремент_vmoТарифы.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.Автоинкремент_vmoТарифы.PropertyType = typeof(long);
+            this.Автоинкремент_vmoТарифы.SearchCondition.OwnerComponent = this.Автоинкремент_vmoТарифы;
+            this.Автоинкремент_vmoТарифы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Автоинкремент_vmoТарифы.Visible = false;
+            // 
+            // Владелец_vmoТарифы
+            // 
+            this.Владелец_vmoТарифы.AutoGenerated = true;
+            this.Владелец_vmoТарифы.Caption = "Владелец";
+            this.Владелец_vmoТарифы.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Владелец_vmoТарифы.Name = "Владелец";
+            this.Владелец_vmoТарифы.NSGType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец_vmoТарифы.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец_vmoТарифы.SearchCondition.OwnerComponent = this.Владелец_vmoТарифы;
+            this.Владелец_vmoТарифы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // НомерСтроки_vmoТарифы
+            // 
+            this.НомерСтроки_vmoТарифы.AutoGenerated = true;
+            this.НомерСтроки_vmoТарифы.CalcTotal = false;
+            this.НомерСтроки_vmoТарифы.Caption = "НомерСтроки";
+            this.НомерСтроки_vmoТарифы.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.НомерСтроки_vmoТарифы.Name = "НомерСтроки";
+            this.НомерСтроки_vmoТарифы.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.НомерСтроки_vmoТарифы.PropertyType = typeof(long);
+            this.НомерСтроки_vmoТарифы.SearchCondition.OwnerComponent = this.НомерСтроки_vmoТарифы;
+            this.НомерСтроки_vmoТарифы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.НомерСтроки_vmoТарифы.Visible = false;
+            // 
+            // Тариф
+            // 
+            this.Тариф.AutoGenerated = true;
+            this.Тариф.Caption = "Тариф";
+            this.Тариф.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Тариф.Name = "Тариф";
+            this.Тариф.NSGType = typeof(TechControl.Метаданные.Мониторинг.Тарифы);
+            this.Тариф.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Тарифы);
+            this.Тариф.SearchCondition.OwnerComponent = this.Тариф;
+            this.Тариф.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Стоимость
+            // 
+            this.Стоимость.AutoGenerated = true;
+            this.Стоимость.CalcTotal = false;
+            this.Стоимость.Caption = "Стоимость";
+            this.Стоимость.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Стоимость.Name = "Стоимость";
+            this.Стоимость.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.Стоимость.PropertyType = typeof(decimal);
+            this.Стоимость.SearchCondition.OwnerComponent = this.Стоимость;
+            this.Стоимость.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ИспользоватьПоУмолчанию
+            // 
+            this.ИспользоватьПоУмолчанию.AutoGenerated = true;
+            this.ИспользоватьПоУмолчанию.Caption = "ИспользоватьПоУмолчанию";
+            this.ИспользоватьПоУмолчанию.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ИспользоватьПоУмолчанию.Name = "ИспользоватьПоУмолчанию";
+            this.ИспользоватьПоУмолчанию.NSGType = typeof(NsgSoft.DataObjects.NsgDataBoolean);
+            this.ИспользоватьПоУмолчанию.PropertyType = typeof(bool);
+            this.ИспользоватьПоУмолчанию.SearchCondition.OwnerComponent = this.ИспользоватьПоУмолчанию;
+            this.ИспользоватьПоУмолчанию.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ГруппаСпецТехники
+            // 
+            this.ГруппаСпецТехники.AutoGenerated = true;
+            this.ГруппаСпецТехники.Caption = "ГруппаСпецТехники";
+            this.ГруппаСпецТехники.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ГруппаСпецТехники.Name = "ГруппаСпецТехники";
+            this.ГруппаСпецТехники.NSGType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
+            this.ГруппаСпецТехники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
+            this.ГруппаСпецТехники.SearchCondition.OwnerComponent = this.ГруппаСпецТехники;
+            this.ГруппаСпецТехники.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // ОбъектыФормаЭлемента
             // 
             this.AllowDrop = true;
@@ -2141,24 +2140,6 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgInput nsgInput14;
         protected NsgLabel nsgLabel13;
         protected NsgInput nsgInput15;
-        private NsgColumnDescriptor.Guid Идентификатор_vmoПерсонал;
-        private NsgColumnDescriptor.Int64 Автоинкремент_vmoПерсонал;
-        private NsgColumnDescriptor.MultipleObject Владелец;
-        private NsgColumnDescriptor.Int64 НомерСтроки;
-        private Сотрудники.ColumnDescriptor Сотрудник;
-        private NsgColumnDescriptor.Guid Идентификатор_vmoТехника;
-        private NsgColumnDescriptor.Int64 Автоинкремент_vmoТехника;
-        private NsgColumnDescriptor.MultipleObject Владелец_vmoТехника;
-        private NsgColumnDescriptor.Int64 НомерСтроки_vmoТехника;
-        private Техника.ColumnDescriptor Техника;
-        private NsgColumnDescriptor.Guid Идентификатор_vmoТарифы;
-        private NsgColumnDescriptor.Int64 Автоинкремент_vmoТарифы;
-        private NsgColumnDescriptor.MultipleObject Владелец_vmoТарифы;
-        private NsgColumnDescriptor.Int64 НомерСтроки_vmoТарифы;
-        private Тарифы.ColumnDescriptor Тариф;
-        private NsgColumnDescriptor.Decimal Стоимость;
-        private NsgColumnDescriptor.Boolean ИспользоватьПоУмолчанию;
-        protected ГруппыСпецТехники.ColumnDescriptor ГруппаСпецТехники;
         private Контрагенты.ColumnDescriptor ПоставщикТоплива;
         private NsgColumnDescriptor.Guid Идентификатор;
         private NsgColumnDescriptor.Int64 Автоинкремент;
@@ -2187,6 +2168,24 @@ namespace TechControl.Метаданные.Мониторинг
         private NsgColumnDescriptor.Boolean СменаОткрыта;
         private _SystemTables.МониторингОбъектыТаблицаТарифы.ColumnDescriptor ТаблицаТарифы;
         private Контрагенты.ColumnDescriptor ПоставщикТоплива_nsgVisualMultipleObject;
-        protected Объекты.ColumnDescriptor Родитель;
+        private Объекты.ColumnDescriptor Родитель;
+        private NsgColumnDescriptor.Guid Идентификатор_vmoПерсонал;
+        private NsgColumnDescriptor.Int64 Автоинкремент_vmoПерсонал;
+        private NsgColumnDescriptor.MultipleObject Владелец;
+        private NsgColumnDescriptor.Int64 НомерСтроки;
+        private Сотрудники.ColumnDescriptor Сотрудник;
+        private NsgColumnDescriptor.Guid Идентификатор_vmoТехника;
+        private NsgColumnDescriptor.Int64 Автоинкремент_vmoТехника;
+        private NsgColumnDescriptor.MultipleObject Владелец_vmoТехника;
+        private NsgColumnDescriptor.Int64 НомерСтроки_vmoТехника;
+        private Техника.ColumnDescriptor Техника;
+        private NsgColumnDescriptor.Guid Идентификатор_vmoТарифы;
+        private NsgColumnDescriptor.Int64 Автоинкремент_vmoТарифы;
+        private NsgColumnDescriptor.MultipleObject Владелец_vmoТарифы;
+        private NsgColumnDescriptor.Int64 НомерСтроки_vmoТарифы;
+        private Тарифы.ColumnDescriptor Тариф;
+        private NsgColumnDescriptor.Decimal Стоимость;
+        private NsgColumnDescriptor.Boolean ИспользоватьПоУмолчанию;
+        protected ГруппыСпецТехники.ColumnDescriptor ГруппаСпецТехники;
     }
 }

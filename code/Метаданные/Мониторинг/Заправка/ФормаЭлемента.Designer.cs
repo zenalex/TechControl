@@ -1406,9 +1406,9 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.nsgInput11.BackColor = System.Drawing.SystemColors.Window;
             this.nsgInput11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput11.ConfigurationName = "";
+            this.nsgInput11.ConfigurationName = "TechControl";
             this.nsgInput11.DisableLeaveControlEvent = false;
-            this.nsgInput11.FullName = "ЗаправочнаяЕмкость";
+            this.nsgInput11.FullName = "Мониторинг.Заправка.ЗаправочнаяЕмкость";
             this.nsgInput11.FullTextSearch = false;
             this.nsgInput11.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput11.IsButton = false;
@@ -1417,7 +1417,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput11.Location = new System.Drawing.Point(146, 99);
             this.nsgInput11.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput11.Mask = "";
-            this.nsgInput11.MetaDataName = "";
+            this.nsgInput11.MetaDataName = "Метаданные";
             this.nsgInput11.MinimumSize = new System.Drawing.Size(4, 20);
             this.nsgInput11.Name = "NsgInput";
             this.nsgInput11.ObjectImages = null;

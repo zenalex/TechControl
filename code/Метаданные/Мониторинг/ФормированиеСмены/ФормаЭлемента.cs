@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using NsgSoft.Common;
+using NsgSoft.Database;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
 using TechControl.Метаданные._SystemTables;
@@ -49,10 +50,19 @@ namespace TechControl.Метаданные.Мониторинг
                     техникаОбъекта.Add(i.Техника);
                 }
             }
+            List<Сотрудники> персоналОбъекта = new List<Сотрудники>();
+            foreach (var i in this.Объект.Value.ТаблицаПерсонал.Rows)
+            {
+                //if (vmoТаблицаПерсонал.Data.DataTable.FindRow(new NsgCompare().Add(МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник, i.Сотрудник)) == null)
+                {
+                    персоналОбъекта.Add(i.Сотрудник);
+                }
+            }
             ФиксацияИстории фиксацияИстории = ФиксацияИстории.Новый();
             NsgCompare cmp = new NsgCompare()
                 .Add(ФиксацияИстории.Names.Объект, формированиеСмены.Объект)
-                .Add(ФиксацияИстории.Names.Техника, техникаОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In);
+                .Add(ФиксацияИстории.Names.Техника, техникаОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In)
+                .Add(ФиксацияИстории.Names.Сотрудник, персоналОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In);
             var rsts = фиксацияИстории.GetRests(формированиеСмены.ДатаДокумента, cmp);
             vmoТаблица.Data.DataTable.FullClear();
             foreach (var i in rsts.Rows)
@@ -106,14 +116,6 @@ namespace TechControl.Метаданные.Мониторинг
                 }
             }
             vmoТаблица.Data.UpdateDataSync(this);
-            List<Сотрудники> персоналОбъекта = new List<Сотрудники>();
-            foreach (var i in this.Объект.Value.ТаблицаПерсонал.Rows)
-            {
-                //if (vmoТаблицаПерсонал.Data.DataTable.FindRow(new NsgCompare().Add(МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник, i.Сотрудник)) == null)
-                {
-                    персоналОбъекта.Add(i.Сотрудник);
-                }
-            }
             //ФиксацияИстории фиксацияИстории = ФиксацияИстории.Новый();
             //NsgCompare cmp = new NsgCompare()
             //    .Add(ФиксацияИстории.Names.Объект, формированиеСмены.Объект)
@@ -173,7 +175,31 @@ namespace TechControl.Метаданные.Мониторинг
         private void nsgInput4_Selected(object sender, EventArgs e)
         {
             if (Объект.Selected)
+            {
+                List<Техника> техникаОбъекта = new List<Техника>();
+                foreach (var i in this.Объект.Value.ТаблицаТехника.Rows)
+                {
+                    //if (vmoТаблица.Data.DataTable.FindRow(new NsgCompare().Add(МониторингФормированиеСменыТаблица.Names.Техника, i.Техника)) == null)
+                    {
+                        //МониторингФормированиеСменыТаблица.Строка row = vmoТаблица.Data.DataTable.NewRow() as МониторингФормированиеСменыТаблица.Строка;
+                        //row.Техника = i.Техника;
+                        //row.Post();
+                        техникаОбъекта.Add(i.Техника);
+                    }
+                }
+                List<Сотрудники> персоналОбъекта = new List<Сотрудники>();
+                foreach (var i in this.Объект.Value.ТаблицаПерсонал.Rows)
+                {
+                    //if (vmoТаблицаПерсонал.Data.DataTable.FindRow(new NsgCompare().Add(МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник, i.Сотрудник)) == null)
+                    {
+                        персоналОбъекта.Add(i.Сотрудник);
+                    }
+                }
+                Техника.SearchCondition.Add(Мониторинг.Техника.Names.Идентификатор, техникаОбъекта, NsgComparison.In);
+                Сотрудник.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта, NsgComparison.In);
+                Сотрудник_vmoТаблицаПерсонал.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта, NsgComparison.In);
                 Ответственный.Value = Объект.Value.Ответственный;
+            }
         }
 
         private void nsgInput7_ValueChanged(object sender, bool init)

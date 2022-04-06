@@ -90,8 +90,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput5 = new NsgSoft.Forms.NsgInput();
             this.nsgLabel6 = new NsgSoft.Forms.NsgLabel();
             this.nsgInput6 = new NsgSoft.Forms.NsgInput();
-            this.nsgLabel3 = new NsgSoft.Forms.NsgLabel();
-            this.nsgInput3 = new NsgSoft.Forms.NsgInput();
             this.bЗаполнить = new NsgSoft.Design.NsgButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -139,7 +137,6 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bЗаполнить)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1299,59 +1296,15 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput6.TabIndex = 19;
             this.nsgInput6.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // nsgLabel3
-            // 
-            this.nsgLabel3.AutoSize = true;
-            this.nsgLabel3.ConfigurationName = "";
-            this.nsgLabel3.FullName = "";
-            this.nsgLabel3.IsInitialized = false;
-            this.nsgLabel3.Location = new System.Drawing.Point(592, 43);
-            this.nsgLabel3.MetaDataName = "";
-            this.nsgLabel3.Name = "nsgLabel3";
-            this.nsgLabel3.Requsite = "";
-            this.nsgLabel3.Size = new System.Drawing.Size(43, 13);
-            this.nsgLabel3.TabIndex = 23;
-            this.nsgLabel3.Text = "Тариф:";
-            // 
-            // nsgInput3
-            // 
-            this.nsgInput3.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput3.ConfigurationName = "TechControl";
-            this.nsgInput3.DisableLeaveControlEvent = false;
-            this.nsgInput3.FullName = "Мониторинг.ФормированиеСмены.Тариф";
-            this.nsgInput3.FullTextSearch = false;
-            this.nsgInput3.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput3.IsButton = false;
-            this.nsgInput3.IsInitialized = true;
-            this.nsgInput3.IsPassword = false;
-            this.nsgInput3.Location = new System.Drawing.Point(638, 40);
-            this.nsgInput3.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput3.Mask = "";
-            this.nsgInput3.MetaDataName = "Метаданные";
-            this.nsgInput3.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput3.Name = "NsgInput";
-            this.nsgInput3.ObjectImages = null;
-            this.nsgInput3.ObjectIndex = null;
-            this.nsgInput3.ObjectStrings = null;
-            this.nsgInput3.Requsite = "Тариф";
-            this.nsgInput3.SearchFieldName = "";
-            this.nsgInput3.ShowMultipleObjectInComboBox = false;
-            this.nsgInput3.ShowRowCount = 10;
-            this.nsgInput3.Size = new System.Drawing.Size(130, 20);
-            this.nsgInput3.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput3.TabIndex = 22;
-            this.nsgInput3.VerticalAlignment = System.Drawing.StringAlignment.Center;
-            // 
             // bЗаполнить
             // 
             this.bЗаполнить.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.bЗаполнить.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.bЗаполнить.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.bЗаполнить.Location = new System.Drawing.Point(771, 40);
+            this.bЗаполнить.Location = new System.Drawing.Point(606, 40);
             this.bЗаполнить.Name = "NsgButton";
             this.bЗаполнить.ReadOnlyProvider = this.nsgVisualMultipleObject;
-            this.bЗаполнить.Size = new System.Drawing.Size(75, 25);
+            this.bЗаполнить.Size = new System.Drawing.Size(162, 25);
             this.bЗаполнить.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
             this.bЗаполнить.TabIndex = 24;
             this.bЗаполнить.Text = "Заполнить";
@@ -1368,7 +1321,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(1, 63);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 1;
+            this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1084, 314);
             this.tabControl1.TabIndex = 25;
             // 
@@ -1384,7 +1337,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Техника";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Visible = false;
+            this.tabPage1.Visible = true;
             // 
             // tabPage2
             // 
@@ -1398,7 +1351,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Персонал";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Visible = true;
+            this.tabPage2.Visible = false;
             // 
             // nsgInput7
             // 
@@ -1424,7 +1377,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput7.SearchFieldName = "";
             this.nsgInput7.ShowMultipleObjectInComboBox = false;
             this.nsgInput7.ShowRowCount = 10;
-            this.nsgInput7.Size = new System.Drawing.Size(130, 20);
+            this.nsgInput7.Size = new System.Drawing.Size(203, 20);
             this.nsgInput7.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput7.TabIndex = 26;
             this.nsgInput7.VerticalAlignment = System.Drawing.StringAlignment.Center;
@@ -1627,8 +1580,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.Controls.Add(this.nsgInput7);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.bЗаполнить);
-            this.Controls.Add(this.nsgLabel3);
-            this.Controls.Add(this.nsgInput3);
             this.Controls.Add(this.nsgLabel6);
             this.Controls.Add(this.nsgInput6);
             this.Controls.Add(this.nsgLabel5);
@@ -1660,8 +1611,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.Controls.SetChildIndex(this.nsgLabel5, 0);
             this.Controls.SetChildIndex(this.nsgInput6, 0);
             this.Controls.SetChildIndex(this.nsgLabel6, 0);
-            this.Controls.SetChildIndex(this.nsgInput3, 0);
-            this.Controls.SetChildIndex(this.nsgLabel3, 0);
             this.Controls.SetChildIndex(this.bЗаполнить, 0);
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.nsgInput7, 0);
@@ -1693,7 +1642,6 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bЗаполнить)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1715,8 +1663,6 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgInput nsgInput5;
         protected NsgLabel nsgLabel6;
         protected NsgInput nsgInput6;
-        protected NsgLabel nsgLabel3;
-        protected NsgInput nsgInput3;
         protected NsgSoft.Design.NsgButton bЗаполнить;
         private NsgIGrid gridТехника;
         protected System.Windows.Forms.TabPage tabPage1;
