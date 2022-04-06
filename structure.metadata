@@ -2545,6 +2545,7 @@
           <Registers>
             <register name="Мониторинг.ФиксацияИстории" regime="Write" />
             <register name="Мониторинг.РегистрСмен" regime="Write" />
+            <register name="Мониторинг.ФиксацияИсторииСотрудников" regime="Write" />
           </Registers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="3be3cf62-104f-4102-8c1a-fba6a67c3de9" type="NsgDataDictionary" editoraccess="Full" name="Картинки" visible="true" description="Картинки" group="Мониторинг" table="_dic_Kartinki" searchfield="Наименование" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="true">
@@ -8440,6 +8441,7 @@
               </NsgLanguageString>
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
+                <param name="Мониторинг.ФормированиеСмены" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="9d449ff2-06a2-40ae-a897-43782154d9e2" type="NsgDataTypedReference" editoraccess="Full" name="Объект" visible="true" description="Объект" field="Obekt" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Объекты">
@@ -8524,6 +8526,7 @@
               </NsgLanguageString>
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
+                <param name="Мониторинг.ФормированиеСмены" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="b89ab7b8-230c-4ed5-88e0-7db248e3d92f" type="NsgDataEnumReference" editoraccess="Full" name="СтатусСотрудника" visible="true" description="Статус сотрудника" field="StatusSotrudnika" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="СтатусСотрудника">
