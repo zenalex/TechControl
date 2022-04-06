@@ -61,10 +61,11 @@ namespace TechControl.Метаданные.Мониторинг
                     NsgCompare cmp = new NsgCompare()
                         .Add(Объект_.Name, i[РегистрСмен.Names.Объект].Value)
                         .Add(Наименование_.Name, техника.Наименование)
-                        .Add(Время_.Name, NsgService.BeginOfMonth(dateTime));
+                        .Add(Время_.Name, NsgService.BeginOfMonth(dateTime)
+                        .Add(НомерСмены_.Name, i[РегистрСмен.Names.НомерСмены].Value);
                     var row = nsgVisualMultipleObject.Data.MemoryTable.FindRow(cmp);
                     if (row == null)
-                    row = nsgVisualMultipleObject.Data.MemoryTable.NewRow();
+                        row = nsgVisualMultipleObject.Data.MemoryTable.NewRow();
                     row[Арендатор_].Value = i[ЗАКАЗЧИК].Value;
                     Тарифы тариф = Тарифы.Новый();//вл[ФормированиеСмены.Names.Тариф].ToReferent() as Тарифы;
                     row[Тариф_].Value = тариф;
