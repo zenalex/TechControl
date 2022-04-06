@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.4.6.0</ProductVersion>
+    <ProductVersion>2022.4.6.1</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -2486,5 +2486,34 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИсторииСотрудников\ФиксацияИсторииСотрудников.NsgInit.cs">
+      <NsgOwnerGuid>13ff2378-5ed8-4049-94e1-13b17aedf0c1</NsgOwnerGuid>
+      <NsgOwnerName>ФиксацияИсторииСотрудников</NsgOwnerName>
+      <DependentUpon>ФиксацияИсторииСотрудников.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИсторииСотрудников\ФиксацияИсторииСотрудников.cs">
+      <NsgOwnerGuid>13ff2378-5ed8-4049-94e1-13b17aedf0c1</NsgOwnerGuid>
+      <NsgOwnerName>ФиксацияИсторииСотрудников</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИсторииСотрудников\МониторингФиксацияИсторииСотрудниковДвижения.NsgInit.cs">
+      <NsgOwnerGuid>3e97f1b1-9245-40d5-9817-b59cad1a46c3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФиксацияИсторииСотрудниковДвижения</NsgOwnerName>
+      <DependentUpon>МониторингФиксацияИсторииСотрудниковДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИсторииСотрудников\МониторингФиксацияИсторииСотрудниковДвижения.cs">
+      <NsgOwnerGuid>3e97f1b1-9245-40d5-9817-b59cad1a46c3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФиксацияИсторииСотрудниковДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИсторииСотрудников\МониторингФиксацияИсторииСотрудниковДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>3e97f1b1-9245-40d5-9817-b59cad1a46c3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФиксацияИсторииСотрудниковДвижения</NsgOwnerName>
+      <DependentUpon>МониторингФиксацияИсторииСотрудниковДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ФиксацияИсторииСотрудников\МониторингФиксацияИсторииСотрудниковДвижения.Строка.cs">
+      <NsgOwnerGuid>3e97f1b1-9245-40d5-9817-b59cad1a46c3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингФиксацияИсторииСотрудниковДвижения</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
