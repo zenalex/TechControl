@@ -34,7 +34,15 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void nsgInput8_ValueChanged(object sender, bool init)
         {
-            nsgIGrid1.Visible = ЭтоИтоговыйДокумент.Value;
+            nsgIGrid1.Visible = bДобавить.Visible = ЭтоИтоговыйДокумент.Value;
+        }
+
+        private void bДобавить_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            var row = vmoТаблица.Data.DataTable.NewRow();
+            row.CopyNotPredefinedFieldsFromObject(this.FormObject);
+            row.Post();
+            vmoТаблица.Data.UpdateDataAsync(this);
         }
     }
     
