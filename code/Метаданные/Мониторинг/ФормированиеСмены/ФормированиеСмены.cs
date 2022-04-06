@@ -237,7 +237,9 @@ namespace TechControl.Метаданные.Мониторинг
                     рег.AddMovement();
                 }
                 #endregion
-                #region TODO: персонал
+                if (регСмены.MovementTable.Count > 0 && !регСмены.Post()) return false;
+                #region персонал
+                регСмены.New();
                 foreach (var i in this.ТаблицаПерсонал.Rows)
                 {
                     // начать смену
@@ -311,8 +313,9 @@ namespace TechControl.Метаданные.Мониторинг
                     рег.AddMovement();
                 }
                 #endregion
-                //if (регСмены.MovementTable.Count > 0 && !регСмены.Post()) return false;
+                if (регСмены.MovementTable.Count > 0 && !регСмены.Post()) return false;
                 #region персонал
+                регСмены.New();
                 foreach (var i in this.ТаблицаПерсонал.Rows)
                 {
                     регС.Сотрудник = i.Сотрудник;
