@@ -196,16 +196,13 @@ namespace TechControl.Метаданные.Мониторинг
                         персоналОбъекта.Add(i.Сотрудник);
                     }
                 }
-                Техника.SearchCondition.Add(Мониторинг.Техника.Names.Идентификатор, техникаОбъекта, NsgComparison.In);
-                Сотрудник.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта, NsgComparison.In);
-                Сотрудник_vmoТаблицаПерсонал.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта, NsgComparison.In);
-                Ответственный.Value = Объект.Value.Ответственный;
-            }
-            else
-            {
                 Техника.SearchCondition.Clear();
+                Техника.SearchCondition.Add(Мониторинг.Техника.Names.Идентификатор, техникаОбъекта.ToArray(), NsgComparison.In);
                 Сотрудник.SearchCondition.Clear();
+                Сотрудник.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
                 Сотрудник_vmoТаблицаПерсонал.SearchCondition.Clear();
+                Сотрудник_vmoТаблицаПерсонал.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
+                Ответственный.Value = Объект.Value.Ответственный;
             }
         }
 
