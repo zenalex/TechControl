@@ -23,23 +23,20 @@ namespace TechControl.Метаданные.Мониторинг
             InitializeComponent();
 		}
 
-		#region #Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
+        public override void OnDataLoaded()
+        {
+            base.OnDataLoaded();
+            //if (FormObject.ObjectState == NsgObjectStates.New)
+            //{
+            //    ЭтоИтоговыйДокумент.Value = true;
+            //}
+        }
 
-		#region #Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-		#region #Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-		#region #Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-	}
+        private void nsgInput8_ValueChanged(object sender, bool init)
+        {
+            nsgIGrid1.Visible = ЭтоИтоговыйДокумент.Value;
+        }
+    }
     
 
 
