@@ -29,6 +29,7 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 ЭтоИтоговыйДокумент.Value = true;
             }
+            nsgInput4_Selected(nsgInput4, EventArgs.Empty);
             nsgInput7_ValueChanged(nsgInput7, false);
         }
 
@@ -202,7 +203,7 @@ namespace TechControl.Метаданные.Мониторинг
                 Сотрудник.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
                 Сотрудник_vmoТаблицаПерсонал.SearchCondition.Clear();
                 Сотрудник_vmoТаблицаПерсонал.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
-                Ответственный.Value = Объект.Value.Ответственный;
+                if (!Ответственный.Selected) Ответственный.Value = Объект.Value.Ответственный;
             }
         }
 
