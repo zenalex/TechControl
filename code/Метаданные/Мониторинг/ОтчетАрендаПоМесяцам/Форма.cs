@@ -48,8 +48,8 @@ namespace TechControl.Метаданные.Мониторинг
             var all = рс.GetCirculate(nsgPeriodPicker1.Period.Begin, nsgPeriodPicker1.Period.End, NsgSoft.Common.NsgPeriod.Day, nsgObjectFilter1.Compare,
                 NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit/*, new[] { РегистрСмен.Names.Объект }*/,
                 dims.ToArray());
-            vmoГруппы.Data.BeginUpdateData();
-            vmoГруппы.Data.MemoryTable.Clear();
+            //vmoГруппы.Data.BeginUpdateData();
+            //vmoГруппы.Data.MemoryTable.Clear();
             nsgVisualMultipleObject.Data.BeginUpdateData();
             nsgVisualMultipleObject.Data.MemoryTable.Clear();
             foreach (var i in all.Rows)
@@ -62,7 +62,8 @@ namespace TechControl.Метаданные.Мониторинг
                         .Add(Объект_.Name, i[РегистрСмен.Names.Объект].Value)
                         .Add(Наименование_.Name, техника.Наименование)
                         .Add(Время_.Name, NsgService.BeginOfMonth(dateTime))
-                        .Add(НомерСмены_.Name, i[РегистрСмен.Names.НомерСмены].Value);
+                        .Add(НомерСмены_.Name, i[РегистрСмен.Names.НомерСмены].Value)
+                        .Add(Сотрудник_.Name, i[РегистрСмен.Names.Сотрудник].Value);
                     var row = nsgVisualMultipleObject.Data.MemoryTable.FindRow(cmp);
                     if (row == null)
                         row = nsgVisualMultipleObject.Data.MemoryTable.NewRow();
@@ -84,15 +85,16 @@ namespace TechControl.Метаданные.Мониторинг
                     //row[СтоимостьВЧас_].Value = тариф[Тарифы.Names.Стоимость].Value;
                     row[Время_].Value = NsgService.BeginOfMonth(dateTime);
                     row[ВремяСтрока_].Value = new NsgDateTimePeriod(NsgService.BeginOfMonth(dateTime), NsgService.EndOfMonth(dateTime)).ToString();
+                    row[Сотрудник_].Value = i[РегистрСмен.Names.Сотрудник].ToReferent();
                     decimal itogo = row[Итого_].ToDecimal();
                     decimal stArItogo = row[СтоимостьАрендыИтого_].ToDecimal();
                     for (int day = 1; day <= 31; day++)
                     {
                         if (dateTime.Day == day)
                         {
-                            row[$"{day}"].Value = row[$"{day}"].ToDecimal() + i[РегистрСмен.Names.ОтработанноеВремя].ToDebit();
-                            itogo += i[РегистрСмен.Names.ОтработанноеВремя].ToDebit();
-                            stArItogo += /*тариф[Тарифы.Names.Стоимость].ToDecimal() **/ i[РегистрСмен.Names.Сумма].ToDebit();
+                            row[$"{day}"].Value = row[$"{day}"].ToDecimal() - i[РегистрСмен.Names.ОтработанноеВремя].ToDecimal();
+                            itogo -= i[РегистрСмен.Names.ОтработанноеВремя].ToDecimal();
+                            stArItogo -= /*тариф[Тарифы.Names.Стоимость].ToDecimal() **/ i[РегистрСмен.Names.Сумма].ToDecimal();
                         }
                         else
                         {
@@ -104,12 +106,12 @@ namespace TechControl.Метаданные.Мониторинг
                     row[СтоимостьВЧас_].Value = itogo == 0 ? 0 : stArItogo / itogo;
                     row.Post();
 
-                    var rowG = vmoГруппы.Data.MemoryTable.NewRow();
-                    rowG[Объект_г].Value = i[РегистрСмен.Names.Объект].Value;
-                    rowG[Арендатор_г].Value = i[ЗАКАЗЧИК].Value;
+                    //var rowG = vmoГруппы.Data.MemoryTable.NewRow();
+                    //rowG[Объект_г].Value = i[РегистрСмен.Names.Объект].Value;
+                    //rowG[Арендатор_г].Value = i[ЗАКАЗЧИК].Value;
                 }
             }
-            vmoГруппы.Data.UpdateDataAsync(this);
+            //vmoГруппы.Data.UpdateDataAsync(this);
             nsgVisualMultipleObject.Data.UpdateDataAsync(this);
         }
 

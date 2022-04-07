@@ -17,34 +17,34 @@ namespace TechControl.Метаданные.Мониторинг
             if (this.ЭтоИтоговыйДокумент)
             {
                 if (!this.Объект.Selected) return new List<Guid>();
-                string ВРЕМЯНАЧАЛАСМЕНЫ = МониторингРежимыРаботыТаблицаГрафик.Names.ВремяНачалаСмены1.Substring(0,
-                    МониторингРежимыРаботыТаблицаГрафик.Names.ВремяНачалаСмены1.Length - 1);
+                //string ВРЕМЯНАЧАЛАСМЕНЫ = МониторингРежимыРаботыТаблицаГрафик.Names.ВремяНачалаСмены1.Substring(0,
+                //    МониторингРежимыРаботыТаблицаГрафик.Names.ВремяНачалаСмены1.Length - 1);
                 //string ВРЕМЯОКОНЧАНИЯСМЕНЫ = МониторингРежимыРаботыТаблицаГрафик.Names.ВремяОкончанияСмены1.Substring(0,
                 //    МониторингРежимыРаботыТаблицаГрафик.Names.ВремяОкончанияСмены1.Length - 1);
-                var rr = this.Объект.РежимРаботы.ТаблицаГрафик.FindRow(new NsgCompare()
-                    .Add(МониторингРежимыРаботыТаблицаГрафик.Names.ДеньНедели, ДеньНедели.ByDayOfWeek[this.ДатаДокумента.DayOfWeek]));
-                var строкиТехника = new List<МониторингФормированиеСменыТаблица.Строка>();
+                //var rr = this.Объект.РежимРаботы.ТаблицаГрафик.FindRow(new NsgCompare()
+                //    .Add(МониторингРежимыРаботыТаблицаГрафик.Names.ДеньНедели, ДеньНедели.ByDayOfWeek[this.ДатаДокумента.DayOfWeek]));
+                //var строкиТехника = new List<МониторингФормированиеСменыТаблица.Строка>();
                 foreach (var i in this.Таблица.Rows)
                 {
                     if (i.НомерСмены < 0 || i.НомерСмены > 3) i.НомерСмены = 0;
-                    DateTime dateTime;
-                    if (rr == null)
-                    {
-                        dateTime = this.ДатаДокумента;
-                    }
-                    else
-                    {
-                        dateTime = (i.НомерСмены == 0) ? rr.ВремяНачалаРабочегоДня : rr[ВРЕМЯНАЧАЛАСМЕНЫ + i.НомерСмены].ToDateTime();
-                    }
-                    var _cmp = new NsgCompare()
-                        .Add(МониторингФормированиеСменыТаблица.Names.Техника, i.Техника);
-                    var prRow =
-                        строкиТехника.FindLast(r =>
-                        _cmp.IsValidObject(r));
-                    if (prRow != null)
-                    {
-                        dateTime = dateTime.AddHours((double)prRow.Длительность);
-                    }
+                    DateTime dateTime = i.Время;
+                    //if (rr == null)
+                    //{
+                    //    dateTime = this.ДатаДокумента;
+                    //}
+                    //else
+                    //{
+                    //    dateTime = (i.НомерСмены == 0) ? rr.ВремяНачалаРабочегоДня : rr[ВРЕМЯНАЧАЛАСМЕНЫ + i.НомерСмены].ToDateTime();
+                    //}
+                    //var _cmpТехника = new NsgCompare()
+                    //    .Add(МониторингФормированиеСменыТаблица.Names.Техника, i.Техника);
+                    //var prRow =
+                    //    строкиТехника.FindLast(r =>
+                    //    _cmp.IsValidObject(r));
+                    //if (prRow != null)
+                    //{
+                    //    dateTime = dateTime.AddHours((double)prRow.Длительность);
+                    //}
                     i.Время = this.ДатаДокумента.Date.Add(dateTime.Subtract(dateTime.Date));
                     if (!i.Тариф.Selected)
                     {
@@ -63,30 +63,30 @@ namespace TechControl.Метаданные.Мониторинг
                         }
                     }
                     i.Post();
-                    строкиТехника.Add(i);
+                    //строкиТехника.Add(i);
                 }
-                var строкиПерсонал = new List<МониторингФормированиеСменыТаблицаПерсонал.Строка>();
+                //var строкиПерсонал = new List<МониторингФормированиеСменыТаблицаПерсонал.Строка>();
                 foreach (var i in this.ТаблицаПерсонал.Rows)
                 {
                     if (i.НомерСмены < 0 || i.НомерСмены > 3) i.НомерСмены = 0;
-                    DateTime dateTime;
-                    if(rr == null)
-                    {
-                        dateTime = this.ДатаДокумента;
-                    }
-                    else
-                    {
-                        dateTime = (i.НомерСмены == 0) ? rr.ВремяНачалаРабочегоДня : rr[ВРЕМЯНАЧАЛАСМЕНЫ + i.НомерСмены].ToDateTime();
-                    }
-                    var _cmp = new NsgCompare()
-                        .Add(МониторингФормированиеСменыТаблица.Names.Сотрудник, i.Сотрудник);
-                    var prRow =
-                        строкиПерсонал.FindLast(r =>
-                        _cmp.IsValidObject(r));
-                    if (prRow != null)
-                    {
-                        dateTime = dateTime.AddHours((double)prRow.Длительность);
-                    }
+                    DateTime dateTime = i.Время;
+                    //if(rr == null)
+                    //{
+                    //    dateTime = this.ДатаДокумента;
+                    //}
+                    //else
+                    //{
+                    //    dateTime = (i.НомерСмены == 0) ? rr.ВремяНачалаРабочегоДня : rr[ВРЕМЯНАЧАЛАСМЕНЫ + i.НомерСмены].ToDateTime();
+                    //}
+                    //var _cmp = new NsgCompare()
+                    //    .Add(МониторингФормированиеСменыТаблица.Names.Сотрудник, i.Сотрудник);
+                    //var prRow =
+                    //    строкиПерсонал.FindLast(r =>
+                    //    _cmp.IsValidObject(r));
+                    //if (prRow != null)
+                    //{
+                    //    dateTime = dateTime.AddHours((double)prRow.Длительность);
+                    //}
                     i.Время = this.ДатаДокумента.Date.Add(dateTime.Subtract(dateTime.Date));
                     if (!i.Тариф.Selected)
                     {
@@ -105,6 +105,7 @@ namespace TechControl.Метаданные.Мониторинг
                         }
                     }
                     i.Post();
+                    //строкиПерсонал.Add(i);
                 }
             }
             else

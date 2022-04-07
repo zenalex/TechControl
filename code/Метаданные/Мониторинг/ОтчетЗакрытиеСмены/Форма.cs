@@ -57,7 +57,7 @@ namespace TechControl.Метаданные.Мониторинг
                         зс.ДатаДокумента = зс.Время = endOfDay;
                         зс.Объект = объект;
                         зс.Post();
-                    }    
+                    }
                     зс.Handle();
                 }
                 dt = dt.AddDays(1);

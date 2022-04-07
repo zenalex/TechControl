@@ -50,6 +50,7 @@ namespace TechControl.Метаданные.Мониторинг
         {
             if (Объект.Selected)
             {
+                previousWO = this.Объект.Value.Идентификатор;
                 List<Техника> техникаОбъекта = new List<Техника>();
                 foreach (var i in this.Объект.Value.ТаблицаТехника.Rows)
                 {
@@ -70,14 +71,14 @@ namespace TechControl.Метаданные.Мониторинг
                 {
                     тарифыСотрудниковОбъекта.Add(i.Тариф);
                 }
-                Техника.SearchCondition.Clear();
-                Техника.SearchCondition.Add(Мониторинг.Техника.Names.Идентификатор, техникаОбъекта.ToArray(), NsgComparison.In);
-                Сотрудник.SearchCondition.Clear();
-                Сотрудник.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
+                Техника_т.SearchCondition.Clear();
+                Техника_т.SearchCondition.Add(Мониторинг.Техника.Names.Идентификатор, техникаОбъекта.ToArray(), NsgComparison.In);
+                Сотрудник_т.SearchCondition.Clear();
+                Сотрудник_т.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
                 Сотрудник_vmoТаблицаПерсонал.SearchCondition.Clear();
                 Сотрудник_vmoТаблицаПерсонал.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
-                Тариф_vmoТаблица.SearchCondition.Clear();
-                Тариф_vmoТаблица.SearchCondition.Add(Тарифы.Names.Идентификатор, тарифыОбъекта.ToArray(), NsgComparison.In);
+                Тариф_т.SearchCondition.Clear();
+                Тариф_т.SearchCondition.Add(Тарифы.Names.Идентификатор, тарифыОбъекта.ToArray(), NsgComparison.In);
                 Тариф_vmoТаблицаПерсонал.SearchCondition.Clear();
                 Тариф_vmoТаблицаПерсонал.SearchCondition.Add(Тарифы.Names.Идентификатор, тарифыСотрудниковОбъекта.ToArray(), NsgComparison.In);
             }
@@ -85,12 +86,12 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void nsgInput7_ValueChanged(object sender, bool init)
         {
-            gridТехника.Columns[Длительность.Name].Visible = ЭтоИтоговыйДокумент.Value;
-            gridТехника.Columns[СтатусТехники.Name].Visible = !ЭтоИтоговыйДокумент.Value;
-            gridТехника.Columns[Время.Name].Visible = !ЭтоИтоговыйДокумент.Value;
+            gridТехника.Columns[Длительность_т.Name].Visible = ЭтоИтоговыйДокумент.Value;
+            gridТехника.Columns[СтатусТехники_т.Name].Visible = !ЭтоИтоговыйДокумент.Value;
+            Время_т.Caption = ЭтоИтоговыйДокумент.Value ? "Время начала" : "Время";
             gridПерсонал.Columns[Длительность_vmoТаблицаПерсонал.Name].Visible = ЭтоИтоговыйДокумент.Value;
             gridПерсонал.Columns[СтатусСотрудника.Name].Visible = !ЭтоИтоговыйДокумент.Value;
-            gridПерсонал.Columns[Время_vmoТаблицаПерсонал.Name].Visible = !ЭтоИтоговыйДокумент.Value;
+            Время_vmoТаблицаПерсонал.Caption = ЭтоИтоговыйДокумент.Value ? "Время начала" : "Время";
         }
 
         Guid previousWO = Guid.Empty;

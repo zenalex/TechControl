@@ -7072,7 +7072,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="ae8061ac-70b0-4f5e-ae80-80e408d318f8" type="NsgDataDateTime" editoraccess="Full" name="Время" visible="true" description="Время" field="Vremja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+            <NsgSimpleObject Guid="ae8061ac-70b0-4f5e-ae80-80e408d318f8" type="NsgDataDateTime" editoraccess="Full" name="Время" visible="true" description="Время" field="Vremja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="Time">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
