@@ -1206,6 +1206,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput4.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput4.TabIndex = 15;
             this.nsgInput4.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.nsgInput4.ValueChanged += new NsgSoft.Design.ValueChangedInitEventHandler(this.nsgInput4_ValueChanged);
             this.nsgInput4.Selected += new System.EventHandler(this.nsgInput4_Selected);
             // 
             // nsgLabel5

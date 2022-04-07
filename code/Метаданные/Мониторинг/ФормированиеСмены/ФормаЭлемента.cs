@@ -42,136 +42,7 @@ namespace TechControl.Метаданные.Мониторинг
             }
             ФормированиеСмены формированиеСмены = this.FormObject as ФормированиеСмены;
             формированиеСмены.Заполнить();
-            //List<Техника> техникаОбъекта = new List<Техника>();
-            //foreach (var i in this.Объект.Value.ТаблицаТехника.Rows)
-            //{
-            //    //if (vmoТаблица.Data.DataTable.FindRow(new NsgCompare().Add(МониторингФормированиеСменыТаблица.Names.Техника, i.Техника)) == null)
-            //    {
-            //        //МониторингФормированиеСменыТаблица.Строка row = vmoТаблица.Data.DataTable.NewRow() as МониторингФормированиеСменыТаблица.Строка;
-            //        //row.Техника = i.Техника;
-            //        //row.Post();
-            //        техникаОбъекта.Add(i.Техника);
-            //    }
-            //}
-            //List<Сотрудники> персоналОбъекта = new List<Сотрудники>();
-            //foreach (var i in this.Объект.Value.ТаблицаПерсонал.Rows)
-            //{
-            //    //if (vmoТаблицаПерсонал.Data.DataTable.FindRow(new NsgCompare().Add(МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник, i.Сотрудник)) == null)
-            //    {
-            //        персоналОбъекта.Add(i.Сотрудник);
-            //    }
-            //}
-            //ФиксацияИстории фиксацияИстории = ФиксацияИстории.Новый();
-            //NsgCompare cmp = new NsgCompare()
-            //    .Add(ФиксацияИстории.Names.Объект, формированиеСмены.Объект)
-            //    .Add(ФиксацияИстории.Names.Техника, техникаОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In)
-            //    .Add(ФиксацияИстории.Names.Сотрудник, персоналОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In);
-            //var rsts = фиксацияИстории.GetRests(формированиеСмены.ДатаДокумента, cmp);
-            //vmoТаблица.Data.DataTable.FullClear();
-            //foreach (var i in rsts.Rows)
-            //{
-            //    //if (vmoТаблица.Data.DataTable.FindRow(new NsgCompare()
-            //    //    .Add(МониторингФормированиеСменыТаблица.Names.Техника, i[МониторингФормированиеСменыТаблица.Names.Техника].Value)) != null)
-            //    //    continue;
-            //    var row = vmoТаблица.Data.DataTable.NewRow();
-            //    row.CopyNotPredefinedFieldsFromObject(i, МониторингФормированиеСменыТаблица.Names.СтатусТехники, МониторингФормированиеСменыТаблица.Names.Время);
-            //    var смена = row[МониторингФормированиеСменыТаблица.Names.НомерСмены].ToInt();
-            //    var статус = i[МониторингФормированиеСменыТаблица.Names.СтатусТехники].ToReferent() as СтатусТехники;
-            //    if (статус == Мониторинг.СтатусТехники.ВРаботе)
-            //    {
-            //        row[МониторингФормированиеСменыТаблица.Names.СтатусТехники].Value = Мониторинг.СтатусТехники.НеРаботает;
-            //    }
-            //    else
-            //    {
-            //        row[МониторингФормированиеСменыТаблица.Names.СтатусТехники].Value = Мониторинг.СтатусТехники.ВРаботе;
-            //    }
-            //    if (смена > 0)
-            //    {
-            //        if (this.Объект.Value.РежимРаботы.Selected)
-            //        {
-            //            ДеньНедели деньНедели = ДеньНедели.ByDayOfWeek[формированиеСмены.ДатаДокумента.DayOfWeek];
-            //            var cmpRR = new NsgCompare()
-            //                .Add(МониторингРежимыРаботыТаблицаГрафик.Names.ДеньНедели, деньНедели);
-            //            var RRRow = this.Объект.Value.РежимРаботы.ТаблицаГрафик.FindRow(cmpRR);
-            //            if (RRRow != null)
-            //            {
-            //                if (статус == Мониторинг.СтатусТехники.ВРаботе)
-            //                {
-            //                    row[МониторингФормированиеСменыТаблица.Names.Время].Value = RRRow[$"ВремяОкончанияСмены{смена}"].Value;
-            //                }
-            //                else
-            //                {
-            //                    row[МониторингФормированиеСменыТаблица.Names.Время].Value = RRRow[$"ВремяНачалаСмены{смена}"].Value;
-            //                }
-            //            }
-            //        }
-            //    }
-            //    row.Post();
-            //}
-            //foreach (var i in техникаОбъекта)
-            //{
-            //    if (vmoТаблица.Data.DataTable.FindRow(new NsgCompare()
-            //        .Add(МониторингФормированиеСменыТаблица.Names.Техника, i)) == null)
-            //    {
-            //        var row = vmoТаблица.Data.DataTable.NewRow();
-            //        row[МониторингФормированиеСменыТаблица.Names.Техника].Value = i;
-            //        row.Post();
-            //    }
-            //}
             vmoТаблица.Data.UpdateDataSync(this);
-            //ФиксацияИсторииСотрудников фиксацияИсторииСотрудников = ФиксацияИсторииСотрудников.Новый();
-            //cmp = new NsgCompare()
-            //    .Add(ФиксацияИсторииСотрудников.Names.Объект, формированиеСмены.Объект)
-            //    .Add(ФиксацияИсторииСотрудников.Names.Сотрудник, персоналОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In);
-            //rsts = фиксацияИсторииСотрудников.GetRests(формированиеСмены.ДатаДокумента, cmp);
-            //vmoТаблицаПерсонал.Data.DataTable.FullClear();
-            //foreach (var i in rsts.Rows)
-            //{
-            //    var row = vmoТаблицаПерсонал.Data.DataTable.NewRow();
-            //    row.CopyNotPredefinedFieldsFromObject(i, МониторингФормированиеСменыТаблицаПерсонал.Names.СтатусСотрудника, МониторингФормированиеСменыТаблицаПерсонал.Names.Время);
-            //    var смена = row[МониторингФормированиеСменыТаблицаПерсонал.Names.НомерСмены].ToInt();
-            //    var статус = i[МониторингФормированиеСменыТаблицаПерсонал.Names.СтатусСотрудника].ToReferent() as СтатусСотрудника;
-            //    if (статус == Мониторинг.СтатусСотрудника.НаРаботе)
-            //    {
-            //        row[МониторингФормированиеСменыТаблицаПерсонал.Names.СтатусСотрудника].Value = Мониторинг.СтатусСотрудника.Отсутствует;
-            //    }
-            //    else
-            //    {
-            //        row[МониторингФормированиеСменыТаблицаПерсонал.Names.СтатусСотрудника].Value = Мониторинг.СтатусСотрудника.НаРаботе;
-            //    }
-            //    if (смена > 0)
-            //    {
-            //        if (this.Объект.Value.РежимРаботы.Selected)
-            //        {
-            //            ДеньНедели деньНедели = ДеньНедели.ByDayOfWeek[формированиеСмены.ДатаДокумента.DayOfWeek];
-            //            var cmpRR = new NsgCompare()
-            //                .Add(МониторингРежимыРаботыТаблицаГрафик.Names.ДеньНедели, деньНедели);
-            //            var RRRow = this.Объект.Value.РежимРаботы.ТаблицаГрафик.FindRow(cmpRR);
-            //            if (RRRow != null)
-            //            {
-            //                if (статус == Мониторинг.СтатусСотрудника.НаРаботе)
-            //                {
-            //                    row[МониторингФормированиеСменыТаблицаПерсонал.Names.Время].Value = RRRow[$"ВремяОкончанияСмены{смена}"].Value;
-            //                }
-            //                else
-            //                {
-            //                    row[МониторингФормированиеСменыТаблицаПерсонал.Names.Время].Value = RRRow[$"ВремяНачалаСмены{смена}"].Value;
-            //                }
-            //            }
-            //        }
-            //    }
-            //    row.Post();
-            //}
-            //foreach (var i in персоналОбъекта)
-            //{
-            //    if (vmoТаблицаПерсонал.Data.DataTable.FindRow(new NsgCompare()
-            //        .Add(МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник, i)) == null)
-            //    {
-            //        var row = vmoТаблицаПерсонал.Data.DataTable.NewRow();
-            //        row[МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник].Value = i;
-            //        row.Post();
-            //    }
-            //}
             vmoТаблицаПерсонал.Data.UpdateDataSync(this);
         }
 
@@ -204,7 +75,6 @@ namespace TechControl.Метаданные.Мониторинг
                 Сотрудник.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
                 Сотрудник_vmoТаблицаПерсонал.SearchCondition.Clear();
                 Сотрудник_vmoТаблицаПерсонал.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
-                if (FormObject.ObjectState != NsgObjectStates.Fill && !Ответственный.Selected) Ответственный.Value = Объект.Value.Ответственный;
             }
         }
 
@@ -216,6 +86,20 @@ namespace TechControl.Метаданные.Мониторинг
             gridПерсонал.Columns[Длительность_vmoТаблицаПерсонал.Name].Visible = ЭтоИтоговыйДокумент.Value;
             gridПерсонал.Columns[СтатусСотрудника.Name].Visible = !ЭтоИтоговыйДокумент.Value;
             gridПерсонал.Columns[Время_vmoТаблицаПерсонал.Name].Visible = !ЭтоИтоговыйДокумент.Value;
+        }
+
+        Guid previousWO = Guid.Empty;
+        private void nsgInput4_ValueChanged(object sender, bool init)
+        {
+            if (this.Объект.Selected && this.Объект.Value.Идентификатор != previousWO)
+            {
+                if (!Ответственный.Selected) Ответственный.Value = Объект.Value.Ответственный;
+                ФормированиеСмены формированиеСмены = this.FormObject as ФормированиеСмены;
+                формированиеСмены.Заполнить();
+                vmoТаблица.Data.UpdateDataSync(this);
+                vmoТаблицаПерсонал.Data.UpdateDataSync(this);
+                previousWO = this.Объект.Value.Идентификатор;
+            }
         }
     }
     
