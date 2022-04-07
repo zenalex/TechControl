@@ -90,9 +90,9 @@ namespace TechControl.Метаданные.Мониторинг
                     {
                         if (dateTime.Day == day)
                         {
-                            row[$"{day}"].Value = row[$"{day}"].ToDecimal() + i[РегистрЗаправок.Names.ОбъемТоплива].ToDebit();
-                            itogo += i[РегистрЗаправок.Names.ОбъемТоплива].ToDebit();
-                            //stArItogo += /*тариф[Тарифы.Names.Стоимость].ToDecimal() **/ i[РегистрЗаправок.Names.Сумма].ToDebit();
+                            row[$"{day}"].Value = row[$"{day}"].ToDecimal() - i[РегистрЗаправок.Names.ОбъемТоплива].ToDecimal();
+                            itogo -= i[РегистрЗаправок.Names.ОбъемТоплива].ToDecimal();
+                            //stArItogo -= /*тариф[Тарифы.Names.Стоимость].ToDecimal() **/ i[РегистрЗаправок.Names.Сумма].ToDebit();
                         }
                         else
                         {
