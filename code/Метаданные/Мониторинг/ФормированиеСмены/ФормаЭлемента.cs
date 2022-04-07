@@ -53,21 +53,22 @@ namespace TechControl.Метаданные.Мониторинг
                 List<Техника> техникаОбъекта = new List<Техника>();
                 foreach (var i in this.Объект.Value.ТаблицаТехника.Rows)
                 {
-                    //if (vmoТаблица.Data.DataTable.FindRow(new NsgCompare().Add(МониторингФормированиеСменыТаблица.Names.Техника, i.Техника)) == null)
-                    {
-                        //МониторингФормированиеСменыТаблица.Строка row = vmoТаблица.Data.DataTable.NewRow() as МониторингФормированиеСменыТаблица.Строка;
-                        //row.Техника = i.Техника;
-                        //row.Post();
-                        техникаОбъекта.Add(i.Техника);
-                    }
+                    техникаОбъекта.Add(i.Техника);
                 }
                 List<Сотрудники> персоналОбъекта = new List<Сотрудники>();
                 foreach (var i in this.Объект.Value.ТаблицаПерсонал.Rows)
                 {
-                    //if (vmoТаблицаПерсонал.Data.DataTable.FindRow(new NsgCompare().Add(МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник, i.Сотрудник)) == null)
-                    {
-                        персоналОбъекта.Add(i.Сотрудник);
-                    }
+                    персоналОбъекта.Add(i.Сотрудник);
+                }
+                List<Тарифы> тарифыОбъекта = new List<Тарифы>();
+                foreach (var i in this.Объект.Value.ТаблицаТарифы.Rows)
+                {
+                    тарифыОбъекта.Add(i.Тариф);
+                }
+                List<Тарифы> тарифыСотрудниковОбъекта = new List<Тарифы>();
+                foreach (var i in this.Объект.Value.ТаблицаТарифыСотрудников.Rows)
+                {
+                    тарифыСотрудниковОбъекта.Add(i.Тариф);
                 }
                 Техника.SearchCondition.Clear();
                 Техника.SearchCondition.Add(Мониторинг.Техника.Names.Идентификатор, техникаОбъекта.ToArray(), NsgComparison.In);
@@ -75,6 +76,10 @@ namespace TechControl.Метаданные.Мониторинг
                 Сотрудник.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
                 Сотрудник_vmoТаблицаПерсонал.SearchCondition.Clear();
                 Сотрудник_vmoТаблицаПерсонал.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
+                Тариф_vmoТаблица.SearchCondition.Clear();
+                Тариф_vmoТаблица.SearchCondition.Add(Тарифы.Names.Идентификатор, тарифыОбъекта.ToArray(), NsgComparison.In);
+                Тариф_vmoТаблицаПерсонал.SearchCondition.Clear();
+                Тариф_vmoТаблицаПерсонал.SearchCondition.Add(Тарифы.Names.Идентификатор, тарифыСотрудниковОбъекта.ToArray(), NsgComparison.In);
             }
         }
 
