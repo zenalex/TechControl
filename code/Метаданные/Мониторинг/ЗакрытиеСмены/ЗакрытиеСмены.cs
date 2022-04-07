@@ -33,7 +33,7 @@ namespace TechControl.Метаданные.Мониторинг
                 decimal price;
                 if (i[ФиксацияИстории.Names.Владелец].ToReferent() is ФормированиеСмены docFS)
                 {
-                    price = docFS.Тариф.Стоимость;
+                    price = i[ФиксацияИстории.Names.Тариф + '.' + Тарифы.Names.Стоимость].ToDecimal();
                 }
                 else
                 {
