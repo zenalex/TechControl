@@ -46,6 +46,22 @@ namespace TechControl.Метаданные.Мониторинг
                         dateTime = dateTime.AddHours((double)prRow.Длительность);
                     }
                     i.Время = this.ДатаДокумента.Date.Add(dateTime.Subtract(dateTime.Date));
+                    if (!i.Тариф.Selected)
+                    {
+                        var tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
+                            .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
+                            .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                        if (tariff == null)
+                        {
+                            tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
+                                .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
+                                .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                        }
+                        if (tariff != null)
+                        {
+                            i.Тариф = tariff.Тариф;
+                        }
+                    }
                     i.Post();
                     строкиТехника.Add(i);
                 }
@@ -72,6 +88,22 @@ namespace TechControl.Метаданные.Мониторинг
                         dateTime = dateTime.AddHours((double)prRow.Длительность);
                     }
                     i.Время = this.ДатаДокумента.Date.Add(dateTime.Subtract(dateTime.Date));
+                    if (!i.Тариф.Selected)
+                    {
+                        //var tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
+                        //    .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
+                        //    .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                        //if (tariff == null)
+                        //{
+                        //    tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
+                        //        .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
+                        //        .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                        //}
+                        //if (tariff != null)
+                        //{
+                        //    i.Тариф = tariff.Тариф;
+                        //}
+                    }
                     i.Post();
                 }
             }
@@ -81,12 +113,44 @@ namespace TechControl.Метаданные.Мониторинг
                 {
                     i.Время = this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
                     if (i.НомерСмены < 0 || i.НомерСмены > 3) i.НомерСмены = 0;
+                    if (!i.Тариф.Selected)
+                    {
+                        var tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
+                            .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
+                            .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                        if (tariff == null)
+                        {
+                            tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
+                                .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
+                                .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                        }
+                        if (tariff != null)
+                        {
+                            i.Тариф = tariff.Тариф;
+                        }
+                    }
                     i.Post();
                 }
                 foreach (var i in this.ТаблицаПерсонал.Rows)
                 {
                     i.Время = this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
                     if (i.НомерСмены < 0 || i.НомерСмены > 3) i.НомерСмены = 0;
+                    if (!i.Тариф.Selected)
+                    {
+                        //var tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
+                        //    .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
+                        //    .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                        //if (tariff == null)
+                        //{
+                        //    tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
+                        //        .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
+                        //        .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                        //}
+                        //if (tariff != null)
+                        //{
+                        //    i.Тариф = tariff.Тариф;
+                        //}
+                    }
                     i.Post();
                 }
             }
@@ -114,7 +178,13 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 var tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
                     .Add(МониторингОбъектыТаблицаТарифы.Names.Тариф, i.Тариф)
-                    .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники, NsgComparison.EqualOrEmpty));
+                    .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                if (tariff == null)
+                {
+                    tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
+                        .Add(МониторингОбъектыТаблицаТарифы.Names.Тариф, i.Тариф)
+                        .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                }
                 if (tariff == null)
                 {
                     NsgSettings.MainForm.ShowMessage(
