@@ -6130,6 +6130,7 @@
           <Registers>
             <register name="Мониторинг.РегистрСмен" regime="Write" />
             <register name="Мониторинг.ФиксацияИстории" regime="Write" />
+            <register name="Мониторинг.ФиксацияИсторииСотрудников" regime="Write" />
           </Registers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="df7e25d9-1207-42f5-8347-d40f2b9805e0" type="NsgDataTable" editoraccess="Full" name="МониторингРегистрЗаправокДвижения" visible="true" description="Мониторинг регистр заправок движения" group="_SystemTables" table="_tab_MonitoringRegistrZa" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="RegisterMovementTable" registerPeriod="None" registerPeriodCount="1">
@@ -8441,6 +8442,7 @@
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
                 <param name="Мониторинг.ФормированиеСмены" />
+                <param name="Мониторинг.ЗакрытиеСмены" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="9d449ff2-06a2-40ae-a897-43782154d9e2" type="NsgDataTypedReference" editoraccess="Full" name="Объект" visible="true" description="Объект" field="Obekt" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Объекты">
@@ -8526,6 +8528,7 @@
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
                 <param name="Мониторинг.ФормированиеСмены" />
+                <param name="Мониторинг.ЗакрытиеСмены" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="b89ab7b8-230c-4ed5-88e0-7db248e3d92f" type="NsgDataEnumReference" editoraccess="Full" name="СтатусСотрудника" visible="true" description="Статус сотрудника" field="StatusSotrudnika" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="СтатусСотрудника">

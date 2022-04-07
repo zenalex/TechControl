@@ -23,23 +23,38 @@ namespace TechControl.Метаданные.Мониторинг
             InitializeComponent();
 		}
 
-		#region #Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
+        #region #Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
 
-		#region #Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
+        #endregion //#Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
 
-		#region #Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
+        #region #Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
 
-		#region #Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
+        #endregion //#Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
 
-	}
+        #region #Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
+
+        #endregion //#Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
+
+        #region #Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
+
+        #endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
+
+        private void nsgIGridТарифыТехники_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.ColumnName == Тариф.Name && e.RowObject[Стоимость].ToDecimal() == 0)
+            {
+                e.RowObject[Стоимость].Value = (e.CellObject.ToReferent() as Тарифы).Стоимость;
+            }
+        }
+
+        private void nsgIGridТарифыПерсонала_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.ColumnName == Тариф_vmoТарифыПерсонал.Name && e.RowObject[Стоимость_vmoТарифыПерсонал].ToDecimal() == 0)
+            {
+                e.RowObject[Стоимость_vmoТарифыПерсонал].Value = (e.CellObject.ToReferent() as Тарифы).Стоимость;
+            }
+        }
+    }
     
 
 
