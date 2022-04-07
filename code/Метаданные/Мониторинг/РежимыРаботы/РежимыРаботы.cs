@@ -24,6 +24,18 @@ namespace TechControl.Метаданные.Мониторинг
 
         #region Методы
         #endregion //Методы
+        public override void New()
+        {
+            base.New();
+            var неделя = Мониторинг.ДеньНедели.ByDayOfWeek;
+
+            foreach (var day in неделя)
+            {
+                var row = ТаблицаГрафик.NewRow();
+                row.ДеньНедели = day.Value;
+                row.Post();
+            }
+        }
     }
 
 }

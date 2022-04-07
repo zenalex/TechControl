@@ -42,24 +42,19 @@ namespace TechControl.Метаданные.Мониторинг
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn6 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn7 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn8 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn9 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn10 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn11 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn12 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn13 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding1 = new NsgSoft.Forms.NsgMasterDetailBinding();
             NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor1 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor2 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             this.nsgIGrid1 = new NsgSoft.Forms.NsgIGrid();
-            this.vmoТаблицаРасписание = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.ДеньНедели_vmoТаблицаРаспиание = new TechControl.Метаданные.Мониторинг.ДеньНедели.ColumnDescriptor();
-            this.ВремяНачалаСмены1_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.ВремяОкончанияСмены1_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.ВремяНачалаПерерыва_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.КоличествоСмен_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.vmoТабличнаяЧасть = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Идентификатор_vmoТабличнаяЧасть = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
             this.Автоинкремент_vmoТабличнаяЧасть = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.Владелец = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
-            this.НомерСтроки = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ДеньНедели = new TechControl.Метаданные.Мониторинг.ДеньНедели.ColumnDescriptor();
             this.ВремяНачалаРабочегоДня = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.ВремяКонцаРабочегоДня = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
@@ -76,6 +71,23 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput1 = new NsgSoft.Forms.NsgInput();
             this.nsgButton1 = new NsgSoft.Design.NsgButton();
             this.nsgButton2 = new NsgSoft.Design.NsgButton();
+            this.nsgButton3 = new NsgSoft.Design.NsgButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nsgInput3 = new NsgSoft.Forms.NsgInput();
+            this.vmoШапка = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.ДниНеделиРабота_vmoШапка = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.ДниНеделиВыходные_vmoШапка = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.ДниНеделиУкорочен_vmoШапка = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.ПериодРабота_vmoШапка = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.ПериодУкорочен_vmoШапка = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.nsgLabel3 = new NsgSoft.Forms.NsgLabel();
+            this.nsgLabel2 = new NsgSoft.Forms.NsgLabel();
+            this.nsgLabel1 = new NsgSoft.Forms.NsgLabel();
+            this.nsgInput2 = new NsgSoft.Forms.NsgInput();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Идентификатор = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
             this.Автоинкремент = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ЭтоГруппа = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
@@ -88,11 +100,18 @@ namespace TechControl.Метаданные.Мониторинг
             this.СостояниеДокумента = new TechControl.Метаданные.Сервис.СостоянияОбъекта.ColumnDescriptor();
             this.ТаблицаГрафик = new TechControl.Метаданные._SystemTables.МониторингРежимыРаботыТаблицаГрафик.ColumnDescriptor();
             this.Родитель = new TechControl.Метаданные.Мониторинг.РежимыРаботы.ColumnDescriptor();
-            this.nsgButton3 = new NsgSoft.Design.NsgButton();
-            this.ВремяОкончанияСмены2_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.ВремяОкончанияСмены3_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.ВремяНачалаСмены3_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ДеньНедели_vmoТаблицаРаспиание = new TechControl.Метаданные.Мониторинг.ДеньНедели.ColumnDescriptor();
+            this.ВремяНачалаСмены1_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяОкончанияСмены1_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяНачалаПерерыва_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.КоличествоСмен_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ВремяНачалаСмены2_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяОкончанияСмены2_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.ВремяНачалаСмены3_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяОкончанияСмены3_vmoТаблицаРасписание = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -111,12 +130,16 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.documentStructure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vmoТаблицаРасписание)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoТабличнаяЧасть)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton3)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoШапка)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -127,7 +150,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgEdit.DisabledImageKey = "disabled_EditElement";
             this.nsgEdit.Dock = System.Windows.Forms.DockStyle.Right;
             this.nsgEdit.ImageKey = "EditElement";
-            this.nsgEdit.Location = new System.Drawing.Point(546, 1);
+            this.nsgEdit.Location = new System.Drawing.Point(1693, 1);
             this.nsgEdit.Name = "nsgEdit";
             this.nsgEdit.NsgToolStrip = this.nsgToolStrip2;
             this.nsgEdit.Size = new System.Drawing.Size(116, 26);
@@ -144,7 +167,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgClose.DisabledImageKey = "disabled_Exit";
             this.nsgClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.nsgClose.ImageKey = "Exit";
-            this.nsgClose.Location = new System.Drawing.Point(662, 1);
+            this.nsgClose.Location = new System.Drawing.Point(1809, 1);
             this.nsgClose.Name = "nsgClose";
             this.nsgClose.NsgToolStrip = this.nsgToolStrip2;
             this.nsgClose.Size = new System.Drawing.Size(78, 26);
@@ -173,7 +196,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgToolStrip2.Location = new System.Drawing.Point(0, 2);
             this.nsgToolStrip2.Name = "nsgToolStrip2";
             this.nsgToolStrip2.Padding = new System.Windows.Forms.Padding(1);
-            this.nsgToolStrip2.Size = new System.Drawing.Size(741, 28);
+            this.nsgToolStrip2.Size = new System.Drawing.Size(1888, 28);
             this.nsgToolStrip2.TabIndex = 1;
             this.nsgToolStrip2.TabStop = false;
             this.nsgToolStrip2.Text = "nsgToolStrip2";
@@ -184,7 +207,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgAll.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.nsgAll.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.nsgAll.Dock = System.Windows.Forms.DockStyle.Right;
-            this.nsgAll.Location = new System.Drawing.Point(276, 1);
+            this.nsgAll.Location = new System.Drawing.Point(1423, 1);
             this.nsgAll.Name = "nsgAll";
             this.nsgAll.NsgToolStrip = this.nsgToolStrip2;
             this.nsgAll.Size = new System.Drawing.Size(95, 26);
@@ -201,7 +224,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgHandling.DisabledImageKey = "disabled_Handle";
             this.nsgHandling.Dock = System.Windows.Forms.DockStyle.Right;
             this.nsgHandling.ImageKey = "Handle";
-            this.nsgHandling.Location = new System.Drawing.Point(371, 1);
+            this.nsgHandling.Location = new System.Drawing.Point(1518, 1);
             this.nsgHandling.Name = "nsgHandling";
             this.nsgHandling.NsgToolStrip = this.nsgToolStrip2;
             this.nsgHandling.Size = new System.Drawing.Size(84, 26);
@@ -218,7 +241,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgSave.DisabledImageKey = "disabled_Save";
             this.nsgSave.Dock = System.Windows.Forms.DockStyle.Right;
             this.nsgSave.ImageKey = "Save";
-            this.nsgSave.Location = new System.Drawing.Point(455, 1);
+            this.nsgSave.Location = new System.Drawing.Point(1602, 1);
             this.nsgSave.Name = "nsgSave";
             this.nsgSave.NsgToolStrip = this.nsgToolStrip2;
             this.nsgSave.Size = new System.Drawing.Size(91, 26);
@@ -232,9 +255,9 @@ namespace TechControl.Метаданные.Мониторинг
             this.panelButtons.AllowDrop = true;
             this.panelButtons.Controls.Add(this.nsgToolStrip2);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(0, 337);
+            this.panelButtons.Location = new System.Drawing.Point(0, 583);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(741, 30);
+            this.panelButtons.Size = new System.Drawing.Size(1888, 30);
             this.panelButtons.TabIndex = 2;
             // 
             // nsgButtonBasic
@@ -244,7 +267,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgButtonBasic.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.nsgButtonBasic.Container = this.documentButton;
             this.nsgButtonBasic.Dock = System.Windows.Forms.DockStyle.Right;
-            this.nsgButtonBasic.Location = new System.Drawing.Point(276, 1);
+            this.nsgButtonBasic.Location = new System.Drawing.Point(1423, 1);
             this.nsgButtonBasic.Name = "nsgButtonBasic";
             this.nsgButtonBasic.Size = new System.Drawing.Size(0, 26);
             this.nsgButtonBasic.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
@@ -355,7 +378,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.Comment.SearchFieldName = "";
             this.Comment.ShowMultipleObjectInComboBox = false;
             this.Comment.ShowRowCount = 10;
-            this.Comment.Size = new System.Drawing.Size(741, 23);
+            this.Comment.Size = new System.Drawing.Size(1888, 23);
             this.Comment.SourceObject = this.nsgVisualMultipleObject;
             this.Comment.TabIndex = 0;
             this.Comment.VerticalAlignment = System.Drawing.StringAlignment.Center;
@@ -446,7 +469,8 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn3.Caption = "";
             nsgIGridColumn3.ChangedProperties = new string[] {
         "Visible",
-        "Index"};
+        "Index",
+        "Format"};
             nsgIGridColumn3.DateFormat = null;
             nsgIGridColumn3.ImportedFromVMO = false;
             nsgIGridColumn3.InitiateRowEdit = true;
@@ -465,7 +489,9 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn4.DateFormat = null;
-            nsgIGridColumn4.Name = "ВремяОкончанияРабочегоДня";
+            nsgIGridColumn4.ImportedFromVMO = false;
+            nsgIGridColumn4.InitiateRowEdit = true;
+            nsgIGridColumn4.Name = "ВремяКонцаРабочегоДня";
             nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn4.Root = this.nsgIGrid1.Columns.Collection;
             nsgIGridColumn4.SortDirection = NsgSoft.Database.NsgSortDirection.None;
@@ -478,7 +504,8 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn5.Caption = "";
             nsgIGridColumn5.ChangedProperties = new string[] {
         "Visible",
-        "Index"};
+        "Index",
+        "Format"};
             nsgIGridColumn5.DateFormat = null;
             nsgIGridColumn5.ImportedFromVMO = false;
             nsgIGridColumn5.InitiateRowEdit = true;
@@ -497,7 +524,9 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn6.DateFormat = null;
-            nsgIGridColumn6.Name = "ВремяОкончанияПерерыва";
+            nsgIGridColumn6.ImportedFromVMO = false;
+            nsgIGridColumn6.InitiateRowEdit = true;
+            nsgIGridColumn6.Name = "ВремяКонцаПерерыва";
             nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn6.Root = this.nsgIGrid1.Columns.Collection;
             nsgIGridColumn6.SortDirection = NsgSoft.Database.NsgSortDirection.None;
@@ -510,9 +539,12 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn7.Caption = "";
             nsgIGridColumn7.ChangedProperties = new string[] {
         "Visible",
+        "Format",
         "Index"};
             nsgIGridColumn7.DateFormat = null;
-            nsgIGridColumn7.Name = "ВремяНачалаСмены";
+            nsgIGridColumn7.ImportedFromVMO = false;
+            nsgIGridColumn7.InitiateRowEdit = true;
+            nsgIGridColumn7.Name = "ВремяНачалаСмены1";
             nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn7.Root = this.nsgIGrid1.Columns.Collection;
             nsgIGridColumn7.SortDirection = NsgSoft.Database.NsgSortDirection.None;
@@ -525,14 +557,107 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn8.Caption = "";
             nsgIGridColumn8.ChangedProperties = new string[] {
         "Visible",
+        "Format",
         "Index"};
             nsgIGridColumn8.DateFormat = null;
-            nsgIGridColumn8.Name = "ВремяОкончанияСмены";
+            nsgIGridColumn8.ImportedFromVMO = false;
+            nsgIGridColumn8.InitiateRowEdit = true;
+            nsgIGridColumn8.Name = "ВремяОкончанияСмены1";
             nsgIGridColumn8.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn8.Root = this.nsgIGrid1.Columns.Collection;
             nsgIGridColumn8.SortDirection = NsgSoft.Database.NsgSortDirection.None;
             nsgIGridColumn8.UseAsHeaderImage = false;
             nsgIGridColumn8.Width = 100;
+            nsgIGridColumn9.AllowFilter = true;
+            nsgIGridColumn9.AllowGroupSelect = false;
+            nsgIGridColumn9.AllowResize = true;
+            nsgIGridColumn9.AutoResize = true;
+            nsgIGridColumn9.Caption = "";
+            nsgIGridColumn9.ChangedProperties = new string[] {
+        "Visible",
+        "Format",
+        "Index"};
+            nsgIGridColumn9.DateFormat = null;
+            nsgIGridColumn9.ImportedFromVMO = false;
+            nsgIGridColumn9.InitiateRowEdit = true;
+            nsgIGridColumn9.Name = "ВремяНачалаСмены2";
+            nsgIGridColumn9.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn9.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn9.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn9.UseAsHeaderImage = false;
+            nsgIGridColumn9.Width = 100;
+            nsgIGridColumn10.AllowFilter = true;
+            nsgIGridColumn10.AllowGroupSelect = false;
+            nsgIGridColumn10.AllowResize = true;
+            nsgIGridColumn10.AutoResize = true;
+            nsgIGridColumn10.Caption = "";
+            nsgIGridColumn10.ChangedProperties = new string[] {
+        "Visible",
+        "Format",
+        "Index"};
+            nsgIGridColumn10.DateFormat = null;
+            nsgIGridColumn10.ImportedFromVMO = false;
+            nsgIGridColumn10.InitiateRowEdit = true;
+            nsgIGridColumn10.Name = "ВремяОкончанияСмены2";
+            nsgIGridColumn10.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn10.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn10.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn10.UseAsHeaderImage = false;
+            nsgIGridColumn10.Width = 100;
+            nsgIGridColumn11.AllowFilter = true;
+            nsgIGridColumn11.AllowGroupSelect = false;
+            nsgIGridColumn11.AllowResize = true;
+            nsgIGridColumn11.AutoResize = true;
+            nsgIGridColumn11.Caption = "";
+            nsgIGridColumn11.ChangedProperties = new string[] {
+        "Visible",
+        "Format",
+        "Index"};
+            nsgIGridColumn11.DateFormat = null;
+            nsgIGridColumn11.ImportedFromVMO = false;
+            nsgIGridColumn11.InitiateRowEdit = true;
+            nsgIGridColumn11.Name = "ВремяНачалаСмены3";
+            nsgIGridColumn11.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn11.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn11.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn11.UseAsHeaderImage = false;
+            nsgIGridColumn11.Width = 100;
+            nsgIGridColumn12.AllowFilter = true;
+            nsgIGridColumn12.AllowGroupSelect = false;
+            nsgIGridColumn12.AllowResize = true;
+            nsgIGridColumn12.AutoResize = true;
+            nsgIGridColumn12.Caption = "";
+            nsgIGridColumn12.ChangedProperties = new string[] {
+        "Visible",
+        "Format",
+        "Index"};
+            nsgIGridColumn12.DateFormat = null;
+            nsgIGridColumn12.ImportedFromVMO = false;
+            nsgIGridColumn12.InitiateRowEdit = true;
+            nsgIGridColumn12.Name = "ВремяОкончанияСмены3";
+            nsgIGridColumn12.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn12.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn12.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn12.UseAsHeaderImage = false;
+            nsgIGridColumn12.Width = 100;
+            nsgIGridColumn13.AllowFilter = true;
+            nsgIGridColumn13.AllowGroupSelect = false;
+            nsgIGridColumn13.AllowResize = true;
+            nsgIGridColumn13.AutoResize = true;
+            nsgIGridColumn13.Caption = "";
+            nsgIGridColumn13.ChangedProperties = new string[] {
+        "Visible",
+        "Index"};
+            nsgIGridColumn13.DateFormat = null;
+            nsgIGridColumn13.ImportedFromVMO = false;
+            nsgIGridColumn13.InitiateRowEdit = true;
+            nsgIGridColumn13.Name = "Владелец";
+            nsgIGridColumn13.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn13.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn13.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn13.UseAsHeaderImage = false;
+            nsgIGridColumn13.Visible = false;
+            nsgIGridColumn13.Width = 100;
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn1);
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn2);
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn3);
@@ -541,6 +666,11 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn6);
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn7);
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn8);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn9);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn10);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn11);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn12);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn13);
             this.nsgIGrid1.Filter = false;
             this.nsgIGrid1.FrozenColumns = 0;
             this.nsgIGrid1.Grouping = true;
@@ -549,7 +679,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid1.IsCanMultiSelect = false;
             this.nsgIGrid1.IsCanSingleSelect = false;
             this.nsgIGrid1.LineHeight = 20;
-            this.nsgIGrid1.Location = new System.Drawing.Point(12, 59);
+            this.nsgIGrid1.Location = new System.Drawing.Point(9, 8);
             this.nsgIGrid1.MarkReadOnly = false;
             this.nsgIGrid1.MasterObject = null;
             this.nsgIGrid1.Name = "NsgIGrid";
@@ -566,111 +696,11 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid1.ShowPanel = true;
             this.nsgIGrid1.ShowTotals = false;
             this.nsgIGrid1.ShowTree = false;
-            this.nsgIGrid1.Size = new System.Drawing.Size(717, 261);
-            this.nsgIGrid1.SourceObject = this.vmoТаблицаРасписание;
+            this.nsgIGrid1.Size = new System.Drawing.Size(1368, 490);
+            this.nsgIGrid1.SourceObject = this.vmoТабличнаяЧасть;
             this.nsgIGrid1.TabIndex = 11;
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
             this.nsgIGrid1.RowEnter += new NsgSoft.Forms.NsgIGrid.NsgIGridRowEventHandler(this.nsgIGrid1_RowEnter);
-            // 
-            // vmoТаблицаРасписание
-            // 
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.ДеньНедели_vmoТаблицаРаспиание);
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.ВремяНачалаСмены1_vmoТаблицаРасписание);
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.ВремяОкончанияСмены1_vmoТаблицаРасписание);
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.ВремяНачалаПерерыва_vmoТаблицаРасписание);
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.ВремяОкончанияПерерыва_vmoТаблицаРасписание);
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание);
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание);
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.КоличествоСмен_vmoТаблицаРасписание);
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.ВремяНачалаСмены2_vmoТаблицаРасписание);
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.ВремяОкончанияСмены2_vmoТаблицаРасписание);
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.ВремяНачалаСмены3_vmoТаблицаРасписание);
-            this.vmoТаблицаРасписание.Columns.Collection.Add(this.ВремяОкончанияСмены3_vmoТаблицаРасписание);
-            this.vmoТаблицаРасписание.IsActive = true;
-            this.vmoТаблицаРасписание.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
-            this.vmoТаблицаРасписание.MetaDataName = "";
-            this.vmoТаблицаРасписание.FullName = "";
-            // 
-            // ДеньНедели_vmoТаблицаРаспиание
-            // 
-            this.ДеньНедели_vmoТаблицаРаспиание.Caption = "ДеньНедели";
-            this.ДеньНедели_vmoТаблицаРаспиание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ДеньНедели_vmoТаблицаРаспиание.Name = "ДеньНедели";
-            this.ДеньНедели_vmoТаблицаРаспиание.NSGType = typeof(TechControl.Метаданные.Мониторинг.ДеньНедели);
-            this.ДеньНедели_vmoТаблицаРаспиание.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ДеньНедели);
-            this.ДеньНедели_vmoТаблицаРаспиание.SearchCondition.OwnerComponent = this.ДеньНедели_vmoТаблицаРаспиание;
-            this.ДеньНедели_vmoТаблицаРаспиание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяНачалаСмены1_vmoТаблицаРасписание
-            // 
-            this.ВремяНачалаСмены1_vmoТаблицаРасписание.Caption = "ВремяНачалаСмены1";
-            this.ВремяНачалаСмены1_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ВремяНачалаСмены1_vmoТаблицаРасписание.Name = "ВремяНачалаСмены1";
-            this.ВремяНачалаСмены1_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяНачалаСмены1_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
-            this.ВремяНачалаСмены1_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяНачалаСмены1_vmoТаблицаРасписание;
-            this.ВремяНачалаСмены1_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяОкончанияСмены1_vmoТаблицаРасписание
-            // 
-            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.Caption = "ВремяОкончанияСмены1";
-            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.Name = "ВремяОкончанияСмены1";
-            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
-            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяОкончанияСмены1_vmoТаблицаРасписание;
-            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяНачалаПерерыва_vmoТаблицаРасписание
-            // 
-            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.Caption = "ВремяНачалаПерерыва";
-            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.Name = "ВремяНачалаПерерыва";
-            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
-            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяНачалаПерерыва_vmoТаблицаРасписание;
-            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяОкончанияПерерыва_vmoТаблицаРасписание
-            // 
-            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.Caption = "ВремяОкончанияПерерыва";
-            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.Name = "ВремяОкончанияПерерыва";
-            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
-            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяОкончанияПерерыва_vmoТаблицаРасписание;
-            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяНачалаРабочегоДня_vmoТаблицаРасписание
-            // 
-            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.Caption = "ВремяНачалаРабочегоДня";
-            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.Name = "ВремяНачалаРабочегоДня";
-            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
-            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание;
-            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяОкончанияРабочегоДня_vmoТаблицаРасписание
-            // 
-            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.Caption = "ВремяОкончанияРабочегоДня";
-            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.Name = "ВремяОкончанияРабочегоДня";
-            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
-            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание;
-            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // КоличествоСмен_vmoТаблицаРасписание
-            // 
-            this.КоличествоСмен_vmoТаблицаРасписание.CalcTotal = false;
-            this.КоличествоСмен_vmoТаблицаРасписание.Caption = "КоличествоСмен";
-            this.КоличествоСмен_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.КоличествоСмен_vmoТаблицаРасписание.Name = "КоличествоСмен";
-            this.КоличествоСмен_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.КоличествоСмен_vmoТаблицаРасписание.PropertyType = typeof(long);
-            this.КоличествоСмен_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.КоличествоСмен_vmoТаблицаРасписание;
-            this.КоличествоСмен_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             this.vmoТабличнаяЧасть.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
             nsgObjectDescriptor2.ConfigurationName = "TechControl";
             this.vmoТабличнаяЧасть.MetaDataName = "Метаданные";
@@ -689,7 +719,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoТабличнаяЧасть.Columns.Collection.Add(this.Идентификатор_vmoТабличнаяЧасть);
             this.vmoТабличнаяЧасть.Columns.Collection.Add(this.Автоинкремент_vmoТабличнаяЧасть);
             this.vmoТабличнаяЧасть.Columns.Collection.Add(this.Владелец);
-            this.vmoТабличнаяЧасть.Columns.Collection.Add(this.НомерСтроки);
             this.vmoТабличнаяЧасть.Columns.Collection.Add(this.ДеньНедели);
             this.vmoТабличнаяЧасть.Columns.Collection.Add(this.ВремяНачалаРабочегоДня);
             this.vmoТабличнаяЧасть.Columns.Collection.Add(this.ВремяКонцаРабочегоДня);
@@ -704,6 +733,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoТабличнаяЧасть.Columns.Collection.Add(this.ВремяНачалаСмены1);
             this.vmoТабличнаяЧасть.IsActive = true;
             this.vmoТабличнаяЧасть.MasterComponent = this.nsgVisualMultipleObject;
+            this.vmoТабличнаяЧасть.DataPosted += new System.EventHandler<NsgSoft.Forms.NsgClosingOperationEventArgs>(this.vmoТабличнаяЧасть_DataPosted);
             this.vmoТабличнаяЧасть.Binding = nsgMasterDetailBinding1;
             // 
             // Идентификатор_vmoТабличнаяЧасть
@@ -741,19 +771,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.Владелец.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
             this.Владелец.SearchCondition.OwnerComponent = this.Владелец;
             this.Владелец.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // НомерСтроки
-            // 
-            this.НомерСтроки.AutoGenerated = true;
-            this.НомерСтроки.CalcTotal = false;
-            this.НомерСтроки.Caption = "НомерСтроки";
-            this.НомерСтроки.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.НомерСтроки.Name = "НомерСтроки";
-            this.НомерСтроки.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.НомерСтроки.PropertyType = typeof(long);
-            this.НомерСтроки.SearchCondition.OwnerComponent = this.НомерСтроки;
-            this.НомерСтроки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.НомерСтроки.Visible = false;
             // 
             // ДеньНедели
             // 
@@ -891,7 +908,7 @@ namespace TechControl.Метаданные.Мониторинг
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 22);
+            this.label1.Location = new System.Drawing.Point(12, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 9;
@@ -909,7 +926,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput1.IsButton = false;
             this.nsgInput1.IsInitialized = true;
             this.nsgInput1.IsPassword = false;
-            this.nsgInput1.Location = new System.Drawing.Point(110, 15);
+            this.nsgInput1.Location = new System.Drawing.Point(101, 26);
             this.nsgInput1.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput1.Mask = "";
             this.nsgInput1.MetaDataName = "Метаданные";
@@ -932,8 +949,9 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgButton1.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.nsgButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.nsgButton1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.nsgButton1.Location = new System.Drawing.Point(499, 15);
+            this.nsgButton1.Location = new System.Drawing.Point(445, 26);
             this.nsgButton1.Name = "NsgButton";
+            this.nsgButton1.ReadOnlyProvider = this.nsgVisualMultipleObject;
             this.nsgButton1.Size = new System.Drawing.Size(104, 38);
             this.nsgButton1.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
             this.nsgButton1.TabIndex = 12;
@@ -946,14 +964,251 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgButton2.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.nsgButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.nsgButton2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.nsgButton2.Location = new System.Drawing.Point(609, 15);
+            this.nsgButton2.Location = new System.Drawing.Point(574, 26);
             this.nsgButton2.Name = "NsgButton";
+            this.nsgButton2.ReadOnlyProvider = this.nsgVisualMultipleObject;
             this.nsgButton2.Size = new System.Drawing.Size(108, 38);
             this.nsgButton2.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
             this.nsgButton2.TabIndex = 13;
             this.nsgButton2.Text = "Очистить";
             this.nsgButton2.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
             this.nsgButton2.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nsgButton2_AsyncClick);
+            // 
+            // nsgButton3
+            // 
+            this.nsgButton3.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.nsgButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nsgButton3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nsgButton3.Location = new System.Drawing.Point(321, 26);
+            this.nsgButton3.Name = "NsgButton";
+            this.nsgButton3.ReadOnlyProvider = this.nsgVisualMultipleObject;
+            this.nsgButton3.Size = new System.Drawing.Size(104, 38);
+            this.nsgButton3.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.nsgButton3.TabIndex = 14;
+            this.nsgButton3.Text = "Сохранить";
+            this.nsgButton3.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nsgButton3.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nsgButton3_AsyncClick);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AllowDrop = true;
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.nsgInput3);
+            this.groupBox1.Controls.Add(this.nsgLabel3);
+            this.groupBox1.Controls.Add(this.nsgLabel2);
+            this.groupBox1.Controls.Add(this.nsgLabel1);
+            this.groupBox1.Controls.Add(this.nsgInput2);
+            this.groupBox1.Location = new System.Drawing.Point(1482, 78);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(327, 228);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(117, 159);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Выходные";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(56, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(183, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Сокращенные рабочие дни недели";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(85, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Рабочие дни недели";
+            // 
+            // nsgInput3
+            // 
+            this.nsgInput3.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput3.ConfigurationName = "";
+            this.nsgInput3.DisableLeaveControlEvent = false;
+            this.nsgInput3.FullName = "ПериодУкорочен";
+            this.nsgInput3.FullTextSearch = false;
+            this.nsgInput3.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput3.IsButton = false;
+            this.nsgInput3.IsInitialized = true;
+            this.nsgInput3.IsPassword = false;
+            this.nsgInput3.Location = new System.Drawing.Point(81, 125);
+            this.nsgInput3.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput3.Mask = "";
+            this.nsgInput3.MetaDataName = "";
+            this.nsgInput3.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput3.Name = "NsgInput";
+            this.nsgInput3.ObjectImages = null;
+            this.nsgInput3.ObjectIndex = null;
+            this.nsgInput3.ObjectStrings = null;
+            this.nsgInput3.Requsite = "ПериодУкорочен";
+            this.nsgInput3.SearchFieldName = "";
+            this.nsgInput3.ShowMultipleObjectInComboBox = false;
+            this.nsgInput3.ShowRowCount = 10;
+            this.nsgInput3.Size = new System.Drawing.Size(130, 20);
+            this.nsgInput3.SourceObject = this.vmoШапка;
+            this.nsgInput3.TabIndex = 4;
+            this.nsgInput3.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // vmoШапка
+            // 
+            this.vmoШапка.Columns.Collection.Add(this.ДниНеделиРабота_vmoШапка);
+            this.vmoШапка.Columns.Collection.Add(this.ДниНеделиВыходные_vmoШапка);
+            this.vmoШапка.Columns.Collection.Add(this.ДниНеделиУкорочен_vmoШапка);
+            this.vmoШапка.Columns.Collection.Add(this.ПериодРабота_vmoШапка);
+            this.vmoШапка.Columns.Collection.Add(this.ПериодУкорочен_vmoШапка);
+            this.vmoШапка.IsActive = true;
+            this.vmoШапка.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoШапка.MetaDataName = "";
+            this.vmoШапка.FullName = "";
+            // 
+            // ДниНеделиРабота_vmoШапка
+            // 
+            this.ДниНеделиРабота_vmoШапка.Caption = "ДниНеделиРабота";
+            this.ДниНеделиРабота_vmoШапка.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДниНеделиРабота_vmoШапка.Name = "ДниНеделиРабота";
+            this.ДниНеделиРабота_vmoШапка.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.ДниНеделиРабота_vmoШапка.PropertyType = typeof(string);
+            this.ДниНеделиРабота_vmoШапка.SearchCondition.OwnerComponent = this.ДниНеделиРабота_vmoШапка;
+            this.ДниНеделиРабота_vmoШапка.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДниНеделиВыходные_vmoШапка
+            // 
+            this.ДниНеделиВыходные_vmoШапка.Caption = "ДниНеделиВыходные";
+            this.ДниНеделиВыходные_vmoШапка.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДниНеделиВыходные_vmoШапка.Name = "ДниНеделиВыходные";
+            this.ДниНеделиВыходные_vmoШапка.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.ДниНеделиВыходные_vmoШапка.PropertyType = typeof(string);
+            this.ДниНеделиВыходные_vmoШапка.SearchCondition.OwnerComponent = this.ДниНеделиВыходные_vmoШапка;
+            this.ДниНеделиВыходные_vmoШапка.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДниНеделиУкорочен_vmoШапка
+            // 
+            this.ДниНеделиУкорочен_vmoШапка.Caption = "ДниНеделиУкорочен";
+            this.ДниНеделиУкорочен_vmoШапка.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДниНеделиУкорочен_vmoШапка.Name = "ДниНеделиУкорочен";
+            this.ДниНеделиУкорочен_vmoШапка.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.ДниНеделиУкорочен_vmoШапка.PropertyType = typeof(string);
+            this.ДниНеделиУкорочен_vmoШапка.SearchCondition.OwnerComponent = this.ДниНеделиУкорочен_vmoШапка;
+            this.ДниНеделиУкорочен_vmoШапка.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ПериодРабота_vmoШапка
+            // 
+            this.ПериодРабота_vmoШапка.Caption = "ПериодРабота";
+            this.ПериодРабота_vmoШапка.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ПериодРабота_vmoШапка.Name = "ПериодРабота";
+            this.ПериодРабота_vmoШапка.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.ПериодРабота_vmoШапка.PropertyType = typeof(string);
+            this.ПериодРабота_vmoШапка.SearchCondition.OwnerComponent = this.ПериодРабота_vmoШапка;
+            this.ПериодРабота_vmoШапка.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ПериодУкорочен_vmoШапка
+            // 
+            this.ПериодУкорочен_vmoШапка.Caption = "ПериодУкорочен";
+            this.ПериодУкорочен_vmoШапка.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ПериодУкорочен_vmoШапка.Name = "ПериодУкорочен";
+            this.ПериодУкорочен_vmoШапка.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.ПериодУкорочен_vmoШапка.PropertyType = typeof(string);
+            this.ПериодУкорочен_vmoШапка.SearchCondition.OwnerComponent = this.ПериодУкорочен_vmoШапка;
+            this.ПериодУкорочен_vmoШапка.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // nsgLabel3
+            // 
+            this.nsgLabel3.AutoSize = true;
+            this.nsgLabel3.ConfigurationName = "";
+            this.nsgLabel3.FullName = "";
+            this.nsgLabel3.IsInitialized = true;
+            this.nsgLabel3.Location = new System.Drawing.Point(66, 185);
+            this.nsgLabel3.MetaDataName = "";
+            this.nsgLabel3.Name = "nsgLabel3";
+            this.nsgLabel3.Requsite = "ДниНеделиВыходные";
+            this.nsgLabel3.Size = new System.Drawing.Size(0, 13);
+            this.nsgLabel3.SourceObject = this.vmoШапка;
+            this.nsgLabel3.TabIndex = 3;
+            // 
+            // nsgLabel2
+            // 
+            this.nsgLabel2.AutoSize = true;
+            this.nsgLabel2.ConfigurationName = "";
+            this.nsgLabel2.FullName = "";
+            this.nsgLabel2.IsInitialized = true;
+            this.nsgLabel2.Location = new System.Drawing.Point(41, 132);
+            this.nsgLabel2.MetaDataName = "";
+            this.nsgLabel2.Name = "nsgLabel2";
+            this.nsgLabel2.Requsite = "ДниНеделиУкорочен";
+            this.nsgLabel2.Size = new System.Drawing.Size(0, 13);
+            this.nsgLabel2.SourceObject = this.vmoШапка;
+            this.nsgLabel2.TabIndex = 2;
+            // 
+            // nsgLabel1
+            // 
+            this.nsgLabel1.AutoSize = true;
+            this.nsgLabel1.ConfigurationName = "";
+            this.nsgLabel1.FullName = "";
+            this.nsgLabel1.IsInitialized = true;
+            this.nsgLabel1.Location = new System.Drawing.Point(41, 55);
+            this.nsgLabel1.MetaDataName = "";
+            this.nsgLabel1.Name = "nsgLabel1";
+            this.nsgLabel1.Requsite = "ДниНеделиРабота";
+            this.nsgLabel1.Size = new System.Drawing.Size(0, 13);
+            this.nsgLabel1.SourceObject = this.vmoШапка;
+            this.nsgLabel1.TabIndex = 1;
+            // 
+            // nsgInput2
+            // 
+            this.nsgInput2.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput2.ConfigurationName = "";
+            this.nsgInput2.DisableLeaveControlEvent = false;
+            this.nsgInput2.FullName = "ПериодРабота";
+            this.nsgInput2.FullTextSearch = false;
+            this.nsgInput2.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput2.IsButton = false;
+            this.nsgInput2.IsInitialized = true;
+            this.nsgInput2.IsPassword = false;
+            this.nsgInput2.Location = new System.Drawing.Point(81, 48);
+            this.nsgInput2.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput2.Mask = "";
+            this.nsgInput2.MetaDataName = "";
+            this.nsgInput2.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput2.Name = "NsgInput";
+            this.nsgInput2.ObjectImages = null;
+            this.nsgInput2.ObjectIndex = null;
+            this.nsgInput2.ObjectStrings = null;
+            this.nsgInput2.Requsite = "ПериодРабота";
+            this.nsgInput2.SearchFieldName = "";
+            this.nsgInput2.ShowMultipleObjectInComboBox = false;
+            this.nsgInput2.ShowRowCount = 10;
+            this.nsgInput2.Size = new System.Drawing.Size(130, 20);
+            this.nsgInput2.SourceObject = this.vmoШапка;
+            this.nsgInput2.TabIndex = 0;
+            this.nsgInput2.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.AllowDrop = true;
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.nsgIGrid1);
+            this.groupBox2.Location = new System.Drawing.Point(6, 70);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1383, 504);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
             // 
             // Идентификатор
             // 
@@ -1097,49 +1352,86 @@ namespace TechControl.Метаданные.Мониторинг
             this.Родитель.SearchCondition.OwnerComponent = this.Родитель;
             this.Родитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // nsgButton3
+            // ДеньНедели_vmoТаблицаРаспиание
             // 
-            this.nsgButton3.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.nsgButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nsgButton3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.nsgButton3.Location = new System.Drawing.Point(389, 15);
-            this.nsgButton3.Name = "NsgButton";
-            this.nsgButton3.Size = new System.Drawing.Size(104, 38);
-            this.nsgButton3.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
-            this.nsgButton3.TabIndex = 14;
-            this.nsgButton3.Text = "Сохранить";
-            this.nsgButton3.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
-            this.nsgButton3.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nsgButton3_AsyncClick);
+            this.ДеньНедели_vmoТаблицаРаспиание.Caption = "ДеньНедели";
+            this.ДеньНедели_vmoТаблицаРаспиание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДеньНедели_vmoТаблицаРаспиание.Name = "ДеньНедели";
+            this.ДеньНедели_vmoТаблицаРаспиание.NSGType = typeof(TechControl.Метаданные.Мониторинг.ДеньНедели);
+            this.ДеньНедели_vmoТаблицаРаспиание.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ДеньНедели);
+            this.ДеньНедели_vmoТаблицаРаспиание.SearchCondition.OwnerComponent = this.ДеньНедели_vmoТаблицаРаспиание;
+            this.ДеньНедели_vmoТаблицаРаспиание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // ВремяОкончанияСмены2_vmoТаблицаРасписание
+            // ВремяНачалаСмены1_vmoТаблицаРасписание
             // 
-            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.Caption = "ВремяОкончанияСмены2";
-            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.Name = "ВремяОкончанияСмены2";
-            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
-            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.PropertyType = typeof(string);
-            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяОкончанияСмены2_vmoТаблицаРасписание;
-            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.ВремяНачалаСмены1_vmoТаблицаРасписание.Caption = "ВремяНачалаСмены1";
+            this.ВремяНачалаСмены1_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ВремяНачалаСмены1_vmoТаблицаРасписание.Name = "ВремяНачалаСмены1";
+            this.ВремяНачалаСмены1_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяНачалаСмены1_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
+            this.ВремяНачалаСмены1_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяНачалаСмены1_vmoТаблицаРасписание;
+            this.ВремяНачалаСмены1_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // ВремяОкончанияСмены3_vmoТаблицаРасписание
+            // ВремяОкончанияСмены1_vmoТаблицаРасписание
             // 
-            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.Caption = "ВремяОкончанияСмены3";
-            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.Name = "ВремяОкончанияСмены3";
-            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
-            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяОкончанияСмены3_vmoТаблицаРасписание;
-            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.Caption = "ВремяОкончанияСмены1";
+            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.Name = "ВремяОкончанияСмены1";
+            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
+            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяОкончанияСмены1_vmoТаблицаРасписание;
+            this.ВремяОкончанияСмены1_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // ВремяНачалаСмены3_vmoТаблицаРасписание
+            // ВремяНачалаПерерыва_vmoТаблицаРасписание
             // 
-            this.ВремяНачалаСмены3_vmoТаблицаРасписание.Caption = "ВремяНачалаСмены3";
-            this.ВремяНачалаСмены3_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ВремяНачалаСмены3_vmoТаблицаРасписание.Name = "ВремяНачалаСмены3";
-            this.ВремяНачалаСмены3_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяНачалаСмены3_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
-            this.ВремяНачалаСмены3_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяНачалаСмены3_vmoТаблицаРасписание;
-            this.ВремяНачалаСмены3_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.Caption = "ВремяНачалаПерерыва";
+            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.Name = "ВремяНачалаПерерыва";
+            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
+            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяНачалаПерерыва_vmoТаблицаРасписание;
+            this.ВремяНачалаПерерыва_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяОкончанияПерерыва_vmoТаблицаРасписание
+            // 
+            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.Caption = "ВремяОкончанияПерерыва";
+            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.Name = "ВремяОкончанияПерерыва";
+            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
+            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяОкончанияПерерыва_vmoТаблицаРасписание;
+            this.ВремяОкончанияПерерыва_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяНачалаРабочегоДня_vmoТаблицаРасписание
+            // 
+            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.Caption = "ВремяНачалаРабочегоДня";
+            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.Name = "ВремяНачалаРабочегоДня";
+            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
+            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание;
+            this.ВремяНачалаРабочегоДня_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяОкончанияРабочегоДня_vmoТаблицаРасписание
+            // 
+            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.Caption = "ВремяОкончанияРабочегоДня";
+            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.Name = "ВремяОкончанияРабочегоДня";
+            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
+            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание;
+            this.ВремяОкончанияРабочегоДня_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // КоличествоСмен_vmoТаблицаРасписание
+            // 
+            this.КоличествоСмен_vmoТаблицаРасписание.CalcTotal = false;
+            this.КоличествоСмен_vmoТаблицаРасписание.Caption = "КоличествоСмен";
+            this.КоличествоСмен_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.КоличествоСмен_vmoТаблицаРасписание.Name = "КоличествоСмен";
+            this.КоличествоСмен_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.КоличествоСмен_vmoТаблицаРасписание.PropertyType = typeof(long);
+            this.КоличествоСмен_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.КоличествоСмен_vmoТаблицаРасписание;
+            this.КоличествоСмен_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // ВремяНачалаСмены2_vmoТаблицаРасписание
             // 
@@ -1151,6 +1443,36 @@ namespace TechControl.Метаданные.Мониторинг
             this.ВремяНачалаСмены2_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяНачалаСмены2_vmoТаблицаРасписание;
             this.ВремяНачалаСмены2_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // ВремяОкончанияСмены2_vmoТаблицаРасписание
+            // 
+            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.Caption = "ВремяОкончанияСмены2";
+            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.Name = "ВремяОкончанияСмены2";
+            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.PropertyType = typeof(string);
+            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяОкончанияСмены2_vmoТаблицаРасписание;
+            this.ВремяОкончанияСмены2_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяНачалаСмены3_vmoТаблицаРасписание
+            // 
+            this.ВремяНачалаСмены3_vmoТаблицаРасписание.Caption = "ВремяНачалаСмены3";
+            this.ВремяНачалаСмены3_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ВремяНачалаСмены3_vmoТаблицаРасписание.Name = "ВремяНачалаСмены3";
+            this.ВремяНачалаСмены3_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяНачалаСмены3_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
+            this.ВремяНачалаСмены3_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяНачалаСмены3_vmoТаблицаРасписание;
+            this.ВремяНачалаСмены3_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяОкончанияСмены3_vmoТаблицаРасписание
+            // 
+            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.Caption = "ВремяОкончанияСмены3";
+            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.Name = "ВремяОкончанияСмены3";
+            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.PropertyType = typeof(System.DateTime);
+            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.SearchCondition.OwnerComponent = this.ВремяОкончанияСмены3_vmoТаблицаРасписание;
+            this.ВремяОкончанияСмены3_vmoТаблицаРасписание.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // РежимыРаботыФормаЭлемента
             // 
             this.AllowDrop = true;
@@ -1159,11 +1481,12 @@ namespace TechControl.Метаданные.Мониторинг
             this.AutoPostOnClose = false;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(741, 410);
+            this.ClientSize = new System.Drawing.Size(1888, 656);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.nsgButton3);
             this.Controls.Add(this.nsgButton2);
             this.Controls.Add(this.nsgButton1);
-            this.Controls.Add(this.nsgIGrid1);
             this.Controls.Add(this.nsgInput1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelButtons);
@@ -1179,10 +1502,11 @@ namespace TechControl.Метаданные.Мониторинг
             this.Controls.SetChildIndex(this.panelButtons, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.nsgInput1, 0);
-            this.Controls.SetChildIndex(this.nsgIGrid1, 0);
             this.Controls.SetChildIndex(this.nsgButton1, 0);
             this.Controls.SetChildIndex(this.nsgButton2, 0);
             this.Controls.SetChildIndex(this.nsgButton3, 0);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.groupBox2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).EndInit();
@@ -1203,12 +1527,17 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.documentStructure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vmoТаблицаРасписание)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoТабличнаяЧасть)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton3)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoШапка)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1249,19 +1578,34 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.Int64 КоличествоСмен;
         protected NsgColumnDescriptor.DateTime ВремяНачалаСмены1;
         protected ДеньНедели.ColumnDescriptor ДеньНедели_vmoТаблицаРаспиание;
-        private NsgColumnDescriptor.DateTime ВремяНачалаСмены1_vmoТаблицаРасписание;
-        private NsgColumnDescriptor.DateTime ВремяОкончанияСмены1_vmoТаблицаРасписание;
-        private NsgColumnDescriptor.DateTime ВремяНачалаПерерыва_vmoТаблицаРасписание;
-        private NsgColumnDescriptor.DateTime ВремяОкончанияПерерыва_vmoТаблицаРасписание;
-        private NsgColumnDescriptor.DateTime ВремяНачалаРабочегоДня_vmoТаблицаРасписание;
-        private NsgColumnDescriptor.DateTime ВремяОкончанияРабочегоДня_vmoТаблицаРасписание;
-        private NsgColumnDescriptor.Int64 КоличествоСмен_vmoТаблицаРасписание;
-        private NsgVisualMultipleObject vmoТабличнаяЧасть;
-        private NsgVisualMultipleObject vmoТаблицаРасписание;
         protected NsgSoft.Design.NsgButton nsgButton3;
         protected NsgColumnDescriptor.String ВремяОкончанияСмены2_vmoТаблицаРасписание;
         protected NsgColumnDescriptor.DateTime ВремяНачалаСмены2_vmoТаблицаРасписание;
         protected NsgColumnDescriptor.DateTime ВремяНачалаСмены3_vmoТаблицаРасписание;
         protected NsgColumnDescriptor.DateTime ВремяОкончанияСмены3_vmoТаблицаРасписание;
+        protected NsgInput nsgInput3;
+        protected NsgColumnDescriptor.String ДниНеделиРабота_vmoШапка;
+        protected NsgColumnDescriptor.String ДниНеделиВыходные_vmoШапка;
+        protected NsgColumnDescriptor.String ДниНеделиУкорочен_vmoШапка;
+        protected NsgInput nsgInput2;
+        protected NsgColumnDescriptor.String ПериодРабота_vmoШапка;
+        protected NsgColumnDescriptor.DateTime ВремяНачалаСмены1_vmoТаблицаРасписание;
+        protected NsgColumnDescriptor.DateTime ВремяОкончанияСмены1_vmoТаблицаРасписание;
+        protected NsgColumnDescriptor.DateTime ВремяНачалаПерерыва_vmoТаблицаРасписание;
+        protected NsgColumnDescriptor.DateTime ВремяОкончанияПерерыва_vmoТаблицаРасписание;
+        protected NsgColumnDescriptor.DateTime ВремяНачалаРабочегоДня_vmoТаблицаРасписание;
+        protected NsgColumnDescriptor.DateTime ВремяОкончанияРабочегоДня_vmoТаблицаРасписание;
+        protected NsgColumnDescriptor.Int64 КоличествоСмен_vmoТаблицаРасписание;
+        protected NsgLabel nsgLabel3;
+        protected NsgLabel nsgLabel2;
+        protected NsgLabel nsgLabel1;
+        protected NsgColumnDescriptor.String ПериодУкорочен_vmoШапка;
+        protected System.Windows.Forms.GroupBox groupBox2;
+        protected System.Windows.Forms.Label label4;
+        protected System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private NsgVisualMultipleObject vmoТабличнаяЧасть;
+        private NsgVisualMultipleObject vmoШапка;
     }
 }
