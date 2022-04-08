@@ -64,29 +64,7 @@ namespace TechControl.Метаданные.Мониторинг
                     return "Неизвестно";
             }
         }
-        protected override void OnSetFormObject(NsgMultipleObject formObject)
-        {
 
-            //var неделя = Мониторинг.ДеньНедели.ByDayOfWeek;
-
-            //if (vmoТабличнаяЧасть.Data.DataTable != null)
-            //{
-            //    vmoТабличнаяЧасть.Data.DataTable.CopyTo(vmoТаблицаРасписание.Data.MemoryTable);
-            //}
-            //else
-            //{
-            //    vmoТабличнаяЧасть.Data.BeginUpdateData();
-            //    foreach (var day in неделя)
-            //    {
-            //        var row = vmoТабличнаяЧасть.Data.DataTable.NewRow();
-            //        row[ДеньНедели].Value = day.Value;
-            //        row.Post();
-            //    }
-            //    vmoТаблицаРасписание.Data.UpdateDataAsync(this);
-            //}
-
-            base.OnSetFormObject(formObject);
-        }
         public override void OnDataLoaded()
         {
             if (FormObject.ObjectState != NsgObjectStates.New)
