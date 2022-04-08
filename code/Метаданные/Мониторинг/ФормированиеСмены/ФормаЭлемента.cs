@@ -22,6 +22,12 @@ namespace TechControl.Метаданные.Мониторинг
             InitializeComponent();
 		}
 
+        protected override void OnSetFormObject(NsgMultipleObject formObject)
+        {
+            base.OnSetFormObject(formObject);
+            previousWO = Объект.Value.Идентификатор;
+        }
+
         public override void OnDataLoaded()
         {
             base.OnDataLoaded();
