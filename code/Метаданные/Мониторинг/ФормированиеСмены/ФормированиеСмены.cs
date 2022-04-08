@@ -165,6 +165,7 @@ namespace TechControl.Метаданные.Мониторинг
             StringBuilder ts = new StringBuilder();
             foreach (var i in this.Таблица.Rows)
             {
+                if (i.Длительность == 0) continue;
                 if (!i.Техника.Selected)
                 {
                     NsgSettings.MainForm.ShowMessage($"Таблица техники: В некоторых строках не выбрана техника",
@@ -217,6 +218,7 @@ namespace TechControl.Метаданные.Мониторинг
             ts.Clear();
             foreach (var i in this.ТаблицаПерсонал.Rows)
             {
+                if (i.Длительность == 0) continue;
                 if (!i.Тариф.Selected)
                 {
                     NsgSettings.MainForm.ShowMessage($"Таблица персонала: В некоторых строках не выбран тариф",
