@@ -505,10 +505,15 @@ namespace TechControl.Метаданные.Мониторинг
             this.Таблица.FullClear();
             foreach (var i in rsts.Rows)
             {
-                //if (vmoТаблица.Data.DataTable.FindRow(new NsgCompare()
-                //    .Add(МониторингФормированиеСменыТаблица.Names.Техника, i[МониторингФормированиеСменыТаблица.Names.Техника].Value)) != null)
-                //    continue;
-                var row = this.Таблица.NewRow();
+                МониторингФормированиеСменыТаблица.Строка row = null;
+                if (!this.ЭтоИтоговыйДокумент)
+                {
+                    row = this.Таблица.FindRow(new NsgCompare()
+                        .Add(МониторингФормированиеСменыТаблица.Names.Техника, i[МониторингФормированиеСменыТаблица.Names.Техника].Value));
+                }
+                if (row == null)
+                    row = this.Таблица.NewRow();
+
                 row.CopyNotPredefinedFieldsFromObject(i, МониторингФормированиеСменыТаблица.Names.СтатусТехники, МониторингФормированиеСменыТаблица.Names.Время);
                 var смена = row[МониторингФормированиеСменыТаблица.Names.НомерСмены].ToInt();
                 var статус = i[МониторингФормированиеСменыТаблица.Names.СтатусТехники].ToReferent() as СтатусТехники;
@@ -562,7 +567,15 @@ namespace TechControl.Метаданные.Мониторинг
             this.ТаблицаПерсонал.FullClear();
             foreach (var i in rsts.Rows)
             {
-                var row = this.ТаблицаПерсонал.NewRow();
+                МониторингФормированиеСменыТаблицаПерсонал.Строка row = null;
+                if (!this.ЭтоИтоговыйДокумент)
+                {
+                    row = this.ТаблицаПерсонал.FindRow(new NsgCompare()
+                        .Add(МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник, i[МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник].Value));
+                }
+                if (row == null)
+                    row = this.ТаблицаПерсонал.NewRow();
+
                 row.CopyNotPredefinedFieldsFromObject(i, МониторингФормированиеСменыТаблицаПерсонал.Names.СтатусСотрудника, МониторингФормированиеСменыТаблицаПерсонал.Names.Время);
                 var смена = row[МониторингФормированиеСменыТаблицаПерсонал.Names.НомерСмены].ToInt();
                 var статус = i[МониторингФормированиеСменыТаблицаПерсонал.Names.СтатусСотрудника].ToReferent() as СтатусСотрудника;
