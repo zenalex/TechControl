@@ -92,9 +92,9 @@ namespace TechControl.Метаданные.Мониторинг
                     {
                         if (dateTime.Day == day)
                         {
-                            row[$"{day}"].Value = row[$"{day}"].ToDecimal() - i[РегистрСмен.Names.ОтработанноеВремя].ToDecimal();
-                            itogo -= i[РегистрСмен.Names.ОтработанноеВремя].ToDecimal();
-                            stArItogo -= /*тариф[Тарифы.Names.Стоимость].ToDecimal() **/ i[РегистрСмен.Names.Сумма].ToDecimal();
+                            row[$"{day}"].Value = row[$"{day}"].ToDecimal() + i[РегистрСмен.Names.ОтработанноеВремя].ToDecimal();
+                            itogo += i[РегистрСмен.Names.ОтработанноеВремя].ToDecimal();
+                            stArItogo += /*тариф[Тарифы.Names.Стоимость].ToDecimal() **/ i[РегистрСмен.Names.Сумма].ToDecimal();
                         }
                         else
                         {
