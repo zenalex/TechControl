@@ -94,9 +94,11 @@ namespace TechControl.Метаданные.Мониторинг
         {
             gridТехника.Columns[Длительность_т.Name].Visible = ЭтоИтоговыйДокумент.Value;
             gridТехника.Columns[СтатусТехники_т.Name].Visible = !ЭтоИтоговыйДокумент.Value;
+            gridТехника.Columns[Время_т.Name].Visible = true;
             Время_т.Caption = ЭтоИтоговыйДокумент.Value ? "Время начала" : "Время";
             gridПерсонал.Columns[Длительность_vmoТаблицаПерсонал.Name].Visible = ЭтоИтоговыйДокумент.Value;
             gridПерсонал.Columns[СтатусСотрудника.Name].Visible = !ЭтоИтоговыйДокумент.Value;
+            gridПерсонал.Columns[Время_vmoТаблицаПерсонал.Name].Visible = true;
             Время_vmoТаблицаПерсонал.Caption = ЭтоИтоговыйДокумент.Value ? "Время начала" : "Время";
         }
 
