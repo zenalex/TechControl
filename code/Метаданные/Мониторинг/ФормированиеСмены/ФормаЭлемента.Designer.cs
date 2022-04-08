@@ -607,6 +607,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.gridТехника.SourceObject = this.vmoТаблица;
             this.gridТехника.TabIndex = 21;
             this.gridТехника.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            this.gridТехника.CellEndEdit += new NsgSoft.Forms.NsgIGrid.NsgIGridCellEventHandler(this.gridТехника_CellEndEdit);
+            this.gridТехника.DataChanged += new System.EventHandler(this.gridТехника_DataChanged);
             this.vmoТаблица.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
             nsgObjectDescriptor2.ConfigurationName = "TechControl";
             this.vmoТаблица.MetaDataName = "Метаданные";
@@ -930,6 +932,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.gridПерсонал.SourceObject = this.vmoТаблицаПерсонал;
             this.gridПерсонал.TabIndex = 22;
             this.gridПерсонал.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            this.gridПерсонал.CellEndEdit += new NsgSoft.Forms.NsgIGrid.NsgIGridCellEventHandler(this.gridПерсонал_CellEndEdit);
+            this.gridПерсонал.DataChanged += new System.EventHandler(this.gridПерсонал_DataChanged);
             this.vmoТаблицаПерсонал.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
             nsgObjectDescriptor4.ConfigurationName = "TechControl";
             this.vmoТаблицаПерсонал.MetaDataName = "Метаданные";
@@ -1322,7 +1326,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(1, 63);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.SelectedIndex = 1;
             this.tabControl1.Size = new System.Drawing.Size(1084, 314);
             this.tabControl1.TabIndex = 25;
             // 
@@ -1338,7 +1342,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Техника";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Visible = true;
+            this.tabPage1.Visible = false;
             // 
             // tabPage2
             // 
@@ -1352,7 +1356,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Персонал";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Visible = false;
+            this.tabPage2.Visible = true;
             // 
             // nsgInput7
             // 

@@ -115,6 +115,144 @@ namespace TechControl.Метаданные.Мониторинг
                 previousWO = this.Объект.Value.Идентификатор;
             }
         }
+
+        private void gridТехника_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            var i = e.RowObject as МониторингФормированиеСменыТаблица.Строка;
+            ПодсветкаСтроки(i);
+        }
+
+        private void gridПерсонал_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            var i = e.RowObject as МониторингФормированиеСменыТаблицаПерсонал.Строка;
+            ПодсветкаСтроки(i);
+        }
+
+        private void gridТехника_DataChanged(object sender, EventArgs e)
+        {
+            if (!this.Объект.Selected || this.Таблица.Value.Count == 0) return;
+
+            bool error = false;
+            List<Техника> t = new List<Техника>();
+            List<Техника> tt = new List<Техника>();
+            foreach (var i in this.Таблица.Value.Rows)
+            {
+                ПодсветкаСтроки(i);
+                if (t.Contains(i.Техника))
+                {
+                    error = !this.ЭтоИтоговыйДокумент.Value;
+                    tt.Add(i.Техника);
+                }
+                else t.Add(i.Техника);
+            }
+            if (error)
+            {
+                foreach (var i in this.Таблица.Value.Rows)
+                {
+                    if (tt.Contains(i.Техника))
+                    {
+                        i[МониторингФормированиеСменыТаблица.Names.Техника].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+                    }
+                }
+            }
+        }
+
+        private void gridПерсонал_DataChanged(object sender, EventArgs e)
+        {
+            if (!this.Объект.Selected || this.ТаблицаПерсонал.Value.Count == 0) return;
+
+            bool error = false;
+            List<Сотрудники> s = new List<Сотрудники>();
+            List<Сотрудники> ss = new List<Сотрудники>();
+            foreach (var i in this.ТаблицаПерсонал.Value.Rows)
+            {
+                ПодсветкаСтроки(i);
+                if (s.Contains(i.Сотрудник))
+                {
+                    error = true;
+                    ss.Add(i.Сотрудник);
+                }
+                else s.Add(i.Сотрудник);
+            }
+            if (error)
+            {
+                foreach (var i in this.ТаблицаПерсонал.Value.Rows)
+                {
+                    if (ss.Contains(i.Сотрудник))
+                    {
+                        i[МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+                    }
+                }
+            }
+        }
+
+        private void ПодсветкаСтроки(МониторингФормированиеСменыТаблица.Строка i)
+        {
+            i.ClearUserProperties();
+            if (this.ЭтоИтоговыйДокумент.Value && i.Длительность == 0)
+            {
+                i.AddUserProperty(NsgIGrid.FORECOLOR, Color.Gray);
+                return;
+            }
+
+            if (!i.Техника.Selected)
+            {
+                i[МониторингФормированиеСменыТаблица.Names.Техника].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+            }
+            if (!i.Тариф.Selected)
+            {
+                i[МониторингФормированиеСменыТаблица.Names.Тариф].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+            }
+            var tariff = this.Объект.Value.ТаблицаТарифы.FindRow(new NsgCompare()
+                .Add(МониторингОбъектыТаблицаТарифы.Names.Тариф, i.Тариф)
+                .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+            if (tariff == null)
+            {
+                tariff = this.Объект.Value.ТаблицаТарифы.FindRow(new NsgCompare()
+                    .Add(МониторингОбъектыТаблицаТарифы.Names.Тариф, i.Тариф)
+                    .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+            }
+            if (tariff == null)
+            {
+                i[МониторингФормированиеСменыТаблица.Names.Тариф].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+            }
+            if (!i.Сотрудник.Selected)
+            {
+                i[МониторингФормированиеСменыТаблица.Names.Сотрудник].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+            }
+        }
+
+        private void ПодсветкаСтроки(МониторингФормированиеСменыТаблицаПерсонал.Строка i)
+        {
+            i.ClearUserProperties();
+            if (this.ЭтоИтоговыйДокумент.Value && i.Длительность == 0)
+            {
+                i.AddUserProperty(NsgIGrid.FORECOLOR, Color.Gray);
+                return;
+            }
+
+            if (!i.Тариф.Selected)
+            {
+                i[МониторингФормированиеСменыТаблицаПерсонал.Names.Тариф].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+            }
+            var tariff = this.Объект.Value.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
+                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, i.Тариф)
+                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Должность, i.Сотрудник.Должность));
+            if (tariff == null)
+            {
+                tariff = this.Объект.Value.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
+                    .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, i.Тариф)
+                    .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Должность, Должности.Новый()));
+            }
+            if (tariff == null)
+            {
+                i[МониторингФормированиеСменыТаблицаПерсонал.Names.Тариф].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+            }
+            if (!i.Сотрудник.Selected)
+            {
+                i[МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+            }
+        }
     }
     
 

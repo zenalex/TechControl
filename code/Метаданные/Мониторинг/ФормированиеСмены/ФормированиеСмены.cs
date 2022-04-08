@@ -165,7 +165,7 @@ namespace TechControl.Метаданные.Мониторинг
             StringBuilder ts = new StringBuilder();
             foreach (var i in this.Таблица.Rows)
             {
-                if (i.Длительность == 0) continue;
+                if (this.ЭтоИтоговыйДокумент && i.Длительность == 0) continue;
                 if (!i.Техника.Selected)
                 {
                     NsgSettings.MainForm.ShowMessage($"Таблица техники: В некоторых строках не выбрана техника",
@@ -174,7 +174,7 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 if (!i.Тариф.Selected)
                 {
-                    NsgSettings.MainForm.ShowMessage($"Таблица техники: В некоторых строках не выбран тариф",
+                    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран тариф",
                         System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
                 }
@@ -190,13 +190,13 @@ namespace TechControl.Метаданные.Мониторинг
                 if (tariff == null)
                 {
                     NsgSettings.MainForm.ShowMessage(
-                        $"Таблица техники: нужен тариф из заданных на объекте для той группы техники, к которой относится выбранная техника",
+                        $"Техника: {i.Техника} - выбранный тариф на задан на объекте для группы техники {i.Техника.ГруппаСпецТехники}",
                         System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
                 }
                 if (!i.Сотрудник.Selected)
                 {
-                    NsgSettings.MainForm.ShowMessage($"Таблица техники: В некоторых строках не выбран сотрудник",
+                    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран сотрудник",
                         System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
                 }
@@ -218,10 +218,10 @@ namespace TechControl.Метаданные.Мониторинг
             ts.Clear();
             foreach (var i in this.ТаблицаПерсонал.Rows)
             {
-                if (i.Длительность == 0) continue;
+                if (this.ЭтоИтоговыйДокумент && i.Длительность == 0) continue;
                 if (!i.Тариф.Selected)
                 {
-                    NsgSettings.MainForm.ShowMessage($"Таблица персонала: В некоторых строках не выбран тариф",
+                    NsgSettings.MainForm.ShowMessage($"Сотрудник: {i.Сотрудник} - не выбран тариф",
                         System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
                 }
@@ -237,7 +237,7 @@ namespace TechControl.Метаданные.Мониторинг
                 if (tariff == null)
                 {
                     NsgSettings.MainForm.ShowMessage(
-                        $"Таблица персонала: нужен тариф из заданных на объекте для должности выбранного сотрудника",
+                        $"Сотрудник: {i.Сотрудник} - выбранный тариф на задан на объекте для должности {i.Сотрудник.Должность}",
                         System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
                 }
