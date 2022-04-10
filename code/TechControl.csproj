@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2022.4.8.1</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
+    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -42,8 +42,13 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.Common, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=447db94fe98f10d5, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -52,6 +57,10 @@
     <Reference Include="NsgSoft.Database, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=1052027ec3662bec, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.Database.FireBird, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=329c008fd3ea84d0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NsgSoft.Database.FireBird.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.DataObjects, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=591c2a9ad26eb48c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -77,6 +86,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBuilder.dll</HintPath>
     </Reference>
+    <Reference Include="NsgSoft.ReportCompression, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=988313eade00fb94, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NsgSoft.ReportCompression.dll</HintPath>
+    </Reference>
     <Reference Include="NsgSoft.ReportControls, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=42cc63b36f026e05, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportControls.dll</HintPath>
@@ -84,6 +97,14 @@
     <Reference Include="NsgSoft.ReportEditor, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=cb3af7bb7cd76ba3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.Tools, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=e30776c925eb128b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NsgSoft.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.Windows.iGridLib.iGrid, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=0bdf22e5110ec457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NsgSoft.Windows.iGridLib.iGrid.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

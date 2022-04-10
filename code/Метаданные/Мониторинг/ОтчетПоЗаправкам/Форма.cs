@@ -32,6 +32,14 @@ namespace TechControl.Метаданные.Мониторинг
         protected override void OnCreateReport(NsgBackgroundWorker nsgBackgroundReporter, System.ComponentModel.DoWorkEventArgs e)
         {
             base.OnCreateReport(nsgBackgroundReporter, e);
+            vmoШапка.Data.MemoryTable.Clear();
+            vmoШапка.Data.CurrentRow = vmoШапка.Data.MemoryTable.NewRow();
+
+            ДатаСоставления.Value = DateTime.Now.Date.ToShortDateString();
+            НачалоПериода.Value = $"с {nsgPeriodPicker.Period.Begin.Date.ToShortDateString()}";
+            ОкончаниеПериода.Value = $"по {nsgPeriodPicker.Period.End.Date.ToShortDateString()}";
+
+
             string ЗАКАЗЧИК = РегистрЗаправок.Names.Объект + '.' + Объекты.Names.Заказчик;
             var dims = nsgGroupsList.GetAllItems();
             //dims.Add(ФиксацияИстории.Names.Техника);
@@ -54,6 +62,9 @@ namespace TechControl.Метаданные.Мониторинг
             //vmoГруппы.Data.MemoryTable.Clear();
             nsgVisualMultipleObject.Data.BeginUpdateData();
             nsgVisualMultipleObject.Data.MemoryTable.Clear();
+
+            decimal[] itogsCrutch = new decimal[31];
+
             foreach (var i in all.Rows)
             {
                 //foreach (var j in i.Таблица.Rows)
@@ -93,6 +104,7 @@ namespace TechControl.Метаданные.Мониторинг
                             row[$"{day}"].Value = row[$"{day}"].ToDecimal() - i[РегистрЗаправок.Names.ОбъемТоплива].ToDecimal();
                             itogo -= i[РегистрЗаправок.Names.ОбъемТоплива].ToDecimal();
                             //stArItogo -= /*тариф[Тарифы.Names.Стоимость].ToDecimal() **/ i[РегистрЗаправок.Names.Сумма].ToDebit();
+                            itogsCrutch[day - 1] += row[$"{day}"].ToDecimal();
                         }
                         else
                         {
@@ -109,6 +121,13 @@ namespace TechControl.Метаданные.Мониторинг
                     //rowG[Арендатор_г].Value = i[ЗАКАЗЧИК].Value;
                 }
             }
+
+            var crutch = string.Join(";", itogsCrutch);
+
+            ИтогКостыль.Value = crutch;
+
+            //var test = decimal.Parse(crutch.Split(';')[0]);
+
             //vmoГруппы.Data.UpdateDataAsync(this);
             nsgVisualMultipleObject.Data.UpdateDataAsync(this);
 
@@ -164,6 +183,7 @@ namespace TechControl.Метаданные.Мониторинг
                         {
                             row[$"{day}"].Value = row[$"{day}"].ToDecimal() + i[РегистрПоставокТоплива.Names.ОбъемТоплива].ToDebit();
                             itogo += i[РегистрПоставокТоплива.Names.ОбъемТоплива].ToDebit();
+                            stArItogo += i[РегистрПоставокТоплива.Names.Сумма].ToDebit();
                             //stArItogo += /*тариф[Тарифы.Names.Стоимость].ToDecimal() **/ i[РегистрПоставокТоплива.Names.ОбъемТоплива].ToDebit();
                         }
                         else
