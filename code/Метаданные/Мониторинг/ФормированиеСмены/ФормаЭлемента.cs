@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml;
 using NsgSoft.Common;
 using NsgSoft.Database;
 using NsgSoft.DataObjects;
@@ -20,12 +21,17 @@ namespace TechControl.Метаданные.Мониторинг
         public ФормированиеСменыФормаЭлемента()
         {
             InitializeComponent();
-		}
+        }
 
         protected override void OnSetFormObject(NsgMultipleObject formObject)
         {
             base.OnSetFormObject(formObject);
             previousWO = Объект.Value.Идентификатор;
+            if (FormObject.ObjectState == NsgObjectStates.New)
+            {
+                ЭтоИтоговыйДокумент.Value = true;
+            }
+            ВидимостьКолонок();
         }
 
         public override void OnDataLoaded()
@@ -36,11 +42,18 @@ namespace TechControl.Метаданные.Мониторинг
                 ЭтоИтоговыйДокумент.Value = true;
             }
             nsgInput4_Selected(nsgInput4, EventArgs.Empty);
-            nsgInput7_ValueChanged(nsgInput7, false);
+            ВидимостьКолонок();
+        }
+
+        public override void SettingsFromXml(XmlElement root)
+        {
+            base.SettingsFromXml(root);
+            ВидимостьКолонок();
         }
 
         private void bЗаполнить_AsyncClick(object sender, DoWorkEventArgs e)
         {
+            ВидимостьКолонок();
             if (!this.Объект.Selected)
             {
                 NsgSettings.MainForm.ShowMessage("Не выбран объект", MessageBoxIcon.Exclamation);
@@ -92,14 +105,34 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void nsgInput7_ValueChanged(object sender, bool init)
         {
-            gridТехника.Columns[Длительность_т.Name].Visible = ЭтоИтоговыйДокумент.Value;
-            gridТехника.Columns[СтатусТехники_т.Name].Visible = !ЭтоИтоговыйДокумент.Value;
-            gridТехника.Columns[Время_т.Name].Visible = true;
+            ВидимостьКолонок();
+        }
+
+        void ВидимостьКолонок()
+        {
+            ФормированиеСмены формированиеСмены = FormObject as ФормированиеСмены;
+            vmoТаблица.Columns[Длительность_т.Name].Visible = ЭтоИтоговыйДокумент.Value;
+            gridТехника.Columns[Длительность_т.Name].Visible = true;
+            vmoТаблица.Columns[СтатусТехники_т.Name].Visible = !ЭтоИтоговыйДокумент.Value;
+            gridТехника.Columns[СтатусТехники_т.Name].Visible = true;
+            vmoТаблица.Columns[Время_т.Name].Visible = true;
+            vmoТаблица.Columns[Сотрудник_т.Name].Visible = true;
             Время_т.Caption = ЭтоИтоговыйДокумент.Value ? "Время начала" : "Время";
-            gridПерсонал.Columns[Длительность_vmoТаблицаПерсонал.Name].Visible = ЭтоИтоговыйДокумент.Value;
-            gridПерсонал.Columns[СтатусСотрудника.Name].Visible = !ЭтоИтоговыйДокумент.Value;
-            gridПерсонал.Columns[Время_vmoТаблицаПерсонал.Name].Visible = true;
+            foreach (var i in формированиеСмены.Таблица.Rows)
+            {
+                ПодсветкаСтроки(i);
+            }
+            vmoТаблицаПерсонал.Columns[Длительность_vmoТаблицаПерсонал.Name].Visible = ЭтоИтоговыйДокумент.Value;
+            gridПерсонал.Columns[Длительность_vmoТаблицаПерсонал.Name].Visible = true;
+            vmoТаблицаПерсонал.Columns[СтатусСотрудника.Name].Visible = !ЭтоИтоговыйДокумент.Value;
+            gridПерсонал.Columns[СтатусСотрудника.Name].Visible = true;
+            vmoТаблицаПерсонал.Columns[Время_vmoТаблицаПерсонал.Name].Visible = true;
+            vmoТаблицаПерсонал.Columns[Сотрудник_vmoТаблицаПерсонал.Name].Visible = true;
             Время_vmoТаблицаПерсонал.Caption = ЭтоИтоговыйДокумент.Value ? "Время начала" : "Время";
+            foreach (var i in формированиеСмены.ТаблицаПерсонал.Rows)
+            {
+                ПодсветкаСтроки(i);
+            }
         }
 
         Guid previousWO = Guid.Empty;
@@ -203,18 +236,21 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 i[МониторингФормированиеСменыТаблица.Names.Тариф].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
             }
-            var tariff = this.Объект.Value.ТаблицаТарифы.FindRow(new NsgCompare()
-                .Add(МониторингОбъектыТаблицаТарифы.Names.Тариф, i.Тариф)
-                .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
-            if (tariff == null)
+            if (this.Объект.Selected)
             {
-                tariff = this.Объект.Value.ТаблицаТарифы.FindRow(new NsgCompare()
+                var tariff = this.Объект.Value.ТаблицаТарифы.FindRow(new NsgCompare()
                     .Add(МониторингОбъектыТаблицаТарифы.Names.Тариф, i.Тариф)
-                    .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
-            }
-            if (tariff == null)
-            {
-                i[МониторингФормированиеСменыТаблица.Names.Тариф].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+                    .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                if (tariff == null)
+                {
+                    tariff = this.Объект.Value.ТаблицаТарифы.FindRow(new NsgCompare()
+                        .Add(МониторингОбъектыТаблицаТарифы.Names.Тариф, i.Тариф)
+                        .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                }
+                if (tariff == null)
+                {
+                    i[МониторингФормированиеСменыТаблица.Names.Тариф].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+                }
             }
             if (!i.Сотрудник.Selected)
             {
@@ -235,18 +271,21 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 i[МониторингФормированиеСменыТаблицаПерсонал.Names.Тариф].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
             }
-            var tariff = this.Объект.Value.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
+            if (this.Объект.Selected)
+            {
+                var tariff = this.Объект.Value.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
                 .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, i.Тариф)
                 .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Должность, i.Сотрудник.Должность));
-            if (tariff == null)
-            {
-                tariff = this.Объект.Value.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
-                    .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, i.Тариф)
-                    .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Должность, Должности.Новый()));
-            }
-            if (tariff == null)
-            {
-                i[МониторингФормированиеСменыТаблицаПерсонал.Names.Тариф].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+                if (tariff == null)
+                {
+                    tariff = this.Объект.Value.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
+                        .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, i.Тариф)
+                        .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Должность, Должности.Новый()));
+                }
+                if (tariff == null)
+                {
+                    i[МониторингФормированиеСменыТаблицаПерсонал.Names.Тариф].AddUserProperty(NsgIGrid.BACKCOLOR, Color.Pink);
+                }
             }
             if (!i.Сотрудник.Selected)
             {
