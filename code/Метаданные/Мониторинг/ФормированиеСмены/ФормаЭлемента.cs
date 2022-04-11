@@ -222,6 +222,10 @@ namespace TechControl.Метаданные.Мониторинг
         private void ПодсветкаСтроки(МониторингФормированиеСменыТаблица.Строка i)
         {
             i.ClearUserProperties();
+            foreach (NsgSimpleObject col in i.ObjectList)
+            {
+                col.ClearUserProperties();
+            }
             if (this.ЭтоИтоговыйДокумент.Value && i.Длительность == 0)
             {
                 i.AddUserProperty(NsgIGrid.FORECOLOR, Color.Gray);
