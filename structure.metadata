@@ -7630,10 +7630,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="f5d8bef6-9779-45a6-85f0-3096cde1c92b" type="NsgDataEnumElement" editoraccess="Full" name="Всесезонная" visible="true" description="Всесезонная" field="Vsesezonnaja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="2">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Зима" />
             <container name="Лето" />
+            <container name="Всесезонная" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="f3e30649-9841-4d65-841c-eb6903729b0f" type="NsgDataTable" editoraccess="Full" name="СпециальнаяОдеждаЗаказСпецодеждыТаблица" visible="true" description="Специальная одежда заказ спецодежды таблица" group="_SystemTables" table="_tab_SpecialnajaOdezhdaZ" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="TablePart" registerPeriod="None" registerPeriodCount="0">

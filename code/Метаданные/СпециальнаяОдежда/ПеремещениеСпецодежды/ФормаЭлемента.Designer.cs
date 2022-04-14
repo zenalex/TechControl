@@ -386,7 +386,6 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             nsgIGridColumn1.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn1.DateFormat = null;
-            nsgIGridColumn1.ImportedFromVMO = false;
             nsgIGridColumn1.InitiateRowEdit = true;
             nsgIGridColumn1.Name = "Владелец";
             nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -403,7 +402,6 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             nsgIGridColumn2.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn2.DateFormat = null;
-            nsgIGridColumn2.ImportedFromVMO = false;
             nsgIGridColumn2.InitiateRowEdit = true;
             nsgIGridColumn2.Name = "Размер";
             nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -419,7 +417,6 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             nsgIGridColumn3.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn3.DateFormat = null;
-            nsgIGridColumn3.ImportedFromVMO = false;
             nsgIGridColumn3.InitiateRowEdit = true;
             nsgIGridColumn3.Name = "Спецодежда";
             nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -435,7 +432,6 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             nsgIGridColumn4.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn4.DateFormat = null;
-            nsgIGridColumn4.ImportedFromVMO = false;
             nsgIGridColumn4.InitiateRowEdit = true;
             nsgIGridColumn4.Name = "Сотрудник";
             nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -449,14 +445,15 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             nsgIGridColumn5.AutoResize = true;
             nsgIGridColumn5.Caption = "";
             nsgIGridColumn5.ChangedProperties = new string[] {
-        "Visible"};
+        "Visible",
+        "Index"};
             nsgIGridColumn5.DateFormat = null;
-            nsgIGridColumn5.ImportedFromVMO = false;
             nsgIGridColumn5.InitiateRowEdit = true;
-            nsgIGridColumn5.Name = "Стоимость";
+            nsgIGridColumn5.Name = "Количество";
             nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn5.Root = this.nsgIGrid1.Columns.Collection;
             nsgIGridColumn5.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn5.TextPosition = System.Drawing.ContentAlignment.MiddleRight;
             nsgIGridColumn5.UseAsHeaderImage = false;
             nsgIGridColumn5.Width = 100;
             nsgIGridColumn6.AllowFilter = true;
@@ -465,9 +462,9 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             nsgIGridColumn6.AutoResize = true;
             nsgIGridColumn6.Caption = "";
             nsgIGridColumn6.ChangedProperties = new string[] {
-        "Visible"};
+        "Visible",
+        "Index"};
             nsgIGridColumn6.DateFormat = null;
-            nsgIGridColumn6.ImportedFromVMO = false;
             nsgIGridColumn6.InitiateRowEdit = true;
             nsgIGridColumn6.Name = "Цена";
             nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -481,15 +478,14 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             nsgIGridColumn7.AutoResize = true;
             nsgIGridColumn7.Caption = "";
             nsgIGridColumn7.ChangedProperties = new string[] {
-        "Visible"};
+        "Visible",
+        "Index"};
             nsgIGridColumn7.DateFormat = null;
-            nsgIGridColumn7.ImportedFromVMO = false;
             nsgIGridColumn7.InitiateRowEdit = true;
-            nsgIGridColumn7.Name = "Количество";
+            nsgIGridColumn7.Name = "Стоимость";
             nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn7.Root = this.nsgIGrid1.Columns.Collection;
             nsgIGridColumn7.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn7.TextPosition = System.Drawing.ContentAlignment.MiddleRight;
             nsgIGridColumn7.UseAsHeaderImage = false;
             nsgIGridColumn7.Width = 100;
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn1);
@@ -528,6 +524,8 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             this.nsgIGrid1.SourceObject = this.vmoТабл;
             this.nsgIGrid1.TabIndex = 13;
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            this.nsgIGrid1.CellEndEdit += new NsgSoft.Forms.NsgIGrid.NsgIGridCellEventHandler(this.nsgIGrid1_CellEndEdit);
+            this.nsgIGrid1.CellRequestEdit += new NsgSoft.Forms.NsgIGrid.NsgIGridCellEventHandler(this.nsgIGrid1_CellRequestEdit);
             this.vmoТабл.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
             nsgObjectDescriptor2.ConfigurationName = "TechControl";
             this.vmoТабл.MetaDataName = "Метаданные";
