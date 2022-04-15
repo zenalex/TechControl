@@ -44,9 +44,9 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
         {
             if (e.ColumnName.Contains("Размер"))
             {
+                Размер.SearchCondition.Clear();
                 if (Спецодежда != null)
                 {
-                    Размер.SearchCondition.Clear();
                     Размер.SearchCondition.Add(Размеры.Names.ВидСпецодежды, Спецодежда.Value.ВидСпецодежды);
                 }                    
             }
