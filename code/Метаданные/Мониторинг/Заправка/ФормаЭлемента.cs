@@ -30,6 +30,7 @@ namespace TechControl.Метаданные.Мониторинг
             //{
             //    ЭтоИтоговыйДокумент.Value = true;
             //}
+            nsgInput8_ValueChanged(nsgInput8, false);
         }
 
         private void nsgInput8_ValueChanged(object sender, bool init)

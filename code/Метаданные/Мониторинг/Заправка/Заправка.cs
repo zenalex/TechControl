@@ -29,6 +29,11 @@ namespace TechControl.Метаданные.Мониторинг
             регистрЗаправок.New();
             if (ЭтоИтоговыйДокумент)
             {
+                if (this.Таблица.Rows.Length == 0)
+                {
+                    NsgSettings.MainForm.ShowMessage("Документ отмечен как итоговый, но таблица пуста");
+                    return false;
+                }
                 foreach (var i in this.Таблица.Rows)
                 {
                     регистрЗаправок.ВидДвижения = i.ВидОперации == ВидОперацииЗаправки.Заправка ?
