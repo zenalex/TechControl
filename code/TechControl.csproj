@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.4.14.0</ProductVersion>
+    <ProductVersion>2022.4.15.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -78,25 +78,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.FormsComponents.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportBase, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=e64ccc7712425ed2, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBase.dll</HintPath>
+    <Reference Include="NsgSoft.ReportBase">
+      <HintPath>..\..\..\SVN\Customers\Titan\Releases\NsgSoft.ReportBase.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportBuilder, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=c0645ec7baa77cae, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBuilder.dll</HintPath>
+    <Reference Include="NsgSoft.ReportBuilder">
+      <HintPath>..\..\..\SVN\Customers\Titan\Releases\NsgSoft.ReportBuilder.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.ReportCompression, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=988313eade00fb94, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\NsgSoft.ReportCompression.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportControls, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=42cc63b36f026e05, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportControls.dll</HintPath>
+    <Reference Include="NsgSoft.ReportControls">
+      <HintPath>..\..\..\SVN\Customers\Titan\Releases\NsgSoft.ReportControls.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportEditor, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=cb3af7bb7cd76ba3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportEditor.dll</HintPath>
+    <Reference Include="NsgSoft.ReportEditor">
+      <HintPath>..\..\..\SVN\Customers\Titan\Releases\NsgSoft.ReportEditor.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.Tools, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=e30776c925eb128b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
