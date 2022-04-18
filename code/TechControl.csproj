@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.4.15.0</ProductVersion>
+    <ProductVersion>2022.4.18.1</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -2565,48 +2565,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\ПремещениеИнструмента.NsgInit.cs">
-      <NsgOwnerGuid>7047ff6b-46af-4bfd-a47d-1adab2056739</NsgOwnerGuid>
-      <NsgOwnerName>ПремещениеИнструмента</NsgOwnerName>
-      <DependentUpon>ПремещениеИнструмента.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\ПремещениеИнструмента.cs">
-      <NsgOwnerGuid>7047ff6b-46af-4bfd-a47d-1adab2056739</NsgOwnerGuid>
-      <NsgOwnerName>ПремещениеИнструмента</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\СпециальнаяОдеждаПремещениеИнструментаТаблица.NsgInit.cs">
-      <NsgOwnerGuid>b9e86340-bd69-4b40-91fd-c1a9035345ec</NsgOwnerGuid>
-      <NsgOwnerName>СпециальнаяОдеждаПремещениеИнструментаТаблица</NsgOwnerName>
-      <DependentUpon>СпециальнаяОдеждаПремещениеИнструментаТаблица.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\СпециальнаяОдеждаПремещениеИнструментаТаблица.cs">
-      <NsgOwnerGuid>b9e86340-bd69-4b40-91fd-c1a9035345ec</NsgOwnerGuid>
-      <NsgOwnerName>СпециальнаяОдеждаПремещениеИнструментаТаблица</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\СпециальнаяОдеждаПремещениеИнструментаТаблица.Строка.NsgInit.cs">
-      <NsgOwnerGuid>b9e86340-bd69-4b40-91fd-c1a9035345ec</NsgOwnerGuid>
-      <NsgOwnerName>СпециальнаяОдеждаПремещениеИнструментаТаблица</NsgOwnerName>
-      <DependentUpon>СпециальнаяОдеждаПремещениеИнструментаТаблица.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\СпециальнаяОдеждаПремещениеИнструментаТаблица.Строка.cs">
-      <NsgOwnerGuid>b9e86340-bd69-4b40-91fd-c1a9035345ec</NsgOwnerGuid>
-      <NsgOwnerName>СпециальнаяОдеждаПремещениеИнструментаТаблица</NsgOwnerName>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\ФормаЭлемента.Designer.cs">
-      <NsgOwnerGuid>7047ff6b-46af-4bfd-a47d-1adab2056739</NsgOwnerGuid>
-      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\ФормаЭлемента.cs">
-      <NsgOwnerGuid>7047ff6b-46af-4bfd-a47d-1adab2056739</NsgOwnerGuid>
-      <SubType>Form</SubType>
-    </Compile>
-    <EmbeddedResource Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\ФормаЭлемента.resx">
-      <NsgOwnerGuid>7047ff6b-46af-4bfd-a47d-1adab2056739</NsgOwnerGuid>
-      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\СпециальнаяОдежда\Инструменты\ФормаЭлемента.Designer.cs">
@@ -2622,5 +2582,49 @@
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПеремещениеИнструментов\ПеремещениеИнструментов.NsgInit.cs">
+      <NsgOwnerGuid>16bc6ad1-f523-4f9f-a3ee-544c8a5a8f87</NsgOwnerGuid>
+      <NsgOwnerName>ПеремещениеИнструментов</NsgOwnerName>
+      <DependentUpon>ПеремещениеИнструментов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПеремещениеИнструментов\ПеремещениеИнструментов.cs">
+      <NsgOwnerGuid>16bc6ad1-f523-4f9f-a3ee-544c8a5a8f87</NsgOwnerGuid>
+      <NsgOwnerName>ПеремещениеИнструментов</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПеремещениеИнструментов\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>16bc6ad1-f523-4f9f-a3ee-544c8a5a8f87</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПеремещениеИнструментов\ФормаЭлемента.cs">
+      <NsgOwnerGuid>16bc6ad1-f523-4f9f-a3ee-544c8a5a8f87</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\СпециальнаяОдежда\ПеремещениеИнструментов\ФормаЭлемента.resx">
+      <NsgOwnerGuid>16bc6ad1-f523-4f9f-a3ee-544c8a5a8f87</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПеремещениеИнструментов\СпециальнаяОдеждаПеремещениеИнструментовТаблица.NsgInit.cs">
+      <NsgOwnerGuid>fbb9cad5-dae8-4b6d-80a5-330ab390590c</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаПеремещениеИнструментовТаблица</NsgOwnerName>
+      <DependentUpon>СпециальнаяОдеждаПеремещениеИнструментовТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПеремещениеИнструментов\СпециальнаяОдеждаПеремещениеИнструментовТаблица.cs">
+      <NsgOwnerGuid>fbb9cad5-dae8-4b6d-80a5-330ab390590c</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаПеремещениеИнструментовТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПеремещениеИнструментов\СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>fbb9cad5-dae8-4b6d-80a5-330ab390590c</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаПеремещениеИнструментовТаблица</NsgOwnerName>
+      <DependentUpon>СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПеремещениеИнструментов\СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка.cs">
+      <NsgOwnerGuid>fbb9cad5-dae8-4b6d-80a5-330ab390590c</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаПеремещениеИнструментовТаблица</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
