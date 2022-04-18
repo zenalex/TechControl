@@ -2553,4 +2553,74 @@
       <NsgOwnerName>МониторингОбъектыТаблицаТарифыСотрудников</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СпециальнаяОдежда\Инструмент\Инструмент.NsgInit.cs">
+      <NsgOwnerGuid>3ddb6d64-52ff-47c0-a46a-551e52746337</NsgOwnerGuid>
+      <NsgOwnerName>Инструмент</NsgOwnerName>
+      <DependentUpon>Инструмент.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\Инструмент\Инструмент.cs">
+      <NsgOwnerGuid>3ddb6d64-52ff-47c0-a46a-551e52746337</NsgOwnerGuid>
+      <NsgOwnerName>Инструмент</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\ПремещениеИнструмента.NsgInit.cs">
+      <NsgOwnerGuid>7047ff6b-46af-4bfd-a47d-1adab2056739</NsgOwnerGuid>
+      <NsgOwnerName>ПремещениеИнструмента</NsgOwnerName>
+      <DependentUpon>ПремещениеИнструмента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\ПремещениеИнструмента.cs">
+      <NsgOwnerGuid>7047ff6b-46af-4bfd-a47d-1adab2056739</NsgOwnerGuid>
+      <NsgOwnerName>ПремещениеИнструмента</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\СпециальнаяОдеждаПремещениеИнструментаТаблица.NsgInit.cs">
+      <NsgOwnerGuid>b9e86340-bd69-4b40-91fd-c1a9035345ec</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаПремещениеИнструментаТаблица</NsgOwnerName>
+      <DependentUpon>СпециальнаяОдеждаПремещениеИнструментаТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\СпециальнаяОдеждаПремещениеИнструментаТаблица.cs">
+      <NsgOwnerGuid>b9e86340-bd69-4b40-91fd-c1a9035345ec</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаПремещениеИнструментаТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\СпециальнаяОдеждаПремещениеИнструментаТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>b9e86340-bd69-4b40-91fd-c1a9035345ec</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаПремещениеИнструментаТаблица</NsgOwnerName>
+      <DependentUpon>СпециальнаяОдеждаПремещениеИнструментаТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\СпециальнаяОдеждаПремещениеИнструментаТаблица.Строка.cs">
+      <NsgOwnerGuid>b9e86340-bd69-4b40-91fd-c1a9035345ec</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаПремещениеИнструментаТаблица</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>7047ff6b-46af-4bfd-a47d-1adab2056739</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\ФормаЭлемента.cs">
+      <NsgOwnerGuid>7047ff6b-46af-4bfd-a47d-1adab2056739</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\СпециальнаяОдежда\ПремещениеИнструмента\ФормаЭлемента.resx">
+      <NsgOwnerGuid>7047ff6b-46af-4bfd-a47d-1adab2056739</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СпециальнаяОдежда\Инструмент\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>3ddb6d64-52ff-47c0-a46a-551e52746337</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\Инструмент\ФормаЭлемента.cs">
+      <NsgOwnerGuid>3ddb6d64-52ff-47c0-a46a-551e52746337</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\СпециальнаяОдежда\Инструмент\ФормаЭлемента.resx">
+      <NsgOwnerGuid>3ddb6d64-52ff-47c0-a46a-551e52746337</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
