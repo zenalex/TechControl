@@ -66,7 +66,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             this.Автоинкремент_vmoТабЧасть = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.Владелец = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.НомерСтроки = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Инструмент = new TechControl.Метаданные.СпециальнаяОдежда.Инструмент.ColumnDescriptor();
+            this.Инструмент = new TechControl.Метаданные.СпециальнаяОдежда.Инструменты.ColumnDescriptor();
             this.Цена = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Сумма = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Количество = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
@@ -829,8 +829,8 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
             this.Инструмент.Caption = "Инструмент";
             this.Инструмент.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Инструмент.Name = "Инструмент";
-            this.Инструмент.NSGType = typeof(TechControl.Метаданные.СпециальнаяОдежда.Инструмент);
-            this.Инструмент.PropertyType = typeof(TechControl.Метаданные.СпециальнаяОдежда.Инструмент);
+            this.Инструмент.NSGType = typeof(TechControl.Метаданные.СпециальнаяОдежда.Инструменты);
+            this.Инструмент.PropertyType = typeof(TechControl.Метаданные.СпециальнаяОдежда.Инструменты);
             this.Инструмент.SearchCondition.OwnerComponent = this.Инструмент;
             this.Инструмент.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -960,7 +960,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
         protected NsgColumnDescriptor.Int64 Автоинкремент_vmoТабЧасть;
         protected NsgColumnDescriptor.MultipleObject Владелец;
         protected NsgColumnDescriptor.Int64 НомерСтроки;
-        protected Инструмент.ColumnDescriptor Инструмент;
+        protected Инструменты.ColumnDescriptor Инструмент;
         protected NsgColumnDescriptor.Decimal Цена;
         protected NsgColumnDescriptor.Decimal Сумма;
     }

@@ -2554,14 +2554,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\СпециальнаяОдежда\Инструмент\Инструмент.NsgInit.cs">
+    <Compile Include="Метаданные\СпециальнаяОдежда\Инструменты\Инструменты.NsgInit.cs">
       <NsgOwnerGuid>3ddb6d64-52ff-47c0-a46a-551e52746337</NsgOwnerGuid>
-      <NsgOwnerName>Инструмент</NsgOwnerName>
-      <DependentUpon>Инструмент.cs</DependentUpon>
+      <NsgOwnerName>Инструменты</NsgOwnerName>
+      <DependentUpon>Инструменты.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\СпециальнаяОдежда\Инструмент\Инструмент.cs">
+    <Compile Include="Метаданные\СпециальнаяОдежда\Инструменты\Инструменты.cs">
       <NsgOwnerGuid>3ddb6d64-52ff-47c0-a46a-551e52746337</NsgOwnerGuid>
-      <NsgOwnerName>Инструмент</NsgOwnerName>
+      <NsgOwnerName>Инструменты</NsgOwnerName>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2609,15 +2609,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\СпециальнаяОдежда\Инструмент\ФормаЭлемента.Designer.cs">
+    <Compile Include="Метаданные\СпециальнаяОдежда\Инструменты\ФормаЭлемента.Designer.cs">
       <NsgOwnerGuid>3ddb6d64-52ff-47c0-a46a-551e52746337</NsgOwnerGuid>
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\СпециальнаяОдежда\Инструмент\ФормаЭлемента.cs">
+    <Compile Include="Метаданные\СпециальнаяОдежда\Инструменты\ФормаЭлемента.cs">
       <NsgOwnerGuid>3ddb6d64-52ff-47c0-a46a-551e52746337</NsgOwnerGuid>
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="Метаданные\СпециальнаяОдежда\Инструмент\ФормаЭлемента.resx">
+    <EmbeddedResource Include="Метаданные\СпециальнаяОдежда\Инструменты\ФормаЭлемента.resx">
       <NsgOwnerGuid>3ddb6d64-52ff-47c0-a46a-551e52746337</NsgOwnerGuid>
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>

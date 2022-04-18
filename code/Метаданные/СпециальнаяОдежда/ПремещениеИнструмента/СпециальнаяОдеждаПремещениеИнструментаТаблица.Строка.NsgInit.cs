@@ -323,12 +323,12 @@ namespace TechControl.Метаданные._SystemTables
         [NsgView(NsgViewTypes.DesignTime)]
         [NsgTypeName("NsgDataDictionary")]
         
-        public СпециальнаяОдежда.Инструмент Инструмент
+        public СпециальнаяОдежда.Инструменты Инструмент
         {
             get
             {
 				 NsgDataTypedReference __Инструмент = ObjectList["Инструмент"] as NsgDataTypedReference;
-                 return (СпециальнаяОдежда.Инструмент)__Инструмент.Referent;
+                 return (СпециальнаяОдежда.Инструменты)__Инструмент.Referent;
             }
             set
             {
