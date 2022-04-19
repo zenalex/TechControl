@@ -18,7 +18,7 @@ namespace TechControl.Метаданные._SystemTables
 {
     
     [NsgTypeName("NsgDataTable", Guid = "fbb9cad5-dae8-4b6d-80a5-330ab390590c")]
-    public partial class СпециальнаяОдеждаПеремещениеИнструментовТаблица : NsgSoft.DataObjects.NsgDataTable
+    public partial class ИнструментыПеремещениеИнструментовТаблица : NsgSoft.DataObjects.NsgDataTable
     {
         #region Данные
         #region Данные NsgSoft.DataObjects.NsgDataTable
@@ -43,7 +43,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <summary>
         /// Создание объекта
         /// </summary>
-        protected СпециальнаяОдеждаПеремещениеИнструментовТаблица()
+        protected ИнструментыПеремещениеИнструментовТаблица()
             : base()
         {
         }
@@ -51,7 +51,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <summary>
         ///  Создание объекта Clone.
         /// </summary>
-        protected СпециальнаяОдеждаПеремещениеИнструментовТаблица(NsgObject obj)
+        protected ИнструментыПеремещениеИнструментовТаблица(NsgObject obj)
             : base(obj)
         {
         }
@@ -59,12 +59,12 @@ namespace TechControl.Метаданные._SystemTables
         #endregion // Конструкторы 
 
         #region Инициализация
-        public static СпециальнаяОдеждаПеремещениеИнструментовТаблица Новый()
+        public static ИнструментыПеремещениеИнструментовТаблица Новый()
         {
             NsgBaseObject obj = CreateByGuid(NsgService.StringToGuid("fbb9cad5-dae8-4b6d-80a5-330ab390590c"));
             if (obj == null)
-                obj = new СпециальнаяОдеждаПеремещениеИнструментовТаблица();
-            return obj as СпециальнаяОдеждаПеремещениеИнструментовТаблица;
+                obj = new ИнструментыПеремещениеИнструментовТаблица();
+            return obj as ИнструментыПеремещениеИнструментовТаблица;
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace TechControl.Метаданные._SystemTables
 	//NsgDataUntypedReference
 	Владелец.IsLoadedFromDll = true;
 	Владелец.FilterTypeForConfigurator = NsgSoft.DataObjects.NsgFiltration.List;
-	Владелец.FilterForConfigurator = "СпециальнаяОдежда.ПеремещениеИнструментов";
+	Владелец.FilterForConfigurator = "Инструменты.ПеремещениеИнструментов";
 	Владелец.ReferentName = "";
 	Владелец.ReferentGroup = "";
 	Владелец.TypeSelectorName = "";
@@ -235,7 +235,7 @@ namespace TechControl.Метаданные._SystemTables
 			}
 			#endregion //создание System.Int64 НомерСтроки
 			
-			#region создание СпециальнаяОдежда.Инструменты Инструмент
+			#region создание Инструменты.Инструменты Инструмент
 			{  
                 NsgDataTypedReference Инструмент = null;
 				if (ObjectList.Contains("Инструмент"))
@@ -244,7 +244,7 @@ namespace TechControl.Метаданные._SystemTables
                     Инструмент = new NsgDataTypedReference();
 	//NsgDataTypedReference
 	Инструмент.IsLoadedFromDll = true;
-	Инструмент.ReferentGroup = "СпециальнаяОдежда";
+	Инструмент.ReferentGroup = "Инструменты";
 	Инструмент.ReferentName = "Инструменты";
 	Инструмент.SaveInDatabase = true;
 	Инструмент.OwnerName = "";
@@ -271,7 +271,7 @@ namespace TechControl.Метаданные._SystemTables
 				if (!ObjectList.Contains("Инструмент"))
                     ObjectList.Add(Инструмент);
 			}
-			#endregion //создание СпециальнаяОдежда.Инструменты Инструмент
+			#endregion //создание Инструменты.Инструменты Инструмент
 			
 			#region создание System.Decimal Цена
 			{  
@@ -395,12 +395,12 @@ namespace TechControl.Метаданные._SystemTables
 			#region заполнение полей класса
 				//NsgDataTable
 	IsLoadedFromDll = true;
-	OwnerFullName = "СпециальнаяОдежда.ПеремещениеИнструментов";
+	OwnerFullName = "Инструменты.ПеремещениеИнструментов";
 	RegisterPeriod = NsgSoft.Common.NsgPeriod.None;
 	RegisterPeriodCount = 0;
 	TableSubType = NsgSoft.Common.NsgTableSubType.TablePart;
 	EntityType = NsgSoft.DataObjects.NsgInterfacedObject.EntityTypes.Object;
-	Name = "СпециальнаяОдеждаПеремещениеИнструментовТаблица";
+	Name = "ИнструментыПеремещениеИнструментовТаблица";
 	Visible = true;
 	Guid = NsgService.StringToGuid("fbb9cad5-dae8-4b6d-80a5-330ab390590c");
 	DefaultSortingName = "";
@@ -415,7 +415,7 @@ namespace TechControl.Метаданные._SystemTables
 	TableName = "_tab_SpecialnajaOdezhdaP1";
 	Presentation = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
 		 new System.Object[]{""});
-	Description = "Специальная одежда перемещение инструментов таблица";
+	Description = "Инструменты перемещение инструментов таблица";
 	EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
 	GroupName = "_SystemTables";
 	
@@ -540,7 +540,7 @@ namespace TechControl.Метаданные._SystemTables
                 if (descriptor == null)
                 {
                     descriptor = new NsgMultipleObjectDescriptor();
-                    descriptor.Name = "СпециальнаяОдеждаПеремещениеИнструментовТаблица";
+                    descriptor.Name = "ИнструментыПеремещениеИнструментовТаблица";
                     descriptor.GroupName = "_SystemTables";
                 }
                 return descriptor;
@@ -553,7 +553,7 @@ namespace TechControl.Метаданные._SystemTables
 
         public static string GetFullName()
         {
-            return "_SystemTables.СпециальнаяОдеждаПеремещениеИнструментовТаблица";
+            return "_SystemTables.ИнструментыПеремещениеИнструментовТаблица";
         }
 
         
@@ -602,7 +602,7 @@ namespace TechControl.Метаданные._SystemTables
         /// </summary>
         [NsgView(NsgViewTypes.DesignTime)]
         [NsgTypeName("NsgReferencedObject")]
-        [NsgReferentsFilterAttribute("СпециальнаяОдежда.ПеремещениеИнструментов")]
+        [NsgReferentsFilterAttribute("Инструменты.ПеремещениеИнструментов")]
         public NsgSoft.DataObjects.NsgReferencedObject Владелец
         {
             get
@@ -643,12 +643,12 @@ namespace TechControl.Метаданные._SystemTables
         [NsgView(NsgViewTypes.DesignTime)]
         [NsgTypeName("NsgDataDictionary")]
         
-        public СпециальнаяОдежда.Инструменты Инструмент
+        public Инструменты.Инструменты Инструмент
         {
             get
             {
 				 NsgDataTypedReference __Инструмент = ObjectList["Инструмент"] as NsgDataTypedReference;
-                 return (СпециальнаяОдежда.Инструменты)__Инструмент.Referent;
+                 return (Инструменты.Инструменты)__Инструмент.Referent;
             }
             set
             {
@@ -738,9 +738,9 @@ namespace TechControl.Метаданные._SystemTables
         /// <summary>
         /// Добавить новую строку в таблицу
         /// </summary>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка NewRow()
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка NewRow()
         {
-            return newRow(null) as СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка;
+            return newRow(null) as ИнструментыПеремещениеИнструментовТаблица.Строка;
         }
 
         /// <summary>
@@ -749,41 +749,41 @@ namespace TechControl.Метаданные._SystemTables
         protected override NsgDataTableRow newRow(NsgDataTableRow row)
         {
             if (row == null)
-                row = new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка(this);
-            return base.newRow(row) as СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка;
+                row = new ИнструментыПеремещениеИнструментовТаблица.Строка(this);
+            return base.newRow(row) as ИнструментыПеремещениеИнструментовТаблица.Строка;
         }
 
         /// <summary>
         /// Добавить новую строку в таблицу путем копирования переданной строки
         /// </summary>
-        public СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка NewRow(СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка inRow)
+        public ИнструментыПеремещениеИнструментовТаблица.Строка NewRow(ИнструментыПеремещениеИнструментовТаблица.Строка inRow)
         {
-            СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка row = inRow.Clone as СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка;
-            return base.newRow(row) as СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка;
+            ИнструментыПеремещениеИнструментовТаблица.Строка row = inRow.Clone as ИнструментыПеремещениеИнструментовТаблица.Строка;
+            return base.newRow(row) as ИнструментыПеремещениеИнструментовТаблица.Строка;
         }
 
 
         /// <summary>
         /// Получить строку таблицы по номеру
         /// </summary>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка GetRow(int rowNumber)
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка GetRow(int rowNumber)
         {
-            return base.GetRow(rowNumber) as СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка;
+            return base.GetRow(rowNumber) as ИнструментыПеремещениеИнструментовТаблица.Строка;
         }
 
         /// <summary>
         /// Возвращает новую строку таблицы, но в саму таблицу ее не включает (эталонная строка)
         /// </summary>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка GetEtalonRow()
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка GetEtalonRow()
         {
-            СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка row = new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка(this);
+            ИнструментыПеремещениеИнструментовТаблица.Строка row = new ИнструментыПеремещениеИнструментовТаблица.Строка(this);
             row.MetaData = MetaData;
             return row;
         }
 
-        private СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка[] convertRowsArray(NsgDataTableRow[] array)
+        private ИнструментыПеремещениеИнструментовТаблица.Строка[] convertRowsArray(NsgDataTableRow[] array)
         {
-            СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка[] res = new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка[array.Length];
+            ИнструментыПеремещениеИнструментовТаблица.Строка[] res = new ИнструментыПеремещениеИнструментовТаблица.Строка[array.Length];
             array.CopyTo(res, 0);
             return res;
         }
@@ -795,9 +795,9 @@ namespace TechControl.Метаданные._SystemTables
         /// </summary>
         /// <param name="compare">Критерии поиска.</param>
         /// <returns>Найденные строки.</returns>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка FindRowByTag(object Tag)
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка FindRowByTag(object Tag)
         {
-            return base.FindRowByTag(Tag) as СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка;
+            return base.FindRowByTag(Tag) as ИнструментыПеремещениеИнструментовТаблица.Строка;
         }
 
         /// <summary>
@@ -805,7 +805,7 @@ namespace TechControl.Метаданные._SystemTables
         /// </summary>
         /// <param name="compare">Критерии поиска.</param>
         /// <returns>Найденные строки.</returns>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка[] FindRowsByTag(object Tag)
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка[] FindRowsByTag(object Tag)
         {
             return convertRowsArray(base.FindRowsByTag(Tag));
         }
@@ -815,9 +815,9 @@ namespace TechControl.Метаданные._SystemTables
         /// </summary>
         /// <param name="compare">Критерии поиска.</param>
         /// <returns>Найденные строки.</returns>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка FindRow(NsgCompare compare)
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка FindRow(NsgCompare compare)
         {
-            return base.FindRow(compare) as СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка;
+            return base.FindRow(compare) as ИнструментыПеремещениеИнструментовТаблица.Строка;
         }
 
         /// <summary>
@@ -826,9 +826,9 @@ namespace TechControl.Метаданные._SystemTables
         /// <param name="inName">Имя колонки.</param>
         /// <param name="inValue">Значение поля.</param>
         /// <returns>Найденные строки.</returns>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка FindRow(string inName, object inValue)
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка FindRow(string inName, object inValue)
         {
-            return base.FindRow(inName, inValue) as СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка;
+            return base.FindRow(inName, inValue) as ИнструментыПеремещениеИнструментовТаблица.Строка;
         }
 
         /// <summary>
@@ -837,9 +837,9 @@ namespace TechControl.Метаданные._SystemTables
         /// <param name="inName">Имя колонки.</param>
         /// <param name="inValue">Значение поля.</param>
         /// <returns>Найденные строки.</returns>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка FindRow(NsgDataFixedFields inName, object inValue)
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка FindRow(NsgDataFixedFields inName, object inValue)
         {
-            return base.FindRow(inName, inValue) as СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка;
+            return base.FindRow(inName, inValue) as ИнструментыПеремещениеИнструментовТаблица.Строка;
         }
 
         /// <summary>
@@ -847,7 +847,7 @@ namespace TechControl.Метаданные._SystemTables
         /// </summary>
         /// <param name="compare">Критерии поиска.</param>
         /// <returns>Найденные строки.</returns>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка[] FindRows(NsgCompare compare)
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка[] FindRows(NsgCompare compare)
         {
             return convertRowsArray(base.FindRows(compare));
         }
@@ -858,7 +858,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <param name="inName">Имя колонки.</param>
         /// <param name="inValue">Значение поля.</param>
         /// <returns>Найденные строки.</returns>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка[] FindRows(string inName, object inValue)
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка[] FindRows(string inName, object inValue)
         {
             return convertRowsArray(base.FindRows(inName, inValue));
         }
@@ -869,7 +869,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <param name="inName">Имя колонки.</param>
         /// <param name="inValue">Значение поля.</param>
         /// <returns>Найденные строки.</returns>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка[] FindRows(NsgDataFixedFields inName, object inValue)
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка[] FindRows(NsgDataFixedFields inName, object inValue)
         {
             return convertRowsArray(base.FindRows(inName, inValue));
         }
@@ -877,15 +877,15 @@ namespace TechControl.Метаданные._SystemTables
         /// <summary>
         /// Метод получения курсора на выборку документов.
         /// </summary>
-        public  NsgVirtualCursor<СпециальнаяОдеждаПеремещениеИнструментовТаблица> GetNewVirtualCursor()
+        public  NsgVirtualCursor<ИнструментыПеремещениеИнструментовТаблица> GetNewVirtualCursor()
         {
-            return base.GetNewVirtualCursor<СпециальнаяОдеждаПеремещениеИнструментовТаблица>();
+            return base.GetNewVirtualCursor<ИнструментыПеремещениеИнструментовТаблица>();
         }
 
         /// <summary>
         /// Получить все строки таблицы с учетом наложенного фильтра. Для получения всех сьтрок без учета фильтра используется свойство AllRows
         /// </summary>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка[] Rows
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка[] Rows
         {
             get
             {
@@ -896,7 +896,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <summary>
         /// Получить все строки таблицы без учето наложенного фильтра. Для получения всех сьтрок с учетом фильтра используется свойство Rows
         /// </summary>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка[] AllRows
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка[] AllRows
         {
             get
             {
@@ -909,9 +909,9 @@ namespace TechControl.Метаданные._SystemTables
         /// </summary>
         /// <param name="inName">Идентификатор строки.</param>
         /// <returns>Найденные строки.</returns>
-        public new СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка GetRow(Guid inID)
+        public new ИнструментыПеремещениеИнструментовТаблица.Строка GetRow(Guid inID)
         {
-            return base.GetRow(inID) as СпециальнаяОдеждаПеремещениеИнструментовТаблица.Строка;
+            return base.GetRow(inID) as ИнструментыПеремещениеИнструментовТаблица.Строка;
         }
         #endregion
         
@@ -921,9 +921,9 @@ namespace TechControl.Метаданные._SystemTables
         #endregion // Методы NsgSoft.DataObjects.NsgDataTable
 
         #region Методы NsgMultipleObject
-        private СпециальнаяОдеждаПеремещениеИнструментовТаблица[] convertArray(NsgMultipleObject[] array)
+        private ИнструментыПеремещениеИнструментовТаблица[] convertArray(NsgMultipleObject[] array)
         {
-            СпециальнаяОдеждаПеремещениеИнструментовТаблица[] res = new СпециальнаяОдеждаПеремещениеИнструментовТаблица[array.Length];
+            ИнструментыПеремещениеИнструментовТаблица[] res = new ИнструментыПеремещениеИнструментовТаблица[array.Length];
             array.CopyTo(res, 0);
             return res;
         }
@@ -938,7 +938,7 @@ namespace TechControl.Метаданные._SystemTables
         /// </remarks>
         /// <param name="compare">Параметры запроса.</param>
         /// <returns>Список найденных объектов.</returns>
-        public new virtual СпециальнаяОдеждаПеремещениеИнструментовТаблица[] FindAll(NsgCompare compare)
+        public new virtual ИнструментыПеремещениеИнструментовТаблица[] FindAll(NsgCompare compare)
         {
             return convertArray(base.FindAll(compare));
         }
@@ -955,7 +955,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <param name="sorting">Параметры сортировки.</param>
         /// <param name="paramAll">Параметры запроса.</param>
         /// <returns>Список найденных объектов.</returns>
-        public new virtual СпециальнаяОдеждаПеремещениеИнструментовТаблица[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, NsgCompare compare)
+        public new virtual ИнструментыПеремещениеИнструментовТаблица[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, NsgCompare compare)
         {
             return convertArray(base.FindAll(ref count, row_start, sorting, compare));
         }
@@ -974,7 +974,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <param name="inName">Имя реквизита.</param>
         /// <param name="inValue">Значение для поиска. Условие поиска - полное совпадение.</param>
         /// <returns>Список найденных объектов.</returns>
-        public new virtual СпециальнаяОдеждаПеремещениеИнструментовТаблица[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, string inName, object inValue)
+        public new virtual ИнструментыПеремещениеИнструментовТаблица[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, string inName, object inValue)
         {
             return convertArray(base.FindAll(ref count, row_start, sorting, inName, inValue));
         }
@@ -993,7 +993,7 @@ namespace TechControl.Метаданные._SystemTables
         /// <param name="inName">Идентификатор реквизита.</param>
         /// <param name="inValue">Значение для поиска. Условие поиска - полное совпадение.</param>
         /// <returns>Список найденных объектов.</returns>
-        public new virtual СпециальнаяОдеждаПеремещениеИнструментовТаблица[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, NsgDataFixedFields inName,
+        public new virtual ИнструментыПеремещениеИнструментовТаблица[] FindAll(ref int count, Int64 row_start, NsgSorting sorting, NsgDataFixedFields inName,
             object inValue)
         {
             return convertArray(base.FindAll(ref count, row_start, sorting, inName, inValue));
@@ -1004,7 +1004,7 @@ namespace TechControl.Метаданные._SystemTables
         {
             get
             {
-                return new СпециальнаяОдеждаПеремещениеИнструментовТаблица(this as NsgObject);
+                return new ИнструментыПеремещениеИнструментовТаблица(this as NsgObject);
             }
         }
 
@@ -1019,7 +1019,7 @@ namespace TechControl.Метаданные._SystemTables
             public ColumnDescriptor()
                 : base()
             {
-                base.NSGType = typeof(СпециальнаяОдеждаПеремещениеИнструментовТаблица);
+                base.NSGType = typeof(ИнструментыПеремещениеИнструментовТаблица);
             }
 
 			/// <summary>
@@ -1027,11 +1027,11 @@ namespace TechControl.Метаданные._SystemTables
 			/// </summary>
 			[Browsable(false)]
 			[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-			public new СпециальнаяОдеждаПеремещениеИнструментовТаблица Value
+			public new ИнструментыПеремещениеИнструментовТаблица Value
             {
                 get
                 {
-                    return (СпециальнаяОдеждаПеремещениеИнструментовТаблица)base.Value;
+                    return (ИнструментыПеремещениеИнструментовТаблица)base.Value;
                 }
                 set
                 {

@@ -11,7 +11,7 @@ using NsgSoft.Common;
 namespace TechControl.Метаданные._SystemTables
 {
     
-    public partial class СпециальнаяОдеждаПеремещениеИнструментаТаблица
+    public partial class ИнструментыПеремещениеИнструментовТаблица
     {
         #region Данные
         #endregion //Данные

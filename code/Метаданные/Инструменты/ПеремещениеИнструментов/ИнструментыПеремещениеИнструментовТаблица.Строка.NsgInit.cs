@@ -16,9 +16,9 @@ using NsgSoft.Common;
 
 namespace TechControl.Метаданные._SystemTables
 {
-    public partial class СпециальнаяОдеждаПеремещениеИнструментаТаблица
+    public partial class ИнструментыПеремещениеИнструментовТаблица
 {
-    [NsgTypeName("NsgDataTableRow", Guid = "5f59aefa-4036-410d-bf7d-05027d697ed6")]
+    [NsgTypeName("NsgDataTableRow", Guid = "fbb9cad5-dae8-4b6d-80a5-330ab390590c")]
     public partial class Строка : NsgSoft.DataObjects.NsgDataTableRow
     {
         #region Данные
@@ -70,7 +70,7 @@ namespace TechControl.Метаданные._SystemTables
         #region Инициализация
         public static Строка Новый()
         {
-            NsgBaseObject obj = CreateByGuid(NsgService.StringToGuid("5f59aefa-4036-410d-bf7d-05027d697ed6"));
+            NsgBaseObject obj = CreateByGuid(NsgService.StringToGuid("fbb9cad5-dae8-4b6d-80a5-330ab390590c"));
             if (obj == null)
                 obj = new Строка();
             return obj as Строка;
@@ -176,6 +176,17 @@ namespace TechControl.Метаданные._SystemTables
             }
             
             /// <summary>
+            /// Цена
+            /// </summary>
+            public static String Цена
+            {
+                get
+                {
+                    return "Цена";
+                }
+            }
+            
+            /// <summary>
             /// Количество
             /// </summary>
             public static String Количество
@@ -197,17 +208,6 @@ namespace TechControl.Метаданные._SystemTables
                 }
             }
             
-            /// <summary>
-            /// Цена
-            /// </summary>
-            public static String Цена
-            {
-                get
-                {
-                    return "Цена";
-                }
-            }
-            
         }
 
         #endregion // Имена
@@ -220,7 +220,7 @@ namespace TechControl.Метаданные._SystemTables
                 if (descriptor == null)
                 {
                     descriptor = new NsgMultipleObjectDescriptor();
-                    descriptor.Name = "СпециальнаяОдеждаПеремещениеИнструментаТаблица";
+                    descriptor.Name = "ИнструментыПеремещениеИнструментовТаблица";
                     descriptor.GroupName = "_SystemTables";
                 }
                 return descriptor;
@@ -282,7 +282,7 @@ namespace TechControl.Метаданные._SystemTables
         /// </summary>
         [NsgView(NsgViewTypes.DesignTime)]
         [NsgTypeName("NsgReferencedObject")]
-        [NsgReferentsFilterAttribute("СпециальнаяОдежда.ПеремещениеИнструмента")]
+        [NsgReferentsFilterAttribute("Инструменты.ПеремещениеИнструментов")]
         public NsgSoft.DataObjects.NsgReferencedObject Владелец
         {
             get
@@ -323,17 +323,37 @@ namespace TechControl.Метаданные._SystemTables
         [NsgView(NsgViewTypes.DesignTime)]
         [NsgTypeName("NsgDataDictionary")]
         
-        public СпециальнаяОдежда.Инструменты Инструмент
+        public Инструменты.Инструменты Инструмент
         {
             get
             {
 				 NsgDataTypedReference __Инструмент = ObjectList["Инструмент"] as NsgDataTypedReference;
-                 return (СпециальнаяОдежда.Инструменты)__Инструмент.Referent;
+                 return (Инструменты.Инструменты)__Инструмент.Referent;
             }
             set
             {
                 NsgDataTypedReference __Инструмент = ObjectList["Инструмент"] as NsgDataTypedReference;
                 __Инструмент.Referent = value;
+            }
+        }
+        
+        /// <summary>
+        /// Цена
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataFloat")]
+        
+        public System.Decimal Цена
+        {
+            get
+            {
+				 NsgDataFloat __Цена = ObjectList["Цена"] as NsgDataFloat;
+                 return (System.Decimal)__Цена.Value;
+            }
+            set
+            {
+                NsgDataFloat __Цена = ObjectList["Цена"] as NsgDataFloat;
+                __Цена.Value = value;
             }
         }
         
@@ -374,26 +394,6 @@ namespace TechControl.Метаданные._SystemTables
             {
                 NsgDataFloat __Сумма = ObjectList["Сумма"] as NsgDataFloat;
                 __Сумма.Value = value;
-            }
-        }
-        
-        /// <summary>
-        /// Цена
-        /// </summary>
-        [NsgView(NsgViewTypes.DesignTime)]
-        [NsgTypeName("NsgDataFloat")]
-        
-        public System.Decimal Цена
-        {
-            get
-            {
-				 NsgDataFloat __Цена = ObjectList["Цена"] as NsgDataFloat;
-                 return (System.Decimal)__Цена.Value;
-            }
-            set
-            {
-                NsgDataFloat __Цена = ObjectList["Цена"] as NsgDataFloat;
-                __Цена.Value = value;
             }
         }
         

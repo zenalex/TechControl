@@ -12,13 +12,13 @@ using NsgSoft.Forms;
 
 
 
-namespace TechControl.Метаданные.СпециальнаяОдежда
+namespace TechControl.Метаданные.Инструменты
 {
     
-    public partial class ИнструментФормаЭлемента
+    public partial class ИнструментыФормаЭлемента
 
     {
-        public ИнструментФормаЭлемента()
+        public ИнструментыФормаЭлемента()
         {
             InitializeComponent();
 		}

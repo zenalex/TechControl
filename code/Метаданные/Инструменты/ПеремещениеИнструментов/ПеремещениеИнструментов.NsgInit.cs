@@ -14,7 +14,7 @@ using NsgSoft.Common;
 // Этот файл создается автоматически, все изменения будут потеряны. //
 // ================================================================ //
 
-namespace TechControl.Метаданные.СпециальнаяОдежда
+namespace TechControl.Метаданные.Инструменты
 {
     
     [NsgTypeName("NsgDataDocument", Guid = "16bc6ad1-f523-4f9f-a3ee-544c8a5a8f87")]
@@ -448,7 +448,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
 			}
 			#endregion //создание Сервис.СостоянияОбъекта СостояниеДокумента
 			
-			#region создание TechControl.Метаданные.СпециальнаяОдежда.ПеремещениеИнструментовФормаЭлемента ФормаЭлемента
+			#region создание TechControl.Метаданные.Инструменты.ПеремещениеИнструментовФормаЭлемента ФормаЭлемента
 			{  
                 NsgDataForm ФормаЭлемента = null;
 				if (ObjectList.Contains("ФормаЭлемента"))
@@ -457,7 +457,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
                     ФормаЭлемента = new NsgDataForm();
 	//NsgDataForm
 	ФормаЭлемента.IsLoadedFromDll = true;
-	ФормаЭлемента.FormClassName = "TechControl.Метаданные.СпециальнаяОдежда.ПеремещениеИнструментовФормаЭлемента";
+	ФормаЭлемента.FormClassName = "TechControl.Метаданные.Инструменты.ПеремещениеИнструментовФормаЭлемента";
 	ФормаЭлемента.SaveInDatabase = false;
 	ФормаЭлемента.StringFormat = "";
 	ФормаЭлемента.SubType = NsgSoft.Common.NsgRekvisitSubType.ElementForm;
@@ -481,7 +481,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
 				if (!ObjectList.Contains("ФормаЭлемента"))
                     ObjectList.Add(ФормаЭлемента);
 			}
-			#endregion //создание TechControl.Метаданные.СпециальнаяОдежда.ПеремещениеИнструментовФормаЭлемента ФормаЭлемента
+			#endregion //создание TechControl.Метаданные.Инструменты.ПеремещениеИнструментовФормаЭлемента ФормаЭлемента
 			
 			#region создание Мониторинг.Объекты Объект
 			{  
@@ -521,7 +521,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
 			}
 			#endregion //создание Мониторинг.Объекты Объект
 			
-			#region создание _SystemTables.СпециальнаяОдеждаПеремещениеИнструментовТаблица Таблица
+			#region создание _SystemTables.ИнструментыПеремещениеИнструментовТаблица Таблица
 			{  
                 NsgDataTableReference Таблица = null;
 				if (ObjectList.Contains("Таблица"))
@@ -533,7 +533,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
 	Таблица.Name = "Таблица";
 	Таблица.SaveInDatabase = false;
 	Таблица.ReferentGroup = "_SystemTables";
-	Таблица.ReferentName = "СпециальнаяОдеждаПеремещениеИнструментовТаблица";
+	Таблица.ReferentName = "ИнструментыПеремещениеИнструментовТаблица";
 	Таблица.OwnerName = "";
 	Таблица.AllowEmptyOwner = false;
 	Таблица.StringFormat = "";
@@ -557,13 +557,51 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
 				if (!ObjectList.Contains("Таблица"))
                     ObjectList.Add(Таблица);
 			}
-			#endregion //создание _SystemTables.СпециальнаяОдеждаПеремещениеИнструментовТаблица Таблица
+			#endregion //создание _SystemTables.ИнструментыПеремещениеИнструментовТаблица Таблица
+			
+			#region создание Перечисления.ПризнакиДвижений ПризнакДвиженя
+			{  
+                NsgDataEnumReference ПризнакДвиженя = null;
+				if (ObjectList.Contains("ПризнакДвиженя"))
+                    ПризнакДвиженя = ObjectList["ПризнакДвиженя"] as NsgDataEnumReference;
+                else
+                    ПризнакДвиженя = new NsgDataEnumReference();
+	//NsgDataEnumReference
+	ПризнакДвиженя.IsLoadedFromDll = true;
+	ПризнакДвиженя.ReferentGroup = "Перечисления";
+	ПризнакДвиженя.ReferentName = "ПризнакиДвижений";
+	ПризнакДвиженя.SaveInDatabase = true;
+	ПризнакДвиженя.OwnerName = "";
+	ПризнакДвиженя.AllowEmptyOwner = false;
+	ПризнакДвиженя.StringFormat = "";
+	ПризнакДвиженя.SubType = NsgSoft.Common.NsgRekvisitSubType.Common;
+	ПризнакДвиженя.IncludeInPredefined = false;
+	ПризнакДвиженя.PeriodicType = NsgSoft.Database.PeriodicTypes.None;
+	ПризнакДвиженя.Required = false;
+	ПризнакДвиженя.EmptyValue = "";
+	ПризнакДвиженя.NullAllow = false;
+	ПризнакДвиженя.IndexType = NsgSoft.Database.NsgRekvisitIndexType.None;
+	ПризнакДвиженя.FieldName = "PriznakDvizhenja";
+	ПризнакДвиженя.InformMetaDataOnValueChanged = false;
+	ПризнакДвиженя.Visible = true;
+	ПризнакДвиженя.Name = "ПризнакДвиженя";
+	ПризнакДвиженя.Presentation = new NsgSoft.DataObjects.NsgLanguageString(new System.String[]{"(Default)"},
+		 new System.Object[]{""});
+	ПризнакДвиженя.Description = "Признак движеня";
+	ПризнакДвиженя.EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
+	ПризнакДвиженя.GroupName = "";
+	ПризнакДвиженя.Guid = NsgService.StringToGuid("c07949e4-58ac-48d4-b4b8-668dbd57d038");
+	
+				if (!ObjectList.Contains("ПризнакДвиженя"))
+                    ObjectList.Add(ПризнакДвиженя);
+			}
+			#endregion //создание Перечисления.ПризнакиДвижений ПризнакДвиженя
 			
 
 			#region заполнение полей класса
 				//NsgDataDocument
 	IsLoadedFromDll = true;
-	SlaveDocuments = new List<string>(new string[]{"Сервис.ОбщийЖурнал", "Мониторинг.ФормированиеСмены", "Сервис.СервернаяЗадача", "Мониторинг.ОтработанноеВремяТехники", "Мониторинг.ЗакрытиеСмены", "Мониторинг.Заправка", "Мониторинг.ПоставкаТоплива", "СпециальнаяОдежда.ПеремещениеСпецодежды", "СпециальнаяОдежда.ЗаказСпецодежды", "СпециальнаяОдежда.ПеремещениеИнструментов"});
+	SlaveDocuments = new List<string>(new string[]{"Сервис.ОбщийЖурнал", "Мониторинг.ФормированиеСмены", "Сервис.СервернаяЗадача", "Мониторинг.ОтработанноеВремяТехники", "Мониторинг.ЗакрытиеСмены", "Мониторинг.Заправка", "Мониторинг.ПоставкаТоплива", "СпециальнаяОдежда.ПеремещениеСпецодежды", "СпециальнаяОдежда.ЗаказСпецодежды", "Инструменты.ПеремещениеИнструментов"});
 	SearchFieldName = "_Code";
 	HandleWithoutTransaction = false;
 	UsedRegistersForConfigurator = new NsgSoft.DataObjects.NsgPropertyCollection(new System.String[]{"Сервис.ПечатныеФормы", "Мониторинг.РегистрМониторингТехники", "Мониторинг.ФиксацияИстории", "Сервис.ПраваПользователей", "Мониторинг.МониторирнгТехники", "Мониторинг.РегистрОтработанногоВремени", "Мониторинг.РегистрСмен", "Мониторинг.РегистрЗаправок", "Мониторинг.РегистрПоставокТоплива", "СпециальнаяОдежда.УчетСпецодежды", "Мониторинг.ФиксацияИсторииСотрудников"},
@@ -588,7 +626,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
 		 new System.Object[]{""});
 	Description = "Перемещение инструментов";
 	EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
-	GroupName = "СпециальнаяОдежда";
+	GroupName = "Инструменты";
 	
 			#endregion //заполнение полей класса
 			#region окончание инициализации NsgSoft.DataObjects.NsgDataDocument
@@ -754,6 +792,17 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
                 }
             }
             
+            /// <summary>
+            /// Признак движеня
+            /// </summary>
+            public static String ПризнакДвиженя
+            {
+                get
+                {
+                    return "ПризнакДвиженя";
+                }
+            }
+            
         }
 
         #endregion // Имена
@@ -767,7 +816,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
                 {
                     descriptor = new NsgMultipleObjectDescriptor();
                     descriptor.Name = "ПеремещениеИнструментов";
-                    descriptor.GroupName = "СпециальнаяОдежда";
+                    descriptor.GroupName = "Инструменты";
                 }
                 return descriptor;
             }
@@ -779,7 +828,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
 
         public static string GetFullName()
         {
-            return "СпециальнаяОдежда.ПеремещениеИнструментов";
+            return "Инструменты.ПеремещениеИнструментов";
         }
 
         
@@ -1009,17 +1058,37 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
         [NsgView(NsgViewTypes.DesignTime)]
         [NsgTypeName("NsgDataTable")]
         
-        public _SystemTables.СпециальнаяОдеждаПеремещениеИнструментовТаблица Таблица
+        public _SystemTables.ИнструментыПеремещениеИнструментовТаблица Таблица
         {
             get
             {
 				 NsgDataTableReference __Таблица = ObjectList["Таблица"] as NsgDataTableReference;
-                 return (_SystemTables.СпециальнаяОдеждаПеремещениеИнструментовТаблица)__Таблица.Referent;
+                 return (_SystemTables.ИнструментыПеремещениеИнструментовТаблица)__Таблица.Referent;
             }
             set
             {
                 NsgDataTableReference __Таблица = ObjectList["Таблица"] as NsgDataTableReference;
                 __Таблица.Referent = value;
+            }
+        }
+        
+        /// <summary>
+        /// Признак движеня
+        /// </summary>
+        [NsgView(NsgViewTypes.DesignTime)]
+        [NsgTypeName("NsgDataEnum")]
+        
+        public Перечисления.ПризнакиДвижений ПризнакДвиженя
+        {
+            get
+            {
+				 NsgDataEnumReference __ПризнакДвиженя = ObjectList["ПризнакДвиженя"] as NsgDataEnumReference;
+                 return (Перечисления.ПризнакиДвижений)__ПризнакДвиженя.Referent;
+            }
+            set
+            {
+                NsgDataEnumReference __ПризнакДвиженя = ObjectList["ПризнакДвиженя"] as NsgDataEnumReference;
+                __ПризнакДвиженя.Referent = value;
             }
         }
         

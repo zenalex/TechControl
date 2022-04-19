@@ -8,10 +8,10 @@ using NsgSoft.Common;
 
 
 
-namespace TechControl.Метаданные.СпециальнаяОдежда
+namespace TechControl.Метаданные.Инструменты
 {
     
-    public partial class ПеремещениеИнструментов
+    public partial class Инструменты
     {
         #region Данные
         #endregion //Данные

@@ -10,7 +10,7 @@ using NsgSoft.Common;
 
 namespace TechControl.Метаданные._SystemTables
 {
-    public partial class СпециальнаяОдеждаПеремещениеИнструментовТаблица
+    public partial class ИнструментыПеремещениеИнструментовТаблица
 {
     public partial class Строка
     {

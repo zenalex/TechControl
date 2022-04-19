@@ -14,7 +14,7 @@ using NsgSoft.Common;
 // Этот файл создается автоматически, все изменения будут потеряны. //
 // ================================================================ //
 
-namespace TechControl.Метаданные.СпециальнаяОдежда
+namespace TechControl.Метаданные.Инструменты
 {
     
     [NsgTypeName("NsgDataDictionary", Guid = "3ddb6d64-52ff-47c0-a46a-551e52746337")]
@@ -448,7 +448,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
 			}
 			#endregion //создание Сервис.СостоянияОбъекта СостояниеДокумента
 			
-			#region создание TechControl.Метаданные.СпециальнаяОдежда.ИнструментыФормаЭлемента ФормаЭлемента
+			#region создание TechControl.Метаданные.Инструменты.ИнструментыФормаЭлемента ФормаЭлемента
 			{  
                 NsgDataForm ФормаЭлемента = null;
 				if (ObjectList.Contains("ФормаЭлемента"))
@@ -457,7 +457,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
                     ФормаЭлемента = new NsgDataForm();
 	//NsgDataForm
 	ФормаЭлемента.IsLoadedFromDll = true;
-	ФормаЭлемента.FormClassName = "TechControl.Метаданные.СпециальнаяОдежда.ИнструментыФормаЭлемента";
+	ФормаЭлемента.FormClassName = "TechControl.Метаданные.Инструменты.ИнструментыФормаЭлемента";
 	ФормаЭлемента.SaveInDatabase = false;
 	ФормаЭлемента.StringFormat = "";
 	ФормаЭлемента.SubType = NsgSoft.Common.NsgRekvisitSubType.ElementForm;
@@ -481,7 +481,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
 				if (!ObjectList.Contains("ФормаЭлемента"))
                     ObjectList.Add(ФормаЭлемента);
 			}
-			#endregion //создание TechControl.Метаданные.СпециальнаяОдежда.ИнструментыФормаЭлемента ФормаЭлемента
+			#endregion //создание TechControl.Метаданные.Инструменты.ИнструментыФормаЭлемента ФормаЭлемента
 			
 			#region создание System.Int64 СрокЭксплуатации
 			{  
@@ -547,7 +547,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
 		 new System.Object[]{""});
 	Description = "Инструменты";
 	EditorVisible = NsgSoft.DataObjects.NsgDataObjectEditorAccess.Full;
-	GroupName = "СпециальнаяОдежда";
+	GroupName = "Инструменты";
 	
 			#endregion //заполнение полей класса
 			#region окончание инициализации NsgSoft.DataObjects.NsgDataDictionary
@@ -715,7 +715,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
                 {
                     descriptor = new NsgMultipleObjectDescriptor();
                     descriptor.Name = "Инструменты";
-                    descriptor.GroupName = "СпециальнаяОдежда";
+                    descriptor.GroupName = "Инструменты";
                 }
                 return descriptor;
             }
@@ -727,7 +727,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
 
         public static string GetFullName()
         {
-            return "СпециальнаяОдежда.Инструменты";
+            return "Инструменты.Инструменты";
         }
 
         
