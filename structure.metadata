@@ -8896,7 +8896,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="c07949e4-58ac-48d4-b4b8-668dbd57d038" type="NsgDataEnumReference" editoraccess="Full" name="ПризнакДвиженя" visible="true" description="Признак движеня" field="PriznakDvizhenja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Перечисления" refname="ПризнакиДвижений">
+            <NsgSimpleObject Guid="c07949e4-58ac-48d4-b4b8-668dbd57d038" type="NsgDataEnumReference" editoraccess="Full" name="ПризнакДвижения" visible="true" description="Признак движеня" field="PriznakDvizhenja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Перечисления" refname="ПризнакиДвижений">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -8906,11 +8906,11 @@
             <container name="ДатаДокумента" />
             <container name="Комментарий" />
             <container name="Объект" />
-            <container name="ПризнакДвиженя" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="ПризнакДвижения" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
