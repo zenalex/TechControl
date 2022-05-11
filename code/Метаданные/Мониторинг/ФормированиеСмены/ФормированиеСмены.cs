@@ -65,6 +65,7 @@ namespace TechControl.Метаданные.Мониторинг
                     i.Post();
                     //строкиТехника.Add(i);
                 }
+                this.КоличествоТехники = this.Таблица.ColumnToArray(МониторингФормированиеСменыТаблица.Names.Техника, new NsgCompare(), true).Length;
                 //var строкиПерсонал = new List<МониторингФормированиеСменыТаблицаПерсонал.Строка>();
                 foreach (var i in this.ТаблицаПерсонал.Rows)
                 {

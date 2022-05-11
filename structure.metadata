@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.5.11.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.5.11.1" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.5.11.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.5.11.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.5.11.1" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.5.11.1;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -2352,15 +2352,15 @@
             <container name="Руководитель" />
             <container name="СменаОткрыта" />
             <container name="ПоставщикТоплива" />
+            <container name="МашинВРаботе" />
+            <container name="МашинНеВРаботе" />
+            <container name="МашинСломано" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="МашинВРаботе" />
-            <container name="МашинНеВРаботе" />
-            <container name="МашинСломано" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2568,6 +2568,31 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="7cc1840e-104a-497a-baf9-168bebf0355c" type="NsgDataInteger" editoraccess="Full" name="КоличествоТехники" visible="true" description="Количество техники" field="KolichestvoTekhniki" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="530e79d3-e532-4da9-98ff-5aa76f1c14df" type="NsgDataInteger" editoraccess="Full" name="ВсегоТехникиВРаботе" visible="true" description="Всего техники ВРаботе" field="VsegoTekhnikiVRabote" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="818a203f-ced0-4c76-affc-f6065aa75d60" type="NsgDataInteger" editoraccess="Full" name="ВсегоТехникиНеВРаботе" visible="true" description="Всего техники не ВРаботе" field="VsegoTekhnikiNeVR" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="9af41814-adfa-47cd-b876-89802a18a356" type="NsgDataInteger" editoraccess="Full" name="ВсегоТехникиСломано" visible="true" description="Всего техники сломано" field="VsegoTekhnikiSlomano" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="bf310740-2b89-4afd-bbf4-5f3920731e23" type="NsgDataInteger" editoraccess="Full" name="ВсегоТехникиВРемонте" visible="true" description="Всего техники ВРемонте" field="VsegoTekhnikiVRem" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -2575,12 +2600,17 @@
             <container name="Объект" />
             <container name="Ответственный" />
             <container name="ЭтоИтоговыйДокумент" />
+            <container name="ИтогоЧасовТехника" />
+            <container name="ИтогоЧасовПерсонал" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ИтогоЧасовТехника" />
-            <container name="ИтогоЧасовПерсонал" />
+            <container name="КоличествоТехники" />
+            <container name="ВсегоТехникиВРаботе" />
+            <container name="ВсегоТехникиНеВРаботе" />
+            <container name="ВсегоТехникиСломано" />
+            <container name="ВсегоТехникиВРемонте" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
