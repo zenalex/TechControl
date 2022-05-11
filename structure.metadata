@@ -2558,6 +2558,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="49cd73f5-4116-4960-b033-704a9fcbd56b" type="NsgDataAggregate" editoraccess="Full" name="ИтогоЧасовТехника" visible="true" description="Итого часов техника" field="ItogoCHasovTekhnika" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True" referentName="Таблица" referentFieldName="Длительность">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="1aea7920-1b09-4e1a-ae27-5f6857dde88e" type="NsgDataAggregate" editoraccess="Full" name="ИтогоЧасовПерсонал" visible="true" description="Итого часов персонал" field="ItogoCHasovPersonal" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True" referentName="ТаблицаПерсонал" referentFieldName="Длительность">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -2569,6 +2579,8 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="ИтогоЧасовТехника" />
+            <container name="ИтогоЧасовПерсонал" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
