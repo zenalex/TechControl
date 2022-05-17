@@ -240,7 +240,8 @@ namespace TechControl.Метаданные.Мониторинг
                     NsgSettings.MainForm.ShowMessage(
                         $"Сотрудник: {i.Сотрудник} - выбранный тариф на задан на объекте для должности {i.Сотрудник.Должность}",
                         System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
+                    throw new Exception($"Сотрудник: {i.Сотрудник} - выбранный тариф на задан на объекте для должности {i.Сотрудник.Должность}");
+                    //return false;
                 }
                 if (!i.Сотрудник.Selected)
                 {
