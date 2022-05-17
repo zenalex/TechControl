@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.5.12.0</ProductVersion>
+    <ProductVersion>2022.5.17.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -2699,5 +2699,70 @@
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовНакопления.NsgInit.cs">
+      <NsgOwnerGuid>c7a869ab-94fc-4689-9701-6b3bf5089ebf</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовНакопления</NsgOwnerName>
+      <DependentUpon>ИнструментыУчетИнструментовНакопления.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовНакопления.cs">
+      <NsgOwnerGuid>c7a869ab-94fc-4689-9701-6b3bf5089ebf</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовНакопления.Строка.NsgInit.cs">
+      <NsgOwnerGuid>c7a869ab-94fc-4689-9701-6b3bf5089ebf</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовНакопления</NsgOwnerName>
+      <DependentUpon>ИнструментыУчетИнструментовНакопления.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовНакопления.Строка.cs">
+      <NsgOwnerGuid>c7a869ab-94fc-4689-9701-6b3bf5089ebf</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\УчетИнструментов.NsgInit.cs">
+      <NsgOwnerGuid>cca9235f-90cc-46d0-9234-0e69d43f94e2</NsgOwnerGuid>
+      <NsgOwnerName>УчетИнструментов</NsgOwnerName>
+      <DependentUpon>УчетИнструментов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\УчетИнструментов.cs">
+      <NsgOwnerGuid>cca9235f-90cc-46d0-9234-0e69d43f94e2</NsgOwnerGuid>
+      <NsgOwnerName>УчетИнструментов</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовНакопления_1.NsgInit.cs">
+      <NsgOwnerGuid>f9461d8a-dc73-41bf-bb97-88242b4f5962</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовНакопления_1</NsgOwnerName>
+      <DependentUpon>ИнструментыУчетИнструментовНакопления_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовНакопления_1.cs">
+      <NsgOwnerGuid>f9461d8a-dc73-41bf-bb97-88242b4f5962</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовНакопления_1.Строка.NsgInit.cs">
+      <NsgOwnerGuid>f9461d8a-dc73-41bf-bb97-88242b4f5962</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовНакопления_1</NsgOwnerName>
+      <DependentUpon>ИнструментыУчетИнструментовНакопления_1.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовНакопления_1.Строка.cs">
+      <NsgOwnerGuid>f9461d8a-dc73-41bf-bb97-88242b4f5962</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовДвижения.NsgInit.cs">
+      <NsgOwnerGuid>8497c9e4-f46f-402e-81a0-6a4fb68c38cf</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовДвижения</NsgOwnerName>
+      <DependentUpon>ИнструментыУчетИнструментовДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовДвижения.cs">
+      <NsgOwnerGuid>8497c9e4-f46f-402e-81a0-6a4fb68c38cf</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>8497c9e4-f46f-402e-81a0-6a4fb68c38cf</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовДвижения</NsgOwnerName>
+      <DependentUpon>ИнструментыУчетИнструментовДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Инструменты\УчетИнструментов\ИнструментыУчетИнструментовДвижения.Строка.cs">
+      <NsgOwnerGuid>8497c9e4-f46f-402e-81a0-6a4fb68c38cf</NsgOwnerGuid>
+      <NsgOwnerName>ИнструментыУчетИнструментовДвижения</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
