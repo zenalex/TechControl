@@ -399,6 +399,7 @@ namespace TechControl.Метаданные.Инструменты
             nsgIGridColumn1.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn1.DateFormat = null;
+            nsgIGridColumn1.ImportedFromVMO = false;
             nsgIGridColumn1.InitiateRowEdit = true;
             nsgIGridColumn1.Name = "Владелец";
             nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -415,6 +416,7 @@ namespace TechControl.Метаданные.Инструменты
             nsgIGridColumn2.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn2.DateFormat = null;
+            nsgIGridColumn2.ImportedFromVMO = false;
             nsgIGridColumn2.InitiateRowEdit = true;
             nsgIGridColumn2.Name = "Инструмент";
             nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -430,6 +432,7 @@ namespace TechControl.Метаданные.Инструменты
             nsgIGridColumn3.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn3.DateFormat = null;
+            nsgIGridColumn3.ImportedFromVMO = false;
             nsgIGridColumn3.InitiateRowEdit = true;
             nsgIGridColumn3.Name = "Цена";
             nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -445,6 +448,7 @@ namespace TechControl.Метаданные.Инструменты
             nsgIGridColumn4.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn4.DateFormat = null;
+            nsgIGridColumn4.ImportedFromVMO = false;
             nsgIGridColumn4.InitiateRowEdit = true;
             nsgIGridColumn4.Name = "Количество";
             nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -461,6 +465,7 @@ namespace TechControl.Метаданные.Инструменты
             nsgIGridColumn5.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn5.DateFormat = null;
+            nsgIGridColumn5.ImportedFromVMO = false;
             nsgIGridColumn5.InitiateRowEdit = true;
             nsgIGridColumn5.Name = "Сумма";
             nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -476,6 +481,7 @@ namespace TechControl.Метаданные.Инструменты
             nsgIGridColumn6.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn6.DateFormat = null;
+            nsgIGridColumn6.ImportedFromVMO = false;
             nsgIGridColumn6.InitiateRowEdit = true;
             nsgIGridColumn6.Name = "ИнвентарныйНомер";
             nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));

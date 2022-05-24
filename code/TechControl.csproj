@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.5.18.0</ProductVersion>
+    <ProductVersion>2022.5.24.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
+    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -127,6 +127,11 @@
   <ItemGroup>
     <Compile Include="AuthorizationBehavior.cs" />
     <Compile Include="AuthorizationMessageInspector.cs" />
+    <Compile Include="Connected Services\EventRibbonService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReferenceAuthorization\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,6 +173,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReferenceValidationNavigation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UtilityServiceWeb\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -496,6 +506,26 @@
       <NsgOwnerGuid>26c45bd5-cbe2-4896-bb5c-84c768417eb9</NsgOwnerGuid>
       <NsgOwnerName>МониторингРегистрМониторингТехникиДвижения</NsgOwnerName>
     </Compile>
+    <None Include="Connected Services\EventRibbonService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EventRibbonService\service.wsdl" />
+    <None Include="Connected Services\EventRibbonService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EventRibbonService\System.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EventRibbonService\TechControl.EventRibbonService.RibbonEventObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EventRibbonService\Titan.IEventRibbonService.wsdl" />
+    <None Include="Connected Services\EventRibbonService\Titan.IEventRibbonService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EventRibbonService\Titan.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiceReferenceAuthorization\soap.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -727,6 +757,29 @@
     <None Include="Connected Services\ServiceReferenceValidationNavigation\TechControl.ServiceReferenceValidationNavigation.SpicNavigationValidationStatisticsResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\UtilityServiceWeb\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UtilityServiceWeb\service.wsdl" />
+    <None Include="Connected Services\UtilityServiceWeb\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UtilityServiceWeb\TechControl.UtilityServiceWeb.AddressInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UtilityServiceWeb\TechControl.UtilityServiceWeb.NsgEmployee.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UtilityServiceWeb\TechControl.UtilityServiceWeb.NsgVisitation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UtilityServiceWeb\TitanUtilityService.IUtilityWebService.wsdl" />
+    <None Include="Connected Services\UtilityServiceWeb\TitanUtilityService.IUtilityWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UtilityServiceWeb\TitanUtilityService.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -880,6 +933,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\EventRibbonService\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceAuthorization\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceControllerStistics\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceDataOnlineSensors\" />
@@ -889,6 +943,7 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceTrackPeriods\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceUnitsSpic\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceValidationNavigation\" />
+    <WCFMetadataStorage Include="Connected Services\UtilityServiceWeb\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReferenceAuthorization\soap.disco" />
@@ -1816,6 +1871,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\UtilityServiceWeb\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\Мониторинг\Тарифы\ФормаЭлемента.Designer.cs">
@@ -2503,6 +2559,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\UtilityServiceWeb\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\Мониторинг\ФиксацияИсторииСотрудников\ФиксацияИсторииСотрудников.NsgInit.cs">
@@ -2565,8 +2622,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\UtilityServiceWeb\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\EventRibbonService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\Инструменты\Инструменты\ФормаЭлемента.Designer.cs">
@@ -2584,6 +2646,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\EventRibbonService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\Инструменты\ПеремещениеИнструментов\ПеремещениеИнструментов.NsgInit.cs">
@@ -2764,5 +2827,31 @@
       <NsgOwnerGuid>8497c9e4-f46f-402e-81a0-6a4fb68c38cf</NsgOwnerGuid>
       <NsgOwnerName>ИнструментыУчетИнструментовДвижения</NsgOwnerName>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаСистемыСлежения.NsgInit.cs">
+      <NsgOwnerGuid>9296187e-4c8b-4f23-a0b6-1c66658c5f0c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаСистемыСлежения</NsgOwnerName>
+      <DependentUpon>МониторингОбъектыТаблицаСистемыСлежения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаСистемыСлежения.cs">
+      <NsgOwnerGuid>9296187e-4c8b-4f23-a0b6-1c66658c5f0c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаСистемыСлежения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаСистемыСлежения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>9296187e-4c8b-4f23-a0b6-1c66658c5f0c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаСистемыСлежения</NsgOwnerName>
+      <DependentUpon>МониторингОбъектыТаблицаСистемыСлежения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаСистемыСлежения.Строка.cs">
+      <NsgOwnerGuid>9296187e-4c8b-4f23-a0b6-1c66658c5f0c</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаСистемыСлежения</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EventRibbonService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>

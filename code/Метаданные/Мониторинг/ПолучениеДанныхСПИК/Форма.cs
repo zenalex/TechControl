@@ -7,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.ServiceModel;
 using System.Threading.Tasks;
+using TechControl.EventRibbonService;
 using TechControl.ServiceReferenceControllerStistics;
 using TechControl.ServiceReferenceDataOnline;
 using TechControl.ServiceReferenceDataOnlineSensors;
@@ -16,6 +18,7 @@ using TechControl.ServiceReferenceMotorModes;
 using TechControl.ServiceReferenceTrackPeriods;
 using TechControl.ServiceReferenceUnitsSpic;
 using TechControl.ServiceReferenceValidationNavigation;
+using TechControl.UtilityServiceWeb;
 using TechControl.Метаданные._SystemTables;
 
 namespace TechControl.Метаданные.Мониторинг
@@ -416,6 +419,33 @@ namespace TechControl.Метаданные.Мониторинг
             }
         }
 
+
+
+        static UtilityWebServiceClient utilityServiceClient;
+        public static UtilityWebServiceClient UtilityServiceClient
+        {
+            get
+            {
+                if (utilityServiceClient == null)
+                {
+                    BasicHttpBinding binding = new BasicHttpBinding();
+                    binding.MaxReceivedMessageSize = 10 * 1024 * 1024;
+                    EndpointAddress address = new EndpointAddress("http://10.10.4.160:5072/UtilityService.svc");
+                    utilityServiceClient = new UtilityWebServiceClient(binding, address);
+
+                    try
+                    {
+                        utilityServiceClient.Open();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+                }
+                return utilityServiceClient;
+            }
+        }
+
         protected override void OnCreateReportCompleted(NsgBackgroundWorker nsgBackgroundReporter, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             base.OnCreateReportCompleted(nsgBackgroundReporter, e);
@@ -469,6 +499,64 @@ namespace TechControl.Метаданные.Мониторинг
             }
 
             return outputResult;
+        }
+
+        private void nsgButton1_AsyncClick(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            //var cmp = new NsgCompare().Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            //cmp.Add(Техника.Names.СистемыСлежения + "." + МониторингТехникаСистемыСлежения.Names.ТипСистемыСлежения, ТипСистемыСлежения.Сигнализации);
+            //var техникаВся = Техника.Новый().FindAll(cmp);
+
+            var start = nsgPeriodPicker1.Period.Begin.Date;
+            var end = nsgPeriodPicker1.Period.End.Date;
+
+            var cmpРег = new NsgCompare().Add(РегистрСмен.Names.Объект, Объект);
+            var регистрСмен = РегистрСмен.Новый().GetCirculate(start, end, cmpРег);
+            var листТехники = new List<Техника>();
+
+            foreach (var смена in регистрСмен.Rows)
+            {
+                var техника = смена[РегистрСмен.Names.Техника].Value as Техника;
+                листТехники.Add(техника);
+                var a = техника.СистемыСлежения.ИдентификаторСистемыСлежения;
+                //    var status = UtilityServiceClient.GetObjectStatusString(смена.СистемыСлежения.ИдентификаторСистемыСлежения);
+                //    var history = EventRibbonClient.GetRibbonEventsWTwoDates(техника.СистемыСлежения.ИдентификаторСистемыСлежения, nsgPeriodPicker1.Period.Begin.Date, nsgPeriodPicker1.Period.End.Date, 10);
+            }
+
+            var cmpСкаут = new NsgCompare().Add(ОтработанноеВремяТехники.Names.Таблица + "." + МониторингОтработанноеВремяТехникиТаблица.Names.ДатаНачалаРаботы, start, NsgComparison.GreaterOrEqual);
+            cmpСкаут.Add(ОтработанноеВремяТехники.Names.Таблица + "." + МониторингОтработанноеВремяТехникиТаблица.Names.ДатаОкончанияРаботы, end, NsgComparison.LessOrEqual);
+            cmpСкаут.Add(ОтработанноеВремяТехники.Names.Таблица + "." + МониторингОтработанноеВремяТехникиТаблица.Names.Техника, листТехники.ToArray(), NsgComparison.In);
+            var времяРаботыТехникиСкаут = ОтработанноеВремяТехники.Новый().FindAll(cmpСкаут);
+
+            vmoСигнализации.Data.BeginUpdateData();
+            vmoСигнализации.Data.MemoryTable.Clear();
+
+            vmoСигнализации.Data.UpdateDataAsync(this);
+        }
+
+        static EventRibbonServiceClient eventRibbonClient;
+        public static EventRibbonServiceClient EventRibbonClient
+        {
+            get
+            {
+                if (eventRibbonClient == null)
+                {
+                    try
+                    {
+                        BasicHttpBinding binding = new BasicHttpBinding();
+                        binding.MaxReceivedMessageSize = 10 * 1024 * 1024;
+                        EndpointAddress address = new EndpointAddress("http://10.10.4.163:3396/Service2.svc");
+                        eventRibbonClient = new EventRibbonServiceClient(binding, address);
+                        eventRibbonClient.Open();
+                    }
+                    catch (Exception ex)
+                    {
+                        NsgSettings.ShowMessage(ex);
+                    }
+                }
+                return eventRibbonClient;
+
+            }
         }
     }
 

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Titan.IEventRibbonService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://Titan.IEventRibbonService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Titan.IEventRibbonService/Imports">
+      <xsd:import namespace="http://Titan.IEventRibbonService" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Titan" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEventRibbonService_GetRibbonEventsWODate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRibbonEventsWODate" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_GetRibbonEventsWODate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRibbonEventsWODateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_GetRibbonEventsWOneDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRibbonEventsWOneDate" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_GetRibbonEventsWOneDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRibbonEventsWOneDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_GetRibbonEventsWTwoDates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRibbonEventsWTwoDates" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_GetRibbonEventsWTwoDates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRibbonEventsWTwoDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_GetRibbonEventsWTwoDatesAndCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRibbonEventsWTwoDatesAndCodes" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_GetRibbonEventsWTwoDatesAndCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRibbonEventsWTwoDatesAndCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_GetObjectStatusHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectStatusHistory" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_GetObjectStatusHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectStatusHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_ReceiveShurgardMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveShurgardMessage" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_ReceiveShurgardMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveShurgardMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_GetButtonAlarms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetButtonAlarms" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_GetButtonAlarms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetButtonAlarmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_IsAlarmWithKeywords_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAlarmWithKeywords" />
+  </wsdl:message>
+  <wsdl:message name="IEventRibbonService_IsAlarmWithKeywords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAlarmWithKeywordsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEventRibbonService">
+    <wsdl:operation name="GetRibbonEventsWODate">
+      <wsdl:input wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWODate" message="tns:IEventRibbonService_GetRibbonEventsWODate_InputMessage" />
+      <wsdl:output wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWODateResponse" message="tns:IEventRibbonService_GetRibbonEventsWODate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonEventsWOneDate">
+      <wsdl:input wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWOneDate" message="tns:IEventRibbonService_GetRibbonEventsWOneDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWOneDateResponse" message="tns:IEventRibbonService_GetRibbonEventsWOneDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonEventsWTwoDates">
+      <wsdl:input wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWTwoDates" message="tns:IEventRibbonService_GetRibbonEventsWTwoDates_InputMessage" />
+      <wsdl:output wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWTwoDatesResponse" message="tns:IEventRibbonService_GetRibbonEventsWTwoDates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonEventsWTwoDatesAndCodes">
+      <wsdl:input wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWTwoDatesAndCodes" message="tns:IEventRibbonService_GetRibbonEventsWTwoDatesAndCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWTwoDatesAndCodesResponse" message="tns:IEventRibbonService_GetRibbonEventsWTwoDatesAndCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectStatusHistory">
+      <wsdl:input wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetObjectStatusHistory" message="tns:IEventRibbonService_GetObjectStatusHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetObjectStatusHistoryResponse" message="tns:IEventRibbonService_GetObjectStatusHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveShurgardMessage">
+      <wsdl:input wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/ReceiveShurgardMessage" message="tns:IEventRibbonService_ReceiveShurgardMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/ReceiveShurgardMessageResponse" message="tns:IEventRibbonService_ReceiveShurgardMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonAlarms">
+      <wsdl:input wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetButtonAlarms" message="tns:IEventRibbonService_GetButtonAlarms_InputMessage" />
+      <wsdl:output wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/GetButtonAlarmsResponse" message="tns:IEventRibbonService_GetButtonAlarms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAlarmWithKeywords">
+      <wsdl:input wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/IsAlarmWithKeywords" message="tns:IEventRibbonService_IsAlarmWithKeywords_InputMessage" />
+      <wsdl:output wsaw:Action="http://Titan.IEventRibbonService/IEventRibbonService/IsAlarmWithKeywordsResponse" message="tns:IEventRibbonService_IsAlarmWithKeywords_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

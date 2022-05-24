@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://Titan.IEventRibbonService" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EventRibbonService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://Titan.IEventRibbonService" location="" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IEventRibbonService" type="i0:IEventRibbonService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRibbonEventsWODate">
+      <soap:operation soapAction="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWODate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonEventsWOneDate">
+      <soap:operation soapAction="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWOneDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonEventsWTwoDates">
+      <soap:operation soapAction="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWTwoDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRibbonEventsWTwoDatesAndCodes">
+      <soap:operation soapAction="http://Titan.IEventRibbonService/IEventRibbonService/GetRibbonEventsWTwoDatesAndCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectStatusHistory">
+      <soap:operation soapAction="http://Titan.IEventRibbonService/IEventRibbonService/GetObjectStatusHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveShurgardMessage">
+      <soap:operation soapAction="http://Titan.IEventRibbonService/IEventRibbonService/ReceiveShurgardMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonAlarms">
+      <soap:operation soapAction="http://Titan.IEventRibbonService/IEventRibbonService/GetButtonAlarms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAlarmWithKeywords">
+      <soap:operation soapAction="http://Titan.IEventRibbonService/IEventRibbonService/IsAlarmWithKeywords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EventRibbonService">
+    <wsdl:port name="BasicHttpBinding_IEventRibbonService" binding="tns:BasicHttpBinding_IEventRibbonService">
+      <soap:address location="http://127.0.0.1:3396/Service2.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

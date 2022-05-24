@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TitanUtilityService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TitanUtilityService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAddressInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressInfo" nillable="true" type="tns:AddressInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressInfo" nillable="true" type="tns:ArrayOfAddressInfo" />
+  <xs:complexType name="AddressInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contractor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractorGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsTechieOnSite" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lat" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Lon" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartnerOO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Techie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechiePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeTechieArrived" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressInfo" nillable="true" type="tns:AddressInfo" />
+  <xs:complexType name="ArrayOfNsgEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NsgEmployee" nillable="true" type="tns:NsgEmployee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNsgEmployee" nillable="true" type="tns:ArrayOfNsgEmployee" />
+  <xs:complexType name="NsgEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FatherName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NsgEmployee" nillable="true" type="tns:NsgEmployee" />
+  <xs:complexType name="ArrayOfNsgVisitation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NsgVisitation" nillable="true" type="tns:NsgVisitation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNsgVisitation" nillable="true" type="tns:ArrayOfNsgVisitation" />
+  <xs:complexType name="NsgVisitation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MonNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Period" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NsgVisitation" nillable="true" type="tns:NsgVisitation" />
+</xs:schema>

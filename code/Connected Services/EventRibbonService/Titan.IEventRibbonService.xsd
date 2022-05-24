@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Titan.IEventRibbonService" elementFormDefault="qualified" targetNamespace="http://Titan.IEventRibbonService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Titan" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:element name="GetRibbonEventsWODate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="monitoringNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maxEvents" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRibbonEventsWODateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Titan" minOccurs="0" name="GetRibbonEventsWODateResult" nillable="true" type="q1:ArrayOfRibbonEventObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRibbonEventsWOneDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="monitoringNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="start" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="maxEvents" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRibbonEventsWOneDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Titan" minOccurs="0" name="GetRibbonEventsWOneDateResult" nillable="true" type="q2:ArrayOfRibbonEventObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRibbonEventsWTwoDates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="monitoringNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="start" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="end" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="maxEvents" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRibbonEventsWTwoDatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Titan" minOccurs="0" name="GetRibbonEventsWTwoDatesResult" nillable="true" type="q3:ArrayOfRibbonEventObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRibbonEventsWTwoDatesAndCodes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="monitoringNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="start" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="end" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="maxEvents" type="xs:int" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="allowedCodes" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRibbonEventsWTwoDatesAndCodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Titan" minOccurs="0" name="GetRibbonEventsWTwoDatesAndCodesResult" nillable="true" type="q5:ArrayOfRibbonEventObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectStatusHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="monitoringNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="start" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectStatusHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetObjectStatusHistoryResult" nillable="true" type="q6:ArrayOfTupleOflongboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceiveShurgardMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="monNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceiveShurgardMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReceiveShurgardMessageResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetButtonAlarms">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="monNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetButtonAlarmsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetButtonAlarmsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAlarmWithKeywords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="monNum" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="keywords" nillable="true" type="q7:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAlarmWithKeywordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsAlarmWithKeywordsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="88f3faac-9f40-4cc6-baf6-6813147acfab" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.10.4.163:3396/Service2.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Titan.IEventRibbonService.wsdl" MetadataType="Wsdl" ID="5d427f22-8be5-4ad7-bcc1-1ba68ea73c67" SourceId="1" SourceUrl="http://10.10.4.163:3396/Service2.svc/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="b72bf9f7-4722-4935-a744-1cf2918a78f8" SourceId="1" SourceUrl="http://10.10.4.163:3396/Service2.svc/mex" />
+    <MetadataFile FileName="Titan.IEventRibbonService.xsd" MetadataType="Schema" ID="e56fa41b-c4d1-47f5-a9bb-982066580278" SourceId="1" SourceUrl="http://10.10.4.163:3396/Service2.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="acc9c390-7864-45ce-be49-9f79d2b8140c" SourceId="1" SourceUrl="http://10.10.4.163:3396/Service2.svc/mex" />
+    <MetadataFile FileName="Titan.xsd" MetadataType="Schema" ID="c0c3278f-f9c3-41a2-80e2-4d003078821e" SourceId="1" SourceUrl="http://10.10.4.163:3396/Service2.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="ad2ebb30-7fed-4cac-a1ea-54fbee1cee97" SourceId="1" SourceUrl="http://10.10.4.163:3396/Service2.svc/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="a4e51f7d-b7ac-4645-a0b0-78c9c0f9e03c" SourceId="1" SourceUrl="http://10.10.4.163:3396/Service2.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

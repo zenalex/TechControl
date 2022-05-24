@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://TitanUtilityService.IUtilityWebService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://TitanUtilityService.IUtilityWebService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://TitanUtilityService.IUtilityWebService/Imports">
+      <xsd:import schemaLocation="" namespace="http://TitanUtilityService.IUtilityWebService" />
+      <xsd:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/TitanUtilityService" />
+      <xsd:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUtilityWebService_IsAddressGuardedByPartners_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAddressGuardedByPartners" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_IsAddressGuardedByPartners_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAddressGuardedByPartnersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetAddressByMonNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressByMonNumber" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetAddressByMonNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressByMonNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetAddressesByMonNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressesByMonNumber" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetAddressesByMonNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressesByMonNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_MonNumbersToGetPushMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonNumbersToGetPushMessages" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_MonNumbersToGetPushMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonNumbersToGetPushMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_CreateLKPushMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLKPushMessage" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_CreateLKPushMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLKPushMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetObjectStatusString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectStatusString" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetObjectStatusString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectStatusStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetGBREmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGBREmployees" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetGBREmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGBREmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetEmployeePhoto_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeePhoto" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetEmployeePhoto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeePhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetRawCobraObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRawCobraObjects" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetRawCobraObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRawCobraObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetRawCobraObjectsOneObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRawCobraObjectsOneObject" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_GetRawCobraObjectsOneObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRawCobraObjectsOneObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_FindGBRVisitations_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindGBRVisitations" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_FindGBRVisitations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindGBRVisitationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_AsteriskOriginate_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsteriskOriginate" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityWebService_AsteriskOriginate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsteriskOriginateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUtilityWebService">
+    <wsdl:operation name="IsAddressGuardedByPartners">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/IsAddressGuardedByPartners" message="tns:IUtilityWebService_IsAddressGuardedByPartners_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/IsAddressGuardedByPartnersResponse" message="tns:IUtilityWebService_IsAddressGuardedByPartners_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressByMonNumber">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressByMonNumber" message="tns:IUtilityWebService_GetAddressByMonNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressByMonNumberResponse" message="tns:IUtilityWebService_GetAddressByMonNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressesByMonNumber">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressesByMonNumber" message="tns:IUtilityWebService_GetAddressesByMonNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressesByMonNumberResponse" message="tns:IUtilityWebService_GetAddressesByMonNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonNumbersToGetPushMessages">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/MonNumbersToGetPushMessages" message="tns:IUtilityWebService_MonNumbersToGetPushMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/MonNumbersToGetPushMessagesResponse" message="tns:IUtilityWebService_MonNumbersToGetPushMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLKPushMessage">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/CreateLKPushMessage" message="tns:IUtilityWebService_CreateLKPushMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/CreateLKPushMessageResponse" message="tns:IUtilityWebService_CreateLKPushMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectStatusString">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetObjectStatusString" message="tns:IUtilityWebService_GetObjectStatusString_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetObjectStatusStringResponse" message="tns:IUtilityWebService_GetObjectStatusString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGBREmployees">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetGBREmployees" message="tns:IUtilityWebService_GetGBREmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetGBREmployeesResponse" message="tns:IUtilityWebService_GetGBREmployees_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeePhoto">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetEmployeePhoto" message="tns:IUtilityWebService_GetEmployeePhoto_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetEmployeePhotoResponse" message="tns:IUtilityWebService_GetEmployeePhoto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRawCobraObjects">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjects" message="tns:IUtilityWebService_GetRawCobraObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjectsResponse" message="tns:IUtilityWebService_GetRawCobraObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRawCobraObjectsOneObject">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjectsOneObject" message="tns:IUtilityWebService_GetRawCobraObjectsOneObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjectsOneObjectResponse" message="tns:IUtilityWebService_GetRawCobraObjectsOneObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindGBRVisitations">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/FindGBRVisitations" message="tns:IUtilityWebService_FindGBRVisitations_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/FindGBRVisitationsResponse" message="tns:IUtilityWebService_FindGBRVisitations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsteriskOriginate">
+      <wsdl:input wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/AsteriskOriginate" message="tns:IUtilityWebService_AsteriskOriginate_InputMessage" />
+      <wsdl:output wsaw:Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/AsteriskOriginateResponse" message="tns:IUtilityWebService_AsteriskOriginate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
