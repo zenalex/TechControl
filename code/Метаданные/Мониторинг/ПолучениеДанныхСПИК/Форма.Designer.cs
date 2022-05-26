@@ -37,16 +37,18 @@ namespace TechControl.Метаданные.Мониторинг
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn1 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn2 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn3 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn4 = new NsgSoft.Forms.NsgIGridColumn();
             this.nsgIGrid1 = new NsgSoft.Forms.NsgIGrid();
             this.vmoСигнализации = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.Техника_vmoСигнализации = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             this.nsgPeriodPicker1 = new NsgSoft.Forms.NsgPeriodPicker();
             this.nsgButton1 = new NsgSoft.Design.NsgButton();
             this.nsgInput1 = new NsgSoft.Forms.NsgInput();
             this.label1 = new System.Windows.Forms.Label();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.Техника_vmoСигнализации = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
-            this.Идентификатор = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.Статус_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.ВремяРаботыСигнализации_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ВремяРаботыДок_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ВремяРаботыСкаут_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -81,7 +83,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.panelButtonReportForm.Controls.Add(this.printButton);
             this.panelButtonReportForm.Controls.Add(this.btnCreateReport);
             this.panelButtonReportForm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 447);
+            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 427);
             this.panelButtonReportForm.Name = "panelButtonReportForm";
             this.panelButtonReportForm.Size = new System.Drawing.Size(867, 30);
             this.panelButtonReportForm.TabIndex = 0;
@@ -144,7 +146,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn1.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn1.DateFormat = null;
-            nsgIGridColumn1.ImportedFromVMO = false;
             nsgIGridColumn1.Name = "Техника";
             nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn1.Root = this.nsgIGrid1.Columns.Collection;
@@ -159,8 +160,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn2.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn2.DateFormat = null;
-            nsgIGridColumn2.ImportedFromVMO = false;
-            nsgIGridColumn2.Name = "Идентификатор";
+            nsgIGridColumn2.Name = "ВремяРаботыСкаут";
             nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn2.Root = this.nsgIGrid1.Columns.Collection;
             nsgIGridColumn2.SortDirection = NsgSoft.Database.NsgSortDirection.None;
@@ -174,16 +174,30 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn3.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn3.DateFormat = null;
-            nsgIGridColumn3.ImportedFromVMO = false;
-            nsgIGridColumn3.Name = "Статус";
+            nsgIGridColumn3.Name = "ВремяРаботыДок";
             nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn3.Root = this.nsgIGrid1.Columns.Collection;
             nsgIGridColumn3.SortDirection = NsgSoft.Database.NsgSortDirection.None;
             nsgIGridColumn3.UseAsHeaderImage = false;
             nsgIGridColumn3.Width = 100;
+            nsgIGridColumn4.AllowFilter = true;
+            nsgIGridColumn4.AllowGroupSelect = false;
+            nsgIGridColumn4.AllowResize = true;
+            nsgIGridColumn4.AutoResize = true;
+            nsgIGridColumn4.Caption = "";
+            nsgIGridColumn4.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn4.DateFormat = null;
+            nsgIGridColumn4.Name = "ВремяРаботыСигнализация";
+            nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn4.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn4.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn4.UseAsHeaderImage = false;
+            nsgIGridColumn4.Width = 100;
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn1);
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn2);
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn3);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn4);
             this.nsgIGrid1.Filter = false;
             this.nsgIGrid1.FrozenColumns = 0;
             this.nsgIGrid1.Grouping = true;
@@ -217,12 +231,23 @@ namespace TechControl.Метаданные.Мониторинг
             // vmoСигнализации
             // 
             this.vmoСигнализации.Columns.Collection.Add(this.Техника_vmoСигнализации);
-            this.vmoСигнализации.Columns.Collection.Add(this.Идентификатор);
-            this.vmoСигнализации.Columns.Collection.Add(this.Статус_vmoСигнализации);
+            this.vmoСигнализации.Columns.Collection.Add(this.ВремяРаботыСкаут_vmoСигнализации);
+            this.vmoСигнализации.Columns.Collection.Add(this.ВремяРаботыДок_vmoСигнализации);
+            this.vmoСигнализации.Columns.Collection.Add(this.ВремяРаботыСигнализации_vmoСигнализации);
             this.vmoСигнализации.IsActive = true;
             this.vmoСигнализации.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
             this.vmoСигнализации.MetaDataName = "";
             this.vmoСигнализации.FullName = "";
+            // 
+            // Техника_vmoСигнализации
+            // 
+            this.Техника_vmoСигнализации.Caption = "Техника";
+            this.Техника_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Техника_vmoСигнализации.Name = "Техника";
+            this.Техника_vmoСигнализации.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoСигнализации.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoСигнализации.SearchCondition.OwnerComponent = this.Техника_vmoСигнализации;
+            this.Техника_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // nsgPeriodPicker1
             // 
@@ -297,35 +322,38 @@ namespace TechControl.Метаданные.Мониторинг
             this.Объект.SearchCondition.OwnerComponent = this.Объект;
             this.Объект.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Техника_vmoСигнализации
+            // ВремяРаботыСигнализации_vmoСигнализации
             // 
-            this.Техника_vmoСигнализации.Caption = "Техника";
-            this.Техника_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Техника_vmoСигнализации.Name = "Техника";
-            this.Техника_vmoСигнализации.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoСигнализации.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoСигнализации.SearchCondition.OwnerComponent = this.Техника_vmoСигнализации;
-            this.Техника_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.ВремяРаботыСигнализации_vmoСигнализации.CalcTotal = false;
+            this.ВремяРаботыСигнализации_vmoСигнализации.Caption = "ВремяРаботыСигнализация";
+            this.ВремяРаботыСигнализации_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяРаботыСигнализации_vmoСигнализации.Name = "ВремяРаботыСигнализация";
+            this.ВремяРаботыСигнализации_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ВремяРаботыСигнализации_vmoСигнализации.PropertyType = typeof(decimal);
+            this.ВремяРаботыСигнализации_vmoСигнализации.SearchCondition.OwnerComponent = this.ВремяРаботыСигнализации_vmoСигнализации;
+            this.ВремяРаботыСигнализации_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Идентификатор
+            // ВремяРаботыДок_vmoСигнализации
             // 
-            this.Идентификатор.Caption = "Идентификатор";
-            this.Идентификатор.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Идентификатор.Name = "Идентификатор";
-            this.Идентификатор.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
-            this.Идентификатор.PropertyType = typeof(string);
-            this.Идентификатор.SearchCondition.OwnerComponent = this.Идентификатор;
-            this.Идентификатор.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.ВремяРаботыДок_vmoСигнализации.CalcTotal = false;
+            this.ВремяРаботыДок_vmoСигнализации.Caption = "ВремяРаботыДок";
+            this.ВремяРаботыДок_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяРаботыДок_vmoСигнализации.Name = "ВремяРаботыДок";
+            this.ВремяРаботыДок_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ВремяРаботыДок_vmoСигнализации.PropertyType = typeof(decimal);
+            this.ВремяРаботыДок_vmoСигнализации.SearchCondition.OwnerComponent = this.ВремяРаботыДок_vmoСигнализации;
+            this.ВремяРаботыДок_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Статус_vmoСигнализации
+            // ВремяРаботыСкаут_vmoСигнализации
             // 
-            this.Статус_vmoСигнализации.Caption = "Статус";
-            this.Статус_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Статус_vmoСигнализации.Name = "Статус";
-            this.Статус_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
-            this.Статус_vmoСигнализации.PropertyType = typeof(string);
-            this.Статус_vmoСигнализации.SearchCondition.OwnerComponent = this.Статус_vmoСигнализации;
-            this.Статус_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.ВремяРаботыСкаут_vmoСигнализации.CalcTotal = false;
+            this.ВремяРаботыСкаут_vmoСигнализации.Caption = "ВремяРаботыСкаут";
+            this.ВремяРаботыСкаут_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяРаботыСкаут_vmoСигнализации.Name = "ВремяРаботыСкаут";
+            this.ВремяРаботыСкаут_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ВремяРаботыСкаут_vmoСигнализации.PropertyType = typeof(decimal);
+            this.ВремяРаботыСкаут_vmoСигнализации.SearchCondition.OwnerComponent = this.ВремяРаботыСкаут_vmoСигнализации;
+            this.ВремяРаботыСкаут_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // ПолучениеДанныхСПИКФорма
             // 
@@ -381,8 +409,9 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgPeriodPicker nsgPeriodPicker1;
         protected NsgSoft.Design.NsgButton nsgButton1;
         protected Техника.ColumnDescriptor Техника_vmoСигнализации;
-        protected NsgColumnDescriptor.String Идентификатор;
-        protected NsgColumnDescriptor.String Статус_vmoСигнализации;
-        protected NsgVisualMultipleObject vmoСигнализации;
+        protected NsgColumnDescriptor.Decimal ВремяРаботыСкаут_vmoСигнализации;
+        private NsgColumnDescriptor.Decimal ВремяРаботыДок_vmoСигнализации;
+        private NsgColumnDescriptor.Decimal ВремяРаботыСигнализации_vmoСигнализации;
+        private NsgVisualMultipleObject vmoСигнализации;
     }
 }
