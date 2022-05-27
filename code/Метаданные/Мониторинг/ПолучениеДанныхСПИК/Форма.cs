@@ -41,12 +41,12 @@ namespace TechControl.Метаданные.Мониторинг
         {
             base.OnCreateReport(nsgBackgroundReporter, e);
 
-            var cmp = new NsgCompare().Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
-            var a = Техника.Новый().FindAll(cmp);
-            foreach (var b in a)
-            {
-                b.Delete();
-            }
+            //var cmp = new NsgCompare().Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален);
+            //var a = Техника.Новый().FindAll(cmp);
+            //foreach (var b in a)
+            //{
+            //    b.Delete();
+            //}
         }
 
         protected override void OnCreateReportCompleted(NsgBackgroundWorker nsgBackgroundReporter, System.ComponentModel.RunWorkerCompletedEventArgs e)
