@@ -47,7 +47,7 @@ namespace TechControl.Метаданные.СпециальнаяОдежда
                 Размер.SearchCondition.Clear();
                 if (Спецодежда != null)
                 {
-                    Размер.SearchCondition.Add(Размеры.Names.ВидСпецодежды, Спецодежда.Value.ВидСпецодежды);
+                    Размер.SearchCondition.Add(Размеры.Names.ВидСпецодежды, Спецодежда.Value.ВидыСпецодежды);
                 }                    
             }
         }

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.5.27.0</ProductVersion>
+    <ProductVersion>2022.5.28.4</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -2853,5 +2853,90 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Учет\ТипНоменклатуры\ТипНоменклатуры.NsgInit.cs">
+      <NsgOwnerGuid>6a061ab7-d046-483e-be8e-1f967de3afd5</NsgOwnerGuid>
+      <NsgOwnerName>ТипНоменклатуры</NsgOwnerName>
+      <DependentUpon>ТипНоменклатуры.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ТипНоменклатуры\ТипНоменклатуры.cs">
+      <NsgOwnerGuid>6a061ab7-d046-483e-be8e-1f967de3afd5</NsgOwnerGuid>
+      <NsgOwnerName>ТипНоменклатуры</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Номенклатура\Номенклатура.NsgInit.cs">
+      <NsgOwnerGuid>3e503a15-be62-4faa-bfb7-42895bfdad61</NsgOwnerGuid>
+      <NsgOwnerName>Номенклатура</NsgOwnerName>
+      <DependentUpon>Номенклатура.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Номенклатура\Номенклатура.cs">
+      <NsgOwnerGuid>3e503a15-be62-4faa-bfb7-42895bfdad61</NsgOwnerGuid>
+      <NsgOwnerName>Номенклатура</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ВидНоменклатуры\ВидНоменклатуры.NsgInit.cs">
+      <NsgOwnerGuid>90d71cb9-9b81-4907-8374-873bb8747962</NsgOwnerGuid>
+      <NsgOwnerName>ВидНоменклатуры</NsgOwnerName>
+      <DependentUpon>ВидНоменклатуры.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ВидНоменклатуры\ВидНоменклатуры.cs">
+      <NsgOwnerGuid>90d71cb9-9b81-4907-8374-873bb8747962</NsgOwnerGuid>
+      <NsgOwnerName>ВидНоменклатуры</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\КатегорияНоменклатуры\КатегорияНоменклатуры.NsgInit.cs">
+      <NsgOwnerGuid>1c237bbd-078c-479e-a302-895f3e38bf9e</NsgOwnerGuid>
+      <NsgOwnerName>КатегорияНоменклатуры</NsgOwnerName>
+      <DependentUpon>КатегорияНоменклатуры.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\КатегорияНоменклатуры\КатегорияНоменклатуры.cs">
+      <NsgOwnerGuid>1c237bbd-078c-479e-a302-895f3e38bf9e</NsgOwnerGuid>
+      <NsgOwnerName>КатегорияНоменклатуры</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\АккаунтПользователя\АккаунтПользователя.NsgInit.cs">
+      <NsgOwnerGuid>03d07a58-c33f-47ad-8c2e-bba281c2f1a1</NsgOwnerGuid>
+      <NsgOwnerName>АккаунтПользователя</NsgOwnerName>
+      <DependentUpon>АккаунтПользователя.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\АккаунтПользователя\АккаунтПользователя.cs">
+      <NsgOwnerGuid>03d07a58-c33f-47ad-8c2e-bba281c2f1a1</NsgOwnerGuid>
+      <NsgOwnerName>АккаунтПользователя</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\СвойствоКатегории\СвойствоКатегории.NsgInit.cs">
+      <NsgOwnerGuid>94d73300-99c8-4851-9005-d90cc689a76c</NsgOwnerGuid>
+      <NsgOwnerName>СвойствоКатегории</NsgOwnerName>
+      <DependentUpon>СвойствоКатегории.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\СвойствоКатегории\СвойствоКатегории.cs">
+      <NsgOwnerGuid>94d73300-99c8-4851-9005-d90cc689a76c</NsgOwnerGuid>
+      <NsgOwnerName>СвойствоКатегории</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\ПользователиСервисов\СлужебныеСправочникиПользователиСервисовАккаутыПользователя.NsgInit.cs">
+      <NsgOwnerGuid>9f989da9-72bd-42a3-ae0b-5bfd2ff883f6</NsgOwnerGuid>
+      <NsgOwnerName>СлужебныеСправочникиПользователиСервисовАккаутыПользователя</NsgOwnerName>
+      <DependentUpon>СлужебныеСправочникиПользователиСервисовАккаутыПользователя.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\ПользователиСервисов\СлужебныеСправочникиПользователиСервисовАккаутыПользователя.cs">
+      <NsgOwnerGuid>9f989da9-72bd-42a3-ae0b-5bfd2ff883f6</NsgOwnerGuid>
+      <NsgOwnerName>СлужебныеСправочникиПользователиСервисовАккаутыПользователя</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\ПользователиСервисов\СлужебныеСправочникиПользователиСервисовАккаутыПользователя.Строка.NsgInit.cs">
+      <NsgOwnerGuid>9f989da9-72bd-42a3-ae0b-5bfd2ff883f6</NsgOwnerGuid>
+      <NsgOwnerName>СлужебныеСправочникиПользователиСервисовАккаутыПользователя</NsgOwnerName>
+      <DependentUpon>СлужебныеСправочникиПользователиСервисовАккаутыПользователя.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\ПользователиСервисов\СлужебныеСправочникиПользователиСервисовАккаутыПользователя.Строка.cs">
+      <NsgOwnerGuid>9f989da9-72bd-42a3-ae0b-5bfd2ff883f6</NsgOwnerGuid>
+      <NsgOwnerName>СлужебныеСправочникиПользователиСервисовАккаутыПользователя</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СлужебныеСправочники\ПриглашениеПользователя\ПриглашениеПользователя.NsgInit.cs">
+      <NsgOwnerGuid>63b189d2-b971-4e5d-86f7-03acab291003</NsgOwnerGuid>
+      <NsgOwnerName>ПриглашениеПользователя</NsgOwnerName>
+      <DependentUpon>ПриглашениеПользователя.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\ПриглашениеПользователя\ПриглашениеПользователя.cs">
+      <NsgOwnerGuid>63b189d2-b971-4e5d-86f7-03acab291003</NsgOwnerGuid>
+      <NsgOwnerName>ПриглашениеПользователя</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
