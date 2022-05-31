@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.5.28.4" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.6.1.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.5.28.4" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.5.28.4;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.6.1.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.6.1.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -10739,12 +10739,12 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="ДатаДокумента" />
+            <container name="Комментарий" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
-            <container name="ДатаДокумента" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="Комментарий" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -10896,14 +10896,14 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
-            <container name="ПрефиксКода" />
-            <container name="НомерКода" />
             <container name="ДатаДокумента" />
-            <container name="Индекс" />
-            <container name="ДокументОснование" />
             <container name="Комментарий" />
             <container name="Сотрудник" />
             <container name="Объект" />
+            <container name="ПрефиксКода" />
+            <container name="НомерКода" />
+            <container name="Индекс" />
+            <container name="ДокументОснование" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -10939,6 +10939,16 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="ed4d05ba-b80c-4a7b-8d3a-d792ea19b223" type="NsgDataTypedReference" editoraccess="Full" name="Объект" visible="true" description="Объект" field="Obekt" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Объекты">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="064d749b-2ecf-42c5-b985-c2a5fc6ea475" type="NsgDataFloat" editoraccess="Full" name="Количество" visible="true" description="Количество" field="Kolichestvo" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="3ace6fa1-150f-4c6f-bbdc-f1942b682b1b" type="NsgDataFloat" editoraccess="Full" name="Стоимость" visible="true" description="Стоимость" field="Stoimost" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -10980,6 +10990,16 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="ed4d05ba-b80c-4a7b-8d3a-d792ea19b223" type="NsgDataTypedReference" editoraccess="Full" name="Объект" visible="true" description="Объект" field="Obekt" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Объекты">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="064d749b-2ecf-42c5-b985-c2a5fc6ea475" type="NsgDataFloat" editoraccess="Full" name="Количество" visible="true" description="Количество" field="Kolichestvo" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="3ace6fa1-150f-4c6f-bbdc-f1942b682b1b" type="NsgDataFloat" editoraccess="Full" name="Стоимость" visible="true" description="Стоимость" field="Stoimost" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -11063,12 +11083,12 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="ee2f8b96-4b78-4622-8114-4a59e23dc7d5" type="NsgDataFloat" editoraccess="Full" name="Стоимость" visible="true" description="Стоимость" field="Stoimost" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+            <NsgSimpleObject Guid="064d749b-2ecf-42c5-b985-c2a5fc6ea475" type="NsgDataFloat" editoraccess="Full" name="Количество" visible="true" description="Количество" field="Kolichestvo" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="b12d5bc3-6570-495c-8796-5ae5a7311f19" type="NsgDataFloat" editoraccess="Full" name="Количество" visible="true" description="Количество" field="Kolichestvo" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+            <NsgSimpleObject Guid="3ace6fa1-150f-4c6f-bbdc-f1942b682b1b" type="NsgDataFloat" editoraccess="Full" name="Стоимость" visible="true" description="Стоимость" field="Stoimost" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -11136,12 +11156,12 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="ee2f8b96-4b78-4622-8114-4a59e23dc7d5" type="NsgDataFloat" editoraccess="Full" name="Стоимость" visible="true" description="Стоимость" field="Stoimost" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+            <NsgSimpleObject Guid="ee2f8b96-4b78-4622-8114-4a59e23dc7d5" type="NsgDataFloat" editoraccess="Full" name="Стоимость" visible="true" description="Стоимость" field="Stoimost" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="b12d5bc3-6570-495c-8796-5ae5a7311f19" type="NsgDataFloat" editoraccess="Full" name="Количество" visible="true" description="Количество" field="Kolichestvo" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+            <NsgSimpleObject Guid="b12d5bc3-6570-495c-8796-5ae5a7311f19" type="NsgDataFloat" editoraccess="Full" name="Количество" visible="true" description="Количество" field="Kolichestvo" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
