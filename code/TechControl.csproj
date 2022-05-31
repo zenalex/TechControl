@@ -2873,14 +2873,14 @@
       <NsgOwnerGuid>3e503a15-be62-4faa-bfb7-42895bfdad61</NsgOwnerGuid>
       <NsgOwnerName>Номенклатура</NsgOwnerName>
     </Compile>
-    <Compile Include="Метаданные\Учет\ВидНоменклатуры\ВидНоменклатуры.NsgInit.cs">
+    <Compile Include="Метаданные\Учет\ВидСвойствНоменклатуры\ВидСвойствНоменклатуры.NsgInit.cs">
       <NsgOwnerGuid>90d71cb9-9b81-4907-8374-873bb8747962</NsgOwnerGuid>
-      <NsgOwnerName>ВидНоменклатуры</NsgOwnerName>
-      <DependentUpon>ВидНоменклатуры.cs</DependentUpon>
+      <NsgOwnerName>ВидСвойствНоменклатуры</NsgOwnerName>
+      <DependentUpon>ВидСвойствНоменклатуры.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\Учет\ВидНоменклатуры\ВидНоменклатуры.cs">
+    <Compile Include="Метаданные\Учет\ВидСвойствНоменклатуры\ВидСвойствНоменклатуры.cs">
       <NsgOwnerGuid>90d71cb9-9b81-4907-8374-873bb8747962</NsgOwnerGuid>
-      <NsgOwnerName>ВидНоменклатуры</NsgOwnerName>
+      <NsgOwnerName>ВидСвойствНоменклатуры</NsgOwnerName>
     </Compile>
     <Compile Include="Метаданные\Учет\КатегорияНоменклатуры\КатегорияНоменклатуры.NsgInit.cs">
       <NsgOwnerGuid>1c237bbd-078c-479e-a302-895f3e38bf9e</NsgOwnerGuid>
@@ -2899,15 +2899,6 @@
     <Compile Include="Метаданные\СлужебныеСправочники\АккаунтПользователя\АккаунтПользователя.cs">
       <NsgOwnerGuid>03d07a58-c33f-47ad-8c2e-bba281c2f1a1</NsgOwnerGuid>
       <NsgOwnerName>АккаунтПользователя</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Учет\СвойствоКатегории\СвойствоКатегории.NsgInit.cs">
-      <NsgOwnerGuid>94d73300-99c8-4851-9005-d90cc689a76c</NsgOwnerGuid>
-      <NsgOwnerName>СвойствоКатегории</NsgOwnerName>
-      <DependentUpon>СвойствоКатегории.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Учет\СвойствоКатегории\СвойствоКатегории.cs">
-      <NsgOwnerGuid>94d73300-99c8-4851-9005-d90cc689a76c</NsgOwnerGuid>
-      <NsgOwnerName>СвойствоКатегории</NsgOwnerName>
     </Compile>
     <Compile Include="Метаданные\СлужебныеСправочники\ПользователиСервисов\СлужебныеСправочникиПользователиСервисовАккаутыПользователя.NsgInit.cs">
       <NsgOwnerGuid>9f989da9-72bd-42a3-ae0b-5bfd2ff883f6</NsgOwnerGuid>
@@ -2937,6 +2928,197 @@
     <Compile Include="Метаданные\СлужебныеСправочники\ПриглашениеПользователя\ПриглашениеПользователя.cs">
       <NsgOwnerGuid>63b189d2-b971-4e5d-86f7-03acab291003</NsgOwnerGuid>
       <NsgOwnerName>ПриглашениеПользователя</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СпециальнаяОдежда\КатегорииСпецодежды\СпециальнаяОдеждаКатегорииСпецодеждыТаблица.NsgInit.cs">
+      <NsgOwnerGuid>f1766d18-c975-4169-9934-30b4d2e7029e</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаКатегорииСпецодеждыТаблица</NsgOwnerName>
+      <DependentUpon>СпециальнаяОдеждаКатегорииСпецодеждыТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\КатегорииСпецодежды\СпециальнаяОдеждаКатегорииСпецодеждыТаблица.cs">
+      <NsgOwnerGuid>f1766d18-c975-4169-9934-30b4d2e7029e</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаКатегорииСпецодеждыТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\КатегорииСпецодежды\СпециальнаяОдеждаКатегорииСпецодеждыТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>f1766d18-c975-4169-9934-30b4d2e7029e</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаКатегорииСпецодеждыТаблица</NsgOwnerName>
+      <DependentUpon>СпециальнаяОдеждаКатегорииСпецодеждыТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СпециальнаяОдежда\КатегорииСпецодежды\СпециальнаяОдеждаКатегорииСпецодеждыТаблица.Строка.cs">
+      <NsgOwnerGuid>f1766d18-c975-4169-9934-30b4d2e7029e</NsgOwnerGuid>
+      <NsgOwnerName>СпециальнаяОдеждаКатегорииСпецодеждыТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\СвойствоНоменклатуры\СвойствоНоменклатуры.NsgInit.cs">
+      <NsgOwnerGuid>9f609a5d-6e6c-49bc-a429-03c428d99edd</NsgOwnerGuid>
+      <NsgOwnerName>СвойствоНоменклатуры</NsgOwnerName>
+      <DependentUpon>СвойствоНоменклатуры.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\СвойствоНоменклатуры\СвойствоНоменклатуры.cs">
+      <NsgOwnerGuid>9f609a5d-6e6c-49bc-a429-03c428d99edd</NsgOwnerGuid>
+      <NsgOwnerName>СвойствоНоменклатуры</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\КатегорияНоменклатуры\УчетКатегорияНоменклатурыТаблица.NsgInit.cs">
+      <NsgOwnerGuid>e6bd3b18-37ac-44a3-b6f6-01d7d0d1424e</NsgOwnerGuid>
+      <NsgOwnerName>УчетКатегорияНоменклатурыТаблица</NsgOwnerName>
+      <DependentUpon>УчетКатегорияНоменклатурыТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\КатегорияНоменклатуры\УчетКатегорияНоменклатурыТаблица.cs">
+      <NsgOwnerGuid>e6bd3b18-37ac-44a3-b6f6-01d7d0d1424e</NsgOwnerGuid>
+      <NsgOwnerName>УчетКатегорияНоменклатурыТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\КатегорияНоменклатуры\УчетКатегорияНоменклатурыТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>e6bd3b18-37ac-44a3-b6f6-01d7d0d1424e</NsgOwnerGuid>
+      <NsgOwnerName>УчетКатегорияНоменклатурыТаблица</NsgOwnerName>
+      <DependentUpon>УчетКатегорияНоменклатурыТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\КатегорияНоменклатуры\УчетКатегорияНоменклатурыТаблица.Строка.cs">
+      <NsgOwnerGuid>e6bd3b18-37ac-44a3-b6f6-01d7d0d1424e</NsgOwnerGuid>
+      <NsgOwnerName>УчетКатегорияНоменклатурыТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ПриходнаяНакладная\ПриходнаяНакладная.NsgInit.cs">
+      <NsgOwnerGuid>938e8f62-e981-4c0d-b579-ac25e9c83e99</NsgOwnerGuid>
+      <NsgOwnerName>ПриходнаяНакладная</NsgOwnerName>
+      <DependentUpon>ПриходнаяНакладная.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ПриходнаяНакладная\ПриходнаяНакладная.cs">
+      <NsgOwnerGuid>938e8f62-e981-4c0d-b579-ac25e9c83e99</NsgOwnerGuid>
+      <NsgOwnerName>ПриходнаяНакладная</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\СвойствоНоменклатуры\УчетСвойствоНоменклатурыТаблица.NsgInit.cs">
+      <NsgOwnerGuid>49e46312-f496-449c-86f1-7b58caa165f4</NsgOwnerGuid>
+      <NsgOwnerName>УчетСвойствоНоменклатурыТаблица</NsgOwnerName>
+      <DependentUpon>УчетСвойствоНоменклатурыТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\СвойствоНоменклатуры\УчетСвойствоНоменклатурыТаблица.cs">
+      <NsgOwnerGuid>49e46312-f496-449c-86f1-7b58caa165f4</NsgOwnerGuid>
+      <NsgOwnerName>УчетСвойствоНоменклатурыТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\СвойствоНоменклатуры\УчетСвойствоНоменклатурыТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>49e46312-f496-449c-86f1-7b58caa165f4</NsgOwnerGuid>
+      <NsgOwnerName>УчетСвойствоНоменклатурыТаблица</NsgOwnerName>
+      <DependentUpon>УчетСвойствоНоменклатурыТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\СвойствоНоменклатуры\УчетСвойствоНоменклатурыТаблица.Строка.cs">
+      <NsgOwnerGuid>49e46312-f496-449c-86f1-7b58caa165f4</NsgOwnerGuid>
+      <NsgOwnerName>УчетСвойствоНоменклатурыТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ВариантыЗначений\ВариантыЗначений.NsgInit.cs">
+      <NsgOwnerGuid>b9d47284-78ab-4ead-8f56-1b16aa3880f5</NsgOwnerGuid>
+      <NsgOwnerName>ВариантыЗначений</NsgOwnerName>
+      <DependentUpon>ВариантыЗначений.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ВариантыЗначений\ВариантыЗначений.cs">
+      <NsgOwnerGuid>b9d47284-78ab-4ead-8f56-1b16aa3880f5</NsgOwnerGuid>
+      <NsgOwnerName>ВариантыЗначений</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Перемещение\Перемещение.NsgInit.cs">
+      <NsgOwnerGuid>ab8fc786-6aa4-4cb8-980b-11659254bf2f</NsgOwnerGuid>
+      <NsgOwnerName>Перемещение</NsgOwnerName>
+      <DependentUpon>Перемещение.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Перемещение\Перемещение.cs">
+      <NsgOwnerGuid>ab8fc786-6aa4-4cb8-980b-11659254bf2f</NsgOwnerGuid>
+      <NsgOwnerName>Перемещение</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыНакопления.NsgInit.cs">
+      <NsgOwnerGuid>0126f628-92c8-4922-a483-ee85d9ea1e2b</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыНакопления</NsgOwnerName>
+      <DependentUpon>УчетОстаткиНоменклатурыНакопления.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыНакопления.cs">
+      <NsgOwnerGuid>0126f628-92c8-4922-a483-ee85d9ea1e2b</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыНакопления.Строка.NsgInit.cs">
+      <NsgOwnerGuid>0126f628-92c8-4922-a483-ee85d9ea1e2b</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыНакопления</NsgOwnerName>
+      <DependentUpon>УчетОстаткиНоменклатурыНакопления.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыНакопления.Строка.cs">
+      <NsgOwnerGuid>0126f628-92c8-4922-a483-ee85d9ea1e2b</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ПриходнаяНакладная\УчетПриходнаяНакладнаяТаблица.NsgInit.cs">
+      <NsgOwnerGuid>fe054100-65fd-4c09-892e-1bb904580674</NsgOwnerGuid>
+      <NsgOwnerName>УчетПриходнаяНакладнаяТаблица</NsgOwnerName>
+      <DependentUpon>УчетПриходнаяНакладнаяТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ПриходнаяНакладная\УчетПриходнаяНакладнаяТаблица.cs">
+      <NsgOwnerGuid>fe054100-65fd-4c09-892e-1bb904580674</NsgOwnerGuid>
+      <NsgOwnerName>УчетПриходнаяНакладнаяТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ПриходнаяНакладная\УчетПриходнаяНакладнаяТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>fe054100-65fd-4c09-892e-1bb904580674</NsgOwnerGuid>
+      <NsgOwnerName>УчетПриходнаяНакладнаяТаблица</NsgOwnerName>
+      <DependentUpon>УчетПриходнаяНакладнаяТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ПриходнаяНакладная\УчетПриходнаяНакладнаяТаблица.Строка.cs">
+      <NsgOwnerGuid>fe054100-65fd-4c09-892e-1bb904580674</NsgOwnerGuid>
+      <NsgOwnerName>УчетПриходнаяНакладнаяТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Перемещение\УчетПеремещениеТаблица.NsgInit.cs">
+      <NsgOwnerGuid>f0a92172-bf62-4892-b526-f6da0f2e9290</NsgOwnerGuid>
+      <NsgOwnerName>УчетПеремещениеТаблица</NsgOwnerName>
+      <DependentUpon>УчетПеремещениеТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Перемещение\УчетПеремещениеТаблица.cs">
+      <NsgOwnerGuid>f0a92172-bf62-4892-b526-f6da0f2e9290</NsgOwnerGuid>
+      <NsgOwnerName>УчетПеремещениеТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Перемещение\УчетПеремещениеТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>f0a92172-bf62-4892-b526-f6da0f2e9290</NsgOwnerGuid>
+      <NsgOwnerName>УчетПеремещениеТаблица</NsgOwnerName>
+      <DependentUpon>УчетПеремещениеТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Перемещение\УчетПеремещениеТаблица.Строка.cs">
+      <NsgOwnerGuid>f0a92172-bf62-4892-b526-f6da0f2e9290</NsgOwnerGuid>
+      <NsgOwnerName>УчетПеремещениеТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыНакопления_1.NsgInit.cs">
+      <NsgOwnerGuid>6e030ce2-6ddd-4b8d-9805-5ab7dca5f024</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыНакопления_1</NsgOwnerName>
+      <DependentUpon>УчетОстаткиНоменклатурыНакопления_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыНакопления_1.cs">
+      <NsgOwnerGuid>6e030ce2-6ddd-4b8d-9805-5ab7dca5f024</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыНакопления_1.Строка.NsgInit.cs">
+      <NsgOwnerGuid>6e030ce2-6ddd-4b8d-9805-5ab7dca5f024</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыНакопления_1</NsgOwnerName>
+      <DependentUpon>УчетОстаткиНоменклатурыНакопления_1.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыНакопления_1.Строка.cs">
+      <NsgOwnerGuid>6e030ce2-6ddd-4b8d-9805-5ab7dca5f024</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\ОстаткиНоменклатуры.NsgInit.cs">
+      <NsgOwnerGuid>65bb2740-900b-4626-b04c-28831163860a</NsgOwnerGuid>
+      <NsgOwnerName>ОстаткиНоменклатуры</NsgOwnerName>
+      <DependentUpon>ОстаткиНоменклатуры.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\ОстаткиНоменклатуры.cs">
+      <NsgOwnerGuid>65bb2740-900b-4626-b04c-28831163860a</NsgOwnerGuid>
+      <NsgOwnerName>ОстаткиНоменклатуры</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыДвижения.NsgInit.cs">
+      <NsgOwnerGuid>abe89d6c-5115-45d9-9372-2b0033d03869</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыДвижения</NsgOwnerName>
+      <DependentUpon>УчетОстаткиНоменклатурыДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыДвижения.cs">
+      <NsgOwnerGuid>abe89d6c-5115-45d9-9372-2b0033d03869</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>abe89d6c-5115-45d9-9372-2b0033d03869</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыДвижения</NsgOwnerName>
+      <DependentUpon>УчетОстаткиНоменклатурыДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ОстаткиНоменклатуры\УчетОстаткиНоменклатурыДвижения.Строка.cs">
+      <NsgOwnerGuid>abe89d6c-5115-45d9-9372-2b0033d03869</NsgOwnerGuid>
+      <NsgOwnerName>УчетОстаткиНоменклатурыДвижения</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
