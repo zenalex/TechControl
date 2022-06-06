@@ -41,11 +41,52 @@ namespace TechControl.Метаданные.Мониторинг
         {
             base.OnCreateReport(nsgBackgroundReporter, e);
 
-            //var cmp = new NsgCompare().Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален);
-            //var a = Техника.Новый().FindAll(cmp);
+            //var cmp = new NsgCompare().Add(ОтработанноеВремяТехники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            //var a = ОтработанноеВремяТехники.Новый().FindAll(cmp);
             //foreach (var b in a)
             //{
             //    b.Delete();
+            //}
+
+            //var cmpB = new NsgCompare().Add(ФормированиеСмены.Names.ПровереноАвтоматически, true);
+            //var r = ФормированиеСмены.Новый().FindAll(cmpB);
+            //foreach (var b in r)
+            //{
+            //    b.Edit();
+            //    b.ПровереноАвтоматически = false;
+            //    b.Post();
+            //}
+
+            //SpicSoapUnitsServiceClient _client = new SpicSoapUnitsServiceClient();
+            //_client.Endpoint.Behaviors.Add(new AuthorizationBehavior());
+            //var unitsCount = _client.GetAllUnitsCount();
+            //Dictionary<int, string> unitIDName = new Dictionary<int, string>();
+            ////Создание запроса.
+            //var request = new SpicObjectsChunkRequest { Offset = 0, Count = unitsCount };
+            //var units = _client.GetAllUnitsPaged(request);
+            //var list = new List<string>();
+            //foreach (var unit in units.Units)
+            //{
+            //    unitIDName.Add(unit.UnitId, unit.Name);
+            //    list.Add(unit.Name);
+            //}
+            //var cmpTech = new NsgCompare().Add(Техника.Names.Наименование, list.ToArray(), NsgComparison.In);
+            //var tech = Техника.Новый().FindAll(cmpTech);
+            //foreach (var t in tech)
+            //{
+            //    foreach (var unit in unitIDName)
+            //    {
+            //        if (t.Наименование == unit.Value)
+            //        {
+            //            t.Edit();
+            //            t.СистемыСлежения.Edit();
+            //            var row = t.СистемыСлежения.NewRow();
+            //            row.ИдентификаторСистемыСлежения = $"{unit.Key}";
+            //            row.Post();
+            //            t.СистемыСлежения.Post();
+            //            t.Post();
+            //        }
+            //    }               
             //}
         }
 
@@ -58,122 +99,158 @@ namespace TechControl.Метаданные.Мониторинг
         {
             var cmpФормСмены = new NsgCompare().Add(ФормированиеСмены.Names.ПровереноАвтоматически, false);
             var формСмен = ФормированиеСмены.Новый().FindAll(cmpФормСмены);
-            var листСмен = new Dictionary<Техника, decimal>();
-            var листИсторий = new Dictionary<Техника, decimal>();
-            var листСкаут = new Dictionary<Техника, decimal>();
+
             var листДат = new List<DateTime>();
+            var листТехники = new List<Техника>();
+            List<TrackingSystems> trackingSystemsWorkshifts = new List<TrackingSystems>();
+            List<TrackingSystems> trackingSystemsSkayt = new List<TrackingSystems>();
+            List<TrackingSystems> trackingSystemsHistory = new List<TrackingSystems>();
 
             foreach (var смена in формСмен)
             {
-                листДат.Add(смена.ДатаДокумента);
+                if (!листДат.Contains(смена.ДатаДокумента.Date))
+                    листДат.Add(смена.ДатаДокумента.Date);
+
                 foreach (var строкаТаб in смена.Таблица.Rows)
                 {
                     var техника = строкаТаб.Техника;
                     var время = строкаТаб.Длительность;
 
-                    if (!листСмен.ContainsKey(техника))
+                    if (!string.IsNullOrEmpty(техника.ToString()))
                     {
-                        if (!string.IsNullOrEmpty(техника.ToString()))
+                        if (!листТехники.Contains(техника))
+                            листТехники.Add(техника);
+
+                        TrackingSystems workShifts = new TrackingSystems();
+                        workShifts.tech = техника;
+                        workShifts.date = смена.ДатаДокумента.Date;
+                        workShifts.totalHours = время;
+                        workShifts.typeSystem = TypeTrackingSystem.Workshifts;
+                        trackingSystemsWorkshifts.Add(workShifts);
+
+                        foreach (var строка in техника.СистемыСлежения.Rows)
                         {
-                            листСмен.Add(техника, время);
-                            foreach (var строка in техника.СистемыСлежения.Rows)
+                            if (строка.ТипСистемыСлежения == ТипСистемыСлежения.Сигнализации)
                             {
-                                if (строка.ТипСистемыСлежения == ТипСистемыСлежения.Сигнализации)
+                                var historys = EventRibbonClient.GetRibbonEventsWTwoDatesAndCodes(строка.ИдентификаторСистемыСлежения, смена.ДатаДокумента.Date,
+                                NsgService.EndOfDay(смена.ДатаДокумента), 1000, new string[] { "3401", "1401" });
+
+                                if (historys.Length > 0)
                                 {
-                                    var historys = EventRibbonClient.GetRibbonEventsWTwoDatesAndCodes(строка.ИдентификаторСистемыСлежения, смена.ДатаДокумента,
-                                    NsgService.EndOfDay(смена.ДатаДокумента), 1000, new string[] { "3401", "1401" });
+                                    DateTime workBegin = new DateTime();
+                                    DateTime workEnd = new DateTime();
+                                    var sortHistory = historys.OrderBy(x => x.Datetime).ToList();
 
-                                    if (historys.Length > 0)
+                                    string снятие = "1401";
+                                    string постановка = "3401";
+                                    string предыдущийСтатус = null;
+
+                                    var истории = new List<decimal>();
+
+                                    for (var i = 0; i < sortHistory.Count; i++)
                                     {
-                                        DateTime workBegin = new DateTime();
-                                        DateTime workEnd = new DateTime();
-                                        var sortHistory = historys.OrderBy(x => x.Datetime).ToList();
+                                        var текущийСтатус = sortHistory[i].Code;
+                                        var текущаяДата = sortHistory[i].Datetime;
 
-                                        string снятие = "1401";
-                                        string постановка = "3401";
-                                        string предыдущийСтатус = null;
-                                        decimal tickAll = 0;
-
-                                        for (var i = 0; i < sortHistory.Count; i++)
+                                        if (i != 0)
                                         {
-                                            var текущийСтатус = sortHistory[i].Code;
-                                            var текущаяДата = sortHistory[i].Datetime;
-
-                                            if (i != 0)
+                                            if (предыдущийСтатус == null && sortHistory[i - 1].Code.Contains(снятие))
                                             {
-                                                if (предыдущийСтатус == null && sortHistory[i - 1].Code.Contains(снятие))
-                                                {
-                                                    предыдущийСтатус = sortHistory[i - 1].Code;
-                                                }
+                                                предыдущийСтатус = sortHistory[i - 1].Code;
+                                            }
 
-                                                if (предыдущийСтатус != null && предыдущийСтатус != текущийСтатус)
+                                            if (предыдущийСтатус != null && предыдущийСтатус != текущийСтатус)
+                                            {
+                                                if (текущийСтатус.Contains(постановка) && предыдущийСтатус.Contains(снятие))
                                                 {
-                                                    if (текущийСтатус.Contains(постановка) && предыдущийСтатус.Contains(снятие))
+                                                    TimeSpan tick = new TimeSpan();
+                                                    workEnd = текущаяДата;
+                                                    tick = (workEnd - workBegin);
+                                                    var totalHours = tick.TotalHours > 24 ? 24 : tick.TotalHours;
+
+                                                    TrackingSystems history = new TrackingSystems();
+                                                    history.date = смена.ДатаДокумента.Date;
+                                                    history.tech = техника;
+                                                    history.totalHours = Math.Round((decimal)totalHours, 2);
+                                                    history.typeSystem = TypeTrackingSystem.Alarms;
+                                                    trackingSystemsHistory.Add(history);
+
+                                                    истории.Add(Math.Round((decimal)totalHours, 2));
+
+                                                    var cmpОтрабВремяСигнал = new NsgCompare().Add(ОтработанноеВремяТехники.Names.ДатаДокумента, текущаяДата.Date, NsgComparison.GreaterOrEqual);
+                                                    cmpОтрабВремяСигнал.Add(ОтработанноеВремяТехники.Names.ДатаДокумента, NsgService.EndOfDay(текущаяДата), NsgComparison.LessOrEqual);
+                                                    cmpОтрабВремяСигнал.Add(ОтработанноеВремяТехники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+                                                    var отрабВремяСигнал = ОтработанноеВремяТехники.Новый().FindAll(cmpОтрабВремяСигнал);
+
+                                                    if (отрабВремяСигнал.Length > 0)
                                                     {
-                                                        TimeSpan tick = new TimeSpan();
-                                                        workEnd = текущаяДата;
-                                                        tick = (workEnd - workBegin);
-                                                        var totalHours = tick.TotalHours > 24 ? 24 : tick.TotalHours;
-
-                                                        var cmpОтрабВремяСигнал = new NsgCompare().Add(ОтработанноеВремяТехники.Names.ДатаДокумента, текущаяДата.Date, NsgComparison.GreaterOrEqual);
-                                                        cmpОтрабВремяСигнал.Add(ОтработанноеВремяТехники.Names.ДатаДокумента, NsgService.EndOfDay(текущаяДата.Date), NsgComparison.LessOrEqual);
-                                                        cmpОтрабВремяСигнал.Add(ОтработанноеВремяТехники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
-                                                        var отрабВремяСигнал = ОтработанноеВремяТехники.Новый().FindAll(cmpОтрабВремяСигнал);
-
-                                                        if (отрабВремяСигнал.Length > 0)
+                                                        отрабВремяСигнал[0].Edit();
+                                                        отрабВремяСигнал[0].Таблица.Edit();
+                                                        var listТехники = new List<Техника>();
+                                                        foreach (var item in отрабВремяСигнал[0].Таблица.Rows)
                                                         {
-                                                            отрабВремяСигнал[0].Edit();
+                                                            if (!listТехники.Contains(item.Техника))
+                                                                listТехники.Add(item.Техника);
+                                                        }
+
+                                                        foreach (var x in отрабВремяСигнал[0].Таблица.Rows)
+                                                        {
+                                                            if (x.ТипСистемыСлежения == ТипСистемыСлежения.Сигнализации && x.Техника == техника)
+                                                            {
+                                                                x.ДатаНачалаРаботы = workBegin;
+                                                                x.ДатаОкончанияРаботы = workEnd;
+                                                                x.ДлительностьРаботы = Math.Round((decimal)totalHours, 2);
+                                                                x.Post();
+                                                            }
+                                                        }
+
+                                                        if (!listТехники.Contains(техника))
+                                                        {
                                                             var row = отрабВремяСигнал[0].Таблица.NewRow();
                                                             row.Техника = техника;
-                                                            row.ДатаОкончанияРаботы = workEnd;
-                                                            row.ДатаНачалаРаботы = workBegin;
-                                                            row.ДлительностьРаботы = Math.Round((decimal)totalHours, 2);
-                                                            row.ТипСистемыСлежения = ТипСистемыСлежения.Сигнализации;
-                                                            row.Post();
-                                                            отрабВремяСигнал[0].Post();
-                                                            отрабВремяСигнал[0].Handle();
-                                                        }
-                                                        else
-                                                        {
-                                                            var отрабВремяСигналНовый = ОтработанноеВремяТехники.Новый();
-                                                            отрабВремяСигналНовый.New();
-                                                            var row = отрабВремяСигналНовый.Таблица.NewRow();
-                                                            row.Техника = техника;
                                                             row.ДатаНачалаРаботы = workBegin;
                                                             row.ДатаОкончанияРаботы = workEnd;
                                                             row.ДлительностьРаботы = Math.Round((decimal)totalHours, 2);
                                                             row.ТипСистемыСлежения = ТипСистемыСлежения.Сигнализации;
                                                             row.Post();
-                                                            отрабВремяСигналНовый.Post();
-                                                            отрабВремяСигналНовый.Handle();
                                                         }
 
-                                                        предыдущийСтатус = null;
-                                                        tickAll += (decimal)totalHours;
+                                                        отрабВремяСигнал[0].Таблица.Post();
+                                                        отрабВремяСигнал[0].Post();
+                                                        отрабВремяСигнал[0].Handle();
                                                     }
+                                                    else
+                                                    {
+                                                        var отрабВремяСигналНовый = ОтработанноеВремяТехники.Новый();
+                                                        отрабВремяСигналНовый.New();
+                                                        отрабВремяСигналНовый.ДатаДокумента = текущаяДата;
+                                                        var row = отрабВремяСигналНовый.Таблица.NewRow();
+                                                        row.Техника = техника;
+                                                        row.ДатаНачалаРаботы = workBegin;
+                                                        row.ДатаОкончанияРаботы = workEnd;
+                                                        row.ДлительностьРаботы = Math.Round((decimal)totalHours, 2);
+                                                        row.ТипСистемыСлежения = ТипСистемыСлежения.Сигнализации;
+                                                        row.Post();
+                                                        отрабВремяСигналНовый.Post();
+                                                        отрабВремяСигналНовый.Handle();
+                                                    }
+
+                                                    предыдущийСтатус = null;
                                                 }
                                             }
-                                            else if (текущийСтатус.Contains(снятие))
-                                                workBegin = текущаяДата;
                                         }
-
-                                        if (!листИсторий.ContainsKey(техника))
-                                            листИсторий.Add(техника, tickAll);
-                                        else
-                                            листИсторий[техника] += tickAll;
+                                        else if (текущийСтатус.Contains(снятие))
+                                            workBegin = текущаяДата;
                                     }
                                 }
                             }
                         }
-                    }
-                    else
-                        листСмен[техника] += время;
+                    }                   
                 }
+                смена.Edit();
+                смена.ПровереноАвтоматически = true;
+                смена.Post();
             }
-
-            var arrayТехника = new List<Техника>();
-            foreach (var смена in листСмен.Keys)
-                arrayТехника.Add(смена);
 
             #region[Получение данных спик]
             SpicSoapUnitsServiceClient _client = new SpicSoapUnitsServiceClient();
@@ -201,7 +278,7 @@ namespace TechControl.Метаданные.Мониторинг
             List<string> listModel = new List<string>();
             List<string> listBrand = new List<string>();
             List<int> listUnitID = new List<int>();
-            Dictionary<int, string> unitIDName = new Dictionary<int, string>();
+            Dictionary<string, string> unitIDName = new Dictionary<string, string>();
             //Создание запроса.
             //var request = new SpicObjectsChunkRequest { Offset = 0, Count = unitsCount };
             //var units = _client.GetAllUnitsPaged(request);
@@ -217,15 +294,16 @@ namespace TechControl.Метаданные.Мониторинг
             var outputResultAuth = await RequestAsync(dataAuth, urlAuth, true, string.Empty);
             var deserializeJsonAuth = JsonConvert.DeserializeObject<DeserializeAuth>(outputResultAuth);
 
-            string onlineDataUrl = $"?api-version=2.0&request.skip=0&request.take={arrayТехника.Count}&request.filter=All&request.search";
+            string onlineDataUrl = $"?api-version=2.0&request.skip=0&request.take={листТехники.Count}&request.filter=All&request.search";
             var sb = new StringBuilder(onlineDataUrl);
-            foreach (var row in arrayТехника)
+            foreach (var row in листТехники)
             {
                 foreach (var строка in row.СистемыСлежения.Rows)
                 {
                     if (строка.ТипСистемыСлежения == ТипСистемыСлежения.Скаут)
                     {
                         sb.Append(строка.ИдентификаторСистемыСлежения);
+                        unitIDName.Add(строка.ИдентификаторСистемыСлежения, row.Наименование);
                     }
                 }
             }
@@ -377,7 +455,6 @@ namespace TechControl.Метаданные.Мониторинг
                 {
                     докОтработанноеВремяТехники = отработанноеВремя[0];
                     докОтработанноеВремяТехники.Edit();
-                    докОтработанноеВремяТехники.Таблица.DeleteAll();
                 }
 
                 try
@@ -397,7 +474,7 @@ namespace TechControl.Метаданные.Мониторинг
                             TargetObject = new SpicObjectIdentity
                             {
                                 ObjectTypeId = ObjectTypeId.Vehicle,
-                                ObjectId = id.Key
+                                ObjectId = Convert.ToInt32(id.Key)
                             }
                         };
 
@@ -489,22 +566,85 @@ namespace TechControl.Метаданные.Мониторинг
 
                                     if (fuelDefuel != null || motorModes != null)
                                     {
-                                        var row = докОтработанноеВремяТехники.Таблица.NewRow();
-                                        row.Техника = tech[0];
-                                        row.НачальныйЗапасТоплива = (decimal)(beginFuelVolumeL == null ? 0 : beginFuelVolumeL);
-                                        row.КонечныйЗапасТоплива = (decimal)(endFuelVolumeL == null ? 0 : endFuelVolumeL);
-                                        row.общийОбъемЗаправленногоТоплива = (decimal)(totalVolumeOfFuelFilled == null ? 0 : totalVolumeOfFuelFilled);
-                                        row.КоличествоЗаправок = (decimal)countFueling;
-                                        row.ДлительностьРаботы = (decimal)durationOfWork;
-                                        row.ДатаНачалаРаботы = beginDate;
-                                        row.ДатаОкончанияРаботы = endDate;
-                                        row.Post();
+                                        if (такоеВремяЕсть)
+                                        {
+                                            var listTech = new List<Техника>();
+                                            foreach (var строка in докОтработанноеВремяТехники.Таблица.Rows)
+                                            {
+                                                if (!listTech.Contains(строка.Техника))
+                                                    listTech.Add(строка.Техника);
+                                            }
 
-                                        if (!листСкаут.ContainsKey(tech[0]))
-                                            листСкаут.Add(tech[0], (decimal)durationOfWork);
+                                            докОтработанноеВремяТехники.Таблица.Edit();
+                                            foreach (var x in докОтработанноеВремяТехники.Таблица.Rows)
+                                            {
+                                                if (x.ТипСистемыСлежения == ТипСистемыСлежения.Скаут && x.Техника == tech[0])
+                                                {
+                                                    x.ДатаНачалаРаботы = beginDate;
+                                                    x.ДатаОкончанияРаботы = endDate;
+                                                    x.ДлительностьРаботы = (decimal)durationOfWork;
+                                                    x.НачальныйЗапасТоплива = (decimal)(beginFuelVolumeL == null ? 0 : beginFuelVolumeL);
+                                                    x.КонечныйЗапасТоплива = (decimal)(endFuelVolumeL == null ? 0 : endFuelVolumeL);
+                                                    x.общийОбъемЗаправленногоТоплива = (decimal)(totalVolumeOfFuelFilled == null ? 0 : totalVolumeOfFuelFilled);
+                                                    x.КоличествоЗаправок = (decimal)countFueling;
+                                                    x.ДлительностьРаботы = (decimal)durationOfWork;
+                                                    x.Post();
+                                                }
+                                                else if (x.ТипСистемыСлежения == ТипСистемыСлежения.Сигнализации && x.Техника == tech[0])
+                                                {
+                                                    var row = докОтработанноеВремяТехники.Таблица.NewRow();
+                                                    row.Техника = tech[0];
+                                                    row.НачальныйЗапасТоплива = (decimal)(beginFuelVolumeL == null ? 0 : beginFuelVolumeL);
+                                                    row.КонечныйЗапасТоплива = (decimal)(endFuelVolumeL == null ? 0 : endFuelVolumeL);
+                                                    row.общийОбъемЗаправленногоТоплива = (decimal)(totalVolumeOfFuelFilled == null ? 0 : totalVolumeOfFuelFilled);
+                                                    row.КоличествоЗаправок = (decimal)countFueling;
+                                                    row.ДлительностьРаботы = (decimal)durationOfWork;
+                                                    row.ДатаНачалаРаботы = beginDate;
+                                                    row.ДатаОкончанияРаботы = endDate;
+                                                    row.ТипСистемыСлежения = ТипСистемыСлежения.Скаут;
+                                                    row.Post();
+                                                }
+                                            }
+
+                                            if (!listTech.Contains(tech[0]))
+                                            {
+                                                var row = докОтработанноеВремяТехники.Таблица.NewRow();
+                                                row.Техника = tech[0];
+                                                row.НачальныйЗапасТоплива = (decimal)(beginFuelVolumeL == null ? 0 : beginFuelVolumeL);
+                                                row.КонечныйЗапасТоплива = (decimal)(endFuelVolumeL == null ? 0 : endFuelVolumeL);
+                                                row.общийОбъемЗаправленногоТоплива = (decimal)(totalVolumeOfFuelFilled == null ? 0 : totalVolumeOfFuelFilled);
+                                                row.КоличествоЗаправок = (decimal)countFueling;
+                                                row.ДлительностьРаботы = (decimal)durationOfWork;
+                                                row.ДатаНачалаРаботы = beginDate;
+                                                row.ДатаОкончанияРаботы = endDate;
+                                                row.ТипСистемыСлежения = ТипСистемыСлежения.Скаут;
+                                                row.Post();
+                                            }
+
+                                            докОтработанноеВремяТехники.Таблица.Post();
+                                        }
                                         else
-                                            листСкаут[tech[0]] += (decimal)durationOfWork;
+                                        {
+                                            var row = докОтработанноеВремяТехники.Таблица.NewRow();
+                                            row.Техника = tech[0];
+                                            row.НачальныйЗапасТоплива = (decimal)(beginFuelVolumeL == null ? 0 : beginFuelVolumeL);
+                                            row.КонечныйЗапасТоплива = (decimal)(endFuelVolumeL == null ? 0 : endFuelVolumeL);
+                                            row.общийОбъемЗаправленногоТоплива = (decimal)(totalVolumeOfFuelFilled == null ? 0 : totalVolumeOfFuelFilled);
+                                            row.КоличествоЗаправок = (decimal)countFueling;
+                                            row.ДлительностьРаботы = (decimal)durationOfWork;
+                                            row.ДатаНачалаРаботы = beginDate;
+                                            row.ДатаОкончанияРаботы = endDate;
+                                            row.ТипСистемыСлежения = ТипСистемыСлежения.Скаут;
+                                            row.Post();
+                                        }                                       
                                     }
+
+                                    TrackingSystems skayt = new TrackingSystems();
+                                    skayt.tech = tech[0];
+                                    skayt.date = дата;
+                                    skayt.totalHours = (decimal)durationOfWork;
+                                    skayt.typeSystem = TypeTrackingSystem.Skayt;
+                                    trackingSystemsSkayt.Add(skayt);
                                 }
                                 else
                                 {
@@ -538,61 +678,69 @@ namespace TechControl.Метаданные.Мониторинг
                 }
             }
 
-            //if (date.Day == DateTime.DaysInMonth(date.Year, date.Month))
-            //    date = new DateTime(date.Year, date.AddMonths(1).Month, date.AddDays(1).Day);
-            //else
-            //    date = new DateTime(date.Year, date.Month, date.AddDays(1).Day);
-            //}
             #endregion
 
-            //var cmpСкаут = new NsgCompare().Add(МониторингОтработанноеВремяТехникиТаблица.Names.Техника, arrayТехника.ToArray(), NsgComparison.In);
-            //var времяРаботыТехникиСкаут = МониторингОтработанноеВремяТехникиТаблица.Новый().FindAll(cmpСкаут);
+            var all = new List<TrackingSystemsAll>();
 
-            //foreach (var строка in времяРаботыТехникиСкаут)
-            //{
-            //    if (строка.ТипСистемыСлежения == ТипСистемыСлежения.Скаут)
-            //    {
-            //        var техника = строка.Техника;
-            //        var длительностьРаботы = строка.ДлительностьРаботы;
-            //        if (!листСкаут.ContainsKey(техника))
-            //            листСкаут.Add(техника, длительностьРаботы);
-            //        else
-            //            листСкаут[техника] += длительностьРаботы;
-            //    }
-            //}
-
-            foreach (var смена in листСмен)
+            foreach (var workshift in trackingSystemsWorkshifts)
             {
-                if (!листСкаут.ContainsKey(смена.Key))
-                    листСкаут.Add(смена.Key, 0);
+                var trackAll = new TrackingSystemsAll();
+                trackAll.tech = workshift.tech;
+                trackAll.date = workshift.date;
+                trackAll.totalHoursWorkshifts = workshift.totalHours;
+                all.Add(trackAll);
+            }    
+
+            foreach (var skayt in trackingSystemsSkayt)
+            {
+                foreach (var row in all)
+                {
+                    if (row.date == skayt.date && row.tech == skayt.tech)
+                    {
+                        row.totalHoursSkayt = skayt.totalHours;
+                    }
+                    //else
+                    //{
+                    //    var trackAll = new TrackingSystemsAll();
+                    //    trackAll.tech = skayt.tech;
+                    //    trackAll.date = skayt.date;
+                    //    trackAll.totalHoursWorkshifts = skayt.totalHours;
+                    //    all.Add(trackAll);
+                    //}
+                }               
             }
 
-            foreach (var скаут in листСкаут)
+            foreach (var history in trackingSystemsHistory)
             {
-                if (!листИсторий.ContainsKey(скаут.Key))
-                    листИсторий.Add(скаут.Key, 0);
+                foreach (var row in all)
+                {
+                    if (row.date == history.date && row.tech == history.tech)
+                    {
+                        row.totalHoursHistory = history.totalHours;
+                    }
+                    //else
+                    //{
+                    //    var trackAll = new TrackingSystemsAll();
+                    //    trackAll.tech = history.tech;
+                    //    trackAll.date = history.date;
+                    //    trackAll.totalHoursHistory = history.totalHours;
+                    //    all.Add(trackAll);
+                    //}
+                }
             }
 
             vmoСигнализации.Data.BeginUpdateData();
             vmoСигнализации.Data.MemoryTable.Clear();
-            foreach (var смена in листСмен)
+            foreach (var строка in all)
             {
-                foreach (var скаут in листСкаут)
-                {
-                    foreach (var история in листИсторий)
-                    {
-                        if (смена.Key == скаут.Key && смена.Key == история.Key)
-                        {
-                            var row = vmoСигнализации.Data.MemoryTable.NewRow();
-                            row[Техника_vmoСигнализации].Value = смена.Key;
-                            row[ВремяРаботыДок_vmoСигнализации].Value = смена.Value;
-                            row[ВремяРаботыСкаут_vmoСигнализации].Value = скаут.Value;
-                            row[ВремяРаботыСигнализации_vmoСигнализации].Value = история.Value;
-                            row.Post();
-                        }
-                    }
-                }
-            }
+                var row = vmoСигнализации.Data.MemoryTable.NewRow();
+                row[Дата_vmoСигнализации].Value = строка.date;
+                row[Техника_vmoСигнализации].Value = строка.tech;
+                row[ВремяРаботыДок_vmoСигнализации].Value = строка.totalHoursWorkshifts;
+                row[ВремяРаботыСкаут_vmoСигнализации].Value = строка.totalHoursSkayt;
+                row[ВремяРаботыСигнализации_vmoСигнализации].Value = строка.totalHoursHistory;
+                row.Post();
+            }         
             vmoСигнализации.Data.UpdateDataAsync(this);
         }
 
@@ -695,6 +843,30 @@ namespace TechControl.Метаданные.Мониторинг
 
             }
         }
+    }
+
+    public class TrackingSystemsAll
+    {
+        public decimal totalHoursWorkshifts { get; set; }
+        public decimal totalHoursSkayt { get; set; }
+        public decimal totalHoursHistory { get; set; }
+        public Техника tech { get; set; }
+        public DateTime date { get; set; }
+    }
+
+    public class TrackingSystems
+    {
+        public Техника tech { get; set; }
+        public DateTime date { get; set; }
+        public decimal totalHours { get; set; }
+        public TypeTrackingSystem typeSystem { get; set; }
+    }
+
+    public enum TypeTrackingSystem
+    {
+        Workshifts,
+        Alarms,
+        Skayt
     }
 
     public class DeserializeAuth
