@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.6.6.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.6.7.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.6.6.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.6.6.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.6.7.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.6.7.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -1433,6 +1433,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="34feaba3-089c-431d-9099-54ca2a5e28e6" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -1450,6 +1455,7 @@
             <container name="Логин" />
             <container name="ГодВыпуска" />
             <container name="ГосНомер" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -1767,6 +1773,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="e4a324c0-7f0b-4b96-a4b6-66773fa6e19a" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -1792,6 +1803,7 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -1870,6 +1882,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="701ea197-5b56-4471-825b-cd6722e79d9b" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -1886,6 +1903,7 @@
             <container name="Логин" />
             <container name="ГодВыпуска" />
             <container name="ГосНомер" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -1971,6 +1989,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="bd837938-0cdb-4a0f-84b2-6583216c6f84" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -1988,6 +2011,7 @@
             <container name="ТипТС" />
             <container name="ГодВыпуска" />
             <container name="ГосНомер" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2091,6 +2115,7 @@
             <container name="ДатаПоследнегоИспользования" />
             <container name="Токен" />
             <container name="Пользователь" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -2099,7 +2124,6 @@
             <container name="СостояниеДокумента" />
             <container name="ФИО" />
             <container name="НомерТелефона" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2382,6 +2406,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="e43fe0f5-8263-4cbd-8b2b-c16fbd999805" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -2408,6 +2437,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2646,6 +2676,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="55c42bfa-9580-4f3a-9aea-a9d3245c40c5" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -2665,6 +2700,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -2756,6 +2792,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="e3c746f2-f6f8-434f-992a-991080b5b44c" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -2766,6 +2807,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4465,6 +4507,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="3351e5ab-27ba-4679-b460-4918e59bfe98" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -4480,6 +4527,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4595,6 +4643,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="e3d3d0ca-e691-4257-89d5-509cd6a13a1e" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -4613,6 +4666,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4688,6 +4742,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="63e63427-cd52-4680-a447-da691cfdc0cc" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -4700,6 +4759,7 @@
             <container name="РежимРаботы" />
             <container name="СтаршийПоОбъекту" />
             <container name="Описание" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4795,6 +4855,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="527c98af-df29-4b02-bd68-c1c887067f32" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -4809,6 +4874,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -5510,6 +5576,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="8923c276-e696-4c7f-a81f-bcf2e1a5ced0" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -5518,6 +5589,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -6033,6 +6105,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="160fc1a1-e3af-413c-8987-d69ad2a9f661" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -6044,6 +6121,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -6262,6 +6340,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="9a8034be-0826-4aea-bbd6-bef4bf719e24" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -6272,6 +6355,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -6460,6 +6544,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="a4c160b7-1f6c-4e92-9809-a015ec79a389" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -6476,6 +6565,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -6798,6 +6888,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="b5aa547f-75e4-4db2-9286-96ad3cc5dc30" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -6811,6 +6906,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -7092,6 +7188,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="b3b32bfb-fc33-4714-a263-6e2a83e7ea5c" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -7102,6 +7203,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -7172,6 +7274,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="13412a7f-590a-4ab6-8b3b-d82587e049a1" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -7182,6 +7289,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -9279,6 +9387,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="6fd11aa2-4276-447d-97a0-5b8c0353f01c" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -9294,6 +9407,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -10743,6 +10857,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="58c08f3e-1100-4a9b-9e11-795996c8a50f" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -10751,6 +10870,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -10900,6 +11020,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="35fd43a8-ed31-4757-ad72-e9b879264e45" type="NsgDataTypedReference" editoraccess="Full" name="АккаунтПользователя" visible="true" description="Аккаунт пользователя" field="AkkauntPolzovatelja" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="АккаунтПользователя">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -10910,6 +11035,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
