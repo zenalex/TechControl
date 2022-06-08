@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.6.7.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.6.8.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.6.7.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.6.7.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.6.8.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.6.8.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -1441,6 +1441,7 @@
           </ObjectList>
           <Containers>
             <container name="Наименование" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -1455,7 +1456,6 @@
             <container name="Логин" />
             <container name="ГодВыпуска" />
             <container name="ГосНомер" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -1794,6 +1794,7 @@
             <container name="ТипСобственности" />
             <container name="ГруппаСпецТехники" />
             <container name="Иконка" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -1803,7 +1804,6 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -1890,6 +1890,7 @@
           </ObjectList>
           <Containers>
             <container name="Наименование" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -1903,7 +1904,6 @@
             <container name="Логин" />
             <container name="ГодВыпуска" />
             <container name="ГосНомер" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2000,6 +2000,7 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -2011,7 +2012,6 @@
             <container name="ТипТС" />
             <container name="ГодВыпуска" />
             <container name="ГосНомер" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2431,13 +2431,13 @@
             <container name="МашинВРаботе" />
             <container name="МашинНеВРаботе" />
             <container name="МашинСломано" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2696,11 +2696,11 @@
             <container name="ВсегоТехникиСломано" />
             <container name="ВсегоТехникиВРемонте" />
             <container name="ПровереноАвтоматически" />
+            <container name="АккаунтПользователя" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -2801,13 +2801,13 @@
           <Containers>
             <container name="Наименование" />
             <container name="Картинка" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4521,13 +4521,13 @@
             <container name="ЯвляетсяЗаказчиком" />
             <container name="ЯвляетсяПоставщикомТоплива" />
             <container name="ИНН" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4660,13 +4660,13 @@
             <container name="ИдентификаторСтрока" />
             <container name="IDСотрудника" />
             <container name="Размер" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4750,6 +4750,7 @@
           </ObjectList>
           <Containers>
             <container name="Наименование" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -4759,7 +4760,6 @@
             <container name="РежимРаботы" />
             <container name="СтаршийПоОбъекту" />
             <container name="Описание" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4868,13 +4868,13 @@
             <container name="ЯвляетсяСтаршимПоОбъекту" />
             <container name="ГруппаДолжностей" />
             <container name="Роль" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -5585,11 +5585,11 @@
           <Containers>
             <container name="ДатаДокумента" />
             <container name="Комментарий" />
+            <container name="АккаунтПользователя" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -6115,13 +6115,13 @@
             <container name="Наименование" />
             <container name="Стоимость" />
             <container name="ИконкаТарифа" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -6351,11 +6351,11 @@
             <container name="Комментарий" />
             <container name="Время" />
             <container name="Объект" />
+            <container name="АккаунтПользователя" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -6561,11 +6561,11 @@
             <container name="ВидОперации" />
             <container name="Источник" />
             <container name="ЭтоИтоговыйДокумент" />
+            <container name="АккаунтПользователя" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -6902,11 +6902,11 @@
             <container name="Объект" />
             <container name="Цена" />
             <container name="Сумма" />
+            <container name="АккаунтПользователя" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -7197,13 +7197,13 @@
           <Containers>
             <container name="Наименование" />
             <container name="Приоритет" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -7283,13 +7283,13 @@
           <Containers>
             <container name="Наименование" />
             <container name="Приоритет" />
+            <container name="АккаунтПользователя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -9403,11 +9403,11 @@
             <container name="КоличествоТехники" />
             <container name="Объект" />
             <container name="Ответственный" />
+            <container name="АккаунтПользователя" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -10091,10 +10091,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="14c8f58a-9793-48f4-9440-c3c8cb6faa4f" type="NsgDataTypedReference" editoraccess="Full" name="Автор" visible="true" description="Автор" field="Avtor" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="СлужебныеСправочники" refname="ПользователиСервисов">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
             <container name="ПоследнееИзменение" />
+            <container name="Автор" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -10866,11 +10872,11 @@
           <Containers>
             <container name="ДатаДокумента" />
             <container name="Комментарий" />
+            <container name="АккаунтПользователя" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -11031,11 +11037,11 @@
             <container name="Комментарий" />
             <container name="Сотрудник" />
             <container name="Объект" />
+            <container name="АккаунтПользователя" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="АккаунтПользователя" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
