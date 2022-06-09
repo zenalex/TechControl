@@ -33,6 +33,7 @@ namespace TechControl.Метаданные.Мониторинг
         {
             base.OnCreateReport(nsgBackgroundReporter, e);
             string ЗАКАЗЧИК = РегистрПоставокТоплива.Names.Объект + '.' + Объекты.Names.Заказчик;
+            string ПОСТАВЩИК = РегистрПоставокТоплива.Names.Поставщик;
             var dims = nsgGroupsList.GetAllItems();
             //dims.Add(ФиксацияИстории.Names.Техника);
             //dims.Add(ФиксацияИстории.Names.Сотрудник);
@@ -65,7 +66,8 @@ namespace TechControl.Метаданные.Мониторинг
                     var row = nsgVisualMultipleObject.Data.MemoryTable.FindRow(cmp);
                     if (row == null)
                         row = nsgVisualMultipleObject.Data.MemoryTable.NewRow();
-                    row[Поставщик_].Value = i[ЗАКАЗЧИК].Value;
+                    row[Заказчик_].Value = i[ЗАКАЗЧИК].Value;
+                    row[Поставщик_].Value = i[ПОСТАВЩИК].Value;
                     //Тарифы тариф = Тарифы.Новый();//вл[ФормированиеСмены.Names.Тариф].ToReferent() as Тарифы;
                     //row[Тариф_].Value = тариф;
                     Объекты объект = i[РегистрПоставокТоплива.Names.Объект].ToReferent() as Объекты;

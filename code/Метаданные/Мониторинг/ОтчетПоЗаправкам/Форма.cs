@@ -41,6 +41,7 @@ namespace TechControl.Метаданные.Мониторинг
 
 
             string ЗАКАЗЧИК = РегистрЗаправок.Names.Объект + '.' + Объекты.Names.Заказчик;
+            string ПОСТАВЩИК = РегистрЗаправок.Names.Поставщик;
             var dims = nsgGroupsList.GetAllItems();
             //dims.Add(ФиксацияИстории.Names.Техника);
             //dims.Add(ФиксацияИстории.Names.Сотрудник);
@@ -78,7 +79,8 @@ namespace TechControl.Метаданные.Мониторинг
                     var row = nsgVisualMultipleObject.Data.MemoryTable.FindRow(cmp);
                     if (row == null)
                         row = nsgVisualMultipleObject.Data.MemoryTable.NewRow();
-                    row[Поставщик_].Value = i[ЗАКАЗЧИК].Value;
+                    row[Заказчик_].Value = i[ЗАКАЗЧИК].Value;
+                    row[Поставщик_].Value = i[ПОСТАВЩИК].Value;
                     //Тарифы тариф = Тарифы.Новый();//вл[ФормированиеСмены.Names.Тариф].ToReferent() as Тарифы;
                     //row[Тариф_].Value = тариф;
                     Объекты объект = i[РегистрЗаправок.Names.Объект].ToReferent() as Объекты;
@@ -137,6 +139,7 @@ namespace TechControl.Метаданные.Мониторинг
         private void ЗаполнитьЗаправки()
         {
             string ЗАКАЗЧИК = РегистрПоставокТоплива.Names.Объект + '.' + Объекты.Names.Заказчик;
+            string ПОСТАВЩИК = РегистрПоставокТоплива.Names.Поставщик;
             var dims = nsgGroupsList.GetAllItems();
 
             dims.Remove(Время_.Caption);
@@ -160,7 +163,8 @@ namespace TechControl.Метаданные.Мониторинг
                     var row = vmoЗаправки.Data.MemoryTable.FindRow(cmp);
                     if (row == null)
                         row = vmoЗаправки.Data.MemoryTable.NewRow();
-                    row[Поставщик_vmoЗаправки].Value = i[ЗАКАЗЧИК].Value;
+                    row[Заказчик_vmoЗаправки].Value = i[ЗАКАЗЧИК].Value;
+                    row[Поставщик_vmoЗаправки].Value = i[ПОСТАВЩИК].Value;
                     //Тарифы тариф = Тарифы.Новый();//вл[ФормированиеСмены.Names.Тариф].ToReferent() as Тарифы;
                     //row[Тариф_].Value = тариф;
                     Объекты объект = i[РегистрПоставокТоплива.Names.Объект].ToReferent() as Объекты;
