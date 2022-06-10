@@ -34,11 +34,18 @@ namespace TechControl.Метаданные.Мониторинг
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ПолучениеДанныхСПИКФорма));
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn13 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn14 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn15 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn16 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn17 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn1 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn2 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn3 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn4 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn5 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn18 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn19 = new NsgSoft.Forms.NsgIGridColumn();
             this.nsgIGrid1 = new NsgSoft.Forms.NsgIGrid();
             this.vmoСигнализации = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Техника_vmoСигнализации = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
@@ -46,21 +53,31 @@ namespace TechControl.Метаданные.Мониторинг
             this.ВремяРаботыДок_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.ВремяРаботыСигнализации_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Дата_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.nsgIGrid2 = new NsgSoft.Forms.NsgIGrid();
+            this.vmoАнализДанных = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.Техника_vmoАнализДанных = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
+            this.Геозона1_vmoАнализДанных = new TechControl.Метаданные.Мониторинг.Геозоны.ColumnDescriptor();
+            this.Геозона2_vmoАнализДанных = new TechControl.Метаданные.Мониторинг.Геозоны.ColumnDescriptor();
+            this.ВремяПриездаВГеозону1_vmoАнализДанных = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяПриездаВГеозону2_vmoАнализДанных = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.nsgButton1 = new NsgSoft.Design.NsgButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.nsgIGrid2 = new NsgSoft.Forms.NsgIGrid();
             this.nsgButton2 = new NsgSoft.Design.NsgButton();
             this.nsgPeriodPicker1 = new NsgSoft.Forms.NsgPeriodPicker();
-            this.vmoАнализДанных = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Техника_vmoАнализДанных = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
-            this.ВремяПриездаНаОбъект_vmoАнализДанных = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.Объект_vmoАнализДанных = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.ВремяПриезда_vmoАнализДанных = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.ВремяВыезда_vmoАнализДанных = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.Геозона2_vmoАнализДанных = new TechControl.Метаданные.Мониторинг.Геозоны.ColumnDescriptor();
-            this.Геозона1_vmoАнализДанных = new TechControl.Метаданные.Мониторинг.Геозоны.ColumnDescriptor();
+            this.nsgInput1 = new NsgSoft.Forms.NsgInput();
+            this.nsgInput2 = new NsgSoft.Forms.NsgInput();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Геозона2 = new TechControl.Метаданные.Мониторинг.Геозоны.ColumnDescriptor();
+            this.Геозона1 = new TechControl.Метаданные.Мониторинг.Геозоны.ColumnDescriptor();
+            this.nsgButton3 = new NsgSoft.Design.NsgButton();
+            this.nsgIGrid3 = new NsgSoft.Forms.NsgIGrid();
+            this.vmoГеозоны = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.НаименованиеГеозоны_vmoГеозоны = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.Широта_vmoГеозоны = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.Долгота_vmoГеозоны = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -68,13 +85,18 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoСигнализации)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoАнализДанных)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vmoАнализДанных)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoГеозоны)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreateReport
@@ -139,6 +161,8 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             // nsgVisualMultipleObject
             // 
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.Геозона1);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.Геозона2);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
             this.nsgVisualMultipleObject.MetaDataName = "";
@@ -155,86 +179,81 @@ namespace TechControl.Метаданные.Мониторинг
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nsgIGrid1.AutoResizeCols = true;
-            nsgIGridColumn1.AllowFilter = true;
-            nsgIGridColumn1.AllowGroupSelect = false;
-            nsgIGridColumn1.AllowResize = true;
-            nsgIGridColumn1.AutoResize = true;
-            nsgIGridColumn1.Caption = "";
-            nsgIGridColumn1.ChangedProperties = new string[] {
+            nsgIGridColumn13.AllowFilter = true;
+            nsgIGridColumn13.AllowGroupSelect = false;
+            nsgIGridColumn13.AllowResize = true;
+            nsgIGridColumn13.AutoResize = true;
+            nsgIGridColumn13.Caption = "";
+            nsgIGridColumn13.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn1.DateFormat = null;
-            nsgIGridColumn1.ImportedFromVMO = false;
-            nsgIGridColumn1.Name = "Техника";
-            nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn1.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn1.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn1.UseAsHeaderImage = false;
-            nsgIGridColumn1.Width = 100;
-            nsgIGridColumn2.AllowFilter = true;
-            nsgIGridColumn2.AllowGroupSelect = false;
-            nsgIGridColumn2.AllowResize = true;
-            nsgIGridColumn2.AutoResize = true;
-            nsgIGridColumn2.Caption = "";
-            nsgIGridColumn2.ChangedProperties = new string[] {
+            nsgIGridColumn13.DateFormat = null;
+            nsgIGridColumn13.Name = "Техника";
+            nsgIGridColumn13.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn13.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn13.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn13.UseAsHeaderImage = false;
+            nsgIGridColumn13.Width = 100;
+            nsgIGridColumn14.AllowFilter = true;
+            nsgIGridColumn14.AllowGroupSelect = false;
+            nsgIGridColumn14.AllowResize = true;
+            nsgIGridColumn14.AutoResize = true;
+            nsgIGridColumn14.Caption = "";
+            nsgIGridColumn14.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn2.DateFormat = null;
-            nsgIGridColumn2.ImportedFromVMO = false;
-            nsgIGridColumn2.Name = "ВремяРаботыСкаут";
-            nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn2.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn2.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn2.UseAsHeaderImage = false;
-            nsgIGridColumn2.Width = 100;
-            nsgIGridColumn3.AllowFilter = true;
-            nsgIGridColumn3.AllowGroupSelect = false;
-            nsgIGridColumn3.AllowResize = true;
-            nsgIGridColumn3.AutoResize = true;
-            nsgIGridColumn3.Caption = "";
-            nsgIGridColumn3.ChangedProperties = new string[] {
+            nsgIGridColumn14.DateFormat = null;
+            nsgIGridColumn14.Name = "ВремяРаботыСкаут";
+            nsgIGridColumn14.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn14.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn14.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn14.UseAsHeaderImage = false;
+            nsgIGridColumn14.Width = 100;
+            nsgIGridColumn15.AllowFilter = true;
+            nsgIGridColumn15.AllowGroupSelect = false;
+            nsgIGridColumn15.AllowResize = true;
+            nsgIGridColumn15.AutoResize = true;
+            nsgIGridColumn15.Caption = "";
+            nsgIGridColumn15.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn3.DateFormat = null;
-            nsgIGridColumn3.ImportedFromVMO = false;
-            nsgIGridColumn3.Name = "ВремяРаботыДок";
-            nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn3.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn3.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn3.UseAsHeaderImage = false;
-            nsgIGridColumn3.Width = 100;
-            nsgIGridColumn4.AllowFilter = true;
-            nsgIGridColumn4.AllowGroupSelect = false;
-            nsgIGridColumn4.AllowResize = true;
-            nsgIGridColumn4.AutoResize = true;
-            nsgIGridColumn4.Caption = "";
-            nsgIGridColumn4.ChangedProperties = new string[] {
+            nsgIGridColumn15.DateFormat = null;
+            nsgIGridColumn15.Name = "ВремяРаботыДок";
+            nsgIGridColumn15.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn15.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn15.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn15.UseAsHeaderImage = false;
+            nsgIGridColumn15.Width = 100;
+            nsgIGridColumn16.AllowFilter = true;
+            nsgIGridColumn16.AllowGroupSelect = false;
+            nsgIGridColumn16.AllowResize = true;
+            nsgIGridColumn16.AutoResize = true;
+            nsgIGridColumn16.Caption = "";
+            nsgIGridColumn16.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn4.DateFormat = null;
-            nsgIGridColumn4.ImportedFromVMO = false;
-            nsgIGridColumn4.Name = "ВремяРаботыСигнализация";
-            nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn4.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn4.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn4.UseAsHeaderImage = false;
-            nsgIGridColumn4.Width = 100;
-            nsgIGridColumn5.AllowFilter = true;
-            nsgIGridColumn5.AllowGroupSelect = false;
-            nsgIGridColumn5.AllowResize = true;
-            nsgIGridColumn5.AutoResize = true;
-            nsgIGridColumn5.Caption = "";
-            nsgIGridColumn5.ChangedProperties = new string[] {
+            nsgIGridColumn16.DateFormat = null;
+            nsgIGridColumn16.Name = "ВремяРаботыСигнализация";
+            nsgIGridColumn16.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn16.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn16.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn16.UseAsHeaderImage = false;
+            nsgIGridColumn16.Width = 100;
+            nsgIGridColumn17.AllowFilter = true;
+            nsgIGridColumn17.AllowGroupSelect = false;
+            nsgIGridColumn17.AllowResize = true;
+            nsgIGridColumn17.AutoResize = true;
+            nsgIGridColumn17.Caption = "";
+            nsgIGridColumn17.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn5.DateFormat = null;
-            nsgIGridColumn5.ImportedFromVMO = false;
-            nsgIGridColumn5.Name = "Дата";
-            nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn5.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn5.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn5.UseAsHeaderImage = false;
-            nsgIGridColumn5.Width = 100;
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn1);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn2);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn3);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn4);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn5);
+            nsgIGridColumn17.DateFormat = null;
+            nsgIGridColumn17.Name = "Дата";
+            nsgIGridColumn17.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn17.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn17.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn17.UseAsHeaderImage = false;
+            nsgIGridColumn17.Width = 100;
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn13);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn14);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn15);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn16);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn17);
             this.nsgIGrid1.Filter = false;
             this.nsgIGrid1.FrozenColumns = 0;
             this.nsgIGrid1.Grouping = true;
@@ -330,6 +349,214 @@ namespace TechControl.Метаданные.Мониторинг
             this.Дата_vmoСигнализации.SearchCondition.OwnerComponent = this.Дата_vmoСигнализации;
             this.Дата_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // nsgIGrid2
+            // 
+            this.nsgIGrid2.Action = NsgSoft.DataObjects.FormShowMode.None;
+            this.nsgIGrid2.AllowSaveColParamsToXML = true;
+            this.nsgIGrid2.AllowSaveColPositionToXML = true;
+            this.nsgIGrid2.AllowSaveColWidthToXML = true;
+            this.nsgIGrid2.AllowSaveSettingsToXML = true;
+            this.nsgIGrid2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nsgIGrid2.AutoResizeCols = true;
+            nsgIGridColumn1.AllowFilter = true;
+            nsgIGridColumn1.AllowGroupSelect = false;
+            nsgIGridColumn1.AllowResize = true;
+            nsgIGridColumn1.AutoResize = true;
+            nsgIGridColumn1.Caption = "";
+            nsgIGridColumn1.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn1.DateFormat = null;
+            nsgIGridColumn1.Name = "Техника";
+            nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn1.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn1.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn1.UseAsHeaderImage = false;
+            nsgIGridColumn1.Width = 100;
+            nsgIGridColumn2.AllowFilter = true;
+            nsgIGridColumn2.AllowGroupSelect = false;
+            nsgIGridColumn2.AllowResize = true;
+            nsgIGridColumn2.AutoResize = true;
+            nsgIGridColumn2.Caption = "";
+            nsgIGridColumn2.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn2.DateFormat = null;
+            nsgIGridColumn2.Name = "Геозона1";
+            nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn2.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn2.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn2.UseAsHeaderImage = false;
+            nsgIGridColumn2.Width = 100;
+            nsgIGridColumn3.AllowFilter = true;
+            nsgIGridColumn3.AllowGroupSelect = false;
+            nsgIGridColumn3.AllowResize = true;
+            nsgIGridColumn3.AutoResize = true;
+            nsgIGridColumn3.Caption = "";
+            nsgIGridColumn3.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn3.DateFormat = null;
+            nsgIGridColumn3.Name = "Геозона2";
+            nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn3.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn3.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn3.UseAsHeaderImage = false;
+            nsgIGridColumn3.Width = 100;
+            nsgIGridColumn4.AllowFilter = true;
+            nsgIGridColumn4.AllowGroupSelect = false;
+            nsgIGridColumn4.AllowResize = true;
+            nsgIGridColumn4.AutoResize = true;
+            nsgIGridColumn4.Caption = "";
+            nsgIGridColumn4.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn4.DateFormat = null;
+            nsgIGridColumn4.Name = "ВремяВыезда";
+            nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn4.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn4.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn4.UseAsHeaderImage = false;
+            nsgIGridColumn4.Width = 100;
+            nsgIGridColumn5.AllowFilter = true;
+            nsgIGridColumn5.AllowGroupSelect = false;
+            nsgIGridColumn5.AllowResize = true;
+            nsgIGridColumn5.AutoResize = true;
+            nsgIGridColumn5.Caption = "";
+            nsgIGridColumn5.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn5.DateFormat = null;
+            nsgIGridColumn5.Name = "ВремяПриезда";
+            nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn5.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn5.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn5.UseAsHeaderImage = false;
+            nsgIGridColumn5.Width = 100;
+            nsgIGridColumn18.AllowFilter = true;
+            nsgIGridColumn18.AllowGroupSelect = false;
+            nsgIGridColumn18.AllowResize = true;
+            nsgIGridColumn18.AutoResize = true;
+            nsgIGridColumn18.Caption = "";
+            nsgIGridColumn18.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn18.DateFormat = null;
+            nsgIGridColumn18.Name = "Объект";
+            nsgIGridColumn18.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn18.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn18.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn18.UseAsHeaderImage = false;
+            nsgIGridColumn18.Width = 100;
+            nsgIGridColumn19.AllowFilter = true;
+            nsgIGridColumn19.AllowGroupSelect = false;
+            nsgIGridColumn19.AllowResize = true;
+            nsgIGridColumn19.AutoResize = true;
+            nsgIGridColumn19.Caption = "";
+            nsgIGridColumn19.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn19.DateFormat = null;
+            nsgIGridColumn19.Name = "ВремяПриездаНаОбъект";
+            nsgIGridColumn19.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn19.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn19.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn19.UseAsHeaderImage = false;
+            nsgIGridColumn19.Width = 100;
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn1);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn2);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn3);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn4);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn5);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn18);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn19);
+            this.nsgIGrid2.Filter = false;
+            this.nsgIGrid2.FrozenColumns = 0;
+            this.nsgIGrid2.Grouping = true;
+            this.nsgIGrid2.Hierarhy = true;
+            this.nsgIGrid2.ImageList = null;
+            this.nsgIGrid2.IsCanMultiSelect = false;
+            this.nsgIGrid2.IsCanSingleSelect = false;
+            this.nsgIGrid2.LineHeight = 20;
+            this.nsgIGrid2.Location = new System.Drawing.Point(6, 85);
+            this.nsgIGrid2.MarkReadOnly = false;
+            this.nsgIGrid2.MasterObject = null;
+            this.nsgIGrid2.Name = "NsgIGrid";
+            this.nsgIGrid2.PageSelector = false;
+            this.nsgIGrid2.ReadOnly = false;
+            this.nsgIGrid2.RowChangeInterval = 200;
+            this.nsgIGrid2.RowHeaderImageList = null;
+            this.nsgIGrid2.RowMode = false;
+            this.nsgIGrid2.ScrollWidth = 0;
+            this.nsgIGrid2.SelectedRow = -1;
+            this.nsgIGrid2.ShowHeader = true;
+            this.nsgIGrid2.ShowLineImages = true;
+            this.nsgIGrid2.ShowLineNumbers = false;
+            this.nsgIGrid2.ShowPanel = true;
+            this.nsgIGrid2.ShowTotals = false;
+            this.nsgIGrid2.ShowTree = false;
+            this.nsgIGrid2.Size = new System.Drawing.Size(541, 301);
+            this.nsgIGrid2.SourceObject = this.vmoАнализДанных;
+            this.nsgIGrid2.TabIndex = 2;
+            this.nsgIGrid2.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            // 
+            // vmoАнализДанных
+            // 
+            this.vmoАнализДанных.Columns.Collection.Add(this.Техника_vmoАнализДанных);
+            this.vmoАнализДанных.Columns.Collection.Add(this.Геозона1_vmoАнализДанных);
+            this.vmoАнализДанных.Columns.Collection.Add(this.Геозона2_vmoАнализДанных);
+            this.vmoАнализДанных.Columns.Collection.Add(this.ВремяПриездаВГеозону1_vmoАнализДанных);
+            this.vmoАнализДанных.Columns.Collection.Add(this.ВремяПриездаВГеозону2_vmoАнализДанных);
+            this.vmoАнализДанных.IsActive = true;
+            this.vmoАнализДанных.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoАнализДанных.MetaDataName = "";
+            this.vmoАнализДанных.FullName = "";
+            // 
+            // Техника_vmoАнализДанных
+            // 
+            this.Техника_vmoАнализДанных.Caption = "Техника";
+            this.Техника_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Техника_vmoАнализДанных.Name = "Техника";
+            this.Техника_vmoАнализДанных.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoАнализДанных.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoАнализДанных.SearchCondition.OwnerComponent = this.Техника_vmoАнализДанных;
+            this.Техника_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Геозона1_vmoАнализДанных
+            // 
+            this.Геозона1_vmoАнализДанных.Caption = "Геозона1";
+            this.Геозона1_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Геозона1_vmoАнализДанных.Name = "Геозона1";
+            this.Геозона1_vmoАнализДанных.NSGType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона1_vmoАнализДанных.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона1_vmoАнализДанных.SearchCondition.OwnerComponent = this.Геозона1_vmoАнализДанных;
+            this.Геозона1_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Геозона2_vmoАнализДанных
+            // 
+            this.Геозона2_vmoАнализДанных.Caption = "Геозона2";
+            this.Геозона2_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Геозона2_vmoАнализДанных.Name = "Геозона2";
+            this.Геозона2_vmoАнализДанных.NSGType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона2_vmoАнализДанных.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона2_vmoАнализДанных.SearchCondition.OwnerComponent = this.Геозона2_vmoАнализДанных;
+            this.Геозона2_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяПриездаВГеозону1_vmoАнализДанных
+            // 
+            this.ВремяПриездаВГеозону1_vmoАнализДанных.Caption = "Время выезда в геозону 1";
+            this.ВремяПриездаВГеозону1_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяПриездаВГеозону1_vmoАнализДанных.Name = "ВремяПриездаВГеозону1";
+            this.ВремяПриездаВГеозону1_vmoАнализДанных.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяПриездаВГеозону1_vmoАнализДанных.PropertyType = typeof(System.DateTime);
+            this.ВремяПриездаВГеозону1_vmoАнализДанных.SearchCondition.OwnerComponent = this.ВремяПриездаВГеозону1_vmoАнализДанных;
+            this.ВремяПриездаВГеозону1_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяПриездаВГеозону2_vmoАнализДанных
+            // 
+            this.ВремяПриездаВГеозону2_vmoАнализДанных.Caption = "Время приезда в геозону 2";
+            this.ВремяПриездаВГеозону2_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяПриездаВГеозону2_vmoАнализДанных.Name = "ВремяПриездаВГеозону2";
+            this.ВремяПриездаВГеозону2_vmoАнализДанных.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяПриездаВГеозону2_vmoАнализДанных.PropertyType = typeof(System.DateTime);
+            this.ВремяПриездаВГеозону2_vmoАнализДанных.SearchCondition.OwnerComponent = this.ВремяПриездаВГеозону2_vmoАнализДанных;
+            this.ВремяПриездаВГеозону2_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // nsgButton1
             // 
             this.nsgButton1.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -355,7 +582,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControl1.Location = new System.Drawing.Point(6, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 1;
-            this.tabControl1.Size = new System.Drawing.Size(849, 409);
+            this.tabControl1.Size = new System.Drawing.Size(861, 418);
             this.tabControl1.TabIndex = 12;
             // 
             // tabPage1
@@ -376,6 +603,12 @@ namespace TechControl.Метаданные.Мониторинг
             // tabPage2
             // 
             this.tabPage2.AllowDrop = true;
+            this.tabPage2.Controls.Add(this.nsgIGrid3);
+            this.tabPage2.Controls.Add(this.nsgButton3);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.nsgInput2);
+            this.tabPage2.Controls.Add(this.nsgInput1);
             this.tabPage2.Controls.Add(this.nsgIGrid2);
             this.tabPage2.Controls.Add(this.nsgButton2);
             this.tabPage2.Controls.Add(this.nsgPeriodPicker1);
@@ -383,49 +616,11 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(841, 383);
+            this.tabPage2.Size = new System.Drawing.Size(853, 392);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Анализ данных";
+            this.tabPage2.Text = "Анализ данных самосвалов";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Visible = true;
-            // 
-            // nsgIGrid2
-            // 
-            this.nsgIGrid2.Action = NsgSoft.DataObjects.FormShowMode.None;
-            this.nsgIGrid2.AllowSaveColParamsToXML = true;
-            this.nsgIGrid2.AllowSaveColPositionToXML = true;
-            this.nsgIGrid2.AllowSaveColWidthToXML = true;
-            this.nsgIGrid2.AllowSaveSettingsToXML = true;
-            this.nsgIGrid2.AutoResizeCols = true;
-            this.nsgIGrid2.Filter = false;
-            this.nsgIGrid2.FrozenColumns = 0;
-            this.nsgIGrid2.Grouping = true;
-            this.nsgIGrid2.Hierarhy = true;
-            this.nsgIGrid2.ImageList = null;
-            this.nsgIGrid2.IsCanMultiSelect = false;
-            this.nsgIGrid2.IsCanSingleSelect = false;
-            this.nsgIGrid2.LineHeight = 20;
-            this.nsgIGrid2.Location = new System.Drawing.Point(16, 57);
-            this.nsgIGrid2.MarkReadOnly = false;
-            this.nsgIGrid2.MasterObject = null;
-            this.nsgIGrid2.Name = "NsgIGrid";
-            this.nsgIGrid2.PageSelector = false;
-            this.nsgIGrid2.ReadOnly = false;
-            this.nsgIGrid2.RowChangeInterval = 200;
-            this.nsgIGrid2.RowHeaderImageList = null;
-            this.nsgIGrid2.RowMode = false;
-            this.nsgIGrid2.ScrollWidth = 0;
-            this.nsgIGrid2.SelectedRow = -1;
-            this.nsgIGrid2.ShowHeader = true;
-            this.nsgIGrid2.ShowLineImages = true;
-            this.nsgIGrid2.ShowLineNumbers = false;
-            this.nsgIGrid2.ShowPanel = true;
-            this.nsgIGrid2.ShowTotals = false;
-            this.nsgIGrid2.ShowTree = false;
-            this.nsgIGrid2.Size = new System.Drawing.Size(819, 307);
-            this.nsgIGrid2.SourceObject = null;
-            this.nsgIGrid2.TabIndex = 2;
-            this.nsgIGrid2.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
             // 
             // nsgButton2
             // 
@@ -451,89 +646,200 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgPeriodPicker1.Size = new System.Drawing.Size(191, 27);
             this.nsgPeriodPicker1.TabIndex = 0;
             // 
-            // vmoАнализДанных
+            // nsgInput1
             // 
-            this.vmoАнализДанных.Columns.Collection.Add(this.Техника_vmoАнализДанных);
-            this.vmoАнализДанных.Columns.Collection.Add(this.Геозона1_vmoАнализДанных);
-            this.vmoАнализДанных.Columns.Collection.Add(this.Геозона2_vmoАнализДанных);
-            this.vmoАнализДанных.Columns.Collection.Add(this.ВремяВыезда_vmoАнализДанных);
-            this.vmoАнализДанных.Columns.Collection.Add(this.ВремяПриезда_vmoАнализДанных);
-            this.vmoАнализДанных.Columns.Collection.Add(this.Объект_vmoАнализДанных);
-            this.vmoАнализДанных.Columns.Collection.Add(this.ВремяПриездаНаОбъект_vmoАнализДанных);
-            this.vmoАнализДанных.IsActive = true;
-            this.vmoАнализДанных.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
-            this.vmoАнализДанных.MetaDataName = "";
-            this.vmoАнализДанных.FullName = "";
+            this.nsgInput1.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput1.ConfigurationName = "";
+            this.nsgInput1.DisableLeaveControlEvent = false;
+            this.nsgInput1.FullName = "Геозона1";
+            this.nsgInput1.FullTextSearch = false;
+            this.nsgInput1.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput1.IsButton = false;
+            this.nsgInput1.IsInitialized = false;
+            this.nsgInput1.IsPassword = false;
+            this.nsgInput1.Location = new System.Drawing.Point(437, 15);
+            this.nsgInput1.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput1.Mask = "";
+            this.nsgInput1.MetaDataName = "";
+            this.nsgInput1.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput1.Name = "NsgInput";
+            this.nsgInput1.ObjectImages = null;
+            this.nsgInput1.ObjectIndex = null;
+            this.nsgInput1.ObjectStrings = null;
+            this.nsgInput1.Requsite = "Геозона1";
+            this.nsgInput1.SearchFieldName = "";
+            this.nsgInput1.ShowMultipleObjectInComboBox = false;
+            this.nsgInput1.ShowRowCount = 10;
+            this.nsgInput1.Size = new System.Drawing.Size(130, 20);
+            this.nsgInput1.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput1.TabIndex = 3;
+            this.nsgInput1.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // Техника_vmoАнализДанных
+            // nsgInput2
             // 
-            this.Техника_vmoАнализДанных.Caption = "Техника";
-            this.Техника_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Техника_vmoАнализДанных.Name = "Техника";
-            this.Техника_vmoАнализДанных.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoАнализДанных.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoАнализДанных.SearchCondition.OwnerComponent = this.Техника_vmoАнализДанных;
-            this.Техника_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.nsgInput2.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput2.ConfigurationName = "";
+            this.nsgInput2.DisableLeaveControlEvent = false;
+            this.nsgInput2.FullName = "Геозона2";
+            this.nsgInput2.FullTextSearch = false;
+            this.nsgInput2.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput2.IsButton = false;
+            this.nsgInput2.IsInitialized = false;
+            this.nsgInput2.IsPassword = false;
+            this.nsgInput2.Location = new System.Drawing.Point(692, 15);
+            this.nsgInput2.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput2.Mask = "";
+            this.nsgInput2.MetaDataName = "";
+            this.nsgInput2.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput2.Name = "NsgInput";
+            this.nsgInput2.ObjectImages = null;
+            this.nsgInput2.ObjectIndex = null;
+            this.nsgInput2.ObjectStrings = null;
+            this.nsgInput2.Requsite = "Геозона2";
+            this.nsgInput2.SearchFieldName = "";
+            this.nsgInput2.ShowMultipleObjectInComboBox = false;
+            this.nsgInput2.ShowRowCount = 10;
+            this.nsgInput2.Size = new System.Drawing.Size(130, 20);
+            this.nsgInput2.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput2.TabIndex = 4;
+            this.nsgInput2.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // ВремяПриездаНаОбъект_vmoАнализДанных
+            // label1
             // 
-            this.ВремяПриездаНаОбъект_vmoАнализДанных.Caption = "ВремяПриездаНаОбъект";
-            this.ВремяПриездаНаОбъект_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяПриездаНаОбъект_vmoАнализДанных.Name = "ВремяПриездаНаОбъект";
-            this.ВремяПриездаНаОбъект_vmoАнализДанных.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяПриездаНаОбъект_vmoАнализДанных.PropertyType = typeof(System.DateTime);
-            this.ВремяПриездаНаОбъект_vmoАнализДанных.SearchCondition.OwnerComponent = this.ВремяПриездаНаОбъект_vmoАнализДанных;
-            this.ВремяПриездаНаОбъект_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(358, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Геозона1:";
             // 
-            // Объект_vmoАнализДанных
+            // label2
             // 
-            this.Объект_vmoАнализДанных.Caption = "Объект";
-            this.Объект_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Объект_vmoАнализДанных.Name = "Объект";
-            this.Объект_vmoАнализДанных.NSGType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
-            this.Объект_vmoАнализДанных.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
-            this.Объект_vmoАнализДанных.SearchCondition.OwnerComponent = this.Объект_vmoАнализДанных;
-            this.Объект_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(628, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Геозона2:";
             // 
-            // ВремяПриезда_vmoАнализДанных
+            // Геозона2
             // 
-            this.ВремяПриезда_vmoАнализДанных.Caption = "ВремяПриезда";
-            this.ВремяПриезда_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяПриезда_vmoАнализДанных.Name = "ВремяПриезда";
-            this.ВремяПриезда_vmoАнализДанных.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяПриезда_vmoАнализДанных.PropertyType = typeof(System.DateTime);
-            this.ВремяПриезда_vmoАнализДанных.SearchCondition.OwnerComponent = this.ВремяПриезда_vmoАнализДанных;
-            this.ВремяПриезда_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Геозона2.Caption = "Геозона2";
+            this.Геозона2.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Геозона2.Name = "Геозона2";
+            this.Геозона2.NSGType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона2.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона2.SearchCondition.OwnerComponent = this.Геозона2;
+            this.Геозона2.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // ВремяВыезда_vmoАнализДанных
+            // Геозона1
             // 
-            this.ВремяВыезда_vmoАнализДанных.Caption = "ВремяВыезда";
-            this.ВремяВыезда_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяВыезда_vmoАнализДанных.Name = "ВремяВыезда";
-            this.ВремяВыезда_vmoАнализДанных.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяВыезда_vmoАнализДанных.PropertyType = typeof(System.DateTime);
-            this.ВремяВыезда_vmoАнализДанных.SearchCondition.OwnerComponent = this.ВремяВыезда_vmoАнализДанных;
-            this.ВремяВыезда_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Геозона1.Caption = "Геозона1";
+            this.Геозона1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Геозона1.Name = "Геозона1";
+            this.Геозона1.NSGType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона1.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона1.SearchCondition.OwnerComponent = this.Геозона1;
+            this.Геозона1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Геозона2_vmoАнализДанных
+            // nsgButton3
             // 
-            this.Геозона2_vmoАнализДанных.Caption = "Геозона2";
-            this.Геозона2_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Геозона2_vmoАнализДанных.Name = "Геозона2";
-            this.Геозона2_vmoАнализДанных.NSGType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
-            this.Геозона2_vmoАнализДанных.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
-            this.Геозона2_vmoАнализДанных.SearchCondition.OwnerComponent = this.Геозона2_vmoАнализДанных;
-            this.Геозона2_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.nsgButton3.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.nsgButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nsgButton3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nsgButton3.Location = new System.Drawing.Point(234, 48);
+            this.nsgButton3.Name = "NsgButton";
+            this.nsgButton3.Size = new System.Drawing.Size(101, 31);
+            this.nsgButton3.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.nsgButton3.TabIndex = 7;
+            this.nsgButton3.Text = "Получить геозоны";
+            this.nsgButton3.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nsgButton3.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nsgButton3_AsyncClick);
             // 
-            // Геозона1_vmoАнализДанных
+            // nsgIGrid3
             // 
-            this.Геозона1_vmoАнализДанных.Caption = "Геозона1";
-            this.Геозона1_vmoАнализДанных.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Геозона1_vmoАнализДанных.Name = "Геозона1";
-            this.Геозона1_vmoАнализДанных.NSGType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
-            this.Геозона1_vmoАнализДанных.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
-            this.Геозона1_vmoАнализДанных.SearchCondition.OwnerComponent = this.Геозона1_vmoАнализДанных;
-            this.Геозона1_vmoАнализДанных.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.nsgIGrid3.Action = NsgSoft.DataObjects.FormShowMode.None;
+            this.nsgIGrid3.AllowSaveColParamsToXML = true;
+            this.nsgIGrid3.AllowSaveColPositionToXML = true;
+            this.nsgIGrid3.AllowSaveColWidthToXML = true;
+            this.nsgIGrid3.AllowSaveSettingsToXML = true;
+            this.nsgIGrid3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nsgIGrid3.AutoResizeCols = true;
+            this.nsgIGrid3.Filter = false;
+            this.nsgIGrid3.FrozenColumns = 0;
+            this.nsgIGrid3.Grouping = true;
+            this.nsgIGrid3.Hierarhy = true;
+            this.nsgIGrid3.ImageList = null;
+            this.nsgIGrid3.IsCanMultiSelect = false;
+            this.nsgIGrid3.IsCanSingleSelect = false;
+            this.nsgIGrid3.LineHeight = 20;
+            this.nsgIGrid3.Location = new System.Drawing.Point(572, 85);
+            this.nsgIGrid3.MarkReadOnly = false;
+            this.nsgIGrid3.MasterObject = null;
+            this.nsgIGrid3.Name = "NsgIGrid";
+            this.nsgIGrid3.PageSelector = false;
+            this.nsgIGrid3.ReadOnly = false;
+            this.nsgIGrid3.RowChangeInterval = 200;
+            this.nsgIGrid3.RowHeaderImageList = null;
+            this.nsgIGrid3.RowMode = false;
+            this.nsgIGrid3.ScrollWidth = 0;
+            this.nsgIGrid3.SelectedRow = -1;
+            this.nsgIGrid3.ShowHeader = true;
+            this.nsgIGrid3.ShowLineImages = true;
+            this.nsgIGrid3.ShowLineNumbers = false;
+            this.nsgIGrid3.ShowPanel = true;
+            this.nsgIGrid3.ShowTotals = false;
+            this.nsgIGrid3.ShowTree = false;
+            this.nsgIGrid3.Size = new System.Drawing.Size(273, 301);
+            this.nsgIGrid3.SourceObject = null;
+            this.nsgIGrid3.TabIndex = 8;
+            this.nsgIGrid3.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            // 
+            // vmoГеозоны
+            // 
+            this.vmoГеозоны.Columns.Collection.Add(this.НаименованиеГеозоны_vmoГеозоны);
+            this.vmoГеозоны.Columns.Collection.Add(this.Долгота_vmoГеозоны);
+            this.vmoГеозоны.Columns.Collection.Add(this.Широта_vmoГеозоны);
+            this.vmoГеозоны.IsActive = true;
+            this.vmoГеозоны.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoГеозоны.MetaDataName = "";
+            this.vmoГеозоны.FullName = "";
+            // 
+            // НаименованиеГеозоны_vmoГеозоны
+            // 
+            this.НаименованиеГеозоны_vmoГеозоны.Caption = "НаименованиеГеозоны";
+            this.НаименованиеГеозоны_vmoГеозоны.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.НаименованиеГеозоны_vmoГеозоны.Name = "НаименованиеГеозоны";
+            this.НаименованиеГеозоны_vmoГеозоны.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.НаименованиеГеозоны_vmoГеозоны.PropertyType = typeof(string);
+            this.НаименованиеГеозоны_vmoГеозоны.SearchCondition.OwnerComponent = this.НаименованиеГеозоны_vmoГеозоны;
+            this.НаименованиеГеозоны_vmoГеозоны.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Широта_vmoГеозоны
+            // 
+            this.Широта_vmoГеозоны.CalcTotal = false;
+            this.Широта_vmoГеозоны.Caption = "Широта";
+            this.Широта_vmoГеозоны.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Широта_vmoГеозоны.Name = "Широта";
+            this.Широта_vmoГеозоны.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.Широта_vmoГеозоны.PropertyType = typeof(decimal);
+            this.Широта_vmoГеозоны.SearchCondition.OwnerComponent = this.Широта_vmoГеозоны;
+            this.Широта_vmoГеозоны.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Долгота_vmoГеозоны
+            // 
+            this.Долгота_vmoГеозоны.CalcTotal = false;
+            this.Долгота_vmoГеозоны.Caption = "Долгота";
+            this.Долгота_vmoГеозоны.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Долгота_vmoГеозоны.Name = "Долгота";
+            this.Долгота_vmoГеозоны.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.Долгота_vmoГеозоны.PropertyType = typeof(decimal);
+            this.Долгота_vmoГеозоны.SearchCondition.OwnerComponent = this.Долгота_vmoГеозоны;
+            this.Долгота_vmoГеозоны.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // ПолучениеДанныхСПИКФорма
             // 
@@ -566,13 +872,19 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoСигнализации)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoАнализДанных)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid2)).EndInit();
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vmoАнализДанных)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoГеозоны)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -589,16 +901,26 @@ namespace TechControl.Метаданные.Мониторинг
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        protected NsgIGrid nsgIGrid2;
         protected NsgSoft.Design.NsgButton nsgButton2;
         protected NsgPeriodPicker nsgPeriodPicker1;
         protected Техника.ColumnDescriptor Техника_vmoАнализДанных;
         private NsgVisualMultipleObject vmoАнализДанных;
         protected Геозоны.ColumnDescriptor Геозона1_vmoАнализДанных;
         private Геозоны.ColumnDescriptor Геозона2_vmoАнализДанных;
-        private NsgColumnDescriptor.DateTime ВремяВыезда_vmoАнализДанных;
-        private NsgColumnDescriptor.DateTime ВремяПриезда_vmoАнализДанных;
-        private Объекты.ColumnDescriptor Объект_vmoАнализДанных;
-        private NsgColumnDescriptor.DateTime ВремяПриездаНаОбъект_vmoАнализДанных;
+        private NsgColumnDescriptor.DateTime ВремяПриездаВГеозону1_vmoАнализДанных;
+        private NsgColumnDescriptor.DateTime ВремяПриездаВГеозону2_vmoАнализДанных;
+        private NsgIGrid nsgIGrid2;
+        protected Геозоны.ColumnDescriptor Геозона1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        protected NsgInput nsgInput2;
+        protected NsgInput nsgInput1;
+        protected Геозоны.ColumnDescriptor Геозона2;
+        protected NsgIGrid nsgIGrid3;
+        protected NsgSoft.Design.NsgButton nsgButton3;
+        protected NsgVisualMultipleObject vmoГеозоны;
+        protected NsgColumnDescriptor.String НаименованиеГеозоны_vmoГеозоны;
+        protected NsgColumnDescriptor.Decimal Долгота_vmoГеозоны;
+        protected NsgColumnDescriptor.Decimal Широта_vmoГеозоны;
     }
 }

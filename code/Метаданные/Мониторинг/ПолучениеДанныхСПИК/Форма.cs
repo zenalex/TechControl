@@ -449,10 +449,6 @@ namespace TechControl.Метаданные.Мониторинг
                 рег.Post();
             }
 
-            //var date = nsgPeriodPicker1.Period.Begin.Date;
-
-            //while (date <= NsgService.EndOfDay(nsgPeriodPicker1.Period.End))
-            //{
             foreach (var дата in листДат)
             {
                 var cmpОтработанноеВремя = new NsgCompare().Add(ОтработанноеВремяТехники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
@@ -851,11 +847,11 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void nsgButton2_AsyncClick(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            var cmp = new NsgCompare().Add(Техника.Names.Наименование, "Самосвал", NsgComparison.Contain);
-            cmp.Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            var cmp = new NsgCompare(NsgLogicalOperator.Or).Add(Техника.Names.Наименование, "Самосвал", NsgComparison.Contain);
+            cmp.Add(Техника.Names.Наименование, "МАН", NsgComparison.Contain);
             var техника = Техника.Новый().FindAll(cmp);
             int[] mass = new int[техника.Length];
-            var listID = new List<int>();
+            var listID = new Dictionary<Техника, int>();
             for (var i = 0; i < техника.Length; i++)
             {
                 foreach (var строка in техника[i].СистемыСлежения.Rows)
@@ -863,7 +859,7 @@ namespace TechControl.Метаданные.Мониторинг
                     if (строка.ТипСистемыСлежения == ТипСистемыСлежения.Скаут)
                     {
                         mass[i] = Convert.ToInt32(строка.ИдентификаторСистемыСлежения);
-                        listID.Add(Convert.ToInt32(строка.ИдентификаторСистемыСлежения));
+                        listID.Add(техника[i], Convert.ToInt32(строка.ИдентификаторСистемыСлежения));
                     }    
                 }
             }
@@ -872,9 +868,11 @@ namespace TechControl.Метаданные.Мониторинг
             _statisticsClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
             SpicSoapGeofenceVisitsStatisticsServiceClient _statisticsGeofenceVisitsClient = new SpicSoapGeofenceVisitsStatisticsServiceClient();
             _statisticsGeofenceVisitsClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
-            SpicNavigationFiltrationStatistics _statisticsNavigationFiltrationClient = new SpicNavigationFiltrationStatistics();
-            SpicGeofenceVisit _geofenceVisitClient = new SpicGeofenceVisit();
+            SpicSoapNavigationFiltrationStatisticsServiceClient _statisticsNavigationFiltrationClient = new SpicSoapNavigationFiltrationStatisticsServiceClient();
+            _statisticsNavigationFiltrationClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
 
+            vmoАнализДанных.Data.BeginUpdateData();
+            vmoАнализДанных.Data.MemoryTable.Clear();
             var date = nsgPeriodPicker1.Period.Begin.Date;
 
             while (date <= NsgService.EndOfDay(nsgPeriodPicker1.Period.End))
@@ -892,34 +890,52 @@ namespace TechControl.Метаданные.Мониторинг
                         TargetObject = new SpicObjectIdentity
                         {
                             ObjectTypeId = ObjectTypeId.Vehicle,
-                            ObjectId = id
+                            ObjectId = id.Value
                         }
                     };
 
                     //отправляем запрос и получаем сессию
                     var statisticsSession = _statisticsClient.StartStatisticsSession(statisticsSessionRequest).Session;
                     // на самом деле, это один и тот же контракт, но его нужно пересоздать  
-                    var fuelDefuelStatisticsSession = new ServiceReferenceFDStat.SpicStatisticsSession
+                    var navigationFiltrationStatisticsSession = new SpicNavigationFiltrationStatisticsService.SpicStatisticsSession
                     {
                         StatisticsSessionId = statisticsSession.StatisticsSessionId,
                     };
-                    // добавляем запрос на построение статистики  
-                    _fuelDefuelStatisticClient.AddStatisticsRequest(fuelDefuelStatisticsSession);
 
-                    var motorModesStatisticsSession = new ServiceReferenceMotorModes.SpicStatisticsSession
+                    var trackPeriodsFiler = new SpicNavigationFiltrationStatisticsService.SpicTrackPeriodsFilter
                     {
-                        StatisticsSessionId = statisticsSession.StatisticsSessionId,
+                        ExcludeRecoilPoints = false,
+                        ExcludeNotMovePoints = false,
+                        IncludeParkingPoints = true
                     };
-                    _motorModesClient.AddStatisticsRequest(motorModesStatisticsSession);
+
+                    var navigationValidationFilter = new SpicNavigationFiltrationStatisticsService.SpicNavigationValidationFilter
+                    {
+                        ExcludeInvalidPoints = false,
+                        ExcludeValidPoints = false,
+                        ExcludeNotValidatedPoints = false
+                    };
+
+                    var settingsNavigationFiltration = new SpicNavigationFiltrationStatisticsService.SpicNavigationFiltrationStatisticsSettings
+                    {
+                        NavigationValidationFilter = navigationValidationFilter,
+                        TrackPeriodsFilter = trackPeriodsFiler
+                    };
+
+                    var navigationFiltrationStatisticsRequest = new SpicNavigationFiltrationStatisticsService.NavigationFiltrationStatisticsRequest
+                    {
+                        Session = navigationFiltrationStatisticsSession,
+                        Settings = settingsNavigationFiltration
+                    };
+
+                    // добавляем запрос на построение статистики  
+                    _statisticsNavigationFiltrationClient.AddStatisticsRequest(navigationFiltrationStatisticsRequest);
 
                     // запускаем построение  
                     _statisticsClient.StartBuild(statisticsSession);
 
-                    var statisticsListFuelDefuel = new List<SpicFuelingDefuelingStatistics>();
-                    SpicFuelingDefuelingStatisticsResult statisticsResponseFuelDefuel;
-
-                    var statisticsListMotorModes = new List<SpicMotorModesStatistics>();
-                    SpicMotorModesStatisticsResult statisticsResponseMotorModes;
+                    var statisticsListNavigationFiltration = new List<SpicNavigationFiltrationStatistics>();
+                    SpicNavigationFiltrationStatisticsResult statisticsResponseNavigationFiltration;
 
                     // выполняем, пока не получим последнюю порцию статистик  
                     do
@@ -927,29 +943,60 @@ namespace TechControl.Метаданные.Мониторинг
                         // ждем, пока порция статистик построится  
                         do
                         {
-                            statisticsResponseFuelDefuel = _fuelDefuelStatisticClient.GetStatistics(fuelDefuelStatisticsSession);
-                            statisticsResponseMotorModes = _motorModesClient.GetStatistics(motorModesStatisticsSession);
+                            statisticsResponseNavigationFiltration = _statisticsNavigationFiltrationClient.GetStatistics(navigationFiltrationStatisticsSession);
 
-                            var fuelDefuel = statisticsResponseFuelDefuel.Statistics;
-                            var motorModes = statisticsResponseMotorModes.Statistics;
+                            var navigationFiltration = statisticsResponseNavigationFiltration.Statistics;
+                            foreach (var point in navigationFiltration.Points)
+                            {
+                                var row = vmoАнализДанных.Data.MemoryTable.NewRow();
+
+                                if (point.Navigation.Location.Longitude == Convert.ToDouble(Геозона1.Value.Долгота) 
+                                    && point.Navigation.Location.Latitude == Convert.ToDouble(Геозона1.Value.Широта))
+                                {                                    
+                                    row[Геозона1_vmoАнализДанных].Value = Геозона1.Value;
+                                    row[ВремяПриездаВГеозону2_vmoАнализДанных].Value = point.Timestamp;
+                                    row[Техника_vmoАнализДанных].Value = id.Key;
+                                }
+                                else if (point.Navigation.Location.Longitude == Convert.ToDouble(Геозона2.Value.Долгота)
+                                    && point.Navigation.Location.Latitude == Convert.ToDouble(Геозона2.Value.Широта))
+                                {                                    
+                                    row[Геозона2_vmoАнализДанных].Value = Геозона2.Value;
+                                    row[ВремяПриездаВГеозону1_vmoАнализДанных].Value = point.Timestamp;
+                                    row[Техника_vmoАнализДанных].Value = id.Key;
+                                }
+
+                                row.Post();
+                                //var cmpГеозоны = new NsgCompare().Add(Геозоны.Names.Долгота, point.Navigation.Location.Longitude);
+                                //cmpГеозоны.Add(Геозоны.Names.Широта, point.Navigation.Location.Latitude);
+                            }
                         }
-                        while (statisticsResponseFuelDefuel.ChunkInfo.Status.Value == "Processing" && statisticsResponseMotorModes.ChunkInfo.Status.Value == "Processing");
+                        while (statisticsResponseNavigationFiltration.ChunkInfo.Status.Value == "Processing");
 
-                        if (statisticsResponseFuelDefuel.Statistics != null)
-                            statisticsListFuelDefuel.Add(statisticsResponseFuelDefuel.Statistics);
-                        if (statisticsResponseMotorModes.Statistics != null)
-                            statisticsListMotorModes.Add(statisticsResponseMotorModes.Statistics);
-                        //    break;
+                        if (statisticsResponseNavigationFiltration.Statistics != null)
+                            statisticsListNavigationFiltration.Add(statisticsResponseNavigationFiltration.Statistics);
 
                         // заказываем следующую порцию статистики  
                         _statisticsClient.BuildNextChunk(statisticsSession);
                     }
-                    while (!statisticsResponseFuelDefuel.ChunkInfo.IsFinalChunk && !statisticsResponseMotorModes.ChunkInfo.IsFinalChunk);
+                    while (!statisticsResponseNavigationFiltration.ChunkInfo.IsFinalChunk);
 
                     // закрываем сессию построения статистик  
                     _statisticsClient.StopStatisticsSession(statisticsSession);
                 }
             }
+        }
+
+        private void nsgButton3_AsyncClick(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            SpicSoapGeofenceServiceClient _geofenceClient = new SpicSoapGeofenceServiceClient();
+            _geofenceClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
+
+
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+            //string dataAuth = "grant_type=password&username=skvortsov@titan002.ru&password=skvortsov@titan002.ru&locale=ru&client_id=8b1fd704-096e-42d6-9ba5-6d98980e7cd1&client_secret=scout-online";
+            //string urlAuth = "auth/token";
+            //var outputResultAuth = await RequestAsync(dataAuth, urlAuth, true, string.Empty);
+            //var deserializeJsonAuth = JsonConvert.DeserializeObject<DeserializeAuth>(outputResultAuth);
         }
     }
 
