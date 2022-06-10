@@ -41,18 +41,18 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoФильтр = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.nsgPeriodPicker = new NsgSoft.Forms.NsgPeriodPicker();
             this.nsgGroupsList = new NsgSoft.ReportBuilder.NsgGroupsList();
-            this.nsgReport1 = new NsgSoft.ReportBuilder.NsgReport(this.components);
+            this.nsgReport3 = new NsgSoft.ReportBuilder.NsgReport(this.components);
             this.nsgReportDataSource = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
-            this.stiReportDataSource1 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("nsgReportDataSource", this.nsgReportDataSource);
+            this.stiReportDataSource9 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("nsgReportDataSource", this.nsgReportDataSource);
             this.rdsФильтр = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
-            this.stiReportDataSource2 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsФильтр", this.rdsФильтр);
+            this.stiReportDataSource10 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsФильтр", this.rdsФильтр);
             this.rdsШапка = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
             this.vmoШапка = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.ДатаСоставления = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.НачалоПериода = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ОкончаниеПериода = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ИтогКостыль = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.stiReportDataSource3 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsШапка", this.rdsШапка);
+            this.stiReportDataSource11 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsШапка", this.rdsШапка);
             this.rdsЗаправки = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
             this.vmoЗаправки = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.ГосНомер_vmoЗаправки = new NsgSoft.Forms.NsgColumnDescriptor.String();
@@ -92,6 +92,56 @@ namespace TechControl.Метаданные.Мониторинг
             this.СтоимостьЗаЛитр_vmoЗаправки = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.ИтогоЛ_vmoЗаправки = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.ИтогоРуб_vmoЗаправки = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.stiReportDataSource12 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsЗаправки", this.rdsЗаправки);
+            this.nsgReport2 = new NsgSoft.ReportBuilder.NsgReport(this.components);
+            this.stiReportDataSource5 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("nsgReportDataSource", this.nsgReportDataSource);
+            this.stiReportDataSource6 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsФильтр", this.rdsФильтр);
+            this.stiReportDataSource7 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsШапка", this.rdsШапка);
+            this.stiReportDataSource8 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsЗаправки", this.rdsЗаправки);
+            this.rdsЗаправки1 = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
+            this.vmoЗаправки1 = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.ГосНомер_з1 = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.Время_з1 = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяСтрока_з1 = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.День1_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День2_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День3_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День4_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День5_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День6_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День7_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День8_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День9_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День10_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День11_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День12_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День13_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День14_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День15_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День16_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День17_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День18_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День19_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День20_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День21_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День22_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День23_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День24_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День25_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День26_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День27_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День28_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День29_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День30_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.День31_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.СтоимостьЗаЛитр_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ИтогоЛ_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ИтогоРуб_з1 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.stiReportDataSource13 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsЗаправки1", this.rdsЗаправки1);
+            this.nsgReport1 = new NsgSoft.ReportBuilder.NsgReport(this.components);
+            this.stiReportDataSource1 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("nsgReportDataSource", this.nsgReportDataSource);
+            this.stiReportDataSource2 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsФильтр", this.rdsФильтр);
+            this.stiReportDataSource3 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsШапка", this.rdsШапка);
             this.stiReportDataSource4 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsЗаправки", this.rdsЗаправки);
             this.ГосНомер_ = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.День1_ = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
@@ -128,16 +178,21 @@ namespace TechControl.Метаданные.Мониторинг
             this.Итого_ = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Время_ = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.ВремяСтрока_ = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.ИтогоСлив_ = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Техника_ = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             this.Поставщик_ = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Объект_ = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
+            this.Заказчик_ = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Техника_ф = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             this.Поставщик_ф = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Объект_ф = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Поставщик_vmoЗаправки = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Объект_vmoЗаправки = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.Заказчик_ = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Заказчик_vmoЗаправки = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
+            this.Поставщик_з1 = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
+            this.Заказчик_з1 = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
+            this.Объект_з1 = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
+            this.ИтогоЗаправка_ = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -152,6 +207,8 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.vmoШапка)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdsЗаправки)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoЗаправки)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdsЗаправки1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoЗаправки1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreateReport
@@ -255,6 +312,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Время_);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ВремяСтрока_);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Заказчик_);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ИтогоСлив_);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ИтогоЗаправка_);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
             this.nsgVisualMultipleObject.MetaDataName = "";
@@ -339,22 +398,22 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgGroupsList.MinimumSize = new System.Drawing.Size(290, 150);
             this.nsgGroupsList.Name = "NsgGroupsList";
             this.nsgGroupsList.NsgRemoveMasterComponent = true;
-            this.nsgGroupsList.SetReport = this.nsgReport1;
+            this.nsgGroupsList.SetReport = this.nsgReport3;
             this.nsgGroupsList.SetTitle = "Группировка";
             this.nsgGroupsList.Size = new System.Drawing.Size(300, 357);
             this.nsgGroupsList.TabIndex = 10;
             // 
-            // nsgReport1
+            // nsgReport3
             // 
-            this.nsgReport1.CurrentProgressValue = 0;
-            this.nsgReport1.HighlightedComponent = null;
-            this.nsgReport1.IsSyncMode = true;
-            this.nsgReport1.MaxProgressValue = 100;
-            this.nsgReport1.OwnerForm = null;
-            this.nsgReport1.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
-            this.nsgReport1.ProgressObject = null;
-            this.nsgReport1.ProgressProcentage = 0;
-            this.nsgReport1.ReferencedAssemblies = new string[] {
+            this.nsgReport3.CurrentProgressValue = 0;
+            this.nsgReport3.HighlightedComponent = null;
+            this.nsgReport3.IsSyncMode = true;
+            this.nsgReport3.MaxProgressValue = 100;
+            this.nsgReport3.OwnerForm = null;
+            this.nsgReport3.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
+            this.nsgReport3.ProgressObject = null;
+            this.nsgReport3.ProgressProcentage = 0;
+            this.nsgReport3.ReferencedAssemblies = new string[] {
         "System.Dll",
         "System.Drawing.Dll",
         "System.Windows.Forms.Dll",
@@ -370,39 +429,53 @@ namespace TechControl.Метаданные.Мониторинг
         "NsgSoft.Forms.Dll",
         "NsgSoft.FormsComponents.dll",
         "NsgSoft.Tools.dll",
-        "NsgSoft.CityGuide.Dll"};
-            this.nsgReport1.ReportAlias = "Отчет";
-            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource1);
-            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource2);
-            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource3);
-            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource4);
-            this.nsgReport1.ReportGuid = "74de7d085e9d42a4a2b638be60b8fc06";
-            this.nsgReport1.ReportLoaded = true;
-            this.nsgReport1.ReportName = "Отчет";
-            this.nsgReport1.ReportSource = resources.GetString("nsgReport1.ReportSource");
-            this.nsgReport1.ReportUnit = NsgSoft.ReportBuilder.StiReportUnitType.Centimeters;
-            this.nsgReport1.ScriptLanguage = NsgSoft.ReportBuilder.StiReportLanguageType.CSharp;
-            this.nsgReport1.ShowBookmarksPanel = false;
+        "TechControl.exe",
+        "TechControl",
+        "NsgSoft.Common.dll",
+        "NsgSoft.DataObjects.dll",
+        "NsgSoft.Design.dll",
+        "NsgSoft.Windows.iGridLib.iGrid.dll",
+        "NsgSoft.Database.dll",
+        "NsgSoft.ReportCompression.dll",
+        "NsgSoft.Database.FireBird.dll",
+        "NsgSoft.Forms.dll",
+        "WeifenLuo.WinFormsUI.Docking.dll",
+        "NsgSoft.ReportBuilder.dll",
+        "NsgSoft.ReportBase.dll",
+        "NsgSoft.ReportControls.dll",
+        "NsgSoft.ReportEditor.dll"};
+            this.nsgReport3.ReportAlias = "Отчет_по_заправкам___13_04";
+            this.nsgReport3.ReportDataSources.Add(this.stiReportDataSource9);
+            this.nsgReport3.ReportDataSources.Add(this.stiReportDataSource10);
+            this.nsgReport3.ReportDataSources.Add(this.stiReportDataSource11);
+            this.nsgReport3.ReportDataSources.Add(this.stiReportDataSource12);
+            this.nsgReport3.ReportGuid = "34db47eb3a644a3a8efa4edce51531d5";
+            this.nsgReport3.ReportLoaded = true;
+            this.nsgReport3.ReportName = "Отчет_по_заправкам___13_04";
+            this.nsgReport3.ReportSource = resources.GetString("nsgReport3.ReportSource");
+            this.nsgReport3.ReportUnit = NsgSoft.ReportBuilder.StiReportUnitType.Centimeters;
+            this.nsgReport3.ScriptLanguage = NsgSoft.ReportBuilder.StiReportLanguageType.CSharp;
+            this.nsgReport3.ShowBookmarksPanel = false;
             // 
             // nsgReportDataSource
             // 
             this.nsgReportDataSource.MasterComponent = this.nsgVisualMultipleObject;
             this.nsgReportDataSource.Name = "nsgReportDataSource";
             // 
-            // stiReportDataSource1
+            // stiReportDataSource9
             // 
-            this.stiReportDataSource1.Item = this.nsgReportDataSource;
-            this.stiReportDataSource1.Name = "nsgReportDataSource";
+            this.stiReportDataSource9.Item = this.nsgReportDataSource;
+            this.stiReportDataSource9.Name = "nsgReportDataSource";
             // 
             // rdsФильтр
             // 
             this.rdsФильтр.MasterComponent = this.vmoФильтр;
             this.rdsФильтр.Name = "rdsФильтр";
             // 
-            // stiReportDataSource2
+            // stiReportDataSource10
             // 
-            this.stiReportDataSource2.Item = this.rdsФильтр;
-            this.stiReportDataSource2.Name = "rdsФильтр";
+            this.stiReportDataSource10.Item = this.rdsФильтр;
+            this.stiReportDataSource10.Name = "rdsФильтр";
             // 
             // rdsШапка
             // 
@@ -461,10 +534,10 @@ namespace TechControl.Метаданные.Мониторинг
             this.ИтогКостыль.SearchCondition.OwnerComponent = this.ИтогКостыль;
             this.ИтогКостыль.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // stiReportDataSource3
+            // stiReportDataSource11
             // 
-            this.stiReportDataSource3.Item = this.rdsШапка;
-            this.stiReportDataSource3.Name = "rdsШапка";
+            this.stiReportDataSource11.Item = this.rdsШапка;
+            this.stiReportDataSource11.Name = "rdsШапка";
             // 
             // rdsЗаправки
             // 
@@ -922,6 +995,602 @@ namespace TechControl.Метаданные.Мониторинг
             this.ИтогоРуб_vmoЗаправки.SearchCondition.OwnerComponent = this.ИтогоРуб_vmoЗаправки;
             this.ИтогоРуб_vmoЗаправки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // stiReportDataSource12
+            // 
+            this.stiReportDataSource12.Item = this.rdsЗаправки;
+            this.stiReportDataSource12.Name = "rdsЗаправки";
+            // 
+            // nsgReport2
+            // 
+            this.nsgReport2.CurrentProgressValue = 0;
+            this.nsgReport2.HighlightedComponent = null;
+            this.nsgReport2.IsSyncMode = true;
+            this.nsgReport2.MaxProgressValue = 100;
+            this.nsgReport2.OwnerForm = null;
+            this.nsgReport2.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
+            this.nsgReport2.ProgressObject = null;
+            this.nsgReport2.ProgressProcentage = 0;
+            this.nsgReport2.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "NsgSoft.ReportControls.Dll",
+        "NsgSoft.ReportBase.Dll",
+        "NsgSoft.ReportBuilder.Dll",
+        "NsgSoft.Common.Dll",
+        "NsgSoft.Database.Dll",
+        "NsgSoft.DataObjects.Dll",
+        "NsgSoft.Design.Dll",
+        "NsgSoft.Forms.Dll",
+        "NsgSoft.FormsComponents.dll",
+        "NsgSoft.Tools.dll",
+        "TechControl.exe",
+        "TechControl",
+        "NsgSoft.Common.dll",
+        "NsgSoft.DataObjects.dll",
+        "NsgSoft.Design.dll",
+        "NsgSoft.Windows.iGridLib.iGrid.dll",
+        "NsgSoft.Database.dll",
+        "NsgSoft.ReportCompression.dll",
+        "NsgSoft.Database.FireBird.dll",
+        "NsgSoft.Forms.dll",
+        "WeifenLuo.WinFormsUI.Docking.dll",
+        "NsgSoft.ReportBuilder.dll",
+        "NsgSoft.ReportBase.dll",
+        "NsgSoft.ReportControls.dll",
+        "NsgSoft.ReportEditor.dll"};
+            this.nsgReport2.ReportAlias = "Отчет_по_заправкам___22_59";
+            this.nsgReport2.ReportDataSources.Add(this.stiReportDataSource5);
+            this.nsgReport2.ReportDataSources.Add(this.stiReportDataSource6);
+            this.nsgReport2.ReportDataSources.Add(this.stiReportDataSource7);
+            this.nsgReport2.ReportDataSources.Add(this.stiReportDataSource8);
+            this.nsgReport2.ReportDataSources.Add(this.stiReportDataSource13);
+            this.nsgReport2.ReportGuid = "675404236d9543c88e385080b4385f9d";
+            this.nsgReport2.ReportLoaded = true;
+            this.nsgReport2.ReportName = "Отчет_по_заправкам___22_59";
+            this.nsgReport2.ReportSource = resources.GetString("nsgReport2.ReportSource");
+            this.nsgReport2.ReportUnit = NsgSoft.ReportBuilder.StiReportUnitType.Centimeters;
+            this.nsgReport2.ScriptLanguage = NsgSoft.ReportBuilder.StiReportLanguageType.CSharp;
+            this.nsgReport2.ShowBookmarksPanel = false;
+            // 
+            // stiReportDataSource5
+            // 
+            this.stiReportDataSource5.Item = this.nsgReportDataSource;
+            this.stiReportDataSource5.Name = "nsgReportDataSource";
+            // 
+            // stiReportDataSource6
+            // 
+            this.stiReportDataSource6.Item = this.rdsФильтр;
+            this.stiReportDataSource6.Name = "rdsФильтр";
+            // 
+            // stiReportDataSource7
+            // 
+            this.stiReportDataSource7.Item = this.rdsШапка;
+            this.stiReportDataSource7.Name = "rdsШапка";
+            // 
+            // stiReportDataSource8
+            // 
+            this.stiReportDataSource8.Item = this.rdsЗаправки;
+            this.stiReportDataSource8.Name = "rdsЗаправки";
+            // 
+            // rdsЗаправки1
+            // 
+            this.rdsЗаправки1.MasterComponent = this.vmoЗаправки1;
+            this.rdsЗаправки1.Name = "rdsЗаправки1";
+            // 
+            // vmoЗаправки1
+            // 
+            this.vmoЗаправки1.Columns.Collection.Add(this.Поставщик_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.Заказчик_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.Объект_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.ГосНомер_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.Время_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.ВремяСтрока_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День1_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День2_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День3_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День4_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День5_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День6_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День7_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День8_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День9_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День10_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День11_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День12_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День13_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День14_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День15_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День16_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День17_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День18_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День19_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День20_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День21_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День22_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День23_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День24_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День25_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День26_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День27_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День28_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День29_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День30_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.День31_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.СтоимостьЗаЛитр_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.ИтогоЛ_з1);
+            this.vmoЗаправки1.Columns.Collection.Add(this.ИтогоРуб_з1);
+            this.vmoЗаправки1.IsActive = true;
+            this.vmoЗаправки1.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoЗаправки1.MetaDataName = "";
+            this.vmoЗаправки1.FullName = "";
+            // 
+            // ГосНомер_з1
+            // 
+            this.ГосНомер_з1.Caption = "ГосНомер";
+            this.ГосНомер_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ГосНомер_з1.Name = "ГосНомер";
+            this.ГосНомер_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.ГосНомер_з1.PropertyType = typeof(string);
+            this.ГосНомер_з1.SearchCondition.OwnerComponent = this.ГосНомер_з1;
+            this.ГосНомер_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Время_з1
+            // 
+            this.Время_з1.Caption = "Время";
+            this.Время_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Время_з1.Name = "Время";
+            this.Время_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.Время_з1.PropertyType = typeof(System.DateTime);
+            this.Время_з1.SearchCondition.OwnerComponent = this.Время_з1;
+            this.Время_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяСтрока_з1
+            // 
+            this.ВремяСтрока_з1.Caption = "ВремяСтрока";
+            this.ВремяСтрока_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяСтрока_з1.Name = "ВремяСтрока";
+            this.ВремяСтрока_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.ВремяСтрока_з1.PropertyType = typeof(string);
+            this.ВремяСтрока_з1.SearchCondition.OwnerComponent = this.ВремяСтрока_з1;
+            this.ВремяСтрока_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День1_з1
+            // 
+            this.День1_з1.CalcTotal = false;
+            this.День1_з1.Caption = "День1";
+            this.День1_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День1_з1.Name = "День1";
+            this.День1_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День1_з1.PropertyType = typeof(decimal);
+            this.День1_з1.SearchCondition.OwnerComponent = this.День1_з1;
+            this.День1_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День2_з1
+            // 
+            this.День2_з1.CalcTotal = false;
+            this.День2_з1.Caption = "День2";
+            this.День2_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День2_з1.Name = "День2";
+            this.День2_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День2_з1.PropertyType = typeof(decimal);
+            this.День2_з1.SearchCondition.OwnerComponent = this.День2_з1;
+            this.День2_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День3_з1
+            // 
+            this.День3_з1.CalcTotal = false;
+            this.День3_з1.Caption = "День3";
+            this.День3_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День3_з1.Name = "День3";
+            this.День3_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День3_з1.PropertyType = typeof(decimal);
+            this.День3_з1.SearchCondition.OwnerComponent = this.День3_з1;
+            this.День3_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День4_з1
+            // 
+            this.День4_з1.CalcTotal = false;
+            this.День4_з1.Caption = "День4";
+            this.День4_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День4_з1.Name = "День4";
+            this.День4_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День4_з1.PropertyType = typeof(decimal);
+            this.День4_з1.SearchCondition.OwnerComponent = this.День4_з1;
+            this.День4_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День5_з1
+            // 
+            this.День5_з1.CalcTotal = false;
+            this.День5_з1.Caption = "День5";
+            this.День5_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День5_з1.Name = "День5";
+            this.День5_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День5_з1.PropertyType = typeof(decimal);
+            this.День5_з1.SearchCondition.OwnerComponent = this.День5_з1;
+            this.День5_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День6_з1
+            // 
+            this.День6_з1.CalcTotal = false;
+            this.День6_з1.Caption = "День6";
+            this.День6_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День6_з1.Name = "День6";
+            this.День6_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День6_з1.PropertyType = typeof(decimal);
+            this.День6_з1.SearchCondition.OwnerComponent = this.День6_з1;
+            this.День6_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День7_з1
+            // 
+            this.День7_з1.CalcTotal = false;
+            this.День7_з1.Caption = "День7";
+            this.День7_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День7_з1.Name = "День7";
+            this.День7_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День7_з1.PropertyType = typeof(decimal);
+            this.День7_з1.SearchCondition.OwnerComponent = this.День7_з1;
+            this.День7_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День8_з1
+            // 
+            this.День8_з1.CalcTotal = false;
+            this.День8_з1.Caption = "День8";
+            this.День8_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День8_з1.Name = "День8";
+            this.День8_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День8_з1.PropertyType = typeof(decimal);
+            this.День8_з1.SearchCondition.OwnerComponent = this.День8_з1;
+            this.День8_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День9_з1
+            // 
+            this.День9_з1.CalcTotal = false;
+            this.День9_з1.Caption = "День9";
+            this.День9_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День9_з1.Name = "День9";
+            this.День9_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День9_з1.PropertyType = typeof(decimal);
+            this.День9_з1.SearchCondition.OwnerComponent = this.День9_з1;
+            this.День9_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День10_з1
+            // 
+            this.День10_з1.CalcTotal = false;
+            this.День10_з1.Caption = "День10";
+            this.День10_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День10_з1.Name = "День10";
+            this.День10_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День10_з1.PropertyType = typeof(decimal);
+            this.День10_з1.SearchCondition.OwnerComponent = this.День10_з1;
+            this.День10_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День11_з1
+            // 
+            this.День11_з1.CalcTotal = false;
+            this.День11_з1.Caption = "День11";
+            this.День11_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День11_з1.Name = "День11";
+            this.День11_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День11_з1.PropertyType = typeof(decimal);
+            this.День11_з1.SearchCondition.OwnerComponent = this.День11_з1;
+            this.День11_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День12_з1
+            // 
+            this.День12_з1.CalcTotal = false;
+            this.День12_з1.Caption = "День12";
+            this.День12_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День12_з1.Name = "День12";
+            this.День12_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День12_з1.PropertyType = typeof(decimal);
+            this.День12_з1.SearchCondition.OwnerComponent = this.День12_з1;
+            this.День12_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День13_з1
+            // 
+            this.День13_з1.CalcTotal = false;
+            this.День13_з1.Caption = "День13";
+            this.День13_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День13_з1.Name = "День13";
+            this.День13_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День13_з1.PropertyType = typeof(decimal);
+            this.День13_з1.SearchCondition.OwnerComponent = this.День13_з1;
+            this.День13_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День14_з1
+            // 
+            this.День14_з1.CalcTotal = false;
+            this.День14_з1.Caption = "День14";
+            this.День14_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День14_з1.Name = "День14";
+            this.День14_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День14_з1.PropertyType = typeof(decimal);
+            this.День14_з1.SearchCondition.OwnerComponent = this.День14_з1;
+            this.День14_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День15_з1
+            // 
+            this.День15_з1.CalcTotal = false;
+            this.День15_з1.Caption = "День15";
+            this.День15_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День15_з1.Name = "День15";
+            this.День15_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День15_з1.PropertyType = typeof(decimal);
+            this.День15_з1.SearchCondition.OwnerComponent = this.День15_з1;
+            this.День15_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День16_з1
+            // 
+            this.День16_з1.CalcTotal = false;
+            this.День16_з1.Caption = "День16";
+            this.День16_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День16_з1.Name = "День16";
+            this.День16_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День16_з1.PropertyType = typeof(decimal);
+            this.День16_з1.SearchCondition.OwnerComponent = this.День16_з1;
+            this.День16_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День17_з1
+            // 
+            this.День17_з1.CalcTotal = false;
+            this.День17_з1.Caption = "День17";
+            this.День17_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День17_з1.Name = "День17";
+            this.День17_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День17_з1.PropertyType = typeof(decimal);
+            this.День17_з1.SearchCondition.OwnerComponent = this.День17_з1;
+            this.День17_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День18_з1
+            // 
+            this.День18_з1.CalcTotal = false;
+            this.День18_з1.Caption = "День18";
+            this.День18_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День18_з1.Name = "День18";
+            this.День18_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День18_з1.PropertyType = typeof(decimal);
+            this.День18_з1.SearchCondition.OwnerComponent = this.День18_з1;
+            this.День18_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День19_з1
+            // 
+            this.День19_з1.CalcTotal = false;
+            this.День19_з1.Caption = "День19";
+            this.День19_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День19_з1.Name = "День19";
+            this.День19_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День19_з1.PropertyType = typeof(decimal);
+            this.День19_з1.SearchCondition.OwnerComponent = this.День19_з1;
+            this.День19_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День20_з1
+            // 
+            this.День20_з1.CalcTotal = false;
+            this.День20_з1.Caption = "День20";
+            this.День20_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День20_з1.Name = "День20";
+            this.День20_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День20_з1.PropertyType = typeof(decimal);
+            this.День20_з1.SearchCondition.OwnerComponent = this.День20_з1;
+            this.День20_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День21_з1
+            // 
+            this.День21_з1.CalcTotal = false;
+            this.День21_з1.Caption = "День21";
+            this.День21_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День21_з1.Name = "День21";
+            this.День21_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День21_з1.PropertyType = typeof(decimal);
+            this.День21_з1.SearchCondition.OwnerComponent = this.День21_з1;
+            this.День21_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День22_з1
+            // 
+            this.День22_з1.CalcTotal = false;
+            this.День22_з1.Caption = "День22";
+            this.День22_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День22_з1.Name = "День22";
+            this.День22_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День22_з1.PropertyType = typeof(decimal);
+            this.День22_з1.SearchCondition.OwnerComponent = this.День22_з1;
+            this.День22_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День23_з1
+            // 
+            this.День23_з1.CalcTotal = false;
+            this.День23_з1.Caption = "День23";
+            this.День23_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День23_з1.Name = "День23";
+            this.День23_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День23_з1.PropertyType = typeof(decimal);
+            this.День23_з1.SearchCondition.OwnerComponent = this.День23_з1;
+            this.День23_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День24_з1
+            // 
+            this.День24_з1.CalcTotal = false;
+            this.День24_з1.Caption = "День24";
+            this.День24_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День24_з1.Name = "День24";
+            this.День24_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День24_з1.PropertyType = typeof(decimal);
+            this.День24_з1.SearchCondition.OwnerComponent = this.День24_з1;
+            this.День24_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День25_з1
+            // 
+            this.День25_з1.CalcTotal = false;
+            this.День25_з1.Caption = "День25";
+            this.День25_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День25_з1.Name = "День25";
+            this.День25_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День25_з1.PropertyType = typeof(decimal);
+            this.День25_з1.SearchCondition.OwnerComponent = this.День25_з1;
+            this.День25_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День26_з1
+            // 
+            this.День26_з1.CalcTotal = false;
+            this.День26_з1.Caption = "День26";
+            this.День26_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День26_з1.Name = "День26";
+            this.День26_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День26_з1.PropertyType = typeof(decimal);
+            this.День26_з1.SearchCondition.OwnerComponent = this.День26_з1;
+            this.День26_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День27_з1
+            // 
+            this.День27_з1.CalcTotal = false;
+            this.День27_з1.Caption = "День27";
+            this.День27_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День27_з1.Name = "День27";
+            this.День27_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День27_з1.PropertyType = typeof(decimal);
+            this.День27_з1.SearchCondition.OwnerComponent = this.День27_з1;
+            this.День27_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День28_з1
+            // 
+            this.День28_з1.CalcTotal = false;
+            this.День28_з1.Caption = "День28";
+            this.День28_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День28_з1.Name = "День28";
+            this.День28_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День28_з1.PropertyType = typeof(decimal);
+            this.День28_з1.SearchCondition.OwnerComponent = this.День28_з1;
+            this.День28_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День29_з1
+            // 
+            this.День29_з1.CalcTotal = false;
+            this.День29_з1.Caption = "День29";
+            this.День29_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День29_з1.Name = "День29";
+            this.День29_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День29_з1.PropertyType = typeof(decimal);
+            this.День29_з1.SearchCondition.OwnerComponent = this.День29_з1;
+            this.День29_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День30_з1
+            // 
+            this.День30_з1.CalcTotal = false;
+            this.День30_з1.Caption = "День30";
+            this.День30_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День30_з1.Name = "День30";
+            this.День30_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День30_з1.PropertyType = typeof(decimal);
+            this.День30_з1.SearchCondition.OwnerComponent = this.День30_з1;
+            this.День30_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // День31_з1
+            // 
+            this.День31_з1.CalcTotal = false;
+            this.День31_з1.Caption = "День31";
+            this.День31_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.День31_з1.Name = "День31";
+            this.День31_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.День31_з1.PropertyType = typeof(decimal);
+            this.День31_з1.SearchCondition.OwnerComponent = this.День31_з1;
+            this.День31_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // СтоимостьЗаЛитр_з1
+            // 
+            this.СтоимостьЗаЛитр_з1.CalcTotal = false;
+            this.СтоимостьЗаЛитр_з1.Caption = "СтоимостьЗаЛитр";
+            this.СтоимостьЗаЛитр_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.СтоимостьЗаЛитр_з1.Name = "СтоимостьЗаЛитр";
+            this.СтоимостьЗаЛитр_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.СтоимостьЗаЛитр_з1.PropertyType = typeof(decimal);
+            this.СтоимостьЗаЛитр_з1.SearchCondition.OwnerComponent = this.СтоимостьЗаЛитр_з1;
+            this.СтоимостьЗаЛитр_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ИтогоЛ_з1
+            // 
+            this.ИтогоЛ_з1.CalcTotal = false;
+            this.ИтогоЛ_з1.Caption = "ИтогоЛ";
+            this.ИтогоЛ_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ИтогоЛ_з1.Name = "ИтогоЛ";
+            this.ИтогоЛ_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ИтогоЛ_з1.PropertyType = typeof(decimal);
+            this.ИтогоЛ_з1.SearchCondition.OwnerComponent = this.ИтогоЛ_з1;
+            this.ИтогоЛ_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ИтогоРуб_з1
+            // 
+            this.ИтогоРуб_з1.CalcTotal = false;
+            this.ИтогоРуб_з1.Caption = "ИтогоРуб";
+            this.ИтогоРуб_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ИтогоРуб_з1.Name = "ИтогоРуб";
+            this.ИтогоРуб_з1.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ИтогоРуб_з1.PropertyType = typeof(decimal);
+            this.ИтогоРуб_з1.SearchCondition.OwnerComponent = this.ИтогоРуб_з1;
+            this.ИтогоРуб_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // stiReportDataSource13
+            // 
+            this.stiReportDataSource13.Item = this.rdsЗаправки1;
+            this.stiReportDataSource13.Name = "rdsЗаправки1";
+            // 
+            // nsgReport1
+            // 
+            this.nsgReport1.CurrentProgressValue = 0;
+            this.nsgReport1.HighlightedComponent = null;
+            this.nsgReport1.IsSyncMode = true;
+            this.nsgReport1.MaxProgressValue = 100;
+            this.nsgReport1.OwnerForm = null;
+            this.nsgReport1.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
+            this.nsgReport1.ProgressObject = null;
+            this.nsgReport1.ProgressProcentage = 0;
+            this.nsgReport1.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "NsgSoft.ReportControls.Dll",
+        "NsgSoft.ReportBase.Dll",
+        "NsgSoft.ReportBuilder.Dll",
+        "NsgSoft.Common.Dll",
+        "NsgSoft.Database.Dll",
+        "NsgSoft.DataObjects.Dll",
+        "NsgSoft.Design.Dll",
+        "NsgSoft.Forms.Dll",
+        "NsgSoft.FormsComponents.dll",
+        "NsgSoft.Tools.dll",
+        "NsgSoft.CityGuide.Dll"};
+            this.nsgReport1.ReportAlias = "Отчет";
+            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource1);
+            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource2);
+            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource3);
+            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource4);
+            this.nsgReport1.ReportGuid = "1e8e35902d1a491d8a99bcb98cb935c9";
+            this.nsgReport1.ReportLoaded = true;
+            this.nsgReport1.ReportName = "Отчет";
+            this.nsgReport1.ReportSource = resources.GetString("nsgReport1.ReportSource");
+            this.nsgReport1.ReportUnit = NsgSoft.ReportBuilder.StiReportUnitType.Centimeters;
+            this.nsgReport1.ScriptLanguage = NsgSoft.ReportBuilder.StiReportLanguageType.CSharp;
+            this.nsgReport1.ShowBookmarksPanel = false;
+            // 
+            // stiReportDataSource1
+            // 
+            this.stiReportDataSource1.Item = this.nsgReportDataSource;
+            this.stiReportDataSource1.Name = "nsgReportDataSource";
+            // 
+            // stiReportDataSource2
+            // 
+            this.stiReportDataSource2.Item = this.rdsФильтр;
+            this.stiReportDataSource2.Name = "rdsФильтр";
+            // 
+            // stiReportDataSource3
+            // 
+            this.stiReportDataSource3.Item = this.rdsШапка;
+            this.stiReportDataSource3.Name = "rdsШапка";
+            // 
             // stiReportDataSource4
             // 
             this.stiReportDataSource4.Item = this.rdsЗаправки;
@@ -1309,6 +1978,17 @@ namespace TechControl.Метаданные.Мониторинг
             this.ВремяСтрока_.SearchCondition.OwnerComponent = this.ВремяСтрока_;
             this.ВремяСтрока_.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // ИтогоСлив_
+            // 
+            this.ИтогоСлив_.CalcTotal = false;
+            this.ИтогоСлив_.Caption = "ИтогоСлив";
+            this.ИтогоСлив_.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ИтогоСлив_.Name = "ИтогоСлив";
+            this.ИтогоСлив_.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ИтогоСлив_.PropertyType = typeof(decimal);
+            this.ИтогоСлив_.SearchCondition.OwnerComponent = this.ИтогоСлив_;
+            this.ИтогоСлив_.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // Техника_
             // 
             this.Техника_.Caption = "Техника";
@@ -1338,6 +2018,16 @@ namespace TechControl.Метаданные.Мониторинг
             this.Объект_.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
             this.Объект_.SearchCondition.OwnerComponent = this.Объект_;
             this.Объект_.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Заказчик_
+            // 
+            this.Заказчик_.Caption = "Заказчик";
+            this.Заказчик_.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Заказчик_.Name = "Заказчик";
+            this.Заказчик_.NSGType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
+            this.Заказчик_.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
+            this.Заказчик_.SearchCondition.OwnerComponent = this.Заказчик_;
+            this.Заказчик_.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // Техника_ф
             // 
@@ -1389,16 +2079,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.Объект_vmoЗаправки.SearchCondition.OwnerComponent = this.Объект_vmoЗаправки;
             this.Объект_vmoЗаправки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Заказчик_
-            // 
-            this.Заказчик_.Caption = "Заказчик";
-            this.Заказчик_.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Заказчик_.Name = "Заказчик";
-            this.Заказчик_.NSGType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
-            this.Заказчик_.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
-            this.Заказчик_.SearchCondition.OwnerComponent = this.Заказчик_;
-            this.Заказчик_.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
             // Заказчик_vmoЗаправки
             // 
             this.Заказчик_vmoЗаправки.Caption = "Заказчик";
@@ -1408,6 +2088,47 @@ namespace TechControl.Метаданные.Мониторинг
             this.Заказчик_vmoЗаправки.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
             this.Заказчик_vmoЗаправки.SearchCondition.OwnerComponent = this.Заказчик_vmoЗаправки;
             this.Заказчик_vmoЗаправки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Поставщик_з1
+            // 
+            this.Поставщик_з1.Caption = "Поставщик";
+            this.Поставщик_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Поставщик_з1.Name = "Поставщик";
+            this.Поставщик_з1.NSGType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
+            this.Поставщик_з1.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
+            this.Поставщик_з1.SearchCondition.OwnerComponent = this.Поставщик_з1;
+            this.Поставщик_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Заказчик_з1
+            // 
+            this.Заказчик_з1.Caption = "Заказчик";
+            this.Заказчик_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Заказчик_з1.Name = "Заказчик";
+            this.Заказчик_з1.NSGType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
+            this.Заказчик_з1.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
+            this.Заказчик_з1.SearchCondition.OwnerComponent = this.Заказчик_з1;
+            this.Заказчик_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Объект_з1
+            // 
+            this.Объект_з1.Caption = "Объект";
+            this.Объект_з1.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Объект_з1.Name = "Объект";
+            this.Объект_з1.NSGType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
+            this.Объект_з1.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
+            this.Объект_з1.SearchCondition.OwnerComponent = this.Объект_з1;
+            this.Объект_з1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ИтогоЗаправка_
+            // 
+            this.ИтогоЗаправка_.CalcTotal = false;
+            this.ИтогоЗаправка_.Caption = "ИтогоЗаправка";
+            this.ИтогоЗаправка_.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ИтогоЗаправка_.Name = "ИтогоЗаправка";
+            this.ИтогоЗаправка_.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ИтогоЗаправка_.PropertyType = typeof(decimal);
+            this.ИтогоЗаправка_.SearchCondition.OwnerComponent = this.ИтогоЗаправка_;
+            this.ИтогоЗаправка_.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // ОтчетПоЗаправкамФорма
             // 
@@ -1426,7 +2147,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.KeyPreview = true;
             this.Location = new System.Drawing.Point(15, 15);
-            this.MainReport = null;
+            this.MainReport = this.nsgReport3;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NsgReportForm";
             this.SelectedObject = null;
@@ -1451,6 +2172,8 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.vmoШапка)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdsЗаправки)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoЗаправки)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdsЗаправки1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoЗаправки1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1494,7 +2217,6 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.Decimal День30_;
         protected NsgColumnDescriptor.Decimal День31_;
         protected NsgColumnDescriptor.Decimal Итого_;
-        protected NsgVisualMultipleObject vmoШапка;
         protected NsgColumnDescriptor.DateTime Время_;
         protected NsgColumnDescriptor.String ВремяСтрока_;
         protected Техника.ColumnDescriptor Техника_ф;
@@ -1503,9 +2225,6 @@ namespace TechControl.Метаданные.Мониторинг
         protected Контрагенты.ColumnDescriptor Поставщик_vmoЗаправки;
         protected NsgColumnDescriptor.String ГосНомер_vmoЗаправки;
         protected NsgColumnDescriptor.String ВремяСтрока_vmoЗаправки;
-        protected NsgSoft.ReportBuilder.NsgReportDataSource nsgReportDataSource;
-        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsФильтр;
-        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsШапка;
         protected Объекты.ColumnDescriptor Объект_vmoЗаправки;
         protected NsgColumnDescriptor.Decimal День1_vmoЗаправки;
         protected NsgColumnDescriptor.Decimal День2_vmoЗаправки;
@@ -1542,21 +2261,80 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.Decimal СтоимостьЗаЛитр_vmoЗаправки;
         protected NsgColumnDescriptor.Decimal ИтогоЛ_vmoЗаправки;
         protected NsgColumnDescriptor.Decimal ИтогоРуб_vmoЗаправки;
-        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsЗаправки;
-        private NsgSoft.ReportBuilder.NsgReport nsgReport1;
         protected NsgColumnDescriptor.String ДатаСоставления;
         protected NsgColumnDescriptor.String НачалоПериода;
         protected NsgColumnDescriptor.String ОкончаниеПериода;
-        protected NsgSoft.Forms.NsgIGridView.NsgObjectFilter nsgObjectFilter;
-        protected NsgVisualMultipleObject vmoФильтр;
-        protected NsgVisualMultipleObject vmoЗаправки;
         protected NsgColumnDescriptor.String ИтогКостыль;
         private NsgSoft.ReportBuilder.NsgGroupsList nsgGroupsList;
+        protected Контрагенты.ColumnDescriptor Заказчик_;
+        protected Контрагенты.ColumnDescriptor Заказчик_vmoЗаправки;
+        protected Контрагенты.ColumnDescriptor Поставщик_з1;
+        protected Контрагенты.ColumnDescriptor Заказчик_з1;
+        protected Объекты.ColumnDescriptor Объект_з1;
+        protected NsgColumnDescriptor.String ГосНомер_з1;
+        protected NsgColumnDescriptor.DateTime Время_з1;
+        protected NsgColumnDescriptor.String ВремяСтрока_з1;
+        protected NsgColumnDescriptor.Decimal День2_з1;
+        protected NsgColumnDescriptor.Decimal День1_з1;
+        protected NsgColumnDescriptor.Decimal День3_з1;
+        protected NsgColumnDescriptor.Decimal День4_з1;
+        protected NsgColumnDescriptor.Decimal День5_з1;
+        protected NsgColumnDescriptor.Decimal День6_з1;
+        protected NsgColumnDescriptor.Decimal День7_з1;
+        protected NsgColumnDescriptor.Decimal День8_з1;
+        protected NsgColumnDescriptor.Decimal День9_з1;
+        protected NsgColumnDescriptor.Decimal День10_з1;
+        protected NsgColumnDescriptor.Decimal День11_з1;
+        protected NsgColumnDescriptor.Decimal День12_з1;
+        protected NsgColumnDescriptor.Decimal День13_з1;
+        protected NsgColumnDescriptor.Decimal День14_з1;
+        protected NsgColumnDescriptor.Decimal День15_з1;
+        protected NsgColumnDescriptor.Decimal День16_з1;
+        protected NsgColumnDescriptor.Decimal День17_з1;
+        protected NsgColumnDescriptor.Decimal День18_з1;
+        protected NsgColumnDescriptor.Decimal День19_з1;
+        protected NsgColumnDescriptor.Decimal День20_з1;
+        protected NsgColumnDescriptor.Decimal День21_з1;
+        protected NsgColumnDescriptor.Decimal День22_з1;
+        protected NsgColumnDescriptor.Decimal День23_з1;
+        protected NsgColumnDescriptor.Decimal День24_з1;
+        protected NsgColumnDescriptor.Decimal День25_з1;
+        protected NsgColumnDescriptor.Decimal День26_з1;
+        protected NsgColumnDescriptor.Decimal День27_з1;
+        protected NsgColumnDescriptor.Decimal День28_з1;
+        protected NsgColumnDescriptor.Decimal День29_з1;
+        protected NsgColumnDescriptor.Decimal День30_з1;
+        protected NsgColumnDescriptor.Decimal День31_з1;
+        protected NsgColumnDescriptor.Decimal СтоимостьЗаЛитр_з1;
+        protected NsgColumnDescriptor.Decimal ИтогоЛ_з1;
+        protected NsgColumnDescriptor.Decimal ИтогоРуб_з1;
+        private NsgSoft.ReportBuilder.NsgReport nsgReport3;
+        protected NsgSoft.ReportBuilder.NsgReportDataSource nsgReportDataSource;
+        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsЗаправки1;
+        protected NsgSoft.ReportBuilder.NsgReport nsgReport1;
+        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsФильтр;
+        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsШапка;
+        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsЗаправки;
         protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource1;
         protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource2;
         protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource3;
         protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource4;
-        protected Контрагенты.ColumnDescriptor Заказчик_;
-        protected Контрагенты.ColumnDescriptor Заказчик_vmoЗаправки;
+        private NsgSoft.ReportBuilder.NsgReport nsgReport2;
+        protected NsgColumnDescriptor.Decimal ИтогоСлив_;
+        protected NsgColumnDescriptor.Decimal ИтогоЗаправка_;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource9;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource10;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource11;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource12;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource5;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource6;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource7;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource8;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource13;
+        protected NsgVisualMultipleObject vmoЗаправки1;
+        protected NsgVisualMultipleObject vmoШапка;
+        protected NsgSoft.Forms.NsgIGridView.NsgObjectFilter nsgObjectFilter;
+        protected NsgVisualMultipleObject vmoФильтр;
+        protected NsgVisualMultipleObject vmoЗаправки;
     }
 }

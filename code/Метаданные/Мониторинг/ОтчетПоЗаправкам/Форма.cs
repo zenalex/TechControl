@@ -98,12 +98,22 @@ namespace TechControl.Метаданные.Мониторинг
                     row[Время_].Value = NsgService.BeginOfMonth(dateTime);
                     row[ВремяСтрока_].Value = new NsgDateTimePeriod(NsgService.BeginOfMonth(dateTime), NsgService.EndOfMonth(dateTime)).ToString();
                     decimal itogo = row[Итого_].ToDecimal();
+                    decimal itogoZapravka = row[ИтогоЗаправка_].ToDecimal();
+                    decimal itogoSleeve = row[ИтогоСлив_].ToDecimal();
                     //decimal stArItogo = row[СтоимостьАрендыИтого_].ToDecimal();
                     for (int day = 1; day <= 31; day++)
                     {
                         if (dateTime.Day == day)
                         {
                             row[$"{day}"].Value = row[$"{day}"].ToDecimal() - i[РегистрЗаправок.Names.ОбъемТоплива].ToDecimal();
+                            if (i[РегистрЗаправок.Names.ОбъемТоплива].ToDecimal() < 0)
+                            {
+                                itogoZapravka -= i[РегистрЗаправок.Names.ОбъемТоплива].ToDecimal();
+                            }
+                            else
+                            {
+                                itogoSleeve += i[РегистрЗаправок.Names.ОбъемТоплива].ToDecimal();
+                            }
                             itogo -= i[РегистрЗаправок.Names.ОбъемТоплива].ToDecimal();
                             //stArItogo -= /*тариф[Тарифы.Names.Стоимость].ToDecimal() **/ i[РегистрЗаправок.Names.Сумма].ToDebit();
                             itogsCrutch[day - 1] += row[$"{day}"].ToDecimal();
@@ -114,6 +124,8 @@ namespace TechControl.Метаданные.Мониторинг
                         }
                     }
                     row[Итого_].Value = itogo;
+                    row[ИтогоЗаправка_].Value = itogoZapravka;
+                    row[ИтогоСлив_].Value = itogoSleeve;
                     //row[СтоимостьАрендыИтого_].Value = stArItogo;
                     //row[СтоимостьВЧас_].Value = itogo == 0 ? 0 : stArItogo / itogo;
                     row.Post();
@@ -133,10 +145,10 @@ namespace TechControl.Метаданные.Мониторинг
             //vmoГруппы.Data.UpdateDataAsync(this);
             nsgVisualMultipleObject.Data.UpdateDataAsync(this);
 
-            ЗаполнитьЗаправки();
+            ЗаполнитьПоставкиТоплива();
         }
 
-        private void ЗаполнитьЗаправки()
+        private void ЗаполнитьПоставкиТоплива()
         {
             string ЗАКАЗЧИК = РегистрПоставокТоплива.Names.Объект + '.' + Объекты.Names.Заказчик;
             string ПОСТАВЩИК = РегистрПоставокТоплива.Names.Поставщик;
@@ -144,6 +156,8 @@ namespace TechControl.Метаданные.Мониторинг
 
             dims.Remove(Время_.Caption);
             dims.Remove(Техника_.Caption);
+            //dims.Add(ЗАКАЗЧИК);
+            //dims.Add(РегистрПоставокТоплива.Names.Объект);
 
             var регистрЗаправок = РегистрПоставокТоплива.Новый();
             var all = регистрЗаправок.GetCirculate(nsgPeriodPicker.Period.Begin, nsgPeriodPicker.Period.End, NsgSoft.Common.NsgPeriod.Day, nsgObjectFilter.Compare,
