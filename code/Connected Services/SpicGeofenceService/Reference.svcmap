@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cd33837b-c3fb-4c04-9c08-7baebe7bf9fe" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://login.scout-gps.ru/spic/geofences/soap?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="soap.xsd" MetadataType="Schema" ID="b9882100-c7c5-469f-90ab-f0815422b85f" SourceId="1" SourceUrl="http://login.scout-gps.ru/spic/geofences/soap?xsd=xsd0" />
+    <MetadataFile FileName="soap1.xsd" MetadataType="Schema" ID="da04a6d4-d394-4db5-8c55-bca8aad3710c" SourceId="1" SourceUrl="http://login.scout-gps.ru/spic/geofences/soap?xsd=xsd1" />
+    <MetadataFile FileName="SpicGeofenceService.wsdl" MetadataType="Wsdl" ID="02310072-30cd-41cc-860c-7a2280cf717f" SourceId="1" SourceUrl="http://login.scout-gps.ru/spic/geofences/soap?wsdl" />
+    <MetadataFile FileName="soap2.xsd" MetadataType="Schema" ID="1c639d1d-224f-4f2b-a7b4-a7fa4ee151f4" SourceId="1" SourceUrl="http://login.scout-gps.ru/spic/geofences/soap?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

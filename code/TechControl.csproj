@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.6.7.0</ProductVersion>
+    <ProductVersion>2022.6.9.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
+    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -173,6 +173,21 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReferenceValidationNavigation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SpicGeofenceService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SpicNavigationFiltrationStatisticsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -757,6 +772,69 @@
     <None Include="Connected Services\ServiceReferenceValidationNavigation\TechControl.ServiceReferenceValidationNavigation.SpicNavigationValidationStatisticsResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SpicGeofenceService\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicGeofenceService\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicGeofenceService\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicGeofenceService\SpicGeofenceService.wsdl" />
+    <None Include="Connected Services\SpicGeofenceService\TechControl.SpicGeofenceService.SpicGeofenceCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\soap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\soap4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\soap5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\SpicNavigationFiltrationStatisticsService.wsdl" />
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\TechControl.SpicNavigationFiltrationStatisticsService.SpicAddonStatisticsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\TechControl.SpicNavigationFiltrationStatisticsService.SpicNavigationFiltrationStatisticsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\soap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\soap4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\soap5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\SpicGeofenceVisitsStatisticsService.wsdl" />
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\TechControl.SpicSoapGeofenceVisitsStatisticsService.SpicAddonStatisticsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\TechControl.SpicSoapGeofenceVisitsStatisticsService.SpicGeofenceVisitStatisticResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\UtilityServiceWeb\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -943,6 +1021,9 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceTrackPeriods\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceUnitsSpic\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceValidationNavigation\" />
+    <WCFMetadataStorage Include="Connected Services\SpicGeofenceService\" />
+    <WCFMetadataStorage Include="Connected Services\SpicNavigationFiltrationStatisticsService\" />
+    <WCFMetadataStorage Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\" />
     <WCFMetadataStorage Include="Connected Services\UtilityServiceWeb\" />
   </ItemGroup>
   <ItemGroup>
@@ -3120,5 +3201,67 @@
       <NsgOwnerGuid>abe89d6c-5115-45d9-9372-2b0033d03869</NsgOwnerGuid>
       <NsgOwnerName>УчетОстаткиНоменклатурыДвижения</NsgOwnerName>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Геозоны\Геозоны.NsgInit.cs">
+      <NsgOwnerGuid>91038ae1-8740-4f05-b39e-984e0cb4403d</NsgOwnerGuid>
+      <NsgOwnerName>Геозоны</NsgOwnerName>
+      <DependentUpon>Геозоны.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Геозоны\Геозоны.cs">
+      <NsgOwnerGuid>91038ae1-8740-4f05-b39e-984e0cb4403d</NsgOwnerGuid>
+      <NsgOwnerName>Геозоны</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SpicSoapGeofenceVisitsStatisticsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SpicGeofenceService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SpicGeofenceService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SpicGeofenceService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Геозоны\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>91038ae1-8740-4f05-b39e-984e0cb4403d</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Геозоны\ФормаЭлемента.cs">
+      <NsgOwnerGuid>91038ae1-8740-4f05-b39e-984e0cb4403d</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Геозоны\ФормаЭлемента.resx">
+      <NsgOwnerGuid>91038ae1-8740-4f05-b39e-984e0cb4403d</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SpicNavigationFiltrationStatisticsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>

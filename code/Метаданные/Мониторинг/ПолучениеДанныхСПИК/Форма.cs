@@ -22,6 +22,9 @@ using TechControl.ServiceReferenceUnitsSpic;
 using TechControl.ServiceReferenceValidationNavigation;
 using TechControl.UtilityServiceWeb;
 using TechControl.Метаданные._SystemTables;
+using TechControl.SpicSoapGeofenceVisitsStatisticsService;
+using TechControl.SpicGeofenceService;
+using TechControl.SpicNavigationFiltrationStatisticsService;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -57,6 +60,13 @@ namespace TechControl.Метаданные.Мониторинг
             //    b.Post();
             //}
 
+            //var cmp = new NsgCompare().Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален);
+            //var a = Техника.Новый().FindAll(cmp);
+            //foreach (var b in a)
+            //{
+            //    b.Delete();
+            //}
+
             //SpicSoapUnitsServiceClient _client = new SpicSoapUnitsServiceClient();
             //_client.Endpoint.Behaviors.Add(new AuthorizationBehavior());
             //var unitsCount = _client.GetAllUnitsCount();
@@ -67,9 +77,20 @@ namespace TechControl.Метаданные.Мониторинг
             //var list = new List<string>();
             //foreach (var unit in units.Units)
             //{
+            //    var cmp = new NsgCompare().Add(Техника.Names.Наименование, unit.Name, NsgComparison.Contain);
+            //    var тех = Техника.Новый().FindAll(cmp);
+            //    тех[0].Edit();
+            //    тех[0].СистемыСлежения.Edit();
+            //    var row = тех[0].СистемыСлежения.NewRow();
+            //    row.ИдентификаторСистемыСлежения = $"{unit.UnitId}";
+            //    row.ТипСистемыСлежения = ТипСистемыСлежения.Скаут;
+            //    row.Post();
+            //    тех[0].СистемыСлежения.Post();
+            //    тех[0].Post();
             //    unitIDName.Add(unit.UnitId, unit.Name);
             //    list.Add(unit.Name);
             //}
+
             //var cmpTech = new NsgCompare().Add(Техника.Names.Наименование, list.ToArray(), NsgComparison.In);
             //var tech = Техника.Новый().FindAll(cmpTech);
             //foreach (var t in tech)
@@ -699,14 +720,6 @@ namespace TechControl.Метаданные.Мониторинг
                     {
                         row.totalHoursSkayt = skayt.totalHours;
                     }
-                    //else
-                    //{
-                    //    var trackAll = new TrackingSystemsAll();
-                    //    trackAll.tech = skayt.tech;
-                    //    trackAll.date = skayt.date;
-                    //    trackAll.totalHoursWorkshifts = skayt.totalHours;
-                    //    all.Add(trackAll);
-                    //}
                 }               
             }
 
@@ -718,14 +731,6 @@ namespace TechControl.Метаданные.Мониторинг
                     {
                         row.totalHoursHistory = history.totalHours;
                     }
-                    //else
-                    //{
-                    //    var trackAll = new TrackingSystemsAll();
-                    //    trackAll.tech = history.tech;
-                    //    trackAll.date = history.date;
-                    //    trackAll.totalHoursHistory = history.totalHours;
-                    //    all.Add(trackAll);
-                    //}
                 }
             }
 
@@ -841,6 +846,109 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 return eventRibbonClient;
 
+            }
+        }
+
+        private void nsgButton2_AsyncClick(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            var cmp = new NsgCompare().Add(Техника.Names.Наименование, "Самосвал", NsgComparison.Contain);
+            cmp.Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            var техника = Техника.Новый().FindAll(cmp);
+            int[] mass = new int[техника.Length];
+            var listID = new List<int>();
+            for (var i = 0; i < техника.Length; i++)
+            {
+                foreach (var строка in техника[i].СистемыСлежения.Rows)
+                {
+                    if (строка.ТипСистемыСлежения == ТипСистемыСлежения.Скаут)
+                    {
+                        mass[i] = Convert.ToInt32(строка.ИдентификаторСистемыСлежения);
+                        listID.Add(Convert.ToInt32(строка.ИдентификаторСистемыСлежения));
+                    }    
+                }
+            }
+
+            SpicSoapStatisticsControllerServiceClient _statisticsClient = new SpicSoapStatisticsControllerServiceClient();
+            _statisticsClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
+            SpicSoapGeofenceVisitsStatisticsServiceClient _statisticsGeofenceVisitsClient = new SpicSoapGeofenceVisitsStatisticsServiceClient();
+            _statisticsGeofenceVisitsClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
+            SpicNavigationFiltrationStatistics _statisticsNavigationFiltrationClient = new SpicNavigationFiltrationStatistics();
+            SpicGeofenceVisit _geofenceVisitClient = new SpicGeofenceVisit();
+
+            var date = nsgPeriodPicker1.Period.Begin.Date;
+
+            while (date <= NsgService.EndOfDay(nsgPeriodPicker1.Period.End))
+            {
+                foreach (var id in listID)
+                {
+                    var statisticsSessionRequest = new SpicStatisticsSessionRequest
+                    {
+                        Period = new ServiceReferenceControllerStistics.SpicDateTimeRange
+                        {
+                            Begin = date,
+                            End = NsgService.EndOfDay(date)
+                        },
+
+                        TargetObject = new SpicObjectIdentity
+                        {
+                            ObjectTypeId = ObjectTypeId.Vehicle,
+                            ObjectId = id
+                        }
+                    };
+
+                    //отправляем запрос и получаем сессию
+                    var statisticsSession = _statisticsClient.StartStatisticsSession(statisticsSessionRequest).Session;
+                    // на самом деле, это один и тот же контракт, но его нужно пересоздать  
+                    var fuelDefuelStatisticsSession = new ServiceReferenceFDStat.SpicStatisticsSession
+                    {
+                        StatisticsSessionId = statisticsSession.StatisticsSessionId,
+                    };
+                    // добавляем запрос на построение статистики  
+                    _fuelDefuelStatisticClient.AddStatisticsRequest(fuelDefuelStatisticsSession);
+
+                    var motorModesStatisticsSession = new ServiceReferenceMotorModes.SpicStatisticsSession
+                    {
+                        StatisticsSessionId = statisticsSession.StatisticsSessionId,
+                    };
+                    _motorModesClient.AddStatisticsRequest(motorModesStatisticsSession);
+
+                    // запускаем построение  
+                    _statisticsClient.StartBuild(statisticsSession);
+
+                    var statisticsListFuelDefuel = new List<SpicFuelingDefuelingStatistics>();
+                    SpicFuelingDefuelingStatisticsResult statisticsResponseFuelDefuel;
+
+                    var statisticsListMotorModes = new List<SpicMotorModesStatistics>();
+                    SpicMotorModesStatisticsResult statisticsResponseMotorModes;
+
+                    // выполняем, пока не получим последнюю порцию статистик  
+                    do
+                    {
+                        // ждем, пока порция статистик построится  
+                        do
+                        {
+                            statisticsResponseFuelDefuel = _fuelDefuelStatisticClient.GetStatistics(fuelDefuelStatisticsSession);
+                            statisticsResponseMotorModes = _motorModesClient.GetStatistics(motorModesStatisticsSession);
+
+                            var fuelDefuel = statisticsResponseFuelDefuel.Statistics;
+                            var motorModes = statisticsResponseMotorModes.Statistics;
+                        }
+                        while (statisticsResponseFuelDefuel.ChunkInfo.Status.Value == "Processing" && statisticsResponseMotorModes.ChunkInfo.Status.Value == "Processing");
+
+                        if (statisticsResponseFuelDefuel.Statistics != null)
+                            statisticsListFuelDefuel.Add(statisticsResponseFuelDefuel.Statistics);
+                        if (statisticsResponseMotorModes.Statistics != null)
+                            statisticsListMotorModes.Add(statisticsResponseMotorModes.Statistics);
+                        //    break;
+
+                        // заказываем следующую порцию статистики  
+                        _statisticsClient.BuildNextChunk(statisticsSession);
+                    }
+                    while (!statisticsResponseFuelDefuel.ChunkInfo.IsFinalChunk && !statisticsResponseMotorModes.ChunkInfo.IsFinalChunk);
+
+                    // закрываем сессию построения статистик  
+                    _statisticsClient.StopStatisticsSession(statisticsSession);
+                }
             }
         }
     }

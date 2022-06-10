@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scout.Platform.Components.TrackServer.Spic.GeofenceVisitsStat" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scout.Platform.Components.TrackServer.Spic.GeofenceVisitsStat" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://login.scout-gps.ru:8081/spic/geofencevisits/soap?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.Controller" />
+  <xs:import schemaLocation="http://login.scout-gps.ru:8081/spic/geofencevisits/soap?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.Concrete" />
+  <xs:import schemaLocation="http://login.scout-gps.ru:8081/spic/geofencevisits/soap?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Infrastructure.Data" />
+  <xs:complexType name="SpicGeofenceVisitStatisticRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.Controller" minOccurs="0" name="Session" nillable="true" type="q1:SpicStatisticsSession" />
+      <xs:element minOccurs="0" name="Settings" nillable="true" type="tns:SpicGeofenceVisitStatisticSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicGeofenceVisitStatisticRequest" nillable="true" type="tns:SpicGeofenceVisitStatisticRequest" />
+  <xs:complexType name="SpicGeofenceVisitStatisticSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExcludeVisitsWithoutParkings" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Geofences" nillable="true" type="tns:ArrayOfSpicGeofenceVisitStatisticsSettingsItem" />
+      <xs:element minOccurs="0" name="MinTimeBetweenSameGeoZoneVisitSeconds" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicGeofenceVisitStatisticSettings" nillable="true" type="tns:SpicGeofenceVisitStatisticSettings" />
+  <xs:complexType name="ArrayOfSpicGeofenceVisitStatisticsSettingsItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpicGeofenceVisitStatisticsSettingsItem" nillable="true" type="tns:SpicGeofenceVisitStatisticsSettingsItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpicGeofenceVisitStatisticsSettingsItem" nillable="true" type="tns:ArrayOfSpicGeofenceVisitStatisticsSettingsItem" />
+  <xs:complexType name="SpicGeofenceVisitStatisticsSettingsItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeofenceId" type="xs:int" />
+      <xs:element minOccurs="0" name="MinVisitTimeSeconds" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicGeofenceVisitStatisticsSettingsItem" nillable="true" type="tns:SpicGeofenceVisitStatisticsSettingsItem" />
+  <xs:complexType name="SpicGeofenceVisitStatisticResult">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.Concrete" minOccurs="0" name="ChunkInfo" nillable="true" type="q2:SpicStatisticsChunkInfo" />
+      <xs:element minOccurs="0" name="Statistics" nillable="true" type="tns:SpicGeofenceVisitStatistic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicGeofenceVisitStatisticResult" nillable="true" type="tns:SpicGeofenceVisitStatisticResult" />
+  <xs:complexType name="SpicGeofenceVisitStatistic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UnitId" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Visits" nillable="true" type="tns:ArrayOfSpicGeofenceVisit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicGeofenceVisitStatistic" nillable="true" type="tns:SpicGeofenceVisitStatistic" />
+  <xs:complexType name="ArrayOfSpicGeofenceVisit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpicGeofenceVisit" nillable="true" type="tns:SpicGeofenceVisit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpicGeofenceVisit" nillable="true" type="tns:ArrayOfSpicGeofenceVisit" />
+  <xs:complexType name="SpicGeofenceVisit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeofenceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeozoneId" type="xs:int" />
+      <xs:element minOccurs="0" name="InnerMileageKm" type="xs:double" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Infrastructure.Data" minOccurs="0" name="Period" nillable="true" type="q3:SpicDateTimeRange" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicGeofenceVisit" nillable="true" type="tns:SpicGeofenceVisit" />
+</xs:schema>

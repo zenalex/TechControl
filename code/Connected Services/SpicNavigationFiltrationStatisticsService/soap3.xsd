@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.SpicNavigationFiltrationStat" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.SpicNavigationFiltrationStat" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://login.scout-gps.ru:8081/spic/NavigationFiltration/soap?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.Controller" />
+  <xs:import schemaLocation="http://login.scout-gps.ru:8081/spic/NavigationFiltration/soap?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.Concrete" />
+  <xs:complexType name="NavigationFiltrationStatisticsRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.Controller" minOccurs="0" name="Session" nillable="true" type="q1:SpicStatisticsSession" />
+      <xs:element minOccurs="0" name="Settings" nillable="true" type="tns:SpicNavigationFiltrationStatisticsSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NavigationFiltrationStatisticsRequest" nillable="true" type="tns:NavigationFiltrationStatisticsRequest" />
+  <xs:complexType name="SpicNavigationFiltrationStatisticsSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NavigationValidationFilter" nillable="true" type="tns:SpicNavigationValidationFilter" />
+      <xs:element minOccurs="0" name="TrackPeriodsFilter" nillable="true" type="tns:SpicTrackPeriodsFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicNavigationFiltrationStatisticsSettings" nillable="true" type="tns:SpicNavigationFiltrationStatisticsSettings" />
+  <xs:complexType name="SpicNavigationValidationFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExcludeInvalidPoints" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ExcludeNotValidatedPoints" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ExcludeValidPoints" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicNavigationValidationFilter" nillable="true" type="tns:SpicNavigationValidationFilter" />
+  <xs:complexType name="SpicTrackPeriodsFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExcludeNotMovePoints" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ExcludeRecoilPoints" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeParkingPoints" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicTrackPeriodsFilter" nillable="true" type="tns:SpicTrackPeriodsFilter" />
+  <xs:complexType name="SpicNavigationFiltrationStatisticsResult">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scout.Plugins.Spic.Server.Statistics.Concrete" minOccurs="0" name="ChunkInfo" nillable="true" type="q2:SpicStatisticsChunkInfo" />
+      <xs:element minOccurs="0" name="Statistics" nillable="true" type="tns:SpicNavigationFiltrationStatistics" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicNavigationFiltrationStatisticsResult" nillable="true" type="tns:SpicNavigationFiltrationStatisticsResult" />
+  <xs:complexType name="SpicNavigationFiltrationStatistics">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Points" nillable="true" type="tns:ArrayOfSpicNavigationPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicNavigationFiltrationStatistics" nillable="true" type="tns:SpicNavigationFiltrationStatistics" />
+  <xs:complexType name="ArrayOfSpicNavigationPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpicNavigationPoint" nillable="true" type="tns:SpicNavigationPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpicNavigationPoint" nillable="true" type="tns:ArrayOfSpicNavigationPoint" />
+  <xs:complexType name="SpicNavigationPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsNavigationValid" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navigation" nillable="true" type="tns:SpicNavigation" />
+      <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicNavigationPoint" nillable="true" type="tns:SpicNavigationPoint" />
+  <xs:complexType name="SpicNavigation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AltitudeMeters" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Angle" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="HardwareValidation" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="tns:SpicLocation" />
+      <xs:element minOccurs="0" name="NavigationSystemType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SatellitesCount" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Speed" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicNavigation" nillable="true" type="tns:SpicNavigation" />
+  <xs:complexType name="SpicLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicLocation" nillable="true" type="tns:SpicLocation" />
+</xs:schema>

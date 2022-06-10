@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scout.Platform.Components.Frontend.Spic.Geofences.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scout.Platform.Components.Frontend.Spic.Geofences.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SpicGeofenceCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SpicGeofences" nillable="true" type="tns:ArrayOfSpicGeofence" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicGeofenceCollection" nillable="true" type="tns:SpicGeofenceCollection" />
+  <xs:complexType name="ArrayOfSpicGeofence">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpicGeofence" nillable="true" type="tns:SpicGeofence" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpicGeofence" nillable="true" type="tns:ArrayOfSpicGeofence" />
+  <xs:complexType name="SpicGeofence">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeofenceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpicGeofence" nillable="true" type="tns:SpicGeofence" />
+</xs:schema>
