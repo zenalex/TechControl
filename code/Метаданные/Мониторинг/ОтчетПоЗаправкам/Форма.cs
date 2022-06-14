@@ -47,6 +47,7 @@ namespace TechControl.Метаданные.Мониторинг
             //dims.Add(ФиксацияИстории.Names.Сотрудник);
             //dims.Remove(Арендатор_.Caption);
             dims.Remove(Время_.Caption);
+            dims.Remove(Заказчик_.Caption);
             //for (int i = 0; i < dims.Count; i++)
             //{
             //    if (dims[i] == "Смена")
@@ -156,6 +157,7 @@ namespace TechControl.Метаданные.Мониторинг
 
             dims.Remove(Время_.Caption);
             dims.Remove(Техника_.Caption);
+            dims.Remove(Заказчик_.Caption);
             //dims.Add(ЗАКАЗЧИК);
             //dims.Add(РегистрПоставокТоплива.Names.Объект);
 
