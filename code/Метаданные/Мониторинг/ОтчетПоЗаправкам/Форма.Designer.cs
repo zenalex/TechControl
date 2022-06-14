@@ -499,7 +499,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgReport3.ReportDataSources.Add(this.stiReportDataSource10);
             this.nsgReport3.ReportDataSources.Add(this.stiReportDataSource11);
             this.nsgReport3.ReportDataSources.Add(this.stiReportDataSource12);
-            this.nsgReport3.ReportGuid = "1c0ca394f9c64cffb6f7dafe317d0af3";
+            this.nsgReport3.ReportGuid = "b53268fe31bf4ba5a19412e57bad0100";
             this.nsgReport3.ReportLoaded = true;
             this.nsgReport3.ReportName = "Отчет_по_заправкам___13_04";
             this.nsgReport3.ReportSource = resources.GetString("nsgReport3.ReportSource");
@@ -2333,7 +2333,6 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.Decimal ИтогоСлив_;
         protected NsgColumnDescriptor.Decimal ИтогоЗаправка_;
         protected Контрагенты.ColumnDescriptor Заказчик_ф;
-        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsШапка;
         private NsgSoft.ReportBuilder.NsgReportDataSource nsgReportDataSource;
         private NsgSoft.ReportBuilder.NsgReportDataSource rdsЗаправки1;
         private NsgSoft.ReportBuilder.NsgReport nsgReport1;
@@ -2357,5 +2356,6 @@ namespace TechControl.Метаданные.Мониторинг
         private NsgVisualMultipleObject vmoФильтр;
         private NsgVisualMultipleObject vmoЗаправки;
         private NsgSoft.ReportBuilder.NsgReportDataSource rdsЗаправки;
+        private NsgSoft.ReportBuilder.NsgReportDataSource rdsШапка;
     }
 }

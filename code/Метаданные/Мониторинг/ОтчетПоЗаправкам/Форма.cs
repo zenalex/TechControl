@@ -170,6 +170,11 @@ namespace TechControl.Метаданные.Мониторинг
             vmoЗаправки.Data.MemoryTable.Clear();
             foreach (var i in all.Rows)
             {
+
+                var iCmp = new NsgCompare()
+                    .Add(Объект_.Name, i[Объект_vmoЗаправки].ToReferent())
+                    .Add(Поставщик_.Name, i[Поставщик_vmoЗаправки].ToReferent());
+                if (nsgVisualMultipleObject.Data.MemoryTable.FindRow(iCmp) != null)
                 //foreach (var j in i.Таблица.Rows)
                 {
                     DateTime dateTime = i[NsgSoft.Common.NsgDataFixedFields._Period].ToDateTime();
