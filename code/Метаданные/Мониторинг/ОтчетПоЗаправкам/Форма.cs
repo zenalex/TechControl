@@ -56,9 +56,24 @@ namespace TechControl.Метаданные.Мониторинг
             //    }
             //}
 
+            //var chDims = nsgGroupsList.GetCheckItems();
+            //var grps = new List<string> { РегистрЗаправок.Names.Объект, РегистрЗаправок.Names.Поставщик, РегистрЗаправок.Names.Техника };
+            //if (!chDims.Contains(Объект_.Caption) && !chDims.Contains(Заказчик_.Caption))
+            //{
+            //    grps.Remove(РегистрЗаправок.Names.Объект);
+            //}
+            //if (!chDims.Contains(Поставщик_.Caption))
+            //{
+            //    grps.Remove(РегистрЗаправок.Names.Поставщик);
+            //}
+            //if (!chDims.Contains(Техника_.Caption))
+            //{
+            //    grps.Remove(РегистрЗаправок.Names.Техника);
+            //}
+
             var регистрЗаправок = РегистрЗаправок.Новый();
             var all = регистрЗаправок.GetCirculate(nsgPeriodPicker.Period.Begin, nsgPeriodPicker.Period.End, NsgSoft.Common.NsgPeriod.Day, nsgObjectFilter.Compare,
-                NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit/*, new[] { РегистрЗаправок.Names.Объект }*/,
+                NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit/*, new[] { РегистрЗаправок.Names.Объект } grps.ToArray()*/,
                 dims.ToArray());
             //vmoГруппы.Data.BeginUpdateData();
             //vmoГруппы.Data.MemoryTable.Clear();
@@ -161,16 +176,26 @@ namespace TechControl.Метаданные.Мониторинг
             //dims.Add(ЗАКАЗЧИК);
             //dims.Add(РегистрПоставокТоплива.Names.Объект);
 
+            //var chDims = nsgGroupsList.GetCheckItems();
+            //var grps = new List<string> { РегистрПоставокТоплива.Names.Объект, РегистрПоставокТоплива.Names.Поставщик };
+            //if (!chDims.Contains(Объект_.Caption) && !chDims.Contains(Заказчик_.Caption))
+            //{
+            //    grps.Remove(РегистрЗаправок.Names.Объект);
+            //}
+            //if (!chDims.Contains(Поставщик_.Caption))
+            //{
+            //    grps.Remove(РегистрЗаправок.Names.Поставщик);
+            //}
+
             var регистрЗаправок = РегистрПоставокТоплива.Новый();
             var all = регистрЗаправок.GetCirculate(nsgPeriodPicker.Period.Begin, nsgPeriodPicker.Period.End, NsgSoft.Common.NsgPeriod.Day, nsgObjectFilter.Compare,
-                NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit/*, new[] { РегистрПоставокТоплива.Names.Объект }*/,
+                NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit/*, new[] { РегистрПоставокТоплива.Names.Объект } grps.ToArray()*/,
                 dims.ToArray());
 
             vmoЗаправки.Data.BeginUpdateData();
             vmoЗаправки.Data.MemoryTable.Clear();
             foreach (var i in all.Rows)
             {
-
                 var iCmp = new NsgCompare()
                     .Add(Объект_.Name, i[Объект_vmoЗаправки].ToReferent())
                     .Add(Поставщик_.Name, i[Поставщик_vmoЗаправки].ToReferent());
