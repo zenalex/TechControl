@@ -960,7 +960,7 @@ namespace TechControl.Метаданные.Мониторинг
                                     {
                                         var x = point.Navigation.Location.Longitude;
                                         var y = point.Navigation.Location.Latitude;
-                                        NsgMemoryTableRow row = vmoАнализДанных.Data.MemoryTable.NewRow();
+                                        var row = vmoАнализДанных.Data.MemoryTable.NewRow();
 
                                         foreach (var геозона in геозоны)
                                         {
@@ -1034,78 +1034,81 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 foreach (var id in unitIDName)
                 {
-                    //создаем запрос сессии статистик
-                    var statisticsSessionRequest = new SpicStatisticsSessionRequest
+                    if (!id.Key.ToString().Contains("Мини-эскаватор"))
                     {
-                        Period = new ServiceReferenceControllerStistics.SpicDateTimeRange
+                        //создаем запрос сессии статистик
+                        var statisticsSessionRequest = new SpicStatisticsSessionRequest
                         {
-                            Begin = date,
-                            End = NsgService.EndOfDay(date)
-                        },
+                            Period = new ServiceReferenceControllerStistics.SpicDateTimeRange
+                            {
+                                Begin = date,
+                                End = NsgService.EndOfDay(date)
+                            },
 
-                        TargetObject = new SpicObjectIdentity
+                            TargetObject = new SpicObjectIdentity
+                            {
+                                ObjectTypeId = ObjectTypeId.Vehicle,
+                                ObjectId = id.Value
+                            }
+                        };
+
+                        //отправляем запрос и получаем сессию
+                        var statisticsSession = _statisticsClient.StartStatisticsSession(statisticsSessionRequest).Session;
+                        // на самом деле, это один и тот же контракт, но его нужно пересоздать  
+                        var fuelDefuelStatisticsSession = new ServiceReferenceFDStat.SpicStatisticsSession
                         {
-                            ObjectTypeId = ObjectTypeId.Vehicle,
-                            ObjectId = id.Value
-                        }
-                    };
+                            StatisticsSessionId = statisticsSession.StatisticsSessionId,
+                        };
+                        // добавляем запрос на построение статистики  
+                        _fuelDefuelStatisticClient.AddStatisticsRequest(fuelDefuelStatisticsSession);
 
-                    //отправляем запрос и получаем сессию
-                    var statisticsSession = _statisticsClient.StartStatisticsSession(statisticsSessionRequest).Session;
-                    // на самом деле, это один и тот же контракт, но его нужно пересоздать  
-                    var fuelDefuelStatisticsSession = new ServiceReferenceFDStat.SpicStatisticsSession
-                    {
-                        StatisticsSessionId = statisticsSession.StatisticsSessionId,
-                    };
-                    // добавляем запрос на построение статистики  
-                    _fuelDefuelStatisticClient.AddStatisticsRequest(fuelDefuelStatisticsSession);
+                        // запускаем построение  
+                        _statisticsClient.StartBuild(statisticsSession);
 
-                    // запускаем построение  
-                    _statisticsClient.StartBuild(statisticsSession);
+                        var statisticsListFuelDefuel = new List<SpicFuelingDefuelingStatistics>();
+                        SpicFuelingDefuelingStatisticsResult statisticsResponseFuelDefuel;
+                        SpicFuelingDefuelingStatistics fuelDefuel = null;
 
-                    var statisticsListFuelDefuel = new List<SpicFuelingDefuelingStatistics>();
-                    SpicFuelingDefuelingStatisticsResult statisticsResponseFuelDefuel;
-                    SpicFuelingDefuelingStatistics fuelDefuel = null;
-
-                    // выполняем, пока не получим последнюю порцию статистик  
-                    do
-                    {
-                        // ждем, пока порция статистик построится  
+                        // выполняем, пока не получим последнюю порцию статистик  
                         do
                         {
-                            statisticsResponseFuelDefuel = _fuelDefuelStatisticClient.GetStatistics(fuelDefuelStatisticsSession);
-
-                            fuelDefuel = statisticsResponseFuelDefuel.Statistics;
-
-                            if (fuelDefuel != null)
+                            // ждем, пока порция статистик построится  
+                            do
                             {
-                                for (int i = fuelDefuel.Events.Length - 1; i >= 0; i--)
+                                statisticsResponseFuelDefuel = _fuelDefuelStatisticClient.GetStatistics(fuelDefuelStatisticsSession);
+
+                                fuelDefuel = statisticsResponseFuelDefuel.Statistics;
+
+                                if (fuelDefuel != null)
                                 {
-                                    if (fuelDefuel.Events[i].EventType.Value.Contains("Fueling"))
+                                    for (int i = fuelDefuel.Events.Length - 1; i >= 0; i--)
                                     {
-                                        var item = fuelDefuel.Events[i];
-                                        var row = vmo.Data.MemoryTable.NewRow();
-                                        row[Техника_vmo].Value = id.Key;
-                                        row[ОбъемЗаправки].Value = item.EndFuelVolumeL - item.BeginFuelVolumeL;
-                                        row[ДатаПоследнейЗаправки].Value = item.Timestamp;
-                                        row.Post();
-                                        break;
+                                        if (fuelDefuel.Events[i].EventType.Value.Contains("Fueling"))
+                                        {
+                                            var item = fuelDefuel.Events[i];
+                                            var row = vmo.Data.MemoryTable.NewRow();
+                                            row[Техника_vmo].Value = id.Key;
+                                            row[ОбъемЗаправки].Value = item.EndFuelVolumeL - item.BeginFuelVolumeL;
+                                            row[ДатаПоследнейЗаправки].Value = item.Timestamp;
+                                            row.Post();
+                                            break;
+                                        }
                                     }
                                 }
                             }
+                            while (statisticsResponseFuelDefuel.ChunkInfo.Status.Value == "Processing");
+
+                            if (statisticsResponseFuelDefuel.Statistics != null)
+                                statisticsListFuelDefuel.Add(statisticsResponseFuelDefuel.Statistics);
+
+                            // заказываем следующую порцию статистики  
+                            _statisticsClient.BuildNextChunk(statisticsSession);
                         }
-                        while (statisticsResponseFuelDefuel.ChunkInfo.Status.Value == "Processing");
+                        while (!statisticsResponseFuelDefuel.ChunkInfo.IsFinalChunk);
 
-                        if (statisticsResponseFuelDefuel.Statistics != null)
-                            statisticsListFuelDefuel.Add(statisticsResponseFuelDefuel.Statistics);
-
-                        // заказываем следующую порцию статистики  
-                        _statisticsClient.BuildNextChunk(statisticsSession);
-                    }
-                    while (!statisticsResponseFuelDefuel.ChunkInfo.IsFinalChunk);
-
-                    // закрываем сессию построения статистик  
-                    _statisticsClient.StopStatisticsSession(statisticsSession);
+                        // закрываем сессию построения статистик  
+                        _statisticsClient.StopStatisticsSession(statisticsSession);
+                    }    
                 }
 
                 if (date.Day == DateTime.DaysInMonth(date.Year, date.Month))
