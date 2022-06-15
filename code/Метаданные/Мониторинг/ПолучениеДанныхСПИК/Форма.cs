@@ -864,6 +864,12 @@ namespace TechControl.Метаданные.Мониторинг
                 }
             }
 
+            var cmpОбъекты = new NsgCompare().Add(Объекты.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            var объекты = Объекты.Новый().FindAll(cmpОбъекты);
+
+            var cmpГеозоны = new NsgCompare().Add(Геозоны.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            var геозоны = Геозоны.Новый().FindAll(cmpГеозоны);
+
             SpicSoapStatisticsControllerServiceClient _statisticsClient = new SpicSoapStatisticsControllerServiceClient();
             _statisticsClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
             SpicSoapGeofenceVisitsStatisticsServiceClient _statisticsGeofenceVisitsClient = new SpicSoapGeofenceVisitsStatisticsServiceClient();
@@ -946,29 +952,38 @@ namespace TechControl.Метаданные.Мониторинг
                             statisticsResponseNavigationFiltration = _statisticsNavigationFiltrationClient.GetStatistics(navigationFiltrationStatisticsSession);
 
                             var navigationFiltration = statisticsResponseNavigationFiltration.Statistics;
-                            foreach (var point in navigationFiltration.Points)
+                            if (navigationFiltration != null)
                             {
-                                var row = vmoАнализДанных.Data.MemoryTable.NewRow();
+                                foreach (var point in navigationFiltration.Points)
+                                {
+                                    if (point.Navigation.Location != null)
+                                    {
+                                        var x = point.Navigation.Location.Longitude;
+                                        var y = point.Navigation.Location.Latitude;
+                                        NsgMemoryTableRow row = vmoАнализДанных.Data.MemoryTable.NewRow();
 
-                                if (point.Navigation.Location.Longitude == Convert.ToDouble(Геозона1.Value.Долгота) 
-                                    && point.Navigation.Location.Latitude == Convert.ToDouble(Геозона1.Value.Широта))
-                                {                                    
-                                    row[Геозона1_vmoАнализДанных].Value = Геозона1.Value;
-                                    row[ВремяПриездаВГеозону2_vmoАнализДанных].Value = point.Timestamp;
-                                    row[Техника_vmoАнализДанных].Value = id.Key;
-                                }
-                                else if (point.Navigation.Location.Longitude == Convert.ToDouble(Геозона2.Value.Долгота)
-                                    && point.Navigation.Location.Latitude == Convert.ToDouble(Геозона2.Value.Широта))
-                                {                                    
-                                    row[Геозона2_vmoАнализДанных].Value = Геозона2.Value;
-                                    row[ВремяПриездаВГеозону1_vmoАнализДанных].Value = point.Timestamp;
-                                    row[Техника_vmoАнализДанных].Value = id.Key;
-                                }
+                                        foreach (var геозона in геозоны)
+                                        {
+                                            if (Math.Pow((x - (double)геозона.Долгота), 2) + Math.Pow((y - (double)геозона.Широта), 2) <= Math.Pow((double)геозона.РадиусГеозоны, 2))
+                                            {
+                                                row[Техника_vmoАнализДанных].Value = id.Key;
+                                                row[Геозона_vmoАнализДанных].Value = геозона;
+                                                row[ВремяПриездаВГеозону_vmoАнализДанных].Value = point.Timestamp;
+                                            }
+                                        }
+                                        foreach (var объект in объекты)
+                                        {
+                                            if (Math.Pow((x - (double)объект.Долгота), 2) + Math.Pow((y - (double)объект.Широта), 2) <= Math.Pow((double)объект.РадиусГеозоны, 2))
+                                            {
+                                                row[Объект_vmoАнализДанных].Value = объект;
+                                                row[ВремяПриездаНаОбъект_vmoАнализДанных].Value = point.Timestamp;
+                                            }
+                                        }
 
-                                row.Post();
-                                //var cmpГеозоны = new NsgCompare().Add(Геозоны.Names.Долгота, point.Navigation.Location.Longitude);
-                                //cmpГеозоны.Add(Геозоны.Names.Широта, point.Navigation.Location.Latitude);
-                            }
+                                        row.Post();
+                                    }
+                                }
+                            }                            
                         }
                         while (statisticsResponseNavigationFiltration.ChunkInfo.Status.Value == "Processing");
 
@@ -983,20 +998,122 @@ namespace TechControl.Метаданные.Мониторинг
                     // закрываем сессию построения статистик  
                     _statisticsClient.StopStatisticsSession(statisticsSession);
                 }
+
+                if (date.Day == DateTime.DaysInMonth(date.Year, date.Month))
+                    date = new DateTime(date.Year, date.AddMonths(1).Month, date.AddDays(1).Day);
+                else
+                    date = new DateTime(date.Year, date.Month, date.AddDays(1).Day);
             }
+            vmoАнализДанных.Data.UpdateDataAsync(this);
         }
 
         private void nsgButton3_AsyncClick(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            SpicSoapGeofenceServiceClient _geofenceClient = new SpicSoapGeofenceServiceClient();
-            _geofenceClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
+            SpicSoapStatisticsControllerServiceClient _statisticsClient = new SpicSoapStatisticsControllerServiceClient();
+            _statisticsClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
+            SpicSoapFuelingDefuelingStatisticsServiceClient _fuelDefuelStatisticClient = new SpicSoapFuelingDefuelingStatisticsServiceClient();
+            _fuelDefuelStatisticClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
+            var cmpTech = new NsgCompare().Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            var tech = Техника.Новый().FindAll(cmpTech);
+            var unitIDName = new Dictionary<Техника, int>();
 
+            foreach(var a in tech)
+            {
+                foreach (var item in a.СистемыСлежения.Rows)
+                {
+                    if (item.ТипСистемыСлежения == ТипСистемыСлежения.Скаут)
+                        unitIDName.Add(a, Convert.ToInt32(item.ИдентификаторСистемыСлежения));
+                }
+            }
 
-            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-            //string dataAuth = "grant_type=password&username=skvortsov@titan002.ru&password=skvortsov@titan002.ru&locale=ru&client_id=8b1fd704-096e-42d6-9ba5-6d98980e7cd1&client_secret=scout-online";
-            //string urlAuth = "auth/token";
-            //var outputResultAuth = await RequestAsync(dataAuth, urlAuth, true, string.Empty);
-            //var deserializeJsonAuth = JsonConvert.DeserializeObject<DeserializeAuth>(outputResultAuth);
+            vmo.Data.BeginUpdateData();
+            vmo.Data.MemoryTable.Clear();
+            var date = nsgPeriodPicker2.Period.Begin.Date;
+
+            while (date <= NsgService.EndOfDay(nsgPeriodPicker2.Period.End))
+            {
+                foreach (var id in unitIDName)
+                {
+                    //создаем запрос сессии статистик
+                    var statisticsSessionRequest = new SpicStatisticsSessionRequest
+                    {
+                        Period = new ServiceReferenceControllerStistics.SpicDateTimeRange
+                        {
+                            Begin = date,
+                            End = NsgService.EndOfDay(date)
+                        },
+
+                        TargetObject = new SpicObjectIdentity
+                        {
+                            ObjectTypeId = ObjectTypeId.Vehicle,
+                            ObjectId = id.Value
+                        }
+                    };
+
+                    //отправляем запрос и получаем сессию
+                    var statisticsSession = _statisticsClient.StartStatisticsSession(statisticsSessionRequest).Session;
+                    // на самом деле, это один и тот же контракт, но его нужно пересоздать  
+                    var fuelDefuelStatisticsSession = new ServiceReferenceFDStat.SpicStatisticsSession
+                    {
+                        StatisticsSessionId = statisticsSession.StatisticsSessionId,
+                    };
+                    // добавляем запрос на построение статистики  
+                    _fuelDefuelStatisticClient.AddStatisticsRequest(fuelDefuelStatisticsSession);
+
+                    // запускаем построение  
+                    _statisticsClient.StartBuild(statisticsSession);
+
+                    var statisticsListFuelDefuel = new List<SpicFuelingDefuelingStatistics>();
+                    SpicFuelingDefuelingStatisticsResult statisticsResponseFuelDefuel;
+                    SpicFuelingDefuelingStatistics fuelDefuel = null;
+
+                    // выполняем, пока не получим последнюю порцию статистик  
+                    do
+                    {
+                        // ждем, пока порция статистик построится  
+                        do
+                        {
+                            statisticsResponseFuelDefuel = _fuelDefuelStatisticClient.GetStatistics(fuelDefuelStatisticsSession);
+
+                            fuelDefuel = statisticsResponseFuelDefuel.Statistics;
+
+                            if (fuelDefuel != null)
+                            {
+                                for (int i = fuelDefuel.Events.Length - 1; i >= 0; i--)
+                                {
+                                    if (fuelDefuel.Events[i].EventType.Value.Contains("Fueling"))
+                                    {
+                                        var item = fuelDefuel.Events[i];
+                                        var row = vmo.Data.MemoryTable.NewRow();
+                                        row[Техника_vmo].Value = id.Key;
+                                        row[ОбъемЗаправки].Value = item.EndFuelVolumeL - item.BeginFuelVolumeL;
+                                        row[ДатаПоследнейЗаправки].Value = item.Timestamp;
+                                        row.Post();
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        while (statisticsResponseFuelDefuel.ChunkInfo.Status.Value == "Processing");
+
+                        if (statisticsResponseFuelDefuel.Statistics != null)
+                            statisticsListFuelDefuel.Add(statisticsResponseFuelDefuel.Statistics);
+
+                        // заказываем следующую порцию статистики  
+                        _statisticsClient.BuildNextChunk(statisticsSession);
+                    }
+                    while (!statisticsResponseFuelDefuel.ChunkInfo.IsFinalChunk);
+
+                    // закрываем сессию построения статистик  
+                    _statisticsClient.StopStatisticsSession(statisticsSession);
+                }
+
+                if (date.Day == DateTime.DaysInMonth(date.Year, date.Month))
+                    date = new DateTime(date.Year, date.AddMonths(1).Month, date.AddDays(1).Day);
+                else
+                    date = new DateTime(date.Year, date.Month, date.AddDays(1).Day);
+            }
+            vmo.Data.UpdateDataAsync(this);
         }
     }
 
