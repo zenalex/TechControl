@@ -41,13 +41,18 @@ namespace TechControl.Метаданные.Мониторинг
 
 
             string ЗАКАЗЧИК = РегистрЗаправок.Names.Объект + '.' + Объекты.Names.Заказчик;
-            string ПОСТАВЩИК = РегистрЗаправок.Names.Поставщик;
-            var dims = nsgGroupsList.GetAllItems();
+            var dims = nsgGroupsList.GetCheckItems(); //nsgGroupsList.GetAllItems();
+            bool hasDimОбъект = dims.Contains(Объект_.Caption);
+            bool hasDimЗаказчик = dims.Contains(Заказчик_.Caption);
+            bool hasDimПоставщик = dims.Contains(Поставщик_.Caption);
+            bool hasDimТехника = dims.Contains(Техника_.Caption);
             //dims.Add(ФиксацияИстории.Names.Техника);
             //dims.Add(ФиксацияИстории.Names.Сотрудник);
             //dims.Remove(Арендатор_.Caption);
             dims.Remove(Время_.Caption);
             dims.Remove(Заказчик_.Caption);
+            if (dims.Contains(Заказчик_.Caption) && !dims.Contains(Объект_.Caption))
+                dims.Add(Объект_.Caption);
             //for (int i = 0; i < dims.Count; i++)
             //{
             //    if (dims[i] == "Смена")
@@ -56,24 +61,9 @@ namespace TechControl.Метаданные.Мониторинг
             //    }
             //}
 
-            //var chDims = nsgGroupsList.GetCheckItems();
-            //var grps = new List<string> { РегистрЗаправок.Names.Объект, РегистрЗаправок.Names.Поставщик, РегистрЗаправок.Names.Техника };
-            //if (!chDims.Contains(Объект_.Caption) && !chDims.Contains(Заказчик_.Caption))
-            //{
-            //    grps.Remove(РегистрЗаправок.Names.Объект);
-            //}
-            //if (!chDims.Contains(Поставщик_.Caption))
-            //{
-            //    grps.Remove(РегистрЗаправок.Names.Поставщик);
-            //}
-            //if (!chDims.Contains(Техника_.Caption))
-            //{
-            //    grps.Remove(РегистрЗаправок.Names.Техника);
-            //}
-
             var регистрЗаправок = РегистрЗаправок.Новый();
             var all = регистрЗаправок.GetCirculate(nsgPeriodPicker.Period.Begin, nsgPeriodPicker.Period.End, NsgSoft.Common.NsgPeriod.Day, nsgObjectFilter.Compare,
-                NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit/*, new[] { РегистрЗаправок.Names.Объект } grps.ToArray()*/,
+                NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit/*, new[] { РегистрЗаправок.Names.Объект }*/,
                 dims.ToArray());
             //vmoГруппы.Data.BeginUpdateData();
             //vmoГруппы.Data.MemoryTable.Clear();
@@ -81,25 +71,28 @@ namespace TechControl.Метаданные.Мониторинг
             nsgVisualMultipleObject.Data.MemoryTable.Clear();
 
             decimal[] itogsCrutch = new decimal[31];
-
             foreach (var i in all.Rows)
             {
                 //foreach (var j in i.Таблица.Rows)
                 {
                     DateTime dateTime = i[NsgSoft.Common.NsgDataFixedFields._Period].ToDateTime();
-                    Техника техника = i[РегистрЗаправок.Names.Техника].ToReferent() as Техника;
+                    Техника техника = hasDimТехника ? i[РегистрЗаправок.Names.Техника].ToReferent() as Техника : Техника.Новый();
+                    Объекты объект = hasDimОбъект ? i[РегистрЗаправок.Names.Объект].ToReferent() as Объекты : Объекты.Новый();
+                    Контрагенты заказчик = hasDimЗаказчик ? i[ЗАКАЗЧИК].ToReferent() as Контрагенты : Контрагенты.Новый();
+                    Контрагенты поставщик = hasDimПоставщик ? i[РегистрЗаправок.Names.Поставщик].ToReferent() as Контрагенты : Контрагенты.Новый();
                     NsgCompare cmp = new NsgCompare()
-                        .Add(Объект_.Name, i[РегистрЗаправок.Names.Объект].Value)
+                        .Add(Объект_.Name, объект)
                         .Add(Техника_.Name, техника)
+                        .Add(Заказчик_.Name, заказчик)
+                        .Add(Поставщик_.Name, поставщик)
                         .Add(Время_.Name, NsgService.BeginOfMonth(dateTime));
                     var row = nsgVisualMultipleObject.Data.MemoryTable.FindRow(cmp);
                     if (row == null)
                         row = nsgVisualMultipleObject.Data.MemoryTable.NewRow();
-                    row[Заказчик_].Value = i[ЗАКАЗЧИК].Value;
-                    row[Поставщик_].Value = i[ПОСТАВЩИК].Value;
+                    row[Заказчик_].Value = заказчик;
+                    row[Поставщик_].Value = поставщик;
                     //Тарифы тариф = Тарифы.Новый();//вл[ФормированиеСмены.Names.Тариф].ToReferent() as Тарифы;
                     //row[Тариф_].Value = тариф;
-                    Объекты объект = i[РегистрЗаправок.Names.Объект].ToReferent() as Объекты;
                     row[Объект_].Value = объект;
                     //int номерСмены = (int)i[РегистрЗаправок.Names.НомерСмены].ToInt();
                     //row[НомерСмены_].Value = номерСмены;
@@ -167,53 +160,63 @@ namespace TechControl.Метаданные.Мониторинг
         private void ЗаполнитьПоставкиТоплива()
         {
             string ЗАКАЗЧИК = РегистрПоставокТоплива.Names.Объект + '.' + Объекты.Names.Заказчик;
-            string ПОСТАВЩИК = РегистрПоставокТоплива.Names.Поставщик;
-            var dims = nsgGroupsList.GetAllItems();
+            var dims = nsgGroupsList.GetCheckItems();
+
+            bool hasDimОбъект = dims.Contains(Объект_.Caption);
+            bool hasDimЗаказчик = dims.Contains(Заказчик_.Caption);
+            bool hasDimПоставщик = dims.Contains(Поставщик_.Caption);
 
             dims.Remove(Время_.Caption);
             dims.Remove(Техника_.Caption);
             dims.Remove(Заказчик_.Caption);
-            //dims.Add(ЗАКАЗЧИК);
-            //dims.Add(РегистрПоставокТоплива.Names.Объект);
-
-            //var chDims = nsgGroupsList.GetCheckItems();
-            //var grps = new List<string> { РегистрПоставокТоплива.Names.Объект, РегистрПоставокТоплива.Names.Поставщик };
-            //if (!chDims.Contains(Объект_.Caption) && !chDims.Contains(Заказчик_.Caption))
-            //{
-            //    grps.Remove(РегистрЗаправок.Names.Объект);
-            //}
-            //if (!chDims.Contains(Поставщик_.Caption))
-            //{
-            //    grps.Remove(РегистрЗаправок.Names.Поставщик);
-            //}
+            if (dims.Contains(Заказчик_.Caption) && !dims.Contains(Объект_.Caption))
+                dims.Add(Объект_.Caption);
 
             var регистрЗаправок = РегистрПоставокТоплива.Новый();
             var all = регистрЗаправок.GetCirculate(nsgPeriodPicker.Period.Begin, nsgPeriodPicker.Period.End, NsgSoft.Common.NsgPeriod.Day, nsgObjectFilter.Compare,
-                NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit/*, new[] { РегистрПоставокТоплива.Names.Объект } grps.ToArray()*/,
+                NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit/*, new[] { РегистрПоставокТоплива.Names.Объект }*/,
                 dims.ToArray());
 
             vmoЗаправки.Data.BeginUpdateData();
             vmoЗаправки.Data.MemoryTable.Clear();
+            foreach (var i in nsgVisualMultipleObject.Data.MemoryTable.Rows)
+            {
+                var row = vmoЗаправки.Data.MemoryTable.NewRow();
+                row[Время_vmoЗаправки].Value = i[Время_].Value;
+                row[Объект_vmoЗаправки].Value = i[Объект_].Value;
+                row[Заказчик_vmoЗаправки].Value = i[Заказчик_].Value;
+                row[Поставщик_vmoЗаправки].Value = i[Поставщик_].Value;
+                row[ГосНомер_vmoЗаправки].Value = i[ГосНомер_].Value;
+            }
+
             foreach (var i in all.Rows)
             {
-                var iCmp = new NsgCompare()
-                    .Add(Объект_.Name, i[Объект_vmoЗаправки].ToReferent())
-                    .Add(Поставщик_.Name, i[Поставщик_vmoЗаправки].ToReferent());
+                var iCmp = new NsgCompare();
+                if (hasDimОбъект)
+                    iCmp.Add(Объект_.Name, i[Объект_vmoЗаправки].ToReferent());
+                if (hasDimЗаказчик)
+                    iCmp.Add(Заказчик_.Name, i[ЗАКАЗЧИК].ToReferent());
+                if (hasDimПоставщик)
+                    iCmp.Add(Поставщик_.Name, i[Поставщик_vmoЗаправки].ToReferent());
                 if (nsgVisualMultipleObject.Data.MemoryTable.FindRow(iCmp) != null)
                 //foreach (var j in i.Таблица.Rows)
                 {
                     DateTime dateTime = i[NsgSoft.Common.NsgDataFixedFields._Period].ToDateTime();
+                    Объекты объект = hasDimОбъект ? i[РегистрПоставокТоплива.Names.Объект].ToReferent() as Объекты : Объекты.Новый();
+                    Контрагенты заказчик = hasDimЗаказчик ? i[ЗАКАЗЧИК].ToReferent() as Контрагенты : Контрагенты.Новый();
+                    Контрагенты поставщик = hasDimПоставщик ? i[РегистрЗаправок.Names.Поставщик].ToReferent() as Контрагенты : Контрагенты.Новый();
                     NsgCompare cmp = new NsgCompare()
-                        .Add(Объект_vmoЗаправки.Name, i[РегистрПоставокТоплива.Names.Объект].Value)
+                        .Add(Объект_vmoЗаправки.Name, объект)
+                        .Add(Заказчик_vmoЗаправки.Name, заказчик)
+                        .Add(Поставщик_vmoЗаправки.Name, поставщик)
                         .Add(Время_vmoЗаправки.Name, NsgService.BeginOfMonth(dateTime));
                     var row = vmoЗаправки.Data.MemoryTable.FindRow(cmp);
                     if (row == null)
                         row = vmoЗаправки.Data.MemoryTable.NewRow();
-                    row[Заказчик_vmoЗаправки].Value = i[ЗАКАЗЧИК].Value;
-                    row[Поставщик_vmoЗаправки].Value = i[ПОСТАВЩИК].Value;
+                    row[Заказчик_vmoЗаправки].Value = заказчик;
+                    row[Поставщик_vmoЗаправки].Value = поставщик;
                     //Тарифы тариф = Тарифы.Новый();//вл[ФормированиеСмены.Names.Тариф].ToReferent() as Тарифы;
                     //row[Тариф_].Value = тариф;
-                    Объекты объект = i[РегистрПоставокТоплива.Names.Объект].ToReferent() as Объекты;
                     row[Объект_vmoЗаправки].Value = объект;
                     //int номерСмены = (int)i[РегистрПоставокТоплива.Names.НомерСмены].ToInt();
                     //row[НомерСмены_].Value = номерСмены;
