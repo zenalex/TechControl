@@ -49,7 +49,8 @@ namespace TechControl.Метаданные.Мониторинг
             }
 
             var рс = РегистрСмен.Новый();
-            var all = рс.GetCirculate(nsgPeriodPicker1.Period.Begin, nsgPeriodPicker1.Period.End, NsgSoft.Common.NsgPeriod.Day, nsgObjectFilter1.Compare,
+            var all = рс.GetCirculate(nsgPeriodPicker1.Period.Begin, nsgPeriodPicker1.Period.End, NsgSoft.Common.NsgPeriod.Day,
+                nsgObjectFilter1.Compare.Clone.Add(РегистрСмен.Names.Техника, Техника.Новый(), NsgSoft.Database.NsgComparison.NotEqual),
                 NsgSoft.Common.NsgRegisterResult.Credit | NsgSoft.Common.NsgRegisterResult.Debit/*, new[] { РегистрСмен.Names.Объект }*/,
                 dims.ToArray());
             //vmoГруппы.Data.BeginUpdateData();

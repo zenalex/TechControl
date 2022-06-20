@@ -371,7 +371,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgReportНовый.ReportDataSources.Add(this.stiReportDataSource5);
             this.nsgReportНовый.ReportDataSources.Add(this.stiReportDataSource6);
             this.nsgReportНовый.ReportDataSources.Add(this.stiReportDataSource7);
-            this.nsgReportНовый.ReportGuid = "4dc247c566cf4cdfbb60a64305775264";
+            this.nsgReportНовый.ReportGuid = "addf5f7ddbb44d7fa063810dfa0aaf76";
             this.nsgReportНовый.ReportLoaded = true;
             this.nsgReportНовый.ReportName = "Аренда_по_месяцам___20_00";
             this.nsgReportНовый.ReportSource = resources.GetString("nsgReportНовый.ReportSource");
