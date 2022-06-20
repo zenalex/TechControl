@@ -865,6 +865,7 @@ namespace TechControl.Метаданные.Мониторинг
             }
 
             var cmpОбъекты = new NsgCompare().Add(Объекты.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            cmpОбъекты.Add(Объекты.Names.Наименование, "тест");
             var объекты = Объекты.Новый().FindAll(cmpОбъекты);
 
             var cmpГеозоны = new NsgCompare().Add(Геозоны.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
@@ -877,9 +878,10 @@ namespace TechControl.Метаданные.Мониторинг
             SpicSoapNavigationFiltrationStatisticsServiceClient _statisticsNavigationFiltrationClient = new SpicSoapNavigationFiltrationStatisticsServiceClient();
             _statisticsNavigationFiltrationClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
 
-            vmoАнализДанных.Data.BeginUpdateData();
-            vmoАнализДанных.Data.MemoryTable.Clear();
             var date = nsgPeriodPicker1.Period.Begin.Date;
+
+            var listAll = new List<GeozoneAndObj>();
+            var listObj = new List<GeozoneAndObj>();
 
             while (date <= NsgService.EndOfDay(nsgPeriodPicker1.Period.End))
             {
@@ -912,14 +914,14 @@ namespace TechControl.Метаданные.Мониторинг
                     {
                         ExcludeRecoilPoints = false,
                         ExcludeNotMovePoints = false,
-                        IncludeParkingPoints = true
+                        IncludeParkingPoints = false
                     };
 
                     var navigationValidationFilter = new SpicNavigationFiltrationStatisticsService.SpicNavigationValidationFilter
                     {
-                        ExcludeInvalidPoints = false,
+                        ExcludeInvalidPoints = true,
                         ExcludeValidPoints = false,
-                        ExcludeNotValidatedPoints = false
+                        ExcludeNotValidatedPoints = true
                     };
 
                     var settingsNavigationFiltration = new SpicNavigationFiltrationStatisticsService.SpicNavigationFiltrationStatisticsSettings
@@ -952,37 +954,166 @@ namespace TechControl.Метаданные.Мониторинг
                             statisticsResponseNavigationFiltration = _statisticsNavigationFiltrationClient.GetStatistics(navigationFiltrationStatisticsSession);
 
                             var navigationFiltration = statisticsResponseNavigationFiltration.Statistics;
+
                             if (navigationFiltration != null)
                             {
-                                foreach (var point in navigationFiltration.Points)
+                                //var objNew = Объекты.Новый();
+                                //var other = new GeozoneAndObj();
+                                //bool c = false;
+                                //bool d = false;
+                                var sortPoints = navigationFiltration.Points.OrderBy(x => x.Timestamp).ToArray();
+                                var longer = sortPoints.Select(x => x.Navigation.Location.Longitude).Distinct().ToArray();
+                                var width = sortPoints.Select(x => x.Navigation.Location.Latitude).Distinct().ToArray();
+                                
+                                if (longer.Length != 1 && width.Length != 1)
                                 {
-                                    if (point.Navigation.Location != null)
+                                    while (sortPoints.Length > 0)
                                     {
-                                        var x = point.Navigation.Location.Longitude;
-                                        var y = point.Navigation.Location.Latitude;
-                                        var row = vmoАнализДанных.Data.MemoryTable.NewRow();
+                                        var firstPoint = sortPoints[0];
+                                        var firstLong = sortPoints[0].Navigation.Location.Longitude;
+                                        var firstWidth = sortPoints[0].Navigation.Location.Latitude;
+                                        GeozoneAndObj temp = null;
 
-                                        foreach (var геозона in геозоны)
-                                        {
-                                            if (Math.Pow((x - (double)геозона.Долгота), 2) + Math.Pow((y - (double)геозона.Широта), 2) <= Math.Pow((double)геозона.РадиусГеозоны, 2))
-                                            {
-                                                row[Техника_vmoАнализДанных].Value = id.Key;
-                                                row[Геозона_vmoАнализДанных].Value = геозона;
-                                                row[ВремяПриездаВГеозону_vmoАнализДанных].Value = point.Timestamp;
-                                            }
-                                        }
+                                        Объекты firstObj = null;
+                                        Геозоны firstGeo = null;
+
                                         foreach (var объект in объекты)
                                         {
-                                            if (Math.Pow((x - (double)объект.Долгота), 2) + Math.Pow((y - (double)объект.Широта), 2) <= Math.Pow((double)объект.РадиусГеозоны, 2))
+                                            if ((Math.Pow((firstLong - (double)объект.Долгота), 2) + Math.Pow((firstWidth - (double)объект.Широта), 2) <= Math.Pow((double)объект.РадиусГеозоны, 2)))
                                             {
-                                                row[Объект_vmoАнализДанных].Value = объект;
-                                                row[ВремяПриездаНаОбъект_vmoАнализДанных].Value = point.Timestamp;
+                                                firstObj = объект;
+                                                temp = new GeozoneAndObj();
+                                                temp.tech = id.Key;
+                                                temp.obj = объект;
+                                                temp.timeObj = firstPoint.Timestamp;
+                                                // заполняем 
+                                                break;
                                             }
                                         }
 
-                                        row.Post();
+                                        if (firstObj == null)
+                                        {
+                                            foreach (var геозона in геозоны)
+                                            {
+                                                if ((Math.Pow((firstLong - (double)геозона.Долгота), 2) + Math.Pow((firstWidth - (double)геозона.Широта), 2) <= Math.Pow((double)геозона.РадиусГеозоны, 2)))
+                                                {
+                                                    firstGeo = геозона;
+                                                    temp = new GeozoneAndObj();
+                                                    temp.timeGeo = firstPoint.Timestamp;
+                                                    temp.geo = геозона;
+                                                    temp.tech = id.Key;
+                                                    // заполняем по firstPoint
+                                                    break;
+                                                }
+                                            }
+                                        }
+
+                                        if (temp != null)
+                                        {
+                                            listAll.Add(temp);
+                                            sortPoints = sortPoints.Where((item, index) => index != 0).ToArray();
+
+                                            //if (temp.obj != null)
+                                            //{
+                                            //    sortPoints = sortPoints.SkipWhile(x => (Math.Pow((x.Navigation.Location.Longitude - (double)temp.obj.Долгота), 2) + Math.Pow((x.Navigation.Location.Latitude - (double)temp.obj.Широта), 2) <= Math.Pow((double)temp.obj.РадиусГеозоны, 2))).ToArray();
+                                            //}
+                                            //else
+                                            //{
+                                            //    sortPoints = sortPoints.SkipWhile(x => (Math.Pow((x.Navigation.Location.Longitude - (double)temp.geo.Долгота), 2) + Math.Pow((x.Navigation.Location.Latitude - (double)temp.geo.Широта), 2) <= Math.Pow((double)temp.geo.РадиусГеозоны, 2))).ToArray();
+                                            //}
+                                        }
+                                        else
+                                        {
+                                            sortPoints = sortPoints.Where((item, index) => index != 0).ToArray();
+                                        }
                                     }
                                 }
+
+                                //foreach (var point in sortPoints)
+                                //{
+                                //    if (point.Navigation.Location != null)
+                                //    {
+                                //        var y = point.Navigation.Location.Longitude;
+                                //        var x = point.Navigation.Location.Latitude;
+
+                                //        bool b = false;
+                                //        var o = Объекты.Новый();
+
+                                //        foreach (var объект in объекты)
+                                //        {
+                                //            if (!c
+                                //                && (Math.Pow((x - (double)объект.Долгота), 2) + Math.Pow((y - (double)объект.Широта), 2) <= Math.Pow((double)объект.РадиусГеозоны, 2)))
+                                //            {
+                                //                c = true;
+                                //                o = объект;
+                                //                all.obj = объект;
+                                //                all.timeObj = point.Timestamp;
+                                //                all.tech = id.Key;
+                                //            }
+
+                                //            if (c
+                                //                && (Math.Pow((x - (double)o.Долгота), 2) + Math.Pow((y - (double)o.Широта), 2) > Math.Pow((double)o.РадиусГеозоны, 2)))
+                                //            {
+                                //                all.timeOfDepartureFromObj = point.Timestamp;
+                                //                b = true;
+                                //                d = true;
+                                //                break;
+                                //            }
+                                //        }
+
+                                //        if (b)
+                                //            break;
+                                //    }
+                                //}
+
+                                //if (!d)
+                                //    all = new GeozoneAndObj();
+
+                                //var гео = Геозоны.Новый();
+                                //bool f = false;
+                                //bool p = false;
+
+                                //foreach (var point in navigationFiltration.Points)
+                                //{
+                                //    if (point.Navigation.Location != null)
+                                //    {
+                                //        var y = point.Navigation.Location.Longitude;
+                                //        var x = point.Navigation.Location.Latitude;
+
+                                //        if (!f)
+                                //        {
+                                //            foreach (var геозона in геозоны) // заехал в геозону
+                                //            {
+                                //                if (Math.Pow((x - (double)геозона.Долгота), 2) + Math.Pow((y - (double)геозона.Широта), 2) <= Math.Pow((double)геозона.РадиусГеозоны, 2))
+                                //                {
+                                //                    other.timeGeo = point.Timestamp;
+                                //                    other.geo = геозона;
+                                //                    other.tech = id.Key;
+                                //                    гео = геозона;
+                                //                    f = true;
+                                //                    break;
+                                //                }
+                                //            }
+                                //        }
+
+                                //        if (f && !string.IsNullOrEmpty(гео.ToString())) // выехал из геозоны
+                                //        {
+                                //            if (Math.Pow((x - (double)гео.Долгота), 2) + Math.Pow((y - (double)гео.Широта), 2) > Math.Pow((double)гео.РадиусГеозоны, 2))
+                                //            {
+                                //                other.timeOfDepartureFromGeo = point.Timestamp;
+                                //                p = true;
+                                //            }
+                                //        }
+                                //    }
+                                //}
+
+                                //if (p)
+                                //    other = new GeozoneAndObj();
+
+                                //if (other != null)
+                                //    listAll.Add(other);
+                                //if (all != null)
+                                //    listObj.Add(all);
                             }                            
                         }
                         while (statisticsResponseNavigationFiltration.ChunkInfo.Status.Value == "Processing");
@@ -1004,7 +1135,80 @@ namespace TechControl.Метаданные.Мониторинг
                 else
                     date = new DateTime(date.Year, date.Month, date.AddDays(1).Day);
             }
-            vmoАнализДанных.Data.UpdateDataAsync(this);
+
+            var listResultsObj = new List<GeozoneAndObj>();
+            var listResultGeo = new List<GeozoneAndObj>();
+            for (int i = 1; i < listAll.Count; i++)
+            {
+                var item = listAll[i];
+                var pastItem = listAll[i - 1];
+                if (item.geo == null && item.obj != null && pastItem.geo != null && pastItem.obj == null && item.tech == pastItem.tech) // выезд из геозоны заезд в объект
+                {
+                    var resultGeo = new GeozoneAndObj();
+                    resultGeo.geo = pastItem.geo;
+                    resultGeo.tech = pastItem.tech;
+                    resultGeo.timeOfDepartureFromGeo = pastItem.timeGeo;
+
+                    listResultGeo.Add(resultGeo);
+
+                    var resultObj = new GeozoneAndObj();
+                    resultObj.obj = item.obj;
+                    resultObj.tech = item.tech;
+                    resultObj.timeObj = item.timeObj;
+
+                    listResultsObj.Add(resultObj);
+                }
+                else if (item.obj == null && item.geo != null && pastItem.obj != null && pastItem.geo == null && item.tech == pastItem.tech) // выезд из объекта и заезд в геозону
+                {
+                    var resultObj = new GeozoneAndObj();
+                    resultObj.obj = pastItem.obj;
+                    resultObj.tech = pastItem.tech;
+                    resultObj.timeOfDepartureFromObj = pastItem.timeObj;
+
+                    listResultsObj.Add(resultObj);
+
+                    var resultGeo = new GeozoneAndObj();
+                    resultGeo.tech = item.tech;
+                    resultGeo.geo = item.geo;
+                    resultGeo.timeGeo = item.timeGeo;
+
+                    listResultGeo.Add(resultGeo);
+                }
+            }
+
+            vmoПосещениеОбъектов.Data.BeginUpdateData();
+            vmoПосещениеОбъектов.Data.MemoryTable.Clear();
+
+            foreach (var all in listResultsObj)
+            {
+                var row = vmoПосещениеОбъектов.Data.MemoryTable.NewRow();
+                row[Техника_vmoПосещениеОбъектов].Value = all.tech;
+                row[Объект_vmoПосещениеОбъектов].Value = all.obj;
+                if (all.timeObj != NsgService.MinDate)
+                    row[ВремяПриезда_vmoПосещениеОбъектов].Value = all.timeObj;
+                if (all.timeOfDepartureFromObj != NsgService.MinDate)
+                    row[ВремяВыездаИзОбъекта_vmoПосещениеОбъектов].Value = all.timeOfDepartureFromObj;
+                row.Post();
+            }
+
+            vmoПосещениеОбъектов.Data.UpdateDataAsync(this);
+
+            vmoПосещениеГеозон.Data.BeginUpdateData();
+            vmoПосещениеГеозон.Data.MemoryTable.Clear();
+
+            foreach (var item in listResultGeo)
+            {
+                var row = vmoПосещениеГеозон.Data.MemoryTable.NewRow();
+                row[Техника_vmoПосещениеГеозон].Value = item.tech;
+                row[Геозона_vmoПосещениеГеозон].Value = item.geo;
+                if (item.timeGeo != NsgService.MinDate)
+                    row[ВремяПриезда_vmoПосещениеГеозон].Value = item.timeGeo;
+                if (item.timeOfDepartureFromGeo != NsgService.MinDate)
+                    row[ВремяОтъезда_vmoПосещениеГеозон].Value = item.timeOfDepartureFromGeo;
+                row.Post();
+            }
+
+            vmoПосещениеГеозон.Data.UpdateDataAsync(this);
         }
 
         private void nsgButton3_AsyncClick(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -1034,7 +1238,7 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 foreach (var id in unitIDName)
                 {
-                    if (!id.Key.ToString().Contains("Мини-эскаватор"))
+                    if (!id.Key.ToString().Contains("Мини"))
                     {
                         //создаем запрос сессии статистик
                         var statisticsSessionRequest = new SpicStatisticsSessionRequest
@@ -1120,6 +1324,16 @@ namespace TechControl.Метаданные.Мониторинг
         }
     }
 
+    public class GeozoneAndObj
+    {
+        public Техника tech { get; set; }
+        public Геозоны geo { get; set; }
+        public DateTime timeOfDepartureFromGeo { get; set; }
+        public DateTime timeGeo { get; set; }
+        public Объекты obj { get; set; }
+        public DateTime timeObj { get; set; }
+        public DateTime timeOfDepartureFromObj { get; set; }
+    }
     public class TrackingSystemsAll
     {
         public decimal totalHoursWorkshifts { get; set; }
