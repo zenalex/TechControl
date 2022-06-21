@@ -43,23 +43,13 @@ namespace TechControl.Метаданные.Мониторинг
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn7 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn8 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn9 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn10 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn11 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding1 = new NsgSoft.Forms.NsgMasterDetailBinding();
             NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor1 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor2 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             this.nsgIGrid1 = new NsgSoft.Forms.NsgIGrid();
             this.vmoТаблица = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Идентификатор_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
-            this.Автоинкремент_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Владелец = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
-            this.НомерСтроки = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Техника_vmoТаблица = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
-            this.ВидОперации_vmoТаблица = new TechControl.Метаданные.Мониторинг.ВидОперацииЗаправки.ColumnDescriptor();
-            this.ЗаправочнаяЕмкость_vmoТаблица = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
-            this.Источник_vmoТаблица = new TechControl.Метаданные.Мониторинг.ИсточникиЗаправки.ColumnDescriptor();
-            this.Комментарий_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.Объект_vmoТаблица = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.ОбъемТоплива_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.Поставщик_vmoТаблица = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -74,6 +64,20 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput5 = new NsgSoft.Forms.NsgInput();
             this.nsgInput6 = new NsgSoft.Forms.NsgInput();
             this.nsgInput7 = new NsgSoft.Forms.NsgInput();
+            this.nsgInput8 = new NsgSoft.Forms.NsgInput();
+            this.label8 = new System.Windows.Forms.Label();
+            this.nsgInput9 = new NsgSoft.Forms.NsgInput();
+            this.nsgInput10 = new NsgSoft.Forms.NsgInput();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.bДобавить = new NsgSoft.Design.NsgButton();
+            this.nsgInput11 = new NsgSoft.Forms.NsgInput();
+            this.label11 = new System.Windows.Forms.Label();
+            this.bЗаполнитьПоОбъекту = new NsgSoft.Design.NsgButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.nsgInput12 = new NsgSoft.Forms.NsgInput();
+            this.nsgInput13 = new NsgSoft.Forms.NsgInput();
             this.Идентификатор = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
             this.Автоинкремент = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ПрефиксКода = new NsgSoft.Forms.NsgColumnDescriptor.String();
@@ -93,16 +97,24 @@ namespace TechControl.Метаданные.Мониторинг
             this.Источник = new TechControl.Метаданные.Мониторинг.ИсточникиЗаправки.ColumnDescriptor();
             this.Таблица = new TechControl.Метаданные._SystemTables.МониторингЗаправкаТаблица.ColumnDescriptor();
             this.ЭтоИтоговыйДокумент = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
-            this.nsgInput8 = new NsgSoft.Forms.NsgInput();
-            this.label8 = new System.Windows.Forms.Label();
-            this.nsgInput9 = new NsgSoft.Forms.NsgInput();
-            this.nsgInput10 = new NsgSoft.Forms.NsgInput();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.bДобавить = new NsgSoft.Design.NsgButton();
-            this.nsgInput11 = new NsgSoft.Forms.NsgInput();
-            this.label11 = new System.Windows.Forms.Label();
-            this.bЗаполнитьПоОбъекту = new NsgSoft.Design.NsgButton();
+            this.АккаунтПользователя = new TechControl.Метаданные.СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor();
+            this.ЕстьРасхожодения = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
+            this.Проверено = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
+            this.МаксимальныйПроцентОтклонения = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.Идентификатор_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
+            this.Автоинкремент_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Владелец = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
+            this.НомерСтроки = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Техника_vmoТаблица = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
+            this.ВидОперации_vmoТаблица = new TechControl.Метаданные.Мониторинг.ВидОперацииЗаправки.ColumnDescriptor();
+            this.ЗаправочнаяЕмкость_vmoТаблица = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
+            this.Источник_vmoТаблица = new TechControl.Метаданные.Мониторинг.ИсточникиЗаправки.ColumnDescriptor();
+            this.Комментарий_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.Объект_vmoТаблица = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
+            this.ОбъемТоплива_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.Поставщик_vmoТаблица = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
+            this.ЛитровПоДатчику = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ПроцентОтклонения = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -135,6 +147,8 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.bДобавить)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bЗаполнитьПоОбъекту)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput13)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -414,6 +428,10 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Источник);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Таблица);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ЭтоИтоговыйДокумент);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.АккаунтПользователя);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ЕстьРасхожодения);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.Проверено);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.МаксимальныйПроцентОтклонения);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.MetaDataName = "Метаданные";
             this.nsgVisualMultipleObject.FullName = "Мониторинг.Заправка";
@@ -437,7 +455,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn1.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn1.DateFormat = null;
-            nsgIGridColumn1.ImportedFromVMO = false;
             nsgIGridColumn1.InitiateRowEdit = true;
             nsgIGridColumn1.Name = "Владелец";
             nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -454,7 +471,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn2.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn2.DateFormat = null;
-            nsgIGridColumn2.ImportedFromVMO = false;
             nsgIGridColumn2.InitiateRowEdit = true;
             nsgIGridColumn2.Name = "Техника";
             nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -470,7 +486,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn3.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn3.DateFormat = null;
-            nsgIGridColumn3.ImportedFromVMO = false;
             nsgIGridColumn3.InitiateRowEdit = true;
             nsgIGridColumn3.Name = "ВидОперации";
             nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -486,7 +501,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn4.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn4.DateFormat = null;
-            nsgIGridColumn4.ImportedFromVMO = false;
             nsgIGridColumn4.InitiateRowEdit = true;
             nsgIGridColumn4.Name = "ЗаправочнаяЕмкость";
             nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -502,7 +516,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn5.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn5.DateFormat = null;
-            nsgIGridColumn5.ImportedFromVMO = false;
             nsgIGridColumn5.InitiateRowEdit = true;
             nsgIGridColumn5.Name = "Источник";
             nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -518,7 +531,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn6.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn6.DateFormat = null;
-            nsgIGridColumn6.ImportedFromVMO = false;
             nsgIGridColumn6.InitiateRowEdit = true;
             nsgIGridColumn6.Name = "Комментарий";
             nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -534,7 +546,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn7.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn7.DateFormat = null;
-            nsgIGridColumn7.ImportedFromVMO = false;
             nsgIGridColumn7.InitiateRowEdit = true;
             nsgIGridColumn7.Name = "Объект";
             nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -550,7 +561,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn8.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn8.DateFormat = null;
-            nsgIGridColumn8.ImportedFromVMO = false;
             nsgIGridColumn8.InitiateRowEdit = true;
             nsgIGridColumn8.Name = "ОбъемТоплива";
             nsgIGridColumn8.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -566,7 +576,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn9.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn9.DateFormat = null;
-            nsgIGridColumn9.ImportedFromVMO = false;
             nsgIGridColumn9.InitiateRowEdit = true;
             nsgIGridColumn9.Name = "Поставщик";
             nsgIGridColumn9.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -574,6 +583,36 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn9.SortDirection = NsgSoft.Database.NsgSortDirection.None;
             nsgIGridColumn9.UseAsHeaderImage = false;
             nsgIGridColumn9.Width = 100;
+            nsgIGridColumn10.AllowFilter = true;
+            nsgIGridColumn10.AllowGroupSelect = false;
+            nsgIGridColumn10.AllowResize = true;
+            nsgIGridColumn10.AutoResize = true;
+            nsgIGridColumn10.Caption = "";
+            nsgIGridColumn10.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn10.DateFormat = null;
+            nsgIGridColumn10.InitiateRowEdit = true;
+            nsgIGridColumn10.Name = "ЛитровПоДатчику";
+            nsgIGridColumn10.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn10.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn10.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn10.UseAsHeaderImage = false;
+            nsgIGridColumn10.Width = 100;
+            nsgIGridColumn11.AllowFilter = true;
+            nsgIGridColumn11.AllowGroupSelect = false;
+            nsgIGridColumn11.AllowResize = true;
+            nsgIGridColumn11.AutoResize = true;
+            nsgIGridColumn11.Caption = "";
+            nsgIGridColumn11.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn11.DateFormat = null;
+            nsgIGridColumn11.InitiateRowEdit = true;
+            nsgIGridColumn11.Name = "ПроцентОтклонения";
+            nsgIGridColumn11.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn11.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn11.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn11.UseAsHeaderImage = false;
+            nsgIGridColumn11.Width = 100;
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn1);
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn2);
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn3);
@@ -583,6 +622,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn7);
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn8);
             this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn9);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn10);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn11);
             this.nsgIGrid1.Filter = false;
             this.nsgIGrid1.FrozenColumns = 0;
             this.nsgIGrid1.Grouping = true;
@@ -639,146 +680,10 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoТаблица.Columns.Collection.Add(this.Объект_vmoТаблица);
             this.vmoТаблица.Columns.Collection.Add(this.ОбъемТоплива_vmoТаблица);
             this.vmoТаблица.Columns.Collection.Add(this.Поставщик_vmoТаблица);
+            this.vmoТаблица.Columns.Collection.Add(this.ЛитровПоДатчику);
+            this.vmoТаблица.Columns.Collection.Add(this.ПроцентОтклонения);
             this.vmoТаблица.MasterComponent = this.nsgVisualMultipleObject;
             this.vmoТаблица.Binding = nsgMasterDetailBinding1;
-            // 
-            // Идентификатор_vmoТаблица
-            // 
-            this.Идентификатор_vmoТаблица.AutoGenerated = true;
-            this.Идентификатор_vmoТаблица.Caption = "Идентификатор";
-            this.Идентификатор_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Идентификатор_vmoТаблица.Name = "Идентификатор";
-            this.Идентификатор_vmoТаблица.NSGType = typeof(NsgSoft.DataObjects.NsgDataGuid);
-            this.Идентификатор_vmoТаблица.PropertyType = typeof(System.Guid);
-            this.Идентификатор_vmoТаблица.SearchCondition.OwnerComponent = this.Идентификатор_vmoТаблица;
-            this.Идентификатор_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.Идентификатор_vmoТаблица.Visible = false;
-            // 
-            // Автоинкремент_vmoТаблица
-            // 
-            this.Автоинкремент_vmoТаблица.AutoGenerated = true;
-            this.Автоинкремент_vmoТаблица.CalcTotal = false;
-            this.Автоинкремент_vmoТаблица.Caption = "Автоинкремент";
-            this.Автоинкремент_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Автоинкремент_vmoТаблица.Name = "Автоинкремент";
-            this.Автоинкремент_vmoТаблица.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.Автоинкремент_vmoТаблица.PropertyType = typeof(long);
-            this.Автоинкремент_vmoТаблица.SearchCondition.OwnerComponent = this.Автоинкремент_vmoТаблица;
-            this.Автоинкремент_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.Автоинкремент_vmoТаблица.Visible = false;
-            // 
-            // Владелец
-            // 
-            this.Владелец.AutoGenerated = true;
-            this.Владелец.Caption = "Владелец";
-            this.Владелец.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Владелец.Name = "Владелец";
-            this.Владелец.NSGType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
-            this.Владелец.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
-            this.Владелец.SearchCondition.OwnerComponent = this.Владелец;
-            this.Владелец.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // НомерСтроки
-            // 
-            this.НомерСтроки.AutoGenerated = true;
-            this.НомерСтроки.CalcTotal = false;
-            this.НомерСтроки.Caption = "НомерСтроки";
-            this.НомерСтроки.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.НомерСтроки.Name = "НомерСтроки";
-            this.НомерСтроки.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.НомерСтроки.PropertyType = typeof(long);
-            this.НомерСтроки.SearchCondition.OwnerComponent = this.НомерСтроки;
-            this.НомерСтроки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.НомерСтроки.Visible = false;
-            // 
-            // Техника_vmoТаблица
-            // 
-            this.Техника_vmoТаблица.AutoGenerated = true;
-            this.Техника_vmoТаблица.Caption = "Техника";
-            this.Техника_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Техника_vmoТаблица.Name = "Техника";
-            this.Техника_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoТаблица.SearchCondition.OwnerComponent = this.Техника_vmoТаблица;
-            this.Техника_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВидОперации_vmoТаблица
-            // 
-            this.ВидОперации_vmoТаблица.AutoGenerated = true;
-            this.ВидОперации_vmoТаблица.Caption = "ВидОперации";
-            this.ВидОперации_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ВидОперации_vmoТаблица.Name = "ВидОперации";
-            this.ВидОперации_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.ВидОперацииЗаправки);
-            this.ВидОперации_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ВидОперацииЗаправки);
-            this.ВидОперации_vmoТаблица.SearchCondition.OwnerComponent = this.ВидОперации_vmoТаблица;
-            this.ВидОперации_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ЗаправочнаяЕмкость_vmoТаблица
-            // 
-            this.ЗаправочнаяЕмкость_vmoТаблица.AutoGenerated = true;
-            this.ЗаправочнаяЕмкость_vmoТаблица.Caption = "ЗаправочнаяЕмкость";
-            this.ЗаправочнаяЕмкость_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ЗаправочнаяЕмкость_vmoТаблица.Name = "ЗаправочнаяЕмкость";
-            this.ЗаправочнаяЕмкость_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.ЗаправочнаяЕмкость_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.ЗаправочнаяЕмкость_vmoТаблица.SearchCondition.OwnerComponent = this.ЗаправочнаяЕмкость_vmoТаблица;
-            this.ЗаправочнаяЕмкость_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Источник_vmoТаблица
-            // 
-            this.Источник_vmoТаблица.AutoGenerated = true;
-            this.Источник_vmoТаблица.Caption = "Источник";
-            this.Источник_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Источник_vmoТаблица.Name = "Источник";
-            this.Источник_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.ИсточникиЗаправки);
-            this.Источник_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ИсточникиЗаправки);
-            this.Источник_vmoТаблица.SearchCondition.OwnerComponent = this.Источник_vmoТаблица;
-            this.Источник_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Комментарий_vmoТаблица
-            // 
-            this.Комментарий_vmoТаблица.AutoGenerated = true;
-            this.Комментарий_vmoТаблица.Caption = "Комментарий";
-            this.Комментарий_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Комментарий_vmoТаблица.Name = "Комментарий";
-            this.Комментарий_vmoТаблица.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
-            this.Комментарий_vmoТаблица.PropertyType = typeof(string);
-            this.Комментарий_vmoТаблица.SearchCondition.OwnerComponent = this.Комментарий_vmoТаблица;
-            this.Комментарий_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Объект_vmoТаблица
-            // 
-            this.Объект_vmoТаблица.AutoGenerated = true;
-            this.Объект_vmoТаблица.Caption = "Объект";
-            this.Объект_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Объект_vmoТаблица.Name = "Объект";
-            this.Объект_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
-            this.Объект_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
-            this.Объект_vmoТаблица.SearchCondition.OwnerComponent = this.Объект_vmoТаблица;
-            this.Объект_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ОбъемТоплива_vmoТаблица
-            // 
-            this.ОбъемТоплива_vmoТаблица.AutoGenerated = true;
-            this.ОбъемТоплива_vmoТаблица.CalcTotal = false;
-            this.ОбъемТоплива_vmoТаблица.Caption = "ОбъемТоплива";
-            this.ОбъемТоплива_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.ОбъемТоплива_vmoТаблица.Name = "ОбъемТоплива";
-            this.ОбъемТоплива_vmoТаблица.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
-            this.ОбъемТоплива_vmoТаблица.PropertyType = typeof(decimal);
-            this.ОбъемТоплива_vmoТаблица.SearchCondition.OwnerComponent = this.ОбъемТоплива_vmoТаблица;
-            this.ОбъемТоплива_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Поставщик_vmoТаблица
-            // 
-            this.Поставщик_vmoТаблица.AutoGenerated = true;
-            this.Поставщик_vmoТаблица.Caption = "Поставщик";
-            this.Поставщик_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Поставщик_vmoТаблица.Name = "Поставщик";
-            this.Поставщик_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
-            this.Поставщик_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
-            this.Поставщик_vmoТаблица.SearchCondition.OwnerComponent = this.Поставщик_vmoТаблица;
-            this.Поставщик_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // label1
             // 
@@ -1054,6 +959,269 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput7.TabIndex = 22;
             this.nsgInput7.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // nsgInput8
+            // 
+            this.nsgInput8.BackColor = System.Drawing.SystemColors.Control;
+            this.nsgInput8.ConfigurationName = "TechControl";
+            this.nsgInput8.DisableLeaveControlEvent = false;
+            this.nsgInput8.FullName = "Мониторинг.Заправка.ЭтоИтоговыйДокумент";
+            this.nsgInput8.FullTextSearch = false;
+            this.nsgInput8.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput8.IsButton = false;
+            this.nsgInput8.IsInitialized = true;
+            this.nsgInput8.IsPassword = false;
+            this.nsgInput8.Location = new System.Drawing.Point(146, 130);
+            this.nsgInput8.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput8.Mask = "";
+            this.nsgInput8.MetaDataName = "Метаданные";
+            this.nsgInput8.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput8.Name = "NsgInput";
+            this.nsgInput8.ObjectImages = null;
+            this.nsgInput8.ObjectIndex = null;
+            this.nsgInput8.ObjectStrings = null;
+            this.nsgInput8.Requsite = "ЭтоИтоговыйДокумент";
+            this.nsgInput8.SearchFieldName = "";
+            this.nsgInput8.ShowMultipleObjectInComboBox = false;
+            this.nsgInput8.ShowRowCount = 10;
+            this.nsgInput8.Size = new System.Drawing.Size(20, 20);
+            this.nsgInput8.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput8.TabIndex = 24;
+            this.nsgInput8.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.nsgInput8.ValueChanged += new NsgSoft.Design.ValueChangedInitEventHandler(this.nsgInput8_ValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(32, 133);
+            this.label8.Name = "label2";
+            this.label8.Size = new System.Drawing.Size(111, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Итоговый документ:";
+            // 
+            // nsgInput9
+            // 
+            this.nsgInput9.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput9.ConfigurationName = "TechControl";
+            this.nsgInput9.DisableLeaveControlEvent = false;
+            this.nsgInput9.FullName = "Мониторинг.Заправка.Источник";
+            this.nsgInput9.FullTextSearch = false;
+            this.nsgInput9.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput9.IsButton = false;
+            this.nsgInput9.IsInitialized = true;
+            this.nsgInput9.IsPassword = false;
+            this.nsgInput9.Location = new System.Drawing.Point(146, 70);
+            this.nsgInput9.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput9.Mask = "";
+            this.nsgInput9.MetaDataName = "Метаданные";
+            this.nsgInput9.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput9.Name = "NsgInput";
+            this.nsgInput9.ObjectImages = null;
+            this.nsgInput9.ObjectIndex = null;
+            this.nsgInput9.ObjectStrings = null;
+            this.nsgInput9.Requsite = "Источник";
+            this.nsgInput9.SearchFieldName = "";
+            this.nsgInput9.ShowMultipleObjectInComboBox = false;
+            this.nsgInput9.ShowRowCount = 10;
+            this.nsgInput9.Size = new System.Drawing.Size(225, 20);
+            this.nsgInput9.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput9.TabIndex = 28;
+            this.nsgInput9.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // nsgInput10
+            // 
+            this.nsgInput10.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput10.ConfigurationName = "TechControl";
+            this.nsgInput10.DisableLeaveControlEvent = false;
+            this.nsgInput10.FullName = "Мониторинг.Заправка.ВидОперации";
+            this.nsgInput10.FullTextSearch = false;
+            this.nsgInput10.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput10.IsButton = false;
+            this.nsgInput10.IsInitialized = true;
+            this.nsgInput10.IsPassword = false;
+            this.nsgInput10.Location = new System.Drawing.Point(146, 42);
+            this.nsgInput10.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput10.Mask = "";
+            this.nsgInput10.MetaDataName = "Метаданные";
+            this.nsgInput10.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput10.Name = "NsgInput";
+            this.nsgInput10.ObjectImages = null;
+            this.nsgInput10.ObjectIndex = null;
+            this.nsgInput10.ObjectStrings = null;
+            this.nsgInput10.Requsite = "ВидОперации";
+            this.nsgInput10.SearchFieldName = "";
+            this.nsgInput10.ShowMultipleObjectInComboBox = false;
+            this.nsgInput10.ShowRowCount = 10;
+            this.nsgInput10.Size = new System.Drawing.Size(225, 20);
+            this.nsgInput10.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput10.TabIndex = 27;
+            this.nsgInput10.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(61, 77);
+            this.label9.Name = "label4";
+            this.label9.Size = new System.Drawing.Size(58, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Источник:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(39, 49);
+            this.label10.Name = "label3";
+            this.label10.Size = new System.Drawing.Size(80, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Вид операции:";
+            // 
+            // bДобавить
+            // 
+            this.bДобавить.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bДобавить.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bДобавить.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bДобавить.Location = new System.Drawing.Point(169, 130);
+            this.bДобавить.Name = "NsgButton";
+            this.bДобавить.ReadOnlyProvider = this.nsgVisualMultipleObject;
+            this.bДобавить.Size = new System.Drawing.Size(232, 25);
+            this.bДобавить.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.bДобавить.TabIndex = 30;
+            this.bДобавить.Text = "Добавить с заполнением";
+            this.bДобавить.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bДобавить.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.bДобавить_AsyncClick);
+            // 
+            // nsgInput11
+            // 
+            this.nsgInput11.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput11.ConfigurationName = "TechControl";
+            this.nsgInput11.DisableLeaveControlEvent = false;
+            this.nsgInput11.FullName = "Мониторинг.Заправка.ЗаправочнаяЕмкость";
+            this.nsgInput11.FullTextSearch = false;
+            this.nsgInput11.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput11.IsButton = false;
+            this.nsgInput11.IsInitialized = true;
+            this.nsgInput11.IsPassword = false;
+            this.nsgInput11.Location = new System.Drawing.Point(146, 99);
+            this.nsgInput11.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput11.Mask = "";
+            this.nsgInput11.MetaDataName = "Метаданные";
+            this.nsgInput11.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput11.Name = "NsgInput";
+            this.nsgInput11.ObjectImages = null;
+            this.nsgInput11.ObjectIndex = null;
+            this.nsgInput11.ObjectStrings = null;
+            this.nsgInput11.Requsite = "ЗаправочнаяЕмкость";
+            this.nsgInput11.SearchFieldName = "";
+            this.nsgInput11.ShowMultipleObjectInComboBox = false;
+            this.nsgInput11.ShowRowCount = 10;
+            this.nsgInput11.Size = new System.Drawing.Size(225, 20);
+            this.nsgInput11.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput11.TabIndex = 32;
+            this.nsgInput11.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(65, 106);
+            this.label11.Name = "label5";
+            this.label11.Size = new System.Drawing.Size(54, 13);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Емкость:";
+            // 
+            // bЗаполнитьПоОбъекту
+            // 
+            this.bЗаполнитьПоОбъекту.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bЗаполнитьПоОбъекту.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bЗаполнитьПоОбъекту.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bЗаполнитьПоОбъекту.Location = new System.Drawing.Point(407, 130);
+            this.bЗаполнитьПоОбъекту.Name = "NsgButton";
+            this.bЗаполнитьПоОбъекту.ReadOnlyProvider = this.nsgVisualMultipleObject;
+            this.bЗаполнитьПоОбъекту.Size = new System.Drawing.Size(232, 25);
+            this.bЗаполнитьПоОбъекту.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.bЗаполнитьПоОбъекту.TabIndex = 33;
+            this.bЗаполнитьПоОбъекту.Text = "Заполнить по объекту";
+            this.bЗаполнитьПоОбъекту.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bЗаполнитьПоОбъекту.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.bЗаполнитьПоОбъекту_AsyncClick);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(686, 106);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(195, 13);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "Максимальный процент отклонения:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(671, 136);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 13);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "Проверено:";
+            // 
+            // nsgInput12
+            // 
+            this.nsgInput12.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput12.ConfigurationName = "";
+            this.nsgInput12.DisableLeaveControlEvent = false;
+            this.nsgInput12.FullName = "МаксимальныйПроцентОтклонения";
+            this.nsgInput12.FullTextSearch = false;
+            this.nsgInput12.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput12.IsButton = false;
+            this.nsgInput12.IsInitialized = false;
+            this.nsgInput12.IsPassword = false;
+            this.nsgInput12.Location = new System.Drawing.Point(884, 99);
+            this.nsgInput12.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput12.Mask = "";
+            this.nsgInput12.MetaDataName = "";
+            this.nsgInput12.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput12.Name = "NsgInput";
+            this.nsgInput12.ObjectImages = null;
+            this.nsgInput12.ObjectIndex = null;
+            this.nsgInput12.ObjectStrings = null;
+            this.nsgInput12.Requsite = "МаксимальныйПроцентОтклонения";
+            this.nsgInput12.SearchFieldName = "";
+            this.nsgInput12.ShowMultipleObjectInComboBox = false;
+            this.nsgInput12.ShowRowCount = 10;
+            this.nsgInput12.Size = new System.Drawing.Size(82, 20);
+            this.nsgInput12.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput12.TabIndex = 36;
+            this.nsgInput12.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // nsgInput13
+            // 
+            this.nsgInput13.BackColor = System.Drawing.SystemColors.Control;
+            this.nsgInput13.ConfigurationName = "";
+            this.nsgInput13.DisableLeaveControlEvent = false;
+            this.nsgInput13.FullName = "Проверено";
+            this.nsgInput13.FullTextSearch = false;
+            this.nsgInput13.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput13.IsButton = false;
+            this.nsgInput13.IsInitialized = false;
+            this.nsgInput13.IsPassword = false;
+            this.nsgInput13.Location = new System.Drawing.Point(740, 130);
+            this.nsgInput13.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput13.Mask = "";
+            this.nsgInput13.MetaDataName = "";
+            this.nsgInput13.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput13.Name = "NsgInput";
+            this.nsgInput13.ObjectImages = null;
+            this.nsgInput13.ObjectIndex = null;
+            this.nsgInput13.ObjectStrings = null;
+            this.nsgInput13.Requsite = "Проверено";
+            this.nsgInput13.SearchFieldName = "";
+            this.nsgInput13.ShowMultipleObjectInComboBox = false;
+            this.nsgInput13.ShowRowCount = 10;
+            this.nsgInput13.Size = new System.Drawing.Size(18, 20);
+            this.nsgInput13.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput13.TabIndex = 37;
+            this.nsgInput13.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // Идентификатор
             // 
             this.Идентификатор.AutoGenerated = true;
@@ -1272,191 +1440,212 @@ namespace TechControl.Метаданные.Мониторинг
             this.ЭтоИтоговыйДокумент.SearchCondition.OwnerComponent = this.ЭтоИтоговыйДокумент;
             this.ЭтоИтоговыйДокумент.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // nsgInput8
+            // АккаунтПользователя
             // 
-            this.nsgInput8.BackColor = System.Drawing.SystemColors.Control;
-            this.nsgInput8.ConfigurationName = "TechControl";
-            this.nsgInput8.DisableLeaveControlEvent = false;
-            this.nsgInput8.FullName = "Мониторинг.Заправка.ЭтоИтоговыйДокумент";
-            this.nsgInput8.FullTextSearch = false;
-            this.nsgInput8.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput8.IsButton = false;
-            this.nsgInput8.IsInitialized = true;
-            this.nsgInput8.IsPassword = false;
-            this.nsgInput8.Location = new System.Drawing.Point(146, 130);
-            this.nsgInput8.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput8.Mask = "";
-            this.nsgInput8.MetaDataName = "Метаданные";
-            this.nsgInput8.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput8.Name = "NsgInput";
-            this.nsgInput8.ObjectImages = null;
-            this.nsgInput8.ObjectIndex = null;
-            this.nsgInput8.ObjectStrings = null;
-            this.nsgInput8.Requsite = "ЭтоИтоговыйДокумент";
-            this.nsgInput8.SearchFieldName = "";
-            this.nsgInput8.ShowMultipleObjectInComboBox = false;
-            this.nsgInput8.ShowRowCount = 10;
-            this.nsgInput8.Size = new System.Drawing.Size(20, 20);
-            this.nsgInput8.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput8.TabIndex = 24;
-            this.nsgInput8.VerticalAlignment = System.Drawing.StringAlignment.Center;
-            this.nsgInput8.ValueChanged += new NsgSoft.Design.ValueChangedInitEventHandler(this.nsgInput8_ValueChanged);
+            this.АккаунтПользователя.AutoGenerated = true;
+            this.АккаунтПользователя.Caption = "АккаунтПользователя";
+            this.АккаунтПользователя.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.АккаунтПользователя.Name = "АккаунтПользователя";
+            this.АккаунтПользователя.NSGType = typeof(TechControl.Метаданные.СлужебныеСправочники.АккаунтПользователя);
+            this.АккаунтПользователя.PropertyType = typeof(TechControl.Метаданные.СлужебныеСправочники.АккаунтПользователя);
+            this.АккаунтПользователя.SearchCondition.OwnerComponent = this.АккаунтПользователя;
+            this.АккаунтПользователя.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // label8
+            // ЕстьРасхожодения
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 133);
-            this.label8.Name = "label2";
-            this.label8.Size = new System.Drawing.Size(111, 13);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Итоговый документ:";
+            this.ЕстьРасхожодения.AutoGenerated = true;
+            this.ЕстьРасхожодения.Caption = "ЕстьРасхожодения";
+            this.ЕстьРасхожодения.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ЕстьРасхожодения.Name = "ЕстьРасхожодения";
+            this.ЕстьРасхожодения.NSGType = typeof(NsgSoft.DataObjects.NsgDataBoolean);
+            this.ЕстьРасхожодения.PropertyType = typeof(bool);
+            this.ЕстьРасхожодения.SearchCondition.OwnerComponent = this.ЕстьРасхожодения;
+            this.ЕстьРасхожодения.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // nsgInput9
+            // Проверено
             // 
-            this.nsgInput9.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput9.ConfigurationName = "TechControl";
-            this.nsgInput9.DisableLeaveControlEvent = false;
-            this.nsgInput9.FullName = "Мониторинг.Заправка.Источник";
-            this.nsgInput9.FullTextSearch = false;
-            this.nsgInput9.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput9.IsButton = false;
-            this.nsgInput9.IsInitialized = true;
-            this.nsgInput9.IsPassword = false;
-            this.nsgInput9.Location = new System.Drawing.Point(146, 70);
-            this.nsgInput9.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput9.Mask = "";
-            this.nsgInput9.MetaDataName = "Метаданные";
-            this.nsgInput9.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput9.Name = "NsgInput";
-            this.nsgInput9.ObjectImages = null;
-            this.nsgInput9.ObjectIndex = null;
-            this.nsgInput9.ObjectStrings = null;
-            this.nsgInput9.Requsite = "Источник";
-            this.nsgInput9.SearchFieldName = "";
-            this.nsgInput9.ShowMultipleObjectInComboBox = false;
-            this.nsgInput9.ShowRowCount = 10;
-            this.nsgInput9.Size = new System.Drawing.Size(225, 20);
-            this.nsgInput9.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput9.TabIndex = 28;
-            this.nsgInput9.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.Проверено.AutoGenerated = true;
+            this.Проверено.Caption = "Проверено";
+            this.Проверено.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Проверено.Name = "Проверено";
+            this.Проверено.NSGType = typeof(NsgSoft.DataObjects.NsgDataBoolean);
+            this.Проверено.PropertyType = typeof(bool);
+            this.Проверено.SearchCondition.OwnerComponent = this.Проверено;
+            this.Проверено.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // nsgInput10
+            // МаксимальныйПроцентОтклонения
             // 
-            this.nsgInput10.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput10.ConfigurationName = "TechControl";
-            this.nsgInput10.DisableLeaveControlEvent = false;
-            this.nsgInput10.FullName = "Мониторинг.Заправка.ВидОперации";
-            this.nsgInput10.FullTextSearch = false;
-            this.nsgInput10.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput10.IsButton = false;
-            this.nsgInput10.IsInitialized = true;
-            this.nsgInput10.IsPassword = false;
-            this.nsgInput10.Location = new System.Drawing.Point(146, 42);
-            this.nsgInput10.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput10.Mask = "";
-            this.nsgInput10.MetaDataName = "Метаданные";
-            this.nsgInput10.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput10.Name = "NsgInput";
-            this.nsgInput10.ObjectImages = null;
-            this.nsgInput10.ObjectIndex = null;
-            this.nsgInput10.ObjectStrings = null;
-            this.nsgInput10.Requsite = "ВидОперации";
-            this.nsgInput10.SearchFieldName = "";
-            this.nsgInput10.ShowMultipleObjectInComboBox = false;
-            this.nsgInput10.ShowRowCount = 10;
-            this.nsgInput10.Size = new System.Drawing.Size(225, 20);
-            this.nsgInput10.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput10.TabIndex = 27;
-            this.nsgInput10.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.МаксимальныйПроцентОтклонения.AutoGenerated = true;
+            this.МаксимальныйПроцентОтклонения.CalcTotal = false;
+            this.МаксимальныйПроцентОтклонения.Caption = "МаксимальныйПроцентОтклонения";
+            this.МаксимальныйПроцентОтклонения.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.МаксимальныйПроцентОтклонения.Name = "МаксимальныйПроцентОтклонения";
+            this.МаксимальныйПроцентОтклонения.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.МаксимальныйПроцентОтклонения.PropertyType = typeof(decimal);
+            this.МаксимальныйПроцентОтклонения.SearchCondition.OwnerComponent = this.МаксимальныйПроцентОтклонения;
+            this.МаксимальныйПроцентОтклонения.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // label9
+            // Идентификатор_vmoТаблица
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(61, 77);
-            this.label9.Name = "label4";
-            this.label9.Size = new System.Drawing.Size(58, 13);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Источник:";
+            this.Идентификатор_vmoТаблица.AutoGenerated = true;
+            this.Идентификатор_vmoТаблица.Caption = "Идентификатор";
+            this.Идентификатор_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Идентификатор_vmoТаблица.Name = "Идентификатор";
+            this.Идентификатор_vmoТаблица.NSGType = typeof(NsgSoft.DataObjects.NsgDataGuid);
+            this.Идентификатор_vmoТаблица.PropertyType = typeof(System.Guid);
+            this.Идентификатор_vmoТаблица.SearchCondition.OwnerComponent = this.Идентификатор_vmoТаблица;
+            this.Идентификатор_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Идентификатор_vmoТаблица.Visible = false;
             // 
-            // label10
+            // Автоинкремент_vmoТаблица
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(39, 49);
-            this.label10.Name = "label3";
-            this.label10.Size = new System.Drawing.Size(80, 13);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Вид операции:";
+            this.Автоинкремент_vmoТаблица.AutoGenerated = true;
+            this.Автоинкремент_vmoТаблица.CalcTotal = false;
+            this.Автоинкремент_vmoТаблица.Caption = "Автоинкремент";
+            this.Автоинкремент_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Автоинкремент_vmoТаблица.Name = "Автоинкремент";
+            this.Автоинкремент_vmoТаблица.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.Автоинкремент_vmoТаблица.PropertyType = typeof(long);
+            this.Автоинкремент_vmoТаблица.SearchCondition.OwnerComponent = this.Автоинкремент_vmoТаблица;
+            this.Автоинкремент_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Автоинкремент_vmoТаблица.Visible = false;
             // 
-            // bДобавить
+            // Владелец
             // 
-            this.bДобавить.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.bДобавить.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.bДобавить.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.bДобавить.Location = new System.Drawing.Point(169, 130);
-            this.bДобавить.Name = "NsgButton";
-            this.bДобавить.ReadOnlyProvider = this.nsgVisualMultipleObject;
-            this.bДобавить.Size = new System.Drawing.Size(232, 25);
-            this.bДобавить.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
-            this.bДобавить.TabIndex = 30;
-            this.bДобавить.Text = "Добавить с заполнением";
-            this.bДобавить.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bДобавить.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.bДобавить_AsyncClick);
+            this.Владелец.AutoGenerated = true;
+            this.Владелец.Caption = "Владелец";
+            this.Владелец.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Владелец.Name = "Владелец";
+            this.Владелец.NSGType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец.SearchCondition.OwnerComponent = this.Владелец;
+            this.Владелец.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // nsgInput11
+            // НомерСтроки
             // 
-            this.nsgInput11.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput11.ConfigurationName = "TechControl";
-            this.nsgInput11.DisableLeaveControlEvent = false;
-            this.nsgInput11.FullName = "Мониторинг.Заправка.ЗаправочнаяЕмкость";
-            this.nsgInput11.FullTextSearch = false;
-            this.nsgInput11.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput11.IsButton = false;
-            this.nsgInput11.IsInitialized = true;
-            this.nsgInput11.IsPassword = false;
-            this.nsgInput11.Location = new System.Drawing.Point(146, 99);
-            this.nsgInput11.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput11.Mask = "";
-            this.nsgInput11.MetaDataName = "Метаданные";
-            this.nsgInput11.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput11.Name = "NsgInput";
-            this.nsgInput11.ObjectImages = null;
-            this.nsgInput11.ObjectIndex = null;
-            this.nsgInput11.ObjectStrings = null;
-            this.nsgInput11.Requsite = "ЗаправочнаяЕмкость";
-            this.nsgInput11.SearchFieldName = "";
-            this.nsgInput11.ShowMultipleObjectInComboBox = false;
-            this.nsgInput11.ShowRowCount = 10;
-            this.nsgInput11.Size = new System.Drawing.Size(225, 20);
-            this.nsgInput11.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput11.TabIndex = 32;
-            this.nsgInput11.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.НомерСтроки.AutoGenerated = true;
+            this.НомерСтроки.CalcTotal = false;
+            this.НомерСтроки.Caption = "НомерСтроки";
+            this.НомерСтроки.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.НомерСтроки.Name = "НомерСтроки";
+            this.НомерСтроки.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.НомерСтроки.PropertyType = typeof(long);
+            this.НомерСтроки.SearchCondition.OwnerComponent = this.НомерСтроки;
+            this.НомерСтроки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.НомерСтроки.Visible = false;
             // 
-            // label11
+            // Техника_vmoТаблица
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(65, 106);
-            this.label11.Name = "label5";
-            this.label11.Size = new System.Drawing.Size(54, 13);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Емкость:";
+            this.Техника_vmoТаблица.AutoGenerated = true;
+            this.Техника_vmoТаблица.Caption = "Техника";
+            this.Техника_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Техника_vmoТаблица.Name = "Техника";
+            this.Техника_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoТаблица.SearchCondition.OwnerComponent = this.Техника_vmoТаблица;
+            this.Техника_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // bЗаполнитьПоОбъекту
+            // ВидОперации_vmoТаблица
             // 
-            this.bЗаполнитьПоОбъекту.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.bЗаполнитьПоОбъекту.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.bЗаполнитьПоОбъекту.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.bЗаполнитьПоОбъекту.Location = new System.Drawing.Point(407, 130);
-            this.bЗаполнитьПоОбъекту.Name = "NsgButton";
-            this.bЗаполнитьПоОбъекту.ReadOnlyProvider = this.nsgVisualMultipleObject;
-            this.bЗаполнитьПоОбъекту.Size = new System.Drawing.Size(232, 25);
-            this.bЗаполнитьПоОбъекту.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
-            this.bЗаполнитьПоОбъекту.TabIndex = 33;
-            this.bЗаполнитьПоОбъекту.Text = "Заполнить по объекту";
-            this.bЗаполнитьПоОбъекту.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bЗаполнитьПоОбъекту.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.bЗаполнитьПоОбъекту_AsyncClick);
+            this.ВидОперации_vmoТаблица.AutoGenerated = true;
+            this.ВидОперации_vmoТаблица.Caption = "ВидОперации";
+            this.ВидОперации_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ВидОперации_vmoТаблица.Name = "ВидОперации";
+            this.ВидОперации_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.ВидОперацииЗаправки);
+            this.ВидОперации_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ВидОперацииЗаправки);
+            this.ВидОперации_vmoТаблица.SearchCondition.OwnerComponent = this.ВидОперации_vmoТаблица;
+            this.ВидОперации_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ЗаправочнаяЕмкость_vmoТаблица
+            // 
+            this.ЗаправочнаяЕмкость_vmoТаблица.AutoGenerated = true;
+            this.ЗаправочнаяЕмкость_vmoТаблица.Caption = "ЗаправочнаяЕмкость";
+            this.ЗаправочнаяЕмкость_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ЗаправочнаяЕмкость_vmoТаблица.Name = "ЗаправочнаяЕмкость";
+            this.ЗаправочнаяЕмкость_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.ЗаправочнаяЕмкость_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.ЗаправочнаяЕмкость_vmoТаблица.SearchCondition.OwnerComponent = this.ЗаправочнаяЕмкость_vmoТаблица;
+            this.ЗаправочнаяЕмкость_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Источник_vmoТаблица
+            // 
+            this.Источник_vmoТаблица.AutoGenerated = true;
+            this.Источник_vmoТаблица.Caption = "Источник";
+            this.Источник_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Источник_vmoТаблица.Name = "Источник";
+            this.Источник_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.ИсточникиЗаправки);
+            this.Источник_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ИсточникиЗаправки);
+            this.Источник_vmoТаблица.SearchCondition.OwnerComponent = this.Источник_vmoТаблица;
+            this.Источник_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Комментарий_vmoТаблица
+            // 
+            this.Комментарий_vmoТаблица.AutoGenerated = true;
+            this.Комментарий_vmoТаблица.Caption = "Комментарий";
+            this.Комментарий_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Комментарий_vmoТаблица.Name = "Комментарий";
+            this.Комментарий_vmoТаблица.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.Комментарий_vmoТаблица.PropertyType = typeof(string);
+            this.Комментарий_vmoТаблица.SearchCondition.OwnerComponent = this.Комментарий_vmoТаблица;
+            this.Комментарий_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Объект_vmoТаблица
+            // 
+            this.Объект_vmoТаблица.AutoGenerated = true;
+            this.Объект_vmoТаблица.Caption = "Объект";
+            this.Объект_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Объект_vmoТаблица.Name = "Объект";
+            this.Объект_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
+            this.Объект_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
+            this.Объект_vmoТаблица.SearchCondition.OwnerComponent = this.Объект_vmoТаблица;
+            this.Объект_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ОбъемТоплива_vmoТаблица
+            // 
+            this.ОбъемТоплива_vmoТаблица.AutoGenerated = true;
+            this.ОбъемТоплива_vmoТаблица.CalcTotal = false;
+            this.ОбъемТоплива_vmoТаблица.Caption = "ОбъемТоплива";
+            this.ОбъемТоплива_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ОбъемТоплива_vmoТаблица.Name = "ОбъемТоплива";
+            this.ОбъемТоплива_vmoТаблица.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ОбъемТоплива_vmoТаблица.PropertyType = typeof(decimal);
+            this.ОбъемТоплива_vmoТаблица.SearchCondition.OwnerComponent = this.ОбъемТоплива_vmoТаблица;
+            this.ОбъемТоплива_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Поставщик_vmoТаблица
+            // 
+            this.Поставщик_vmoТаблица.AutoGenerated = true;
+            this.Поставщик_vmoТаблица.Caption = "Поставщик";
+            this.Поставщик_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Поставщик_vmoТаблица.Name = "Поставщик";
+            this.Поставщик_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
+            this.Поставщик_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Контрагенты);
+            this.Поставщик_vmoТаблица.SearchCondition.OwnerComponent = this.Поставщик_vmoТаблица;
+            this.Поставщик_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ЛитровПоДатчику
+            // 
+            this.ЛитровПоДатчику.AutoGenerated = true;
+            this.ЛитровПоДатчику.CalcTotal = false;
+            this.ЛитровПоДатчику.Caption = "ЛитровПоДатчику";
+            this.ЛитровПоДатчику.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ЛитровПоДатчику.Name = "ЛитровПоДатчику";
+            this.ЛитровПоДатчику.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ЛитровПоДатчику.PropertyType = typeof(decimal);
+            this.ЛитровПоДатчику.SearchCondition.OwnerComponent = this.ЛитровПоДатчику;
+            this.ЛитровПоДатчику.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ПроцентОтклонения
+            // 
+            this.ПроцентОтклонения.AutoGenerated = true;
+            this.ПроцентОтклонения.CalcTotal = false;
+            this.ПроцентОтклонения.Caption = "ПроцентОтклонения";
+            this.ПроцентОтклонения.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ПроцентОтклонения.Name = "ПроцентОтклонения";
+            this.ПроцентОтклонения.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ПроцентОтклонения.PropertyType = typeof(decimal);
+            this.ПроцентОтклонения.SearchCondition.OwnerComponent = this.ПроцентОтклонения;
+            this.ПроцентОтклонения.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // ЗаправкаФормаЭлемента
             // 
@@ -1467,6 +1656,10 @@ namespace TechControl.Метаданные.Мониторинг
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1297, 452);
+            this.Controls.Add(this.nsgInput13);
+            this.Controls.Add(this.nsgInput12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.bЗаполнитьПоОбъекту);
             this.Controls.Add(this.nsgInput11);
             this.Controls.Add(this.label11);
@@ -1528,6 +1721,10 @@ namespace TechControl.Метаданные.Мониторинг
             this.Controls.SetChildIndex(this.label11, 0);
             this.Controls.SetChildIndex(this.nsgInput11, 0);
             this.Controls.SetChildIndex(this.bЗаполнитьПоОбъекту, 0);
+            this.Controls.SetChildIndex(this.label12, 0);
+            this.Controls.SetChildIndex(this.label13, 0);
+            this.Controls.SetChildIndex(this.nsgInput12, 0);
+            this.Controls.SetChildIndex(this.nsgInput13, 0);
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).EndInit();
@@ -1562,6 +1759,8 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.bДобавить)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bЗаполнитьПоОбъекту)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1577,6 +1776,23 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgInput nsgInput5;
         protected NsgInput nsgInput6;
         protected NsgInput nsgInput7;
+        protected NsgInput nsgInput8;
+        protected System.Windows.Forms.Label label8;
+        protected NsgInput nsgInput9;
+        protected NsgInput nsgInput10;
+        protected System.Windows.Forms.Label label9;
+        protected System.Windows.Forms.Label label10;
+        protected System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Label label4;
+        protected System.Windows.Forms.Label label5;
+        protected System.Windows.Forms.Label label6;
+        protected System.Windows.Forms.Label label7;
+        protected NsgSoft.Design.NsgButton bДобавить;
+        private NsgVisualMultipleObject vmoТаблица;
+        private NsgIGrid nsgIGrid1;
+        protected NsgInput nsgInput11;
+        protected System.Windows.Forms.Label label11;
+        protected NsgSoft.Design.NsgButton bЗаполнитьПоОбъекту;
         private NsgColumnDescriptor.Guid Идентификатор;
         private NsgColumnDescriptor.Int64 Автоинкремент;
         private NsgColumnDescriptor.String ПрефиксКода;
@@ -1595,35 +1811,28 @@ namespace TechControl.Метаданные.Мониторинг
         private ВидОперацииЗаправки.ColumnDescriptor ВидОперации;
         private ИсточникиЗаправки.ColumnDescriptor Источник;
         private _SystemTables.МониторингЗаправкаТаблица.ColumnDescriptor Таблица;
-        protected NsgColumnDescriptor.Boolean ЭтоИтоговыйДокумент;
-        protected NsgInput nsgInput8;
-        protected System.Windows.Forms.Label label8;
-        protected NsgInput nsgInput9;
-        protected NsgInput nsgInput10;
-        protected System.Windows.Forms.Label label9;
-        protected System.Windows.Forms.Label label10;
-        protected System.Windows.Forms.Label label3;
-        protected System.Windows.Forms.Label label4;
-        protected System.Windows.Forms.Label label5;
-        protected System.Windows.Forms.Label label6;
-        protected System.Windows.Forms.Label label7;
-        protected Контрагенты.ColumnDescriptor Поставщик_vmoТаблица;
-        protected NsgColumnDescriptor.Guid Идентификатор_vmoТаблица;
-        protected NsgColumnDescriptor.Int64 Автоинкремент_vmoТаблица;
-        protected NsgColumnDescriptor.MultipleObject Владелец;
-        protected NsgColumnDescriptor.Int64 НомерСтроки;
-        protected Техника.ColumnDescriptor Техника_vmoТаблица;
-        protected ВидОперацииЗаправки.ColumnDescriptor ВидОперации_vmoТаблица;
-        protected Техника.ColumnDescriptor ЗаправочнаяЕмкость_vmoТаблица;
-        protected ИсточникиЗаправки.ColumnDescriptor Источник_vmoТаблица;
-        protected NsgColumnDescriptor.String Комментарий_vmoТаблица;
-        protected Объекты.ColumnDescriptor Объект_vmoТаблица;
-        protected NsgColumnDescriptor.Decimal ОбъемТоплива_vmoТаблица;
-        protected NsgSoft.Design.NsgButton bДобавить;
-        private NsgVisualMultipleObject vmoТаблица;
-        private NsgIGrid nsgIGrid1;
-        protected NsgInput nsgInput11;
-        protected System.Windows.Forms.Label label11;
-        protected NsgSoft.Design.NsgButton bЗаполнитьПоОбъекту;
+        private NsgColumnDescriptor.Boolean ЭтоИтоговыйДокумент;
+        private СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor АккаунтПользователя;
+        private NsgColumnDescriptor.Boolean ЕстьРасхожодения;
+        private NsgColumnDescriptor.Boolean Проверено;
+        private NsgColumnDescriptor.Decimal МаксимальныйПроцентОтклонения;
+        private NsgColumnDescriptor.Guid Идентификатор_vmoТаблица;
+        private NsgColumnDescriptor.Int64 Автоинкремент_vmoТаблица;
+        private NsgColumnDescriptor.MultipleObject Владелец;
+        private NsgColumnDescriptor.Int64 НомерСтроки;
+        private Техника.ColumnDescriptor Техника_vmoТаблица;
+        private ВидОперацииЗаправки.ColumnDescriptor ВидОперации_vmoТаблица;
+        private Техника.ColumnDescriptor ЗаправочнаяЕмкость_vmoТаблица;
+        private ИсточникиЗаправки.ColumnDescriptor Источник_vmoТаблица;
+        private NsgColumnDescriptor.String Комментарий_vmoТаблица;
+        private Объекты.ColumnDescriptor Объект_vmoТаблица;
+        private NsgColumnDescriptor.Decimal ОбъемТоплива_vmoТаблица;
+        private Контрагенты.ColumnDescriptor Поставщик_vmoТаблица;
+        private NsgColumnDescriptor.Decimal ЛитровПоДатчику;
+        protected NsgColumnDescriptor.Decimal ПроцентОтклонения;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        protected NsgInput nsgInput12;
+        protected NsgInput nsgInput13;
     }
 }

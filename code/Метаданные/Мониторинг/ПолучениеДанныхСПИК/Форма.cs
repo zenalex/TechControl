@@ -25,6 +25,7 @@ using TechControl.Метаданные._SystemTables;
 using TechControl.SpicSoapGeofenceVisitsStatisticsService;
 using TechControl.SpicGeofenceService;
 using TechControl.SpicNavigationFiltrationStatisticsService;
+using System.Globalization;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -957,10 +958,6 @@ namespace TechControl.Метаданные.Мониторинг
 
                             if (navigationFiltration != null)
                             {
-                                //var objNew = Объекты.Новый();
-                                //var other = new GeozoneAndObj();
-                                //bool c = false;
-                                //bool d = false;
                                 var sortPoints = navigationFiltration.Points.OrderBy(x => x.Timestamp).ToArray();
                                 var longer = sortPoints.Select(x => x.Navigation.Location.Longitude).Distinct().ToArray();
                                 var width = sortPoints.Select(x => x.Navigation.Location.Latitude).Distinct().ToArray();
@@ -979,141 +976,73 @@ namespace TechControl.Метаданные.Мониторинг
 
                                         foreach (var объект in объекты)
                                         {
-                                            if ((Math.Pow((firstLong - (double)объект.Долгота), 2) + Math.Pow((firstWidth - (double)объект.Широта), 2) <= Math.Pow((double)объект.РадиусГеозоны, 2)))
+                                            //if (объект.ЛевыйНижнийУголДолгота == 0)
+                                            //{
+                                            //var map = new MapsChecker((double)объект.Широта, (double)объект.Долгота, (double)объект.РадиусГеозоны);
+                                            if ((Math.Pow((firstLong - (double)объект.Долгота), 2) + Math.Pow((firstWidth - (double)объект.Широта), 2)) <= Math.Pow((double)объект.РадиусГеозоны, 2))
+                                                //if (map.CheckEntry(firstWidth, firstLong))
                                             {
-                                                firstObj = объект;
-                                                temp = new GeozoneAndObj();
-                                                temp.tech = id.Key;
-                                                temp.obj = объект;
-                                                temp.timeObj = firstPoint.Timestamp;
-                                                // заполняем 
-                                                break;
-                                            }
+                                                    firstObj = объект;
+                                                    temp = new GeozoneAndObj();
+                                                    temp.tech = id.Key;
+                                                    temp.obj = объект;
+                                                    temp.timeObj = firstPoint.Timestamp;
+                                                    // заполняем 
+                                                    break;
+                                                }
+                                            //}
+                                            //else if (firstLong > (double)объект.ЛевыйНижнийУголДолгота && firstLong < (double)объект.ПравыйВерхнийУголДолгота 
+                                            //    && firstWidth < (double)объект.ЛевыйНижнийУголШирота && firstWidth > (double)объект.ПравыйВерхнийУголШирота)
+                                            //{
+                                            //    firstObj = объект;
+                                            //    temp = new GeozoneAndObj();
+                                            //    temp.tech = id.Key;
+                                            //    temp.obj = объект;
+                                            //    temp.timeObj = firstPoint.Timestamp;
+                                            //    // заполняем 
+                                            //    break;
+                                            //}
                                         }
 
                                         if (firstObj == null)
                                         {
                                             foreach (var геозона in геозоны)
                                             {
-                                                if ((Math.Pow((firstLong - (double)геозона.Долгота), 2) + Math.Pow((firstWidth - (double)геозона.Широта), 2) <= Math.Pow((double)геозона.РадиусГеозоны, 2)))
-                                                {
-                                                    firstGeo = геозона;
-                                                    temp = new GeozoneAndObj();
-                                                    temp.timeGeo = firstPoint.Timestamp;
-                                                    temp.geo = геозона;
-                                                    temp.tech = id.Key;
-                                                    // заполняем по firstPoint
-                                                    break;
-                                                }
+                                                //if (геозона.ЛевыйНижнийУголДолгота == 0)
+                                                //{
+                                                //var map = new MapsChecker((double)геозона.Широта, (double)геозона.Долгота, (double)геозона.РадиусГеозоны);
+                                                if ((Math.Pow((firstLong - (double)геозона.Долгота), 2) + Math.Pow((firstWidth - (double)геозона.Широта), 2)) <= Math.Pow((double)геозона.РадиусГеозоны, 2))
+                                                    //if (map.CheckEntry(firstWidth, firstLong))
+                                                    {
+                                                        firstGeo = геозона;
+                                                        temp = new GeozoneAndObj();
+                                                        temp.timeGeo = firstPoint.Timestamp;
+                                                        temp.geo = геозона;
+                                                        temp.tech = id.Key;
+                                                        // заполняем по firstPoint
+                                                        break;
+                                                    }
+                                                //}    
+                                                //else if (firstLong > (double)геозона.ЛевыйНижнийУголДолгота && firstLong < (double)геозона.ПравыйВерхнийУголДолгота 
+                                                //    && firstWidth < (double)геозона.ЛевыйНижнийУголШирота && firstWidth > (double)геозона.ПравыйВерхнийУголШирота)
+                                                //{
+                                                //    firstGeo = геозона;
+                                                //    temp = new GeozoneAndObj();
+                                                //    temp.timeGeo = firstPoint.Timestamp;
+                                                //    temp.geo = геозона;
+                                                //    temp.tech = id.Key;
+                                                //    // заполняем по firstPoint
+                                                //    break;
+                                                //}
                                             }
                                         }
 
                                         if (temp != null)
-                                        {
                                             listAll.Add(temp);
-                                            sortPoints = sortPoints.Where((item, index) => index != 0).ToArray();
 
-                                            //if (temp.obj != null)
-                                            //{
-                                            //    sortPoints = sortPoints.SkipWhile(x => (Math.Pow((x.Navigation.Location.Longitude - (double)temp.obj.Долгота), 2) + Math.Pow((x.Navigation.Location.Latitude - (double)temp.obj.Широта), 2) <= Math.Pow((double)temp.obj.РадиусГеозоны, 2))).ToArray();
-                                            //}
-                                            //else
-                                            //{
-                                            //    sortPoints = sortPoints.SkipWhile(x => (Math.Pow((x.Navigation.Location.Longitude - (double)temp.geo.Долгота), 2) + Math.Pow((x.Navigation.Location.Latitude - (double)temp.geo.Широта), 2) <= Math.Pow((double)temp.geo.РадиусГеозоны, 2))).ToArray();
-                                            //}
-                                        }
-                                        else
-                                        {
-                                            sortPoints = sortPoints.Where((item, index) => index != 0).ToArray();
-                                        }
+                                        sortPoints = sortPoints.Where((item, index) => index != 0).ToArray();
                                     }
                                 }
-
-                                //foreach (var point in sortPoints)
-                                //{
-                                //    if (point.Navigation.Location != null)
-                                //    {
-                                //        var y = point.Navigation.Location.Longitude;
-                                //        var x = point.Navigation.Location.Latitude;
-
-                                //        bool b = false;
-                                //        var o = Объекты.Новый();
-
-                                //        foreach (var объект in объекты)
-                                //        {
-                                //            if (!c
-                                //                && (Math.Pow((x - (double)объект.Долгота), 2) + Math.Pow((y - (double)объект.Широта), 2) <= Math.Pow((double)объект.РадиусГеозоны, 2)))
-                                //            {
-                                //                c = true;
-                                //                o = объект;
-                                //                all.obj = объект;
-                                //                all.timeObj = point.Timestamp;
-                                //                all.tech = id.Key;
-                                //            }
-
-                                //            if (c
-                                //                && (Math.Pow((x - (double)o.Долгота), 2) + Math.Pow((y - (double)o.Широта), 2) > Math.Pow((double)o.РадиусГеозоны, 2)))
-                                //            {
-                                //                all.timeOfDepartureFromObj = point.Timestamp;
-                                //                b = true;
-                                //                d = true;
-                                //                break;
-                                //            }
-                                //        }
-
-                                //        if (b)
-                                //            break;
-                                //    }
-                                //}
-
-                                //if (!d)
-                                //    all = new GeozoneAndObj();
-
-                                //var гео = Геозоны.Новый();
-                                //bool f = false;
-                                //bool p = false;
-
-                                //foreach (var point in navigationFiltration.Points)
-                                //{
-                                //    if (point.Navigation.Location != null)
-                                //    {
-                                //        var y = point.Navigation.Location.Longitude;
-                                //        var x = point.Navigation.Location.Latitude;
-
-                                //        if (!f)
-                                //        {
-                                //            foreach (var геозона in геозоны) // заехал в геозону
-                                //            {
-                                //                if (Math.Pow((x - (double)геозона.Долгота), 2) + Math.Pow((y - (double)геозона.Широта), 2) <= Math.Pow((double)геозона.РадиусГеозоны, 2))
-                                //                {
-                                //                    other.timeGeo = point.Timestamp;
-                                //                    other.geo = геозона;
-                                //                    other.tech = id.Key;
-                                //                    гео = геозона;
-                                //                    f = true;
-                                //                    break;
-                                //                }
-                                //            }
-                                //        }
-
-                                //        if (f && !string.IsNullOrEmpty(гео.ToString())) // выехал из геозоны
-                                //        {
-                                //            if (Math.Pow((x - (double)гео.Долгота), 2) + Math.Pow((y - (double)гео.Широта), 2) > Math.Pow((double)гео.РадиусГеозоны, 2))
-                                //            {
-                                //                other.timeOfDepartureFromGeo = point.Timestamp;
-                                //                p = true;
-                                //            }
-                                //        }
-                                //    }
-                                //}
-
-                                //if (p)
-                                //    other = new GeozoneAndObj();
-
-                                //if (other != null)
-                                //    listAll.Add(other);
-                                //if (all != null)
-                                //    listObj.Add(all);
                             }                            
                         }
                         while (statisticsResponseNavigationFiltration.ChunkInfo.Status.Value == "Processing");
@@ -1138,6 +1067,10 @@ namespace TechControl.Метаданные.Мониторинг
 
             var listResultsObj = new List<GeozoneAndObj>();
             var listResultGeo = new List<GeozoneAndObj>();
+            var techCount = new Dictionary<Техника, int>();
+            var count = 0;
+            bool a = false;
+            bool b = false;
             for (int i = 1; i < listAll.Count; i++)
             {
                 var item = listAll[i];
@@ -1157,6 +1090,7 @@ namespace TechControl.Метаданные.Мониторинг
                     resultObj.timeObj = item.timeObj;
 
                     listResultsObj.Add(resultObj);
+                    a = true;
                 }
                 else if (item.obj == null && item.geo != null && pastItem.obj != null && pastItem.geo == null && item.tech == pastItem.tech) // выезд из объекта и заезд в геозону
                 {
@@ -1173,6 +1107,24 @@ namespace TechControl.Метаданные.Мониторинг
                     resultGeo.timeGeo = item.timeGeo;
 
                     listResultGeo.Add(resultGeo);
+                    b = true;
+                }
+
+                if (a && b)
+                {
+                    if (!techCount.ContainsKey(item.tech))
+                    {
+                        count = 0;
+                        count++;
+                        techCount.Add(item.tech, count);
+                    }
+                    else
+                    {
+                        count++;
+                        techCount[item.tech] = count;
+                    }
+                    a = false;
+                    b = false;
                 }
             }
 
@@ -1209,6 +1161,14 @@ namespace TechControl.Метаданные.Мониторинг
             }
 
             vmoПосещениеГеозон.Data.UpdateDataAsync(this);
+
+            string countTech = string.Empty;
+            foreach (var item in techCount)
+            {
+                countTech = $"{item.Key} колличество заходов: {item.Value}" + "\n";
+            }
+
+            ЧислоПодходов.Value = countTech;
         }
 
         private void nsgButton3_AsyncClick(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -1217,111 +1177,191 @@ namespace TechControl.Метаданные.Мониторинг
             _statisticsClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
             SpicSoapFuelingDefuelingStatisticsServiceClient _fuelDefuelStatisticClient = new SpicSoapFuelingDefuelingStatisticsServiceClient();
             _fuelDefuelStatisticClient.Endpoint.Behaviors.Add(new AuthorizationBehavior());
-            var cmpTech = new NsgCompare().Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
-            var tech = Техника.Новый().FindAll(cmpTech);
-            var unitIDName = new Dictionary<Техника, int>();
 
-            foreach(var a in tech)
+            var listChecks = new List<CheckingFuelingTech>();
+
+            var cmpЗаправка = new NsgCompare().Add(Заправка.Names.Проверено, false);
+            cmpЗаправка.Add(Заправка.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            cmpЗаправка.Add(Заправка.Names.ЭтоИтоговыйДокумент, true);
+            var заправки = Заправка.Новый().FindAll(cmpЗаправка);
+            foreach (var заправка in заправки)
             {
-                foreach (var item in a.СистемыСлежения.Rows)
+                foreach (var тех in заправка.Таблица.Rows)
                 {
-                    if (item.ТипСистемыСлежения == ТипСистемыСлежения.Скаут)
-                        unitIDName.Add(a, Convert.ToInt32(item.ИдентификаторСистемыСлежения));
+                    foreach (var row in тех.Техника.СистемыСлежения.Rows)
+                    {
+                        if (row.ТипСистемыСлежения == ТипСистемыСлежения.Скаут)
+                        {
+                            var checkFueling = new CheckingFuelingTech();
+                            checkFueling.timeToCheck = заправка.ДатаДокумента.Date;
+                            checkFueling.tech = тех.Техника;
+                            checkFueling.id = Convert.ToInt32(row.ИдентификаторСистемыСлежения);
+                            checkFueling.fueling = заправка;
+                            listChecks.Add(checkFueling);
+                        }
+                    }
                 }
             }
 
             vmo.Data.BeginUpdateData();
             vmo.Data.MemoryTable.Clear();
-            var date = nsgPeriodPicker2.Period.Begin.Date;
 
-            while (date <= NsgService.EndOfDay(nsgPeriodPicker2.Period.End))
+            foreach (var item in listChecks)
             {
-                foreach (var id in unitIDName)
+                if (!item.tech.ToString().Contains("Мини"))
                 {
-                    if (!id.Key.ToString().Contains("Мини"))
+                    //создаем запрос сессии статистик
+                    var statisticsSessionRequest = new SpicStatisticsSessionRequest
                     {
-                        //создаем запрос сессии статистик
-                        var statisticsSessionRequest = new SpicStatisticsSessionRequest
+                        Period = new ServiceReferenceControllerStistics.SpicDateTimeRange
                         {
-                            Period = new ServiceReferenceControllerStistics.SpicDateTimeRange
-                            {
-                                Begin = date,
-                                End = NsgService.EndOfDay(date)
-                            },
+                            Begin = item.timeToCheck,
+                            End = NsgService.EndOfDay(item.timeToCheck)
+                        },
 
-                            TargetObject = new SpicObjectIdentity
-                            {
-                                ObjectTypeId = ObjectTypeId.Vehicle,
-                                ObjectId = id.Value
-                            }
-                        };
-
-                        //отправляем запрос и получаем сессию
-                        var statisticsSession = _statisticsClient.StartStatisticsSession(statisticsSessionRequest).Session;
-                        // на самом деле, это один и тот же контракт, но его нужно пересоздать  
-                        var fuelDefuelStatisticsSession = new ServiceReferenceFDStat.SpicStatisticsSession
+                        TargetObject = new SpicObjectIdentity
                         {
-                            StatisticsSessionId = statisticsSession.StatisticsSessionId,
-                        };
-                        // добавляем запрос на построение статистики  
-                        _fuelDefuelStatisticClient.AddStatisticsRequest(fuelDefuelStatisticsSession);
+                            ObjectTypeId = ObjectTypeId.Vehicle,
+                            ObjectId = item.id
+                        }
+                    };
 
-                        // запускаем построение  
-                        _statisticsClient.StartBuild(statisticsSession);
+                    //отправляем запрос и получаем сессию
+                    var statisticsSession = _statisticsClient.StartStatisticsSession(statisticsSessionRequest).Session;
+                    // на самом деле, это один и тот же контракт, но его нужно пересоздать  
+                    var fuelDefuelStatisticsSession = new ServiceReferenceFDStat.SpicStatisticsSession
+                    {
+                        StatisticsSessionId = statisticsSession.StatisticsSessionId,
+                    };
+                    // добавляем запрос на построение статистики  
+                    _fuelDefuelStatisticClient.AddStatisticsRequest(fuelDefuelStatisticsSession);
 
-                        var statisticsListFuelDefuel = new List<SpicFuelingDefuelingStatistics>();
-                        SpicFuelingDefuelingStatisticsResult statisticsResponseFuelDefuel;
-                        SpicFuelingDefuelingStatistics fuelDefuel = null;
+                    // запускаем построение  
+                    _statisticsClient.StartBuild(statisticsSession);
 
-                        // выполняем, пока не получим последнюю порцию статистик  
+                    var statisticsListFuelDefuel = new List<SpicFuelingDefuelingStatistics>();
+                    SpicFuelingDefuelingStatisticsResult statisticsResponseFuelDefuel;
+                    SpicFuelingDefuelingStatistics fuelDefuel = null;
+
+                    // выполняем, пока не получим последнюю порцию статистик  
+                    do
+                    {
+                        // ждем, пока порция статистик построится  
                         do
                         {
-                            // ждем, пока порция статистик построится  
-                            do
+                            statisticsResponseFuelDefuel = _fuelDefuelStatisticClient.GetStatistics(fuelDefuelStatisticsSession);
+
+                            fuelDefuel = statisticsResponseFuelDefuel.Statistics;
+
+                            if (fuelDefuel != null)
                             {
-                                statisticsResponseFuelDefuel = _fuelDefuelStatisticClient.GetStatistics(fuelDefuelStatisticsSession);
-
-                                fuelDefuel = statisticsResponseFuelDefuel.Statistics;
-
-                                if (fuelDefuel != null)
+                                for (int i = fuelDefuel.Events.Length - 1; i >= 0; i--)
                                 {
-                                    for (int i = fuelDefuel.Events.Length - 1; i >= 0; i--)
-                                    {
-                                        if (fuelDefuel.Events[i].EventType.Value.Contains("Fueling"))
+                                    if (fuelDefuel.Events[i].EventType.Value.Contains("Fueling"))
+                                    {                                        
+                                        var eventFueling = fuelDefuel.Events[i];
+                                        var объемЗаправки = eventFueling.EndFuelVolumeL - eventFueling.BeginFuelVolumeL;
+                                        var row = vmo.Data.MemoryTable.NewRow();
+
+                                        row[Техника_vmo].Value = item.tech;
+                                        row[ОбъемЗаправки].Value = объемЗаправки;
+                                        row[ДатаПоследнейЗаправки].Value = eventFueling.Timestamp;
+                                        row.Post();
+
+                                        var док = item.fueling;
+                                        док.Edit();
+                                        док.Таблица.Edit();
+                                        foreach (var строка in док.Таблица.Rows)
                                         {
-                                            var item = fuelDefuel.Events[i];
-                                            var row = vmo.Data.MemoryTable.NewRow();
-                                            row[Техника_vmo].Value = id.Key;
-                                            row[ОбъемЗаправки].Value = item.EndFuelVolumeL - item.BeginFuelVolumeL;
-                                            row[ДатаПоследнейЗаправки].Value = item.Timestamp;
-                                            row.Post();
-                                            break;
+                                            if (строка.Техника == item.tech)
+                                            {
+                                                строка.ЛитровПоДатчику = (decimal)объемЗаправки;
+                                                строка.ПроцентОтклонения = (Math.Abs((decimal)объемЗаправки - строка.ОбъемТоплива) / строка.ОбъемТоплива) * 100;
+                                            }
                                         }
+                                        var max = док.Таблица.Rows.Max(x => x.ПроцентОтклонения);
+                                        док.МаксимальныйПроцентОтклонения = док.Таблица.Rows.FirstOrDefault(x => x.ПроцентОтклонения == max).ПроцентОтклонения;
+                                        док.Проверено = true;
+                                        док.Таблица.Post();
+                                        док.Post();
+                                        док.Handle();
+
+                                        break;
                                     }
                                 }
                             }
-                            while (statisticsResponseFuelDefuel.ChunkInfo.Status.Value == "Processing");
-
-                            if (statisticsResponseFuelDefuel.Statistics != null)
-                                statisticsListFuelDefuel.Add(statisticsResponseFuelDefuel.Statistics);
-
-                            // заказываем следующую порцию статистики  
-                            _statisticsClient.BuildNextChunk(statisticsSession);
                         }
-                        while (!statisticsResponseFuelDefuel.ChunkInfo.IsFinalChunk);
+                        while (statisticsResponseFuelDefuel.ChunkInfo.Status.Value == "Processing");
 
-                        // закрываем сессию построения статистик  
-                        _statisticsClient.StopStatisticsSession(statisticsSession);
-                    }    
+                        if (statisticsResponseFuelDefuel.Statistics != null)
+                            statisticsListFuelDefuel.Add(statisticsResponseFuelDefuel.Statistics);
+
+                        // заказываем следующую порцию статистики  
+                        _statisticsClient.BuildNextChunk(statisticsSession);
+                    }
+                    while (!statisticsResponseFuelDefuel.ChunkInfo.IsFinalChunk);
+
+                    // закрываем сессию построения статистик  
+                    _statisticsClient.StopStatisticsSession(statisticsSession);
                 }
+            }                    
+                
 
-                if (date.Day == DateTime.DaysInMonth(date.Year, date.Month))
-                    date = new DateTime(date.Year, date.AddMonths(1).Month, date.AddDays(1).Day);
-                else
-                    date = new DateTime(date.Year, date.Month, date.AddDays(1).Day);
-            }
+                //if (date.Day == DateTime.DaysInMonth(date.Year, date.Month))
+                //    date = new DateTime(date.Year, date.AddMonths(1).Month, date.AddDays(1).Day);
+                //else
+                //    date = new DateTime(date.Year, date.Month, date.AddDays(1).Day);
+            
             vmo.Data.UpdateDataAsync(this);
         }
+    }
+
+    public class MapsChecker
+    {
+        const int EARTHRADIUS = 6372795;
+        private double _baseLatitude;
+        private double _baseLongitude;
+        private double _radius;
+
+        public MapsChecker(double latitude, double longitude, double radius)
+        {
+            _baseLatitude =latitude;
+            _baseLongitude = longitude;
+            _radius = radius;
+        }
+
+        public bool CheckEntry(double latitude, double longitude)
+        {
+            double latitudeRad = latitude * Math.PI / 180;
+            double longitudeRad = longitude * Math.PI / 180;
+            double baseLatitudeRad = _baseLatitude * Math.PI / 180;
+            double baseLongitudeRad = _baseLongitude * Math.PI / 180;
+
+            double latitudeCos = Math.Cos(latitudeRad);
+            double baselatitudeCos = Math.Cos(baseLatitudeRad);
+            double latitudeSin = Math.Sin(latitudeRad);
+            double baselatitudeSin = Math.Sin(baseLongitudeRad);
+
+            double delta = longitudeRad - baseLongitudeRad;
+            double deltaCos = Math.Cos(delta);
+            double deltaSin = Math.Sin(delta);
+
+            double y = Math.Sqrt(Math.Pow(latitudeCos * deltaSin, 2) + Math.Pow(latitudeCos * baselatitudeSin - latitudeSin * baselatitudeCos * deltaCos, 2));
+            double x = latitudeSin * baselatitudeSin + latitudeCos * baselatitudeCos * deltaCos;
+
+            double distanceAtan = Math.Atan2(y, x);
+            double distance = distanceAtan * EARTHRADIUS;
+
+            return _radius >= distance;
+        }
+    }
+
+    public class CheckingFuelingTech
+    {
+        public Техника tech { get; set; }
+        public DateTime timeToCheck { get; set; }
+        public int id { get; set; }
+        public Заправка fueling { get; set; }
     }
 
     public class GeozoneAndObj

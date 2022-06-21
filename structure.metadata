@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.6.15.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.6.20.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.6.15.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.6.15.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.6.20.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.6.20.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -2421,7 +2421,27 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="e556e08c-6709-4385-aef4-d2122e11f5cb" type="NsgDataFloat" editoraccess="Full" name="РадиусГеозоны" visible="true" description="Радиус геозоны" field="RadiusGeozony" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+            <NsgSimpleObject Guid="e556e08c-6709-4385-aef4-d2122e11f5cb" type="NsgDataFloat" editoraccess="Full" name="РадиусГеозоны" visible="true" description="Радиус геозоны" field="RadiusGeozony" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="6" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="53fa3d1d-85c1-40d4-9910-73a0b422000a" type="NsgDataFloat" editoraccess="Full" name="ЛевыйНижнийУголДолгота" visible="true" description="Левый нижний угол долгота" field="LevyijNizhniijUgo" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="6" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="791ae223-d7fa-43d0-a167-8052a017ac75" type="NsgDataFloat" editoraccess="Full" name="ПравыйВерхнийУголДолгота" visible="true" description="Правый верхний угол долгота" field="PravyijVerkhniijU" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="6" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="2ded23a5-4244-47e0-a094-ed15656440b6" type="NsgDataFloat" editoraccess="Full" name="ПравыйВерхнийУголШирота" visible="true" description="Правый верхний угол широта" field="PravyijVerkhniijU1" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="6" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="cd7d2327-0849-480e-85e5-1079d544ce8e" type="NsgDataFloat" editoraccess="Full" name="ЛевыйНижнийУголШирота" visible="true" description="Левый нижний угол широта" field="LevyijNizhniijUgo1" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="6" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -2456,6 +2476,10 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ЛевыйНижнийУголДолгота" />
+            <container name="ПравыйВерхнийУголДолгота" />
+            <container name="ПравыйВерхнийУголШирота" />
+            <container name="ЛевыйНижнийУголШирота" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -6567,6 +6591,21 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="c1bdbb4d-6256-4e72-b220-d351e204d638" type="NsgDataBoolean" editoraccess="Full" name="ЕстьРасхожодения" visible="true" description="Есть расхожодения" field="EstRaskhozhodenija" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="f3516c37-5c5f-4e60-8ca7-55ea85e0aaaa" type="NsgDataBoolean" editoraccess="Full" name="Проверено" visible="true" description="Проверено" field="Provereno" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="0fff29cd-1bf2-4070-96e3-91c664588c21" type="NsgDataFloat" editoraccess="Full" name="МаксимальныйПроцентОтклонения" visible="true" description="Максимальный процент отклонения" field="MaksimalnyijProce" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -6584,6 +6623,9 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="ЕстьРасхожодения" />
+            <container name="Проверено" />
+            <container name="МаксимальныйПроцентОтклонения" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -8656,6 +8698,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="6b1b5a39-92b9-4b83-bd31-e82223c4f5d2" type="NsgDataFloat" editoraccess="Full" name="ЛитровПоДатчику" visible="true" description="Литров по датчику" field="LitrovPoDatchiku" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="2a6e9e5a-2b55-4dc6-a291-3be2f0e59cb9" type="NsgDataFloat" editoraccess="Full" name="ПроцентОтклонения" visible="true" description="Процент отклонения" field="ProcentOtklonenija" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Техника" />
@@ -8666,6 +8718,8 @@
             <container name="Объект" />
             <container name="ОбъемТоплива" />
             <container name="Поставщик" />
+            <container name="ЛитровПоДатчику" />
+            <container name="ПроцентОтклонения" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="3e97f1b1-9245-40d5-9817-b59cad1a46c3" type="NsgDataTable" editoraccess="Full" name="МониторингФиксацияИсторииСотрудниковДвижения" visible="true" description="Мониторинг фиксация истории сотрудников движения" group="_SystemTables" table="_tab_MonitoringFiksacija1" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="RegisterCharacteristicsTable" registerPeriod="None" registerPeriodCount="1">
@@ -11402,7 +11456,27 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="3c948461-b49c-464d-80c5-3b67a1a6f401" type="NsgDataFloat" editoraccess="Full" name="РадиусГеозоны" visible="true" description="Радиус геозоны" field="RadiusGeozony" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+            <NsgSimpleObject Guid="3c948461-b49c-464d-80c5-3b67a1a6f401" type="NsgDataFloat" editoraccess="Full" name="РадиусГеозоны" visible="true" description="Радиус геозоны" field="RadiusGeozony" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="6" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="2fa4c552-6980-4f6b-bb3c-e6bdbf5ff672" type="NsgDataFloat" editoraccess="Full" name="ЛевыйНижнийУголШирота" visible="true" description="Левый нижний угол широта" field="LevyijNizhniijUgo" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="6" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="4d9436ca-8388-449f-a58e-0af3dd4be901" type="NsgDataFloat" editoraccess="Full" name="ЛевыйНижнийУголДолгота" visible="true" description="Левый нижний угол долгота" field="LevyijNizhniijUgo1" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="6" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="91d78b77-900f-4021-ad64-64d6e18418c8" type="NsgDataFloat" editoraccess="Full" name="ПравыйВерхнийУголШирота" visible="true" description="Правый верхний угол широта" field="PravyijVerkhniijU" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="6" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="739c5dc5-666b-453f-93d9-a5efa74c6228" type="NsgDataFloat" editoraccess="Full" name="ПравыйВерхнийУголДолгота" visible="true" description="Правый верхний угол долгота" field="PravyijVerkhniijU1" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="6" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -11419,6 +11493,10 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ЛевыйНижнийУголШирота" />
+            <container name="ЛевыйНижнийУголДолгота" />
+            <container name="ПравыйВерхнийУголШирота" />
+            <container name="ПравыйВерхнийУголДолгота" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>

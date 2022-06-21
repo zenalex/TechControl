@@ -78,15 +78,15 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.nsgLabel1 = new NsgSoft.Forms.NsgLabel();
             this.nsgButton2 = new NsgSoft.Design.NsgButton();
             this.nsgPeriodPicker1 = new NsgSoft.Forms.NsgPeriodPicker();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.nsgPeriodPicker2 = new NsgSoft.Forms.NsgPeriodPicker();
             this.nsgButton3 = new NsgSoft.Design.NsgButton();
             this.НаименованиеГеозоны_vmoГеозоны = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Долгота_vmoГеозоны = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Широта_vmoГеозоны = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.РадиусГеозоны = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ЧислоПодходов = new NsgSoft.Forms.NsgColumnDescriptor.String();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -171,7 +171,7 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             // nsgVisualMultipleObject
             // 
-            this.nsgVisualMultipleObject.Columns.Collection.Add(this.РадиусГеозоны);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ЧислоПодходов);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
             this.nsgVisualMultipleObject.MetaDataName = "";
@@ -381,7 +381,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn6.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn6.DateFormat = null;
-            nsgIGridColumn6.ImportedFromVMO = false;
             nsgIGridColumn6.Name = "Техника";
             nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn6.Root = this.nsgIGrid2.Columns.Collection;
@@ -397,7 +396,6 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn7.DateFormat = null;
-            nsgIGridColumn7.ImportedFromVMO = false;
             nsgIGridColumn7.Name = "Объект";
             nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn7.Root = this.nsgIGrid2.Columns.Collection;
@@ -412,7 +410,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn8.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn8.DateFormat = null;
-            nsgIGridColumn8.ImportedFromVMO = false;
             nsgIGridColumn8.Name = "ВремяПриезда";
             nsgIGridColumn8.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn8.Root = this.nsgIGrid2.Columns.Collection;
@@ -427,7 +424,6 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn9.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn9.DateFormat = null;
-            nsgIGridColumn9.ImportedFromVMO = false;
             nsgIGridColumn9.Name = "ВремяВыезда";
             nsgIGridColumn9.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn9.Root = this.nsgIGrid2.Columns.Collection;
@@ -446,7 +442,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid2.IsCanMultiSelect = false;
             this.nsgIGrid2.IsCanSingleSelect = false;
             this.nsgIGrid2.LineHeight = 20;
-            this.nsgIGrid2.Location = new System.Drawing.Point(6, 48);
+            this.nsgIGrid2.Location = new System.Drawing.Point(6, 104);
             this.nsgIGrid2.MarkReadOnly = false;
             this.nsgIGrid2.MasterObject = null;
             this.nsgIGrid2.Name = "NsgIGrid";
@@ -463,7 +459,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid2.ShowPanel = true;
             this.nsgIGrid2.ShowTotals = false;
             this.nsgIGrid2.ShowTree = false;
-            this.nsgIGrid2.Size = new System.Drawing.Size(749, 338);
+            this.nsgIGrid2.Size = new System.Drawing.Size(749, 282);
             this.nsgIGrid2.SourceObject = this.vmoПосещениеОбъектов;
             this.nsgIGrid2.TabIndex = 2;
             this.nsgIGrid2.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -588,7 +584,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid3.IsCanMultiSelect = false;
             this.nsgIGrid3.IsCanSingleSelect = false;
             this.nsgIGrid3.LineHeight = 20;
-            this.nsgIGrid3.Location = new System.Drawing.Point(27, 64);
+            this.nsgIGrid3.Location = new System.Drawing.Point(27, 76);
             this.nsgIGrid3.MarkReadOnly = false;
             this.nsgIGrid3.MasterObject = null;
             this.nsgIGrid3.Name = "NsgIGrid";
@@ -730,7 +726,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid4.IsCanMultiSelect = false;
             this.nsgIGrid4.IsCanSingleSelect = false;
             this.nsgIGrid4.LineHeight = 20;
-            this.nsgIGrid4.Location = new System.Drawing.Point(806, 48);
+            this.nsgIGrid4.Location = new System.Drawing.Point(806, 104);
             this.nsgIGrid4.MarkReadOnly = false;
             this.nsgIGrid4.MasterObject = null;
             this.nsgIGrid4.Name = "NsgIGrid";
@@ -747,7 +743,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid4.ShowPanel = true;
             this.nsgIGrid4.ShowTotals = false;
             this.nsgIGrid4.ShowTree = false;
-            this.nsgIGrid4.Size = new System.Drawing.Size(343, 338);
+            this.nsgIGrid4.Size = new System.Drawing.Size(343, 282);
             this.nsgIGrid4.SourceObject = this.vmoПосещениеГеозон;
             this.nsgIGrid4.TabIndex = 3;
             this.nsgIGrid4.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -850,6 +846,7 @@ namespace TechControl.Метаданные.Мониторинг
             // tabPage2
             // 
             this.tabPage2.AllowDrop = true;
+            this.tabPage2.Controls.Add(this.nsgLabel1);
             this.tabPage2.Controls.Add(this.nsgIGrid4);
             this.tabPage2.Controls.Add(this.nsgIGrid2);
             this.tabPage2.Controls.Add(this.nsgButton2);
@@ -863,6 +860,20 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabPage2.Text = "Анализ данных самосвалов";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Visible = true;
+            // 
+            // nsgLabel1
+            // 
+            this.nsgLabel1.AutoSize = true;
+            this.nsgLabel1.ConfigurationName = "";
+            this.nsgLabel1.FullName = "";
+            this.nsgLabel1.IsInitialized = true;
+            this.nsgLabel1.Location = new System.Drawing.Point(445, 15);
+            this.nsgLabel1.MetaDataName = "";
+            this.nsgLabel1.Name = "nsgLabel1";
+            this.nsgLabel1.Requsite = "ЧислоПодходов";
+            this.nsgLabel1.Size = new System.Drawing.Size(0, 13);
+            this.nsgLabel1.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgLabel1.TabIndex = 4;
             // 
             // nsgButton2
             // 
@@ -891,7 +902,6 @@ namespace TechControl.Метаданные.Мониторинг
             // tabPage3
             // 
             this.tabPage3.AllowDrop = true;
-            this.tabPage3.Controls.Add(this.nsgPeriodPicker2);
             this.tabPage3.Controls.Add(this.nsgIGrid3);
             this.tabPage3.Controls.Add(this.nsgButton3);
             this.tabPage3.Enabled = true;
@@ -903,16 +913,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabPage3.Text = "test";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Visible = false;
-            // 
-            // nsgPeriodPicker2
-            // 
-            this.nsgPeriodPicker2.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.nsgPeriodPicker2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgPeriodPicker2.Location = new System.Drawing.Point(142, 20);
-            this.nsgPeriodPicker2.MinimumSize = new System.Drawing.Size(2, 4);
-            this.nsgPeriodPicker2.Name = "NsgPeriodPicker";
-            this.nsgPeriodPicker2.Size = new System.Drawing.Size(191, 27);
-            this.nsgPeriodPicker2.TabIndex = 2;
             // 
             // nsgButton3
             // 
@@ -960,16 +960,15 @@ namespace TechControl.Метаданные.Мониторинг
             this.Широта_vmoГеозоны.SearchCondition.OwnerComponent = this.Широта_vmoГеозоны;
             this.Широта_vmoГеозоны.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // РадиусГеозоны
+            // ЧислоПодходов
             // 
-            this.РадиусГеозоны.CalcTotal = false;
-            this.РадиусГеозоны.Caption = "РадиусГеозоны";
-            this.РадиусГеозоны.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.РадиусГеозоны.Name = "РадиусГеозоны";
-            this.РадиусГеозоны.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
-            this.РадиусГеозоны.PropertyType = typeof(decimal);
-            this.РадиусГеозоны.SearchCondition.OwnerComponent = this.РадиусГеозоны;
-            this.РадиусГеозоны.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.ЧислоПодходов.Caption = "Число подходов";
+            this.ЧислоПодходов.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ЧислоПодходов.Name = "ЧислоПодходов";
+            this.ЧислоПодходов.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.ЧислоПодходов.PropertyType = typeof(string);
+            this.ЧислоПодходов.SearchCondition.OwnerComponent = this.ЧислоПодходов;
+            this.ЧислоПодходов.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // ПолучениеДанныхСПИКФорма
             // 
@@ -985,7 +984,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.Controls.Add(this.panelButtonReportForm);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.KeyPreview = true;
-            this.Location = new System.Drawing.Point(15, 15);
+            this.Location = new System.Drawing.Point(-2, 15);
             this.MainReport = null;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NsgReportForm";
@@ -1012,6 +1011,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton3)).EndInit();
@@ -1036,26 +1036,26 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.Decimal ВремяРаботыСигнализации_vmoСигнализации;
         protected System.Windows.Forms.TabPage tabPage1;
         protected System.Windows.Forms.TabPage tabPage2;
-        protected NsgColumnDescriptor.Decimal РадиусГеозоны;
-        private NsgVisualMultipleObject vmoСигнализации;
-        private System.Windows.Forms.TabControl tabControl1;
-        private NsgVisualMultipleObject vmoПосещениеОбъектов;
-        private System.Windows.Forms.TabPage tabPage3;
         protected NsgSoft.Design.NsgButton nsgButton3;
-        protected NsgPeriodPicker nsgPeriodPicker2;
         protected NsgColumnDescriptor.DateTime ДатаПоследнейЗаправки;
         protected Техника.ColumnDescriptor Техника_vmo;
         protected NsgColumnDescriptor.Decimal ОбъемЗаправки;
         protected Объекты.ColumnDescriptor Объект_vmoПосещениеОбъектов;
         protected NsgColumnDescriptor.DateTime ВремяПриезда_vmoПосещениеОбъектов;
         private NsgIGrid nsgIGrid3;
-        private NsgVisualMultipleObject vmo;
-        private NsgColumnDescriptor.DateTime ВремяВыездаИзОбъекта_vmoПосещениеОбъектов;
         protected Техника.ColumnDescriptor Техника_vmoПосещениеГеозон;
         protected Геозоны.ColumnDescriptor Геозона_vmoПосещениеГеозон;
         protected NsgColumnDescriptor.DateTime ВремяПриезда_vmoПосещениеГеозон;
         protected NsgColumnDescriptor.DateTime ВремяОтъезда_vmoПосещениеГеозон;
         private NsgIGrid nsgIGrid4;
+        protected System.Windows.Forms.TabControl tabControl1;
+        protected System.Windows.Forms.TabPage tabPage3;
+        protected NsgColumnDescriptor.DateTime ВремяВыездаИзОбъекта_vmoПосещениеОбъектов;
+        protected NsgColumnDescriptor.String ЧислоПодходов;
+        private NsgLabel nsgLabel1;
+        private NsgVisualMultipleObject vmoСигнализации;
+        private NsgVisualMultipleObject vmoПосещениеОбъектов;
+        private NsgVisualMultipleObject vmo;
         private NsgVisualMultipleObject vmoПосещениеГеозон;
     }
 }
