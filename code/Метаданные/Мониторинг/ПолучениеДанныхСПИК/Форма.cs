@@ -1065,48 +1065,40 @@ namespace TechControl.Метаданные.Мониторинг
                     date = new DateTime(date.Year, date.Month, date.AddDays(1).Day);
             }
 
-            var listResultsObj = new List<GeozoneAndObj>();
-            var listResultGeo = new List<GeozoneAndObj>();
+            var listResultAll = new List<GeozoneAndObj>();
             var techCount = new Dictionary<Техника, int>();
             var count = 0;
             bool a = false;
             bool b = false;
+            GeozoneAndObj buffer1 = new GeozoneAndObj();
+            GeozoneAndObj buffer2 = new GeozoneAndObj();
+
             for (int i = 1; i < listAll.Count; i++)
             {
                 var item = listAll[i];
                 var pastItem = listAll[i - 1];
                 if (item.geo == null && item.obj != null && pastItem.geo != null && pastItem.obj == null && item.tech == pastItem.tech) // выезд из геозоны заезд в объект
                 {
-                    var resultGeo = new GeozoneAndObj();
-                    resultGeo.geo = pastItem.geo;
-                    resultGeo.tech = pastItem.tech;
-                    resultGeo.timeOfDepartureFromGeo = pastItem.timeGeo;
-
-                    listResultGeo.Add(resultGeo);
-
-                    var resultObj = new GeozoneAndObj();
-                    resultObj.obj = item.obj;
-                    resultObj.tech = item.tech;
-                    resultObj.timeObj = item.timeObj;
-
-                    listResultsObj.Add(resultObj);
+                    var resultAll1 = new GeozoneAndObj();
+                    resultAll1.geo = pastItem.geo;
+                    resultAll1.tech = pastItem.tech;
+                    resultAll1.timeOfDepartureFromGeo = pastItem.timeGeo;
+                    resultAll1.obj = item.obj;
+                    resultAll1.tech = item.tech;
+                    resultAll1.timeObj = item.timeObj;
+                    buffer1 = resultAll1;
                     a = true;
                 }
                 else if (item.obj == null && item.geo != null && pastItem.obj != null && pastItem.geo == null && item.tech == pastItem.tech) // выезд из объекта и заезд в геозону
                 {
-                    var resultObj = new GeozoneAndObj();
-                    resultObj.obj = pastItem.obj;
-                    resultObj.tech = pastItem.tech;
-                    resultObj.timeOfDepartureFromObj = pastItem.timeObj;
-
-                    listResultsObj.Add(resultObj);
-
-                    var resultGeo = new GeozoneAndObj();
-                    resultGeo.tech = item.tech;
-                    resultGeo.geo = item.geo;
-                    resultGeo.timeGeo = item.timeGeo;
-
-                    listResultGeo.Add(resultGeo);
+                    var resultAll2 = new GeozoneAndObj();
+                    resultAll2.obj = pastItem.obj;
+                    resultAll2.tech = pastItem.tech;
+                    resultAll2.timeOfDepartureFromObj = pastItem.timeObj;
+                    resultAll2.tech = item.tech;
+                    resultAll2.geo = item.geo;
+                    resultAll2.timeGeo = item.timeGeo;
+                    buffer2 = resultAll2;
                     b = true;
                 }
 
@@ -1123,49 +1115,74 @@ namespace TechControl.Метаданные.Мониторинг
                         count++;
                         techCount[item.tech] = count;
                     }
+
+                    var resultAll = new GeozoneAndObj();
+                    var resultAllOther = new GeozoneAndObj();
+                    resultAll.tech = buffer1.tech;
+
+                    if (buffer1.geo == buffer2.geo)
+                    {
+                        resultAll.geo = buffer1.geo;
+                        resultAll.timeOfDepartureFromGeo = buffer1.timeOfDepartureFromGeo;
+                        resultAll.timeGeo = buffer2.timeGeo;
+                    }
+                    else
+                    {
+                        resultAll.geo = buffer1.geo;
+                        resultAll.timeOfDepartureFromGeo = buffer1.timeOfDepartureFromGeo;
+
+                        resultAllOther.tech = buffer2.tech;
+                        resultAllOther.geo = buffer2.geo;
+                        resultAllOther.timeGeo = buffer2.timeGeo;
+                    }
+                    
+                    if (buffer1.obj == buffer2.obj)
+                    {
+                        resultAll.obj = buffer1.obj;
+                        resultAll.timeOfDepartureFromObj = buffer2.timeOfDepartureFromObj;
+                        resultAll.timeObj = buffer1.timeObj;
+                    }
+                    else
+                    {
+                        resultAll.obj = buffer1.obj;
+                        resultAll.timeObj = buffer1.timeObj;
+
+                        resultAllOther.tech = buffer2.tech;
+                        resultAllOther.obj = buffer2.obj;
+                        resultAllOther.timeOfDepartureFromObj = buffer2.timeOfDepartureFromObj;
+                    }
+
+                    listResultAll.Add(resultAll);
+                    if (resultAllOther.tech != null)
+                        listResultAll.Add(resultAllOther);
+
                     a = false;
                     b = false;
                 }
             }
 
-            vmoПосещениеОбъектов.Data.BeginUpdateData();
-            vmoПосещениеОбъектов.Data.MemoryTable.Clear();
+            vmoХодки.Data.BeginUpdateData();
+            vmoХодки.Data.MemoryTable.Clear();
 
-            foreach (var all in listResultsObj)
+            foreach (var all in listResultAll)
             {
-                var row = vmoПосещениеОбъектов.Data.MemoryTable.NewRow();
-                row[Техника_vmoПосещениеОбъектов].Value = all.tech;
-                row[Объект_vmoПосещениеОбъектов].Value = all.obj;
-                if (all.timeObj != NsgService.MinDate)
-                    row[ВремяПриезда_vmoПосещениеОбъектов].Value = all.timeObj;
-                if (all.timeOfDepartureFromObj != NsgService.MinDate)
-                    row[ВремяВыездаИзОбъекта_vmoПосещениеОбъектов].Value = all.timeOfDepartureFromObj;
+                var row = vmoХодки.Data.MemoryTable.NewRow();
+                row[Техника_vmoХодки].Value = all.tech;
+                row[Объект_vmoХодки].Value = all.obj;
+                row[ВремяПриездаНаОбъект_vmoХодки].Value = all.timeObj;
+                row[ВремяВыездаИзОбъекта_vmoХодки].Value = all.timeOfDepartureFromObj;
+                row[Геозона_vmoХодки].Value = all.geo;
+                row[ВремяПриездаНаГеозону_vmoХодки].Value = all.timeGeo;
+                row[ВремяВыездаИзГеозоны_vmoХодки].Value = all.timeOfDepartureFromGeo;
                 row.Post();
             }
 
-            vmoПосещениеОбъектов.Data.UpdateDataAsync(this);
-
-            vmoПосещениеГеозон.Data.BeginUpdateData();
-            vmoПосещениеГеозон.Data.MemoryTable.Clear();
-
-            foreach (var item in listResultGeo)
-            {
-                var row = vmoПосещениеГеозон.Data.MemoryTable.NewRow();
-                row[Техника_vmoПосещениеГеозон].Value = item.tech;
-                row[Геозона_vmoПосещениеГеозон].Value = item.geo;
-                if (item.timeGeo != NsgService.MinDate)
-                    row[ВремяПриезда_vmoПосещениеГеозон].Value = item.timeGeo;
-                if (item.timeOfDepartureFromGeo != NsgService.MinDate)
-                    row[ВремяОтъезда_vmoПосещениеГеозон].Value = item.timeOfDepartureFromGeo;
-                row.Post();
-            }
-
-            vmoПосещениеГеозон.Data.UpdateDataAsync(this);
+            vmoХодки.Data.UpdateDataAsync(this);
 
             string countTech = string.Empty;
             foreach (var item in techCount)
             {
-                countTech = $"{item.Key} колличество заходов: {item.Value}" + "\n";
+                countTech += $"{item.Key} колличество заходов: {item.Value}" + "\n";
             }
 
             ЧислоПодходов.Value = countTech;
