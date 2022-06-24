@@ -1067,7 +1067,7 @@ namespace TechControl.Метаданные.Мониторинг
 
             var listResultAll = new List<GeozoneAndObj>();
             var techCount = new Dictionary<Техника, int>();
-            var count = 0;
+            decimal count = 0;
             bool a = false;
             bool b = false;
             GeozoneAndObj buffer1 = new GeozoneAndObj();
@@ -1104,21 +1104,11 @@ namespace TechControl.Метаданные.Мониторинг
 
                 if (a && b)
                 {
-                    if (!techCount.ContainsKey(item.tech))
-                    {
-                        count = 0;
-                        count++;
-                        techCount.Add(item.tech, count);
-                    }
-                    else
-                    {
-                        count++;
-                        techCount[item.tech] = count;
-                    }
-
+                    count++;
                     var resultAll = new GeozoneAndObj();
                     var resultAllOther = new GeozoneAndObj();
                     resultAll.tech = buffer1.tech;
+                    resultAll.countObjGeo = count;
 
                     if (buffer1.geo == buffer2.geo)
                     {
@@ -1390,6 +1380,8 @@ namespace TechControl.Метаданные.Мониторинг
         public Объекты obj { get; set; }
         public DateTime timeObj { get; set; }
         public DateTime timeOfDepartureFromObj { get; set; }
+        public decimal countObjGeo { get; set; }
+
     }
     public class TrackingSystemsAll
     {

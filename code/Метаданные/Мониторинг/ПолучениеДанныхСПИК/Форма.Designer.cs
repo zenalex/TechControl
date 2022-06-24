@@ -51,29 +51,10 @@ namespace TechControl.Метаданные.Мониторинг
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn15 = new NsgSoft.Forms.NsgIGridColumn();
             this.nsgIGrid1 = new NsgSoft.Forms.NsgIGrid();
             this.vmoСигнализации = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Техника_vmoСигнализации = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
-            this.ВремяРаботыСкаут_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.ВремяРаботыДок_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.ВремяРаботыСигнализации_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.Дата_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.nsgIGrid2 = new NsgSoft.Forms.NsgIGrid();
             this.vmoХодки = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Техника_vmoХодки = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
-            this.Объект_vmoХодки = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.ВремяПриездаНаОбъект_vmoХодки = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.ВремяВыездаИзОбъекта_vmoХодки = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.Геозона_vmoХодки = new TechControl.Метаданные.Мониторинг.Геозоны.ColumnDescriptor();
-            this.ВремяПриездаНаГеозону_vmoХодки = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.ВремяВыездаИзГеозоны_vmoХодки = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.nsgIGrid3 = new NsgSoft.Forms.NsgIGrid();
             this.vmo = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.ДатаПоследнейЗаправки = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.Техника_vmo = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
-            this.ОбъемЗаправки = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.Техника_vmoПосещениеГеозон = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
-            this.Геозона_vmoПосещениеГеозон = new TechControl.Метаданные.Мониторинг.Геозоны.ColumnDescriptor();
-            this.ВремяПриезда_vmoПосещениеГеозон = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.ВремяОтъезда_vmoПосещениеГеозон = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.nsgButton1 = new NsgSoft.Design.NsgButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -83,10 +64,30 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgPeriodPicker1 = new NsgSoft.Forms.NsgPeriodPicker();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.nsgButton3 = new NsgSoft.Design.NsgButton();
+            this.Техника_vmoСигнализации = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
+            this.ВремяРаботыСкаут_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ВремяРаботыДок_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ВремяРаботыСигнализации_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.Дата_vmoСигнализации = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ЧислоПодходов = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.Техника_vmoХодки = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
+            this.Объект_vmoХодки = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
+            this.ВремяПриездаНаОбъект_vmoХодки = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяВыездаИзОбъекта_vmoХодки = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.Геозона_vmoХодки = new TechControl.Метаданные.Мониторинг.Геозоны.ColumnDescriptor();
+            this.ВремяПриездаНаГеозону_vmoХодки = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяВыездаИзГеозоны_vmoХодки = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ДатаПоследнейЗаправки = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.Техника_vmo = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
+            this.ОбъемЗаправки = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ВремяПриезда_vmoПосещениеГеозон = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВремяОтъезда_vmoПосещениеГеозон = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.НаименованиеГеозоны_vmoГеозоны = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Долгота_vmoГеозоны = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Широта_vmoГеозоны = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.ЧислоПодходов = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.Техника_vmoПосещениеГеозон = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
+            this.Геозона_vmoПосещениеГеозон = new TechControl.Метаданные.Мониторинг.Геозоны.ColumnDescriptor();
+            this.КоличествоХодок_vmoХодки = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -130,7 +131,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.panelButtonReportForm.Controls.Add(this.printButton);
             this.panelButtonReportForm.Controls.Add(this.btnCreateReport);
             this.panelButtonReportForm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 427);
+            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 447);
             this.panelButtonReportForm.Name = "panelButtonReportForm";
             this.panelButtonReportForm.Size = new System.Drawing.Size(1171, 30);
             this.panelButtonReportForm.TabIndex = 0;
@@ -194,6 +195,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn1.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn1.DateFormat = null;
+            nsgIGridColumn1.ImportedFromVMO = false;
             nsgIGridColumn1.Name = "Техника";
             nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn1.Root = this.nsgIGrid1.Columns.Collection;
@@ -208,6 +210,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn2.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn2.DateFormat = null;
+            nsgIGridColumn2.ImportedFromVMO = false;
             nsgIGridColumn2.Name = "ВремяРаботыСкаут";
             nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn2.Root = this.nsgIGrid1.Columns.Collection;
@@ -222,6 +225,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn3.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn3.DateFormat = null;
+            nsgIGridColumn3.ImportedFromVMO = false;
             nsgIGridColumn3.Name = "ВремяРаботыДок";
             nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn3.Root = this.nsgIGrid1.Columns.Collection;
@@ -236,6 +240,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn4.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn4.DateFormat = null;
+            nsgIGridColumn4.ImportedFromVMO = false;
             nsgIGridColumn4.Name = "ВремяРаботыСигнализация";
             nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn4.Root = this.nsgIGrid1.Columns.Collection;
@@ -250,6 +255,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn5.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn5.DateFormat = null;
+            nsgIGridColumn5.ImportedFromVMO = false;
             nsgIGridColumn5.Name = "Дата";
             nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn5.Root = this.nsgIGrid1.Columns.Collection;
@@ -303,59 +309,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoСигнализации.MetaDataName = "";
             this.vmoСигнализации.FullName = "";
             // 
-            // Техника_vmoСигнализации
-            // 
-            this.Техника_vmoСигнализации.Caption = "Техника";
-            this.Техника_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Техника_vmoСигнализации.Name = "Техника";
-            this.Техника_vmoСигнализации.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoСигнализации.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoСигнализации.SearchCondition.OwnerComponent = this.Техника_vmoСигнализации;
-            this.Техника_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяРаботыСкаут_vmoСигнализации
-            // 
-            this.ВремяРаботыСкаут_vmoСигнализации.CalcTotal = false;
-            this.ВремяРаботыСкаут_vmoСигнализации.Caption = "ВремяРаботыСкаут";
-            this.ВремяРаботыСкаут_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяРаботыСкаут_vmoСигнализации.Name = "ВремяРаботыСкаут";
-            this.ВремяРаботыСкаут_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
-            this.ВремяРаботыСкаут_vmoСигнализации.PropertyType = typeof(decimal);
-            this.ВремяРаботыСкаут_vmoСигнализации.SearchCondition.OwnerComponent = this.ВремяРаботыСкаут_vmoСигнализации;
-            this.ВремяРаботыСкаут_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяРаботыДок_vmoСигнализации
-            // 
-            this.ВремяРаботыДок_vmoСигнализации.CalcTotal = false;
-            this.ВремяРаботыДок_vmoСигнализации.Caption = "ВремяРаботыДок";
-            this.ВремяРаботыДок_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяРаботыДок_vmoСигнализации.Name = "ВремяРаботыДок";
-            this.ВремяРаботыДок_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
-            this.ВремяРаботыДок_vmoСигнализации.PropertyType = typeof(decimal);
-            this.ВремяРаботыДок_vmoСигнализации.SearchCondition.OwnerComponent = this.ВремяРаботыДок_vmoСигнализации;
-            this.ВремяРаботыДок_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяРаботыСигнализации_vmoСигнализации
-            // 
-            this.ВремяРаботыСигнализации_vmoСигнализации.CalcTotal = false;
-            this.ВремяРаботыСигнализации_vmoСигнализации.Caption = "ВремяРаботыСигнализация";
-            this.ВремяРаботыСигнализации_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяРаботыСигнализации_vmoСигнализации.Name = "ВремяРаботыСигнализация";
-            this.ВремяРаботыСигнализации_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
-            this.ВремяРаботыСигнализации_vmoСигнализации.PropertyType = typeof(decimal);
-            this.ВремяРаботыСигнализации_vmoСигнализации.SearchCondition.OwnerComponent = this.ВремяРаботыСигнализации_vmoСигнализации;
-            this.ВремяРаботыСигнализации_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Дата_vmoСигнализации
-            // 
-            this.Дата_vmoСигнализации.Caption = "Дата";
-            this.Дата_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Дата_vmoСигнализации.Name = "Дата";
-            this.Дата_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.Дата_vmoСигнализации.PropertyType = typeof(System.DateTime);
-            this.Дата_vmoСигнализации.SearchCondition.OwnerComponent = this.Дата_vmoСигнализации;
-            this.Дата_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
             // nsgIGrid2
             // 
             this.nsgIGrid2.Action = NsgSoft.DataObjects.FormShowMode.None;
@@ -374,6 +327,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn6.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn6.DateFormat = null;
+            nsgIGridColumn6.ImportedFromVMO = false;
             nsgIGridColumn6.Name = "Техника";
             nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn6.Root = this.nsgIGrid2.Columns.Collection;
@@ -389,6 +343,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn7.DateFormat = null;
+            nsgIGridColumn7.ImportedFromVMO = false;
             nsgIGridColumn7.Name = "Объект";
             nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn7.Root = this.nsgIGrid2.Columns.Collection;
@@ -403,6 +358,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn8.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn8.DateFormat = null;
+            nsgIGridColumn8.ImportedFromVMO = false;
             nsgIGridColumn8.Name = "ВремяПриездаНаОбъект";
             nsgIGridColumn8.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn8.Root = this.nsgIGrid2.Columns.Collection;
@@ -417,6 +373,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn9.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn9.DateFormat = null;
+            nsgIGridColumn9.ImportedFromVMO = false;
             nsgIGridColumn9.Name = "ВремяВыездаИзОбъекта";
             nsgIGridColumn9.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn9.Root = this.nsgIGrid2.Columns.Collection;
@@ -431,6 +388,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn10.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn10.DateFormat = null;
+            nsgIGridColumn10.ImportedFromVMO = false;
             nsgIGridColumn10.Name = "Геозона";
             nsgIGridColumn10.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn10.Root = this.nsgIGrid2.Columns.Collection;
@@ -445,6 +403,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn11.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn11.DateFormat = null;
+            nsgIGridColumn11.ImportedFromVMO = false;
             nsgIGridColumn11.Name = "ВремяПриездаНаГеозону";
             nsgIGridColumn11.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn11.Root = this.nsgIGrid2.Columns.Collection;
@@ -459,6 +418,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn12.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn12.DateFormat = null;
+            nsgIGridColumn12.ImportedFromVMO = false;
             nsgIGridColumn12.Name = "ВремяВыездаИзГеозоны";
             nsgIGridColumn12.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn12.Root = this.nsgIGrid2.Columns.Collection;
@@ -511,80 +471,11 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoХодки.Columns.Collection.Add(this.Геозона_vmoХодки);
             this.vmoХодки.Columns.Collection.Add(this.ВремяПриездаНаГеозону_vmoХодки);
             this.vmoХодки.Columns.Collection.Add(this.ВремяВыездаИзГеозоны_vmoХодки);
+            this.vmoХодки.Columns.Collection.Add(this.КоличествоХодок_vmoХодки);
             this.vmoХодки.IsActive = true;
             this.vmoХодки.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
             this.vmoХодки.MetaDataName = "";
             this.vmoХодки.FullName = "";
-            // 
-            // Техника_vmoХодки
-            // 
-            this.Техника_vmoХодки.Caption = "Техника";
-            this.Техника_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Техника_vmoХодки.Name = "Техника";
-            this.Техника_vmoХодки.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoХодки.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoХодки.SearchCondition.OwnerComponent = this.Техника_vmoХодки;
-            this.Техника_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Объект_vmoХодки
-            // 
-            this.Объект_vmoХодки.Caption = "Объект";
-            this.Объект_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Объект_vmoХодки.Name = "Объект";
-            this.Объект_vmoХодки.NSGType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
-            this.Объект_vmoХодки.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
-            this.Объект_vmoХодки.SearchCondition.OwnerComponent = this.Объект_vmoХодки;
-            this.Объект_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяПриездаНаОбъект_vmoХодки
-            // 
-            this.ВремяПриездаНаОбъект_vmoХодки.Caption = "Время приезда на объект";
-            this.ВремяПриездаНаОбъект_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяПриездаНаОбъект_vmoХодки.Name = "ВремяПриездаНаОбъект";
-            this.ВремяПриездаНаОбъект_vmoХодки.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяПриездаНаОбъект_vmoХодки.PropertyType = typeof(System.DateTime);
-            this.ВремяПриездаНаОбъект_vmoХодки.SearchCondition.OwnerComponent = this.ВремяПриездаНаОбъект_vmoХодки;
-            this.ВремяПриездаНаОбъект_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяВыездаИзОбъекта_vmoХодки
-            // 
-            this.ВремяВыездаИзОбъекта_vmoХодки.Caption = "Время выезда из объекта";
-            this.ВремяВыездаИзОбъекта_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяВыездаИзОбъекта_vmoХодки.Name = "ВремяВыездаИзОбъекта";
-            this.ВремяВыездаИзОбъекта_vmoХодки.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяВыездаИзОбъекта_vmoХодки.PropertyType = typeof(System.DateTime);
-            this.ВремяВыездаИзОбъекта_vmoХодки.SearchCondition.OwnerComponent = this.ВремяВыездаИзОбъекта_vmoХодки;
-            this.ВремяВыездаИзОбъекта_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Геозона_vmoХодки
-            // 
-            this.Геозона_vmoХодки.Caption = "Геозона";
-            this.Геозона_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Геозона_vmoХодки.Name = "Геозона";
-            this.Геозона_vmoХодки.NSGType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
-            this.Геозона_vmoХодки.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
-            this.Геозона_vmoХодки.SearchCondition.OwnerComponent = this.Геозона_vmoХодки;
-            this.Геозона_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяПриездаНаГеозону_vmoХодки
-            // 
-            this.ВремяПриездаНаГеозону_vmoХодки.Caption = "Время приезда на геозону";
-            this.ВремяПриездаНаГеозону_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяПриездаНаГеозону_vmoХодки.Name = "ВремяПриездаНаГеозону";
-            this.ВремяПриездаНаГеозону_vmoХодки.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяПриездаНаГеозону_vmoХодки.PropertyType = typeof(System.DateTime);
-            this.ВремяПриездаНаГеозону_vmoХодки.SearchCondition.OwnerComponent = this.ВремяПриездаНаГеозону_vmoХодки;
-            this.ВремяПриездаНаГеозону_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяВыездаИзГеозоны_vmoХодки
-            // 
-            this.ВремяВыездаИзГеозоны_vmoХодки.Caption = "Время выезда из геозоны";
-            this.ВремяВыездаИзГеозоны_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяВыездаИзГеозоны_vmoХодки.Name = "ВремяВыездаИзГеозоны";
-            this.ВремяВыездаИзГеозоны_vmoХодки.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяВыездаИзГеозоны_vmoХодки.PropertyType = typeof(System.DateTime);
-            this.ВремяВыездаИзГеозоны_vmoХодки.SearchCondition.OwnerComponent = this.ВремяВыездаИзГеозоны_vmoХодки;
-            this.ВремяВыездаИзГеозоны_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // nsgIGrid3
             // 
@@ -606,6 +497,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn13.DateFormat = null;
+            nsgIGridColumn13.ImportedFromVMO = false;
             nsgIGridColumn13.Name = "Техника";
             nsgIGridColumn13.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn13.Root = this.nsgIGrid3.Columns.Collection;
@@ -621,6 +513,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Visible",
         "Index"};
             nsgIGridColumn14.DateFormat = null;
+            nsgIGridColumn14.ImportedFromVMO = false;
             nsgIGridColumn14.Name = "ДатаПоследнейЗаправки";
             nsgIGridColumn14.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn14.Root = this.nsgIGrid3.Columns.Collection;
@@ -635,6 +528,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn15.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn15.DateFormat = null;
+            nsgIGridColumn15.ImportedFromVMO = false;
             nsgIGridColumn15.Name = "ОбъемЗаправки";
             nsgIGridColumn15.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn15.Root = this.nsgIGrid3.Columns.Collection;
@@ -683,77 +577,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmo.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
             this.vmo.MetaDataName = "";
             this.vmo.FullName = "";
-            // 
-            // ДатаПоследнейЗаправки
-            // 
-            this.ДатаПоследнейЗаправки.Caption = "ДатаПоследнейЗаправки";
-            this.ДатаПоследнейЗаправки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ДатаПоследнейЗаправки.Name = "ДатаПоследнейЗаправки";
-            this.ДатаПоследнейЗаправки.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ДатаПоследнейЗаправки.PropertyType = typeof(System.DateTime);
-            this.ДатаПоследнейЗаправки.SearchCondition.OwnerComponent = this.ДатаПоследнейЗаправки;
-            this.ДатаПоследнейЗаправки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Техника_vmo
-            // 
-            this.Техника_vmo.Caption = "Техника";
-            this.Техника_vmo.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Техника_vmo.Name = "Техника";
-            this.Техника_vmo.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmo.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmo.SearchCondition.OwnerComponent = this.Техника_vmo;
-            this.Техника_vmo.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ОбъемЗаправки
-            // 
-            this.ОбъемЗаправки.CalcTotal = false;
-            this.ОбъемЗаправки.Caption = "ОбъемЗаправки";
-            this.ОбъемЗаправки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ОбъемЗаправки.Name = "ОбъемЗаправки";
-            this.ОбъемЗаправки.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
-            this.ОбъемЗаправки.PropertyType = typeof(decimal);
-            this.ОбъемЗаправки.SearchCondition.OwnerComponent = this.ОбъемЗаправки;
-            this.ОбъемЗаправки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Техника_vmoПосещениеГеозон
-            // 
-            this.Техника_vmoПосещениеГеозон.Caption = "Техника";
-            this.Техника_vmoПосещениеГеозон.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Техника_vmoПосещениеГеозон.Name = "Техника";
-            this.Техника_vmoПосещениеГеозон.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoПосещениеГеозон.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.Техника_vmoПосещениеГеозон.SearchCondition.OwnerComponent = this.Техника_vmoПосещениеГеозон;
-            this.Техника_vmoПосещениеГеозон.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Геозона_vmoПосещениеГеозон
-            // 
-            this.Геозона_vmoПосещениеГеозон.Caption = "Геозона";
-            this.Геозона_vmoПосещениеГеозон.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Геозона_vmoПосещениеГеозон.Name = "Геозона";
-            this.Геозона_vmoПосещениеГеозон.NSGType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
-            this.Геозона_vmoПосещениеГеозон.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
-            this.Геозона_vmoПосещениеГеозон.SearchCondition.OwnerComponent = this.Геозона_vmoПосещениеГеозон;
-            this.Геозона_vmoПосещениеГеозон.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяПриезда_vmoПосещениеГеозон
-            // 
-            this.ВремяПриезда_vmoПосещениеГеозон.Caption = "ВремяПриезда";
-            this.ВремяПриезда_vmoПосещениеГеозон.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяПриезда_vmoПосещениеГеозон.Name = "ВремяПриезда";
-            this.ВремяПриезда_vmoПосещениеГеозон.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяПриезда_vmoПосещениеГеозон.PropertyType = typeof(System.DateTime);
-            this.ВремяПриезда_vmoПосещениеГеозон.SearchCondition.OwnerComponent = this.ВремяПриезда_vmoПосещениеГеозон;
-            this.ВремяПриезда_vmoПосещениеГеозон.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ВремяОтъезда_vmoПосещениеГеозон
-            // 
-            this.ВремяОтъезда_vmoПосещениеГеозон.Caption = "ВремяОтъезда";
-            this.ВремяОтъезда_vmoПосещениеГеозон.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВремяОтъезда_vmoПосещениеГеозон.Name = "ВремяОтъезда";
-            this.ВремяОтъезда_vmoПосещениеГеозон.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ВремяОтъезда_vmoПосещениеГеозон.PropertyType = typeof(System.DateTime);
-            this.ВремяОтъезда_vmoПосещениеГеозон.SearchCondition.OwnerComponent = this.ВремяОтъезда_vmoПосещениеГеозон;
-            this.ВремяОтъезда_vmoПосещениеГеозон.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // nsgButton1
             // 
@@ -883,6 +706,190 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgButton3.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
             this.nsgButton3.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nsgButton3_AsyncClick);
             // 
+            // Техника_vmoСигнализации
+            // 
+            this.Техника_vmoСигнализации.Caption = "Техника";
+            this.Техника_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Техника_vmoСигнализации.Name = "Техника";
+            this.Техника_vmoСигнализации.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoСигнализации.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoСигнализации.SearchCondition.OwnerComponent = this.Техника_vmoСигнализации;
+            this.Техника_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяРаботыСкаут_vmoСигнализации
+            // 
+            this.ВремяРаботыСкаут_vmoСигнализации.CalcTotal = false;
+            this.ВремяРаботыСкаут_vmoСигнализации.Caption = "ВремяРаботыСкаут";
+            this.ВремяРаботыСкаут_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяРаботыСкаут_vmoСигнализации.Name = "ВремяРаботыСкаут";
+            this.ВремяРаботыСкаут_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ВремяРаботыСкаут_vmoСигнализации.PropertyType = typeof(decimal);
+            this.ВремяРаботыСкаут_vmoСигнализации.SearchCondition.OwnerComponent = this.ВремяРаботыСкаут_vmoСигнализации;
+            this.ВремяРаботыСкаут_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяРаботыДок_vmoСигнализации
+            // 
+            this.ВремяРаботыДок_vmoСигнализации.CalcTotal = false;
+            this.ВремяРаботыДок_vmoСигнализации.Caption = "ВремяРаботыДок";
+            this.ВремяРаботыДок_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяРаботыДок_vmoСигнализации.Name = "ВремяРаботыДок";
+            this.ВремяРаботыДок_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ВремяРаботыДок_vmoСигнализации.PropertyType = typeof(decimal);
+            this.ВремяРаботыДок_vmoСигнализации.SearchCondition.OwnerComponent = this.ВремяРаботыДок_vmoСигнализации;
+            this.ВремяРаботыДок_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяРаботыСигнализации_vmoСигнализации
+            // 
+            this.ВремяРаботыСигнализации_vmoСигнализации.CalcTotal = false;
+            this.ВремяРаботыСигнализации_vmoСигнализации.Caption = "ВремяРаботыСигнализация";
+            this.ВремяРаботыСигнализации_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяРаботыСигнализации_vmoСигнализации.Name = "ВремяРаботыСигнализация";
+            this.ВремяРаботыСигнализации_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ВремяРаботыСигнализации_vmoСигнализации.PropertyType = typeof(decimal);
+            this.ВремяРаботыСигнализации_vmoСигнализации.SearchCondition.OwnerComponent = this.ВремяРаботыСигнализации_vmoСигнализации;
+            this.ВремяРаботыСигнализации_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Дата_vmoСигнализации
+            // 
+            this.Дата_vmoСигнализации.Caption = "Дата";
+            this.Дата_vmoСигнализации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Дата_vmoСигнализации.Name = "Дата";
+            this.Дата_vmoСигнализации.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.Дата_vmoСигнализации.PropertyType = typeof(System.DateTime);
+            this.Дата_vmoСигнализации.SearchCondition.OwnerComponent = this.Дата_vmoСигнализации;
+            this.Дата_vmoСигнализации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ЧислоПодходов
+            // 
+            this.ЧислоПодходов.Caption = "Число подходов";
+            this.ЧислоПодходов.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ЧислоПодходов.Name = "ЧислоПодходов";
+            this.ЧислоПодходов.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.ЧислоПодходов.PropertyType = typeof(string);
+            this.ЧислоПодходов.SearchCondition.OwnerComponent = this.ЧислоПодходов;
+            this.ЧислоПодходов.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Техника_vmoХодки
+            // 
+            this.Техника_vmoХодки.Caption = "Техника";
+            this.Техника_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Техника_vmoХодки.Name = "Техника";
+            this.Техника_vmoХодки.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoХодки.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoХодки.SearchCondition.OwnerComponent = this.Техника_vmoХодки;
+            this.Техника_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Объект_vmoХодки
+            // 
+            this.Объект_vmoХодки.Caption = "Объект";
+            this.Объект_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Объект_vmoХодки.Name = "Объект";
+            this.Объект_vmoХодки.NSGType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
+            this.Объект_vmoХодки.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
+            this.Объект_vmoХодки.SearchCondition.OwnerComponent = this.Объект_vmoХодки;
+            this.Объект_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяПриездаНаОбъект_vmoХодки
+            // 
+            this.ВремяПриездаНаОбъект_vmoХодки.Caption = "Время приезда на объект";
+            this.ВремяПриездаНаОбъект_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяПриездаНаОбъект_vmoХодки.Name = "ВремяПриездаНаОбъект";
+            this.ВремяПриездаНаОбъект_vmoХодки.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяПриездаНаОбъект_vmoХодки.PropertyType = typeof(System.DateTime);
+            this.ВремяПриездаНаОбъект_vmoХодки.SearchCondition.OwnerComponent = this.ВремяПриездаНаОбъект_vmoХодки;
+            this.ВремяПриездаНаОбъект_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяВыездаИзОбъекта_vmoХодки
+            // 
+            this.ВремяВыездаИзОбъекта_vmoХодки.Caption = "Время выезда из объекта";
+            this.ВремяВыездаИзОбъекта_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяВыездаИзОбъекта_vmoХодки.Name = "ВремяВыездаИзОбъекта";
+            this.ВремяВыездаИзОбъекта_vmoХодки.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяВыездаИзОбъекта_vmoХодки.PropertyType = typeof(System.DateTime);
+            this.ВремяВыездаИзОбъекта_vmoХодки.SearchCondition.OwnerComponent = this.ВремяВыездаИзОбъекта_vmoХодки;
+            this.ВремяВыездаИзОбъекта_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Геозона_vmoХодки
+            // 
+            this.Геозона_vmoХодки.Caption = "Геозона";
+            this.Геозона_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Геозона_vmoХодки.Name = "Геозона";
+            this.Геозона_vmoХодки.NSGType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона_vmoХодки.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона_vmoХодки.SearchCondition.OwnerComponent = this.Геозона_vmoХодки;
+            this.Геозона_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяПриездаНаГеозону_vmoХодки
+            // 
+            this.ВремяПриездаНаГеозону_vmoХодки.Caption = "Время приезда на геозону";
+            this.ВремяПриездаНаГеозону_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяПриездаНаГеозону_vmoХодки.Name = "ВремяПриездаНаГеозону";
+            this.ВремяПриездаНаГеозону_vmoХодки.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяПриездаНаГеозону_vmoХодки.PropertyType = typeof(System.DateTime);
+            this.ВремяПриездаНаГеозону_vmoХодки.SearchCondition.OwnerComponent = this.ВремяПриездаНаГеозону_vmoХодки;
+            this.ВремяПриездаНаГеозону_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяВыездаИзГеозоны_vmoХодки
+            // 
+            this.ВремяВыездаИзГеозоны_vmoХодки.Caption = "Время выезда из геозоны";
+            this.ВремяВыездаИзГеозоны_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяВыездаИзГеозоны_vmoХодки.Name = "ВремяВыездаИзГеозоны";
+            this.ВремяВыездаИзГеозоны_vmoХодки.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяВыездаИзГеозоны_vmoХодки.PropertyType = typeof(System.DateTime);
+            this.ВремяВыездаИзГеозоны_vmoХодки.SearchCondition.OwnerComponent = this.ВремяВыездаИзГеозоны_vmoХодки;
+            this.ВремяВыездаИзГеозоны_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДатаПоследнейЗаправки
+            // 
+            this.ДатаПоследнейЗаправки.Caption = "ДатаПоследнейЗаправки";
+            this.ДатаПоследнейЗаправки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ДатаПоследнейЗаправки.Name = "ДатаПоследнейЗаправки";
+            this.ДатаПоследнейЗаправки.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ДатаПоследнейЗаправки.PropertyType = typeof(System.DateTime);
+            this.ДатаПоследнейЗаправки.SearchCondition.OwnerComponent = this.ДатаПоследнейЗаправки;
+            this.ДатаПоследнейЗаправки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Техника_vmo
+            // 
+            this.Техника_vmo.Caption = "Техника";
+            this.Техника_vmo.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Техника_vmo.Name = "Техника";
+            this.Техника_vmo.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmo.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmo.SearchCondition.OwnerComponent = this.Техника_vmo;
+            this.Техника_vmo.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ОбъемЗаправки
+            // 
+            this.ОбъемЗаправки.CalcTotal = false;
+            this.ОбъемЗаправки.Caption = "ОбъемЗаправки";
+            this.ОбъемЗаправки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ОбъемЗаправки.Name = "ОбъемЗаправки";
+            this.ОбъемЗаправки.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ОбъемЗаправки.PropertyType = typeof(decimal);
+            this.ОбъемЗаправки.SearchCondition.OwnerComponent = this.ОбъемЗаправки;
+            this.ОбъемЗаправки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяПриезда_vmoПосещениеГеозон
+            // 
+            this.ВремяПриезда_vmoПосещениеГеозон.Caption = "ВремяПриезда";
+            this.ВремяПриезда_vmoПосещениеГеозон.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяПриезда_vmoПосещениеГеозон.Name = "ВремяПриезда";
+            this.ВремяПриезда_vmoПосещениеГеозон.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяПриезда_vmoПосещениеГеозон.PropertyType = typeof(System.DateTime);
+            this.ВремяПриезда_vmoПосещениеГеозон.SearchCondition.OwnerComponent = this.ВремяПриезда_vmoПосещениеГеозон;
+            this.ВремяПриезда_vmoПосещениеГеозон.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВремяОтъезда_vmoПосещениеГеозон
+            // 
+            this.ВремяОтъезда_vmoПосещениеГеозон.Caption = "ВремяОтъезда";
+            this.ВремяОтъезда_vmoПосещениеГеозон.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВремяОтъезда_vmoПосещениеГеозон.Name = "ВремяОтъезда";
+            this.ВремяОтъезда_vmoПосещениеГеозон.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ВремяОтъезда_vmoПосещениеГеозон.PropertyType = typeof(System.DateTime);
+            this.ВремяОтъезда_vmoПосещениеГеозон.SearchCondition.OwnerComponent = this.ВремяОтъезда_vmoПосещениеГеозон;
+            this.ВремяОтъезда_vmoПосещениеГеозон.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // НаименованиеГеозоны_vmoГеозоны
             // 
             this.НаименованиеГеозоны_vmoГеозоны.Caption = "НаименованиеГеозоны";
@@ -915,15 +922,36 @@ namespace TechControl.Метаданные.Мониторинг
             this.Широта_vmoГеозоны.SearchCondition.OwnerComponent = this.Широта_vmoГеозоны;
             this.Широта_vmoГеозоны.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // ЧислоПодходов
+            // Техника_vmoПосещениеГеозон
             // 
-            this.ЧислоПодходов.Caption = "Число подходов";
-            this.ЧислоПодходов.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ЧислоПодходов.Name = "ЧислоПодходов";
-            this.ЧислоПодходов.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
-            this.ЧислоПодходов.PropertyType = typeof(string);
-            this.ЧислоПодходов.SearchCondition.OwnerComponent = this.ЧислоПодходов;
-            this.ЧислоПодходов.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Техника_vmoПосещениеГеозон.Caption = "Техника";
+            this.Техника_vmoПосещениеГеозон.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Техника_vmoПосещениеГеозон.Name = "Техника";
+            this.Техника_vmoПосещениеГеозон.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoПосещениеГеозон.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.Техника_vmoПосещениеГеозон.SearchCondition.OwnerComponent = this.Техника_vmoПосещениеГеозон;
+            this.Техника_vmoПосещениеГеозон.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Геозона_vmoПосещениеГеозон
+            // 
+            this.Геозона_vmoПосещениеГеозон.Caption = "Геозона";
+            this.Геозона_vmoПосещениеГеозон.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Геозона_vmoПосещениеГеозон.Name = "Геозона";
+            this.Геозона_vmoПосещениеГеозон.NSGType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона_vmoПосещениеГеозон.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Геозоны);
+            this.Геозона_vmoПосещениеГеозон.SearchCondition.OwnerComponent = this.Геозона_vmoПосещениеГеозон;
+            this.Геозона_vmoПосещениеГеозон.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // КоличествоХодок_vmoХодки
+            // 
+            this.КоличествоХодок_vmoХодки.CalcTotal = false;
+            this.КоличествоХодок_vmoХодки.Caption = "КоличествоХодок";
+            this.КоличествоХодок_vmoХодки.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.КоличествоХодок_vmoХодки.Name = "КоличествоХодок";
+            this.КоличествоХодок_vmoХодки.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.КоличествоХодок_vmoХодки.PropertyType = typeof(decimal);
+            this.КоличествоХодок_vmoХодки.SearchCondition.OwnerComponent = this.КоличествоХодок_vmoХодки;
+            this.КоличествоХодок_vmoХодки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // ПолучениеДанныхСПИКФорма
             // 
@@ -1004,12 +1032,13 @@ namespace TechControl.Метаданные.Мониторинг
         protected System.Windows.Forms.TabPage tabPage3;
         protected NsgColumnDescriptor.DateTime ВремяВыездаИзОбъекта_vmoХодки;
         protected NsgColumnDescriptor.String ЧислоПодходов;
-        private NsgLabel nsgLabel1;
-        private NsgVisualMultipleObject vmoСигнализации;
-        private NsgVisualMultipleObject vmoХодки;
-        private NsgVisualMultipleObject vmo;
         protected Геозоны.ColumnDescriptor Геозона_vmoХодки;
-        private NsgColumnDescriptor.DateTime ВремяПриездаНаГеозону_vmoХодки;
-        private NsgColumnDescriptor.DateTime ВремяВыездаИзГеозоны_vmoХодки;
+        protected NsgColumnDescriptor.Decimal КоличествоХодок_vmoХодки;
+        protected NsgLabel nsgLabel1;
+        protected NsgVisualMultipleObject vmoСигнализации;
+        protected NsgVisualMultipleObject vmoХодки;
+        protected NsgVisualMultipleObject vmo;
+        protected NsgColumnDescriptor.DateTime ВремяПриездаНаГеозону_vmoХодки;
+        protected NsgColumnDescriptor.DateTime ВремяВыездаИзГеозоны_vmoХодки;
     }
 }
