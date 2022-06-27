@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.6.20.0</ProductVersion>
+    <ProductVersion>2022.6.24.1</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -3263,5 +3263,69 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\РегистрацияХодок.NsgInit.cs">
+      <NsgOwnerGuid>2b4b8ab0-f617-4be0-8b68-f6c09670d8d5</NsgOwnerGuid>
+      <NsgOwnerName>РегистрацияХодок</NsgOwnerName>
+      <DependentUpon>РегистрацияХодок.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\РегистрацияХодок.cs">
+      <NsgOwnerGuid>2b4b8ab0-f617-4be0-8b68-f6c09670d8d5</NsgOwnerGuid>
+      <NsgOwnerName>РегистрацияХодок</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>2b4b8ab0-f617-4be0-8b68-f6c09670d8d5</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\ФормаЭлемента.cs">
+      <NsgOwnerGuid>2b4b8ab0-f617-4be0-8b68-f6c09670d8d5</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\РегистрацияХодок\ФормаЭлемента.resx">
+      <NsgOwnerGuid>2b4b8ab0-f617-4be0-8b68-f6c09670d8d5</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\МониторингРегистрацияХодокТаблицаКоличестваХодок.NsgInit.cs">
+      <NsgOwnerGuid>00bcddf0-bfb0-4dc3-aab7-7386490bed21</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрацияХодокТаблицаКоличестваХодок</NsgOwnerName>
+      <DependentUpon>МониторингРегистрацияХодокТаблицаКоличестваХодок.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\МониторингРегистрацияХодокТаблицаКоличестваХодок.cs">
+      <NsgOwnerGuid>00bcddf0-bfb0-4dc3-aab7-7386490bed21</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрацияХодокТаблицаКоличестваХодок</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\МониторингРегистрацияХодокТаблицаКоличестваХодок.Строка.NsgInit.cs">
+      <NsgOwnerGuid>00bcddf0-bfb0-4dc3-aab7-7386490bed21</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрацияХодокТаблицаКоличестваХодок</NsgOwnerName>
+      <DependentUpon>МониторингРегистрацияХодокТаблицаКоличестваХодок.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\МониторингРегистрацияХодокТаблицаКоличестваХодок.Строка.cs">
+      <NsgOwnerGuid>00bcddf0-bfb0-4dc3-aab7-7386490bed21</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрацияХодокТаблицаКоличестваХодок</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\МониторингРегистрацияХодокТабличнаяЧасть.NsgInit.cs">
+      <NsgOwnerGuid>fc35b4d0-2c11-43cf-8fa0-477c1cf9fb4f</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрацияХодокТабличнаяЧасть</NsgOwnerName>
+      <DependentUpon>МониторингРегистрацияХодокТабличнаяЧасть.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\МониторингРегистрацияХодокТабличнаяЧасть.cs">
+      <NsgOwnerGuid>fc35b4d0-2c11-43cf-8fa0-477c1cf9fb4f</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрацияХодокТабличнаяЧасть</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\МониторингРегистрацияХодокТабличнаяЧасть.Строка.NsgInit.cs">
+      <NsgOwnerGuid>fc35b4d0-2c11-43cf-8fa0-477c1cf9fb4f</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрацияХодокТабличнаяЧасть</NsgOwnerName>
+      <DependentUpon>МониторингРегистрацияХодокТабличнаяЧасть.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\МониторингРегистрацияХодокТабличнаяЧасть.Строка.cs">
+      <NsgOwnerGuid>fc35b4d0-2c11-43cf-8fa0-477c1cf9fb4f</NsgOwnerGuid>
+      <NsgOwnerName>МониторингРегистрацияХодокТабличнаяЧасть</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
