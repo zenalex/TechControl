@@ -1080,7 +1080,7 @@ namespace TechControl.Метаданные.Мониторинг
 
             var listResultAll = new List<GeozoneAndObj>();
             var techCount = new Dictionary<Техника, int>();
-            decimal count = 0;
+            int count = 0;
             bool a = false;
             bool b = false;
             GeozoneAndObj buffer1 = new GeozoneAndObj();
@@ -1117,9 +1117,18 @@ namespace TechControl.Метаданные.Мониторинг
                     b = true;
                 }
 
+                if (item.tech != pastItem.tech)
+                    count = 0;
+
                 if (a && b)
                 {
                     count++;
+
+                    if (!techCount.ContainsKey(item.tech))
+                        techCount.Add(item.tech, count);
+                    else
+                        techCount[item.tech] = count;
+                    
                     var resultAll = new GeozoneAndObj();
                     var resultAllOther = new GeozoneAndObj();
                     resultAll.tech = buffer1.tech;
@@ -1182,12 +1191,14 @@ namespace TechControl.Метаданные.Мониторинг
                 row[Геозона_vmoХодки].Value = all.geo;
                 row[ВремяПриездаНаГеозону_vmoХодки].Value = all.timeGeo;
                 row[ВремяВыездаИзГеозоны_vmoХодки].Value = all.timeOfDepartureFromGeo;
-                row[КоличествоХодок_vmoХодки].Value = all.countObjGeo;
                 row.Post();
             }
 
             vmoХодки.Data.UpdateDataAsync(this);
 
+            КоличествоХодок.Value = "";
+            foreach (var item in techCount)
+                КоличествоХодок.Value += $"{item.Key} количество ходок {item.Value}" + "\n" ;
 
             if (listResultAll.Count > 0)
             {
