@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.6.28.0</ProductVersion>
+    <ProductVersion>2022.6.30.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -3327,5 +3327,72 @@
       <NsgOwnerGuid>fc35b4d0-2c11-43cf-8fa0-477c1cf9fb4f</NsgOwnerGuid>
       <NsgOwnerName>МониторингРегистрацияХодокТабличнаяЧасть</NsgOwnerName>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Учет\Номенклатура\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>3e503a15-be62-4faa-bfb7-42895bfdad61</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Номенклатура\ФормаЭлемента.cs">
+      <NsgOwnerGuid>3e503a15-be62-4faa-bfb7-42895bfdad61</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Учет\Номенклатура\ФормаЭлемента.resx">
+      <NsgOwnerGuid>3e503a15-be62-4faa-bfb7-42895bfdad61</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Учет\КатегорияНоменклатуры\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>1c237bbd-078c-479e-a302-895f3e38bf9e</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\КатегорияНоменклатуры\ФормаЭлемента.cs">
+      <NsgOwnerGuid>1c237bbd-078c-479e-a302-895f3e38bf9e</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Учет\КатегорияНоменклатуры\ФормаЭлемента.resx">
+      <NsgOwnerGuid>1c237bbd-078c-479e-a302-895f3e38bf9e</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Учет\СвойствоНоменклатуры\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>9f609a5d-6e6c-49bc-a429-03c428d99edd</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\СвойствоНоменклатуры\ФормаЭлемента.cs">
+      <NsgOwnerGuid>9f609a5d-6e6c-49bc-a429-03c428d99edd</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Учет\СвойствоНоменклатуры\ФормаЭлемента.resx">
+      <NsgOwnerGuid>9f609a5d-6e6c-49bc-a429-03c428d99edd</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Учет\ПриходнаяНакладная\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>938e8f62-e981-4c0d-b579-ac25e9c83e99</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ПриходнаяНакладная\ФормаЭлемента.cs">
+      <NsgOwnerGuid>938e8f62-e981-4c0d-b579-ac25e9c83e99</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Учет\ПриходнаяНакладная\ФормаЭлемента.resx">
+      <NsgOwnerGuid>938e8f62-e981-4c0d-b579-ac25e9c83e99</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Учет\Перемещение\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>ab8fc786-6aa4-4cb8-980b-11659254bf2f</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Перемещение\ФормаЭлемента.cs">
+      <NsgOwnerGuid>ab8fc786-6aa4-4cb8-980b-11659254bf2f</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Учет\Перемещение\ФормаЭлемента.resx">
+      <NsgOwnerGuid>ab8fc786-6aa4-4cb8-980b-11659254bf2f</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
