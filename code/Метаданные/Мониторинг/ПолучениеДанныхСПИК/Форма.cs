@@ -868,7 +868,7 @@ namespace TechControl.Метаданные.Мониторинг
                     {
                         mass[i] = Convert.ToInt32(строка.ИдентификаторСистемыСлежения);
                         listID.Add(техника[i], Convert.ToInt32(строка.ИдентификаторСистемыСлежения));
-                    }    
+                    }
                 }
             }
 
@@ -970,7 +970,7 @@ namespace TechControl.Метаданные.Мониторинг
                                 var sortPoints = navigationFiltration.Points.OrderBy(x => x.Timestamp).ToArray();
                                 var longer = sortPoints.Select(x => x.Navigation.Location.Longitude).Distinct().ToArray();
                                 var width = sortPoints.Select(x => x.Navigation.Location.Latitude).Distinct().ToArray();
-                                
+
                                 if (longer.Length != 1 && width.Length != 1)
                                 {
                                     while (sortPoints.Length > 0)
@@ -989,16 +989,16 @@ namespace TechControl.Метаданные.Мониторинг
                                             //{
                                             //var map = new MapsChecker((double)объект.Широта, (double)объект.Долгота, (double)объект.РадиусГеозоны);
                                             if ((Math.Pow((firstLong - (double)объект.Геозона.Долгота), 2) + Math.Pow((firstWidth - (double)объект.Геозона.Широта), 2)) <= Math.Pow((double)объект.Геозона.РадиусГеозоны, 2))
-                                                //if (map.CheckEntry(firstWidth, firstLong))
+                                            //if (map.CheckEntry(firstWidth, firstLong))
                                             {
-                                                    firstObj = объект;
-                                                    temp = new GeozoneAndObj();
-                                                    temp.tech = id.Key;
-                                                    temp.obj = объект;
-                                                    temp.timeObj = firstPoint.Timestamp;
+                                                firstObj = объект;
+                                                temp = new GeozoneAndObj();
+                                                temp.tech = id.Key;
+                                                temp.obj = объект;
+                                                temp.timeObj = firstPoint.Timestamp;
                                                 temp.timeDoc = date;
-                                                    // заполняем 
-                                                    break;
+                                                // заполняем 
+                                                break;
                                             }
                                             //}
                                             //else if (firstLong > (double)объект.ЛевыйНижнийУголДолгота && firstLong < (double)объект.ПравыйВерхнийУголДолгота 
@@ -1022,17 +1022,17 @@ namespace TechControl.Метаданные.Мониторинг
                                                 //{
                                                 //var map = new MapsChecker((double)геозона.Широта, (double)геозона.Долгота, (double)геозона.РадиусГеозоны);
                                                 if ((Math.Pow((firstLong - (double)геозона.Долгота), 2) + Math.Pow((firstWidth - (double)геозона.Широта), 2)) <= Math.Pow((double)геозона.РадиусГеозоны, 2))
-                                                    //if (map.CheckEntry(firstWidth, firstLong))
-                                                    {
-                                                        firstGeo = геозона;
-                                                        temp = new GeozoneAndObj();
-                                                        temp.timeGeo = firstPoint.Timestamp;
-                                                        temp.geo = геозона;
-                                                        temp.tech = id.Key;
+                                                //if (map.CheckEntry(firstWidth, firstLong))
+                                                {
+                                                    firstGeo = геозона;
+                                                    temp = new GeozoneAndObj();
+                                                    temp.timeGeo = firstPoint.Timestamp;
+                                                    temp.geo = геозона;
+                                                    temp.tech = id.Key;
                                                     temp.timeDoc = date;
-                                                        // заполняем по firstPoint
-                                                        break;
-                                                    }
+                                                    // заполняем по firstPoint
+                                                    break;
+                                                }
                                                 //}    
                                                 //else if (firstLong > (double)геозона.ЛевыйНижнийУголДолгота && firstLong < (double)геозона.ПравыйВерхнийУголДолгота 
                                                 //    && firstWidth < (double)геозона.ЛевыйНижнийУголШирота && firstWidth > (double)геозона.ПравыйВерхнийУголШирота)
@@ -1054,7 +1054,7 @@ namespace TechControl.Метаданные.Мониторинг
                                         sortPoints = sortPoints.Where((item, index) => index != 0).ToArray();
                                     }
                                 }
-                            }                            
+                            }
                         }
                         while (statisticsResponseNavigationFiltration.ChunkInfo.Status.Value == "Processing");
 
@@ -1079,6 +1079,7 @@ namespace TechControl.Метаданные.Мониторинг
             }
 
             var listResultAll = new List<GeozoneAndObj>();
+            var listResultOther = new List<GeozoneAndObj>();
             var techCount = new Dictionary<Техника, int>();
             int count = 0;
             bool a = false;
@@ -1128,11 +1129,14 @@ namespace TechControl.Метаданные.Мониторинг
                         techCount.Add(item.tech, count);
                     else
                         techCount[item.tech] = count;
-                    
+
                     var resultAll = new GeozoneAndObj();
-                    var resultAllOther = new GeozoneAndObj();
+                    GeozoneAndObj resultAllOther = null;
+                    var регистрацияХодок = new GeozoneAndObj();
+                    GeozoneAndObj регХодок = null;
+                    регистрацияХодок.tech = buffer1.tech;
+                    регистрацияХодок.timeDoc = buffer1.timeDoc;
                     resultAll.tech = buffer1.tech;
-                    resultAll.countObjGeo = count;
                     resultAll.timeDoc = buffer1.timeDoc;
 
                     if (buffer1.geo == buffer2.geo)
@@ -1140,38 +1144,68 @@ namespace TechControl.Метаданные.Мониторинг
                         resultAll.geo = buffer1.geo;
                         resultAll.timeOfDepartureFromGeo = buffer1.timeOfDepartureFromGeo;
                         resultAll.timeGeo = buffer2.timeGeo;
+
+                        регистрацияХодок.geo = buffer1.geo;
                     }
                     else
                     {
                         resultAll.geo = buffer1.geo;
                         resultAll.timeOfDepartureFromGeo = buffer1.timeOfDepartureFromGeo;
 
+                        resultAllOther = new GeozoneAndObj();
                         resultAllOther.tech = buffer2.tech;
                         resultAllOther.geo = buffer2.geo;
                         resultAllOther.timeGeo = buffer2.timeGeo;
                         resultAllOther.timeDoc = buffer2.timeDoc;
+
+                        регистрацияХодок.geo = buffer1.geo;
+
+                        регХодок = new GeozoneAndObj();
+                        регХодок.tech = buffer2.tech;
+                        регХодок.timeDoc = buffer2.timeDoc;
+                        регХодок.geo = buffer2.geo;
                     }
-                    
+
                     if (buffer1.obj == buffer2.obj)
                     {
                         resultAll.obj = buffer1.obj;
                         resultAll.timeOfDepartureFromObj = buffer2.timeOfDepartureFromObj;
                         resultAll.timeObj = buffer1.timeObj;
+
+                        регистрацияХодок.obj = buffer1.obj;
                     }
                     else
                     {
                         resultAll.obj = buffer1.obj;
                         resultAll.timeObj = buffer1.timeObj;
 
-                        resultAllOther.tech = buffer2.tech;
+                        if (resultAllOther == null)
+                        {
+                            resultAllOther = new GeozoneAndObj();
+                            resultAllOther.tech = buffer2.tech;
+                            resultAllOther.timeDoc = buffer2.timeDoc;
+
+                        }
                         resultAllOther.obj = buffer2.obj;
                         resultAllOther.timeOfDepartureFromObj = buffer2.timeOfDepartureFromObj;
-                        resultAllOther.timeDoc = buffer2.timeDoc;
+
+                        регистрацияХодок.obj = buffer1.obj;
+                        if (регХодок == null)
+                        {
+                            регХодок = new GeozoneAndObj();
+                            регХодок.tech = buffer2.tech;
+                            регХодок.timeDoc = buffer2.timeDoc;
+                        }
+                        регХодок.obj = buffer2.obj;
                     }
 
                     listResultAll.Add(resultAll);
-                    if (resultAllOther.tech != null)
+                    if (resultAllOther != null)
                         listResultAll.Add(resultAllOther);
+
+                    listResultOther.Add(регистрацияХодок);
+                    if (регХодок != null)
+                        listResultOther.Add(регХодок);
 
                     a = false;
                     b = false;
@@ -1198,40 +1232,44 @@ namespace TechControl.Метаданные.Мониторинг
 
             КоличествоХодок.Value = "";
             foreach (var item in techCount)
-                КоличествоХодок.Value += $"{item.Key} количество ходок {item.Value}" + "\n" ;
+                КоличествоХодок.Value += $"{item.Key} количество ходок {item.Value}" + "\n";
 
-            if (listResultAll.Count > 0)
+
+            foreach (var дата in listDate)
             {
-                foreach (var дата in listDate)
+                var ходки = РегистрацияХодок.Новый();
+                ходки.New();
+                ходки.ДатаДокумента = дата;
+
+                foreach (var all in listResultOther)
                 {
-                    var ходки = РегистрацияХодок.Новый();
-                    ходки.New();
-                    ходки.ДатаДокумента = дата;
-
-                    foreach (var all in listResultAll)
+                    if (дата == all.timeDoc)
                     {
-                        if (дата == all.timeDoc)
-                        {
-                            var row = ходки.ТабличнаяЧасть.NewRow();
-                            row.Техника = all.tech;
-                            row.Объект = all.obj;
-                            row.Геозона = all.geo;
-                            row.ВремяПриездаНаГеозону = all.timeGeo;
-                            row.ВремяВыездаИзГеозоны = all.timeOfDepartureFromGeo;
-                            row.ВремяПриездаНаОбъект = all.timeObj;
-                            row.ВремяВыездаИзОбъекта = all.timeOfDepartureFromObj;
-                            row.Post();
-
-                            var rowCount = ходки.ТаблицаКоличестваХодок.NewRow();
-                            rowCount.Техника = all.tech;
-                            rowCount.Объект = all.obj;
-                            rowCount.КоличествоХодок = Convert.ToInt32(all.countObjGeo);
-                            rowCount.Post();
-                        }
+                        var rowCount = ходки.ТаблицаКоличестваХодок.NewRow();
+                        rowCount.Техника = all.tech;
+                        rowCount.Объект = all.obj;
+                        rowCount.КоличествоХодок = Convert.ToInt32(all.countObjGeo);
+                        rowCount.Post();
                     }
-
-                    ходки.Post();
                 }
+
+                foreach(var all in listResultAll)
+                {
+                    if (дата == all.timeDoc)
+                    {
+                        var row = ходки.ТабличнаяЧасть.NewRow();
+                        row.Техника = all.tech;
+                        row.Объект = all.obj;
+                        row.Геозона = all.geo;
+                        row.ВремяПриездаНаГеозону = all.timeGeo;
+                        row.ВремяВыездаИзГеозоны = all.timeOfDepartureFromGeo;
+                        row.ВремяПриездаНаОбъект = all.timeObj;
+                        row.ВремяВыездаИзОбъекта = all.timeOfDepartureFromObj;
+                        row.Post();
+                    }
+                }
+
+                ходки.Post();
             }
         }
 
