@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.6.30.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.7.4.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.6.30.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.6.30.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.7.4.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.7.4.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -9899,14 +9899,14 @@
             <container name="АккаунтПользователя" />
             <container name="ВидНоменклатуры" />
             <container name="ПоследнееИзменение" />
+            <container name="ТипНоменклатуры" />
+            <container name="КатегорияНоменклатуры" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="ТипНоменклатуры" />
-            <container name="КатегорияНоменклатуры" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -10964,12 +10964,12 @@
             <container name="ДатаДокумента" />
             <container name="Комментарий" />
             <container name="АккаунтПользователя" />
+            <container name="Контрагент" />
+            <container name="Объект" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="Контрагент" />
-            <container name="Объект" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -11131,6 +11131,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="aa2ef3a9-33d7-427f-9946-762e52d481df" type="NsgDataEnumReference" editoraccess="Full" name="ПризнакДвижения" visible="true" description="Признак движения" field="PriznakDvizhenija" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Перечисления" refname="ПризнакиДвижений">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -11142,6 +11147,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="ПризнакДвижения" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
