@@ -128,7 +128,11 @@ namespace TechControl.Метаданные.Мониторинг
             base.OnCreateReportCompleted(nsgBackgroundReporter, e);
         }
 
-	}
+        private void ОтчетАрендаПоМесяцамФорма_MainReportChanged(object sender, MainReportChangedEventArgs e)
+        {
+            nsgGroupsList1.UpdateGroupsList();
+        }
+    }
     
 
 

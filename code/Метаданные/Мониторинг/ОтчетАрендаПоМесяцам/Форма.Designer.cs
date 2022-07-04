@@ -1028,6 +1028,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.SelectedObject = null;
             this.TabText = "NsgMultipleObjectBaseForm";
             this.Text = "NsgReportForm";
+            this.MainReportChanged += new System.EventHandler<NsgSoft.Forms.MainReportChangedEventArgs>(this.ОтчетАрендаПоМесяцамФорма_MainReportChanged);
             this.Controls.SetChildIndex(this.panelButtonReportForm, 0);
             this.Controls.SetChildIndex(this.nsgObjectFilter1, 0);
             this.Controls.SetChildIndex(this.nsgGroupsList1, 0);

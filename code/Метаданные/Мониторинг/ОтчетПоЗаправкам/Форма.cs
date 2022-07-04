@@ -262,7 +262,12 @@ namespace TechControl.Метаданные.Мониторинг
         {
             base.OnCreateReportCompleted(nsgBackgroundReporter, e);
         }
-	}
+
+        private void ОтчетПоЗаправкамФорма_MainReportChanged(object sender, MainReportChangedEventArgs e)
+        {
+            nsgGroupsList.UpdateGroupsList();
+        }
+    }
     
 
 
