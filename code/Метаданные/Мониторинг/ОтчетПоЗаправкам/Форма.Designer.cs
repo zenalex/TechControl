@@ -448,7 +448,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgGroupsList.MinimumSize = new System.Drawing.Size(290, 150);
             this.nsgGroupsList.Name = "NsgGroupsList";
             this.nsgGroupsList.NsgRemoveMasterComponent = true;
-            this.nsgGroupsList.SetReport = null;
+            this.nsgGroupsList.SetReport = this.nsgReport3;
             this.nsgGroupsList.SetTitle = "Группировка";
             this.nsgGroupsList.Size = new System.Drawing.Size(300, 357);
             this.nsgGroupsList.TabIndex = 10;
