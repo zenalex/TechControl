@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.7.4.0</ProductVersion>
+    <ProductVersion>2022.7.8.1</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -3391,6 +3391,32 @@
     </Compile>
     <EmbeddedResource Include="Метаданные\Учет\Перемещение\ФормаЭлемента.resx">
       <NsgOwnerGuid>ab8fc786-6aa4-4cb8-980b-11659254bf2f</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Ходки\Ходки.NsgInit.cs">
+      <NsgOwnerGuid>26610c78-318a-4301-8e50-3d7aae19a826</NsgOwnerGuid>
+      <NsgOwnerName>Ходки</NsgOwnerName>
+      <DependentUpon>Ходки.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Ходки\Ходки.cs">
+      <NsgOwnerGuid>26610c78-318a-4301-8e50-3d7aae19a826</NsgOwnerGuid>
+      <NsgOwnerName>Ходки</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Ходки\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>26610c78-318a-4301-8e50-3d7aae19a826</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Ходки\ФормаЭлемента.cs">
+      <NsgOwnerGuid>26610c78-318a-4301-8e50-3d7aae19a826</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Ходки\ФормаЭлемента.resx">
+      <NsgOwnerGuid>26610c78-318a-4301-8e50-3d7aae19a826</NsgOwnerGuid>
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
