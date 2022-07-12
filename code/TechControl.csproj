@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.7.8.1</ProductVersion>
+    <ProductVersion>2022.7.12.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -3420,5 +3420,16 @@
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Учет\Фотографии\Фотографии.NsgInit.cs">
+      <NsgOwnerGuid>feeb7e32-730b-451c-8370-5b2928485c18</NsgOwnerGuid>
+      <NsgOwnerName>Фотографии</NsgOwnerName>
+      <DependentUpon>Фотографии.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Фотографии\Фотографии.cs">
+      <NsgOwnerGuid>feeb7e32-730b-451c-8370-5b2928485c18</NsgOwnerGuid>
+      <NsgOwnerName>Фотографии</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
