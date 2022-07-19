@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.7.12.1</ProductVersion>
+    <ProductVersion>2022.7.19.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -2772,8 +2772,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Метаданные\Мониторинг\РегистрацияХодок\РегистрацияХодок.NsgInit.cs">
       <NsgOwnerGuid>2b4b8ab0-f617-4be0-8b68-f6c09670d8d5</NsgOwnerGuid>
       <NsgOwnerName>РегистрацияХодок</NsgOwnerName>
@@ -2963,6 +2961,17 @@
     <Compile Include="Метаданные\Учет\Размеры\Размеры.cs">
       <NsgOwnerGuid>47d2a783-3a6f-4f22-8573-cdea3e3ef95b</NsgOwnerGuid>
       <NsgOwnerName>Размеры</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СлужебныеСправочники\Уведомления\Уведомления.NsgInit.cs">
+      <NsgOwnerGuid>24f4b843-f71b-44d3-90d1-2cffce7f9e48</NsgOwnerGuid>
+      <NsgOwnerName>Уведомления</NsgOwnerName>
+      <DependentUpon>Уведомления.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\Уведомления\Уведомления.cs">
+      <NsgOwnerGuid>24f4b843-f71b-44d3-90d1-2cffce7f9e48</NsgOwnerGuid>
+      <NsgOwnerName>Уведомления</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
