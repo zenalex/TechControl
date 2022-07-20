@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2022.7.19.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2022.7.20.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.7.19.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.7.19.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2022.7.20.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2022.7.20.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -2435,6 +2435,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="f7a89344-1df6-4f26-ad6b-3356f72258e2" type="NsgDataTypedReference" editoraccess="Full" name="ЗаправочнаяЕмкость" visible="true" description="Заправочная емкость" field="ZapravochnajaEmkost" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Объекты">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -2463,6 +2468,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ЗаправочнаяЕмкость" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -10485,14 +10491,14 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
-            <container name="ПрефиксКода" />
-            <container name="НомерКода" />
             <container name="ДатаДокумента" />
-            <container name="Индекс" />
-            <container name="ДокументОснование" />
             <container name="Комментарий" />
             <container name="ПользовательСервисов" />
             <container name="Просмотрено" />
+            <container name="ПрефиксКода" />
+            <container name="НомерКода" />
+            <container name="Индекс" />
+            <container name="ДокументОснование" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />

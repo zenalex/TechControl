@@ -13,17 +13,25 @@ namespace TechControl.Метаданные.Мониторинг
     
     public partial class Объекты
     {
-        #region Данные
-        #endregion //Данные
-
-        #region Конструкторы
-        #endregion //Конструкторы
-
-        #region Свойства
-        #endregion //Свойства
-
-        #region Методы
-        #endregion //Методы
+        protected override List<Guid> BasePost()
+        {
+            if (this.СостояниеДокумента != Сервис.СостоянияОбъекта.Создан && !ЗаправочнаяЕмкость.Selected)
+            {
+                var r = FindAllRequisits(new NsgCompare().Add(Names.Идентификатор, Идентификатор), Names.ЗаправочнаяЕмкость)
+                    .Rows[0][Names.ЗаправочнаяЕмкость].ToReferent() as Объекты;
+                if (!r.Selected)
+                {
+                    r.New();
+                    r.Адрес = Адрес;
+                    r.АккаунтПользователя = АккаунтПользователя;
+                    r.Наименование = Наименование + " заправочная емкость";
+                    r.ЗаправочнаяЕмкость = r;
+                    r.Post();
+                }
+                ЗаправочнаяЕмкость = r;
+            }
+            return base.BasePost();
+        }
     }
 
 }
