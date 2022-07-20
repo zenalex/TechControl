@@ -5,8 +5,7 @@ using NsgSoft.DataObjects;
 using NsgSoft.Database;
 using System.IO;
 using NsgSoft.Common;
-
-
+using TechControl.Метаданные._SystemTables;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -18,15 +17,22 @@ namespace TechControl.Метаданные.Мониторинг
             if (this.СостояниеДокумента != Сервис.СостоянияОбъекта.Создан && !ЗаправочнаяЕмкость.Selected)
             {
                 var r = FindAllRequisits(new NsgCompare().Add(Names.Идентификатор, Идентификатор), Names.ЗаправочнаяЕмкость)
-                    .Rows[0][Names.ЗаправочнаяЕмкость].ToReferent() as Объекты;
+                    .Rows[0][Names.ЗаправочнаяЕмкость].ToReferent() as Техника;
                 if (!r.Selected)
                 {
-                    r.New();
-                    r.Адрес = Адрес;
-                    r.АккаунтПользователя = АккаунтПользователя;
-                    r.Наименование = Наименование + " заправочная емкость";
-                    r.ЗаправочнаяЕмкость = r;
-                    r.Post();
+                    var row = ТаблицаТехника.FindRow(new NsgCompare()
+                        .Add(МониторингОбъектыТаблицаТехника.Names.Техника, Техника.Новый(), NsgComparison.NotEqual));
+                    if (row != null)
+                    {
+                        r = row[МониторингОбъектыТаблицаТехника.Names.Техника].ToReferent() as Техника;
+                    }
+                    else
+                    {
+                        r.New();
+                        r.АккаунтПользователя = АккаунтПользователя;
+                        r.Наименование = Наименование + " - заправочная емкость";
+                        r.Post();
+                    }
                 }
                 ЗаправочнаяЕмкость = r;
             }

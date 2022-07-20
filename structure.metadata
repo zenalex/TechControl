@@ -2435,7 +2435,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="f7a89344-1df6-4f26-ad6b-3356f72258e2" type="NsgDataTypedReference" editoraccess="Full" name="ЗаправочнаяЕмкость" visible="true" description="Заправочная емкость" field="ZapravochnajaEmkost" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Объекты">
+            <NsgSimpleObject Guid="915880aa-bd41-4363-a809-4e036e4d145b" type="NsgDataTypedReference" editoraccess="Full" name="ЗаправочнаяЕмкость" visible="true" description="Заправочная емкость" field="ZapravochnajaEmkost" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Техника">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
