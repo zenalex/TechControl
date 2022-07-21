@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.7.20.0</ProductVersion>
+    <ProductVersion>2022.7.21.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -2972,6 +2972,35 @@
     <Compile Include="Метаданные\СлужебныеСправочники\Уведомления\Уведомления.cs">
       <NsgOwnerGuid>24f4b843-f71b-44d3-90d1-2cffce7f9e48</NsgOwnerGuid>
       <NsgOwnerName>Уведомления</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ПроверкаЗаправки\ПроверкаЗаправки.NsgInit.cs">
+      <NsgOwnerGuid>98a0c815-a45d-468d-9692-f333b51f592e</NsgOwnerGuid>
+      <NsgOwnerName>ПроверкаЗаправки</NsgOwnerName>
+      <DependentUpon>ПроверкаЗаправки.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ПроверкаЗаправки\ПроверкаЗаправки.cs">
+      <NsgOwnerGuid>98a0c815-a45d-468d-9692-f333b51f592e</NsgOwnerGuid>
+      <NsgOwnerName>ПроверкаЗаправки</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ПроверкаЗаправки\МониторингПроверкаЗаправкиТаблица.NsgInit.cs">
+      <NsgOwnerGuid>9f902b4e-986f-4d63-b343-2612f614eaae</NsgOwnerGuid>
+      <NsgOwnerName>МониторингПроверкаЗаправкиТаблица</NsgOwnerName>
+      <DependentUpon>МониторингПроверкаЗаправкиТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ПроверкаЗаправки\МониторингПроверкаЗаправкиТаблица.cs">
+      <NsgOwnerGuid>9f902b4e-986f-4d63-b343-2612f614eaae</NsgOwnerGuid>
+      <NsgOwnerName>МониторингПроверкаЗаправкиТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ПроверкаЗаправки\МониторингПроверкаЗаправкиТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>9f902b4e-986f-4d63-b343-2612f614eaae</NsgOwnerGuid>
+      <NsgOwnerName>МониторингПроверкаЗаправкиТаблица</NsgOwnerName>
+      <DependentUpon>МониторингПроверкаЗаправкиТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ПроверкаЗаправки\МониторингПроверкаЗаправкиТаблица.Строка.cs">
+      <NsgOwnerGuid>9f902b4e-986f-4d63-b343-2612f614eaae</NsgOwnerGuid>
+      <NsgOwnerName>МониторингПроверкаЗаправкиТаблица</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
