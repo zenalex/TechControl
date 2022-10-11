@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.10.10.0</ProductVersion>
+    <ProductVersion>2022.10.11.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -3027,6 +3027,17 @@
     <Compile Include="Метаданные\СлужебныеСправочники\НастройкиПользователейСервисов\НастройкиПользователейСервисов.cs">
       <NsgOwnerGuid>6c3cd7cb-ce0d-482f-8f03-98b0a197c238</NsgOwnerGuid>
       <NsgOwnerName>НастройкиПользователейСервисов</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Договоры\Договоры.NsgInit.cs">
+      <NsgOwnerGuid>35ae64dc-e8b5-48b7-b31d-ff22fdb66647</NsgOwnerGuid>
+      <NsgOwnerName>Договоры</NsgOwnerName>
+      <DependentUpon>Договоры.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Договоры\Договоры.cs">
+      <NsgOwnerGuid>35ae64dc-e8b5-48b7-b31d-ff22fdb66647</NsgOwnerGuid>
+      <NsgOwnerName>Договоры</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
