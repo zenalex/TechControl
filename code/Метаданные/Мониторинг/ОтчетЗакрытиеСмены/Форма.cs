@@ -268,16 +268,25 @@ namespace TechControl.Метаданные.Мониторинг
                     {
                         if (j.WorkObject != i.Id) continue;
 
-                        var row = объекты.ТаблицаПерсонал.NewRow();
-                        if (всеСотрудники.TryGetValue(j.Sotrudnik, out Сотрудники со))
+                        if (всеСотрудники.TryGetValue(j.Sotrudnik, out Сотрудники со) &&
+                            объекты.ТаблицаПерсонал.FindRow(new NsgCompare()
+                                .Add(МониторингОбъектыТаблицаПерсонал.Names.Сотрудник, со)) == null)
+                        {
+                            var row = объекты.ТаблицаПерсонал.NewRow();
                             row.Сотрудник = со;
-                        row.Post();
+                            row.Post();
+                        }
 
-                        var rowT = объекты.ТаблицаТарифыСотрудников.NewRow();
-                        if (всеТарифы.TryGetValue(j.Tariff, out Тарифы та))
+                        if (всеТарифы.TryGetValue(j.Tariff, out Тарифы та) &&
+                            объекты.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
+                                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, та)
+                                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Стоимость, j.Sum)) == null)
+                        {
+                            var rowT = объекты.ТаблицаТарифыСотрудников.NewRow();
                             rowT.Тариф = та;
-                        rowT.Стоимость = j.Sum;
-                        rowT.Post();
+                            rowT.Стоимость = j.Sum;
+                            rowT.Post();
+                        }
                     }
                     объекты.Post();
                     всеОбъекты.Add(i.Id, объекты);
