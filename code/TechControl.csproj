@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.10.11.0</ProductVersion>
+    <ProductVersion>2022.10.14.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -3038,6 +3038,26 @@
     <Compile Include="Метаданные\Мониторинг\Договоры\Договоры.cs">
       <NsgOwnerGuid>35ae64dc-e8b5-48b7-b31d-ff22fdb66647</NsgOwnerGuid>
       <NsgOwnerName>Договоры</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СлужебныеСправочники\АккаунтПользователя\СлужебныеСправочникиАккаунтПользователяДоступныеОбъекты.NsgInit.cs">
+      <NsgOwnerGuid>adc36a70-d87b-4d54-a3a6-791b0218d04e</NsgOwnerGuid>
+      <NsgOwnerName>СлужебныеСправочникиАккаунтПользователяДоступныеОбъекты</NsgOwnerName>
+      <DependentUpon>СлужебныеСправочникиАккаунтПользователяДоступныеОбъекты.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\АккаунтПользователя\СлужебныеСправочникиАккаунтПользователяДоступныеОбъекты.cs">
+      <NsgOwnerGuid>adc36a70-d87b-4d54-a3a6-791b0218d04e</NsgOwnerGuid>
+      <NsgOwnerName>СлужебныеСправочникиАккаунтПользователяДоступныеОбъекты</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\АккаунтПользователя\СлужебныеСправочникиАккаунтПользователяДоступныеОбъекты.Строка.NsgInit.cs">
+      <NsgOwnerGuid>adc36a70-d87b-4d54-a3a6-791b0218d04e</NsgOwnerGuid>
+      <NsgOwnerName>СлужебныеСправочникиАккаунтПользователяДоступныеОбъекты</NsgOwnerName>
+      <DependentUpon>СлужебныеСправочникиАккаунтПользователяДоступныеОбъекты.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\АккаунтПользователя\СлужебныеСправочникиАккаунтПользователяДоступныеОбъекты.Строка.cs">
+      <NsgOwnerGuid>adc36a70-d87b-4d54-a3a6-791b0218d04e</NsgOwnerGuid>
+      <NsgOwnerName>СлужебныеСправочникиАккаунтПользователяДоступныеОбъекты</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
