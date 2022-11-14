@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2022.10.14.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
+    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -3059,5 +3059,20 @@
       <NsgOwnerGuid>adc36a70-d87b-4d54-a3a6-791b0218d04e</NsgOwnerGuid>
       <NsgOwnerName>СлужебныеСправочникиАккаунтПользователяДоступныеОбъекты</NsgOwnerName>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\СлужебныеСправочники\АккаунтПользователя\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>03d07a58-c33f-47ad-8c2e-bba281c2f1a1</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеСправочники\АккаунтПользователя\ФормаЭлемента.cs">
+      <NsgOwnerGuid>03d07a58-c33f-47ad-8c2e-bba281c2f1a1</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\СлужебныеСправочники\АккаунтПользователя\ФормаЭлемента.resx">
+      <NsgOwnerGuid>03d07a58-c33f-47ad-8c2e-bba281c2f1a1</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
