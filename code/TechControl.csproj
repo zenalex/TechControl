@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2022.10.14.0</ProductVersion>
+    <ProductVersion>2022.12.19.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
+    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -78,11 +78,23 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.FormsComponents.dll</HintPath>
     </Reference>
+    <Reference Include="NsgSoft.Report, Version=2022.11.10.1, Culture=neutral, PublicKeyToken=8582361bc9fff25a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Users\Sashazen\SVN\Customers\Titan\Releases\NsgSoft.Report.dll</HintPath>
+    </Reference>
     <Reference Include="NsgSoft.ReportBase">
       <HintPath>..\..\..\SVN\Customers\Titan\Releases\NsgSoft.ReportBase.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.ReportBuilder">
       <HintPath>..\..\..\SVN\Customers\Titan\Releases\NsgSoft.ReportBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.ReportBuilder.Helper, Version=2022.11.10.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Users\Sashazen\SVN\Customers\Titan\Releases\NsgSoft.ReportBuilder.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.ReportBuilder.Win, Version=2022.11.10.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Users\Sashazen\SVN\Customers\Titan\Releases\NsgSoft.ReportBuilder.Win.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.ReportCompression, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=988313eade00fb94, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -90,6 +102,18 @@
     </Reference>
     <Reference Include="NsgSoft.ReportControls">
       <HintPath>..\..\..\SVN\Customers\Titan\Releases\NsgSoft.ReportControls.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.ReportData, Version=2022.11.10.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Users\Sashazen\SVN\Customers\Titan\Releases\NsgSoft.ReportData.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.ReportDatabase, Version=2022.11.10.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Users\Sashazen\SVN\Customers\Titan\Releases\NsgSoft.ReportDatabase.dll</HintPath>
+    </Reference>
+    <Reference Include="NsgSoft.ReportDesign, Version=2022.11.10.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Users\Sashazen\SVN\Customers\Titan\Releases\NsgSoft.ReportDesign.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.ReportEditor">
       <HintPath>..\..\..\SVN\Customers\Titan\Releases\NsgSoft.ReportEditor.dll</HintPath>
@@ -101,6 +125,10 @@
     <Reference Include="NsgSoft.Windows.iGridLib.iGrid, Version=2021.9.17.1, Culture=neutral, PublicKeyToken=0bdf22e5110ec457, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\NsgSoft.Windows.iGridLib.iGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win, Version=2021.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Users\Sashazen\SVN\Customers\Titan\Releases\DLL\Stimulsoft.Controls.Win.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -3098,5 +3126,61 @@
       <DependentUpon>Форма.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Грузы\ПривозГруза\ПривозГруза.NsgInit.cs">
+      <NsgOwnerGuid>3cdd4645-7c73-40dc-8407-5e108ab1f992</NsgOwnerGuid>
+      <NsgOwnerName>ПривозГруза</NsgOwnerName>
+      <DependentUpon>ПривозГруза.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ПривозГруза\ПривозГруза.cs">
+      <NsgOwnerGuid>3cdd4645-7c73-40dc-8407-5e108ab1f992</NsgOwnerGuid>
+      <NsgOwnerName>ПривозГруза</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ПривозГруза\ГрузыПривозГрузаТаблицаКартинок.NsgInit.cs">
+      <NsgOwnerGuid>d1492cd3-2e40-4fb7-a5af-9bffc9f923b4</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыПривозГрузаТаблицаКартинок</NsgOwnerName>
+      <DependentUpon>ГрузыПривозГрузаТаблицаКартинок.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ПривозГруза\ГрузыПривозГрузаТаблицаКартинок.cs">
+      <NsgOwnerGuid>d1492cd3-2e40-4fb7-a5af-9bffc9f923b4</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыПривозГрузаТаблицаКартинок</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ПривозГруза\ГрузыПривозГрузаТаблицаКартинок.Строка.NsgInit.cs">
+      <NsgOwnerGuid>d1492cd3-2e40-4fb7-a5af-9bffc9f923b4</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыПривозГрузаТаблицаКартинок</NsgOwnerName>
+      <DependentUpon>ГрузыПривозГрузаТаблицаКартинок.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ПривозГруза\ГрузыПривозГрузаТаблицаКартинок.Строка.cs">
+      <NsgOwnerGuid>d1492cd3-2e40-4fb7-a5af-9bffc9f923b4</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыПривозГрузаТаблицаКартинок</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ВывозГруза\ВывозГруза.NsgInit.cs">
+      <NsgOwnerGuid>60532b8b-7d8b-4865-82d1-7ded28d2d261</NsgOwnerGuid>
+      <NsgOwnerName>ВывозГруза</NsgOwnerName>
+      <DependentUpon>ВывозГруза.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ВывозГруза\ВывозГруза.cs">
+      <NsgOwnerGuid>60532b8b-7d8b-4865-82d1-7ded28d2d261</NsgOwnerGuid>
+      <NsgOwnerName>ВывозГруза</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ВывозГруза\ГрузыВывозГрузаТаблицаКартинок.NsgInit.cs">
+      <NsgOwnerGuid>db815534-babd-4d36-8a67-03fe4ae5957c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыВывозГрузаТаблицаКартинок</NsgOwnerName>
+      <DependentUpon>ГрузыВывозГрузаТаблицаКартинок.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ВывозГруза\ГрузыВывозГрузаТаблицаКартинок.cs">
+      <NsgOwnerGuid>db815534-babd-4d36-8a67-03fe4ae5957c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыВывозГрузаТаблицаКартинок</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ВывозГруза\ГрузыВывозГрузаТаблицаКартинок.Строка.NsgInit.cs">
+      <NsgOwnerGuid>db815534-babd-4d36-8a67-03fe4ae5957c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыВывозГрузаТаблицаКартинок</NsgOwnerName>
+      <DependentUpon>ГрузыВывозГрузаТаблицаКартинок.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ВывозГруза\ГрузыВывозГрузаТаблицаКартинок.Строка.cs">
+      <NsgOwnerGuid>db815534-babd-4d36-8a67-03fe4ae5957c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыВывозГрузаТаблицаКартинок</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
