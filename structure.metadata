@@ -9582,12 +9582,12 @@
             <container name="Объект" />
             <container name="АккаунтПользователя" />
             <container name="ПризнакДвижения" />
+            <container name="ТребуетПодтверждения" />
+            <container name="Статус" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ТребуетПодтверждения" />
-            <container name="Статус" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -11502,16 +11502,16 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
-            <container name="ПрефиксКода" />
-            <container name="НомерКода" />
-            <container name="АккаунтПользователя" />
             <container name="ДатаДокумента" />
-            <container name="Индекс" />
-            <container name="ДокументОснование" />
             <container name="Комментарий" />
+            <container name="АккаунтПользователя" />
             <container name="Объект" />
             <container name="Сотрудник" />
             <container name="Подтверждено" />
+            <container name="ПрефиксКода" />
+            <container name="НомерКода" />
+            <container name="Индекс" />
+            <container name="ДокументОснование" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
