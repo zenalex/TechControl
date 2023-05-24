@@ -26,7 +26,7 @@ namespace TechControl.Метаданные.Учет
         protected override bool Handling()
         {
             ОстаткиНоменклатуры остаткиНоменклатуры = ОстаткиНоменклатуры.Новый(this);
-            var cmp = new NsgCompare().Add(ОстаткиНоменклатуры.Names.Владелец, ДокументОснование);
+            var cmp = new NsgCompare().Add(ОстаткиНоменклатуры.Names.Перемещение, ДокументОснование);
             var движ = остаткиНоменклатуры.GetRests(cmp);
             foreach (var ост in движ.Rows)
             {
@@ -48,6 +48,16 @@ namespace TechControl.Метаданные.Учет
             }
             return остаткиНоменклатуры.Post();
             #endregion //Методы
+        }
+        public override void OnBaseAssigned()
+        {
+            base.OnBaseAssigned();
+            if (ДокументОснование != null && ДокументОснование.Selected && ДокументОснование is Перемещение)
+            {
+                var докПеремещение = ДокументОснование as Перемещение;
+                this.CopyNotPredefinedFieldsFromObject(докПеремещение);
+                this.Таблица.CopyNotPredefinedFieldsFromObject(докПеремещение.Таблица);
+            }
         }
     }
 }

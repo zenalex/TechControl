@@ -32,6 +32,7 @@ namespace TechControl.Метаданные.Учет
             }
             return остаткиНоменклатуры.Post();
         }
+       
     }
 
 }
