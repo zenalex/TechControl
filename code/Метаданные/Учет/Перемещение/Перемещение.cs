@@ -5,8 +5,8 @@ using NsgSoft.DataObjects;
 using NsgSoft.Database;
 using System.IO;
 using NsgSoft.Common;
-
-
+using NsgSoft.ReportBase.Wizards;
+using System.Linq.Expressions;
 
 namespace TechControl.Метаданные.Учет
 {
@@ -30,7 +30,24 @@ namespace TechControl.Метаданные.Учет
                     остаткиНоменклатуры.Перемещение = this;
                 остаткиНоменклатуры.AddMovement();
             }
+            var докПодтверждения = ПодтверждениеПеремещения.Новый();
+            var cmp = new NsgCompare().Add(ПодтверждениеПеремещения.Names.ДокументОснование, this);
+            var спПодтверждений = докПодтверждения.FindAll(cmp);
+            foreach(var текПодтв in спПодтверждений)
+            {
+                try 
+                {
+                    текПодтв.Handle();
+                }
+                catch(Exception ex) 
+                {
+                    NsgSettings.MainForm.ShowMessage(ex.ToString());
+                }
+                
+                
+            }    
             return остаткиНоменклатуры.Post();
+
         }
        
     }
