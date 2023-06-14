@@ -1372,7 +1372,7 @@
             <register name="Мониторинг.ФиксацияИсторииСотрудников" regime="Write" />
             <register name="Инструменты.УчетИнструментов" regime="Write" />
             <register name="Учет.ОстаткиНоменклатуры" regime="Write" />
-            <register name="УчетСпецодеждыИСИЗ.УчетСпецодеждыИСИЗ" regime="Write" />
+            <register name="УчетСпецодеждыИСИЗ.РегистрУчетСпецодежды" regime="Write" />
           </Registers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="44c5e4d7-ae74-4c81-9544-03b294646ac4" type="NsgDataTable" editoraccess="Full" name="PeriodicTable" visible="true" description="Periodic table" group="_SystemTables" table="_tab_PeriodicTable" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="PeriodicTable" registerPeriod="None" registerPeriodCount="0">
@@ -9423,7 +9423,6 @@
           </DataInterfaces>
           <Registers>
             <register name="Учет.ОстаткиНоменклатуры" regime="Write" />
-            <register name="УчетСпецодеждыИСИЗ.УчетСпецодеждыИСИЗ" regime="Write" />
           </Registers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="f0a92172-bf62-4892-b526-f6da0f2e9290" type="NsgDataTable" editoraccess="Full" name="УчетПеремещениеТаблица" visible="true" description="Учет перемещение таблица" group="_SystemTables" table="_tab_UchetPeremeschenieT" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="TablePart" registerPeriod="None" registerPeriodCount="0">
@@ -11582,77 +11581,6 @@
             <container name="Выполнено" />
           </Containers>
         </NsgMultipleObject>
-        <NsgMultipleObject Guid="b07e096b-f4ec-4d23-b753-b2fa6f96c5c6" type="NsgDataTable" editoraccess="Full" name="УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения" visible="true" description="Учет спецодежды ИСИЗУчет спецодежды ИСИЗДвижения" group="_SystemTables" table="_tab_UchetSpecodezhdyISI" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="RegisterCharacteristicsTable" registerPeriod="None" registerPeriodCount="1">
-          <NsgLanguageString type="presentation">
-            <presentation lang="(Default)" value="" />
-          </NsgLanguageString>
-          <NsgLanguageString type="valuemask">
-            <presentation lang="(Default)" value="{Представление}" />
-          </NsgLanguageString>
-          <ObjectList>
-            <NsgSimpleObject Guid="83786843-82d7-4a35-86e4-b6e13eea4e19" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="e20a346a-e88f-428a-a84c-4ba6f54370fd" type="NsgDataInteger" editoraccess="Hidden" name="Автоинкремент" visible="true" description="Автоинкремент" field="_AutoInc" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="0a060713-d820-4102-ae14-dec32e85f955" type="NsgDataUntypedReference" editoraccess="ReadOnly" name="Владелец" visible="true" description="Владелец" field="_Owner" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-              <NsgObjectsFilter filter_type="List">
-                <param name="Сервис.КорректировкаРегистра" />
-                <param name="Учет.ПриходнаяНакладная" />
-                <param name="УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды" />
-              </NsgObjectsFilter>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="a98a047f-70b0-48ba-9574-2d545b96acb9" type="NsgDataDateTime" editoraccess="Limited" name="Дата" visible="true" description="Дата документа" field="_Date" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="Дата документа" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="87f818ff-e08a-4202-86f9-1925c453ef54" type="NsgDataDateTime" editoraccess="Limited" name="КонецПериода" visible="true" description="Конец периода" field="_DateEnd" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="ba3c74ae-e4e6-48f5-9d10-3b4908e15c9d" type="NsgDataTypedReference" editoraccess="Full" name="Сотрудник" visible="true" description="Сотрудник" field="Sotrudnik" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Сотрудники">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="86557717-139c-4c10-ab4b-1622f86c966d" type="NsgDataTypedReference" editoraccess="Full" name="НоменклатураСпецодеждыИСИЗ" visible="true" description="Номенклатура спецодежды ИСИЗ" field="NomenklaturaSpeco" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Номенклатура">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="209df52b-ebaa-481d-9cf3-a0301673b262" type="NsgDataDateTime" editoraccess="Full" name="ДатаВыдачи" visible="true" description="Дата выдачи" field="DataVydachi" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="ec2c4b88-00dd-499b-9269-4c99e6c07f0a" type="NsgDataTypedReference" editoraccess="Full" name="КомплектСпецодежды" visible="true" description="Комплект спецодежды" field="KomplektSpecodezhdy" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="КомплектыСпецодежды">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="31001a05-4497-4648-ba6b-fd527adacbd2" type="NsgDataString" editoraccess="Full" name="УникальныйНомер" visible="true" description="Уникальный номер" field="UnikalnyijNomer" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="489471a5-b0eb-4d15-b7ba-236b61211bf1" type="NsgDataTypedReference" editoraccess="Full" name="Размер" visible="true" description="Размер" field="Razmer" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Размеры">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-          </ObjectList>
-          <Containers />
-        </NsgMultipleObject>
         <NsgMultipleObject Guid="10a9ab76-fe1f-4eaf-87b3-6242936c8bc0" type="NsgDataTable" editoraccess="Full" name="УчетСпецодеждыИСИЗПеремещениеСпецодеждыТаблица" visible="true" description="Учет спецодежды ИСИЗПеремещение спецодежды таблица" group="_SystemTables" table="_tab_UchetSpecodezhdyISI1" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="TablePart" registerPeriod="None" registerPeriodCount="0">
           <NsgLanguageString type="presentation">
             <presentation lang="(Default)" value="" />
@@ -11711,81 +11639,6 @@
             <container name="КомплектСпецодежды" />
             <container name="Размер" />
           </Containers>
-        </NsgMultipleObject>
-        <NsgMultipleObject Guid="f0a5c4db-26b7-46b7-8678-3f262d748788" type="NsgDataCharacteristics" editoraccess="Full" name="УчетСпецодеждыИСИЗ" visible="true" description="Характеристики" group="УчетСпецодеждыИСИЗ" table="_reg_UchetSpecodezhdyISIZ" useFullTextIndex="false" visibleadminonly="false" registerType="Characteristics" HandlingWarnings="0" dateDependence="true">
-          <NsgLanguageString type="presentation">
-            <presentation lang="(Default)" value="" />
-          </NsgLanguageString>
-          <NsgLanguageString type="valuemask">
-            <presentation lang="(Default)" value="{Представление}" />
-          </NsgLanguageString>
-          <ObjectList>
-            <NsgSimpleObject Guid="a98a047f-70b0-48ba-9574-2d545b96acb9" type="NsgDataDateTime" editoraccess="Limited" name="Дата" visible="true" description="Дата документа" field="_Date" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="Дата документа" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="87f818ff-e08a-4202-86f9-1925c453ef54" type="NsgDataDateTime" editoraccess="Limited" name="КонецПериода" visible="true" description="Конец периода" field="_DateEnd" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="0bd32add-6ff5-4d16-b3f2-9e7d70252842" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="a7f401bc-8df4-40ac-b505-da6bd5718d02" type="NsgDataInteger" editoraccess="Hidden" name="Автоинкремент" visible="true" description="Автоинкремент" field="_AutoInc" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="e4d88724-9f9a-46f5-abce-39e8c57ab000" type="NsgRegisterTable" editoraccess="NonRemovable" name="Движения" visible="true" description="Движения" field="Dvizhenija" index="None" subtype="TabCharacteristics" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="_SystemTables" refname="УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения" registerPeriodCount="1" registerPeriod="0">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="2c2a07e6-9c39-41a4-ac70-252db4552c30" type="NsgDataUntypedReference" editoraccess="Limited" name="Владелец" visible="true" description="Владелец" field="_Owner" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-              <NsgObjectsFilter filter_type="List">
-                <param name="Сервис.КорректировкаРегистра" />
-                <param name="Учет.ПриходнаяНакладная" />
-                <param name="УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды" />
-              </NsgObjectsFilter>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="ba3c74ae-e4e6-48f5-9d10-3b4908e15c9d" type="NsgDataTypedReference" editoraccess="Full" name="Сотрудник" visible="true" description="Сотрудник" field="Sotrudnik" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Сотрудники">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="86557717-139c-4c10-ab4b-1622f86c966d" type="NsgDataTypedReference" editoraccess="Full" name="НоменклатураСпецодеждыИСИЗ" visible="true" description="Номенклатура спецодежды ИСИЗ" field="NomenklaturaSpeco" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Номенклатура">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="209df52b-ebaa-481d-9cf3-a0301673b262" type="NsgDataDateTime" editoraccess="Full" name="ДатаВыдачи" visible="true" description="Дата выдачи" field="DataVydachi" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="ec2c4b88-00dd-499b-9269-4c99e6c07f0a" type="NsgDataTypedReference" editoraccess="Full" name="КомплектСпецодежды" visible="true" description="Комплект спецодежды" field="KomplektSpecodezhdy" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="КомплектыСпецодежды">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="489471a5-b0eb-4d15-b7ba-236b61211bf1" type="NsgDataTypedReference" editoraccess="Full" name="Размер" visible="true" description="Размер" field="Razmer" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Размеры">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="eb7c355c-d6a8-47e5-9c8a-a5d08c52095c" type="NsgDataString" editoraccess="Full" name="УникальныйНомер" visible="true" description="Уникальный номер" field="UnikalnyijNomer" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-          </ObjectList>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="f2e93b29-de19-4366-a58f-dac4e84a27cd" type="NsgDataDictionary" editoraccess="Full" name="КомплектыСпецодежды" visible="true" description="КомплектыСпецодежды" group="УчетСпецодеждыИСИЗ" table="_dic_KomplektySpecodezhdy" searchfield="Наименование" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="false">
           <NsgLanguageString type="presentation">
@@ -12032,8 +11885,8 @@
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
           </DataInterfaces>
           <Registers>
-            <register name="УчетСпецодеждыИСИЗ.УчетСпецодеждыИСИЗ" regime="Write" />
             <register name="Учет.ОстаткиНоменклатуры" regime="Write" />
+            <register name="УчетСпецодеждыИСИЗ.РегистрУчетСпецодежды" regime="Write" />
           </Registers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="acbaecc9-e512-42af-a13a-1423d08083d1" type="NsgDataDictionary" editoraccess="Full" name="Склады" visible="true" description="Справочник" group="УчетСпецодеждыИСИЗ" table="_dic_Sklady" searchfield="Наименование" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="false">
@@ -12228,6 +12081,150 @@
             <container name="ВидСвойствНоменклатуры" />
             <container name="Размер" />
           </Containers>
+        </NsgMultipleObject>
+        <NsgMultipleObject Guid="0bd23bd2-9eb1-4bbb-a765-27f832202394" type="NsgDataCharacteristics" editoraccess="Full" name="РегистрУчетСпецодежды" visible="true" description="Характеристики" group="УчетСпецодеждыИСИЗ" table="_reg_RegistrUchetSpecode" useFullTextIndex="false" visibleadminonly="false" registerType="Characteristics" HandlingWarnings="0" dateDependence="true">
+          <NsgLanguageString type="presentation">
+            <presentation lang="(Default)" value="" />
+          </NsgLanguageString>
+          <NsgLanguageString type="valuemask">
+            <presentation lang="(Default)" value="{Представление}" />
+          </NsgLanguageString>
+          <ObjectList>
+            <NsgSimpleObject Guid="36d506c1-6513-460c-9117-9c9560542606" type="NsgDataDateTime" editoraccess="Limited" name="Дата" visible="true" description="Дата документа" field="_Date" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="Дата документа" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="f89d6fc5-2d15-4e92-906a-926bbc7c7d8f" type="NsgDataDateTime" editoraccess="Limited" name="КонецПериода" visible="true" description="Конец периода" field="_DateEnd" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="9d4369a5-681c-45a8-b190-3d1412bdd501" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="09293ac9-5f13-4dd9-8574-2c27c291cae2" type="NsgDataInteger" editoraccess="Hidden" name="Автоинкремент" visible="true" description="Автоинкремент" field="_AutoInc" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="2262bdea-634f-4560-a713-514e5f95aca6" type="NsgRegisterTable" editoraccess="NonRemovable" name="Движения" visible="true" description="Движения" field="Dvizhenija" index="None" subtype="TabCharacteristics" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="_SystemTables" refname="УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения" registerPeriodCount="1" registerPeriod="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="9d6119c7-b43b-45ce-b509-bb98aa327e64" type="NsgDataUntypedReference" editoraccess="Limited" name="Владелец" visible="true" description="Владелец" field="_Owner" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+              <NsgObjectsFilter filter_type="List">
+                <param name="Сервис.КорректировкаРегистра" />
+                <param name="УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды" />
+              </NsgObjectsFilter>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="a90910b3-8f55-4a3f-a282-b8fc3fa92395" type="NsgDataDateTime" editoraccess="Full" name="ДатаВыдачи" visible="true" description="Дата выдачи" field="DataVydachi" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="18b51b8d-7355-43f5-bff3-9b46854f276c" type="NsgDataTypedReference" editoraccess="Full" name="КомплектСпецодежды" visible="true" description="Комплект спецодежды" field="KomplektSpecodezhdy" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="КомплектыСпецодежды">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="228834b8-f7af-44ac-ad3f-abb5bc528253" type="NsgDataTypedReference" editoraccess="Full" name="НоменклатураСпецодеждыИСИЗ" visible="true" description="Номенклатура спецодежды ИСИЗ" field="NomenklaturaSpeco" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Номенклатура">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="13b224a8-321f-45e9-b5f5-bee280a8bc4f" type="NsgDataTypedReference" editoraccess="Full" name="Размер" visible="true" description="Размер" field="Razmer" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Размеры">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="8074e74f-bcad-4caf-a8cf-d46044ae4e6c" type="NsgDataTypedReference" editoraccess="Full" name="Сотрудник" visible="true" description="Сотрудник" field="Sotrudnik" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Сотрудники">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="10c274d7-4b2e-4eb3-a0ff-da74ff3d09e6" type="NsgDataString" editoraccess="Full" name="УникальныйНомер" visible="true" description="Уникальный номер" field="UnikalnyijNomer" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+          </ObjectList>
+        </NsgMultipleObject>
+        <NsgMultipleObject Guid="0668065b-f9e1-42c0-8eb9-34c45e62562d" type="NsgDataTable" editoraccess="Full" name="УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения" visible="true" description="Учет спецодежды ИСИЗУчет спецодежды движения" group="_SystemTables" table="_tab_UchetSpecodezhdyISI3" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="RegisterCharacteristicsTable" registerPeriod="None" registerPeriodCount="1">
+          <NsgLanguageString type="presentation">
+            <presentation lang="(Default)" value="" />
+          </NsgLanguageString>
+          <NsgLanguageString type="valuemask">
+            <presentation lang="(Default)" value="{Представление}" />
+          </NsgLanguageString>
+          <ObjectList>
+            <NsgSimpleObject Guid="1bd6cdc1-a43d-48bd-9014-3d46c86272db" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="3f72d77a-d780-4944-84c5-a5ea98ecb165" type="NsgDataInteger" editoraccess="Hidden" name="Автоинкремент" visible="true" description="Автоинкремент" field="_AutoInc" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="708e1f4b-80f3-4c47-b8f1-8a16b171379e" type="NsgDataUntypedReference" editoraccess="ReadOnly" name="Владелец" visible="true" description="Владелец" field="_Owner" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+              <NsgObjectsFilter filter_type="List">
+                <param name="Сервис.КорректировкаРегистра" />
+                <param name="УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды" />
+              </NsgObjectsFilter>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="36d506c1-6513-460c-9117-9c9560542606" type="NsgDataDateTime" editoraccess="Limited" name="Дата" visible="true" description="Дата документа" field="_Date" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="Дата документа" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="f89d6fc5-2d15-4e92-906a-926bbc7c7d8f" type="NsgDataDateTime" editoraccess="Limited" name="КонецПериода" visible="true" description="Конец периода" field="_DateEnd" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="8074e74f-bcad-4caf-a8cf-d46044ae4e6c" type="NsgDataTypedReference" editoraccess="Full" name="Сотрудник" visible="true" description="Сотрудник" field="Sotrudnik" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Сотрудники">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="10c274d7-4b2e-4eb3-a0ff-da74ff3d09e6" type="NsgDataString" editoraccess="Full" name="УникальныйНомер" visible="true" description="Уникальный номер" field="UnikalnyijNomer" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="a90910b3-8f55-4a3f-a282-b8fc3fa92395" type="NsgDataDateTime" editoraccess="Full" name="ДатаВыдачи" visible="true" description="Дата выдачи" field="DataVydachi" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="18b51b8d-7355-43f5-bff3-9b46854f276c" type="NsgDataTypedReference" editoraccess="Full" name="КомплектСпецодежды" visible="true" description="Комплект спецодежды" field="KomplektSpecodezhdy" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="КомплектыСпецодежды">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="228834b8-f7af-44ac-ad3f-abb5bc528253" type="NsgDataTypedReference" editoraccess="Full" name="НоменклатураСпецодеждыИСИЗ" visible="true" description="Номенклатура спецодежды ИСИЗ" field="NomenklaturaSpeco" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Номенклатура">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="13b224a8-321f-45e9-b5f5-bee280a8bc4f" type="NsgDataTypedReference" editoraccess="Full" name="Размер" visible="true" description="Размер" field="Razmer" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Размеры">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+          </ObjectList>
+          <Containers />
         </NsgMultipleObject>
       </ObjectList>
     </NsgMetaData>

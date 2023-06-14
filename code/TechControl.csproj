@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2023.6.13.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
+    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -3301,15 +3301,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗ.NsgInit.cs">
-      <NsgOwnerGuid>f0a5c4db-26b7-46b7-8678-3f262d748788</NsgOwnerGuid>
-      <NsgOwnerName>УчетСпецодеждыИСИЗ</NsgOwnerName>
-      <DependentUpon>УчетСпецодеждыИСИЗ.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗ.cs">
-      <NsgOwnerGuid>f0a5c4db-26b7-46b7-8678-3f262d748788</NsgOwnerGuid>
-      <NsgOwnerName>УчетСпецодеждыИСИЗ</NsgOwnerName>
-    </Compile>
     <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ПеремещениеСпецодежды\УчетСпецодеждыИСИЗПеремещениеСпецодеждыТаблица.NsgInit.cs">
       <NsgOwnerGuid>10a9ab76-fe1f-4eaf-87b3-6242936c8bc0</NsgOwnerGuid>
       <NsgOwnerName>УчетСпецодеждыИСИЗПеремещениеСпецодеждыТаблица</NsgOwnerName>
@@ -3327,24 +3318,6 @@
     <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ПеремещениеСпецодежды\УчетСпецодеждыИСИЗПеремещениеСпецодеждыТаблица.Строка.cs">
       <NsgOwnerGuid>10a9ab76-fe1f-4eaf-87b3-6242936c8bc0</NsgOwnerGuid>
       <NsgOwnerName>УчетСпецодеждыИСИЗПеремещениеСпецодеждыТаблица</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения.NsgInit.cs">
-      <NsgOwnerGuid>b07e096b-f4ec-4d23-b753-b2fa6f96c5c6</NsgOwnerGuid>
-      <NsgOwnerName>УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения</NsgOwnerName>
-      <DependentUpon>УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения.cs">
-      <NsgOwnerGuid>b07e096b-f4ec-4d23-b753-b2fa6f96c5c6</NsgOwnerGuid>
-      <NsgOwnerName>УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения.Строка.NsgInit.cs">
-      <NsgOwnerGuid>b07e096b-f4ec-4d23-b753-b2fa6f96c5c6</NsgOwnerGuid>
-      <NsgOwnerName>УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения</NsgOwnerName>
-      <DependentUpon>УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗ\УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения.Строка.cs">
-      <NsgOwnerGuid>b07e096b-f4ec-4d23-b753-b2fa6f96c5c6</NsgOwnerGuid>
-      <NsgOwnerName>УчетСпецодеждыИСИЗУчетСпецодеждыИСИЗДвижения</NsgOwnerName>
     </Compile>
     <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ПеремещениеСпецодежды\ПеремещениеСпецодежды.NsgInit.cs">
       <NsgOwnerGuid>487f2255-562f-4db4-a67b-dce983f0bb85</NsgOwnerGuid>
@@ -3491,6 +3464,35 @@
     <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаРазмеров.Строка.cs">
       <NsgOwnerGuid>ae846c19-3ebd-4fa0-8ed7-c9bf6dae9f93</NsgOwnerGuid>
       <NsgOwnerName>МониторингСотрудникиТаблицаРазмеров</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрУчетСпецодежды\РегистрУчетСпецодежды.NsgInit.cs">
+      <NsgOwnerGuid>0bd23bd2-9eb1-4bbb-a765-27f832202394</NsgOwnerGuid>
+      <NsgOwnerName>РегистрУчетСпецодежды</NsgOwnerName>
+      <DependentUpon>РегистрУчетСпецодежды.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрУчетСпецодежды\РегистрУчетСпецодежды.cs">
+      <NsgOwnerGuid>0bd23bd2-9eb1-4bbb-a765-27f832202394</NsgOwnerGuid>
+      <NsgOwnerName>РегистрУчетСпецодежды</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрУчетСпецодежды\УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения.NsgInit.cs">
+      <NsgOwnerGuid>0668065b-f9e1-42c0-8eb9-34c45e62562d</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения</NsgOwnerName>
+      <DependentUpon>УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрУчетСпецодежды\УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения.cs">
+      <NsgOwnerGuid>0668065b-f9e1-42c0-8eb9-34c45e62562d</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрУчетСпецодежды\УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>0668065b-f9e1-42c0-8eb9-34c45e62562d</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения</NsgOwnerName>
+      <DependentUpon>УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрУчетСпецодежды\УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения.Строка.cs">
+      <NsgOwnerGuid>0668065b-f9e1-42c0-8eb9-34c45e62562d</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
