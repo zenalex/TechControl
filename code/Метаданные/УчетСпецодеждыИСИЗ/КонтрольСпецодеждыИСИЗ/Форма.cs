@@ -12,6 +12,7 @@ using NsgSoft.Database;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
 using TechControl.Метаданные.Мониторинг;
+using TechControl.Метаданные.Сервис;
 using TechControl.Метаданные.Учет;
 
 namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
@@ -36,6 +37,18 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             if (vmoДопДанныеДляОтчета.Data.CurrentRow == null)
             {
                 vmoДопДанныеДляОтчета.Data.CurrentRow = vmoДопДанныеДляОтчета.Data.MemoryTable.NewRow();
+            }
+
+            var user = (NsgSettings.CurrentUser as Пользователи).Сотрудник;
+            var cmp = Объект.SearchCondition;
+            cmp.Clear();
+            cmp.Add(Объекты.Names.Ответственный, user);
+            cmp.Add(Объекты.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+
+            var отправитель = Объекты.Новый();
+            if (отправитель.Find(cmp))
+            {
+                Объект.Value = отправитель;
             }
         }
 
@@ -110,7 +123,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                                         if (строкаОстатков != null)
                                         {
                                             row[ДатаВыдачи_vmoДанныеДляОтчета].Value = строкаОстатков[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime();
-                                            row[ТребуетсяВыдача_vmoДанныеДляОтчета].Value = строкаОстатков[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddDays((int)ном.СрокЭксплуатации) < DateTime.Now;
+                                            row[ТребуетсяВыдача_vmoДанныеДляОтчета].Value = строкаОстатков[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths((int)ном.СрокЭксплуатации) < дата;
                                             остатки.DeleteRow(строкаОстатков);
                                         }
                                         
@@ -127,7 +140,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                                     row[Сотрудник_vmoДанныеДляОтчета].Value = сотрудник;
                                     row[Должность_vmoДанныеДляОтчета].Value = сотрудник.Должность;
                                     row[ДатаВыдачи_vmoДанныеДляОтчета].Value = остаткиПоСотруднику.First()[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime();
-                                    row[ТребуетсяВыдача_vmoДанныеДляОтчета].Value = остаткиПоСотруднику.First()[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddDays((int)ном.СрокЭксплуатации) < DateTime.Now;
+                                    row[ТребуетсяВыдача_vmoДанныеДляОтчета].Value = остаткиПоСотруднику.First()[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths((int)ном.СрокЭксплуатации) < дата;
                                     row.Post();
                                     foreach ( var ост in остаткиПоСотруднику)
                                     {
@@ -168,8 +181,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                     row[Сотрудник_vmoДанныеДляОтчета].Value = сотрудник;
                     row[Должность_vmoДанныеДляОтчета].Value = сотрудник.Должность;
                     row[ДатаВыдачи_vmoДанныеДляОтчета].Value = item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime();
-                    row[ТребуетсяВыдача_vmoДанныеДляОтчета].Value = item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddDays((int)ном.СрокЭксплуатации) < DateTime.Now;
-                    row[ТребуетсяВыдача_vmoДанныеДляОтчета].Value = комплект.Selected && item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddDays((int)ном.СрокЭксплуатации) > DateTime.Now;
+                    row[ТребуетсяВыдача_vmoДанныеДляОтчета].Value = item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths((int)ном.СрокЭксплуатации) < дата;
+                    row[ТребуетсяВозврат_vmoДанныеДляОтчета].Value = комплект.Selected && item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths((int)ном.СрокЭксплуатации) > дата;
                     row.Post();
                 }
             }
@@ -268,9 +281,17 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         private void nbВыдать_AsyncClick(object sender, DoWorkEventArgs e)
         {
             var сотрудник = Сотрудник.Value;
+            var отправитель = Объект.Value;
             if (!сотрудник.Selected)
             {
                 NsgSettings.MainForm.ShowMessage("Укажите сотрудника");
+                vmoСписокСпецодежды.Data.UpdateDataSync(this);
+                return;
+            }
+
+            if (!отправитель.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Укажите выдающий объект.");
                 vmoСписокСпецодежды.Data.UpdateDataSync(this);
                 return;
             }

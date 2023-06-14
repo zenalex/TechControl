@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2023.6.13.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -3376,15 +3376,6 @@
     <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\КомплектыСпецодежды\УчетСпецодеждыИСИЗКомплектыСпецодеждыТаблицаКомплектаСпецодежды.Строка.cs">
       <NsgOwnerGuid>8396e326-26ac-475f-a29a-61152e8f2f2e</NsgOwnerGuid>
       <NsgOwnerName>УчетСпецодеждыИСИЗКомплектыСпецодеждыТаблицаКомплектаСпецодежды</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\Склады\Склады.NsgInit.cs">
-      <NsgOwnerGuid>acbaecc9-e512-42af-a13a-1423d08083d1</NsgOwnerGuid>
-      <NsgOwnerName>Склады</NsgOwnerName>
-      <DependentUpon>Склады.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\Склады\Склады.cs">
-      <NsgOwnerGuid>acbaecc9-e512-42af-a13a-1423d08083d1</NsgOwnerGuid>
-      <NsgOwnerName>Склады</NsgOwnerName>
     </Compile>
   </ItemGroup>
   <ItemGroup>
