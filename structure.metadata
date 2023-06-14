@@ -9765,6 +9765,7 @@
                 <param name="Учет.ПриходнаяНакладная" />
                 <param name="Учет.Перемещение" />
                 <param name="Учет.ПодтверждениеПеремещения" />
+                <param name="УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="f6becf23-3c01-4cd2-8da2-cfded5c1c9b1" type="NsgDataEnumReference" editoraccess="ReadOnly" name="ВидДвижения" visible="true" description="Вид движения" field="_Sign" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Сервис" refname="ВидыДвижений">
@@ -9846,6 +9847,7 @@
                 <param name="Учет.ПриходнаяНакладная" />
                 <param name="Учет.Перемещение" />
                 <param name="Учет.ПодтверждениеПеремещения" />
+                <param name="УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="09a01ff7-bfb9-4516-87f0-1274e0841856" type="NsgDataDateTime" editoraccess="Hidden" name="ДатаДокумента" visible="true" description="Дата документа" field="_Date" index="Sort" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
@@ -11638,7 +11640,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="31001a05-4497-4648-ba6b-fd527adacbd2" type="NsgDataString" editoraccess="Full" name="УникальныйНомер" visible="true" description="Уникальный номер" field="UnikalnyijNomer" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+            <NsgSimpleObject Guid="31001a05-4497-4648-ba6b-fd527adacbd2" type="NsgDataString" editoraccess="Full" name="УникальныйНомер" visible="true" description="Уникальный номер" field="UnikalnyijNomer" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -11773,12 +11775,12 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="31001a05-4497-4648-ba6b-fd527adacbd2" type="NsgDataString" editoraccess="Full" name="УникальныйНомер" visible="true" description="Уникальный номер" field="UnikalnyijNomer" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+            <NsgSimpleObject Guid="489471a5-b0eb-4d15-b7ba-236b61211bf1" type="NsgDataTypedReference" editoraccess="Full" name="Размер" visible="true" description="Размер" field="Razmer" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Размеры">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="489471a5-b0eb-4d15-b7ba-236b61211bf1" type="NsgDataTypedReference" editoraccess="Full" name="Размер" visible="true" description="Размер" field="Razmer" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Размеры">
+            <NsgSimpleObject Guid="eb7c355c-d6a8-47e5-9c8a-a5d08c52095c" type="NsgDataString" editoraccess="Full" name="УникальныйНомер" visible="true" description="Уникальный номер" field="UnikalnyijNomer" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -12031,6 +12033,7 @@
           </DataInterfaces>
           <Registers>
             <register name="УчетСпецодеждыИСИЗ.УчетСпецодеждыИСИЗ" regime="Write" />
+            <register name="Учет.ОстаткиНоменклатуры" regime="Write" />
           </Registers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="acbaecc9-e512-42af-a13a-1423d08083d1" type="NsgDataDictionary" editoraccess="Full" name="Склады" visible="true" description="Справочник" group="УчетСпецодеждыИСИЗ" table="_dic_Sklady" searchfield="Наименование" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="false">
