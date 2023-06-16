@@ -35,8 +35,9 @@ namespace TechControl.Метаданные.Администрирование
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.nbУдалениеЛишнихДолжностей = new NsgSoft.Design.NsgButton();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.nbУдалениеСотрудников = new NsgSoft.Design.NsgButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -46,6 +47,7 @@ namespace TechControl.Метаданные.Администрирование
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbУдалениеЛишнихДолжностей)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbУдалениеСотрудников)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreateReport
@@ -85,6 +87,7 @@ namespace TechControl.Метаданные.Администрирование
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.nbУдалениеСотрудников);
             this.tabPage1.Controls.Add(this.nbУдалениеЛишнихДолжностей);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -94,16 +97,6 @@ namespace TechControl.Метаданные.Администрирование
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 74);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // nbУдалениеЛишнихДолжностей
             // 
             this.nbУдалениеЛишнихДолжностей.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -111,12 +104,36 @@ namespace TechControl.Метаданные.Администрирование
             this.nbУдалениеЛишнихДолжностей.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.nbУдалениеЛишнихДолжностей.Location = new System.Drawing.Point(6, 6);
             this.nbУдалениеЛишнихДолжностей.Name = "nbУдалениеЛишнихДолжностей";
-            this.nbУдалениеЛишнихДолжностей.Size = new System.Drawing.Size(171, 25);
+            this.nbУдалениеЛишнихДолжностей.Size = new System.Drawing.Size(212, 25);
             this.nbУдалениеЛишнихДолжностей.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
             this.nbУдалениеЛишнихДолжностей.TabIndex = 0;
             this.nbУдалениеЛишнихДолжностей.Text = "Удаление лишних должностей";
             this.nbУдалениеЛишнихДолжностей.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
             this.nbУдалениеЛишнихДолжностей.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbУдалениеЛишнихДолжностей_AsyncClick);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(734, 481);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // nbУдалениеСотрудников
+            // 
+            this.nbУдалениеСотрудников.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.nbУдалениеСотрудников.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nbУдалениеСотрудников.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nbУдалениеСотрудников.Location = new System.Drawing.Point(6, 37);
+            this.nbУдалениеСотрудников.Name = "nbУдалениеСотрудников";
+            this.nbУдалениеСотрудников.Size = new System.Drawing.Size(212, 25);
+            this.nbУдалениеСотрудников.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.nbУдалениеСотрудников.TabIndex = 1;
+            this.nbУдалениеСотрудников.Text = "Удаление лишних сотрудников";
+            this.nbУдалениеСотрудников.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nbУдалениеСотрудников.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbУдалениеСотрудников_AsyncClick);
             // 
             // СлужебныеДействияФорма
             // 
@@ -136,6 +153,7 @@ namespace TechControl.Метаданные.Администрирование
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nbУдалениеЛишнихДолжностей)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbУдалениеСотрудников)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -146,5 +164,6 @@ namespace TechControl.Метаданные.Администрирование
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         protected NsgSoft.Design.NsgButton nbУдалениеЛишнихДолжностей;
+        protected NsgSoft.Design.NsgButton nbУдалениеСотрудников;
     }
 }

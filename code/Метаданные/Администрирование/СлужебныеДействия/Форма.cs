@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using NsgSoft.Database;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
 using TechControl.Метаданные.Мониторинг;
@@ -44,6 +45,19 @@ namespace TechControl.Метаданные.Администрирование
 
             var всеДолжности = Должности.Новый().FindAll(cmp);
             foreach (var item in всеДолжности)
+            {
+                NsgSettings.MainForm.ShowMessage($"Удаляется {item}");
+                item.Delete();
+            }
+        }
+
+        private void nbУдалениеСотрудников_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            var cmp = new NsgCompare();
+            cmp.Add(Сотрудники.Names.ЗагрузочныйИдентификатор, string.Empty, NsgComparison.NotEqual);
+
+            var всеСотрудники = Сотрудники.Новый().FindAll(cmp);
+            foreach (var item in всеСотрудники)
             {
                 NsgSettings.MainForm.ShowMessage($"Удаляется {item}");
                 item.Delete();
