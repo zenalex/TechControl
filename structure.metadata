@@ -8462,6 +8462,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="fee67bad-efc8-43fa-a738-a021462163de" type="NsgDataInteger" editoraccess="Full" name="СрокПоставкиДней" visible="true" description="Срок поставки дней" field="SrokPostavkiDneij" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -8477,6 +8482,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="СрокПоставкиДней" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>

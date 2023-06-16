@@ -35,7 +35,10 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                 vmoДопДанныеДляОтчета.Data.CurrentRow = vmoДопДанныеДляОтчета.Data.MemoryTable.NewRow();
             }
 
-            nsgVisualMultipleObject.Data.MemoryTable.Clear();
+            if (nsgVisualMultipleObject.Data.CurrentRow == null)
+            {
+                nsgVisualMultipleObject.Data.CurrentRow = nsgVisualMultipleObject.Data.MemoryTable.NewRow();
+            }
 
             vmoСписокСпецодежды.Data.BeginUpdateData();
             vmoСписокСпецодежды.Data.MemoryTable.Clear();
@@ -246,6 +249,10 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                                     var остаткиПоСотруднику = остаткиПоСпецодежде.AllRows.Where(x => (x[РегистрУчетСпецодежды.Names.НоменклатураСпецодеждыИСИЗ].ToReferent() as Номенклатура) == ном
                                         && (x[РегистрУчетСпецодежды.Names.КомплектСпецодежды].ToReferent() as КомплектыСпецодежды) == компл).ToArray();
 
+                                    if (!всегоТребуетсяСпецодежды.ContainsKey(key))
+                                    {
+                                        всегоТребуетсяСпецодежды[key] = 0;
+                                    }
                                     if (остаткиПоСотруднику.Length > 0)
                                     {
                                         var строкаОстатков = остаткиПоСотруднику.FirstOrDefault();
@@ -341,7 +348,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                         && (x[РегистрУчетСпецодежды.Names.КомплектСпецодежды].ToReferent() as КомплектыСпецодежды) == компл))
                         {
                             ужеВыдано++;
-                            if (nom.СрокЭксплуатации != 0 && item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths((int)nom.СрокЭксплуатации) > DateTime.Now)
+                            if (nom.СрокЭксплуатации != 0 && item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths((int)nom.СрокЭксплуатации) < DateTime.Now)
                             {
                                 всегоЗаконченСрок++;
                             }
@@ -353,6 +360,9 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                         }
 
                         row[ВсегоВыдано_vmoСписокСпецодежды].Value = ужеВыдано;
+                        row[ТребуетсяПоКомплекту_vmoСписокСпецодежды].Value = строкаСпецодежды.Количество;
+                        var кВыдаче = строкаСпецодежды.Количество - (ужеВыдано - всегоЗаконченСрок);
+                        row[КВыдаче_vmoСписокСпецодежды].Value = кВыдаче <0 ? 0 : кВыдаче;
                         row[ВсегоЗаконченСрок_vmoСписокСпецодежды].Value = всегоЗаконченСрок;
                     }
 
