@@ -10,6 +10,7 @@
         <group name="Учет" />
         <group name="Грузы" />
         <group name="УчетСпецодеждыИСИЗ" />
+        <group name="Администрирование" />
       </Groups>
       <ObjectList>
         <NsgMultipleObject Guid="d0b1a2f4-feef-4cfb-8646-58889c209467" type="NsgDataAssemblyObject" editoraccess="Limited" name="DataAssemblyObject" visible="true" description="Data assembly object" group="Сервис" table="NsgAssemblyObject" searchfield="_Code" useFullTextIndex="true" visibleadminonly="true" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="false">
@@ -4793,13 +4794,13 @@
             <container name="ДатаУвольнения" />
             <container name="ОбъектВыдачиСпецодежды" />
             <container name="ОсновнойОбъект" />
+            <container name="ЗагрузочныйИдентификатор" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="ЗагрузочныйИдентификатор" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -5012,13 +5013,13 @@
             <container name="ГруппаДолжностей" />
             <container name="Роль" />
             <container name="АккаунтПользователя" />
+            <container name="ЗагрузочныйИдентификатор" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="ЗагрузочныйИдентификатор" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -12181,6 +12182,31 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers />
+        </NsgMultipleObject>
+        <NsgMultipleObject Guid="807ae348-6c0e-4faa-8cd2-999a3462689e" type="NsgReportObject" editoraccess="Full" name="СлужебныеДействия" visible="true" description="Отчет" group="Администрирование" table="_report_SluzhebnyeDeijst" useFullTextIndex="true" visibleadminonly="true">
+          <NsgLanguageString type="presentation">
+            <presentation lang="(Default)" value="" />
+          </NsgLanguageString>
+          <NsgLanguageString type="valuemask">
+            <presentation lang="(Default)" value="{Представление}" />
+          </NsgLanguageString>
+          <ObjectList>
+            <NsgSimpleObject Guid="52e4681c-4cde-42f5-bfdb-cbe195e40de6" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="b4ee0951-fa22-4133-84ae-0d86da27eac5" type="NsgDataInteger" editoraccess="Hidden" name="Автоинкремент" visible="true" description="Автоинкремент" field="_AutoInc" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="acc88ba2-c6ad-4c91-bd73-cbb7e8e3230a" type="NsgDataForm" editoraccess="Full" name="Форма" visible="true" description="Форма" field="Forma" index="None" subtype="ElementForm" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" class="TechControl.Метаданные.Администрирование.СлужебныеДействияФорма">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+          </ObjectList>
         </NsgMultipleObject>
       </ObjectList>
     </NsgMetaData>

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2023.6.13.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -3485,5 +3485,29 @@
       <NsgOwnerGuid>0668065b-f9e1-42c0-8eb9-34c45e62562d</NsgOwnerGuid>
       <NsgOwnerName>УчетСпецодеждыИСИЗРегистрУчетСпецодеждыДвижения</NsgOwnerName>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Администрирование\СлужебныеДействия\СлужебныеДействия.NsgInit.cs">
+      <NsgOwnerGuid>807ae348-6c0e-4faa-8cd2-999a3462689e</NsgOwnerGuid>
+      <NsgOwnerName>СлужебныеДействия</NsgOwnerName>
+      <DependentUpon>СлужебныеДействия.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Администрирование\СлужебныеДействия\СлужебныеДействия.cs">
+      <NsgOwnerGuid>807ae348-6c0e-4faa-8cd2-999a3462689e</NsgOwnerGuid>
+      <NsgOwnerName>СлужебныеДействия</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Администрирование\СлужебныеДействия\Форма.Designer.cs">
+      <NsgOwnerGuid>807ae348-6c0e-4faa-8cd2-999a3462689e</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Администрирование\СлужебныеДействия\Форма.cs">
+      <NsgOwnerGuid>807ae348-6c0e-4faa-8cd2-999a3462689e</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Администрирование\СлужебныеДействия\Форма.resx">
+      <NsgOwnerGuid>807ae348-6c0e-4faa-8cd2-999a3462689e</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
