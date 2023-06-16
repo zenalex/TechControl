@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://TitanUtilityService.IUtilityWebService" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UtilityWebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsdl:import namespace="http://TitanUtilityService.IUtilityWebService" location="" />
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://TitanUtilityService.ITechControlUtilityWebService" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UtilityWebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://TitanUtilityService.ITechControlUtilityWebService" location="" />
   <wsdl:types />
-  <wsdl:binding name="BasicHttpBinding_IUtilityWebService" type="i0:IUtilityWebService">
+  <wsdl:binding name="BasicHttpBinding_ITechControlUtilityWebService" type="i0:ITechControlUtilityWebService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="IsAddressGuardedByPartners">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/IsAddressGuardedByPartners" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/IsAddressGuardedByPartners" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -14,7 +14,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetAddressByMonNumber">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressByMonNumber" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetAddressByMonNumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -23,7 +23,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetAddressesByMonNumber">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressesByMonNumber" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetAddressesByMonNumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -32,7 +32,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="MonNumbersToGetPushMessages">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/MonNumbersToGetPushMessages" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/MonNumbersToGetPushMessages" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -41,7 +41,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateLKPushMessage">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/CreateLKPushMessage" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/CreateLKPushMessage" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -50,7 +50,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetObjectStatusString">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetObjectStatusString" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetObjectStatusString" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -59,7 +59,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetGBREmployees">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetGBREmployees" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetGBREmployees" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -68,7 +68,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEmployeePhoto">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetEmployeePhoto" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetEmployeePhoto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -77,7 +77,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetRawCobraObjects">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjects" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetRawCobraObjects" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -86,7 +86,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetRawCobraObjectsOneObject">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjectsOneObject" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetRawCobraObjectsOneObject" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -95,7 +95,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="FindGBRVisitations">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/FindGBRVisitations" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/FindGBRVisitations" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -104,7 +104,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AsteriskOriginate">
-      <soap:operation soapAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/AsteriskOriginate" style="document" />
+      <soap:operation soapAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/AsteriskOriginate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -114,7 +114,7 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="UtilityWebService">
-    <wsdl:port name="BasicHttpBinding_IUtilityWebService" binding="tns:BasicHttpBinding_IUtilityWebService">
+    <wsdl:port name="BasicHttpBinding_ITechControlUtilityWebService" binding="tns:BasicHttpBinding_ITechControlUtilityWebService">
       <soap:address location="http://10.10.4.160:5072/UtilityService.svc" />
     </wsdl:port>
   </wsdl:service>

@@ -389,135 +389,135 @@ namespace TechControl.UtilityServiceWeb {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://TitanUtilityService.IUtilityWebService", ConfigurationName="UtilityServiceWeb.IUtilityWebService")]
-    public interface IUtilityWebService {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://TitanUtilityService.ITechControlUtilityWebService", ConfigurationName="UtilityServiceWeb.ITechControlUtilityWebService")]
+    public interface ITechControlUtilityWebService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/IsAddressGuarded" +
-            "ByPartners", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/IsAddressGuarded" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/IsAddressGuarded" +
+            "ByPartners", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/IsAddressGuarded" +
             "ByPartnersResponse")]
         bool IsAddressGuardedByPartners(string monNum);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/IsAddressGuarded" +
-            "ByPartners", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/IsAddressGuarded" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/IsAddressGuarded" +
+            "ByPartners", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/IsAddressGuarded" +
             "ByPartnersResponse")]
         System.Threading.Tasks.Task<bool> IsAddressGuardedByPartnersAsync(string monNum);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressByMonN" +
-            "umber", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressByMonN" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetAddressByMonN" +
+            "umber", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetAddressByMonN" +
             "umberResponse")]
         TechControl.UtilityServiceWeb.AddressInfo[] GetAddressByMonNumber(string monNum, string numType);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressByMonN" +
-            "umber", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressByMonN" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetAddressByMonN" +
+            "umber", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetAddressByMonN" +
             "umberResponse")]
         System.Threading.Tasks.Task<TechControl.UtilityServiceWeb.AddressInfo[]> GetAddressByMonNumberAsync(string monNum, string numType);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressesByMo" +
-            "nNumber", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressesByMo" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetAddressesByMo" +
+            "nNumber", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetAddressesByMo" +
             "nNumberResponse")]
         TechControl.UtilityServiceWeb.AddressInfo[] GetAddressesByMonNumber(string[] monNums);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressesByMo" +
-            "nNumber", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetAddressesByMo" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetAddressesByMo" +
+            "nNumber", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetAddressesByMo" +
             "nNumberResponse")]
         System.Threading.Tasks.Task<TechControl.UtilityServiceWeb.AddressInfo[]> GetAddressesByMonNumberAsync(string[] monNums);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/MonNumbersToGetP" +
-            "ushMessages", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/MonNumbersToGetP" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/MonNumbersToGetP" +
+            "ushMessages", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/MonNumbersToGetP" +
             "ushMessagesResponse")]
         string[] MonNumbersToGetPushMessages();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/MonNumbersToGetP" +
-            "ushMessages", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/MonNumbersToGetP" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/MonNumbersToGetP" +
+            "ushMessages", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/MonNumbersToGetP" +
             "ushMessagesResponse")]
         System.Threading.Tasks.Task<string[]> MonNumbersToGetPushMessagesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/CreateLKPushMess" +
-            "age", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/CreateLKPushMess" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/CreateLKPushMess" +
+            "age", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/CreateLKPushMess" +
             "ageResponse")]
         void CreateLKPushMessage(string monNumber, string code, string LKStatus, string zone, string user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/CreateLKPushMess" +
-            "age", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/CreateLKPushMess" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/CreateLKPushMess" +
+            "age", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/CreateLKPushMess" +
             "ageResponse")]
         System.Threading.Tasks.Task CreateLKPushMessageAsync(string monNumber, string code, string LKStatus, string zone, string user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetObjectStatusS" +
-            "tring", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetObjectStatusS" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetObjectStatusS" +
+            "tring", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetObjectStatusS" +
             "tringResponse")]
         string GetObjectStatusString(string monNumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetObjectStatusS" +
-            "tring", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetObjectStatusS" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetObjectStatusS" +
+            "tring", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetObjectStatusS" +
             "tringResponse")]
         System.Threading.Tasks.Task<string> GetObjectStatusStringAsync(string monNumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetGBREmployees", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetGBREmployeesR" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetGBREmployees", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetGBREmployeesR" +
             "esponse")]
         TechControl.UtilityServiceWeb.NsgEmployee[] GetGBREmployees();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetGBREmployees", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetGBREmployeesR" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetGBREmployees", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetGBREmployeesR" +
             "esponse")]
         System.Threading.Tasks.Task<TechControl.UtilityServiceWeb.NsgEmployee[]> GetGBREmployeesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetEmployeePhoto" +
-            "", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetEmployeePhoto" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetEmployeePhoto" +
+            "", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetEmployeePhoto" +
             "Response")]
         string GetEmployeePhoto(string TabelNumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetEmployeePhoto" +
-            "", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetEmployeePhoto" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetEmployeePhoto" +
+            "", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetEmployeePhoto" +
             "Response")]
         System.Threading.Tasks.Task<string> GetEmployeePhotoAsync(string TabelNumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjec" +
-            "ts", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjec" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetRawCobraObjec" +
+            "ts", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetRawCobraObjec" +
             "tsResponse")]
         string GetRawCobraObjects(string[] fields);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjec" +
-            "ts", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjec" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetRawCobraObjec" +
+            "ts", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetRawCobraObjec" +
             "tsResponse")]
         System.Threading.Tasks.Task<string> GetRawCobraObjectsAsync(string[] fields);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjec" +
-            "tsOneObject", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjec" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetRawCobraObjec" +
+            "tsOneObject", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetRawCobraObjec" +
             "tsOneObjectResponse")]
         string GetRawCobraObjectsOneObject(string monNumber, string[] fields);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjec" +
-            "tsOneObject", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/GetRawCobraObjec" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetRawCobraObjec" +
+            "tsOneObject", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/GetRawCobraObjec" +
             "tsOneObjectResponse")]
         System.Threading.Tasks.Task<string> GetRawCobraObjectsOneObjectAsync(string monNumber, string[] fields);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/FindGBRVisitatio" +
-            "ns", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/FindGBRVisitatio" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/FindGBRVisitatio" +
+            "ns", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/FindGBRVisitatio" +
             "nsResponse")]
         TechControl.UtilityServiceWeb.NsgVisitation[] FindGBRVisitations();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/FindGBRVisitatio" +
-            "ns", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/FindGBRVisitatio" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/FindGBRVisitatio" +
+            "ns", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/FindGBRVisitatio" +
             "nsResponse")]
         System.Threading.Tasks.Task<TechControl.UtilityServiceWeb.NsgVisitation[]> FindGBRVisitationsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/AsteriskOriginat" +
-            "e", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/AsteriskOriginat" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/AsteriskOriginat" +
+            "e", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/AsteriskOriginat" +
             "eResponse")]
         void AsteriskOriginate(string clientPhone, string gbrPhone);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/AsteriskOriginat" +
-            "e", ReplyAction="http://TitanUtilityService.IUtilityWebService/IUtilityWebService/AsteriskOriginat" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/AsteriskOriginat" +
+            "e", ReplyAction="http://TitanUtilityService.ITechControlUtilityWebService/ITechControlUtilityWebService/AsteriskOriginat" +
             "eResponse")]
         System.Threading.Tasks.Task AsteriskOriginateAsync(string clientPhone, string gbrPhone);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IUtilityWebServiceChannel : TechControl.UtilityServiceWeb.IUtilityWebService, System.ServiceModel.IClientChannel {
+    public interface ITechControlUtilityWebServiceChannel : TechControl.UtilityServiceWeb.ITechControlUtilityWebService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UtilityWebServiceClient : System.ServiceModel.ClientBase<TechControl.UtilityServiceWeb.IUtilityWebService>, TechControl.UtilityServiceWeb.IUtilityWebService {
+    public partial class UtilityWebServiceClient : System.ServiceModel.ClientBase<TechControl.UtilityServiceWeb.ITechControlUtilityWebService>, TechControl.UtilityServiceWeb.ITechControlUtilityWebService {
         
         public UtilityWebServiceClient() {
         }

@@ -22,9 +22,9 @@
     <MetadataSource Address="http://10.10.4.160:5072/UtilityService.svc/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TitanUtilityService.IUtilityWebService.wsdl" MetadataType="Wsdl" ID="a9a2025e-d292-4075-be37-8d2ddd920c5f" SourceId="1" SourceUrl="http://10.10.4.160:5072/UtilityService.svc/mex" />
+    <MetadataFile FileName="TitanUtilityService.ITechControlUtilityWebService.wsdl" MetadataType="Wsdl" ID="a9a2025e-d292-4075-be37-8d2ddd920c5f" SourceId="1" SourceUrl="http://10.10.4.160:5072/UtilityService.svc/mex" />
     <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="0738be3d-1f8e-4e9c-bb19-266ca7287305" SourceId="1" SourceUrl="http://10.10.4.160:5072/UtilityService.svc/mex" />
-    <MetadataFile FileName="TitanUtilityService.IUtilityWebService.xsd" MetadataType="Schema" ID="448b7bdb-42f9-4060-925b-efda1e38eb59" SourceId="1" SourceUrl="http://10.10.4.160:5072/UtilityService.svc/mex" />
+    <MetadataFile FileName="TitanUtilityService.ITechControlUtilityWebService.xsd" MetadataType="Schema" ID="448b7bdb-42f9-4060-925b-efda1e38eb59" SourceId="1" SourceUrl="http://10.10.4.160:5072/UtilityService.svc/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="a548d5c0-57b1-4a43-8aab-4df60cb04dd8" SourceId="1" SourceUrl="http://10.10.4.160:5072/UtilityService.svc/mex" />
     <MetadataFile FileName="TitanUtilityService.xsd" MetadataType="Schema" ID="58999694-bac7-4ae6-add8-34e5fac49606" SourceId="1" SourceUrl="http://10.10.4.160:5072/UtilityService.svc/mex" />
     <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="d51b552d-6bb6-4f64-a6c4-f2ff76c8d82b" SourceId="1" SourceUrl="http://10.10.4.160:5072/UtilityService.svc/mex" />

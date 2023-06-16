@@ -3318,13 +3318,13 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="Сотрудник" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Сотрудник" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4759,6 +4759,21 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="f61a1649-dafa-4393-b07a-ac97287ff5e6" type="NsgDataTypedReference" editoraccess="Full" name="ОбъектВыдачиСпецодежды" visible="true" description="Объект выдачи спецодежды" field="ObektVydachiSpeco" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Объекты">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="2eea8cbf-15f0-45ef-82d3-930b4c7196bb" type="NsgDataTypedReference" editoraccess="Full" name="ОсновнойОбъект" visible="true" description="Основной объект" field="OsnovnoijObekt" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Объекты">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="3e1dfc80-680b-447b-a19c-f4d3790081a9" type="NsgDataString" editoraccess="Full" name="ЗагрузочныйИдентификатор" visible="true" description="Загрузочный идентификатор" field="ZagruzochnyijIden" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -4776,12 +4791,15 @@
             <container name="ДатаРождения" />
             <container name="ДатаПриемаНаРаботу" />
             <container name="ДатаУвольнения" />
+            <container name="ОбъектВыдачиСпецодежды" />
+            <container name="ОсновнойОбъект" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ЗагрузочныйИдентификатор" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -4980,6 +4998,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="2fe7bdf3-9f41-416f-9720-ab4d24f02efb" type="NsgDataString" editoraccess="Full" name="ЗагрузочныйИдентификатор" visible="true" description="Загрузочный идентификатор" field="ZagruzochnyijIden" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -4995,6 +5018,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ЗагрузочныйИдентификатор" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
