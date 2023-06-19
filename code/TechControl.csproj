@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2023.6.13.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -3509,5 +3509,96 @@
       <DependentUpon>Форма.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\УчетИнструмента\РегистрУчетИнструмента\РегистрУчетИнструмента.NsgInit.cs">
+      <NsgOwnerGuid>5f920070-8662-4144-9726-1ceb59887840</NsgOwnerGuid>
+      <NsgOwnerName>РегистрУчетИнструмента</NsgOwnerName>
+      <DependentUpon>РегистрУчетИнструмента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\РегистрУчетИнструмента\РегистрУчетИнструмента.cs">
+      <NsgOwnerGuid>5f920070-8662-4144-9726-1ceb59887840</NsgOwnerGuid>
+      <NsgOwnerName>РегистрУчетИнструмента</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\КонтрольИнструмента\КонтрольИнструмента.NsgInit.cs">
+      <NsgOwnerGuid>245aac1e-3f07-4143-aca9-7759da695b44</NsgOwnerGuid>
+      <NsgOwnerName>КонтрольИнструмента</NsgOwnerName>
+      <DependentUpon>КонтрольИнструмента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\КонтрольИнструмента\КонтрольИнструмента.cs">
+      <NsgOwnerGuid>245aac1e-3f07-4143-aca9-7759da695b44</NsgOwnerGuid>
+      <NsgOwnerName>КонтрольИнструмента</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\КонтрольИнструмента\Форма.Designer.cs">
+      <NsgOwnerGuid>245aac1e-3f07-4143-aca9-7759da695b44</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\КонтрольИнструмента\Форма.cs">
+      <NsgOwnerGuid>245aac1e-3f07-4143-aca9-7759da695b44</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\УчетИнструмента\КонтрольИнструмента\Форма.resx">
+      <NsgOwnerGuid>245aac1e-3f07-4143-aca9-7759da695b44</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\УчетИнструмента\ПеремещениеИнструмента\УчетИнструментаПеремещениеИнструментаТаблица.NsgInit.cs">
+      <NsgOwnerGuid>bc7bc86e-e1fd-4a3c-a05a-f5cc02341cfb</NsgOwnerGuid>
+      <NsgOwnerName>УчетИнструментаПеремещениеИнструментаТаблица</NsgOwnerName>
+      <DependentUpon>УчетИнструментаПеремещениеИнструментаТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\ПеремещениеИнструмента\УчетИнструментаПеремещениеИнструментаТаблица.cs">
+      <NsgOwnerGuid>bc7bc86e-e1fd-4a3c-a05a-f5cc02341cfb</NsgOwnerGuid>
+      <NsgOwnerName>УчетИнструментаПеремещениеИнструментаТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\ПеремещениеИнструмента\УчетИнструментаПеремещениеИнструментаТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>bc7bc86e-e1fd-4a3c-a05a-f5cc02341cfb</NsgOwnerGuid>
+      <NsgOwnerName>УчетИнструментаПеремещениеИнструментаТаблица</NsgOwnerName>
+      <DependentUpon>УчетИнструментаПеремещениеИнструментаТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\ПеремещениеИнструмента\УчетИнструментаПеремещениеИнструментаТаблица.Строка.cs">
+      <NsgOwnerGuid>bc7bc86e-e1fd-4a3c-a05a-f5cc02341cfb</NsgOwnerGuid>
+      <NsgOwnerName>УчетИнструментаПеремещениеИнструментаТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\ПеремещениеИнструмента\ПеремещениеИнструмента.NsgInit.cs">
+      <NsgOwnerGuid>396101d3-491c-4740-abf1-298541aa558f</NsgOwnerGuid>
+      <NsgOwnerName>ПеремещениеИнструмента</NsgOwnerName>
+      <DependentUpon>ПеремещениеИнструмента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\ПеремещениеИнструмента\ПеремещениеИнструмента.cs">
+      <NsgOwnerGuid>396101d3-491c-4740-abf1-298541aa558f</NsgOwnerGuid>
+      <NsgOwnerName>ПеремещениеИнструмента</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\ПеремещениеИнструмента\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>396101d3-491c-4740-abf1-298541aa558f</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\ПеремещениеИнструмента\ФормаЭлемента.cs">
+      <NsgOwnerGuid>396101d3-491c-4740-abf1-298541aa558f</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\УчетИнструмента\ПеремещениеИнструмента\ФормаЭлемента.resx">
+      <NsgOwnerGuid>396101d3-491c-4740-abf1-298541aa558f</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\УчетИнструмента\РегистрУчетИнструмента\УчетИнструментаРегистрУчетИнструментаДвижения.NsgInit.cs">
+      <NsgOwnerGuid>79cf45d6-5d9a-4265-b313-39fa3c5aa375</NsgOwnerGuid>
+      <NsgOwnerName>УчетИнструментаРегистрУчетИнструментаДвижения</NsgOwnerName>
+      <DependentUpon>УчетИнструментаРегистрУчетИнструментаДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\РегистрУчетИнструмента\УчетИнструментаРегистрУчетИнструментаДвижения.cs">
+      <NsgOwnerGuid>79cf45d6-5d9a-4265-b313-39fa3c5aa375</NsgOwnerGuid>
+      <NsgOwnerName>УчетИнструментаРегистрУчетИнструментаДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\РегистрУчетИнструмента\УчетИнструментаРегистрУчетИнструментаДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>79cf45d6-5d9a-4265-b313-39fa3c5aa375</NsgOwnerGuid>
+      <NsgOwnerName>УчетИнструментаРегистрУчетИнструментаДвижения</NsgOwnerName>
+      <DependentUpon>УчетИнструментаРегистрУчетИнструментаДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетИнструмента\РегистрУчетИнструмента\УчетИнструментаРегистрУчетИнструментаДвижения.Строка.cs">
+      <NsgOwnerGuid>79cf45d6-5d9a-4265-b313-39fa3c5aa375</NsgOwnerGuid>
+      <NsgOwnerName>УчетИнструментаРегистрУчетИнструментаДвижения</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
