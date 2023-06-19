@@ -64,7 +64,10 @@ namespace TechControl.Метаданные.Учет
             this.ПоследнееИзменение = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.ТипНоменклатуры = new TechControl.Метаданные.Учет.ТипНоменклатуры.ColumnDescriptor();
             this.КатегорияНоменклатуры = new TechControl.Метаданные.Учет.КатегорияНоменклатуры.ColumnDescriptor();
+            this.СрокПоставкиДней = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.Родитель = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
+            this.nsgLabel8 = new NsgSoft.Forms.NsgLabel();
+            this.nsgInput8 = new NsgSoft.Forms.NsgInput();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -90,6 +93,7 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput8)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -382,6 +386,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ПоследнееИзменение);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ТипНоменклатуры);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.КатегорияНоменклатуры);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.СрокПоставкиДней);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Родитель);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.MetaDataName = "Метаданные";
@@ -439,7 +444,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgLabel2.IsInitialized = false;
             this.nsgLabel2.Location = new System.Drawing.Point(9, 42);
             this.nsgLabel2.MetaDataName = "";
-            this.nsgLabel2.Name = "nsgLabel1";
+            this.nsgLabel2.Name = "nsgLabel2";
             this.nsgLabel2.Requsite = "";
             this.nsgLabel2.Size = new System.Drawing.Size(26, 13);
             this.nsgLabel2.TabIndex = 14;
@@ -483,7 +488,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgLabel3.IsInitialized = false;
             this.nsgLabel3.Location = new System.Drawing.Point(220, 42);
             this.nsgLabel3.MetaDataName = "";
-            this.nsgLabel3.Name = "nsgLabel1";
+            this.nsgLabel3.Name = "nsgLabel3";
             this.nsgLabel3.Requsite = "";
             this.nsgLabel3.Size = new System.Drawing.Size(26, 13);
             this.nsgLabel3.TabIndex = 16;
@@ -527,7 +532,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgLabel4.IsInitialized = false;
             this.nsgLabel4.Location = new System.Drawing.Point(473, 12);
             this.nsgLabel4.MetaDataName = "";
-            this.nsgLabel4.Name = "nsgLabel1";
+            this.nsgLabel4.Name = "nsgLabel4";
             this.nsgLabel4.Requsite = "";
             this.nsgLabel4.Size = new System.Drawing.Size(48, 13);
             this.nsgLabel4.TabIndex = 18;
@@ -571,7 +576,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgLabel5.IsInitialized = false;
             this.nsgLabel5.Location = new System.Drawing.Point(9, 72);
             this.nsgLabel5.MetaDataName = "";
-            this.nsgLabel5.Name = "nsgLabel1";
+            this.nsgLabel5.Name = "nsgLabel5";
             this.nsgLabel5.Requsite = "";
             this.nsgLabel5.Size = new System.Drawing.Size(60, 13);
             this.nsgLabel5.TabIndex = 20;
@@ -615,7 +620,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgLabel6.IsInitialized = false;
             this.nsgLabel6.Location = new System.Drawing.Point(9, 102);
             this.nsgLabel6.MetaDataName = "";
-            this.nsgLabel6.Name = "nsgLabel1";
+            this.nsgLabel6.Name = "nsgLabel6";
             this.nsgLabel6.Requsite = "";
             this.nsgLabel6.Size = new System.Drawing.Size(92, 13);
             this.nsgLabel6.TabIndex = 22;
@@ -657,9 +662,9 @@ namespace TechControl.Метаданные.Учет
             this.nsgLabel7.ConfigurationName = "";
             this.nsgLabel7.FullName = "";
             this.nsgLabel7.IsInitialized = false;
-            this.nsgLabel7.Location = new System.Drawing.Point(244, 102);
+            this.nsgLabel7.Location = new System.Drawing.Point(11, 132);
             this.nsgLabel7.MetaDataName = "";
-            this.nsgLabel7.Name = "nsgLabel1";
+            this.nsgLabel7.Name = "nsgLabel7";
             this.nsgLabel7.Requsite = "";
             this.nsgLabel7.Size = new System.Drawing.Size(105, 13);
             this.nsgLabel7.TabIndex = 24;
@@ -677,7 +682,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput7.IsButton = false;
             this.nsgInput7.IsInitialized = true;
             this.nsgInput7.IsPassword = false;
-            this.nsgInput7.Location = new System.Drawing.Point(352, 99);
+            this.nsgInput7.Location = new System.Drawing.Point(119, 129);
             this.nsgInput7.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput7.Mask = "";
             this.nsgInput7.MetaDataName = "Метаданные";
@@ -881,6 +886,18 @@ namespace TechControl.Метаданные.Учет
             this.КатегорияНоменклатуры.SearchCondition.OwnerComponent = this.КатегорияНоменклатуры;
             this.КатегорияНоменклатуры.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // СрокПоставкиДней
+            // 
+            this.СрокПоставкиДней.AutoGenerated = true;
+            this.СрокПоставкиДней.CalcTotal = false;
+            this.СрокПоставкиДней.Caption = "СрокПоставкиДней";
+            this.СрокПоставкиДней.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.СрокПоставкиДней.Name = "СрокПоставкиДней";
+            this.СрокПоставкиДней.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.СрокПоставкиДней.PropertyType = typeof(long);
+            this.СрокПоставкиДней.SearchCondition.OwnerComponent = this.СрокПоставкиДней;
+            this.СрокПоставкиДней.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // Родитель
             // 
             this.Родитель.AutoGenerated = true;
@@ -892,6 +909,50 @@ namespace TechControl.Метаданные.Учет
             this.Родитель.SearchCondition.OwnerComponent = this.Родитель;
             this.Родитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // nsgLabel8
+            // 
+            this.nsgLabel8.AutoSize = true;
+            this.nsgLabel8.ConfigurationName = "";
+            this.nsgLabel8.FullName = "";
+            this.nsgLabel8.IsInitialized = false;
+            this.nsgLabel8.Location = new System.Drawing.Point(34, 158);
+            this.nsgLabel8.MetaDataName = "";
+            this.nsgLabel8.Name = "nsgLabel7";
+            this.nsgLabel8.Requsite = "";
+            this.nsgLabel8.Size = new System.Drawing.Size(82, 13);
+            this.nsgLabel8.TabIndex = 26;
+            this.nsgLabel8.Text = "Срок поставки";
+            // 
+            // nsgInput8
+            // 
+            this.nsgInput8.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput8.ConfigurationName = "";
+            this.nsgInput8.DisableLeaveControlEvent = false;
+            this.nsgInput8.FullName = "СрокПоставкиДней";
+            this.nsgInput8.FullTextSearch = false;
+            this.nsgInput8.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput8.IsButton = false;
+            this.nsgInput8.IsInitialized = true;
+            this.nsgInput8.IsPassword = false;
+            this.nsgInput8.Location = new System.Drawing.Point(119, 158);
+            this.nsgInput8.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput8.Mask = "";
+            this.nsgInput8.MetaDataName = "";
+            this.nsgInput8.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput8.Name = "NsgInput";
+            this.nsgInput8.ObjectImages = null;
+            this.nsgInput8.ObjectIndex = null;
+            this.nsgInput8.ObjectStrings = null;
+            this.nsgInput8.Requsite = "СрокПоставкиДней";
+            this.nsgInput8.SearchFieldName = "";
+            this.nsgInput8.ShowMultipleObjectInComboBox = false;
+            this.nsgInput8.ShowRowCount = 10;
+            this.nsgInput8.Size = new System.Drawing.Size(81, 20);
+            this.nsgInput8.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput8.TabIndex = 25;
+            this.nsgInput8.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // НоменклатураФормаЭлемента
             // 
             this.AllowDrop = true;
@@ -901,6 +962,8 @@ namespace TechControl.Метаданные.Учет
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(741, 410);
+            this.Controls.Add(this.nsgLabel8);
+            this.Controls.Add(this.nsgInput8);
             this.Controls.Add(this.nsgLabel7);
             this.Controls.Add(this.nsgInput7);
             this.Controls.Add(this.nsgLabel6);
@@ -940,6 +1003,8 @@ namespace TechControl.Метаданные.Учет
             this.Controls.SetChildIndex(this.nsgLabel6, 0);
             this.Controls.SetChildIndex(this.nsgInput7, 0);
             this.Controls.SetChildIndex(this.nsgLabel7, 0);
+            this.Controls.SetChildIndex(this.nsgInput8, 0);
+            this.Controls.SetChildIndex(this.nsgLabel8, 0);
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).EndInit();
@@ -967,6 +1032,7 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -988,21 +1054,24 @@ namespace TechControl.Метаданные.Учет
         protected NsgLabel nsgLabel7;
         protected NsgInput nsgInput7;
         protected NsgColumnDescriptor.Guid Идентификатор;
-        private NsgColumnDescriptor.Int64 Автоинкремент;
-        private NsgColumnDescriptor.Boolean ЭтоГруппа;
-        private NsgColumnDescriptor.Guid ИдентификаторРодителя;
-        private NsgColumnDescriptor.Byte Уровень;
-        private NsgColumnDescriptor.String ПрефиксКода;
-        private NsgColumnDescriptor.Int64 НомерКода;
-        private NsgColumnDescriptor.String Код;
-        private NsgColumnDescriptor.String Наименование;
-        private Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
-        private NsgColumnDescriptor.Int64 СрокЭксплуатации;
-        private СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor АккаунтПользователя;
+        protected NsgColumnDescriptor.Int64 Автоинкремент;
+        protected NsgColumnDescriptor.Boolean ЭтоГруппа;
+        protected NsgColumnDescriptor.Guid ИдентификаторРодителя;
+        protected NsgColumnDescriptor.Byte Уровень;
+        protected NsgColumnDescriptor.String ПрефиксКода;
+        protected NsgColumnDescriptor.Int64 НомерКода;
+        protected NsgColumnDescriptor.String Код;
+        protected NsgColumnDescriptor.String Наименование;
+        protected Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
+        protected NsgColumnDescriptor.Int64 СрокЭксплуатации;
+        protected СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor АккаунтПользователя;
         protected ВидСвойствНоменклатуры.ColumnDescriptor ВидНоменклатуры;
-        private NsgColumnDescriptor.DateTime ПоследнееИзменение;
-        private ТипНоменклатуры.ColumnDescriptor ТипНоменклатуры;
-        private КатегорияНоменклатуры.ColumnDescriptor КатегорияНоменклатуры;
+        protected NsgColumnDescriptor.DateTime ПоследнееИзменение;
+        protected ТипНоменклатуры.ColumnDescriptor ТипНоменклатуры;
+        protected КатегорияНоменклатуры.ColumnDescriptor КатегорияНоменклатуры;
+        protected NsgColumnDescriptor.Int64 СрокПоставкиДней;
         protected Номенклатура.ColumnDescriptor Родитель;
+        protected NsgLabel nsgLabel8;
+        protected NsgInput nsgInput8;
     }
 }

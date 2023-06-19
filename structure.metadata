@@ -8476,13 +8476,13 @@
             <container name="ПоследнееИзменение" />
             <container name="ТипНоменклатуры" />
             <container name="КатегорияНоменклатуры" />
+            <container name="СрокПоставкиДней" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="СрокПоставкиДней" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -11907,6 +11907,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="eec43468-2e4a-4713-b182-ae38fcd34757" type="NsgDataDateTime" editoraccess="Full" name="ДатаНачалаЭксплуатации" visible="true" description="Дата начала эксплуатации" field="DataNachalaEHkspl" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -11917,6 +11922,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="ДатаНачалаЭксплуатации" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
