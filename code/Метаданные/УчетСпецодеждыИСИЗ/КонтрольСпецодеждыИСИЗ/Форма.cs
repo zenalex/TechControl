@@ -50,6 +50,11 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             cmp.Add(Объекты.Names.Ответственный, user);
             cmp.Add(Объекты.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
 
+            var cmpСпецодежда = Номенклатура_vmoСписокСпецодежды.SearchCondition;
+            cmpСпецодежда.Clear();
+            cmpСпецодежда.Add(Номенклатура.Names.ТипНоменклатуры, ТипНоменклатуры.Спецодежда);
+            cmpСпецодежда.Add(Номенклатура.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+
             var отправитель = Объекты.Новый();
             if (отправитель.Find(cmp))
             {
@@ -453,6 +458,28 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             else
             {
                 _номерТаба = 2;
+            }
+        }
+
+        private void nsgIGrid1_CellRequestEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.ColumnName == РазмерКВыдаче_vmoСписокСпецодежды.Name)
+            {
+                var номенклатура = e.RowObject[Номенклатура_vmoСписокСпецодежды].ToReferent() as Номенклатура;
+                
+                if (!номенклатура.Selected)
+                {
+                    NsgSettings.MainForm.ShowMessage("Необходимо выбрать номенклатуру");
+                    e.Cancel = true;
+                    return;
+                }
+                else
+                {
+                    var вид = номенклатура.ВидНоменклатуры;
+                    var cmp = РазмерКВыдаче_vmoСписокСпецодежды.SearchCondition;
+                    cmp.Clear();
+                    cmp.Add(Размеры.Names.ВидСвойствНоменклатуры, вид);
+                }
             }
         }
     }

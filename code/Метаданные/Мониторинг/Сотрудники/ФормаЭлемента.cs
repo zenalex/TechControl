@@ -7,10 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
-
-
-
-
+using TechControl.Метаданные.Учет;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -23,23 +20,26 @@ namespace TechControl.Метаданные.Мониторинг
             InitializeComponent();
 		}
 
-		#region #Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-		#region #Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-		#region #Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-		#region #Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-	}
+        private void nsgIGrid1_CellRequestEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.ColumnName == Размер_vmoТаблицаРазмеров.Name)
+            {
+                var вид = e.RowObject[ВидСвойствНоменклатуры].ToReferent() as ВидСвойствНоменклатуры;
+                if (!вид.Selected)
+                {
+                    NsgSettings.MainForm.ShowMessage("Необходимо выбрать вид номенклатуры");
+                    e.Cancel = true;
+                    return;
+                }
+                else
+                {
+                    var cmp = Размер_vmoТаблицаРазмеров.SearchCondition;
+                    cmp.Clear();
+                    cmp.Add(Размеры.Names.ВидСвойствНоменклатуры, вид);
+                }
+            }
+        }
+    }
     
 
 

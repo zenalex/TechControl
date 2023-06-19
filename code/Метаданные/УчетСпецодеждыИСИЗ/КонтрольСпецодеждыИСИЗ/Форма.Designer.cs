@@ -335,6 +335,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.nsgIGrid1.SourceObject = this.vmoСписокСпецодежды;
             this.nsgIGrid1.TabIndex = 2;
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            this.nsgIGrid1.CellRequestEdit += new NsgSoft.Forms.NsgIGrid.NsgIGridCellEventHandler(this.nsgIGrid1_CellRequestEdit);
             // 
             // vmoСписокСпецодежды
             // 
@@ -427,7 +428,6 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.РазмерКВыдаче_vmoСписокСпецодежды.Name = "РазмерКВыдаче";
             this.РазмерКВыдаче_vmoСписокСпецодежды.NSGType = typeof(TechControl.Метаданные.Учет.Размеры);
             this.РазмерКВыдаче_vmoСписокСпецодежды.PropertyType = typeof(TechControl.Метаданные.Учет.Размеры);
-            this.РазмерКВыдаче_vmoСписокСпецодежды.ReadOnly = true;
             this.РазмерКВыдаче_vmoСписокСпецодежды.SearchCondition.OwnerComponent = this.РазмерКВыдаче_vmoСписокСпецодежды;
             this.РазмерКВыдаче_vmoСписокСпецодежды.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 

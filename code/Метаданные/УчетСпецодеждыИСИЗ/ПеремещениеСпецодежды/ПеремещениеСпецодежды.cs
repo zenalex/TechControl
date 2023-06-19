@@ -7,12 +7,28 @@ using System.IO;
 using NsgSoft.Common;
 using TechControl.Метаданные.Мониторинг;
 using TechControl.Метаданные.Учет;
+using TechControl.Метаданные._SystemTables;
 
 namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
 {
     
     public partial class ПеремещениеСпецодежды
     {
+        protected override List<Guid> BasePost()
+        {
+            if (Таблица.Count > 0)
+            {
+                var cmp = new NsgCompare();
+                cmp.Add(УчетСпецодеждыИСИЗПеремещениеСпецодеждыТаблица.Names.НоменклатураСпецодеждыИСИЗ + "." + Номенклатура.Names.ТипНоменклатуры , ТипНоменклатуры.Спецодежда, NsgComparison.NotEqual);
+                var row = Таблица.FindRow(cmp);
+                if (row != null)
+                {
+                    throw new Exception($"В документе указана номенклатура, не являющаяся спецодеждой: {row.НоменклатураСпецодеждыИСИЗ}");
+                }
+            }
+            return base.BasePost();
+        }
+
         protected override bool Handling()
         {
             РегистрУчетСпецодежды рег = РегистрУчетСпецодежды.Новый(this);

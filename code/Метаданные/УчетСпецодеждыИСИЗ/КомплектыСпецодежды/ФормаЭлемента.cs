@@ -5,12 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using NsgSoft.Database;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
-
-
-
-
+using TechControl.Метаданные.Учет;
 
 namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
 {
@@ -18,26 +16,19 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
     public partial class КомплектыСпецодеждыФормаЭлемента
 
     {
+        protected override void OnSetFormObject(NsgMultipleObject formObject)
+        {
+            var cmp = НоменклатураСпецодеждыИСИЗ.SearchCondition;
+            cmp.Add(Номенклатура.Names.ТипНоменклатуры, ТипНоменклатуры.Спецодежда);
+            cmp.Add(Номенклатура.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+
+            base.OnSetFormObject(formObject);
+        }
+
         public КомплектыСпецодеждыФормаЭлемента()
         {
             InitializeComponent();
 		}
-
-		#region #Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-		#region #Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-		#region #Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-		#region #Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
 
 	}
     

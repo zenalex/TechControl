@@ -13,6 +13,22 @@ namespace TechControl.Метаданные.Мониторинг
     
     public partial class Сотрудники
     {
+        protected override List<Guid> BasePost()
+        {
+            if (ТаблицаРазмеров.Count > 0)
+            {
+                Размеры размер = Размеры.Новый();
+                var cmp = new NsgCompare();
+                cmp.Add(МониторингСотрудникиТаблицаРазмеров.Names.Размер, размер);
+                var row = ТаблицаРазмеров.FindRow(cmp);
+                if (row != null)
+                {
+                    throw new Exception($"Не заполнен размер {row.ВидСвойствНоменклатуры}");
+                }
+            }
+            return base.BasePost();
+        }
+
         public Размеры РазмерНоменклатуры(Номенклатура номенклатура) 
         {
             Размеры размер = Размеры.Новый();
