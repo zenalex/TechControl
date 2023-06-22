@@ -545,6 +545,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Метаданные\Мониторинг\РегистрМониторингТехники\ФормаЭлемента.resx">
       <NsgOwnerGuid>7b195da5-41c5-4f12-b74b-895fa0a08c81</NsgOwnerGuid>
@@ -2364,7 +2365,7 @@
     <None Include="Resources\МеркиКостюма.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\46c71d0e03c965a4f8dfe5a8ce492c35.png" />
+    <None Include="Resources\РазмерыОбуви.png" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
