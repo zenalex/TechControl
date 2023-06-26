@@ -3650,4 +3650,44 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ВидыРазмернойСетки\ВидыРазмернойСетки.NsgInit.cs">
+      <NsgOwnerGuid>8b4deac6-5671-4321-b0f2-b7625f77e92b</NsgOwnerGuid>
+      <NsgOwnerName>ВидыРазмернойСетки</NsgOwnerName>
+      <DependentUpon>ВидыРазмернойСетки.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ВидыРазмернойСетки\ВидыРазмернойСетки.cs">
+      <NsgOwnerGuid>8b4deac6-5671-4321-b0f2-b7625f77e92b</NsgOwnerGuid>
+      <NsgOwnerName>ВидыРазмернойСетки</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Учет\РегистрЦен\РегистрЦен.NsgInit.cs">
+      <NsgOwnerGuid>1a8bffdb-d009-441e-99c1-fdbe08dbb152</NsgOwnerGuid>
+      <NsgOwnerName>РегистрЦен</NsgOwnerName>
+      <DependentUpon>РегистрЦен.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\РегистрЦен\РегистрЦен.cs">
+      <NsgOwnerGuid>1a8bffdb-d009-441e-99c1-fdbe08dbb152</NsgOwnerGuid>
+      <NsgOwnerName>РегистрЦен</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\РегистрЦен\УчетРегистрЦенДвижения.NsgInit.cs">
+      <NsgOwnerGuid>99133672-3b31-40d6-8bcd-9cd4a123f03c</NsgOwnerGuid>
+      <NsgOwnerName>УчетРегистрЦенДвижения</NsgOwnerName>
+      <DependentUpon>УчетРегистрЦенДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\РегистрЦен\УчетРегистрЦенДвижения.cs">
+      <NsgOwnerGuid>99133672-3b31-40d6-8bcd-9cd4a123f03c</NsgOwnerGuid>
+      <NsgOwnerName>УчетРегистрЦенДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\РегистрЦен\УчетРегистрЦенДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>99133672-3b31-40d6-8bcd-9cd4a123f03c</NsgOwnerGuid>
+      <NsgOwnerName>УчетРегистрЦенДвижения</NsgOwnerName>
+      <DependentUpon>УчетРегистрЦенДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\РегистрЦен\УчетРегистрЦенДвижения.Строка.cs">
+      <NsgOwnerGuid>99133672-3b31-40d6-8bcd-9cd4a123f03c</NsgOwnerGuid>
+      <NsgOwnerName>УчетРегистрЦенДвижения</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>
