@@ -26,26 +26,9 @@ namespace TechControl.Метаданные.Мониторинг
             base.OnSetFormObject(formObject);
             if (formObject != null)
             {
-                НайтиИлиСоздатьМерку();
+                var мерка = (formObject as Сотрудники).ПолучитьМерку();
+                vmoМерки.Data.CurrentRow = мерка;
             }
-        }
-
-        private void НайтиИлиСоздатьМерку() 
-        {
-            //vmoМерки.Data.BeginUpdateData();
-            var cmp = new NsgCompare();
-            cmp.Add(Мерки.Names.Владелец, FormObject);
-            var мерка = Мерки.Новый();
-            if (!мерка.Find(cmp))
-            {
-                мерка.New();
-            }
-            else
-            {
-                мерка.Edit();
-            }
-            vmoМерки.Data.CurrentRow = мерка;
-            //vmoМерки.Data.UpdateDataSync(this);
         }
 
         private void nsgIGrid1_CellRequestEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)

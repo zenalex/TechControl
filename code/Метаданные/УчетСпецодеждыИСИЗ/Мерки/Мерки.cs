@@ -13,17 +13,10 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
     
     public partial class Мерки
     {
-        #region Данные
-        #endregion //Данные
-
-        #region Конструкторы
-        #endregion //Конструкторы
-
-        #region Свойства
-        #endregion //Свойства
-
-        #region Методы
-        #endregion //Методы
+        protected override List<Guid> BasePost()
+        {
+            return base.BasePost();
+        }
     }
 
 }

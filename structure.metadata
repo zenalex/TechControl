@@ -4785,6 +4785,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="d769bc5b-c731-4a6e-8446-2764ade5b7d9" type="NsgDataTypedReference" editoraccess="Full" name="ДокументКонтроляСпецодежды" visible="true" description="Документ контроля спецодежды" field="DokumentKontrolja" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="ПеремещениеСпецодежды">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -4811,6 +4816,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ДокументКонтроляСпецодежды" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -10647,7 +10653,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="a3f02804-ca73-4105-bfc1-52474595bdf9" type="NsgDataFloat" editoraccess="Full" name="БоковаяДлинаБрюк" visible="true" description="Боковая длина брюк" field="BokovajaDlinaBrjuk" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+            <NsgSimpleObject Guid="674ba73a-3100-42ca-bb8d-4cc89578e8cd" type="NsgDataFloat" editoraccess="Full" name="ВнутренняяДлинаБрюкМин" visible="true" description="Внутренняя длина брюк мин" field="VnutrennjajaDlina" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -10657,12 +10663,12 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="674ba73a-3100-42ca-bb8d-4cc89578e8cd" type="NsgDataFloat" editoraccess="Full" name="ВнутренняяДлинаБрюк" visible="true" description="Внутренняя длина брюк" field="VnutrennjajaDlina" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+            <NsgSimpleObject Guid="24ccab0b-7b81-49c7-abdb-13fd8802abed" type="NsgDataFloat" editoraccess="Full" name="ВнутренняяДлинаБрюкМакс" visible="true" description="Внутренняя длина брюк макс" field="VnutrennjajaDlina1" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="ac01e391-9024-4c8c-89b8-f4b726efe98c" type="NsgDataFloat" editoraccess="Full" name="ДлинаРукава" visible="true" description="Длина рукава" field="DlinaRukava" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+            <NsgSimpleObject Guid="c7218705-bff4-44d9-9a20-7f670aa80923" type="NsgDataFloat" editoraccess="Full" name="ДлинаРукаваМакс" visible="true" description="Длина рукава макс" field="DlinaRukavaMaks" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -10682,12 +10688,32 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="5fb0251f-eb59-4b4e-abc8-a1067407dd75" type="NsgDataFloat" editoraccess="Full" name="ДлинаСтупни" visible="true" description="Длина ступни" field="DlinaStupni" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+            <NsgSimpleObject Guid="022f36a1-13ef-4765-aefe-110118909139" type="NsgDataFloat" editoraccess="Full" name="ДлинаСтупниМакс" visible="true" description="Длина ступни макс" field="DlinaStupniMaks" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="6a9c8765-428d-4523-adac-04721666f7ba" type="NsgDataTypedReference" editoraccess="Full" name="ВидРазмернойСетки" visible="true" description="Вид размерной сетки" field="VidRazmernoijSetki" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="ВидыРазмернойСетки">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="a3f02804-ca73-4105-bfc1-52474595bdf9" type="NsgDataFloat" editoraccess="Full" name="БоковаяДлинаБрюкМин" visible="true" description="Боковая длина брюк мин" field="BokovajaDlinaBrjuk" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="ac01e391-9024-4c8c-89b8-f4b726efe98c" type="NsgDataFloat" editoraccess="Full" name="ДлинаРукаваМин" visible="true" description="Длина рукава мин" field="DlinaRukava" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="5fb0251f-eb59-4b4e-abc8-a1067407dd75" type="NsgDataFloat" editoraccess="Full" name="ДлинаСтупниМин" visible="true" description="Длина ступни мин" field="DlinaStupni" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="7b480e50-3a00-478b-93df-270e690335b1" type="NsgDataFloat" editoraccess="Full" name="БоковаяДлинаБрюкМакс" visible="true" description="Боковая длина брюк макс" field="BokovajaDlinaBrju" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -10702,14 +10728,14 @@
             <container name="ОбхватТалииМакс" />
             <container name="ОбхватБедерМин" />
             <container name="ОбхватБедерМакс" />
-            <container name="БоковаяДлинаБрюк" />
+            <container name="ВнутренняяДлинаБрюкМин" />
             <container name="ОбхватШеиМин" />
-            <container name="ВнутренняяДлинаБрюк" />
-            <container name="ДлинаРукава" />
+            <container name="ВнутренняяДлинаБрюкМакс" />
+            <container name="ДлинаРукаваМакс" />
             <container name="ОбхватГрудиМакс" />
             <container name="РостМин" />
             <container name="ОбхватШеиМакс" />
-            <container name="ДлинаСтупни" />
+            <container name="ДлинаСтупниМакс" />
             <container name="ВидРазмернойСетки" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
@@ -10717,6 +10743,10 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="БоковаяДлинаБрюкМин" />
+            <container name="ДлинаРукаваМин" />
+            <container name="ДлинаСтупниМин" />
+            <container name="БоковаяДлинаБрюкМакс" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -12208,10 +12238,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="6cc6f58c-0048-4da8-9149-b45381fe4849" type="NsgDataTypedReference" editoraccess="Full" name="ВидРазмернойСетки" visible="true" description="Вид размерной сетки" field="VidRazmernoijSetki" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="ВидыРазмернойСетки">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ВидСвойствНоменклатуры" />
             <container name="Размер" />
+            <container name="ВидРазмернойСетки" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="0bd23bd2-9eb1-4bbb-a765-27f832202394" type="NsgDataCharacteristics" editoraccess="Full" name="РегистрУчетСпецодежды" visible="true" description="Характеристики" group="УчетСпецодеждыИСИЗ" table="_reg_RegistrUchetSpecode" useFullTextIndex="false" visibleadminonly="false" registerType="Characteristics" HandlingWarnings="0" dateDependence="true">
@@ -13002,6 +13038,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="5416127a-c4ff-4586-a851-7aaf63bb4696" type="NsgDataTypedReference" editoraccess="Full" name="ВидНоменклатуры" visible="true" description="Вид номенклатуры" field="VidNomenklatury" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="ВидСвойствНоменклатуры">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -13011,6 +13052,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ВидНоменклатуры" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -13022,6 +13064,16 @@
             <presentation lang="(Default)" value="{Представление}" />
           </NsgLanguageString>
           <ObjectList>
+            <NsgSimpleObject Guid="e6d1cf29-087e-429a-a61c-5ed5af05d423" type="NsgDataDateTime" editoraccess="Limited" name="Дата" visible="true" description="Дата документа" field="_Date" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="Дата документа" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="51b090e7-65a8-41f1-9eac-38e58fb44e86" type="NsgDataDateTime" editoraccess="Limited" name="КонецПериода" visible="true" description="Конец периода" field="_DateEnd" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
             <NsgSimpleObject Guid="4f974cd3-46be-4d46-ba8c-d03fff5c96a9" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
@@ -13045,16 +13097,6 @@
                 <param name="Сервис.КорректировкаРегистра" />
                 <param name="Учет.ПриходнаяНакладная" />
               </NsgObjectsFilter>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="e6d1cf29-087e-429a-a61c-5ed5af05d423" type="NsgDataDateTime" editoraccess="Limited" name="Дата" visible="true" description="Дата документа" field="_Date" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="Дата документа" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="51b090e7-65a8-41f1-9eac-38e58fb44e86" type="NsgDataDateTime" editoraccess="Limited" name="КонецПериода" visible="true" description="Конец периода" field="_DateEnd" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="1c2569d8-f1b5-49cb-91a6-d7864d9443af" type="NsgDataTypedReference" editoraccess="Full" name="Номенклатура" visible="true" description="Номенклатура" field="Nomenklatura" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Номенклатура">
               <NsgLanguageString type="presentation">

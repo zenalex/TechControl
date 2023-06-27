@@ -5,8 +5,7 @@ using NsgSoft.DataObjects;
 using NsgSoft.Database;
 using System.IO;
 using NsgSoft.Common;
-
-
+using TechControl.Метаданные.УчетСпецодеждыИСИЗ;
 
 namespace TechControl.Метаданные.Учет
 {
@@ -25,6 +24,29 @@ namespace TechControl.Метаданные.Учет
             }
 
             return цена;
+        }
+
+        protected override List<Guid> BasePost()
+        {
+            if (ТипНоменклатуры == ТипНоменклатуры.Спецодежда)
+            {
+                if (!ВидНоменклатуры.Selected)
+                {
+                    throw new Exception("Не выбран вид спецодежды!!!");
+                }
+
+                if (!ВидРазмернойСетки.Selected)
+                {
+                    throw new Exception("Не выбран вид размерной сетки!!!");
+                }
+
+            }
+            else
+            {
+                ВидНоменклатуры = ВидСвойствНоменклатуры.Новый();
+                ВидРазмернойСетки = ВидыРазмернойСетки.Новый();
+            }
+            return base.BasePost();
         }
 
         //public Номенклатура СвязаннаяНоменклатураБУ()
