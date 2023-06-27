@@ -3690,4 +3690,15 @@
       <NsgOwnerName>УчетРегистрЦенДвижения</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Учет\ТипыЦен\ТипыЦен.NsgInit.cs">
+      <NsgOwnerGuid>ba70675c-03fb-4d59-b525-4996513d7a9a</NsgOwnerGuid>
+      <NsgOwnerName>ТипыЦен</NsgOwnerName>
+      <DependentUpon>ТипыЦен.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ТипыЦен\ТипыЦен.cs">
+      <NsgOwnerGuid>ba70675c-03fb-4d59-b525-4996513d7a9a</NsgOwnerGuid>
+      <NsgOwnerName>ТипыЦен</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>
