@@ -3701,4 +3701,15 @@
       <NsgOwnerName>ТипыЦен</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Подразделения\Подразделения.NsgInit.cs">
+      <NsgOwnerGuid>97054c8f-bf31-466a-a096-3df5088d5559</NsgOwnerGuid>
+      <NsgOwnerName>Подразделения</NsgOwnerName>
+      <DependentUpon>Подразделения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Подразделения\Подразделения.cs">
+      <NsgOwnerGuid>97054c8f-bf31-466a-a096-3df5088d5559</NsgOwnerGuid>
+      <NsgOwnerName>Подразделения</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>
