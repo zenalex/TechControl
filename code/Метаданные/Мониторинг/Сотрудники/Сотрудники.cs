@@ -164,6 +164,11 @@ namespace TechControl.Метаданные.Мониторинг
             cmpОбхватШеи.Add(Размеры.Names.ОбхватШеиМакс, мерка.ОбхватШеи, NsgComparison.Greater);
             cmpOr.Add(cmpОбхватШеи);
 
+            var cmpОбхватГоловы = new NsgCompare();
+            cmpОбхватГоловы.Add(Размеры.Names.ОбхватГоловыМин, мерка.ОбхватГоловы, NsgComparison.LessOrEqual);
+            cmpОбхватГоловы.Add(Размеры.Names.ОбхватГоловыМакс, мерка.ОбхватГоловы, NsgComparison.Greater);
+            cmpOr.Add(cmpОбхватГоловы);
+
             var cmpРост = new NsgCompare();
             cmpРост.Add(Размеры.Names.РостМин, мерка.Рост, NsgComparison.LessOrEqual);
             cmpРост.Add(Размеры.Names.РостМакс, мерка.Рост, NsgComparison.Greater);
@@ -175,7 +180,7 @@ namespace TechControl.Метаданные.Мониторинг
 
             if (всеРазмеры.Length == 0)
             {
-                NsgSettings.MainForm.ShowMessage($"Для {номенклатураОдежды} не найден подходящий размер в справочнике", System.Windows.Forms.MessageBoxIcon.Warning);
+                NsgSettings.MainForm.ShowMessage($"Для {номенклатураОдежды} по меркам {this} не найден подходящий размер в справочнике", System.Windows.Forms.MessageBoxIcon.Warning);
                 return размер;
             }
             else if (всеРазмеры.Length == 1)
@@ -217,7 +222,11 @@ namespace TechControl.Метаданные.Мониторинг
 
                     if (разм.РостМакс > мерка.Рост && разм.РостМин <= мерка.Рост)
                         совпадения[разм]++;
+
+                    if (разм.ОбхватГоловыМакс > мерка.ОбхватГоловы && разм.ОбхватГоловыМин <= мерка.ОбхватГоловы)
+                        совпадения[разм]++;
                 }
+
 
                 размер = совпадения.OrderByDescending(x => x.Value).First().Key;
                 return размер;

@@ -12,6 +12,7 @@
         <group name="УчетСпецодеждыИСИЗ" />
         <group name="Администрирование" />
         <group name="УчетИнструмента" />
+        <group name="ПечатныеФормыДокументов" />
       </Groups>
       <ObjectList>
         <NsgMultipleObject Guid="d0b1a2f4-feef-4cfb-8646-58889c209467" type="NsgDataAssemblyObject" editoraccess="Limited" name="DataAssemblyObject" visible="true" description="Data assembly object" group="Сервис" table="NsgAssemblyObject" searchfield="_Code" useFullTextIndex="true" visibleadminonly="true" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="false">
@@ -4816,13 +4817,13 @@
             <container name="ОсновнойОбъект" />
             <container name="ЗагрузочныйИдентификатор" />
             <container name="ДокументКонтроляСпецодежды" />
+            <container name="Подразделение" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Подразделение" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -10724,6 +10725,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="b959eddd-b609-4c0b-8b6d-f06f1ca4a6bf" type="NsgDataFloat" editoraccess="Full" name="ОбхватГоловыМакс" visible="true" description="Обхват головы макс" field="ObkhvatGolovyMaks" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="9b5494a8-7238-4a7e-91a9-8facad5b86b3" type="NsgDataFloat" editoraccess="Full" name="ОбхватГоловыМин" visible="true" description="Обхват головы мин" field="ObkhvatGolovyMin" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -10753,6 +10764,8 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ОбхватГоловыМакс" />
+            <container name="ОбхватГоловыМин" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -12870,6 +12883,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="7b64ac1e-371d-45ba-b225-2ab6abc08ddc" type="NsgDataFloat" editoraccess="Full" name="ОбхватГоловы" visible="true" description="Обхват головы" field="ObkhvatGolovy" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -12888,6 +12906,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ОбхватГоловы" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -13350,17 +13369,42 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="Наименование" />
+            <container name="ЗагрузочныйИдентификатор" />
+            <container name="Руководитель" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Наименование" />
-            <container name="ЗагрузочныйИдентификатор" />
-            <container name="Руководитель" />
           </Containers>
           <DataInterfaces />
+        </NsgMultipleObject>
+        <NsgMultipleObject Guid="7303b636-8f88-46f0-984a-0490df48c0fc" type="NsgReportObject" editoraccess="Full" name="ПФПеремещениеСпецодежды" visible="true" description="Отчет" group="ПечатныеФормыДокументов" table="_report_PFPeremeschenieS" useFullTextIndex="true" visibleadminonly="false">
+          <NsgLanguageString type="presentation">
+            <presentation lang="(Default)" value="" />
+          </NsgLanguageString>
+          <NsgLanguageString type="valuemask">
+            <presentation lang="(Default)" value="{Представление}" />
+          </NsgLanguageString>
+          <ObjectList>
+            <NsgSimpleObject Guid="4a4d64c8-5ef6-42c1-9b4c-030fd9b645ab" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="898bd02e-d4ce-492d-adcc-87b2947e1203" type="NsgDataInteger" editoraccess="Hidden" name="Автоинкремент" visible="true" description="Автоинкремент" field="_AutoInc" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="ca402154-795f-4062-a1dd-2d1447c745d7" type="NsgDataForm" editoraccess="Full" name="Форма" visible="true" description="Форма" field="Forma" index="None" subtype="ElementForm" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" class="TechControl.Метаданные.ПечатныеФормыДокументов.ПФПеремещениеСпецодеждыФорма">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+          </ObjectList>
         </NsgMultipleObject>
       </ObjectList>
     </NsgMetaData>

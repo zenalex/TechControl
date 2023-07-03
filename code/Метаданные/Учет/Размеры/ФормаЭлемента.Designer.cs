@@ -76,6 +76,13 @@ namespace TechControl.Метаданные.Учет
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.nsgInput17 = new NsgSoft.Forms.NsgInput();
+            this.vmoДляКопирования = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.РазмерДляКопии = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
+            this.nsgInput15 = new NsgSoft.Forms.NsgInput();
+            this.nsgButton1 = new NsgSoft.Design.NsgButton();
+            this.nsgInput23 = new NsgSoft.Forms.NsgInput();
+            this.nsgInput24 = new NsgSoft.Forms.NsgInput();
+            this.label17 = new System.Windows.Forms.Label();
             this.Идентификатор = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
             this.Автоинкремент = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ЭтоГруппа = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
@@ -105,13 +112,10 @@ namespace TechControl.Метаданные.Учет
             this.БоковаяДлинаБрюкМин = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.ДлинаРукаваМин = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.ДлинаСтупниМин = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.Вещественное_4 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.БоковаяДлинаБрюкМакс = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ОбхватГоловыМакс = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ОбхватГоловыМин = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Родитель = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
-            this.vmoДляКопирования = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.РазмерДляКопии = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
-            this.nsgInput15 = new NsgSoft.Forms.NsgInput();
-            this.nsgButton1 = new NsgSoft.Design.NsgButton();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -159,6 +163,8 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.vmoДляКопирования)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput24)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -464,8 +470,9 @@ namespace TechControl.Метаданные.Учет
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.БоковаяДлинаБрюкМин);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ДлинаРукаваМин);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ДлинаСтупниМин);
-            this.nsgVisualMultipleObject.Columns.Collection.Add(this.Вещественное_4);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.БоковаяДлинаБрюкМакс);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ОбхватГоловыМакс);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ОбхватГоловыМин);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Родитель);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.MetaDataName = "Метаданные";
@@ -572,13 +579,16 @@ namespace TechControl.Метаданные.Учет
             this.tabControl1.Controls.Add(this.tpПарметрыНоги);
             this.tabControl1.Location = new System.Drawing.Point(13, 65);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 1;
+            this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(838, 518);
             this.tabControl1.TabIndex = 14;
             // 
             // tpПараметры
             // 
             this.tpПараметры.AllowDrop = true;
+            this.tpПараметры.Controls.Add(this.nsgInput23);
+            this.tpПараметры.Controls.Add(this.nsgInput24);
+            this.tpПараметры.Controls.Add(this.label17);
             this.tpПараметры.Controls.Add(this.nsgInput20);
             this.tpПараметры.Controls.Add(this.nsgInput19);
             this.tpПараметры.Controls.Add(this.nsgInput18);
@@ -614,7 +624,7 @@ namespace TechControl.Метаданные.Учет
             this.tpПараметры.TabIndex = 0;
             this.tpПараметры.Text = "Значения параметров";
             this.tpПараметры.UseVisualStyleBackColor = true;
-            this.tpПараметры.Visible = false;
+            this.tpПараметры.Visible = true;
             // 
             // nsgInput20
             // 
@@ -1202,7 +1212,7 @@ namespace TechControl.Метаданные.Учет
             this.tpПарметрыНоги.TabIndex = 1;
             this.tpПарметрыНоги.Text = "Парметры ступни";
             this.tpПарметрыНоги.UseVisualStyleBackColor = true;
-            this.tpПарметрыНоги.Visible = true;
+            this.tpПарметрыНоги.Visible = false;
             // 
             // label15
             // 
@@ -1342,6 +1352,138 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput17.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput17.TabIndex = 15;
             this.nsgInput17.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // vmoДляКопирования
+            // 
+            this.vmoДляКопирования.Columns.Collection.Add(this.РазмерДляКопии);
+            this.vmoДляКопирования.IsActive = true;
+            this.vmoДляКопирования.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoДляКопирования.MetaDataName = "";
+            this.vmoДляКопирования.FullName = "";
+            // 
+            // РазмерДляКопии
+            // 
+            this.РазмерДляКопии.Caption = "Размер";
+            this.РазмерДляКопии.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.РазмерДляКопии.Name = "Размер";
+            this.РазмерДляКопии.NSGType = typeof(TechControl.Метаданные.Учет.Размеры);
+            this.РазмерДляКопии.PropertyType = typeof(TechControl.Метаданные.Учет.Размеры);
+            this.РазмерДляКопии.SearchCondition.OwnerComponent = this.РазмерДляКопии;
+            this.РазмерДляКопии.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // nsgInput15
+            // 
+            this.nsgInput15.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput15.ConfigurationName = "";
+            this.nsgInput15.DisableLeaveControlEvent = false;
+            this.nsgInput15.FullName = "Размер";
+            this.nsgInput15.FullTextSearch = false;
+            this.nsgInput15.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput15.IsButton = false;
+            this.nsgInput15.IsInitialized = true;
+            this.nsgInput15.IsPassword = false;
+            this.nsgInput15.Location = new System.Drawing.Point(690, 9);
+            this.nsgInput15.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput15.Mask = "";
+            this.nsgInput15.MetaDataName = "";
+            this.nsgInput15.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput15.Name = "NsgInput";
+            this.nsgInput15.ObjectImages = null;
+            this.nsgInput15.ObjectIndex = null;
+            this.nsgInput15.ObjectStrings = null;
+            this.nsgInput15.Requsite = "Размер";
+            this.nsgInput15.SearchFieldName = "";
+            this.nsgInput15.ShowMultipleObjectInComboBox = false;
+            this.nsgInput15.ShowRowCount = 10;
+            this.nsgInput15.Size = new System.Drawing.Size(130, 20);
+            this.nsgInput15.SourceObject = this.vmoДляКопирования;
+            this.nsgInput15.TabIndex = 17;
+            this.nsgInput15.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // nsgButton1
+            // 
+            this.nsgButton1.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.nsgButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nsgButton1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nsgButton1.Location = new System.Drawing.Point(690, 37);
+            this.nsgButton1.Name = "NsgButton";
+            this.nsgButton1.ReadOnlyProvider = this.nsgVisualMultipleObject;
+            this.nsgButton1.Size = new System.Drawing.Size(130, 25);
+            this.nsgButton1.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.nsgButton1.TabIndex = 18;
+            this.nsgButton1.Text = "копировать из размера";
+            this.nsgButton1.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nsgButton1.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nsgButton1_AsyncClick);
+            // 
+            // nsgInput23
+            // 
+            this.nsgInput23.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput23.ConfigurationName = "";
+            this.nsgInput23.DisableLeaveControlEvent = false;
+            this.nsgInput23.FullName = "ОбхватГоловыМакс";
+            this.nsgInput23.FullTextSearch = false;
+            this.nsgInput23.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput23.IsButton = false;
+            this.nsgInput23.IsInitialized = true;
+            this.nsgInput23.IsPassword = false;
+            this.nsgInput23.Location = new System.Drawing.Point(247, 313);
+            this.nsgInput23.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput23.Mask = "";
+            this.nsgInput23.MetaDataName = "";
+            this.nsgInput23.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput23.Name = "NsgInput";
+            this.nsgInput23.ObjectImages = null;
+            this.nsgInput23.ObjectIndex = null;
+            this.nsgInput23.ObjectStrings = null;
+            this.nsgInput23.Requsite = "ОбхватГоловыМакс";
+            this.nsgInput23.SearchFieldName = "";
+            this.nsgInput23.ShowMultipleObjectInComboBox = false;
+            this.nsgInput23.ShowRowCount = 10;
+            this.nsgInput23.Size = new System.Drawing.Size(60, 20);
+            this.nsgInput23.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput23.TabIndex = 42;
+            this.nsgInput23.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // nsgInput24
+            // 
+            this.nsgInput24.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput24.ConfigurationName = "";
+            this.nsgInput24.DisableLeaveControlEvent = false;
+            this.nsgInput24.FullName = "ОбхватГоловыМин";
+            this.nsgInput24.FullTextSearch = false;
+            this.nsgInput24.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput24.IsButton = false;
+            this.nsgInput24.IsInitialized = true;
+            this.nsgInput24.IsPassword = false;
+            this.nsgInput24.Location = new System.Drawing.Point(179, 313);
+            this.nsgInput24.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput24.Mask = "";
+            this.nsgInput24.MetaDataName = "";
+            this.nsgInput24.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput24.Name = "NsgInput";
+            this.nsgInput24.ObjectImages = null;
+            this.nsgInput24.ObjectIndex = null;
+            this.nsgInput24.ObjectStrings = null;
+            this.nsgInput24.Requsite = "ОбхватГоловыМин";
+            this.nsgInput24.SearchFieldName = "";
+            this.nsgInput24.ShowMultipleObjectInComboBox = false;
+            this.nsgInput24.ShowRowCount = 10;
+            this.nsgInput24.Size = new System.Drawing.Size(60, 20);
+            this.nsgInput24.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput24.TabIndex = 41;
+            this.nsgInput24.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(73, 320);
+            this.label17.Name = "label12";
+            this.label17.Size = new System.Drawing.Size(103, 13);
+            this.label17.TabIndex = 40;
+            this.label17.Text = "Обхват головы см.";
             // 
             // Идентификатор
             // 
@@ -1688,18 +1830,6 @@ namespace TechControl.Метаданные.Учет
             this.ДлинаСтупниМин.SearchCondition.OwnerComponent = this.ДлинаСтупниМин;
             this.ДлинаСтупниМин.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Вещественное_4
-            // 
-            this.Вещественное_4.AutoGenerated = true;
-            this.Вещественное_4.CalcTotal = false;
-            this.Вещественное_4.Caption = "Вещественное_4";
-            this.Вещественное_4.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Вещественное_4.Name = "Вещественное_4";
-            this.Вещественное_4.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
-            this.Вещественное_4.PropertyType = typeof(decimal);
-            this.Вещественное_4.SearchCondition.OwnerComponent = this.Вещественное_4;
-            this.Вещественное_4.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
             // БоковаяДлинаБрюкМакс
             // 
             this.БоковаяДлинаБрюкМакс.AutoGenerated = true;
@@ -1712,6 +1842,30 @@ namespace TechControl.Метаданные.Учет
             this.БоковаяДлинаБрюкМакс.SearchCondition.OwnerComponent = this.БоковаяДлинаБрюкМакс;
             this.БоковаяДлинаБрюкМакс.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // ОбхватГоловыМакс
+            // 
+            this.ОбхватГоловыМакс.AutoGenerated = true;
+            this.ОбхватГоловыМакс.CalcTotal = false;
+            this.ОбхватГоловыМакс.Caption = "ОбхватГоловыМакс";
+            this.ОбхватГоловыМакс.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ОбхватГоловыМакс.Name = "ОбхватГоловыМакс";
+            this.ОбхватГоловыМакс.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ОбхватГоловыМакс.PropertyType = typeof(decimal);
+            this.ОбхватГоловыМакс.SearchCondition.OwnerComponent = this.ОбхватГоловыМакс;
+            this.ОбхватГоловыМакс.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ОбхватГоловыМин
+            // 
+            this.ОбхватГоловыМин.AutoGenerated = true;
+            this.ОбхватГоловыМин.CalcTotal = false;
+            this.ОбхватГоловыМин.Caption = "ОбхватГоловыМин";
+            this.ОбхватГоловыМин.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ОбхватГоловыМин.Name = "ОбхватГоловыМин";
+            this.ОбхватГоловыМин.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ОбхватГоловыМин.PropertyType = typeof(decimal);
+            this.ОбхватГоловыМин.SearchCondition.OwnerComponent = this.ОбхватГоловыМин;
+            this.ОбхватГоловыМин.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // Родитель
             // 
             this.Родитель.AutoGenerated = true;
@@ -1722,69 +1876,6 @@ namespace TechControl.Метаданные.Учет
             this.Родитель.PropertyType = typeof(TechControl.Метаданные.Учет.Размеры);
             this.Родитель.SearchCondition.OwnerComponent = this.Родитель;
             this.Родитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // vmoДляКопирования
-            // 
-            this.vmoДляКопирования.Columns.Collection.Add(this.РазмерДляКопии);
-            this.vmoДляКопирования.IsActive = true;
-            this.vmoДляКопирования.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
-            this.vmoДляКопирования.MetaDataName = "";
-            this.vmoДляКопирования.FullName = "";
-            // 
-            // РазмерДляКопии
-            // 
-            this.РазмерДляКопии.Caption = "Размер";
-            this.РазмерДляКопии.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.РазмерДляКопии.Name = "Размер";
-            this.РазмерДляКопии.NSGType = typeof(TechControl.Метаданные.Учет.Размеры);
-            this.РазмерДляКопии.PropertyType = typeof(TechControl.Метаданные.Учет.Размеры);
-            this.РазмерДляКопии.SearchCondition.OwnerComponent = this.РазмерДляКопии;
-            this.РазмерДляКопии.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // nsgInput15
-            // 
-            this.nsgInput15.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput15.ConfigurationName = "";
-            this.nsgInput15.DisableLeaveControlEvent = false;
-            this.nsgInput15.FullName = "Размер";
-            this.nsgInput15.FullTextSearch = false;
-            this.nsgInput15.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput15.IsButton = false;
-            this.nsgInput15.IsInitialized = false;
-            this.nsgInput15.IsPassword = false;
-            this.nsgInput15.Location = new System.Drawing.Point(690, 9);
-            this.nsgInput15.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput15.Mask = "";
-            this.nsgInput15.MetaDataName = "";
-            this.nsgInput15.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput15.Name = "NsgInput";
-            this.nsgInput15.ObjectImages = null;
-            this.nsgInput15.ObjectIndex = null;
-            this.nsgInput15.ObjectStrings = null;
-            this.nsgInput15.Requsite = "Размер";
-            this.nsgInput15.SearchFieldName = "";
-            this.nsgInput15.ShowMultipleObjectInComboBox = false;
-            this.nsgInput15.ShowRowCount = 10;
-            this.nsgInput15.Size = new System.Drawing.Size(130, 20);
-            this.nsgInput15.SourceObject = this.vmoДляКопирования;
-            this.nsgInput15.TabIndex = 17;
-            this.nsgInput15.VerticalAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // nsgButton1
-            // 
-            this.nsgButton1.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.nsgButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nsgButton1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.nsgButton1.Location = new System.Drawing.Point(690, 37);
-            this.nsgButton1.Name = "NsgButton";
-            this.nsgButton1.ReadOnlyProvider = this.nsgVisualMultipleObject;
-            this.nsgButton1.Size = new System.Drawing.Size(130, 25);
-            this.nsgButton1.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
-            this.nsgButton1.TabIndex = 18;
-            this.nsgButton1.Text = "копировать из размера";
-            this.nsgButton1.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
-            this.nsgButton1.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nsgButton1_AsyncClick);
             // 
             // РазмерыФормаЭлемента
             // 
@@ -1875,6 +1966,8 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.vmoДляКопирования)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput24)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1915,38 +2008,6 @@ namespace TechControl.Метаданные.Учет
         protected System.Windows.Forms.Label label14;
         protected NsgInput nsgInput17;
         private System.Windows.Forms.TabControl tabControl1;
-        protected NsgColumnDescriptor.Guid Идентификатор;
-        protected NsgColumnDescriptor.Int64 Автоинкремент;
-        protected NsgColumnDescriptor.Boolean ЭтоГруппа;
-        protected NsgColumnDescriptor.Guid ИдентификаторРодителя;
-        protected NsgColumnDescriptor.Byte Уровень;
-        protected NsgColumnDescriptor.String ПрефиксКода;
-        protected NsgColumnDescriptor.Int64 НомерКода;
-        protected NsgColumnDescriptor.String Код;
-        protected NsgColumnDescriptor.String Наименование;
-        protected Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
-        protected ВидСвойствНоменклатуры.ColumnDescriptor ВидСвойствНоменклатуры;
-        protected NsgColumnDescriptor.Decimal РостМакс;
-        protected NsgColumnDescriptor.Decimal ОбхватГрудиМин;
-        protected NsgColumnDescriptor.Decimal ОбхватТалииМин;
-        protected NsgColumnDescriptor.Decimal ОбхватТалииМакс;
-        protected NsgColumnDescriptor.Decimal ОбхватБедерМин;
-        protected NsgColumnDescriptor.Decimal ОбхватБедерМакс;
-        protected NsgColumnDescriptor.Decimal ВнутренняяДлинаБрюкМин;
-        protected NsgColumnDescriptor.Decimal ОбхватШеиМин;
-        protected NsgColumnDescriptor.Decimal ВнутренняяДлинаБрюкМакс;
-        protected NsgColumnDescriptor.Decimal ДлинаРукаваМакс;
-        protected NsgColumnDescriptor.Decimal ОбхватГрудиМакс;
-        protected NsgColumnDescriptor.Decimal РостМин;
-        protected NsgColumnDescriptor.Decimal ОбхватШеиМакс;
-        protected NsgColumnDescriptor.Decimal ДлинаСтупниМакс;
-        protected УчетСпецодеждыИСИЗ.ВидыРазмернойСетки.ColumnDescriptor ВидРазмернойСетки;
-        protected NsgColumnDescriptor.Decimal БоковаяДлинаБрюкМин;
-        protected NsgColumnDescriptor.Decimal ДлинаРукаваМин;
-        protected NsgColumnDescriptor.Decimal ДлинаСтупниМин;
-        protected NsgColumnDescriptor.Decimal Вещественное_4;
-        protected NsgColumnDescriptor.Decimal БоковаяДлинаБрюкМакс;
-        protected Размеры.ColumnDescriptor Родитель;
         protected NsgInput nsgInput20;
         protected NsgInput nsgInput19;
         protected NsgInput nsgInput18;
@@ -1955,9 +2016,45 @@ namespace TechControl.Метаданные.Учет
         protected System.Windows.Forms.Label label16;
         protected NsgInput nsgInput21;
         protected NsgInput nsgInput22;
-        protected NsgVisualMultipleObject vmoДляКопирования;
         protected Размеры.ColumnDescriptor РазмерДляКопии;
         protected NsgInput nsgInput15;
         protected NsgSoft.Design.NsgButton nsgButton1;
+        protected NsgInput nsgInput23;
+        protected NsgInput nsgInput24;
+        protected System.Windows.Forms.Label label17;
+        private NsgVisualMultipleObject vmoДляКопирования;
+        private NsgColumnDescriptor.Guid Идентификатор;
+        private NsgColumnDescriptor.Int64 Автоинкремент;
+        private NsgColumnDescriptor.Boolean ЭтоГруппа;
+        private NsgColumnDescriptor.Guid ИдентификаторРодителя;
+        private NsgColumnDescriptor.Byte Уровень;
+        private NsgColumnDescriptor.String ПрефиксКода;
+        private NsgColumnDescriptor.Int64 НомерКода;
+        private NsgColumnDescriptor.String Код;
+        private NsgColumnDescriptor.String Наименование;
+        private Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
+        private ВидСвойствНоменклатуры.ColumnDescriptor ВидСвойствНоменклатуры;
+        private NsgColumnDescriptor.Decimal РостМакс;
+        private NsgColumnDescriptor.Decimal ОбхватГрудиМин;
+        private NsgColumnDescriptor.Decimal ОбхватТалииМин;
+        private NsgColumnDescriptor.Decimal ОбхватТалииМакс;
+        private NsgColumnDescriptor.Decimal ОбхватБедерМин;
+        private NsgColumnDescriptor.Decimal ОбхватБедерМакс;
+        private NsgColumnDescriptor.Decimal ВнутренняяДлинаБрюкМин;
+        private NsgColumnDescriptor.Decimal ОбхватШеиМин;
+        private NsgColumnDescriptor.Decimal ВнутренняяДлинаБрюкМакс;
+        private NsgColumnDescriptor.Decimal ДлинаРукаваМакс;
+        private NsgColumnDescriptor.Decimal ОбхватГрудиМакс;
+        private NsgColumnDescriptor.Decimal РостМин;
+        private NsgColumnDescriptor.Decimal ОбхватШеиМакс;
+        private NsgColumnDescriptor.Decimal ДлинаСтупниМакс;
+        private УчетСпецодеждыИСИЗ.ВидыРазмернойСетки.ColumnDescriptor ВидРазмернойСетки;
+        private NsgColumnDescriptor.Decimal БоковаяДлинаБрюкМин;
+        private NsgColumnDescriptor.Decimal ДлинаРукаваМин;
+        private NsgColumnDescriptor.Decimal ДлинаСтупниМин;
+        private NsgColumnDescriptor.Decimal БоковаяДлинаБрюкМакс;
+        private NsgColumnDescriptor.Decimal ОбхватГоловыМакс;
+        private NsgColumnDescriptor.Decimal ОбхватГоловыМин;
+        protected Размеры.ColumnDescriptor Родитель;
     }
 }

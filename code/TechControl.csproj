@@ -3712,4 +3712,28 @@
       <NsgOwnerName>Подразделения</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФПеремещениеСпецодежды\ПФПеремещениеСпецодежды.NsgInit.cs">
+      <NsgOwnerGuid>7303b636-8f88-46f0-984a-0490df48c0fc</NsgOwnerGuid>
+      <NsgOwnerName>ПФПеремещениеСпецодежды</NsgOwnerName>
+      <DependentUpon>ПФПеремещениеСпецодежды.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФПеремещениеСпецодежды\ПФПеремещениеСпецодежды.cs">
+      <NsgOwnerGuid>7303b636-8f88-46f0-984a-0490df48c0fc</NsgOwnerGuid>
+      <NsgOwnerName>ПФПеремещениеСпецодежды</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФПеремещениеСпецодежды\Форма.Designer.cs">
+      <NsgOwnerGuid>7303b636-8f88-46f0-984a-0490df48c0fc</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФПеремещениеСпецодежды\Форма.cs">
+      <NsgOwnerGuid>7303b636-8f88-46f0-984a-0490df48c0fc</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\ПечатныеФормыДокументов\ПФПеремещениеСпецодежды\Форма.resx">
+      <NsgOwnerGuid>7303b636-8f88-46f0-984a-0490df48c0fc</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
