@@ -26,7 +26,7 @@ namespace TechControl.Метаданные.Мониторинг
             base.OnSetFormObject(formObject);
             if (formObject != null)
             {
-                var мерка = (formObject as Сотрудники).ПолучитьМерку();
+                var мерка = (formObject as Сотрудники).ПолучитьМерку(true);
                 vmoМерки.Data.CurrentRow = мерка;
             }
         }
@@ -58,6 +58,19 @@ namespace TechControl.Метаданные.Мониторинг
                 vmoМерки.Data.BeginUpdateData();
                 
                 vmoМерки.Data.UpdateDataSync(this);
+            }
+        }
+
+        private void nbЗаполнитьТаблицуРазмеров_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            if (FormObject != null)
+            {
+                vmoТаблицаРазмеров.Data.BeginUpdateData();
+
+                var сотрудник = FormObject as Сотрудники;
+                сотрудник.ЗаполнитьТаблицуРазмеров();
+
+                vmoТаблицаРазмеров.Data.UpdateDataSync(this);
             }
         }
     }
