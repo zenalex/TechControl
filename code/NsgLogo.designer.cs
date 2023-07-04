@@ -28,18 +28,21 @@ namespace TechControl
         /// </summary>
         private void InitializeComponent()
         {
-			this.SuspendLayout();
-			// 
-			// NsgLogo
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(21F, 47F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(360, 400);
-			this.Font = new System.Drawing.Font("Tahoma", 29F);
-			this.Location = new System.Drawing.Point(0, 0);
-			this.Name = "NsgLogo";
-			this.Text = "NsgLogo";
-			this.ResumeLayout(false);
+            this.SuspendLayout();
+            // 
+            // NsgLogo
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 48F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(360, 400);
+            this.Font = new System.Drawing.Font("Tahoma", 30F);
+            this.Image = global::TechControl.Properties.Resources.app_icon;
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "NsgLogo";
+            this.Padding = new System.Windows.Forms.Padding(1, 1, 1, 30);
+            this.Text = "TechControl";
+            this.ResumeLayout(false);
 
         }
 

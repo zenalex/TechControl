@@ -542,6 +542,9 @@
       <NsgOwnerGuid>7b195da5-41c5-4f12-b74b-895fa0a08c81</NsgOwnerGuid>
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="NsgLogo.resx">
+      <DependentUpon>NsgLogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -2368,6 +2371,7 @@
     <None Include="Resources\РазмерыОбуви.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\app_icon.png" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
