@@ -78,7 +78,7 @@ namespace TechControl.Метаданные.Мониторинг
             return размер;
         }
 
-        public Мерки ПолучитьМерку(bool дляРедактирования = false) 
+        public Мерки ПолучитьМерку(bool дляРедактирования = false, bool запостить = false) 
         {
             var cmp = new NsgCompare();
             cmp.Add(Мерки.Names.Владелец, this);
@@ -87,6 +87,10 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 мерка.New();
                 мерка.Владелец = this;
+                if (запостить)
+                {
+                    мерка.Post();
+                }
             }
             else
             {

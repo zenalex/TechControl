@@ -139,11 +139,14 @@
   <metadata name="nsgVisualMultipleObject.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="vmoСписокСпецодежды.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="vmoСотрудники.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>201, 17</value>
   </metadata>
+  <metadata name="vmoСписокСпецодежды.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>344, 17</value>
+  </metadata>
   <metadata name="vmoДопДанныеДляОтчета.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>391, 17</value>
+    <value>534, 17</value>
   </metadata>
   <data name="nsgGroupsList1.DisableComponents" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -155,24 +158,21 @@
 </value>
   </data>
   <metadata name="vmoФильтр.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>594, 17</value>
+    <value>737, 17</value>
   </metadata>
   <metadata name="vmoДанныеДляОтчета.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>711, 17</value>
+    <value>854, 17</value>
   </metadata>
   <metadata name="nsgReport1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>891, 17</value>
+    <value>1034, 17</value>
   </metadata>
   <metadata name="rdsОтчет.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1006, 17</value>
+    <value>1149, 17</value>
   </metadata>
   <metadata name="rdsДопДанныеОтчета.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1107, 17</value>
+    <value>17, 56</value>
   </metadata>
-  <metadata name="rdsОтчет.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1006, 17</value>
-  </metadata>
-  <metadata name="rdsДопДанныеОтчета.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1107, 17</value>
-  </metadata>
+  <data name="nsgReport1.ReportSource" xml:space="preserve">
+    <value>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</value>
+  </data>
 </root>

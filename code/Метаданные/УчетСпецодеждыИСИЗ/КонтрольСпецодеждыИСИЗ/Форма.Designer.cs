@@ -34,6 +34,10 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(КонтрольСпецодеждыИСИЗФорма));
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn1 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn2 = new NsgSoft.Forms.NsgIGridColumn();
+            this.nsgIGrid2 = new NsgSoft.Forms.NsgIGrid();
+            this.vmoСотрудники = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpВыдача = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +48,28 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.nbЗаполнить = new NsgSoft.Design.NsgButton();
             this.nsgIGrid1 = new NsgSoft.Forms.NsgIGrid();
             this.vmoСписокСпецодежды = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.nsgInput1 = new NsgSoft.Forms.NsgInput();
+            this.tpОтчеты = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbЗакупки = new System.Windows.Forms.RadioButton();
+            this.rdbСпецодежда = new System.Windows.Forms.RadioButton();
+            this.nsgInput2 = new NsgSoft.Forms.NsgInput();
+            this.vmoДопДанныеДляОтчета = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.nsgGroupsList1 = new NsgSoft.ReportBuilder.NsgGroupsList();
+            this.nsgObjectFilter1 = new NsgSoft.Forms.NsgIGridView.NsgObjectFilter();
+            this.vmoФильтр = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.tpСотрудники = new System.Windows.Forms.TabPage();
+            this.nbПроблемныеСотрудники = new NsgSoft.Design.NsgButton();
+            this.vmoДанныеДляОтчета = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.nsgReport1 = new NsgSoft.ReportBuilder.NsgReport(this.components);
+            this.rdsОтчет = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
+            this.stiReportDataSource1 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsОтчет", this.rdsОтчет);
+            this.rdsДопДанныеОтчета = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
+            this.stiReportDataSource2 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsДопДанныеОтчета", this.rdsДопДанныеОтчета);
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
+            this.ДатаНачалаЭксплуатации = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.Номенклатура_vmoСписокСпецодежды = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
             this.Комплект_vmoСписокСпецодежды = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды.ColumnDescriptor();
             this.ВсегоВыдано_vmoСписокСпецодежды = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
@@ -53,20 +79,12 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.РазмерКВыдаче_vmoСписокСпецодежды = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
             this.ВыдатьСотруднику_vmoСписокСпецодежды = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ТребуетсяПоКомплекту_vmoСписокСпецодежды = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nsgInput1 = new NsgSoft.Forms.NsgInput();
-            this.tpСотрБезСИЗ = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbЗакупки = new System.Windows.Forms.RadioButton();
-            this.rdbСпецодежда = new System.Windows.Forms.RadioButton();
-            this.nsgInput2 = new NsgSoft.Forms.NsgInput();
-            this.vmoДопДанныеДляОтчета = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.КоличествоНаСкладе_vmoСписокСпецодежды = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ДатаОтчета_vmoДопДанныеДляОтчета = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.nsgGroupsList1 = new NsgSoft.ReportBuilder.NsgGroupsList();
-            this.nsgObjectFilter1 = new NsgSoft.Forms.NsgIGridView.NsgObjectFilter();
-            this.vmoФильтр = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Сотрудник_vmoФильтр = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
-            this.vmoДанныеДляОтчета = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.Сотрудник_vmoСотрудники = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Подразделение_vmoСотрудники = new TechControl.Метаданные.Мониторинг.Подразделения.ColumnDescriptor();
+            this.Проблема_vmoСотрудники = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Номенклатура_vmoДанныеДляОтчета = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
             this.Комплект_vmoДанныеДляОтчета = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды.ColumnDescriptor();
             this.Количество_vmoДанныеДляОтчета = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
@@ -77,21 +95,17 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.ТребуетсяВозврат_vmoДанныеДляОтчета = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.Объект_vmoДанныеДляОтчета = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.КоличествоНаОбъекте_vmoДанныеДляОтчета = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.nsgReport1 = new NsgSoft.ReportBuilder.NsgReport(this.components);
-            this.rdsОтчет = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
-            this.stiReportDataSource1 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsОтчет", this.rdsОтчет);
-            this.rdsДопДанныеОтчета = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
-            this.stiReportDataSource2 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsДопДанныеОтчета", this.rdsДопДанныеОтчета);
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
-            this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.ДатаНачалаЭксплуатации = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.КоличествоНаСкладе_vmoСписокСпецодежды = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Размер_vmoДанныеДляОтчета = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
+            this.Цена_vmoДанныеДляОтчета = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.Стоимость_vmoДанныеДляОтчета = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formSettingsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elementRightsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoСотрудники)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tpВыдача.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).BeginInit();
@@ -101,13 +115,15 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoСписокСпецодежды)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).BeginInit();
-            this.tpСотрБезСИЗ.SuspendLayout();
+            this.tpОтчеты.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoДопДанныеДляОтчета)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgGroupsList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgObjectFilter1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoФильтр)).BeginInit();
+            this.tpСотрудники.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbПроблемныеСотрудники)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoДанныеДляОтчета)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdsОтчет)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdsДопДанныеОтчета)).BeginInit();
@@ -137,7 +153,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.panelButtonReportForm.Controls.Add(this.printButton);
             this.panelButtonReportForm.Controls.Add(this.btnCreateReport);
             this.panelButtonReportForm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 511);
+            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 531);
             this.panelButtonReportForm.Name = "panelButtonReportForm";
             this.panelButtonReportForm.Size = new System.Drawing.Size(879, 30);
             this.panelButtonReportForm.TabIndex = 0;
@@ -198,6 +214,89 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.nsgVisualMultipleObject.MetaDataName = "";
             this.nsgVisualMultipleObject.FullName = "";
             // 
+            // nsgIGrid2
+            // 
+            this.nsgIGrid2.Action = NsgSoft.DataObjects.FormShowMode.None;
+            this.nsgIGrid2.AllowSaveColParamsToXML = true;
+            this.nsgIGrid2.AllowSaveColPositionToXML = true;
+            this.nsgIGrid2.AllowSaveColWidthToXML = true;
+            this.nsgIGrid2.AllowSaveSettingsToXML = true;
+            this.nsgIGrid2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nsgIGrid2.AutoResizeCols = true;
+            nsgIGridColumn1.AllowFilter = true;
+            nsgIGridColumn1.AllowGroupSelect = false;
+            nsgIGridColumn1.AllowResize = true;
+            nsgIGridColumn1.AutoResize = true;
+            nsgIGridColumn1.Caption = "";
+            nsgIGridColumn1.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn1.DateFormat = null;
+            nsgIGridColumn1.ImportedFromVMO = false;
+            nsgIGridColumn1.Name = "Сотрудник";
+            nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn1.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn1.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn1.UseAsHeaderImage = false;
+            nsgIGridColumn1.Width = 100;
+            nsgIGridColumn2.AllowFilter = true;
+            nsgIGridColumn2.AllowGroupSelect = false;
+            nsgIGridColumn2.AllowResize = true;
+            nsgIGridColumn2.AutoResize = true;
+            nsgIGridColumn2.Caption = "";
+            nsgIGridColumn2.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn2.DateFormat = null;
+            nsgIGridColumn2.ImportedFromVMO = false;
+            nsgIGridColumn2.Name = "Подразделение";
+            nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn2.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn2.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn2.UseAsHeaderImage = false;
+            nsgIGridColumn2.Width = 100;
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn1);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn2);
+            this.nsgIGrid2.Filter = false;
+            this.nsgIGrid2.FrozenColumns = 0;
+            this.nsgIGrid2.Grouping = true;
+            this.nsgIGrid2.Hierarhy = true;
+            this.nsgIGrid2.ImageList = null;
+            this.nsgIGrid2.IsCanMultiSelect = false;
+            this.nsgIGrid2.IsCanSingleSelect = false;
+            this.nsgIGrid2.LineHeight = 20;
+            this.nsgIGrid2.Location = new System.Drawing.Point(3, 32);
+            this.nsgIGrid2.MarkReadOnly = false;
+            this.nsgIGrid2.MasterObject = null;
+            this.nsgIGrid2.Name = "NsgIGrid";
+            this.nsgIGrid2.PageSelector = false;
+            this.nsgIGrid2.ReadOnly = false;
+            this.nsgIGrid2.RowChangeInterval = 200;
+            this.nsgIGrid2.RowHeaderImageList = null;
+            this.nsgIGrid2.RowMode = false;
+            this.nsgIGrid2.ScrollWidth = 0;
+            this.nsgIGrid2.SelectedRow = -1;
+            this.nsgIGrid2.ShowHeader = true;
+            this.nsgIGrid2.ShowLineImages = true;
+            this.nsgIGrid2.ShowLineNumbers = false;
+            this.nsgIGrid2.ShowPanel = true;
+            this.nsgIGrid2.ShowTotals = false;
+            this.nsgIGrid2.ShowTree = false;
+            this.nsgIGrid2.Size = new System.Drawing.Size(860, 444);
+            this.nsgIGrid2.SourceObject = this.vmoСотрудники;
+            this.nsgIGrid2.TabIndex = 0;
+            this.nsgIGrid2.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            // 
+            // vmoСотрудники
+            // 
+            this.vmoСотрудники.Columns.Collection.Add(this.Сотрудник_vmoСотрудники);
+            this.vmoСотрудники.Columns.Collection.Add(this.Подразделение_vmoСотрудники);
+            this.vmoСотрудники.Columns.Collection.Add(this.Проблема_vmoСотрудники);
+            this.vmoСотрудники.IsActive = true;
+            this.vmoСотрудники.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoСотрудники.MetaDataName = "";
+            this.vmoСотрудники.FullName = "";
+            // 
             // tabControl1
             // 
             this.tabControl1.AllowDrop = true;
@@ -205,10 +304,11 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tpВыдача);
-            this.tabControl1.Controls.Add(this.tpСотрБезСИЗ);
+            this.tabControl1.Controls.Add(this.tpОтчеты);
+            this.tabControl1.Controls.Add(this.tpСотрудники);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.SelectedIndex = 2;
             this.tabControl1.Size = new System.Drawing.Size(879, 505);
             this.tabControl1.TabIndex = 9;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
@@ -233,7 +333,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.tpВыдача.TabIndex = 0;
             this.tpВыдача.Text = "Выдача спецодежды";
             this.tpВыдача.UseVisualStyleBackColor = true;
-            this.tpВыдача.Visible = true;
+            this.tpВыдача.Visible = false;
             // 
             // label3
             // 
@@ -403,6 +503,325 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.vmoСписокСпецодежды.MetaDataName = "";
             this.vmoСписокСпецодежды.FullName = "";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(50, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Сотрудник";
+            // 
+            // nsgInput1
+            // 
+            this.nsgInput1.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput1.ConfigurationName = "";
+            this.nsgInput1.DisableLeaveControlEvent = false;
+            this.nsgInput1.FullName = "Сотрудник";
+            this.nsgInput1.FullTextSearch = false;
+            this.nsgInput1.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput1.IsButton = false;
+            this.nsgInput1.IsInitialized = true;
+            this.nsgInput1.IsPassword = false;
+            this.nsgInput1.Location = new System.Drawing.Point(113, 50);
+            this.nsgInput1.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput1.Mask = "";
+            this.nsgInput1.MetaDataName = "";
+            this.nsgInput1.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput1.Name = "NsgInput";
+            this.nsgInput1.ObjectImages = null;
+            this.nsgInput1.ObjectIndex = null;
+            this.nsgInput1.ObjectStrings = null;
+            this.nsgInput1.Requsite = "Сотрудник";
+            this.nsgInput1.SearchFieldName = "";
+            this.nsgInput1.ShowMultipleObjectInComboBox = false;
+            this.nsgInput1.ShowRowCount = 10;
+            this.nsgInput1.Size = new System.Drawing.Size(229, 20);
+            this.nsgInput1.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput1.TabIndex = 0;
+            this.nsgInput1.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.nsgInput1.Selected += new System.EventHandler(this.nsgInput1_Selected);
+            // 
+            // tpОтчеты
+            // 
+            this.tpОтчеты.AllowDrop = true;
+            this.tpОтчеты.Controls.Add(this.groupBox1);
+            this.tpОтчеты.Controls.Add(this.nsgInput2);
+            this.tpОтчеты.Controls.Add(this.nsgGroupsList1);
+            this.tpОтчеты.Controls.Add(this.nsgObjectFilter1);
+            this.tpОтчеты.Enabled = true;
+            this.tpОтчеты.Location = new System.Drawing.Point(4, 22);
+            this.tpОтчеты.Name = "tabPage2";
+            this.tpОтчеты.Padding = new System.Windows.Forms.Padding(3);
+            this.tpОтчеты.Size = new System.Drawing.Size(871, 479);
+            this.tpОтчеты.TabIndex = 1;
+            this.tpОтчеты.Text = "Сотрудники без СИЗ и Спецодежды";
+            this.tpОтчеты.UseVisualStyleBackColor = true;
+            this.tpОтчеты.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AllowDrop = true;
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.rdbЗакупки);
+            this.groupBox1.Controls.Add(this.rdbСпецодежда);
+            this.groupBox1.Location = new System.Drawing.Point(534, 235);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(329, 79);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Тип отчета";
+            // 
+            // rdbЗакупки
+            // 
+            this.rdbЗакупки.AutoSize = true;
+            this.rdbЗакупки.Location = new System.Drawing.Point(7, 44);
+            this.rdbЗакупки.Name = "rdbЗакупки";
+            this.rdbЗакупки.Size = new System.Drawing.Size(67, 17);
+            this.rdbЗакупки.TabIndex = 1;
+            this.rdbЗакупки.TabStop = true;
+            this.rdbЗакупки.Text = "Закупки";
+            this.rdbЗакупки.UseVisualStyleBackColor = true;
+            this.rdbЗакупки.CheckedChanged += new System.EventHandler(this.rdbЗакупки_CheckedChanged);
+            // 
+            // rdbСпецодежда
+            // 
+            this.rdbСпецодежда.AutoSize = true;
+            this.rdbСпецодежда.Location = new System.Drawing.Point(7, 20);
+            this.rdbСпецодежда.Name = "rdbСпецодежда";
+            this.rdbСпецодежда.Size = new System.Drawing.Size(141, 17);
+            this.rdbСпецодежда.TabIndex = 0;
+            this.rdbСпецодежда.TabStop = true;
+            this.rdbСпецодежда.Text = "Выданная спецодежда";
+            this.rdbСпецодежда.UseVisualStyleBackColor = true;
+            this.rdbСпецодежда.CheckedChanged += new System.EventHandler(this.rdbСпецодежда_CheckedChanged);
+            // 
+            // nsgInput2
+            // 
+            this.nsgInput2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nsgInput2.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput2.ConfigurationName = "";
+            this.nsgInput2.DisableLeaveControlEvent = false;
+            this.nsgInput2.FullName = "ДатаОтчета";
+            this.nsgInput2.FullTextSearch = false;
+            this.nsgInput2.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput2.IsButton = false;
+            this.nsgInput2.IsInitialized = true;
+            this.nsgInput2.IsPassword = false;
+            this.nsgInput2.Location = new System.Drawing.Point(533, 7);
+            this.nsgInput2.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput2.Mask = "";
+            this.nsgInput2.MetaDataName = "";
+            this.nsgInput2.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput2.Name = "NsgInput";
+            this.nsgInput2.ObjectImages = null;
+            this.nsgInput2.ObjectIndex = null;
+            this.nsgInput2.ObjectStrings = null;
+            this.nsgInput2.Requsite = "ДатаОтчета";
+            this.nsgInput2.SearchFieldName = "";
+            this.nsgInput2.ShowMultipleObjectInComboBox = false;
+            this.nsgInput2.ShowRowCount = 10;
+            this.nsgInput2.Size = new System.Drawing.Size(210, 20);
+            this.nsgInput2.SourceObject = this.vmoДопДанныеДляОтчета;
+            this.nsgInput2.TabIndex = 1;
+            this.nsgInput2.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // vmoДопДанныеДляОтчета
+            // 
+            this.vmoДопДанныеДляОтчета.Columns.Collection.Add(this.ДатаОтчета_vmoДопДанныеДляОтчета);
+            this.vmoДопДанныеДляОтчета.IsActive = true;
+            this.vmoДопДанныеДляОтчета.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoДопДанныеДляОтчета.MetaDataName = "";
+            this.vmoДопДанныеДляОтчета.FullName = "";
+            // 
+            // nsgGroupsList1
+            // 
+            this.nsgGroupsList1.AllowDrop = true;
+            this.nsgGroupsList1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nsgGroupsList1.BackColor = System.Drawing.SystemColors.Control;
+            this.nsgGroupsList1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgGroupsList1.DisableComponents = ((System.Collections.Generic.List<string>)(resources.GetObject("nsgGroupsList1.DisableComponents")));
+            this.nsgGroupsList1.Location = new System.Drawing.Point(533, 40);
+            this.nsgGroupsList1.MinimumSize = new System.Drawing.Size(290, 150);
+            this.nsgGroupsList1.Name = "NsgGroupsList";
+            this.nsgGroupsList1.NsgRemoveMasterComponent = true;
+            this.nsgGroupsList1.SetReport = null;
+            this.nsgGroupsList1.SetTitle = "title";
+            this.nsgGroupsList1.Size = new System.Drawing.Size(332, 175);
+            this.nsgGroupsList1.TabIndex = 0;
+            // 
+            // nsgObjectFilter1
+            // 
+            this.nsgObjectFilter1.AllowDrop = true;
+            this.nsgObjectFilter1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nsgObjectFilter1.AutoSetCompare = true;
+            this.nsgObjectFilter1.BackColor = System.Drawing.SystemColors.Control;
+            this.nsgObjectFilter1.FilterTypeCaption = "Тип Фильтра";
+            this.nsgObjectFilter1.Grouping = false;
+            this.nsgObjectFilter1.IsModify = true;
+            this.nsgObjectFilter1.LineHeight = 20;
+            this.nsgObjectFilter1.Location = new System.Drawing.Point(9, 7);
+            this.nsgObjectFilter1.LockAdditionalColumns = false;
+            this.nsgObjectFilter1.LockUpdateColumnsFromSourceObject = false;
+            this.nsgObjectFilter1.Name = "NsgObjectFilter";
+            this.nsgObjectFilter1.ReadOnly = false;
+            this.nsgObjectFilter1.Regime = NsgSoft.Forms.NsgIGridView.NsgObjectFilter.Regimes.Filter;
+            this.nsgObjectFilter1.RekvisitCaption = "Имя Фильтра";
+            this.nsgObjectFilter1.SaveSettings = false;
+            this.nsgObjectFilter1.Size = new System.Drawing.Size(518, 466);
+            this.nsgObjectFilter1.SourceObject = this.vmoФильтр;
+            this.nsgObjectFilter1.TabIndex = 0;
+            this.nsgObjectFilter1.ValueCaption = "Фильтр";
+            // 
+            // vmoФильтр
+            // 
+            this.vmoФильтр.Columns.Collection.Add(this.Сотрудник_vmoФильтр);
+            this.vmoФильтр.IsActive = true;
+            this.vmoФильтр.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoФильтр.MetaDataName = "";
+            this.vmoФильтр.FullName = "";
+            // 
+            // tpСотрудники
+            // 
+            this.tpСотрудники.AllowDrop = true;
+            this.tpСотрудники.Controls.Add(this.nbПроблемныеСотрудники);
+            this.tpСотрудники.Controls.Add(this.nsgIGrid2);
+            this.tpСотрудники.Enabled = true;
+            this.tpСотрудники.Location = new System.Drawing.Point(4, 22);
+            this.tpСотрудники.Name = "tpСотрудники";
+            this.tpСотрудники.Size = new System.Drawing.Size(871, 479);
+            this.tpСотрудники.TabIndex = 2;
+            this.tpСотрудники.Text = "Проверка сотрудников";
+            this.tpСотрудники.UseVisualStyleBackColor = true;
+            this.tpСотрудники.Visible = true;
+            // 
+            // nbПроблемныеСотрудники
+            // 
+            this.nbПроблемныеСотрудники.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.nbПроблемныеСотрудники.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nbПроблемныеСотрудники.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nbПроблемныеСотрудники.Location = new System.Drawing.Point(8, 3);
+            this.nbПроблемныеСотрудники.Name = "NsgButton";
+            this.nbПроблемныеСотрудники.Size = new System.Drawing.Size(128, 25);
+            this.nbПроблемныеСотрудники.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.nbПроблемныеСотрудники.TabIndex = 1;
+            this.nbПроблемныеСотрудники.Text = "Заполнить";
+            this.nbПроблемныеСотрудники.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nbПроблемныеСотрудники.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nsgButton1_AsyncClick);
+            // 
+            // vmoДанныеДляОтчета
+            // 
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Номенклатура_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Комплект_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Количество_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.ДатаВыдачи_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.ТребуетсяВыдача_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Сотрудник_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Должность_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.ТребуетсяВозврат_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Объект_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.КоличествоНаОбъекте_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Размер_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Цена_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Стоимость_vmoДанныеДляОтчета);
+            this.vmoДанныеДляОтчета.IsActive = true;
+            this.vmoДанныеДляОтчета.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoДанныеДляОтчета.MetaDataName = "";
+            this.vmoДанныеДляОтчета.FullName = "";
+            // 
+            // nsgReport1
+            // 
+            this.nsgReport1.CurrentProgressValue = 0;
+            this.nsgReport1.HighlightedComponent = null;
+            this.nsgReport1.IsSyncMode = true;
+            this.nsgReport1.MaxProgressValue = 100;
+            this.nsgReport1.OwnerForm = null;
+            this.nsgReport1.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
+            this.nsgReport1.ProgressObject = null;
+            this.nsgReport1.ProgressProcentage = 0;
+            this.nsgReport1.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "NsgSoft.ReportControls.Dll",
+        "NsgSoft.ReportBase.Dll",
+        "NsgSoft.ReportBuilder.Dll",
+        "NsgSoft.Common.Dll",
+        "NsgSoft.Database.Dll",
+        "NsgSoft.DataObjects.Dll",
+        "NsgSoft.Design.Dll",
+        "NsgSoft.Forms.Dll",
+        "NsgSoft.FormsComponents.dll",
+        "NsgSoft.Tools.dll",
+        "NsgSoft.CityGuide.Dll"};
+            this.nsgReport1.ReportAlias = "Report";
+            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource1);
+            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource2);
+            this.nsgReport1.ReportGuid = "590fe73c096840b2b18dc036d3faa60e";
+            this.nsgReport1.ReportLoaded = true;
+            this.nsgReport1.ReportName = "Report";
+            this.nsgReport1.ReportSource = resources.GetString("nsgReport1.ReportSource");
+            this.nsgReport1.ReportUnit = NsgSoft.ReportBuilder.StiReportUnitType.Centimeters;
+            this.nsgReport1.ScriptLanguage = NsgSoft.ReportBuilder.StiReportLanguageType.CSharp;
+            this.nsgReport1.ShowBookmarksPanel = false;
+            // 
+            // rdsОтчет
+            // 
+            this.rdsОтчет.MasterComponent = this.vmoДанныеДляОтчета;
+            this.rdsОтчет.Name = "rdsОтчет";
+            // 
+            // stiReportDataSource1
+            // 
+            this.stiReportDataSource1.Item = this.rdsОтчет;
+            this.stiReportDataSource1.Name = "rdsОтчет";
+            // 
+            // rdsДопДанныеОтчета
+            // 
+            this.rdsДопДанныеОтчета.MasterComponent = this.vmoДопДанныеДляОтчета;
+            this.rdsДопДанныеОтчета.Name = "rdsДопДанныеОтчета";
+            this.rdsДопДанныеОтчета.Records = NsgSoft.Forms.NsgSourceRows.CurentRow;
+            // 
+            // stiReportDataSource2
+            // 
+            this.stiReportDataSource2.Item = this.rdsДопДанныеОтчета;
+            this.stiReportDataSource2.Name = "rdsДопДанныеОтчета";
+            // 
+            // Сотрудник
+            // 
+            this.Сотрудник.Caption = "Сотрудник";
+            this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Сотрудник.Name = "Сотрудник";
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
+            this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Объект
+            // 
+            this.Объект.Caption = "Объект";
+            this.Объект.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Объект.Name = "Объект";
+            this.Объект.NSGType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
+            this.Объект.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
+            this.Объект.SearchCondition.OwnerComponent = this.Объект;
+            this.Объект.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДатаНачалаЭксплуатации
+            // 
+            this.ДатаНачалаЭксплуатации.Caption = "ДатаНачалаЭксплуатации";
+            this.ДатаНачалаЭксплуатации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ДатаНачалаЭксплуатации.Name = "ДатаНачалаЭксплуатации";
+            this.ДатаНачалаЭксплуатации.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ДатаНачалаЭксплуатации.PropertyType = typeof(System.DateTime);
+            this.ДатаНачалаЭксплуатации.SearchCondition.OwnerComponent = this.ДатаНачалаЭксплуатации;
+            this.ДатаНачалаЭксплуатации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // Номенклатура_vmoСписокСпецодежды
             // 
             this.Номенклатура_vmoСписокСпецодежды.Caption = "Номенкатура";
@@ -504,136 +923,17 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.ТребуетсяПоКомплекту_vmoСписокСпецодежды.SearchCondition.OwnerComponent = this.ТребуетсяПоКомплекту_vmoСписокСпецодежды;
             this.ТребуетсяПоКомплекту_vmoСписокСпецодежды.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // label1
+            // КоличествоНаСкладе_vmoСписокСпецодежды
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Сотрудник";
-            // 
-            // nsgInput1
-            // 
-            this.nsgInput1.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput1.ConfigurationName = "";
-            this.nsgInput1.DisableLeaveControlEvent = false;
-            this.nsgInput1.FullName = "Сотрудник";
-            this.nsgInput1.FullTextSearch = false;
-            this.nsgInput1.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput1.IsButton = false;
-            this.nsgInput1.IsInitialized = true;
-            this.nsgInput1.IsPassword = false;
-            this.nsgInput1.Location = new System.Drawing.Point(113, 50);
-            this.nsgInput1.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput1.Mask = "";
-            this.nsgInput1.MetaDataName = "";
-            this.nsgInput1.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput1.Name = "NsgInput";
-            this.nsgInput1.ObjectImages = null;
-            this.nsgInput1.ObjectIndex = null;
-            this.nsgInput1.ObjectStrings = null;
-            this.nsgInput1.Requsite = "Сотрудник";
-            this.nsgInput1.SearchFieldName = "";
-            this.nsgInput1.ShowMultipleObjectInComboBox = false;
-            this.nsgInput1.ShowRowCount = 10;
-            this.nsgInput1.Size = new System.Drawing.Size(229, 20);
-            this.nsgInput1.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput1.TabIndex = 0;
-            this.nsgInput1.VerticalAlignment = System.Drawing.StringAlignment.Center;
-            this.nsgInput1.Selected += new System.EventHandler(this.nsgInput1_Selected);
-            // 
-            // tpСотрБезСИЗ
-            // 
-            this.tpСотрБезСИЗ.AllowDrop = true;
-            this.tpСотрБезСИЗ.Controls.Add(this.groupBox1);
-            this.tpСотрБезСИЗ.Controls.Add(this.nsgInput2);
-            this.tpСотрБезСИЗ.Controls.Add(this.nsgGroupsList1);
-            this.tpСотрБезСИЗ.Controls.Add(this.nsgObjectFilter1);
-            this.tpСотрБезСИЗ.Enabled = true;
-            this.tpСотрБезСИЗ.Location = new System.Drawing.Point(4, 22);
-            this.tpСотрБезСИЗ.Name = "tabPage2";
-            this.tpСотрБезСИЗ.Padding = new System.Windows.Forms.Padding(3);
-            this.tpСотрБезСИЗ.Size = new System.Drawing.Size(871, 479);
-            this.tpСотрБезСИЗ.TabIndex = 1;
-            this.tpСотрБезСИЗ.Text = "Сотрудники без СИЗ и Спецодежды";
-            this.tpСотрБезСИЗ.UseVisualStyleBackColor = true;
-            this.tpСотрБезСИЗ.Visible = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.AllowDrop = true;
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.rdbЗакупки);
-            this.groupBox1.Controls.Add(this.rdbСпецодежда);
-            this.groupBox1.Location = new System.Drawing.Point(534, 235);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(329, 79);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Тип отчета";
-            // 
-            // rdbЗакупки
-            // 
-            this.rdbЗакупки.AutoSize = true;
-            this.rdbЗакупки.Location = new System.Drawing.Point(7, 44);
-            this.rdbЗакупки.Name = "rdbЗакупки";
-            this.rdbЗакупки.Size = new System.Drawing.Size(67, 17);
-            this.rdbЗакупки.TabIndex = 1;
-            this.rdbЗакупки.TabStop = true;
-            this.rdbЗакупки.Text = "Закупки";
-            this.rdbЗакупки.UseVisualStyleBackColor = true;
-            // 
-            // rdbСпецодежда
-            // 
-            this.rdbСпецодежда.AutoSize = true;
-            this.rdbСпецодежда.Location = new System.Drawing.Point(7, 20);
-            this.rdbСпецодежда.Name = "rdbСпецодежда";
-            this.rdbСпецодежда.Size = new System.Drawing.Size(141, 17);
-            this.rdbСпецодежда.TabIndex = 0;
-            this.rdbСпецодежда.TabStop = true;
-            this.rdbСпецодежда.Text = "Выданная спецодежда";
-            this.rdbСпецодежда.UseVisualStyleBackColor = true;
-            // 
-            // nsgInput2
-            // 
-            this.nsgInput2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nsgInput2.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput2.ConfigurationName = "";
-            this.nsgInput2.DisableLeaveControlEvent = false;
-            this.nsgInput2.FullName = "ДатаОтчета";
-            this.nsgInput2.FullTextSearch = false;
-            this.nsgInput2.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput2.IsButton = false;
-            this.nsgInput2.IsInitialized = true;
-            this.nsgInput2.IsPassword = false;
-            this.nsgInput2.Location = new System.Drawing.Point(533, 7);
-            this.nsgInput2.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput2.Mask = "";
-            this.nsgInput2.MetaDataName = "";
-            this.nsgInput2.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput2.Name = "NsgInput";
-            this.nsgInput2.ObjectImages = null;
-            this.nsgInput2.ObjectIndex = null;
-            this.nsgInput2.ObjectStrings = null;
-            this.nsgInput2.Requsite = "ДатаОтчета";
-            this.nsgInput2.SearchFieldName = "";
-            this.nsgInput2.ShowMultipleObjectInComboBox = false;
-            this.nsgInput2.ShowRowCount = 10;
-            this.nsgInput2.Size = new System.Drawing.Size(210, 20);
-            this.nsgInput2.SourceObject = this.vmoДопДанныеДляОтчета;
-            this.nsgInput2.TabIndex = 1;
-            this.nsgInput2.VerticalAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // vmoДопДанныеДляОтчета
-            // 
-            this.vmoДопДанныеДляОтчета.Columns.Collection.Add(this.ДатаОтчета_vmoДопДанныеДляОтчета);
-            this.vmoДопДанныеДляОтчета.IsActive = true;
-            this.vmoДопДанныеДляОтчета.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
-            this.vmoДопДанныеДляОтчета.MetaDataName = "";
-            this.vmoДопДанныеДляОтчета.FullName = "";
+            this.КоличествоНаСкладе_vmoСписокСпецодежды.CalcTotal = false;
+            this.КоличествоНаСкладе_vmoСписокСпецодежды.Caption = "КоличествоНаСкладе";
+            this.КоличествоНаСкладе_vmoСписокСпецодежды.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.КоличествоНаСкладе_vmoСписокСпецодежды.Name = "КоличествоНаСкладе";
+            this.КоличествоНаСкладе_vmoСписокСпецодежды.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.КоличествоНаСкладе_vmoСписокСпецодежды.PropertyType = typeof(long);
+            this.КоличествоНаСкладе_vmoСписокСпецодежды.ReadOnly = true;
+            this.КоличествоНаСкладе_vmoСписокСпецодежды.SearchCondition.OwnerComponent = this.КоличествоНаСкладе_vmoСписокСпецодежды;
+            this.КоличествоНаСкладе_vmoСписокСпецодежды.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // ДатаОтчета_vmoДопДанныеДляОтчета
             // 
@@ -645,55 +945,6 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.ДатаОтчета_vmoДопДанныеДляОтчета.SearchCondition.OwnerComponent = this.ДатаОтчета_vmoДопДанныеДляОтчета;
             this.ДатаОтчета_vmoДопДанныеДляОтчета.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // nsgGroupsList1
-            // 
-            this.nsgGroupsList1.AllowDrop = true;
-            this.nsgGroupsList1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nsgGroupsList1.BackColor = System.Drawing.SystemColors.Control;
-            this.nsgGroupsList1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgGroupsList1.DisableComponents = ((System.Collections.Generic.List<string>)(resources.GetObject("nsgGroupsList1.DisableComponents")));
-            this.nsgGroupsList1.Location = new System.Drawing.Point(533, 40);
-            this.nsgGroupsList1.MinimumSize = new System.Drawing.Size(290, 150);
-            this.nsgGroupsList1.Name = "NsgGroupsList";
-            this.nsgGroupsList1.NsgRemoveMasterComponent = true;
-            this.nsgGroupsList1.SetReport = null;
-            this.nsgGroupsList1.SetTitle = "title";
-            this.nsgGroupsList1.Size = new System.Drawing.Size(332, 175);
-            this.nsgGroupsList1.TabIndex = 0;
-            // 
-            // nsgObjectFilter1
-            // 
-            this.nsgObjectFilter1.AllowDrop = true;
-            this.nsgObjectFilter1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nsgObjectFilter1.AutoSetCompare = true;
-            this.nsgObjectFilter1.BackColor = System.Drawing.SystemColors.Control;
-            this.nsgObjectFilter1.FilterTypeCaption = "Тип Фильтра";
-            this.nsgObjectFilter1.Grouping = false;
-            this.nsgObjectFilter1.IsModify = true;
-            this.nsgObjectFilter1.LineHeight = 20;
-            this.nsgObjectFilter1.Location = new System.Drawing.Point(9, 7);
-            this.nsgObjectFilter1.LockAdditionalColumns = false;
-            this.nsgObjectFilter1.LockUpdateColumnsFromSourceObject = false;
-            this.nsgObjectFilter1.Name = "NsgObjectFilter";
-            this.nsgObjectFilter1.ReadOnly = false;
-            this.nsgObjectFilter1.Regime = NsgSoft.Forms.NsgIGridView.NsgObjectFilter.Regimes.Filter;
-            this.nsgObjectFilter1.RekvisitCaption = "Имя Фильтра";
-            this.nsgObjectFilter1.SaveSettings = false;
-            this.nsgObjectFilter1.Size = new System.Drawing.Size(518, 466);
-            this.nsgObjectFilter1.SourceObject = this.vmoФильтр;
-            this.nsgObjectFilter1.TabIndex = 0;
-            this.nsgObjectFilter1.ValueCaption = "Фильтр";
-            // 
-            // vmoФильтр
-            // 
-            this.vmoФильтр.Columns.Collection.Add(this.Сотрудник_vmoФильтр);
-            this.vmoФильтр.IsActive = true;
-            this.vmoФильтр.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
-            this.vmoФильтр.MetaDataName = "";
-            this.vmoФильтр.FullName = "";
-            // 
             // Сотрудник_vmoФильтр
             // 
             this.Сотрудник_vmoФильтр.Caption = "Сотрудник";
@@ -704,22 +955,38 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.Сотрудник_vmoФильтр.SearchCondition.OwnerComponent = this.Сотрудник_vmoФильтр;
             this.Сотрудник_vmoФильтр.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // vmoДанныеДляОтчета
+            // Сотрудник_vmoСотрудники
             // 
-            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Номенклатура_vmoДанныеДляОтчета);
-            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Комплект_vmoДанныеДляОтчета);
-            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Количество_vmoДанныеДляОтчета);
-            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.ДатаВыдачи_vmoДанныеДляОтчета);
-            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.ТребуетсяВыдача_vmoДанныеДляОтчета);
-            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Сотрудник_vmoДанныеДляОтчета);
-            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Должность_vmoДанныеДляОтчета);
-            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.ТребуетсяВозврат_vmoДанныеДляОтчета);
-            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.Объект_vmoДанныеДляОтчета);
-            this.vmoДанныеДляОтчета.Columns.Collection.Add(this.КоличествоНаОбъекте_vmoДанныеДляОтчета);
-            this.vmoДанныеДляОтчета.IsActive = true;
-            this.vmoДанныеДляОтчета.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
-            this.vmoДанныеДляОтчета.MetaDataName = "";
-            this.vmoДанныеДляОтчета.FullName = "";
+            this.Сотрудник_vmoСотрудники.Caption = "Сотрудник";
+            this.Сотрудник_vmoСотрудники.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Сотрудник_vmoСотрудники.Name = "Сотрудник";
+            this.Сотрудник_vmoСотрудники.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoСотрудники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoСотрудники.ReadOnly = true;
+            this.Сотрудник_vmoСотрудники.SearchCondition.OwnerComponent = this.Сотрудник_vmoСотрудники;
+            this.Сотрудник_vmoСотрудники.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Подразделение_vmoСотрудники
+            // 
+            this.Подразделение_vmoСотрудники.Caption = "Подразделение";
+            this.Подразделение_vmoСотрудники.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Подразделение_vmoСотрудники.Name = "Подразделение";
+            this.Подразделение_vmoСотрудники.NSGType = typeof(TechControl.Метаданные.Мониторинг.Подразделения);
+            this.Подразделение_vmoСотрудники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Подразделения);
+            this.Подразделение_vmoСотрудники.ReadOnly = true;
+            this.Подразделение_vmoСотрудники.SearchCondition.OwnerComponent = this.Подразделение_vmoСотрудники;
+            this.Подразделение_vmoСотрудники.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Проблема_vmoСотрудники
+            // 
+            this.Проблема_vmoСотрудники.Caption = "Проблема";
+            this.Проблема_vmoСотрудники.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Проблема_vmoСотрудники.Name = "Проблема";
+            this.Проблема_vmoСотрудники.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.Проблема_vmoСотрудники.PropertyType = typeof(string);
+            this.Проблема_vmoСотрудники.ReadOnly = true;
+            this.Проблема_vmoСотрудники.SearchCondition.OwnerComponent = this.Проблема_vmoСотрудники;
+            this.Проблема_vmoСотрудники.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // Номенклатура_vmoДанныеДляОтчета
             // 
@@ -823,106 +1090,37 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.КоличествоНаОбъекте_vmoДанныеДляОтчета.SearchCondition.OwnerComponent = this.КоличествоНаОбъекте_vmoДанныеДляОтчета;
             this.КоличествоНаОбъекте_vmoДанныеДляОтчета.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // nsgReport1
+            // Размер_vmoДанныеДляОтчета
             // 
-            this.nsgReport1.CurrentProgressValue = 0;
-            this.nsgReport1.HighlightedComponent = null;
-            this.nsgReport1.IsSyncMode = true;
-            this.nsgReport1.MaxProgressValue = 100;
-            this.nsgReport1.OwnerForm = null;
-            this.nsgReport1.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
-            this.nsgReport1.ProgressObject = null;
-            this.nsgReport1.ProgressProcentage = 0;
-            this.nsgReport1.ReferencedAssemblies = new string[] {
-        "System.Dll",
-        "System.Drawing.Dll",
-        "System.Windows.Forms.Dll",
-        "System.Data.Dll",
-        "System.Xml.Dll",
-        "NsgSoft.ReportControls.Dll",
-        "NsgSoft.ReportBase.Dll",
-        "NsgSoft.ReportBuilder.Dll",
-        "NsgSoft.Common.Dll",
-        "NsgSoft.Database.Dll",
-        "NsgSoft.DataObjects.Dll",
-        "NsgSoft.Design.Dll",
-        "NsgSoft.Forms.Dll",
-        "NsgSoft.FormsComponents.dll",
-        "NsgSoft.Tools.dll",
-        "NsgSoft.CityGuide.Dll"};
-            this.nsgReport1.ReportAlias = "Report";
-            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource1);
-            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource2);
-            this.nsgReport1.ReportGuid = "432815342c074ed59e40a0b6a7714a15";
-            this.nsgReport1.ReportLoaded = true;
-            this.nsgReport1.ReportName = "Report";
-            this.nsgReport1.ReportSource = null;
-            this.nsgReport1.ReportUnit = NsgSoft.ReportBuilder.StiReportUnitType.Centimeters;
-            this.nsgReport1.ScriptLanguage = NsgSoft.ReportBuilder.StiReportLanguageType.CSharp;
-            this.nsgReport1.ShowBookmarksPanel = false;
+            this.Размер_vmoДанныеДляОтчета.Caption = "Размер";
+            this.Размер_vmoДанныеДляОтчета.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Размер_vmoДанныеДляОтчета.Name = "Размер";
+            this.Размер_vmoДанныеДляОтчета.NSGType = typeof(TechControl.Метаданные.Учет.Размеры);
+            this.Размер_vmoДанныеДляОтчета.PropertyType = typeof(TechControl.Метаданные.Учет.Размеры);
+            this.Размер_vmoДанныеДляОтчета.SearchCondition.OwnerComponent = this.Размер_vmoДанныеДляОтчета;
+            this.Размер_vmoДанныеДляОтчета.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // rdsОтчет
+            // Цена_vmoДанныеДляОтчета
             // 
-            this.rdsОтчет.MasterComponent = this.vmoДанныеДляОтчета;
-            this.rdsОтчет.Name = "rdsОтчет";
+            this.Цена_vmoДанныеДляОтчета.CalcTotal = false;
+            this.Цена_vmoДанныеДляОтчета.Caption = "Цена";
+            this.Цена_vmoДанныеДляОтчета.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Цена_vmoДанныеДляОтчета.Name = "Цена";
+            this.Цена_vmoДанныеДляОтчета.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.Цена_vmoДанныеДляОтчета.PropertyType = typeof(decimal);
+            this.Цена_vmoДанныеДляОтчета.SearchCondition.OwnerComponent = this.Цена_vmoДанныеДляОтчета;
+            this.Цена_vmoДанныеДляОтчета.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // stiReportDataSource1
+            // Стоимость_vmoДанныеДляОтчета
             // 
-            this.stiReportDataSource1.Item = this.rdsОтчет;
-            this.stiReportDataSource1.Name = "rdsОтчет";
-            // 
-            // rdsДопДанныеОтчета
-            // 
-            this.rdsДопДанныеОтчета.MasterComponent = this.vmoДопДанныеДляОтчета;
-            this.rdsДопДанныеОтчета.Name = "rdsДопДанныеОтчета";
-            this.rdsДопДанныеОтчета.Records = NsgSoft.Forms.NsgSourceRows.CurentRow;
-            // 
-            // stiReportDataSource2
-            // 
-            this.stiReportDataSource2.Item = this.rdsДопДанныеОтчета;
-            this.stiReportDataSource2.Name = "rdsДопДанныеОтчета";
-            // 
-            // Сотрудник
-            // 
-            this.Сотрудник.Caption = "Сотрудник";
-            this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
-            this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Объект
-            // 
-            this.Объект.Caption = "Объект";
-            this.Объект.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Объект.Name = "Объект";
-            this.Объект.NSGType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
-            this.Объект.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
-            this.Объект.SearchCondition.OwnerComponent = this.Объект;
-            this.Объект.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // ДатаНачалаЭксплуатации
-            // 
-            this.ДатаНачалаЭксплуатации.Caption = "ДатаНачалаЭксплуатации";
-            this.ДатаНачалаЭксплуатации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ДатаНачалаЭксплуатации.Name = "ДатаНачалаЭксплуатации";
-            this.ДатаНачалаЭксплуатации.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.ДатаНачалаЭксплуатации.PropertyType = typeof(System.DateTime);
-            this.ДатаНачалаЭксплуатации.SearchCondition.OwnerComponent = this.ДатаНачалаЭксплуатации;
-            this.ДатаНачалаЭксплуатации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // КоличествоНаСкладе_vmoСписокСпецодежды
-            // 
-            this.КоличествоНаСкладе_vmoСписокСпецодежды.CalcTotal = false;
-            this.КоличествоНаСкладе_vmoСписокСпецодежды.Caption = "КоличествоНаСкладе";
-            this.КоличествоНаСкладе_vmoСписокСпецодежды.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.КоличествоНаСкладе_vmoСписокСпецодежды.Name = "КоличествоНаСкладе";
-            this.КоличествоНаСкладе_vmoСписокСпецодежды.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.КоличествоНаСкладе_vmoСписокСпецодежды.PropertyType = typeof(long);
-            this.КоличествоНаСкладе_vmoСписокСпецодежды.ReadOnly = true;
-            this.КоличествоНаСкладе_vmoСписокСпецодежды.SearchCondition.OwnerComponent = this.КоличествоНаСкладе_vmoСписокСпецодежды;
-            this.КоличествоНаСкладе_vmoСписокСпецодежды.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Стоимость_vmoДанныеДляОтчета.CalcTotal = false;
+            this.Стоимость_vmoДанныеДляОтчета.Caption = "Стоимость";
+            this.Стоимость_vmoДанныеДляОтчета.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Стоимость_vmoДанныеДляОтчета.Name = "Стоимость";
+            this.Стоимость_vmoДанныеДляОтчета.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.Стоимость_vmoДанныеДляОтчета.PropertyType = typeof(decimal);
+            this.Стоимость_vmoДанныеДляОтчета.SearchCondition.OwnerComponent = this.Стоимость_vmoДанныеДляОтчета;
+            this.Стоимость_vmoДанныеДляОтчета.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // КонтрольСпецодеждыИСИЗФорма
             // 
@@ -954,6 +1152,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             ((System.ComponentModel.ISupportInitialize)(this.formSettingsButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.elementRightsButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoСотрудники)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tpВыдача.ResumeLayout(false);
             this.tpВыдача.PerformLayout();
@@ -964,7 +1164,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoСписокСпецодежды)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).EndInit();
-            this.tpСотрБезСИЗ.ResumeLayout(false);
+            this.tpОтчеты.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).EndInit();
@@ -972,6 +1172,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             ((System.ComponentModel.ISupportInitialize)(this.nsgGroupsList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgObjectFilter1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoФильтр)).EndInit();
+            this.tpСотрудники.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nbПроблемныеСотрудники)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoДанныеДляОтчета)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdsОтчет)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdsДопДанныеОтчета)).EndInit();
@@ -1016,22 +1218,32 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         protected System.Windows.Forms.RadioButton rdbСпецодежда;
         protected NsgColumnDescriptor.Int64 ТребуетсяПоКомплекту_vmoСписокСпецодежды;
         protected NsgColumnDescriptor.Int64 ВсегоВыдано_vmoСписокСпецодежды;
-        private NsgColumnDescriptor.Int64 КВыдаче_vmoСписокСпецодежды;
-        private NsgSoft.ReportBuilder.NsgReport nsgReport1;
-        private NsgSoft.ReportBuilder.NsgReportDataSource rdsОтчет;
-        private NsgSoft.ReportBuilder.NsgReportDataSource rdsДопДанныеОтчета;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tpВыдача;
-        private System.Windows.Forms.TabPage tpСотрБезСИЗ;
-        private NsgVisualMultipleObject vmoСписокСпецодежды;
-        private NsgVisualMultipleObject vmoФильтр;
-        private NsgVisualMultipleObject vmoДанныеДляОтчета;
-        private NsgVisualMultipleObject vmoДопДанныеДляОтчета;
-        private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource1;
-        private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource2;
         protected NsgColumnDescriptor.DateTime ДатаНачалаЭксплуатации;
         protected System.Windows.Forms.Label label3;
         protected NsgInput nsgInput4;
         protected NsgColumnDescriptor.Int64 КоличествоНаСкладе_vmoСписокСпецодежды;
+        protected Учет.Размеры.ColumnDescriptor Размер_vmoДанныеДляОтчета;
+        protected NsgColumnDescriptor.Int64 КВыдаче_vmoСписокСпецодежды;
+        protected NsgColumnDescriptor.Decimal Цена_vmoДанныеДляОтчета;
+        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoСотрудники;
+        protected NsgSoft.Design.NsgButton nbПроблемныеСотрудники;
+        protected NsgColumnDescriptor.String Проблема_vmoСотрудники;
+        protected Мониторинг.Подразделения.ColumnDescriptor Подразделение_vmoСотрудники;
+        protected System.Windows.Forms.TabControl tabControl1;
+        protected System.Windows.Forms.TabPage tpСотрудники;
+        private NsgIGrid nsgIGrid2;
+        protected NsgColumnDescriptor.Decimal Стоимость_vmoДанныеДляОтчета;
+        protected NsgVisualMultipleObject vmoСотрудники;
+        protected NsgSoft.ReportBuilder.NsgReport nsgReport1;
+        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsОтчет;
+        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsДопДанныеОтчета;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource1;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource2;
+        protected System.Windows.Forms.TabPage tpВыдача;
+        protected System.Windows.Forms.TabPage tpОтчеты;
+        protected NsgVisualMultipleObject vmoСписокСпецодежды;
+        protected NsgVisualMultipleObject vmoФильтр;
+        protected NsgVisualMultipleObject vmoДанныеДляОтчета;
+        protected NsgVisualMultipleObject vmoДопДанныеДляОтчета;
     }
 }

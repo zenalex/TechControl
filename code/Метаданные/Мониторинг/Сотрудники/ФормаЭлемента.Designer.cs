@@ -34,16 +34,16 @@ namespace TechControl.Метаданные.Мониторинг
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(СотрудникиФормаЭлемента));
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn5 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn6 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn7 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn8 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding3 = new NsgSoft.Forms.NsgMasterDetailBinding();
-            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor5 = new NsgSoft.DataObjects.NsgObjectDescriptor();
-            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor6 = new NsgSoft.DataObjects.NsgObjectDescriptor();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn1 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn2 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn3 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn4 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding1 = new NsgSoft.Forms.NsgMasterDetailBinding();
             NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor1 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor2 = new NsgSoft.DataObjects.NsgObjectDescriptor();
+            NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding2 = new NsgSoft.Forms.NsgMasterDetailBinding();
+            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor3 = new NsgSoft.DataObjects.NsgObjectDescriptor();
+            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor4 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             this.nsgIGrid1 = new NsgSoft.Forms.NsgIGrid();
             this.vmoТаблицаРазмеров = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Идентификатор_vmoТаблицаРазмеров = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
@@ -73,6 +73,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.label7 = new System.Windows.Forms.Label();
             this.tpРазмеры = new System.Windows.Forms.TabPage();
             this.tpМерки = new System.Windows.Forms.TabPage();
+            this.nbЗаполнитьТаблицуРазмеров = new NsgSoft.Design.NsgButton();
             this.label19 = new System.Windows.Forms.Label();
             this.nsgInput18 = new NsgSoft.Forms.NsgInput();
             this.vmoМерки = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
@@ -150,7 +151,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.ДокументКонтроляСпецодежды = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды.ColumnDescriptor();
             this.Подразделение = new TechControl.Метаданные.Мониторинг.Подразделения.ColumnDescriptor();
             this.Родитель = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
-            this.nbЗаполнитьТаблицуРазмеров = new NsgSoft.Design.NsgButton();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -183,6 +183,7 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput7)).BeginInit();
             this.tpРазмеры.SuspendLayout();
             this.tpМерки.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнитьТаблицуРазмеров)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoМерки)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput17)).BeginInit();
@@ -196,7 +197,6 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнитьТаблицуРазмеров)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -519,75 +519,75 @@ namespace TechControl.Метаданные.Мониторинг
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nsgIGrid1.AutoResizeCols = true;
-            nsgIGridColumn5.AllowFilter = true;
-            nsgIGridColumn5.AllowGroupSelect = false;
-            nsgIGridColumn5.AllowResize = true;
-            nsgIGridColumn5.AutoResize = true;
-            nsgIGridColumn5.Caption = "";
-            nsgIGridColumn5.ChangedProperties = new string[] {
+            nsgIGridColumn1.AllowFilter = true;
+            nsgIGridColumn1.AllowGroupSelect = false;
+            nsgIGridColumn1.AllowResize = true;
+            nsgIGridColumn1.AutoResize = true;
+            nsgIGridColumn1.Caption = "";
+            nsgIGridColumn1.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn5.DateFormat = null;
-            nsgIGridColumn5.ImportedFromVMO = false;
-            nsgIGridColumn5.InitiateRowEdit = true;
-            nsgIGridColumn5.Name = "Владелец";
-            nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn5.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn5.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn5.UseAsHeaderImage = false;
-            nsgIGridColumn5.Visible = false;
-            nsgIGridColumn5.Width = 100;
-            nsgIGridColumn6.AllowFilter = true;
-            nsgIGridColumn6.AllowGroupSelect = false;
-            nsgIGridColumn6.AllowResize = true;
-            nsgIGridColumn6.AutoResize = true;
-            nsgIGridColumn6.Caption = "";
-            nsgIGridColumn6.ChangedProperties = new string[] {
+            nsgIGridColumn1.DateFormat = null;
+            nsgIGridColumn1.ImportedFromVMO = false;
+            nsgIGridColumn1.InitiateRowEdit = true;
+            nsgIGridColumn1.Name = "Владелец";
+            nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn1.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn1.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn1.UseAsHeaderImage = false;
+            nsgIGridColumn1.Visible = false;
+            nsgIGridColumn1.Width = 100;
+            nsgIGridColumn2.AllowFilter = true;
+            nsgIGridColumn2.AllowGroupSelect = false;
+            nsgIGridColumn2.AllowResize = true;
+            nsgIGridColumn2.AutoResize = true;
+            nsgIGridColumn2.Caption = "";
+            nsgIGridColumn2.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn6.DateFormat = null;
-            nsgIGridColumn6.ImportedFromVMO = false;
-            nsgIGridColumn6.InitiateRowEdit = true;
-            nsgIGridColumn6.Name = "ВидСвойствНоменклатуры";
-            nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn6.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn6.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn6.UseAsHeaderImage = false;
-            nsgIGridColumn6.Width = 100;
-            nsgIGridColumn7.AllowFilter = true;
-            nsgIGridColumn7.AllowGroupSelect = false;
-            nsgIGridColumn7.AllowResize = true;
-            nsgIGridColumn7.AutoResize = true;
-            nsgIGridColumn7.Caption = "";
-            nsgIGridColumn7.ChangedProperties = new string[] {
+            nsgIGridColumn2.DateFormat = null;
+            nsgIGridColumn2.ImportedFromVMO = false;
+            nsgIGridColumn2.InitiateRowEdit = true;
+            nsgIGridColumn2.Name = "ВидСвойствНоменклатуры";
+            nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn2.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn2.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn2.UseAsHeaderImage = false;
+            nsgIGridColumn2.Width = 100;
+            nsgIGridColumn3.AllowFilter = true;
+            nsgIGridColumn3.AllowGroupSelect = false;
+            nsgIGridColumn3.AllowResize = true;
+            nsgIGridColumn3.AutoResize = true;
+            nsgIGridColumn3.Caption = "";
+            nsgIGridColumn3.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn7.DateFormat = null;
-            nsgIGridColumn7.ImportedFromVMO = false;
-            nsgIGridColumn7.InitiateRowEdit = true;
-            nsgIGridColumn7.Name = "Размер";
-            nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn7.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn7.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn7.UseAsHeaderImage = false;
-            nsgIGridColumn7.Width = 100;
-            nsgIGridColumn8.AllowFilter = true;
-            nsgIGridColumn8.AllowGroupSelect = false;
-            nsgIGridColumn8.AllowResize = true;
-            nsgIGridColumn8.AutoResize = true;
-            nsgIGridColumn8.Caption = "";
-            nsgIGridColumn8.ChangedProperties = new string[] {
+            nsgIGridColumn3.DateFormat = null;
+            nsgIGridColumn3.ImportedFromVMO = false;
+            nsgIGridColumn3.InitiateRowEdit = true;
+            nsgIGridColumn3.Name = "Размер";
+            nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn3.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn3.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn3.UseAsHeaderImage = false;
+            nsgIGridColumn3.Width = 100;
+            nsgIGridColumn4.AllowFilter = true;
+            nsgIGridColumn4.AllowGroupSelect = false;
+            nsgIGridColumn4.AllowResize = true;
+            nsgIGridColumn4.AutoResize = true;
+            nsgIGridColumn4.Caption = "";
+            nsgIGridColumn4.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn8.DateFormat = null;
-            nsgIGridColumn8.ImportedFromVMO = false;
-            nsgIGridColumn8.InitiateRowEdit = true;
-            nsgIGridColumn8.Name = "ВидРазмернойСетки";
-            nsgIGridColumn8.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn8.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn8.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn8.UseAsHeaderImage = false;
-            nsgIGridColumn8.Width = 100;
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn5);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn6);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn7);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn8);
+            nsgIGridColumn4.DateFormat = null;
+            nsgIGridColumn4.ImportedFromVMO = false;
+            nsgIGridColumn4.InitiateRowEdit = true;
+            nsgIGridColumn4.Name = "ВидРазмернойСетки";
+            nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn4.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn4.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn4.UseAsHeaderImage = false;
+            nsgIGridColumn4.Width = 100;
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn1);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn2);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn3);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn4);
             this.nsgIGrid1.Filter = false;
             this.nsgIGrid1.FrozenColumns = 0;
             this.nsgIGrid1.Grouping = true;
@@ -619,20 +619,20 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
             this.nsgIGrid1.CellRequestEdit += new NsgSoft.Forms.NsgIGrid.NsgIGridCellEventHandler(this.nsgIGrid1_CellRequestEdit);
             this.vmoТаблицаРазмеров.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
-            nsgObjectDescriptor6.ConfigurationName = "TechControl";
+            nsgObjectDescriptor2.ConfigurationName = "TechControl";
             this.vmoТаблицаРазмеров.MetaDataName = "Метаданные";
             this.vmoТаблицаРазмеров.FullName = "_SystemTables.МониторингСотрудникиТаблицаРазмеров.Владелец";
             // 
             // vmoТаблицаРазмеров
             // 
-            nsgObjectDescriptor5.ConfigurationName = "TechControl";
-            nsgObjectDescriptor5.FullName = "_SystemTables.МониторингСотрудникиТаблицаРазмеров.Владелец";
-            nsgObjectDescriptor5.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding3.DetailField = nsgObjectDescriptor5;
-            nsgObjectDescriptor6.FullName = "Мониторинг.Сотрудники.ТаблицаРазмеров";
-            nsgObjectDescriptor6.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding3.MasterField = nsgObjectDescriptor6;
-            nsgMasterDetailBinding3.Type = NsgSoft.Forms.NsgBindingType.Tables;
+            nsgObjectDescriptor1.ConfigurationName = "TechControl";
+            nsgObjectDescriptor1.FullName = "_SystemTables.МониторингСотрудникиТаблицаРазмеров.Владелец";
+            nsgObjectDescriptor1.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding1.DetailField = nsgObjectDescriptor1;
+            nsgObjectDescriptor2.FullName = "Мониторинг.Сотрудники.ТаблицаРазмеров";
+            nsgObjectDescriptor2.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding1.MasterField = nsgObjectDescriptor2;
+            nsgMasterDetailBinding1.Type = NsgSoft.Forms.NsgBindingType.Tables;
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.Идентификатор_vmoТаблицаРазмеров);
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.Автоинкремент_vmoТаблицаРазмеров);
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.Владелец);
@@ -642,7 +642,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.ВидРазмернойСетки);
             this.vmoТаблицаРазмеров.IsActive = true;
             this.vmoТаблицаРазмеров.MasterComponent = this.nsgVisualMultipleObject;
-            this.vmoТаблицаРазмеров.Binding = nsgMasterDetailBinding3;
+            this.vmoТаблицаРазмеров.Binding = nsgMasterDetailBinding1;
             // 
             // Идентификатор_vmoТаблицаРазмеров
             // 
@@ -1133,6 +1133,21 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpМерки.UseVisualStyleBackColor = true;
             this.tpМерки.Visible = true;
             // 
+            // nbЗаполнитьТаблицуРазмеров
+            // 
+            this.nbЗаполнитьТаблицуРазмеров.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.nbЗаполнитьТаблицуРазмеров.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nbЗаполнитьТаблицуРазмеров.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nbЗаполнитьТаблицуРазмеров.Location = new System.Drawing.Point(443, 398);
+            this.nbЗаполнитьТаблицуРазмеров.Name = "NsgButton";
+            this.nbЗаполнитьТаблицуРазмеров.ReadOnlyProvider = this.nsgVisualMultipleObject;
+            this.nbЗаполнитьТаблицуРазмеров.Size = new System.Drawing.Size(97, 63);
+            this.nbЗаполнитьТаблицуРазмеров.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.nbЗаполнитьТаблицуРазмеров.TabIndex = 23;
+            this.nbЗаполнитьТаблицуРазмеров.Text = "Заполнить таблицу размеров";
+            this.nbЗаполнитьТаблицуРазмеров.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nbЗаполнитьТаблицуРазмеров.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbЗаполнитьТаблицуРазмеров_AsyncClick);
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -1172,20 +1187,20 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput18.TabIndex = 21;
             this.nsgInput18.VerticalAlignment = System.Drawing.StringAlignment.Center;
             this.vmoМерки.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
-            nsgObjectDescriptor2.ConfigurationName = "TechControl";
+            nsgObjectDescriptor4.ConfigurationName = "TechControl";
             this.vmoМерки.MetaDataName = "Метаданные";
             this.vmoМерки.FullName = "УчетСпецодеждыИСИЗ.Мерки.Владелец";
             // 
             // vmoМерки
             // 
-            nsgObjectDescriptor1.ConfigurationName = "TechControl";
-            nsgObjectDescriptor1.FullName = "УчетСпецодеждыИСИЗ.Мерки.Владелец";
-            nsgObjectDescriptor1.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding1.DetailField = nsgObjectDescriptor1;
-            nsgObjectDescriptor2.FullName = "Мониторинг.Сотрудники.Идентификатор";
-            nsgObjectDescriptor2.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding1.MasterField = nsgObjectDescriptor2;
-            nsgMasterDetailBinding1.Type = NsgSoft.Forms.NsgBindingType.Subdictionaries;
+            nsgObjectDescriptor3.ConfigurationName = "TechControl";
+            nsgObjectDescriptor3.FullName = "УчетСпецодеждыИСИЗ.Мерки.Владелец";
+            nsgObjectDescriptor3.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding2.DetailField = nsgObjectDescriptor3;
+            nsgObjectDescriptor4.FullName = "Мониторинг.Сотрудники.Идентификатор";
+            nsgObjectDescriptor4.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding2.MasterField = nsgObjectDescriptor4;
+            nsgMasterDetailBinding2.Type = NsgSoft.Forms.NsgBindingType.Subdictionaries;
             this.vmoМерки.Columns.Collection.Add(this.Владелец_nsgVisualMultipleObject1);
             this.vmoМерки.Columns.Collection.Add(this.Идентификатор_nsgVisualMultipleObject1);
             this.vmoМерки.Columns.Collection.Add(this.Автоинкремент_nsgVisualMultipleObject1);
@@ -1210,7 +1225,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoМерки.Columns.Collection.Add(this.Родитель_nsgVisualMultipleObject1);
             this.vmoМерки.IsActive = true;
             this.vmoМерки.MasterComponent = this.nsgVisualMultipleObject;
-            this.vmoМерки.Binding = nsgMasterDetailBinding1;
+            this.vmoМерки.Binding = nsgMasterDetailBinding2;
             // 
             // Владелец_nsgVisualMultipleObject1
             // 
@@ -2204,21 +2219,6 @@ namespace TechControl.Метаданные.Мониторинг
             this.Родитель.SearchCondition.OwnerComponent = this.Родитель;
             this.Родитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // nbЗаполнитьТаблицуРазмеров
-            // 
-            this.nbЗаполнитьТаблицуРазмеров.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.nbЗаполнитьТаблицуРазмеров.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nbЗаполнитьТаблицуРазмеров.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.nbЗаполнитьТаблицуРазмеров.Location = new System.Drawing.Point(443, 398);
-            this.nbЗаполнитьТаблицуРазмеров.Name = "NsgButton";
-            this.nbЗаполнитьТаблицуРазмеров.ReadOnlyProvider = this.nsgVisualMultipleObject;
-            this.nbЗаполнитьТаблицуРазмеров.Size = new System.Drawing.Size(97, 63);
-            this.nbЗаполнитьТаблицуРазмеров.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
-            this.nbЗаполнитьТаблицуРазмеров.TabIndex = 23;
-            this.nbЗаполнитьТаблицуРазмеров.Text = "Заполнить таблицу размеров";
-            this.nbЗаполнитьТаблицуРазмеров.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
-            this.nbЗаполнитьТаблицуРазмеров.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbЗаполнитьТаблицуРазмеров_AsyncClick);
-            // 
             // СотрудникиФормаЭлемента
             // 
             this.AllowDrop = true;
@@ -2277,6 +2277,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpРазмеры.ResumeLayout(false);
             this.tpМерки.ResumeLayout(false);
             this.tpМерки.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнитьТаблицуРазмеров)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoМерки)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput17)).EndInit();
@@ -2290,7 +2291,6 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнитьТаблицуРазмеров)).EndInit();
             this.ResumeLayout(false);
 
         }
