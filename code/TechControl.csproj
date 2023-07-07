@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2023.6.13.0</ProductVersion>
+    <ProductVersion>2023.7.7.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -3737,6 +3737,94 @@
     <EmbeddedResource Include="Метаданные\ПечатныеФормыДокументов\ПФПеремещениеСпецодежды\Форма.resx">
       <NsgOwnerGuid>7303b636-8f88-46f0-984a-0490df48c0fc</NsgOwnerGuid>
       <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоСпецодежде\ОтчетПоСпецодежде.NsgInit.cs">
+      <NsgOwnerGuid>eb51a3c9-7cbd-44b7-af1b-730632c89b36</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетПоСпецодежде</NsgOwnerName>
+      <DependentUpon>ОтчетПоСпецодежде.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоСпецодежде\ОтчетПоСпецодежде.cs">
+      <NsgOwnerGuid>eb51a3c9-7cbd-44b7-af1b-730632c89b36</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетПоСпецодежде</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоСпецодежде\Форма.Designer.cs">
+      <NsgOwnerGuid>eb51a3c9-7cbd-44b7-af1b-730632c89b36</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоСпецодежде\Форма.cs">
+      <NsgOwnerGuid>eb51a3c9-7cbd-44b7-af1b-730632c89b36</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Отчеты\ОтчетПоСпецодежде\Форма.resx">
+      <NsgOwnerGuid>eb51a3c9-7cbd-44b7-af1b-730632c89b36</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоЗакупкам\ОтчетПоЗакупкам.NsgInit.cs">
+      <NsgOwnerGuid>b1580849-ea8d-42ef-8863-2a3a3cc0d97c</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетПоЗакупкам</NsgOwnerName>
+      <DependentUpon>ОтчетПоЗакупкам.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоЗакупкам\ОтчетПоЗакупкам.cs">
+      <NsgOwnerGuid>b1580849-ea8d-42ef-8863-2a3a3cc0d97c</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетПоЗакупкам</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоЗакупкам\Форма.Designer.cs">
+      <NsgOwnerGuid>b1580849-ea8d-42ef-8863-2a3a3cc0d97c</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоЗакупкам\Форма.cs">
+      <NsgOwnerGuid>b1580849-ea8d-42ef-8863-2a3a3cc0d97c</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Отчеты\ОтчетПоЗакупкам\Форма.resx">
+      <NsgOwnerGuid>b1580849-ea8d-42ef-8863-2a3a3cc0d97c</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Учет\ФормированиеЦены\УчетФормированиеЦеныТаблица.NsgInit.cs">
+      <NsgOwnerGuid>a1cece2c-135c-47a2-a776-279549a561f7</NsgOwnerGuid>
+      <NsgOwnerName>УчетФормированиеЦеныТаблица</NsgOwnerName>
+      <DependentUpon>УчетФормированиеЦеныТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ФормированиеЦены\УчетФормированиеЦеныТаблица.cs">
+      <NsgOwnerGuid>a1cece2c-135c-47a2-a776-279549a561f7</NsgOwnerGuid>
+      <NsgOwnerName>УчетФормированиеЦеныТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ФормированиеЦены\УчетФормированиеЦеныТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>a1cece2c-135c-47a2-a776-279549a561f7</NsgOwnerGuid>
+      <NsgOwnerName>УчетФормированиеЦеныТаблица</NsgOwnerName>
+      <DependentUpon>УчетФормированиеЦеныТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ФормированиеЦены\УчетФормированиеЦеныТаблица.Строка.cs">
+      <NsgOwnerGuid>a1cece2c-135c-47a2-a776-279549a561f7</NsgOwnerGuid>
+      <NsgOwnerName>УчетФормированиеЦеныТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ФормированиеЦены\ФормированиеЦены.NsgInit.cs">
+      <NsgOwnerGuid>e50ae06a-dc50-4ec9-b8e0-27ae35256d0d</NsgOwnerGuid>
+      <NsgOwnerName>ФормированиеЦены</NsgOwnerName>
+      <DependentUpon>ФормированиеЦены.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ФормированиеЦены\ФормированиеЦены.cs">
+      <NsgOwnerGuid>e50ae06a-dc50-4ec9-b8e0-27ae35256d0d</NsgOwnerGuid>
+      <NsgOwnerName>ФормированиеЦены</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Учет\ФормированиеЦены\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>e50ae06a-dc50-4ec9-b8e0-27ae35256d0d</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ФормированиеЦены\ФормаЭлемента.cs">
+      <NsgOwnerGuid>e50ae06a-dc50-4ec9-b8e0-27ae35256d0d</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Учет\ФормированиеЦены\ФормаЭлемента.resx">
+      <NsgOwnerGuid>e50ae06a-dc50-4ec9-b8e0-27ae35256d0d</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

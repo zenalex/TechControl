@@ -101,6 +101,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         {
             if (_номерТаба == 2 && (rdbСпецодежда.Checked || rdbЗакупки.Checked))
             {
+                base.OnCreateReportCompleted(nsgBackgroundReporter, e);
                 if (rdbСпецодежда.Checked)
                 {
                     if (nsgReport1.Pages.Count > 1)
@@ -117,7 +118,6 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                         nsgReport1.Pages[1].Enabled = true;
                     }
                 }
-                base.OnCreateReportCompleted(nsgBackgroundReporter, e);
             }
         }
 
@@ -392,7 +392,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                         {
                             ужеВыдано++;
                             int срокЭксплуатации = nom.ПланАмортизации.Selected ? (int)nom.ПланАмортизации.СрокАмортизацииМес : 0;
-                            if (nom.СрокЭксплуатации != 0 && item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths(срокЭксплуатации) < DateTime.Now)
+                            if (срокЭксплуатации != 0 && item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths(срокЭксплуатации) < DateTime.Now)
                             {
                                 всегоЗаконченСрок++;
                             }
@@ -430,7 +430,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                 ужеВыдано++;
 
                 int срокЭксплуатации = nom.ПланАмортизации.Selected ? (int)nom.ПланАмортизации.СрокАмортизацииМес : 0;
-                if (nom.СрокЭксплуатации != 0 && строкаОстатков[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths(срокЭксплуатации) > DateTime.Now)
+                if (срокЭксплуатации != 0 && строкаОстатков[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths(срокЭксплуатации) > DateTime.Now)
                 {
                     всегоЗаконченСрок++;
                 }

@@ -38,12 +38,12 @@ namespace TechControl.Метаданные.Мониторинг
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn2 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn3 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn4 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding1 = new NsgSoft.Forms.NsgMasterDetailBinding();
-            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor1 = new NsgSoft.DataObjects.NsgObjectDescriptor();
-            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor2 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding2 = new NsgSoft.Forms.NsgMasterDetailBinding();
             NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor3 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor4 = new NsgSoft.DataObjects.NsgObjectDescriptor();
+            NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding3 = new NsgSoft.Forms.NsgMasterDetailBinding();
+            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor5 = new NsgSoft.DataObjects.NsgObjectDescriptor();
+            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor6 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             this.nsgIGrid1 = new NsgSoft.Forms.NsgIGrid();
             this.vmoТаблицаРазмеров = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Идентификатор_vmoТаблицаРазмеров = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
@@ -619,20 +619,20 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
             this.nsgIGrid1.CellRequestEdit += new NsgSoft.Forms.NsgIGrid.NsgIGridCellEventHandler(this.nsgIGrid1_CellRequestEdit);
             this.vmoТаблицаРазмеров.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
-            nsgObjectDescriptor2.ConfigurationName = "TechControl";
+            nsgObjectDescriptor4.ConfigurationName = "TechControl";
             this.vmoТаблицаРазмеров.MetaDataName = "Метаданные";
             this.vmoТаблицаРазмеров.FullName = "_SystemTables.МониторингСотрудникиТаблицаРазмеров.Владелец";
             // 
             // vmoТаблицаРазмеров
             // 
-            nsgObjectDescriptor1.ConfigurationName = "TechControl";
-            nsgObjectDescriptor1.FullName = "_SystemTables.МониторингСотрудникиТаблицаРазмеров.Владелец";
-            nsgObjectDescriptor1.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding1.DetailField = nsgObjectDescriptor1;
-            nsgObjectDescriptor2.FullName = "Мониторинг.Сотрудники.ТаблицаРазмеров";
-            nsgObjectDescriptor2.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding1.MasterField = nsgObjectDescriptor2;
-            nsgMasterDetailBinding1.Type = NsgSoft.Forms.NsgBindingType.Tables;
+            nsgObjectDescriptor3.ConfigurationName = "TechControl";
+            nsgObjectDescriptor3.FullName = "_SystemTables.МониторингСотрудникиТаблицаРазмеров.Владелец";
+            nsgObjectDescriptor3.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding2.DetailField = nsgObjectDescriptor3;
+            nsgObjectDescriptor4.FullName = "Мониторинг.Сотрудники.ТаблицаРазмеров";
+            nsgObjectDescriptor4.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding2.MasterField = nsgObjectDescriptor4;
+            nsgMasterDetailBinding2.Type = NsgSoft.Forms.NsgBindingType.Tables;
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.Идентификатор_vmoТаблицаРазмеров);
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.Автоинкремент_vmoТаблицаРазмеров);
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.Владелец);
@@ -642,7 +642,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.ВидРазмернойСетки);
             this.vmoТаблицаРазмеров.IsActive = true;
             this.vmoТаблицаРазмеров.MasterComponent = this.nsgVisualMultipleObject;
-            this.vmoТаблицаРазмеров.Binding = nsgMasterDetailBinding1;
+            this.vmoТаблицаРазмеров.Binding = nsgMasterDetailBinding2;
             // 
             // Идентификатор_vmoТаблицаРазмеров
             // 
@@ -807,7 +807,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput1.ShowRowCount = 10;
             this.nsgInput1.Size = new System.Drawing.Size(200, 20);
             this.nsgInput1.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput1.TabIndex = 15;
+            this.nsgInput1.TabIndex = 0;
             this.nsgInput1.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput2
@@ -837,7 +837,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput2.ShowRowCount = 10;
             this.nsgInput2.Size = new System.Drawing.Size(130, 20);
             this.nsgInput2.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput2.TabIndex = 16;
+            this.nsgInput2.TabIndex = 1;
             this.nsgInput2.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput3
@@ -867,7 +867,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput3.ShowRowCount = 10;
             this.nsgInput3.Size = new System.Drawing.Size(130, 20);
             this.nsgInput3.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput3.TabIndex = 17;
+            this.nsgInput3.TabIndex = 2;
             this.nsgInput3.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput4
@@ -897,7 +897,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput4.ShowRowCount = 10;
             this.nsgInput4.Size = new System.Drawing.Size(130, 20);
             this.nsgInput4.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput4.TabIndex = 18;
+            this.nsgInput4.TabIndex = 3;
             this.nsgInput4.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput5
@@ -927,7 +927,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput5.ShowRowCount = 10;
             this.nsgInput5.Size = new System.Drawing.Size(130, 20);
             this.nsgInput5.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput5.TabIndex = 19;
+            this.nsgInput5.TabIndex = 4;
             this.nsgInput5.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput6
@@ -957,7 +957,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput6.ShowRowCount = 10;
             this.nsgInput6.Size = new System.Drawing.Size(305, 20);
             this.nsgInput6.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput6.TabIndex = 20;
+            this.nsgInput6.TabIndex = 5;
             this.nsgInput6.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // tabControl1
@@ -971,7 +971,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControl1.Controls.Add(this.tpМерки);
             this.tabControl1.Location = new System.Drawing.Point(6, 3);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 2;
+            this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1166, 528);
             this.tabControl1.TabIndex = 21;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
@@ -1003,7 +1003,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpОсновные.TabIndex = 0;
             this.tpОсновные.Text = "Основные";
             this.tpОсновные.UseVisualStyleBackColor = true;
-            this.tpОсновные.Visible = false;
+            this.tpОсновные.Visible = true;
             // 
             // nsgInput8
             // 
@@ -1032,7 +1032,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput8.ShowRowCount = 10;
             this.nsgInput8.Size = new System.Drawing.Size(305, 20);
             this.nsgInput8.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput8.TabIndex = 24;
+            this.nsgInput8.TabIndex = 7;
             this.nsgInput8.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label8
@@ -1071,7 +1071,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput7.ShowRowCount = 10;
             this.nsgInput7.Size = new System.Drawing.Size(305, 20);
             this.nsgInput7.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput7.TabIndex = 22;
+            this.nsgInput7.TabIndex = 6;
             this.nsgInput7.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label7
@@ -1184,23 +1184,23 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput18.ShowRowCount = 10;
             this.nsgInput18.Size = new System.Drawing.Size(58, 20);
             this.nsgInput18.SourceObject = this.vmoМерки;
-            this.nsgInput18.TabIndex = 21;
+            this.nsgInput18.TabIndex = 9;
             this.nsgInput18.VerticalAlignment = System.Drawing.StringAlignment.Center;
             this.vmoМерки.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
-            nsgObjectDescriptor4.ConfigurationName = "TechControl";
+            nsgObjectDescriptor6.ConfigurationName = "TechControl";
             this.vmoМерки.MetaDataName = "Метаданные";
             this.vmoМерки.FullName = "УчетСпецодеждыИСИЗ.Мерки.Владелец";
             // 
             // vmoМерки
             // 
-            nsgObjectDescriptor3.ConfigurationName = "TechControl";
-            nsgObjectDescriptor3.FullName = "УчетСпецодеждыИСИЗ.Мерки.Владелец";
-            nsgObjectDescriptor3.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding2.DetailField = nsgObjectDescriptor3;
-            nsgObjectDescriptor4.FullName = "Мониторинг.Сотрудники.Идентификатор";
-            nsgObjectDescriptor4.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding2.MasterField = nsgObjectDescriptor4;
-            nsgMasterDetailBinding2.Type = NsgSoft.Forms.NsgBindingType.Subdictionaries;
+            nsgObjectDescriptor5.ConfigurationName = "TechControl";
+            nsgObjectDescriptor5.FullName = "УчетСпецодеждыИСИЗ.Мерки.Владелец";
+            nsgObjectDescriptor5.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding3.DetailField = nsgObjectDescriptor5;
+            nsgObjectDescriptor6.FullName = "Мониторинг.Сотрудники.Идентификатор";
+            nsgObjectDescriptor6.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding3.MasterField = nsgObjectDescriptor6;
+            nsgMasterDetailBinding3.Type = NsgSoft.Forms.NsgBindingType.Subdictionaries;
             this.vmoМерки.Columns.Collection.Add(this.Владелец_nsgVisualMultipleObject1);
             this.vmoМерки.Columns.Collection.Add(this.Идентификатор_nsgVisualMultipleObject1);
             this.vmoМерки.Columns.Collection.Add(this.Автоинкремент_nsgVisualMultipleObject1);
@@ -1225,7 +1225,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoМерки.Columns.Collection.Add(this.Родитель_nsgVisualMultipleObject1);
             this.vmoМерки.IsActive = true;
             this.vmoМерки.MasterComponent = this.nsgVisualMultipleObject;
-            this.vmoМерки.Binding = nsgMasterDetailBinding2;
+            this.vmoМерки.Binding = nsgMasterDetailBinding3;
             // 
             // Владелец_nsgVisualMultipleObject1
             // 
@@ -1524,7 +1524,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput17.ShowRowCount = 10;
             this.nsgInput17.Size = new System.Drawing.Size(58, 20);
             this.nsgInput17.SourceObject = this.vmoМерки;
-            this.nsgInput17.TabIndex = 19;
+            this.nsgInput17.TabIndex = 8;
             this.nsgInput17.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // pictureBox2
@@ -1582,7 +1582,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput16.ShowRowCount = 10;
             this.nsgInput16.Size = new System.Drawing.Size(58, 20);
             this.nsgInput16.SourceObject = this.vmoМерки;
-            this.nsgInput16.TabIndex = 15;
+            this.nsgInput16.TabIndex = 1;
             this.nsgInput16.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label15
@@ -1621,7 +1621,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput15.ShowRowCount = 10;
             this.nsgInput15.Size = new System.Drawing.Size(58, 20);
             this.nsgInput15.SourceObject = this.vmoМерки;
-            this.nsgInput15.TabIndex = 13;
+            this.nsgInput15.TabIndex = 2;
             this.nsgInput15.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label14
@@ -1660,7 +1660,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput14.ShowRowCount = 10;
             this.nsgInput14.Size = new System.Drawing.Size(58, 20);
             this.nsgInput14.SourceObject = this.vmoМерки;
-            this.nsgInput14.TabIndex = 11;
+            this.nsgInput14.TabIndex = 3;
             this.nsgInput14.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label13
@@ -1699,7 +1699,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput13.ShowRowCount = 10;
             this.nsgInput13.Size = new System.Drawing.Size(58, 20);
             this.nsgInput13.SourceObject = this.vmoМерки;
-            this.nsgInput13.TabIndex = 9;
+            this.nsgInput13.TabIndex = 4;
             this.nsgInput13.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label12
@@ -1738,7 +1738,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput12.ShowRowCount = 10;
             this.nsgInput12.Size = new System.Drawing.Size(58, 20);
             this.nsgInput12.SourceObject = this.vmoМерки;
-            this.nsgInput12.TabIndex = 7;
+            this.nsgInput12.TabIndex = 5;
             this.nsgInput12.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label11
@@ -1777,7 +1777,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput11.ShowRowCount = 10;
             this.nsgInput11.Size = new System.Drawing.Size(58, 20);
             this.nsgInput11.SourceObject = this.vmoМерки;
-            this.nsgInput11.TabIndex = 5;
+            this.nsgInput11.TabIndex = 6;
             this.nsgInput11.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label10
@@ -1816,7 +1816,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput10.ShowRowCount = 10;
             this.nsgInput10.Size = new System.Drawing.Size(58, 20);
             this.nsgInput10.SourceObject = this.vmoМерки;
-            this.nsgInput10.TabIndex = 3;
+            this.nsgInput10.TabIndex = 7;
             this.nsgInput10.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label9
@@ -1855,7 +1855,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput9.ShowRowCount = 10;
             this.nsgInput9.Size = new System.Drawing.Size(58, 20);
             this.nsgInput9.SourceObject = this.vmoМерки;
-            this.nsgInput9.TabIndex = 1;
+            this.nsgInput9.TabIndex = 0;
             this.nsgInput9.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // pictureBox1

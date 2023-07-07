@@ -41,6 +41,9 @@ namespace TechControl.Метаданные.Учет
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpПараметры = new System.Windows.Forms.TabPage();
+            this.nsgInput23 = new NsgSoft.Forms.NsgInput();
+            this.nsgInput24 = new NsgSoft.Forms.NsgInput();
+            this.label17 = new System.Windows.Forms.Label();
             this.nsgInput20 = new NsgSoft.Forms.NsgInput();
             this.nsgInput19 = new NsgSoft.Forms.NsgInput();
             this.nsgInput18 = new NsgSoft.Forms.NsgInput();
@@ -80,9 +83,6 @@ namespace TechControl.Метаданные.Учет
             this.РазмерДляКопии = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
             this.nsgInput15 = new NsgSoft.Forms.NsgInput();
             this.nsgButton1 = new NsgSoft.Design.NsgButton();
-            this.nsgInput23 = new NsgSoft.Forms.NsgInput();
-            this.nsgInput24 = new NsgSoft.Forms.NsgInput();
-            this.label17 = new System.Windows.Forms.Label();
             this.Идентификатор = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
             this.Автоинкремент = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ЭтоГруппа = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
@@ -139,6 +139,8 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tpПараметры.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput18)).BeginInit();
@@ -163,8 +165,6 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.vmoДляКопирования)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput24)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -505,7 +505,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput1.ShowRowCount = 10;
             this.nsgInput1.Size = new System.Drawing.Size(205, 20);
             this.nsgInput1.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput1.TabIndex = 9;
+            this.nsgInput1.TabIndex = 0;
             this.nsgInput1.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label1
@@ -553,7 +553,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput2.ShowRowCount = 10;
             this.nsgInput2.Size = new System.Drawing.Size(205, 20);
             this.nsgInput2.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput2.TabIndex = 11;
+            this.nsgInput2.TabIndex = 1;
             this.nsgInput2.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // pictureBox1
@@ -579,7 +579,7 @@ namespace TechControl.Метаданные.Учет
             this.tabControl1.Controls.Add(this.tpПарметрыНоги);
             this.tabControl1.Location = new System.Drawing.Point(13, 65);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.SelectedIndex = 1;
             this.tabControl1.Size = new System.Drawing.Size(838, 518);
             this.tabControl1.TabIndex = 14;
             // 
@@ -626,6 +626,75 @@ namespace TechControl.Метаданные.Учет
             this.tpПараметры.UseVisualStyleBackColor = true;
             this.tpПараметры.Visible = true;
             // 
+            // nsgInput23
+            // 
+            this.nsgInput23.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput23.ConfigurationName = "TechControl";
+            this.nsgInput23.DisableLeaveControlEvent = false;
+            this.nsgInput23.FullName = "Учет.Размеры.ОбхватГоловыМакс";
+            this.nsgInput23.FullTextSearch = false;
+            this.nsgInput23.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput23.IsButton = false;
+            this.nsgInput23.IsInitialized = true;
+            this.nsgInput23.IsPassword = false;
+            this.nsgInput23.Location = new System.Drawing.Point(247, 313);
+            this.nsgInput23.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput23.Mask = "";
+            this.nsgInput23.MetaDataName = "Метаданные";
+            this.nsgInput23.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput23.Name = "NsgInput";
+            this.nsgInput23.ObjectImages = null;
+            this.nsgInput23.ObjectIndex = null;
+            this.nsgInput23.ObjectStrings = null;
+            this.nsgInput23.Requsite = "ОбхватГоловыМакс";
+            this.nsgInput23.SearchFieldName = "";
+            this.nsgInput23.ShowMultipleObjectInComboBox = false;
+            this.nsgInput23.ShowRowCount = 10;
+            this.nsgInput23.Size = new System.Drawing.Size(60, 20);
+            this.nsgInput23.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput23.TabIndex = 17;
+            this.nsgInput23.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // nsgInput24
+            // 
+            this.nsgInput24.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput24.ConfigurationName = "TechControl";
+            this.nsgInput24.DisableLeaveControlEvent = false;
+            this.nsgInput24.FullName = "Учет.Размеры.ОбхватГоловыМин";
+            this.nsgInput24.FullTextSearch = false;
+            this.nsgInput24.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput24.IsButton = false;
+            this.nsgInput24.IsInitialized = true;
+            this.nsgInput24.IsPassword = false;
+            this.nsgInput24.Location = new System.Drawing.Point(179, 313);
+            this.nsgInput24.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput24.Mask = "";
+            this.nsgInput24.MetaDataName = "Метаданные";
+            this.nsgInput24.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput24.Name = "NsgInput";
+            this.nsgInput24.ObjectImages = null;
+            this.nsgInput24.ObjectIndex = null;
+            this.nsgInput24.ObjectStrings = null;
+            this.nsgInput24.Requsite = "ОбхватГоловыМин";
+            this.nsgInput24.SearchFieldName = "";
+            this.nsgInput24.ShowMultipleObjectInComboBox = false;
+            this.nsgInput24.ShowRowCount = 10;
+            this.nsgInput24.Size = new System.Drawing.Size(60, 20);
+            this.nsgInput24.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput24.TabIndex = 16;
+            this.nsgInput24.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(73, 320);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(103, 13);
+            this.label17.TabIndex = 40;
+            this.label17.Text = "Обхват головы см.";
+            // 
             // nsgInput20
             // 
             this.nsgInput20.BackColor = System.Drawing.SystemColors.Window;
@@ -653,7 +722,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput20.ShowRowCount = 10;
             this.nsgInput20.Size = new System.Drawing.Size(60, 20);
             this.nsgInput20.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput20.TabIndex = 39;
+            this.nsgInput20.TabIndex = 15;
             this.nsgInput20.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput19
@@ -683,7 +752,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput19.ShowRowCount = 10;
             this.nsgInput19.Size = new System.Drawing.Size(60, 20);
             this.nsgInput19.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput19.TabIndex = 38;
+            this.nsgInput19.TabIndex = 11;
             this.nsgInput19.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput18
@@ -713,7 +782,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput18.ShowRowCount = 10;
             this.nsgInput18.Size = new System.Drawing.Size(60, 20);
             this.nsgInput18.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput18.TabIndex = 37;
+            this.nsgInput18.TabIndex = 9;
             this.nsgInput18.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput16
@@ -743,7 +812,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput16.ShowRowCount = 10;
             this.nsgInput16.Size = new System.Drawing.Size(60, 20);
             this.nsgInput16.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput16.TabIndex = 36;
+            this.nsgInput16.TabIndex = 14;
             this.nsgInput16.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label12
@@ -782,7 +851,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput11.ShowRowCount = 10;
             this.nsgInput11.Size = new System.Drawing.Size(60, 20);
             this.nsgInput11.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput11.TabIndex = 34;
+            this.nsgInput11.TabIndex = 13;
             this.nsgInput11.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput14
@@ -812,7 +881,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput14.ShowRowCount = 10;
             this.nsgInput14.Size = new System.Drawing.Size(60, 20);
             this.nsgInput14.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput14.TabIndex = 33;
+            this.nsgInput14.TabIndex = 12;
             this.nsgInput14.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label11
@@ -851,7 +920,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput13.ShowRowCount = 10;
             this.nsgInput13.Size = new System.Drawing.Size(60, 20);
             this.nsgInput13.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput13.TabIndex = 31;
+            this.nsgInput13.TabIndex = 10;
             this.nsgInput13.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label10
@@ -889,7 +958,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput12.ShowRowCount = 10;
             this.nsgInput12.Size = new System.Drawing.Size(60, 20);
             this.nsgInput12.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput12.TabIndex = 29;
+            this.nsgInput12.TabIndex = 8;
             this.nsgInput12.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label9
@@ -928,7 +997,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput9.ShowRowCount = 10;
             this.nsgInput9.Size = new System.Drawing.Size(60, 20);
             this.nsgInput9.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput9.TabIndex = 27;
+            this.nsgInput9.TabIndex = 7;
             this.nsgInput9.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput10
@@ -958,7 +1027,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput10.ShowRowCount = 10;
             this.nsgInput10.Size = new System.Drawing.Size(60, 20);
             this.nsgInput10.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput10.TabIndex = 26;
+            this.nsgInput10.TabIndex = 6;
             this.nsgInput10.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label8
@@ -997,7 +1066,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput7.ShowRowCount = 10;
             this.nsgInput7.Size = new System.Drawing.Size(60, 20);
             this.nsgInput7.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput7.TabIndex = 24;
+            this.nsgInput7.TabIndex = 5;
             this.nsgInput7.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput8
@@ -1027,7 +1096,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput8.ShowRowCount = 10;
             this.nsgInput8.Size = new System.Drawing.Size(60, 20);
             this.nsgInput8.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput8.TabIndex = 23;
+            this.nsgInput8.TabIndex = 4;
             this.nsgInput8.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label7
@@ -1066,7 +1135,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput5.ShowRowCount = 10;
             this.nsgInput5.Size = new System.Drawing.Size(60, 20);
             this.nsgInput5.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput5.TabIndex = 21;
+            this.nsgInput5.TabIndex = 3;
             this.nsgInput5.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput6
@@ -1096,7 +1165,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput6.ShowRowCount = 10;
             this.nsgInput6.Size = new System.Drawing.Size(60, 20);
             this.nsgInput6.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput6.TabIndex = 20;
+            this.nsgInput6.TabIndex = 2;
             this.nsgInput6.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label6
@@ -1153,7 +1222,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput4.ShowRowCount = 10;
             this.nsgInput4.Size = new System.Drawing.Size(60, 20);
             this.nsgInput4.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput4.TabIndex = 16;
+            this.nsgInput4.TabIndex = 1;
             this.nsgInput4.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput3
@@ -1183,7 +1252,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput3.ShowRowCount = 10;
             this.nsgInput3.Size = new System.Drawing.Size(60, 20);
             this.nsgInput3.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput3.TabIndex = 15;
+            this.nsgInput3.TabIndex = 0;
             this.nsgInput3.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label3
@@ -1212,7 +1281,7 @@ namespace TechControl.Метаданные.Учет
             this.tpПарметрыНоги.TabIndex = 1;
             this.tpПарметрыНоги.Text = "Парметры ступни";
             this.tpПарметрыНоги.UseVisualStyleBackColor = true;
-            this.tpПарметрыНоги.Visible = false;
+            this.tpПарметрыНоги.Visible = true;
             // 
             // label15
             // 
@@ -1259,7 +1328,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput21.ShowRowCount = 10;
             this.nsgInput21.Size = new System.Drawing.Size(60, 20);
             this.nsgInput21.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput21.TabIndex = 41;
+            this.nsgInput21.TabIndex = 1;
             this.nsgInput21.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgInput22
@@ -1289,7 +1358,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput22.ShowRowCount = 10;
             this.nsgInput22.Size = new System.Drawing.Size(60, 20);
             this.nsgInput22.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput22.TabIndex = 40;
+            this.nsgInput22.TabIndex = 0;
             this.nsgInput22.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // label13
@@ -1350,7 +1419,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput17.ShowRowCount = 10;
             this.nsgInput17.Size = new System.Drawing.Size(205, 20);
             this.nsgInput17.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput17.TabIndex = 15;
+            this.nsgInput17.TabIndex = 2;
             this.nsgInput17.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // vmoДляКопирования
@@ -1398,7 +1467,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput15.ShowRowCount = 10;
             this.nsgInput15.Size = new System.Drawing.Size(130, 20);
             this.nsgInput15.SourceObject = this.vmoДляКопирования;
-            this.nsgInput15.TabIndex = 17;
+            this.nsgInput15.TabIndex = 3;
             this.nsgInput15.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // nsgButton1
@@ -1411,79 +1480,10 @@ namespace TechControl.Метаданные.Учет
             this.nsgButton1.ReadOnlyProvider = this.nsgVisualMultipleObject;
             this.nsgButton1.Size = new System.Drawing.Size(130, 25);
             this.nsgButton1.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
-            this.nsgButton1.TabIndex = 18;
+            this.nsgButton1.TabIndex = 4;
             this.nsgButton1.Text = "копировать из размера";
             this.nsgButton1.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
             this.nsgButton1.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nsgButton1_AsyncClick);
-            // 
-            // nsgInput23
-            // 
-            this.nsgInput23.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput23.ConfigurationName = "";
-            this.nsgInput23.DisableLeaveControlEvent = false;
-            this.nsgInput23.FullName = "ОбхватГоловыМакс";
-            this.nsgInput23.FullTextSearch = false;
-            this.nsgInput23.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput23.IsButton = false;
-            this.nsgInput23.IsInitialized = true;
-            this.nsgInput23.IsPassword = false;
-            this.nsgInput23.Location = new System.Drawing.Point(247, 313);
-            this.nsgInput23.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput23.Mask = "";
-            this.nsgInput23.MetaDataName = "";
-            this.nsgInput23.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput23.Name = "NsgInput";
-            this.nsgInput23.ObjectImages = null;
-            this.nsgInput23.ObjectIndex = null;
-            this.nsgInput23.ObjectStrings = null;
-            this.nsgInput23.Requsite = "ОбхватГоловыМакс";
-            this.nsgInput23.SearchFieldName = "";
-            this.nsgInput23.ShowMultipleObjectInComboBox = false;
-            this.nsgInput23.ShowRowCount = 10;
-            this.nsgInput23.Size = new System.Drawing.Size(60, 20);
-            this.nsgInput23.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput23.TabIndex = 42;
-            this.nsgInput23.VerticalAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // nsgInput24
-            // 
-            this.nsgInput24.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput24.ConfigurationName = "";
-            this.nsgInput24.DisableLeaveControlEvent = false;
-            this.nsgInput24.FullName = "ОбхватГоловыМин";
-            this.nsgInput24.FullTextSearch = false;
-            this.nsgInput24.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput24.IsButton = false;
-            this.nsgInput24.IsInitialized = true;
-            this.nsgInput24.IsPassword = false;
-            this.nsgInput24.Location = new System.Drawing.Point(179, 313);
-            this.nsgInput24.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput24.Mask = "";
-            this.nsgInput24.MetaDataName = "";
-            this.nsgInput24.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput24.Name = "NsgInput";
-            this.nsgInput24.ObjectImages = null;
-            this.nsgInput24.ObjectIndex = null;
-            this.nsgInput24.ObjectStrings = null;
-            this.nsgInput24.Requsite = "ОбхватГоловыМин";
-            this.nsgInput24.SearchFieldName = "";
-            this.nsgInput24.ShowMultipleObjectInComboBox = false;
-            this.nsgInput24.ShowRowCount = 10;
-            this.nsgInput24.Size = new System.Drawing.Size(60, 20);
-            this.nsgInput24.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput24.TabIndex = 41;
-            this.nsgInput24.VerticalAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(73, 320);
-            this.label17.Name = "label12";
-            this.label17.Size = new System.Drawing.Size(103, 13);
-            this.label17.TabIndex = 40;
-            this.label17.Text = "Обхват головы см.";
             // 
             // Идентификатор
             // 
@@ -1941,6 +1941,8 @@ namespace TechControl.Метаданные.Учет
             this.tabControl1.ResumeLayout(false);
             this.tpПараметры.ResumeLayout(false);
             this.tpПараметры.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput18)).EndInit();
@@ -1966,8 +1968,6 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.vmoДляКопирования)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput24)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
