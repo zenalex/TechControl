@@ -38,6 +38,9 @@ namespace TechControl.Метаданные.Мониторинг
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn2 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn3 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn4 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding1 = new NsgSoft.Forms.NsgMasterDetailBinding();
+            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor1 = new NsgSoft.DataObjects.NsgObjectDescriptor();
+            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor2 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding2 = new NsgSoft.Forms.NsgMasterDetailBinding();
             NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor3 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor4 = new NsgSoft.DataObjects.NsgObjectDescriptor();
@@ -150,7 +153,16 @@ namespace TechControl.Метаданные.Мониторинг
             this.ЗагрузочныйИдентификатор = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ДокументКонтроляСпецодежды = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды.ColumnDescriptor();
             this.Подразделение = new TechControl.Метаданные.Мониторинг.Подразделения.ColumnDescriptor();
+            this.ТаблицаСовмещаемыхДолжностей = new TechControl.Метаданные._SystemTables.МониторингСотрудникиТаблицаСовмещаемыхДолжностей.ColumnDescriptor();
             this.Родитель = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.tpСовмещаемыеДолжности = new System.Windows.Forms.TabPage();
+            this.vmoТаблицаДолжностей = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.Идентификатор_vmoТаблицаДолжностей = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
+            this.Автоинкремент_vmoТаблицаДолжностей = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Владелец_vmoТаблицаДолжностей = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
+            this.НомерСтроки_vmoТаблицаДолжностей = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Должность_vmoТаблицаДолжностей = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
+            this.nsgIGrid2 = new NsgSoft.Forms.NsgIGrid();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -197,6 +209,9 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tpСовмещаемыеДолжности.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoТаблицаДолжностей)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid2)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -503,6 +518,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ЗагрузочныйИдентификатор);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ДокументКонтроляСпецодежды);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Подразделение);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.ТаблицаСовмещаемыхДолжностей);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Родитель);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.MetaDataName = "Метаданные";
@@ -619,20 +635,20 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
             this.nsgIGrid1.CellRequestEdit += new NsgSoft.Forms.NsgIGrid.NsgIGridCellEventHandler(this.nsgIGrid1_CellRequestEdit);
             this.vmoТаблицаРазмеров.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
-            nsgObjectDescriptor4.ConfigurationName = "TechControl";
+            nsgObjectDescriptor2.ConfigurationName = "TechControl";
             this.vmoТаблицаРазмеров.MetaDataName = "Метаданные";
             this.vmoТаблицаРазмеров.FullName = "_SystemTables.МониторингСотрудникиТаблицаРазмеров.Владелец";
             // 
             // vmoТаблицаРазмеров
             // 
-            nsgObjectDescriptor3.ConfigurationName = "TechControl";
-            nsgObjectDescriptor3.FullName = "_SystemTables.МониторингСотрудникиТаблицаРазмеров.Владелец";
-            nsgObjectDescriptor3.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding2.DetailField = nsgObjectDescriptor3;
-            nsgObjectDescriptor4.FullName = "Мониторинг.Сотрудники.ТаблицаРазмеров";
-            nsgObjectDescriptor4.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding2.MasterField = nsgObjectDescriptor4;
-            nsgMasterDetailBinding2.Type = NsgSoft.Forms.NsgBindingType.Tables;
+            nsgObjectDescriptor1.ConfigurationName = "TechControl";
+            nsgObjectDescriptor1.FullName = "_SystemTables.МониторингСотрудникиТаблицаРазмеров.Владелец";
+            nsgObjectDescriptor1.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding1.DetailField = nsgObjectDescriptor1;
+            nsgObjectDescriptor2.FullName = "Мониторинг.Сотрудники.ТаблицаРазмеров";
+            nsgObjectDescriptor2.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding1.MasterField = nsgObjectDescriptor2;
+            nsgMasterDetailBinding1.Type = NsgSoft.Forms.NsgBindingType.Tables;
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.Идентификатор_vmoТаблицаРазмеров);
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.Автоинкремент_vmoТаблицаРазмеров);
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.Владелец);
@@ -642,7 +658,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoТаблицаРазмеров.Columns.Collection.Add(this.ВидРазмернойСетки);
             this.vmoТаблицаРазмеров.IsActive = true;
             this.vmoТаблицаРазмеров.MasterComponent = this.nsgVisualMultipleObject;
-            this.vmoТаблицаРазмеров.Binding = nsgMasterDetailBinding2;
+            this.vmoТаблицаРазмеров.Binding = nsgMasterDetailBinding1;
             // 
             // Идентификатор_vmoТаблицаРазмеров
             // 
@@ -969,9 +985,10 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControl1.Controls.Add(this.tpОсновные);
             this.tabControl1.Controls.Add(this.tpРазмеры);
             this.tabControl1.Controls.Add(this.tpМерки);
+            this.tabControl1.Controls.Add(this.tpСовмещаемыеДолжности);
             this.tabControl1.Location = new System.Drawing.Point(6, 3);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.SelectedIndex = 3;
             this.tabControl1.Size = new System.Drawing.Size(1166, 528);
             this.tabControl1.TabIndex = 21;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
@@ -1003,7 +1020,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpОсновные.TabIndex = 0;
             this.tpОсновные.Text = "Основные";
             this.tpОсновные.UseVisualStyleBackColor = true;
-            this.tpОсновные.Visible = true;
+            this.tpОсновные.Visible = false;
             // 
             // nsgInput8
             // 
@@ -1131,7 +1148,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpМерки.TabIndex = 2;
             this.tpМерки.Text = "Мерки";
             this.tpМерки.UseVisualStyleBackColor = true;
-            this.tpМерки.Visible = true;
+            this.tpМерки.Visible = false;
             // 
             // nbЗаполнитьТаблицуРазмеров
             // 
@@ -1187,20 +1204,20 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput18.TabIndex = 9;
             this.nsgInput18.VerticalAlignment = System.Drawing.StringAlignment.Center;
             this.vmoМерки.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
-            nsgObjectDescriptor6.ConfigurationName = "TechControl";
+            nsgObjectDescriptor4.ConfigurationName = "TechControl";
             this.vmoМерки.MetaDataName = "Метаданные";
             this.vmoМерки.FullName = "УчетСпецодеждыИСИЗ.Мерки.Владелец";
             // 
             // vmoМерки
             // 
-            nsgObjectDescriptor5.ConfigurationName = "TechControl";
-            nsgObjectDescriptor5.FullName = "УчетСпецодеждыИСИЗ.Мерки.Владелец";
-            nsgObjectDescriptor5.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding3.DetailField = nsgObjectDescriptor5;
-            nsgObjectDescriptor6.FullName = "Мониторинг.Сотрудники.Идентификатор";
-            nsgObjectDescriptor6.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding3.MasterField = nsgObjectDescriptor6;
-            nsgMasterDetailBinding3.Type = NsgSoft.Forms.NsgBindingType.Subdictionaries;
+            nsgObjectDescriptor3.ConfigurationName = "TechControl";
+            nsgObjectDescriptor3.FullName = "УчетСпецодеждыИСИЗ.Мерки.Владелец";
+            nsgObjectDescriptor3.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding2.DetailField = nsgObjectDescriptor3;
+            nsgObjectDescriptor4.FullName = "Мониторинг.Сотрудники.Идентификатор";
+            nsgObjectDescriptor4.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding2.MasterField = nsgObjectDescriptor4;
+            nsgMasterDetailBinding2.Type = NsgSoft.Forms.NsgBindingType.Subdictionaries;
             this.vmoМерки.Columns.Collection.Add(this.Владелец_nsgVisualMultipleObject1);
             this.vmoМерки.Columns.Collection.Add(this.Идентификатор_nsgVisualMultipleObject1);
             this.vmoМерки.Columns.Collection.Add(this.Автоинкремент_nsgVisualMultipleObject1);
@@ -1225,7 +1242,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoМерки.Columns.Collection.Add(this.Родитель_nsgVisualMultipleObject1);
             this.vmoМерки.IsActive = true;
             this.vmoМерки.MasterComponent = this.nsgVisualMultipleObject;
-            this.vmoМерки.Binding = nsgMasterDetailBinding3;
+            this.vmoМерки.Binding = nsgMasterDetailBinding2;
             // 
             // Владелец_nsgVisualMultipleObject1
             // 
@@ -2208,6 +2225,18 @@ namespace TechControl.Метаданные.Мониторинг
             this.Подразделение.SearchCondition.OwnerComponent = this.Подразделение;
             this.Подразделение.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // ТаблицаСовмещаемыхДолжностей
+            // 
+            this.ТаблицаСовмещаемыхДолжностей.AutoGenerated = true;
+            this.ТаблицаСовмещаемыхДолжностей.Caption = "ТаблицаСовмещаемыхДолжностей";
+            this.ТаблицаСовмещаемыхДолжностей.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ТаблицаСовмещаемыхДолжностей.Name = "ТаблицаСовмещаемыхДолжностей";
+            this.ТаблицаСовмещаемыхДолжностей.NSGType = typeof(TechControl.Метаданные._SystemTables.МониторингСотрудникиТаблицаСовмещаемыхДолжностей);
+            this.ТаблицаСовмещаемыхДолжностей.PropertyType = typeof(TechControl.Метаданные._SystemTables.МониторингСотрудникиТаблицаСовмещаемыхДолжностей);
+            this.ТаблицаСовмещаемыхДолжностей.SearchCondition.OwnerComponent = this.ТаблицаСовмещаемыхДолжностей;
+            this.ТаблицаСовмещаемыхДолжностей.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.ТаблицаСовмещаемыхДолжностей.Visible = false;
+            // 
             // Родитель
             // 
             this.Родитель.AutoGenerated = true;
@@ -2218,6 +2247,143 @@ namespace TechControl.Метаданные.Мониторинг
             this.Родитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
             this.Родитель.SearchCondition.OwnerComponent = this.Родитель;
             this.Родитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // tpСовмещаемыеДолжности
+            // 
+            this.tpСовмещаемыеДолжности.AllowDrop = true;
+            this.tpСовмещаемыеДолжности.Controls.Add(this.nsgIGrid2);
+            this.tpСовмещаемыеДолжности.Enabled = true;
+            this.tpСовмещаемыеДолжности.Location = new System.Drawing.Point(4, 22);
+            this.tpСовмещаемыеДолжности.Name = "tpСовмещаемыеДолжности";
+            this.tpСовмещаемыеДолжности.Size = new System.Drawing.Size(1158, 502);
+            this.tpСовмещаемыеДолжности.TabIndex = 3;
+            this.tpСовмещаемыеДолжности.Text = "Совмещаемые должности";
+            this.tpСовмещаемыеДолжности.UseVisualStyleBackColor = true;
+            this.tpСовмещаемыеДолжности.Visible = true;
+            this.vmoТаблицаДолжностей.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
+            nsgObjectDescriptor6.ConfigurationName = "TechControl";
+            this.vmoТаблицаДолжностей.MetaDataName = "Метаданные";
+            this.vmoТаблицаДолжностей.FullName = "_SystemTables.МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Владелец";
+            // 
+            // vmoТаблицаДолжностей
+            // 
+            nsgObjectDescriptor5.ConfigurationName = "TechControl";
+            nsgObjectDescriptor5.FullName = "_SystemTables.МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Владелец";
+            nsgObjectDescriptor5.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding3.DetailField = nsgObjectDescriptor5;
+            nsgObjectDescriptor6.FullName = "Мониторинг.Сотрудники.ТаблицаСовмещаемыхДолжностей";
+            nsgObjectDescriptor6.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding3.MasterField = nsgObjectDescriptor6;
+            nsgMasterDetailBinding3.Type = NsgSoft.Forms.NsgBindingType.Tables;
+            this.vmoТаблицаДолжностей.Columns.Collection.Add(this.Идентификатор_vmoТаблицаДолжностей);
+            this.vmoТаблицаДолжностей.Columns.Collection.Add(this.Автоинкремент_vmoТаблицаДолжностей);
+            this.vmoТаблицаДолжностей.Columns.Collection.Add(this.Владелец_vmoТаблицаДолжностей);
+            this.vmoТаблицаДолжностей.Columns.Collection.Add(this.НомерСтроки_vmoТаблицаДолжностей);
+            this.vmoТаблицаДолжностей.Columns.Collection.Add(this.Должность_vmoТаблицаДолжностей);
+            this.vmoТаблицаДолжностей.IsActive = true;
+            this.vmoТаблицаДолжностей.MasterComponent = this.nsgVisualMultipleObject;
+            this.vmoТаблицаДолжностей.Binding = nsgMasterDetailBinding3;
+            // 
+            // Идентификатор_vmoТаблицаДолжностей
+            // 
+            this.Идентификатор_vmoТаблицаДолжностей.AutoGenerated = true;
+            this.Идентификатор_vmoТаблицаДолжностей.Caption = "Идентификатор";
+            this.Идентификатор_vmoТаблицаДолжностей.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Идентификатор_vmoТаблицаДолжностей.Name = "Идентификатор";
+            this.Идентификатор_vmoТаблицаДолжностей.NSGType = typeof(NsgSoft.DataObjects.NsgDataGuid);
+            this.Идентификатор_vmoТаблицаДолжностей.PropertyType = typeof(System.Guid);
+            this.Идентификатор_vmoТаблицаДолжностей.SearchCondition.OwnerComponent = this.Идентификатор_vmoТаблицаДолжностей;
+            this.Идентификатор_vmoТаблицаДолжностей.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Идентификатор_vmoТаблицаДолжностей.Visible = false;
+            // 
+            // Автоинкремент_vmoТаблицаДолжностей
+            // 
+            this.Автоинкремент_vmoТаблицаДолжностей.AutoGenerated = true;
+            this.Автоинкремент_vmoТаблицаДолжностей.CalcTotal = false;
+            this.Автоинкремент_vmoТаблицаДолжностей.Caption = "Автоинкремент";
+            this.Автоинкремент_vmoТаблицаДолжностей.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Автоинкремент_vmoТаблицаДолжностей.Name = "Автоинкремент";
+            this.Автоинкремент_vmoТаблицаДолжностей.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.Автоинкремент_vmoТаблицаДолжностей.PropertyType = typeof(long);
+            this.Автоинкремент_vmoТаблицаДолжностей.SearchCondition.OwnerComponent = this.Автоинкремент_vmoТаблицаДолжностей;
+            this.Автоинкремент_vmoТаблицаДолжностей.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Автоинкремент_vmoТаблицаДолжностей.Visible = false;
+            // 
+            // Владелец_vmoТаблицаДолжностей
+            // 
+            this.Владелец_vmoТаблицаДолжностей.AutoGenerated = true;
+            this.Владелец_vmoТаблицаДолжностей.Caption = "Владелец";
+            this.Владелец_vmoТаблицаДолжностей.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Владелец_vmoТаблицаДолжностей.Name = "Владелец";
+            this.Владелец_vmoТаблицаДолжностей.NSGType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец_vmoТаблицаДолжностей.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец_vmoТаблицаДолжностей.SearchCondition.OwnerComponent = this.Владелец_vmoТаблицаДолжностей;
+            this.Владелец_vmoТаблицаДолжностей.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // НомерСтроки_vmoТаблицаДолжностей
+            // 
+            this.НомерСтроки_vmoТаблицаДолжностей.AutoGenerated = true;
+            this.НомерСтроки_vmoТаблицаДолжностей.CalcTotal = false;
+            this.НомерСтроки_vmoТаблицаДолжностей.Caption = "НомерСтроки";
+            this.НомерСтроки_vmoТаблицаДолжностей.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.НомерСтроки_vmoТаблицаДолжностей.Name = "НомерСтроки";
+            this.НомерСтроки_vmoТаблицаДолжностей.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.НомерСтроки_vmoТаблицаДолжностей.PropertyType = typeof(long);
+            this.НомерСтроки_vmoТаблицаДолжностей.SearchCondition.OwnerComponent = this.НомерСтроки_vmoТаблицаДолжностей;
+            this.НомерСтроки_vmoТаблицаДолжностей.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.НомерСтроки_vmoТаблицаДолжностей.Visible = false;
+            // 
+            // Должность_vmoТаблицаДолжностей
+            // 
+            this.Должность_vmoТаблицаДолжностей.AutoGenerated = true;
+            this.Должность_vmoТаблицаДолжностей.Caption = "Должность";
+            this.Должность_vmoТаблицаДолжностей.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Должность_vmoТаблицаДолжностей.Name = "Должность";
+            this.Должность_vmoТаблицаДолжностей.NSGType = typeof(TechControl.Метаданные.Мониторинг.Должности);
+            this.Должность_vmoТаблицаДолжностей.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Должности);
+            this.Должность_vmoТаблицаДолжностей.SearchCondition.OwnerComponent = this.Должность_vmoТаблицаДолжностей;
+            this.Должность_vmoТаблицаДолжностей.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // nsgIGrid2
+            // 
+            this.nsgIGrid2.Action = NsgSoft.DataObjects.FormShowMode.None;
+            this.nsgIGrid2.AllowSaveColParamsToXML = true;
+            this.nsgIGrid2.AllowSaveColPositionToXML = true;
+            this.nsgIGrid2.AllowSaveColWidthToXML = true;
+            this.nsgIGrid2.AllowSaveSettingsToXML = true;
+            this.nsgIGrid2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nsgIGrid2.AutoResizeCols = true;
+            this.nsgIGrid2.Filter = false;
+            this.nsgIGrid2.FrozenColumns = 0;
+            this.nsgIGrid2.Grouping = true;
+            this.nsgIGrid2.Hierarhy = true;
+            this.nsgIGrid2.ImageList = null;
+            this.nsgIGrid2.IsCanMultiSelect = false;
+            this.nsgIGrid2.IsCanSingleSelect = false;
+            this.nsgIGrid2.LineHeight = 20;
+            this.nsgIGrid2.Location = new System.Drawing.Point(3, 3);
+            this.nsgIGrid2.MarkReadOnly = false;
+            this.nsgIGrid2.MasterObject = null;
+            this.nsgIGrid2.Name = "NsgIGrid";
+            this.nsgIGrid2.PageSelector = false;
+            this.nsgIGrid2.ReadOnly = false;
+            this.nsgIGrid2.RowChangeInterval = 200;
+            this.nsgIGrid2.RowHeaderImageList = null;
+            this.nsgIGrid2.RowMode = false;
+            this.nsgIGrid2.ScrollWidth = 0;
+            this.nsgIGrid2.SelectedRow = -1;
+            this.nsgIGrid2.ShowHeader = true;
+            this.nsgIGrid2.ShowLineImages = true;
+            this.nsgIGrid2.ShowLineNumbers = false;
+            this.nsgIGrid2.ShowPanel = true;
+            this.nsgIGrid2.ShowTotals = false;
+            this.nsgIGrid2.ShowTree = false;
+            this.nsgIGrid2.Size = new System.Drawing.Size(1148, 496);
+            this.nsgIGrid2.SourceObject = this.vmoТаблицаДолжностей;
+            this.nsgIGrid2.TabIndex = 0;
+            this.nsgIGrid2.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
             // 
             // СотрудникиФормаЭлемента
             // 
@@ -2291,6 +2457,9 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tpСовмещаемыеДолжности.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vmoТаблицаДолжностей)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2347,37 +2516,6 @@ namespace TechControl.Метаданные.Мониторинг
         private Учет.ВидСвойствНоменклатуры.ColumnDescriptor ВидСвойствНоменклатуры;
         private Учет.Размеры.ColumnDescriptor Размер_vmoТаблицаРазмеров;
         protected УчетСпецодеждыИСИЗ.ВидыРазмернойСетки.ColumnDescriptor ВидРазмернойСетки;
-        private NsgColumnDescriptor.Guid Идентификатор;
-        private NsgColumnDescriptor.Int64 Автоинкремент;
-        private NsgColumnDescriptor.Boolean ЭтоГруппа;
-        private NsgColumnDescriptor.Guid ИдентификаторРодителя;
-        private NsgColumnDescriptor.Byte Уровень;
-        private NsgColumnDescriptor.String ПрефиксКода;
-        private NsgColumnDescriptor.Int64 НомерКода;
-        private NsgColumnDescriptor.String Код;
-        private NsgColumnDescriptor.String Наименование;
-        private Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
-        private NsgColumnDescriptor.String Фамилия;
-        private NsgColumnDescriptor.String Отчество;
-        private NsgColumnDescriptor.String НомерТелефона;
-        private Должности.ColumnDescriptor Должность;
-        private NsgColumnDescriptor.String Имя;
-        private СтатусСотрудника.ColumnDescriptor Статус;
-        private NsgColumnDescriptor.String ИдентификаторСтрока;
-        private NsgColumnDescriptor.Int64 IDСотрудника;
-        private Учет.Размеры.ColumnDescriptor Размер;
-        private СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor АккаунтПользователя;
-        private NsgColumnDescriptor.String ТабельныйНомер;
-        private NsgColumnDescriptor.DateTime ДатаРождения;
-        private NsgColumnDescriptor.DateTime ДатаПриемаНаРаботу;
-        private NsgColumnDescriptor.DateTime ДатаУвольнения;
-        private _SystemTables.МониторингСотрудникиТаблицаРазмеров.ColumnDescriptor ТаблицаРазмеров;
-        private Объекты.ColumnDescriptor ОбъектВыдачиСпецодежды;
-        private Объекты.ColumnDescriptor ОсновнойОбъект;
-        private NsgColumnDescriptor.String ЗагрузочныйИдентификатор;
-        private УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды.ColumnDescriptor ДокументКонтроляСпецодежды;
-        private Подразделения.ColumnDescriptor Подразделение;
-        private Сотрудники.ColumnDescriptor Родитель;
         protected System.Windows.Forms.Label label19;
         protected NsgInput nsgInput18;
         protected NsgColumnDescriptor.MultipleObject Владелец_nsgVisualMultipleObject1;
@@ -2403,5 +2541,45 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.Decimal ОбхватГоловы;
         protected УчетСпецодеждыИСИЗ.Мерки.ColumnDescriptor Родитель_nsgVisualMultipleObject1;
         protected NsgSoft.Design.NsgButton nbЗаполнитьТаблицуРазмеров;
+        protected NsgColumnDescriptor.Guid Идентификатор;
+        protected NsgColumnDescriptor.Int64 Автоинкремент;
+        protected NsgColumnDescriptor.Boolean ЭтоГруппа;
+        protected NsgColumnDescriptor.Guid ИдентификаторРодителя;
+        protected NsgColumnDescriptor.Byte Уровень;
+        protected NsgColumnDescriptor.String ПрефиксКода;
+        protected NsgColumnDescriptor.Int64 НомерКода;
+        protected NsgColumnDescriptor.String Код;
+        protected NsgColumnDescriptor.String Наименование;
+        protected Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
+        protected NsgColumnDescriptor.String Фамилия;
+        protected NsgColumnDescriptor.String Отчество;
+        protected NsgColumnDescriptor.String НомерТелефона;
+        protected Должности.ColumnDescriptor Должность;
+        protected NsgColumnDescriptor.String Имя;
+        protected СтатусСотрудника.ColumnDescriptor Статус;
+        protected NsgColumnDescriptor.String ИдентификаторСтрока;
+        protected NsgColumnDescriptor.Int64 IDСотрудника;
+        protected Учет.Размеры.ColumnDescriptor Размер;
+        protected СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor АккаунтПользователя;
+        protected NsgColumnDescriptor.String ТабельныйНомер;
+        protected NsgColumnDescriptor.DateTime ДатаРождения;
+        protected NsgColumnDescriptor.DateTime ДатаПриемаНаРаботу;
+        protected NsgColumnDescriptor.DateTime ДатаУвольнения;
+        protected _SystemTables.МониторингСотрудникиТаблицаРазмеров.ColumnDescriptor ТаблицаРазмеров;
+        protected Объекты.ColumnDescriptor ОбъектВыдачиСпецодежды;
+        protected Объекты.ColumnDescriptor ОсновнойОбъект;
+        protected NsgColumnDescriptor.String ЗагрузочныйИдентификатор;
+        protected УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды.ColumnDescriptor ДокументКонтроляСпецодежды;
+        protected Подразделения.ColumnDescriptor Подразделение;
+        protected _SystemTables.МониторингСотрудникиТаблицаСовмещаемыхДолжностей.ColumnDescriptor ТаблицаСовмещаемыхДолжностей;
+        protected Сотрудники.ColumnDescriptor Родитель;
+        private System.Windows.Forms.TabPage tpСовмещаемыеДолжности;
+        protected NsgIGrid nsgIGrid2;
+        protected NsgVisualMultipleObject vmoТаблицаДолжностей;
+        private NsgColumnDescriptor.Guid Идентификатор_vmoТаблицаДолжностей;
+        private NsgColumnDescriptor.Int64 Автоинкремент_vmoТаблицаДолжностей;
+        private NsgColumnDescriptor.MultipleObject Владелец_vmoТаблицаДолжностей;
+        private NsgColumnDescriptor.Int64 НомерСтроки_vmoТаблицаДолжностей;
+        protected Должности.ColumnDescriptor Должность_vmoТаблицаДолжностей;
     }
 }

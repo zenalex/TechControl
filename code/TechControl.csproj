@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2023.7.7.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -3827,5 +3827,45 @@
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаСовмещаемыхДолжностей.NsgInit.cs">
+      <NsgOwnerGuid>d738009d-0e85-41f8-a21d-ca969d66576d</NsgOwnerGuid>
+      <NsgOwnerName>МониторингСотрудникиТаблицаСовмещаемыхДолжностей</NsgOwnerName>
+      <DependentUpon>МониторингСотрудникиТаблицаСовмещаемыхДолжностей.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаСовмещаемыхДолжностей.cs">
+      <NsgOwnerGuid>d738009d-0e85-41f8-a21d-ca969d66576d</NsgOwnerGuid>
+      <NsgOwnerName>МониторингСотрудникиТаблицаСовмещаемыхДолжностей</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Строка.NsgInit.cs">
+      <NsgOwnerGuid>d738009d-0e85-41f8-a21d-ca969d66576d</NsgOwnerGuid>
+      <NsgOwnerName>МониторингСотрудникиТаблицаСовмещаемыхДолжностей</NsgOwnerName>
+      <DependentUpon>МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Строка.cs">
+      <NsgOwnerGuid>d738009d-0e85-41f8-a21d-ca969d66576d</NsgOwnerGuid>
+      <NsgOwnerName>МониторингСотрудникиТаблицаСовмещаемыхДолжностей</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Должности\МониторингДолжностиТаблицаНеобязательнойНоменклатуры.NsgInit.cs">
+      <NsgOwnerGuid>c0eabbdf-5614-4c72-a1c3-c74f59075898</NsgOwnerGuid>
+      <NsgOwnerName>МониторингДолжностиТаблицаНеобязательнойНоменклатуры</NsgOwnerName>
+      <DependentUpon>МониторингДолжностиТаблицаНеобязательнойНоменклатуры.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Должности\МониторингДолжностиТаблицаНеобязательнойНоменклатуры.cs">
+      <NsgOwnerGuid>c0eabbdf-5614-4c72-a1c3-c74f59075898</NsgOwnerGuid>
+      <NsgOwnerName>МониторингДолжностиТаблицаНеобязательнойНоменклатуры</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Должности\МониторингДолжностиТаблицаНеобязательнойНоменклатуры.Строка.NsgInit.cs">
+      <NsgOwnerGuid>c0eabbdf-5614-4c72-a1c3-c74f59075898</NsgOwnerGuid>
+      <NsgOwnerName>МониторингДолжностиТаблицаНеобязательнойНоменклатуры</NsgOwnerName>
+      <DependentUpon>МониторингДолжностиТаблицаНеобязательнойНоменклатуры.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Должности\МониторингДолжностиТаблицаНеобязательнойНоменклатуры.Строка.cs">
+      <NsgOwnerGuid>c0eabbdf-5614-4c72-a1c3-c74f59075898</NsgOwnerGuid>
+      <NsgOwnerName>МониторингДолжностиТаблицаНеобязательнойНоменклатуры</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>

@@ -19,9 +19,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
 {
     
     public partial class КонтрольСпецодеждыИСИЗФорма
-
     {
-        private int _выбранныйОтчет;
 
         public КонтрольСпецодеждыИСИЗФорма()
         {
@@ -32,11 +30,6 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         {
             base.OnSetFormObject(formObject);
             
-            if (vmoДопДанныеДляОтчета.Data.CurrentRow == null)
-            {
-                vmoДопДанныеДляОтчета.Data.CurrentRow = vmoДопДанныеДляОтчета.Data.MemoryTable.NewRow();
-            }
-
             if (nsgVisualMultipleObject.Data.CurrentRow == null)
             {
                 nsgVisualMultipleObject.Data.CurrentRow = nsgVisualMultipleObject.Data.MemoryTable.NewRow();
@@ -66,290 +59,22 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
 
         protected override void OnBeforeCreateReport(NsgBackgroundWorker nsgBackgroundReporter)
         {
-            if (_номерТаба == 2 && (rdbСпецодежда.Checked || rdbЗакупки.Checked))
-            {
-                base.OnBeforeCreateReport(nsgBackgroundReporter);
-            }
-
+            base.OnBeforeCreateReport(nsgBackgroundReporter);
         }
 
         protected override void OnCreateReport(NsgBackgroundWorker nsgBackgroundReporter, System.ComponentModel.DoWorkEventArgs e)
         {
-            if (_номерТаба == 2)
-            {
-                base.OnCreateReport(nsgBackgroundReporter, e);
-                if (rdbСпецодежда.Checked)
-                {
-                    if (nsgReport1.Pages.Count > 1)
-                    {
-                        nsgReport1.Pages[0].Enabled = false;
-                    }
-                    СформироватьОтчетПоСпецодежде();
-                }
-                else if (rdbЗакупки.Checked)
-                {
-                    if (nsgReport1.Pages.Count > 1)
-                    {
-                        nsgReport1.Pages[1].Enabled = false;
-                    }
-                    СформироватьОтчетПоЗакупкам();
-                }
-            }
+            base.OnCreateReport(nsgBackgroundReporter, e);
         }
 
         protected override void OnCreateReportCompleted(NsgBackgroundWorker nsgBackgroundReporter, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
-            if (_номерТаба == 2 && (rdbСпецодежда.Checked || rdbЗакупки.Checked))
-            {
-                base.OnCreateReportCompleted(nsgBackgroundReporter, e);
-                if (rdbСпецодежда.Checked)
-                {
-                    if (nsgReport1.Pages.Count > 1)
-                    {
-                        nsgReport1.Pages[0].Enabled = true;
-                        nsgReport1.Pages[1].Enabled = false;
-                    }
-                }
-                else if (rdbЗакупки.Checked)
-                {
-                    if (nsgReport1.Pages.Count > 1)
-                    {
-                        nsgReport1.Pages[0].Enabled = false;
-                        nsgReport1.Pages[1].Enabled = true;
-                    }
-                }
-            }
-        }
-
-        private void СформироватьОтчетПоСпецодежде() 
-        {
-            var дата = ДатаОтчета_vmoДопДанныеДляОтчета.Value != NsgService.MinDate ? ДатаОтчета_vmoДопДанныеДляОтчета.Value : DateTime.Now;
-            var cmp = new NsgCompare();
-            cmp.Add(nsgObjectFilter1.Compare);
-            cmp.Add(Сотрудники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
-
-            var всеСотрудники = Сотрудники.Новый().FindAll(cmp);
-
-            РегистрУчетСпецодежды рег = РегистрУчетСпецодежды.Новый();
-            var cmpРег = new NsgCompare();
-            cmpРег.Add(РегистрУчетСпецодежды.Names.Сотрудник, всеСотрудники, NsgComparison.In);
-            var остатки = рег.GetRests(дата, cmpРег);
-            vmoДанныеДляОтчета.Data.BeginUpdateData();
-            vmoДанныеДляОтчета.Data.MemoryTable.Clear();
-
-            foreach (var сотрудник in всеСотрудники)
-            {
-                if (сотрудник.Должность.Selected)
-                {
-                    foreach (var срокаТаблицыКомплектов in сотрудник.Должность.ТаблицаКомплектовСпецодежды.AllRows)
-                    {
-                        foreach (var item in срокаТаблицыКомплектов.КомплектСпецодежды.ТаблицаКомплектаСпецодежды.AllRows)
-                        {
-                            var ном = item.НоменклатураСпецодеждыИСИЗ;
-                            var компл = срокаТаблицыКомплектов.КомплектСпецодежды;
-                            var остаткиПоСотруднику = остатки.AllRows.Where(x => (x[РегистрУчетСпецодежды.Names.НоменклатураСпецодеждыИСИЗ].ToReferent() as Номенклатура) == ном
-                                 && (x[РегистрУчетСпецодежды.Names.КомплектСпецодежды].ToReferent() as КомплектыСпецодежды) == компл).ToArray();
-                            if (остаткиПоСотруднику.Length > 0)
-                            {
-                                if (сотрудник.РазмерНоменклатуры(ном) != Размеры.Новый())
-                                {
-                                    for (int i = 0; i < item.Количество; i++)
-                                    {
-                                        var строкаОстатков = остаткиПоСотруднику.FirstOrDefault();
-
-                                        var row = vmoДанныеДляОтчета.Data.MemoryTable.NewRow();
-                                        row[Номенклатура_vmoДанныеДляОтчета].Value = ном;
-                                        row[Комплект_vmoДанныеДляОтчета].Value = компл;
-                                        row[Количество_vmoДанныеДляОтчета].Value = 1;
-                                        row[Сотрудник_vmoДанныеДляОтчета].Value = сотрудник;
-                                        row[Должность_vmoДанныеДляОтчета].Value = сотрудник.Должность;
-                                        if (строкаОстатков != null)
-                                        {
-                                            row[ДатаВыдачи_vmoДанныеДляОтчета].Value = строкаОстатков[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime();
-                                            row[ТребуетсяВыдача_vmoДанныеДляОтчета].Value = строкаОстатков[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths((int)ном.ПланАмортизации.СрокАмортизацииМес) < дата;
-                                            остатки.DeleteRow(строкаОстатков);
-                                        }
-                                        
-                                        row.Post();
-                                    }
-                                }
-                                else
-                                {
-                                    остаткиПоСотруднику = остаткиПоСотруднику.OrderByDescending(x => x[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime()).ToArray();
-                                    var row = vmoДанныеДляОтчета.Data.MemoryTable.NewRow();
-                                    row[Номенклатура_vmoДанныеДляОтчета].Value = ном;
-                                    row[Комплект_vmoДанныеДляОтчета].Value = компл;
-                                    row[Количество_vmoДанныеДляОтчета].Value = остаткиПоСотруднику.Length;
-                                    row[Сотрудник_vmoДанныеДляОтчета].Value = сотрудник;
-                                    row[Должность_vmoДанныеДляОтчета].Value = сотрудник.Должность;
-                                    row[ДатаВыдачи_vmoДанныеДляОтчета].Value = остаткиПоСотруднику.First()[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime();
-                                    row[ТребуетсяВыдача_vmoДанныеДляОтчета].Value = остаткиПоСотруднику.First()[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths((int)ном.ПланАмортизации.СрокАмортизацииМес) < дата;
-                                    row.Post();
-                                    foreach ( var ост in остаткиПоСотруднику)
-                                    {
-                                        остатки.DeleteRow(ост);
-                                    }
-                                }
-
-                            }
-                            else
-                            {
-                                var row = vmoДанныеДляОтчета.Data.MemoryTable.NewRow();
-                                row[Номенклатура_vmoДанныеДляОтчета].Value = ном;
-                                row[Комплект_vmoДанныеДляОтчета].Value = компл;
-                                row[Количество_vmoДанныеДляОтчета].Value = item.Количество;
-                                row[ТребуетсяВыдача_vmoДанныеДляОтчета].Value = true;
-                                row[Сотрудник_vmoДанныеДляОтчета].Value = сотрудник;
-                                row[Должность_vmoДанныеДляОтчета].Value = сотрудник.Должность;
-                                row.Post();
-                            }
-
-                        }
-                    }
-                }
-            }
-
-            if (остатки.Count > 0)
-            {
-                foreach (var item in остатки.AllRows)
-                {
-                    var сотрудник = item[РегистрУчетСпецодежды.Names.Сотрудник].ToReferent() as Сотрудники;
-                    var ном = item[РегистрУчетСпецодежды.Names.НоменклатураСпецодеждыИСИЗ].ToReferent() as Номенклатура;
-                    var комплект = item[РегистрУчетСпецодежды.Names.КомплектСпецодежды].ToReferent() as КомплектыСпецодежды;
-
-                    var row = vmoДанныеДляОтчета.Data.MemoryTable.NewRow();
-                    row[Номенклатура_vmoДанныеДляОтчета].Value = ном;
-                    row[Комплект_vmoДанныеДляОтчета].Value = комплект;
-                    row[Количество_vmoДанныеДляОтчета].Value = 1;
-                    row[Сотрудник_vmoДанныеДляОтчета].Value = сотрудник;
-                    row[Должность_vmoДанныеДляОтчета].Value = сотрудник.Должность;
-                    row[ДатаВыдачи_vmoДанныеДляОтчета].Value = item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime();
-                    row[ТребуетсяВыдача_vmoДанныеДляОтчета].Value = item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths((int)ном.ПланАмортизации.СрокАмортизацииМес) < дата;
-                    row[ТребуетсяВозврат_vmoДанныеДляОтчета].Value = комплект.Selected && item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths((int)ном.ПланАмортизации.СрокАмортизацииМес) > дата;
-                    row.Post();
-                }
-            }
-
-            vmoДанныеДляОтчета.Data.UpdateDataSync(this);
-
-        }
-
-        private void СформироватьОтчетПоЗакупкам()
-        {
-            var дата = ДатаОтчета_vmoДопДанныеДляОтчета.Value != NsgService.MinDate ? ДатаОтчета_vmoДопДанныеДляОтчета.Value : DateTime.Now;
-            var cmp = new NsgCompare();
-            cmp.Add(nsgObjectFilter1.Compare);
-            cmp.Add(Сотрудники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
-
-            var всеСотрудники = Сотрудники.Новый().FindAll(cmp);
-
-            РегистрУчетСпецодежды рег = РегистрУчетСпецодежды.Новый();
-            var cmpРег = new NsgCompare();
-            cmpРег.Add(РегистрУчетСпецодежды.Names.Сотрудник, всеСотрудники, NsgComparison.In);
-            var остаткиПоСпецодежде = рег.GetRests(дата, cmpРег);
-
-            ОстаткиНоменклатуры регОстатков = ОстаткиНоменклатуры.Новый();
-            var cmpРегОстатков = new NsgCompare();
-            cmpРегОстатков.Add(ОстаткиНоменклатуры.Names.Номенклатура + "." + Номенклатура.Names.ТипНоменклатуры, ТипНоменклатуры.Спецодежда);
-            var остаткиНаСкладах = регОстатков.GetRests(дата);
-
-            vmoДанныеДляОтчета.Data.BeginUpdateData();
-            vmoДанныеДляОтчета.Data.MemoryTable.Clear();
-
-            Dictionary<Tuple<Номенклатура, Размеры, Сотрудники>, int> всегоТребуетсяСпецодежды = new Dictionary<Tuple<Номенклатура, Размеры, Сотрудники>, int>();
-
-            foreach (var сотрудник in всеСотрудники)
-            {
-                if (сотрудник.Должность.Selected)
-                {
-                    foreach (var срокаТаблицыКомплектов in сотрудник.Должность.ТаблицаКомплектовСпецодежды.AllRows)
-                    {
-                        foreach (var item in срокаТаблицыКомплектов.КомплектСпецодежды.ТаблицаКомплектаСпецодежды.AllRows)
-                        {
-                            var ном = item.НоменклатураСпецодеждыИСИЗ;
-                            var компл = срокаТаблицыКомплектов.КомплектСпецодежды;
-                            var размер = сотрудник.РазмерНоменклатуры(ном);
-                            if (!размер.Selected)
-                            {
-                                размер = сотрудник.ПолучитьРазмер(ном);
-                            }
-
-                            if (размер.Selected)
-                            {
-                                var key = new Tuple<Номенклатура, Размеры, Сотрудники>(ном, размер, сотрудник);
-
-                                for (int i = 0; i < item.Количество; i++)
-                                {
-                                    var остаткиПоСотруднику = остаткиПоСпецодежде.AllRows.Where(x => (x[РегистрУчетСпецодежды.Names.НоменклатураСпецодеждыИСИЗ].ToReferent() as Номенклатура) == ном
-                                        && (x[РегистрУчетСпецодежды.Names.КомплектСпецодежды].ToReferent() as КомплектыСпецодежды) == компл).ToArray();
-
-                                    if (!всегоТребуетсяСпецодежды.ContainsKey(key))
-                                    {
-                                        всегоТребуетсяСпецодежды[key] = 0;
-                                    }
-                                    if (остаткиПоСотруднику.Length > 0)
-                                    {
-                                        var строкаОстатков = остаткиПоСотруднику.FirstOrDefault();
-
-                                        if (строкаОстатков != null)
-                                        {
-                                            var требуетсяВыдача = строкаОстатков[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths((int)ном.ПланАмортизации.СрокАмортизацииМес) < дата;
-                                            if (требуетсяВыдача)
-                                            {
-                                                всегоТребуетсяСпецодежды[key]++;
-                                            }
-                                            остаткиПоСпецодежде.DeleteRow(строкаОстатков);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        всегоТребуетсяСпецодежды[key]++;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            foreach (var item in всегоТребуетсяСпецодежды)
-            {
-                var номенклатура = item.Key.Item1;
-                var размер = item.Key.Item2;
-                var сотрудник = item.Key.Item3;
-                var объект = сотрудник.ОбъектВыдачиСпецодежды.Selected ? сотрудник.ОбъектВыдачиСпецодежды : сотрудник.ОсновнойОбъект;
-
-                var конкретныеОстаткиНаОбъектах = остаткиНаСкладах.AllRows
-                    .Where(x => (x[ОстаткиНоменклатуры.Names.Номенклатура].ToReferent() as Номенклатура) == номенклатура
-                && (x[ОстаткиНоменклатуры.Names.Размер].ToReferent() as Размеры) == размер 
-                && (x[ОстаткиНоменклатуры.Names.Объект].ToReferent() as Объекты) == объект)
-                    .ToArray();
-
-                NsgMemoryTableRow остаток = null;
-                int наОбъекте = 0;
-                if (конкретныеОстаткиНаОбъектах.Length > 0)
-                {
-                    остаток = конкретныеОстаткиНаОбъектах.First();
-                    наОбъекте = (int)остаток[ОстаткиНоменклатуры.Names.Количество].ToInt();
-                }
-
-                var row = vmoДанныеДляОтчета.Data.MemoryTable.NewRow();
-                row[Номенклатура_vmoДанныеДляОтчета].Value = номенклатура;
-                row[Цена_vmoДанныеДляОтчета].Value = номенклатура.ПолучитьЦену(дата);
-                row[Объект_vmoДанныеДляОтчета].Value = объект;
-                row[Количество_vmoДанныеДляОтчета].Value = item.Value - наОбъекте;
-                row[Сотрудник_vmoДанныеДляОтчета].Value = сотрудник;
-                row[Должность_vmoДанныеДляОтчета].Value = сотрудник.Должность;
-                row[КоличествоНаОбъекте_vmoДанныеДляОтчета].Value = наОбъекте;
-                row[Размер_vmoДанныеДляОтчета].Value = размер;
-                row.Post();
-            }
-
-            vmoДанныеДляОтчета.Data.UpdateDataSync(this);
+            base.OnCreateReportCompleted(nsgBackgroundReporter, e);
         }
 
         private void nbЗаполнить_AsyncClick(object sender, DoWorkEventArgs e)
         {
+            ЗаполнитьТаблицуКомплектов();
             ЗаполнитьТаблицуСпецодежды();
         }
 
@@ -411,6 +136,71 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                     row[КВыдаче_vmoСписокСпецодежды].Value = кВыдаче < 0 ? 0 : кВыдаче;
 
                     row[ТребуетсяПоКомплекту_vmoСписокСпецодежды].Value = строкаСпецодежды.Количество;
+
+                    row.Post();
+                }
+            }
+
+            foreach (var строкаСовмещения in сотрудник.ТаблицаСовмещаемыхДолжностей.AllRows)
+            {
+                foreach (var строкаПрочее in строкаСовмещения.Должность.ТаблицаНеобязательнойНоменклатуры.AllRows)
+                {
+                    var nom = строкаПрочее.Номенклатура;
+                    var компл = КомплектыСпецодежды.Прочее;
+                    var размер = сотрудник.ПолучитьРазмер(nom);
+
+                    var cmpПрочее = new NsgCompare();
+                    cmpПрочее.Add(Номенклатура_vmoСписокСпецодежды.Name, nom);
+                    cmpПрочее.Add(Комплект_vmoСписокСпецодежды.Name, компл);
+                    cmpПрочее.Add(РазмерКВыдаче_vmoСписокСпецодежды.Name, размер);
+                    var строкаПрочего = vmoСписокСпецодежды.Data.MemoryTable.FindRow(cmpПрочее);
+
+                    NsgMemoryTableRow row = null;
+                    var ужеВыдано = 0;
+                    var всегоЗаконченСрок = 0;
+                    if (строкаПрочего != null)
+                    {
+                        row = строкаПрочего;
+                        ужеВыдано = (int)строкаПрочего[ВсегоВыдано_vmoСписокСпецодежды].ToInt();
+                        всегоЗаконченСрок = (int)строкаПрочего[ВсегоЗаконченСрок_vmoСписокСпецодежды].ToInt();
+                    }
+                    else
+                    {
+                        row = vmoСписокСпецодежды.Data.MemoryTable.NewRow();
+                    }
+
+                    row[Номенклатура_vmoСписокСпецодежды].Value = nom;
+                    row[Комплект_vmoСписокСпецодежды].Value = компл;
+                    row[РазмерКВыдаче_vmoСписокСпецодежды].Value = размер;
+                    
+                    if (остатки.AllRows.Any(x => (x[РегистрУчетСпецодежды.Names.НоменклатураСпецодеждыИСИЗ].ToReferent() as Номенклатура) == nom
+                        && (x[РегистрУчетСпецодежды.Names.КомплектСпецодежды].ToReferent() as КомплектыСпецодежды) == компл))
+                    {
+
+                        foreach (var item in остатки.AllRows.Where(x => (x[РегистрУчетСпецодежды.Names.НоменклатураСпецодеждыИСИЗ].ToReferent() as Номенклатура) == nom
+                        && (x[РегистрУчетСпецодежды.Names.КомплектСпецодежды].ToReferent() as КомплектыСпецодежды) == компл))
+                        {
+                            ужеВыдано++;
+                            int срокЭксплуатации = nom.ПланАмортизации.Selected ? (int)nom.ПланАмортизации.СрокАмортизацииМес : 0;
+                            if (срокЭксплуатации != 0 && item[РегистрУчетСпецодежды.Names.ДатаВыдачи].ToDateTime().AddMonths(срокЭксплуатации) < DateTime.Now)
+                            {
+                                всегоЗаконченСрок++;
+                            }
+                            if (!(row[РазмерВыданных_vmoСписокСпецодежды].ToReferent() as Размеры).Selected)
+                            {
+                                row[РазмерВыданных_vmoСписокСпецодежды].Value = item[РегистрУчетСпецодежды.Names.Размер].ToReferent() as Размеры;
+                            }
+                            остатки.DeleteRow(item);
+                        }
+
+                        row[ВсегоВыдано_vmoСписокСпецодежды].Value = ужеВыдано;
+                        row[ВсегоЗаконченСрок_vmoСписокСпецодежды].Value = всегоЗаконченСрок;
+                    }
+
+                    var кВыдаче = строкаПрочее.Количество - (ужеВыдано - всегоЗаконченСрок);
+                    row[КВыдаче_vmoСписокСпецодежды].Value = кВыдаче < 0 ? 0 : кВыдаче;
+
+                    row[ТребуетсяПоКомплекту_vmoСписокСпецодежды].Value = строкаПрочее.Количество;
 
                     row.Post();
                 }
@@ -480,12 +270,43 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
 
             NsgSettings.MainForm.ShowObject(перемещение, this);
 
+            ЗаполнитьТаблицуКомплектов();
             ЗаполнитьТаблицуСпецодежды();
         }
 
         private void nsgInput1_Selected(object sender, EventArgs e)
         {
+            ЗаполнитьТаблицуКомплектов();
             ЗаполнитьТаблицуСпецодежды();
+        }
+
+        private void ЗаполнитьТаблицуКомплектов() 
+        {
+            vmoКомплекты.Data.BeginUpdateData();
+            vmoКомплекты.Data.MemoryTable.Clear();
+
+            var сотрудник = Сотрудник.Value;
+            if (!сотрудник.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Укажите сотрудника");
+                vmoКомплекты.Data.UpdateDataSync(this);
+                return;
+            }
+
+            foreach (var item in сотрудник.Должность.ТаблицаКомплектовСпецодежды.AllRows)
+            {
+                var row = vmoКомплекты.Data.MemoryTable.NewRow();
+                row[Комплект_vmoКомплекты].Value = item.КомплектСпецодежды;
+                row[Выбрано_vmoКомплекты].Value = true;
+                row.Post();
+            }
+
+            var rowПрочее = vmoКомплекты.Data.MemoryTable.NewRow();
+            rowПрочее[Комплект_vmoКомплекты].Value = КомплектыСпецодежды.Прочее;
+            rowПрочее[Выбрано_vmoКомплекты].Value = true;
+            rowПрочее.Post();
+
+            vmoКомплекты.Data.UpdateDataSync(this);
         }
 
         int _номерТаба;
@@ -537,20 +358,32 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                     var номенклатура = e.RowObject[Номенклатура_vmoСписокСпецодежды.Name].ToReferent() as Номенклатура;
                     if (номенклатура != null && номенклатура.Selected)
                     {
-                        var размерКВыдаче = e.RowObject[РазмерВыданных_vmoСписокСпецодежды.Name].ToReferent() as Размеры;
-                        if (размерКВыдаче != null && размерКВыдаче.Selected)
+                        if (номенклатура.ТипНоменклатуры == ТипНоменклатуры.Спецодежда)
+                        {
+                            var размерКВыдаче = e.RowObject[РазмерВыданных_vmoСписокСпецодежды.Name].ToReferent() as Размеры;
+                            if (размерКВыдаче != null && размерКВыдаче.Selected)
+                            {
+                                var рег = ОстаткиНоменклатуры.Новый();
+                                рег.Номенклатура = номенклатура;
+                                рег.Размер = размерКВыдаче;
+                                рег.Объект = Объект.Value;
+                                рег.GetRest();
+                                e.RowObject[КоличествоНаСкладе_vmoСписокСпецодежды.Name].Value = (long)рег.Количество;
+                            }
+                            else
+                            {
+                                NsgSettings.MainForm.ShowMessage($"Для определения остатков, необходимо указать размер спецодежды к выдаче");
+                            }
+                        }
+                        else
                         {
                             var рег = ОстаткиНоменклатуры.Новый();
                             рег.Номенклатура = номенклатура;
-                            рег.Размер = размерКВыдаче;
                             рег.Объект = Объект.Value;
                             рег.GetRest();
                             e.RowObject[КоличествоНаСкладе_vmoСписокСпецодежды.Name].Value = (long)рег.Количество;
                         }
-                        else
-                        {
-                            NsgSettings.MainForm.ShowMessage($"Для определения остатков, необходимо указать размер спецодежды к выдаче");
-                        }
+                        
                     }
                     else
                     {
@@ -584,12 +417,23 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                         var номенклатура = item[Номенклатура_vmoСписокСпецодежды.Name].ToReferent() as Номенклатура;
                         if (номенклатура != null && номенклатура.Selected)
                         {
-                            var размерКВыдаче = item[РазмерВыданных_vmoСписокСпецодежды.Name].ToReferent() as Размеры;
-                            if (размерКВыдаче != null && размерКВыдаче.Selected)
+                            if (номенклатура.ТипНоменклатуры == ТипНоменклатуры.Спецодежда)
+                            {
+                                var размерКВыдаче = item[РазмерВыданных_vmoСписокСпецодежды.Name].ToReferent() as Размеры;
+                                if (размерКВыдаче != null && размерКВыдаче.Selected)
+                                {
+                                    var рег = ОстаткиНоменклатуры.Новый();
+                                    рег.Номенклатура = номенклатура;
+                                    рег.Размер = размерКВыдаче;
+                                    рег.Объект = Объект.Value;
+                                    рег.GetRest();
+                                    item[КоличествоНаСкладе_vmoСписокСпецодежды.Name].Value = (long)рег.Количество;
+                                }
+                            }
+                            else
                             {
                                 var рег = ОстаткиНоменклатуры.Новый();
                                 рег.Номенклатура = номенклатура;
-                                рег.Размер = размерКВыдаче;
                                 рег.Объект = Объект.Value;
                                 рег.GetRest();
                                 item[КоличествоНаСкладе_vmoСписокСпецодежды.Name].Value = (long)рег.Количество;
@@ -597,22 +441,6 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                         }
                     }
                 }
-            }
-        }
-
-        private void rdbСпецодежда_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbСпецодежда.Checked)
-            {
-                _выбранныйОтчет = 1;
-            }
-        }
-
-        private void rdbЗакупки_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbЗакупки.Checked)
-            {
-                _выбранныйОтчет = 2;
             }
         }
 
@@ -671,6 +499,43 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                 }
                 vmoСотрудники.Data.UpdateDataSync(this);
             }
+        }
+
+        private void nsgIGrid3_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.ColumnName == Выбрано_vmoКомплекты.Name)
+            {
+                НаложитьФильтрПоКомплектам();
+            }
+        }
+
+        private void НаложитьФильтрПоКомплектам() 
+        {
+            var cmp = vmoСписокСпецодежды.Data.GetComparison(this);
+            КомплектыСпецодежды[] выбранныеКомплекты = vmoКомплекты.Data.MemoryTable.AllRows
+                .Where(x => x[Выбрано_vmoКомплекты].ToBoolean())
+                .Select(x => x[Комплект_vmoКомплекты].ToReferent() as КомплектыСпецодежды)
+                .ToArray();
+
+            cmp.Clear();
+            cmp.Add(Комплект_vmoСписокСпецодежды.Name, выбранныеКомплекты);
+
+            vmoСписокСпецодежды.Data.UpdateDataSync(this);
+        }
+
+        private void vmoКомплекты_GetAvailableTools(object sender, ref NsgWorkPanelTools tools)
+        {
+            tools = NsgWorkPanelTools.Settings;
+        }
+
+        private void nbЗакупки_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void nbСпецодежда_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+
         }
     }
     
