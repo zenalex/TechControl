@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2023.7.7.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
+    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -327,6 +327,12 @@
       <NsgOwnerGuid>6b96e818-0212-4542-90b3-d84d13a8d015</NsgOwnerGuid>
     </None>
     <Compile Include="TokenRepository.cs" />
+    <Compile Include="Метаданные\ДопФормы\ФормаВыбораРазмера.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Метаданные\ДопФормы\ФормаВыбораРазмера.Designer.cs">
+      <DependentUpon>ФормаВыбораРазмера.cs</DependentUpon>
+    </Compile>
     <Compile Include="Метаданные\Метаданные.NsgInit.cs">
       <NsgOwnerGuid>2dbd2646-52ef-4d89-8d8e-ef1f94e39426</NsgOwnerGuid>
       <NsgOwnerName>Метаданные</NsgOwnerName>
@@ -549,6 +555,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Метаданные\ДопФормы\ФормаВыбораРазмера.resx">
+      <DependentUpon>ФормаВыбораРазмера.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Метаданные\Мониторинг\РегистрМониторингТехники\ФормаЭлемента.resx">
       <NsgOwnerGuid>7b195da5-41c5-4f12-b74b-895fa0a08c81</NsgOwnerGuid>
