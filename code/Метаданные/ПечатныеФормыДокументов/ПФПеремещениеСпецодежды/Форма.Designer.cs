@@ -34,6 +34,15 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ПФПеремещениеСпецодеждыФорма));
+            this.vmoТабличныеДанные = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.rdsОсновные = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
+            this.rdsТабличныеДанные = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
+            this.nsgReport1 = new NsgSoft.ReportBuilder.NsgReport(this.components);
+            this.vmoТаблицаАмортизации = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.rdsТаблицаАмортизации = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
+            this.stiReportDataSource1 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsОсновные", this.rdsОсновные);
+            this.stiReportDataSource2 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsТабличныеДанные", this.rdsТабличныеДанные);
+            this.stiReportDataSource3 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsТаблицаАмортизации", this.rdsТаблицаАмортизации);
             this.Идентификатор = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
             this.Автоинкремент = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ПрефиксКода = new NsgSoft.Forms.NsgColumnDescriptor.String();
@@ -48,18 +57,19 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.Получатель = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.Отправитель = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.ДатаНачалаЭксплуатации = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.vmoТабличныеДанные = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Номенклатура_vmoТабличныеДанные = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
-            this.Стоимость_vmoТабличныеДанные = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.Цена_vmoТабличныеДанные = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.Количество_vmoТабличныеДанные = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Размер_vmoТабличныеДанные = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
             this.Комплект_vmoТабличныеДанные = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды.ColumnDescriptor();
-            this.rdsОсновные = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
-            this.rdsТабличныеДанные = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
-            this.nsgReport1 = new NsgSoft.ReportBuilder.NsgReport(this.components);
-            this.stiReportDataSource1 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsОсновные", this.rdsОсновные);
-            this.stiReportDataSource2 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsТабличныеДанные", this.rdsТабличныеДанные);
+            this.Размер_vmoТабличныеДанные = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
+            this.Количество_vmoТабличныеДанные = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Цена_vmoТабличныеДанные = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.Стоимость_vmoТабличныеДанные = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.НазваниеПериода_vmoТабличныеДанные = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.СтоимостьВПериоде_vmoТабличныеДанные = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.НазваниеПериода_vmoТаблицаАмортизации = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.СуммаЗаПериод_vmoТаблицаАмортизации = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.Номенклатура_vmoТаблицаАмортизации = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
+            this.Размер_vmoТаблицаАмортизации = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
+            this.НомерПериода_vmoТаблицаАмортизации = new NsgSoft.Forms.NsgColumnDescriptor.String();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -69,6 +79,8 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             ((System.ComponentModel.ISupportInitialize)(this.vmoТабличныеДанные)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdsОсновные)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdsТабличныеДанные)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoТаблицаАмортизации)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdsТаблицаАмортизации)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreateReport
@@ -95,7 +107,7 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.panelButtonReportForm.Controls.Add(this.printButton);
             this.panelButtonReportForm.Controls.Add(this.btnCreateReport);
             this.panelButtonReportForm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 128);
+            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 148);
             this.panelButtonReportForm.Name = "panelButtonReportForm";
             this.panelButtonReportForm.Size = new System.Drawing.Size(418, 28);
             this.panelButtonReportForm.TabIndex = 0;
@@ -165,6 +177,103 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.MetaDataName = "Метаданные";
             this.nsgVisualMultipleObject.FullName = "УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды";
+            // 
+            // vmoТабличныеДанные
+            // 
+            this.vmoТабличныеДанные.Columns.Collection.Add(this.Номенклатура_vmoТабличныеДанные);
+            this.vmoТабличныеДанные.Columns.Collection.Add(this.Комплект_vmoТабличныеДанные);
+            this.vmoТабличныеДанные.Columns.Collection.Add(this.Размер_vmoТабличныеДанные);
+            this.vmoТабличныеДанные.Columns.Collection.Add(this.Количество_vmoТабличныеДанные);
+            this.vmoТабличныеДанные.Columns.Collection.Add(this.Цена_vmoТабличныеДанные);
+            this.vmoТабличныеДанные.Columns.Collection.Add(this.Стоимость_vmoТабличныеДанные);
+            this.vmoТабличныеДанные.Columns.Collection.Add(this.НазваниеПериода_vmoТабличныеДанные);
+            this.vmoТабличныеДанные.Columns.Collection.Add(this.СтоимостьВПериоде_vmoТабличныеДанные);
+            this.vmoТабличныеДанные.IsActive = true;
+            this.vmoТабличныеДанные.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoТабличныеДанные.MetaDataName = "";
+            this.vmoТабличныеДанные.FullName = "";
+            // 
+            // rdsОсновные
+            // 
+            this.rdsОсновные.MasterComponent = this.nsgVisualMultipleObject;
+            this.rdsОсновные.Name = "rdsОсновные";
+            this.rdsОсновные.Records = NsgSoft.Forms.NsgSourceRows.CurentRow;
+            // 
+            // rdsТабличныеДанные
+            // 
+            this.rdsТабличныеДанные.MasterComponent = this.vmoТабличныеДанные;
+            this.rdsТабличныеДанные.Name = "rdsТабличныеДанные";
+            // 
+            // nsgReport1
+            // 
+            this.nsgReport1.CurrentProgressValue = 0;
+            this.nsgReport1.HighlightedComponent = null;
+            this.nsgReport1.IsSyncMode = true;
+            this.nsgReport1.MaxProgressValue = 100;
+            this.nsgReport1.OwnerForm = null;
+            this.nsgReport1.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
+            this.nsgReport1.ProgressObject = null;
+            this.nsgReport1.ProgressProcentage = 0;
+            this.nsgReport1.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "NsgSoft.ReportControls.Dll",
+        "NsgSoft.ReportBase.Dll",
+        "NsgSoft.ReportBuilder.Dll",
+        "NsgSoft.Common.Dll",
+        "NsgSoft.Database.Dll",
+        "NsgSoft.DataObjects.Dll",
+        "NsgSoft.Design.Dll",
+        "NsgSoft.Forms.Dll",
+        "NsgSoft.FormsComponents.dll",
+        "NsgSoft.Tools.dll",
+        "NsgSoft.CityGuide.Dll"};
+            this.nsgReport1.ReportAlias = "Report";
+            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource1);
+            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource2);
+            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource3);
+            this.nsgReport1.ReportGuid = "d5b7ce3aae4c4d3db0fadb5ad4f5aa62";
+            this.nsgReport1.ReportLoaded = true;
+            this.nsgReport1.ReportName = "Report";
+            this.nsgReport1.ReportSource = null;
+            this.nsgReport1.ReportUnit = NsgSoft.ReportBuilder.StiReportUnitType.Centimeters;
+            this.nsgReport1.ScriptLanguage = NsgSoft.ReportBuilder.StiReportLanguageType.CSharp;
+            this.nsgReport1.ShowBookmarksPanel = false;
+            // 
+            // vmoТаблицаАмортизации
+            // 
+            this.vmoТаблицаАмортизации.Columns.Collection.Add(this.НазваниеПериода_vmoТаблицаАмортизации);
+            this.vmoТаблицаАмортизации.Columns.Collection.Add(this.СуммаЗаПериод_vmoТаблицаАмортизации);
+            this.vmoТаблицаАмортизации.Columns.Collection.Add(this.Номенклатура_vmoТаблицаАмортизации);
+            this.vmoТаблицаАмортизации.Columns.Collection.Add(this.Размер_vmoТаблицаАмортизации);
+            this.vmoТаблицаАмортизации.Columns.Collection.Add(this.НомерПериода_vmoТаблицаАмортизации);
+            this.vmoТаблицаАмортизации.IsActive = true;
+            this.vmoТаблицаАмортизации.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoТаблицаАмортизации.MetaDataName = "";
+            this.vmoТаблицаАмортизации.FullName = "";
+            // 
+            // rdsТаблицаАмортизации
+            // 
+            this.rdsТаблицаАмортизации.MasterComponent = this.vmoТаблицаАмортизации;
+            this.rdsТаблицаАмортизации.Name = "rdsТаблицаАмортизации";
+            // 
+            // stiReportDataSource1
+            // 
+            this.stiReportDataSource1.Item = this.rdsОсновные;
+            this.stiReportDataSource1.Name = "rdsОсновные";
+            // 
+            // stiReportDataSource2
+            // 
+            this.stiReportDataSource2.Item = this.rdsТабличныеДанные;
+            this.stiReportDataSource2.Name = "rdsТабличныеДанные";
+            // 
+            // stiReportDataSource3
+            // 
+            this.stiReportDataSource3.Item = this.rdsТаблицаАмортизации;
+            this.stiReportDataSource3.Name = "rdsТаблицаАмортизации";
             // 
             // Идентификатор
             // 
@@ -328,19 +437,6 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.ДатаНачалаЭксплуатации.SearchCondition.OwnerComponent = this.ДатаНачалаЭксплуатации;
             this.ДатаНачалаЭксплуатации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // vmoТабличныеДанные
-            // 
-            this.vmoТабличныеДанные.Columns.Collection.Add(this.Номенклатура_vmoТабличныеДанные);
-            this.vmoТабличныеДанные.Columns.Collection.Add(this.Комплект_vmoТабличныеДанные);
-            this.vmoТабличныеДанные.Columns.Collection.Add(this.Размер_vmoТабличныеДанные);
-            this.vmoТабличныеДанные.Columns.Collection.Add(this.Количество_vmoТабличныеДанные);
-            this.vmoТабличныеДанные.Columns.Collection.Add(this.Цена_vmoТабличныеДанные);
-            this.vmoТабличныеДанные.Columns.Collection.Add(this.Стоимость_vmoТабличныеДанные);
-            this.vmoТабличныеДанные.IsActive = true;
-            this.vmoТабличныеДанные.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
-            this.vmoТабличныеДанные.MetaDataName = "";
-            this.vmoТабличныеДанные.FullName = "";
-            // 
             // Номенклатура_vmoТабличныеДанные
             // 
             this.Номенклатура_vmoТабличныеДанные.Caption = "Номенклатура";
@@ -351,27 +447,25 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.Номенклатура_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.Номенклатура_vmoТабличныеДанные;
             this.Номенклатура_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Стоимость_vmoТабличныеДанные
+            // Комплект_vmoТабличныеДанные
             // 
-            this.Стоимость_vmoТабличныеДанные.CalcTotal = false;
-            this.Стоимость_vmoТабличныеДанные.Caption = "Стоимость";
-            this.Стоимость_vmoТабличныеДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Стоимость_vmoТабличныеДанные.Name = "Стоимость";
-            this.Стоимость_vmoТабличныеДанные.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
-            this.Стоимость_vmoТабличныеДанные.PropertyType = typeof(decimal);
-            this.Стоимость_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.Стоимость_vmoТабличныеДанные;
-            this.Стоимость_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Комплект_vmoТабличныеДанные.Caption = "Комплект";
+            this.Комплект_vmoТабличныеДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Комплект_vmoТабличныеДанные.Name = "Комплект";
+            this.Комплект_vmoТабличныеДанные.NSGType = typeof(TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды);
+            this.Комплект_vmoТабличныеДанные.PropertyType = typeof(TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды);
+            this.Комплект_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.Комплект_vmoТабличныеДанные;
+            this.Комплект_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Цена_vmoТабличныеДанные
+            // Размер_vmoТабличныеДанные
             // 
-            this.Цена_vmoТабличныеДанные.CalcTotal = false;
-            this.Цена_vmoТабличныеДанные.Caption = "Цена";
-            this.Цена_vmoТабличныеДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Цена_vmoТабличныеДанные.Name = "Цена";
-            this.Цена_vmoТабличныеДанные.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
-            this.Цена_vmoТабличныеДанные.PropertyType = typeof(decimal);
-            this.Цена_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.Цена_vmoТабличныеДанные;
-            this.Цена_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Размер_vmoТабличныеДанные.Caption = "Размер";
+            this.Размер_vmoТабличныеДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Размер_vmoТабличныеДанные.Name = "Размер";
+            this.Размер_vmoТабличныеДанные.NSGType = typeof(TechControl.Метаданные.Учет.Размеры);
+            this.Размер_vmoТабличныеДанные.PropertyType = typeof(TechControl.Метаданные.Учет.Размеры);
+            this.Размер_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.Размер_vmoТабличныеДанные;
+            this.Размер_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // Количество_vmoТабличныеДанные
             // 
@@ -384,84 +478,98 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.Количество_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.Количество_vmoТабличныеДанные;
             this.Количество_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Размер_vmoТабличныеДанные
+            // Цена_vmoТабличныеДанные
             // 
-            this.Размер_vmoТабличныеДанные.Caption = "Размер";
-            this.Размер_vmoТабличныеДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Размер_vmoТабличныеДанные.Name = "Размер";
-            this.Размер_vmoТабличныеДанные.NSGType = typeof(TechControl.Метаданные.Учет.Размеры);
-            this.Размер_vmoТабличныеДанные.PropertyType = typeof(TechControl.Метаданные.Учет.Размеры);
-            this.Размер_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.Размер_vmoТабличныеДанные;
-            this.Размер_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Цена_vmoТабличныеДанные.CalcTotal = false;
+            this.Цена_vmoТабличныеДанные.Caption = "Цена";
+            this.Цена_vmoТабличныеДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Цена_vmoТабличныеДанные.Name = "Цена";
+            this.Цена_vmoТабличныеДанные.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.Цена_vmoТабличныеДанные.PropertyType = typeof(decimal);
+            this.Цена_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.Цена_vmoТабличныеДанные;
+            this.Цена_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Комплект_vmoТабличныеДанные
+            // Стоимость_vmoТабличныеДанные
             // 
-            this.Комплект_vmoТабличныеДанные.Caption = "Комплект";
-            this.Комплект_vmoТабличныеДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Комплект_vmoТабличныеДанные.Name = "Комплект";
-            this.Комплект_vmoТабличныеДанные.NSGType = typeof(TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды);
-            this.Комплект_vmoТабличныеДанные.PropertyType = typeof(TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды);
-            this.Комплект_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.Комплект_vmoТабличныеДанные;
-            this.Комплект_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Стоимость_vmoТабличныеДанные.CalcTotal = false;
+            this.Стоимость_vmoТабличныеДанные.Caption = "Стоимость";
+            this.Стоимость_vmoТабличныеДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Стоимость_vmoТабличныеДанные.Name = "Стоимость";
+            this.Стоимость_vmoТабличныеДанные.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.Стоимость_vmoТабличныеДанные.PropertyType = typeof(decimal);
+            this.Стоимость_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.Стоимость_vmoТабличныеДанные;
+            this.Стоимость_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // rdsОсновные
+            // НазваниеПериода_vmoТабличныеДанные
             // 
-            this.rdsОсновные.MasterComponent = this.nsgVisualMultipleObject;
-            this.rdsОсновные.Name = "rdsОсновные";
-            this.rdsОсновные.Records = NsgSoft.Forms.NsgSourceRows.CurentRow;
+            this.НазваниеПериода_vmoТабличныеДанные.Caption = "НазваниеПериода";
+            this.НазваниеПериода_vmoТабличныеДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.НазваниеПериода_vmoТабличныеДанные.Name = "НазваниеПериода";
+            this.НазваниеПериода_vmoТабличныеДанные.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.НазваниеПериода_vmoТабличныеДанные.PropertyType = typeof(string);
+            this.НазваниеПериода_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.НазваниеПериода_vmoТабличныеДанные;
+            this.НазваниеПериода_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // rdsТабличныеДанные
+            // СтоимостьВПериоде_vmoТабличныеДанные
             // 
-            this.rdsТабличныеДанные.MasterComponent = this.vmoТабличныеДанные;
-            this.rdsТабличныеДанные.Name = "rdsТабличныеДанные";
+            this.СтоимостьВПериоде_vmoТабличныеДанные.CalcTotal = false;
+            this.СтоимостьВПериоде_vmoТабличныеДанные.Caption = "СтоимостьВПериоде";
+            this.СтоимостьВПериоде_vmoТабличныеДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.СтоимостьВПериоде_vmoТабличныеДанные.Name = "СтоимостьВПериоде";
+            this.СтоимостьВПериоде_vmoТабличныеДанные.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.СтоимостьВПериоде_vmoТабличныеДанные.PropertyType = typeof(decimal);
+            this.СтоимостьВПериоде_vmoТабличныеДанные.SearchCondition.OwnerComponent = this.СтоимостьВПериоде_vmoТабличныеДанные;
+            this.СтоимостьВПериоде_vmoТабличныеДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // nsgReport1
+            // НазваниеПериода_vmoТаблицаАмортизации
             // 
-            this.nsgReport1.CurrentProgressValue = 0;
-            this.nsgReport1.HighlightedComponent = null;
-            this.nsgReport1.IsSyncMode = true;
-            this.nsgReport1.MaxProgressValue = 100;
-            this.nsgReport1.OwnerForm = null;
-            this.nsgReport1.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
-            this.nsgReport1.ProgressObject = null;
-            this.nsgReport1.ProgressProcentage = 0;
-            this.nsgReport1.ReferencedAssemblies = new string[] {
-        "System.Dll",
-        "System.Drawing.Dll",
-        "System.Windows.Forms.Dll",
-        "System.Data.Dll",
-        "System.Xml.Dll",
-        "NsgSoft.ReportControls.Dll",
-        "NsgSoft.ReportBase.Dll",
-        "NsgSoft.ReportBuilder.Dll",
-        "NsgSoft.Common.Dll",
-        "NsgSoft.Database.Dll",
-        "NsgSoft.DataObjects.Dll",
-        "NsgSoft.Design.Dll",
-        "NsgSoft.Forms.Dll",
-        "NsgSoft.FormsComponents.dll",
-        "NsgSoft.Tools.dll",
-        "NsgSoft.CityGuide.Dll"};
-            this.nsgReport1.ReportAlias = "Report";
-            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource1);
-            this.nsgReport1.ReportDataSources.Add(this.stiReportDataSource2);
-            this.nsgReport1.ReportGuid = "d5b7ce3aae4c4d3db0fadb5ad4f5aa62";
-            this.nsgReport1.ReportLoaded = false;
-            this.nsgReport1.ReportName = "Report";
-            this.nsgReport1.ReportSource = null;
-            this.nsgReport1.ReportUnit = NsgSoft.ReportBuilder.StiReportUnitType.Centimeters;
-            this.nsgReport1.ScriptLanguage = NsgSoft.ReportBuilder.StiReportLanguageType.CSharp;
-            this.nsgReport1.ShowBookmarksPanel = false;
+            this.НазваниеПериода_vmoТаблицаАмортизации.Caption = "НазваниеПериода";
+            this.НазваниеПериода_vmoТаблицаАмортизации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.НазваниеПериода_vmoТаблицаАмортизации.Name = "НазваниеПериода";
+            this.НазваниеПериода_vmoТаблицаАмортизации.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.НазваниеПериода_vmoТаблицаАмортизации.PropertyType = typeof(string);
+            this.НазваниеПериода_vmoТаблицаАмортизации.SearchCondition.OwnerComponent = this.НазваниеПериода_vmoТаблицаАмортизации;
+            this.НазваниеПериода_vmoТаблицаАмортизации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // stiReportDataSource1
+            // СуммаЗаПериод_vmoТаблицаАмортизации
             // 
-            this.stiReportDataSource1.Item = this.rdsОсновные;
-            this.stiReportDataSource1.Name = "rdsОсновные";
+            this.СуммаЗаПериод_vmoТаблицаАмортизации.Caption = "СуммаЗаПериод";
+            this.СуммаЗаПериод_vmoТаблицаАмортизации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.СуммаЗаПериод_vmoТаблицаАмортизации.Name = "СуммаЗаПериод";
+            this.СуммаЗаПериод_vmoТаблицаАмортизации.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.СуммаЗаПериод_vmoТаблицаАмортизации.PropertyType = typeof(string);
+            this.СуммаЗаПериод_vmoТаблицаАмортизации.SearchCondition.OwnerComponent = this.СуммаЗаПериод_vmoТаблицаАмортизации;
+            this.СуммаЗаПериод_vmoТаблицаАмортизации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // stiReportDataSource2
+            // Номенклатура_vmoТаблицаАмортизации
             // 
-            this.stiReportDataSource2.Item = this.rdsТабличныеДанные;
-            this.stiReportDataSource2.Name = "rdsТабличныеДанные";
+            this.Номенклатура_vmoТаблицаАмортизации.Caption = "Номенклатура";
+            this.Номенклатура_vmoТаблицаАмортизации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Номенклатура_vmoТаблицаАмортизации.Name = "Номенклатура";
+            this.Номенклатура_vmoТаблицаАмортизации.NSGType = typeof(TechControl.Метаданные.Учет.Номенклатура);
+            this.Номенклатура_vmoТаблицаАмортизации.PropertyType = typeof(TechControl.Метаданные.Учет.Номенклатура);
+            this.Номенклатура_vmoТаблицаАмортизации.SearchCondition.OwnerComponent = this.Номенклатура_vmoТаблицаАмортизации;
+            this.Номенклатура_vmoТаблицаАмортизации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Размер_vmoТаблицаАмортизации
+            // 
+            this.Размер_vmoТаблицаАмортизации.Caption = "Размер";
+            this.Размер_vmoТаблицаАмортизации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Размер_vmoТаблицаАмортизации.Name = "Размер";
+            this.Размер_vmoТаблицаАмортизации.NSGType = typeof(TechControl.Метаданные.Учет.Размеры);
+            this.Размер_vmoТаблицаАмортизации.PropertyType = typeof(TechControl.Метаданные.Учет.Размеры);
+            this.Размер_vmoТаблицаАмортизации.SearchCondition.OwnerComponent = this.Размер_vmoТаблицаАмортизации;
+            this.Размер_vmoТаблицаАмортизации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // НомерПериода_vmoТаблицаАмортизации
+            // 
+            this.НомерПериода_vmoТаблицаАмортизации.Caption = "НомерПериода";
+            this.НомерПериода_vmoТаблицаАмортизации.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.НомерПериода_vmoТаблицаАмортизации.Name = "НомерПериода";
+            this.НомерПериода_vmoТаблицаАмортизации.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.НомерПериода_vmoТаблицаАмортизации.PropertyType = typeof(string);
+            this.НомерПериода_vmoТаблицаАмортизации.SearchCondition.OwnerComponent = this.НомерПериода_vmoТаблицаАмортизации;
+            this.НомерПериода_vmoТаблицаАмортизации.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // ПФПеремещениеСпецодеждыФорма
             // 
@@ -493,6 +601,8 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             ((System.ComponentModel.ISupportInitialize)(this.vmoТабличныеДанные)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdsОсновные)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdsТабличныеДанные)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoТаблицаАмортизации)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdsТаблицаАмортизации)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -513,17 +623,27 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
         protected _SystemTables.УчетСпецодеждыИСИЗПеремещениеСпецодеждыТаблица.ColumnDescriptor Таблица;
         protected NsgColumnDescriptor.MultipleObject Получатель;
         protected NsgColumnDescriptor.MultipleObject Отправитель;
-        protected NsgVisualMultipleObject vmoТабличныеДанные;
         protected Учет.Номенклатура.ColumnDescriptor Номенклатура_vmoТабличныеДанные;
         protected УчетСпецодеждыИСИЗ.КомплектыСпецодежды.ColumnDescriptor Комплект_vmoТабличныеДанные;
         protected NsgSoft.ReportBuilder.NsgReportDataSource rdsОсновные;
         protected NsgSoft.ReportBuilder.NsgReportDataSource rdsТабличныеДанные;
-        private NsgSoft.ReportBuilder.NsgReport nsgReport1;
-        private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource1;
-        private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource2;
         protected Учет.Размеры.ColumnDescriptor Размер_vmoТабличныеДанные;
         protected NsgColumnDescriptor.Int64 Количество_vmoТабличныеДанные;
         protected NsgColumnDescriptor.Decimal Цена_vmoТабличныеДанные;
         protected NsgColumnDescriptor.Decimal Стоимость_vmoТабличныеДанные;
+        protected NsgColumnDescriptor.String НазваниеПериода_vmoТабличныеДанные;
+        protected NsgColumnDescriptor.Decimal СтоимостьВПериоде_vmoТабличныеДанные;
+        protected NsgVisualMultipleObject vmoТаблицаАмортизации;
+        protected NsgColumnDescriptor.String НазваниеПериода_vmoТаблицаАмортизации;
+        protected NsgColumnDescriptor.String СуммаЗаПериод_vmoТаблицаАмортизации;
+        protected Учет.Номенклатура.ColumnDescriptor Номенклатура_vmoТаблицаАмортизации;
+        protected Учет.Размеры.ColumnDescriptor Размер_vmoТаблицаАмортизации;
+        protected NsgSoft.ReportBuilder.NsgReportDataSource rdsТаблицаАмортизации;
+        protected NsgSoft.ReportBuilder.NsgReport nsgReport1;
+        protected NsgVisualMultipleObject vmoТабличныеДанные;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource1;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource2;
+        protected NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource3;
+        protected NsgColumnDescriptor.String НомерПериода_vmoТаблицаАмортизации;
     }
 }
