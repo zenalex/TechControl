@@ -3919,4 +3919,30 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Администрирование\ОбработкаДокументов\ОбработкаДокументов.NsgInit.cs">
+      <NsgOwnerGuid>6f607fb9-aa25-4336-8e98-0088544105f0</NsgOwnerGuid>
+      <NsgOwnerName>ОбработкаДокументов</NsgOwnerName>
+      <DependentUpon>ОбработкаДокументов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Администрирование\ОбработкаДокументов\ОбработкаДокументов.cs">
+      <NsgOwnerGuid>6f607fb9-aa25-4336-8e98-0088544105f0</NsgOwnerGuid>
+      <NsgOwnerName>ОбработкаДокументов</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Администрирование\ОбработкаДокументов\Обработка.Designer.cs">
+      <NsgOwnerGuid>6f607fb9-aa25-4336-8e98-0088544105f0</NsgOwnerGuid>
+      <DependentUpon>Обработка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Администрирование\ОбработкаДокументов\Обработка.cs">
+      <NsgOwnerGuid>6f607fb9-aa25-4336-8e98-0088544105f0</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Администрирование\ОбработкаДокументов\Обработка.resx">
+      <NsgOwnerGuid>6f607fb9-aa25-4336-8e98-0088544105f0</NsgOwnerGuid>
+      <DependentUpon>Обработка.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
