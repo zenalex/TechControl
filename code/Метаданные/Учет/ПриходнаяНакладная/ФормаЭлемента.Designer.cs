@@ -78,6 +78,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput4 = new NsgSoft.Forms.NsgInput();
             this.nsgLabel5 = new NsgSoft.Forms.NsgLabel();
             this.nsgInput5 = new NsgSoft.Forms.NsgInput();
+            this.nbФормированиеЦены = new NsgSoft.Design.NsgButton();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -94,6 +95,7 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.showInListButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentStructure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elementRightsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoТаблица)).BeginInit();
@@ -102,6 +104,7 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbФормированиеЦены)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -142,6 +145,7 @@ namespace TechControl.Метаданные.Учет
             // 
             this.nsgToolStrip2.AllowDrop = true;
             this.nsgToolStrip2.CausesValidation = false;
+            this.nsgToolStrip2.Controls.Add(this.elementRightsButton);
             this.nsgToolStrip2.Controls.Add(this.documentStructure);
             this.nsgToolStrip2.Controls.Add(this.showInListButton);
             this.nsgToolStrip2.Controls.Add(this.btnUsersActions);
@@ -217,7 +221,7 @@ namespace TechControl.Метаданные.Учет
             this.panelButtons.AllowDrop = true;
             this.panelButtons.Controls.Add(this.nsgToolStrip2);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(0, 380);
+            this.panelButtons.Location = new System.Drawing.Point(0, 337);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Size = new System.Drawing.Size(741, 30);
             this.panelButtons.TabIndex = 2;
@@ -359,6 +363,21 @@ namespace TechControl.Метаданные.Учет
             this.documentStructure.TabIndex = 17;
             this.documentStructure.Text = "Структура документов";
             this.documentStructure.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // elementRightsButton
+            // 
+            this.elementRightsButton.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.elementRightsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.elementRightsButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.elementRightsButton.Container = this.documentButton;
+            this.elementRightsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.elementRightsButton.Location = new System.Drawing.Point(447, 1);
+            this.elementRightsButton.Name = "elementRightsButton";
+            this.elementRightsButton.Size = new System.Drawing.Size(88, 26);
+            this.elementRightsButton.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.elementRightsButton.TabIndex = 18;
+            this.elementRightsButton.Text = "Права пользователей";
+            this.elementRightsButton.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nsgVisualMultipleObject
             // 
@@ -1019,9 +1038,9 @@ namespace TechControl.Метаданные.Учет
             // 
             this.nsgInput5.BackColor = System.Drawing.SystemColors.Window;
             this.nsgInput5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput5.ConfigurationName = "";
+            this.nsgInput5.ConfigurationName = "TechControl";
             this.nsgInput5.DisableLeaveControlEvent = false;
-            this.nsgInput5.FullName = "ДатаДокумента";
+            this.nsgInput5.FullName = "Учет.ПриходнаяНакладная.ДатаДокумента";
             this.nsgInput5.FullTextSearch = false;
             this.nsgInput5.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput5.IsButton = false;
@@ -1030,7 +1049,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput5.Location = new System.Drawing.Point(308, 9);
             this.nsgInput5.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput5.Mask = "";
-            this.nsgInput5.MetaDataName = "";
+            this.nsgInput5.MetaDataName = "Метаданные";
             this.nsgInput5.MinimumSize = new System.Drawing.Size(4, 20);
             this.nsgInput5.Name = "NsgInput";
             this.nsgInput5.ObjectImages = null;
@@ -1045,6 +1064,20 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput5.TabIndex = 24;
             this.nsgInput5.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // nbФормированиеЦены
+            // 
+            this.nbФормированиеЦены.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.nbФормированиеЦены.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nbФормированиеЦены.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nbФормированиеЦены.Location = new System.Drawing.Point(13, 123);
+            this.nbФормированиеЦены.Name = "NsgButton";
+            this.nbФормированиеЦены.Size = new System.Drawing.Size(75, 25);
+            this.nbФормированиеЦены.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.nbФормированиеЦены.TabIndex = 26;
+            this.nbФормированиеЦены.Text = "Сформировать цену";
+            this.nbФормированиеЦены.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nbФормированиеЦены.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbФормированиеЦены_AsyncClick);
+            // 
             // ПриходнаяНакладнаяФормаЭлемента
             // 
             this.AllowDrop = true;
@@ -1054,6 +1087,7 @@ namespace TechControl.Метаданные.Учет
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(741, 410);
+            this.Controls.Add(this.nbФормированиеЦены);
             this.Controls.Add(this.nsgLabel5);
             this.Controls.Add(this.nsgInput5);
             this.Controls.Add(this.nsgIGrid1);
@@ -1087,6 +1121,7 @@ namespace TechControl.Метаданные.Учет
             this.Controls.SetChildIndex(this.nsgIGrid1, 0);
             this.Controls.SetChildIndex(this.nsgInput5, 0);
             this.Controls.SetChildIndex(this.nsgLabel5, 0);
+            this.Controls.SetChildIndex(this.nbФормированиеЦены, 0);
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).EndInit();
@@ -1105,6 +1140,7 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.showInListButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentStructure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elementRightsButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoТаблица)).EndInit();
@@ -1113,6 +1149,7 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbФормированиеЦены)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1155,5 +1192,6 @@ namespace TechControl.Метаданные.Учет
         private NsgVisualMultipleObject vmoТаблица;
         protected NsgLabel nsgLabel5;
         protected NsgInput nsgInput5;
+        protected NsgSoft.Design.NsgButton nbФормированиеЦены;
     }
 }

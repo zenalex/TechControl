@@ -13,17 +13,26 @@ namespace TechControl.Метаданные.Учет
     
     public partial class ФормированиеЦены
     {
-        #region Данные
-        #endregion //Данные
+        protected override bool Handling()
+        {
+            return ПроведениеПоРегиструЦен();
+        }
 
-        #region Конструкторы
-        #endregion //Конструкторы
-
-        #region Свойства
-        #endregion //Свойства
-
-        #region Методы
-        #endregion //Методы
+        private bool ПроведениеПоРегиструЦен() 
+        {
+            var reg = РегистрЦен.Новый(this);
+            reg.New();
+            foreach (var item in Таблица.AllRows)
+            {
+                reg.Дата = ДатаДокумента;
+                reg.Номенклатура = item.Номенклатура;
+                reg.Размер = item.Размер;
+                reg.ТипЦены = item.ТипЦены;
+                reg.Цена = item.Цена;
+                reg.AddMovement();
+            }
+            return reg.Post();
+        }
     }
 
 }

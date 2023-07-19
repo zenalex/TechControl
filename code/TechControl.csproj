@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2023.7.7.0</ProductVersion>
+    <ProductVersion>2023.7.18.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -3942,6 +3942,159 @@
     <EmbeddedResource Include="Метаданные\Администрирование\ОбработкаДокументов\Обработка.resx">
       <NsgOwnerGuid>6f607fb9-aa25-4336-8e98-0088544105f0</NsgOwnerGuid>
       <DependentUpon>Обработка.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Перечисления\СтатусыЗаявок\СтатусыЗаявок.NsgInit.cs">
+      <NsgOwnerGuid>29f483b0-ce31-4a3b-84b4-03a17a783a7d</NsgOwnerGuid>
+      <NsgOwnerName>СтатусыЗаявок</NsgOwnerName>
+      <DependentUpon>СтатусыЗаявок.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Перечисления\СтатусыЗаявок\СтатусыЗаявок.cs">
+      <NsgOwnerGuid>29f483b0-ce31-4a3b-84b4-03a17a783a7d</NsgOwnerGuid>
+      <NsgOwnerName>СтатусыЗаявок</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЗаявкаПоставщику\ПФЗаявкаПоставщику.NsgInit.cs">
+      <NsgOwnerGuid>fa407f4b-e571-4f59-86d1-47889dd77285</NsgOwnerGuid>
+      <NsgOwnerName>ПФЗаявкаПоставщику</NsgOwnerName>
+      <DependentUpon>ПФЗаявкаПоставщику.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЗаявкаПоставщику\ПФЗаявкаПоставщику.cs">
+      <NsgOwnerGuid>fa407f4b-e571-4f59-86d1-47889dd77285</NsgOwnerGuid>
+      <NsgOwnerName>ПФЗаявкаПоставщику</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЗаявкаПоставщику\Форма.Designer.cs">
+      <NsgOwnerGuid>fa407f4b-e571-4f59-86d1-47889dd77285</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЗаявкаПоставщику\Форма.cs">
+      <NsgOwnerGuid>fa407f4b-e571-4f59-86d1-47889dd77285</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\ПечатныеФормыДокументов\ПФЗаявкаПоставщику\Форма.resx">
+      <NsgOwnerGuid>fa407f4b-e571-4f59-86d1-47889dd77285</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ЗаявкаНаСотрудника\УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица.NsgInit.cs">
+      <NsgOwnerGuid>3dc55938-0487-4991-8b4f-e673ed2b0a0b</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица</NsgOwnerName>
+      <DependentUpon>УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ЗаявкаНаСотрудника\УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица.cs">
+      <NsgOwnerGuid>3dc55938-0487-4991-8b4f-e673ed2b0a0b</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ЗаявкаНаСотрудника\УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>3dc55938-0487-4991-8b4f-e673ed2b0a0b</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица</NsgOwnerName>
+      <DependentUpon>УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ЗаявкаНаСотрудника\УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица.Строка.cs">
+      <NsgOwnerGuid>3dc55938-0487-4991-8b4f-e673ed2b0a0b</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ЗаявкаНаСотрудника\ЗаявкаНаСотрудника.NsgInit.cs">
+      <NsgOwnerGuid>6c112ead-532f-476f-b6bd-9636ad854921</NsgOwnerGuid>
+      <NsgOwnerName>ЗаявкаНаСотрудника</NsgOwnerName>
+      <DependentUpon>ЗаявкаНаСотрудника.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ЗаявкаНаСотрудника\ЗаявкаНаСотрудника.cs">
+      <NsgOwnerGuid>6c112ead-532f-476f-b6bd-9636ad854921</NsgOwnerGuid>
+      <NsgOwnerName>ЗаявкаНаСотрудника</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиПоставщикам\РегистрЗаявкиПоставщикам.NsgInit.cs">
+      <NsgOwnerGuid>687b400b-7a50-4df0-b3de-1ba729b8e4f4</NsgOwnerGuid>
+      <NsgOwnerName>РегистрЗаявкиПоставщикам</NsgOwnerName>
+      <DependentUpon>РегистрЗаявкиПоставщикам.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиПоставщикам\РегистрЗаявкиПоставщикам.cs">
+      <NsgOwnerGuid>687b400b-7a50-4df0-b3de-1ba729b8e4f4</NsgOwnerGuid>
+      <NsgOwnerName>РегистрЗаявкиПоставщикам</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиНаСотрудников\РегистрЗаявкиНаСотрудников.NsgInit.cs">
+      <NsgOwnerGuid>3b45fc32-286b-49e6-87f3-b9bd1a6ea136</NsgOwnerGuid>
+      <NsgOwnerName>РегистрЗаявкиНаСотрудников</NsgOwnerName>
+      <DependentUpon>РегистрЗаявкиНаСотрудников.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиНаСотрудников\РегистрЗаявкиНаСотрудников.cs">
+      <NsgOwnerGuid>3b45fc32-286b-49e6-87f3-b9bd1a6ea136</NsgOwnerGuid>
+      <NsgOwnerName>РегистрЗаявкиНаСотрудников</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиНаСотрудников\УчетСпецодеждыИСИЗРегистрЗаявкиНаСотрудниковДвижения.NsgInit.cs">
+      <NsgOwnerGuid>2d1bd63a-299f-49ae-a5b1-d327b3237572</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрЗаявкиНаСотрудниковДвижения</NsgOwnerName>
+      <DependentUpon>УчетСпецодеждыИСИЗРегистрЗаявкиНаСотрудниковДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиНаСотрудников\УчетСпецодеждыИСИЗРегистрЗаявкиНаСотрудниковДвижения.cs">
+      <NsgOwnerGuid>2d1bd63a-299f-49ae-a5b1-d327b3237572</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрЗаявкиНаСотрудниковДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиНаСотрудников\УчетСпецодеждыИСИЗРегистрЗаявкиНаСотрудниковДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>2d1bd63a-299f-49ae-a5b1-d327b3237572</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрЗаявкиНаСотрудниковДвижения</NsgOwnerName>
+      <DependentUpon>УчетСпецодеждыИСИЗРегистрЗаявкиНаСотрудниковДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиНаСотрудников\УчетСпецодеждыИСИЗРегистрЗаявкиНаСотрудниковДвижения.Строка.cs">
+      <NsgOwnerGuid>2d1bd63a-299f-49ae-a5b1-d327b3237572</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрЗаявкиНаСотрудниковДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиПоставщикам\УчетСпецодеждыИСИЗРегистрЗаявкиПоставщикамДвижения.NsgInit.cs">
+      <NsgOwnerGuid>bfde4225-add7-4101-a95f-d5f2c315e373</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрЗаявкиПоставщикамДвижения</NsgOwnerName>
+      <DependentUpon>УчетСпецодеждыИСИЗРегистрЗаявкиПоставщикамДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиПоставщикам\УчетСпецодеждыИСИЗРегистрЗаявкиПоставщикамДвижения.cs">
+      <NsgOwnerGuid>bfde4225-add7-4101-a95f-d5f2c315e373</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрЗаявкиПоставщикамДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиПоставщикам\УчетСпецодеждыИСИЗРегистрЗаявкиПоставщикамДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>bfde4225-add7-4101-a95f-d5f2c315e373</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрЗаявкиПоставщикамДвижения</NsgOwnerName>
+      <DependentUpon>УчетСпецодеждыИСИЗРегистрЗаявкиПоставщикамДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрЗаявкиПоставщикам\УчетСпецодеждыИСИЗРегистрЗаявкиПоставщикамДвижения.Строка.cs">
+      <NsgOwnerGuid>bfde4225-add7-4101-a95f-d5f2c315e373</NsgOwnerGuid>
+      <NsgOwnerName>УчетСпецодеждыИСИЗРегистрЗаявкиПоставщикамДвижения</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ЗаявкаНаСотрудника\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>6c112ead-532f-476f-b6bd-9636ad854921</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\ЗаявкаНаСотрудника\ФормаЭлемента.cs">
+      <NsgOwnerGuid>6c112ead-532f-476f-b6bd-9636ad854921</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\УчетСпецодеждыИСИЗ\ЗаявкаНаСотрудника\ФормаЭлемента.resx">
+      <NsgOwnerGuid>6c112ead-532f-476f-b6bd-9636ad854921</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЗаявкаНаСотрудника\ПФЗаявкаНаСотрудника.NsgInit.cs">
+      <NsgOwnerGuid>1634e6b4-850f-4818-85a8-793f66f1283b</NsgOwnerGuid>
+      <NsgOwnerName>ПФЗаявкаНаСотрудника</NsgOwnerName>
+      <DependentUpon>ПФЗаявкаНаСотрудника.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЗаявкаНаСотрудника\ПФЗаявкаНаСотрудника.cs">
+      <NsgOwnerGuid>1634e6b4-850f-4818-85a8-793f66f1283b</NsgOwnerGuid>
+      <NsgOwnerName>ПФЗаявкаНаСотрудника</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЗаявкаНаСотрудника\Форма.Designer.cs">
+      <NsgOwnerGuid>1634e6b4-850f-4818-85a8-793f66f1283b</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЗаявкаНаСотрудника\Форма.cs">
+      <NsgOwnerGuid>1634e6b4-850f-4818-85a8-793f66f1283b</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\ПечатныеФормыДокументов\ПФЗаявкаНаСотрудника\Форма.resx">
+      <NsgOwnerGuid>1634e6b4-850f-4818-85a8-793f66f1283b</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

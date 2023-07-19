@@ -9,7 +9,9 @@ using System.Windows.Forms;
 using NsgSoft.Common;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
+using TechControl.Метаданные.Мониторинг;
 using TechControl.Метаданные.Учет;
+using TechControl.Метаданные.УчетСпецодеждыИСИЗ;
 
 namespace TechControl.Метаданные.ПечатныеФормыДокументов
 {
@@ -21,6 +23,18 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
         {
             InitializeComponent();
 		}
+
+        protected override void OnSetFormObject(NsgMultipleObject formObject)
+        {
+            base.OnSetFormObject(formObject);
+            if (formObject!= null)
+            {
+                if (vmoДопДанные.Data.CurrentRow == null)
+                {
+                    vmoДопДанные.Data.CurrentRow = vmoДопДанные.Data.MemoryTable.NewRow();
+                }
+            }
+        }
 
         protected override void OnBeforeCreateReport(NsgBackgroundWorker nsgBackgroundReporter)
         {
@@ -40,6 +54,19 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
 
         private void ЗаполнитьДанные() 
         {
+            vmoДопДанные.Data.BeginUpdateData();
+            vmoДопДанные.Data.MemoryTable.Clear();
+            if (FormObject != null && FormObject is ПеремещениеСпецодежды перемещение)
+            {
+                if (Отправитель.Value is Объекты объект)
+                {
+                    Фирма_vmoДопДанные.Value = объект.Фирма;
+                    ПредставительФирмы_vmoДопДанные.Value = объект.Ответственный;
+                    СотрудникПолучатель_vmoДопДанные.Value = Получатель.Value as Сотрудники;
+                }
+            }
+            vmoДопДанные.Data.UpdateDataSync(this);
+
             vmoТабличныеДанные.Data.BeginUpdateData();
             vmoТабличныеДанные.Data.MemoryTable.Clear();
             Dictionary<Номенклатура, decimal> списокНоменклатурыИСтоимости = new Dictionary<Номенклатура, decimal>();
@@ -87,7 +114,7 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
 
                 while (текущаяДата <= датаОкончанияЭксплуатации)
                 {
-                    var имяКолонки = $"c {датаНачалаПериода:d} \nпо {текущаяДата:d}";
+                    var имяКолонки = $"c {датаНачалаПериода:d}";// \nпо {текущаяДата:d}";
                     vmoТабличныеДанные.Data.MemoryTable.AddColumn(имяКолонки, typeof(decimal));
                     foreach (var row in vmoТабличныеДанные.Data.MemoryTable.AllRows)
                     {

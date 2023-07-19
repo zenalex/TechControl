@@ -23,23 +23,31 @@ namespace TechControl.Метаданные.Учет
             InitializeComponent();
 		}
 
-		#region #Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
+        protected override void OnSetFormObject(NsgMultipleObject formObject)
+        {
+            if (vmoДопДанные.Data.CurrentRow == null)
+            {
+                vmoДопДанные.Data.CurrentRow = vmoДопДанные.Data.MemoryTable.NewRow();
+            }
+            base.OnSetFormObject(formObject);
+        }
 
-		#region #Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
+        private void nbТипЦены_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            if (!ТипЦены_vmoДопДанные.Value.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Необходимо указать тип цены");
+                return;
+            }
 
-		#region #Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-		#region #Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
-
-	}
+            vmoТаблица.Data.BeginUpdateData();
+            foreach (var item in vmoТаблица.Data.DataTable.AllRows)
+            {
+                item[ТипЦены.Name].Value = ТипЦены_vmoДопДанные.Value;
+            }
+            vmoТаблица.Data.UpdateDataSync(this);
+        }
+    }
     
 
 
