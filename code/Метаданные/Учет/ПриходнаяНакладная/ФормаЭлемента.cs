@@ -65,6 +65,7 @@ namespace TechControl.Метаданные.Учет
                 NsgSettings.MainForm.ShowObject(формирование, this );
             }
         }
+
     }
     
 

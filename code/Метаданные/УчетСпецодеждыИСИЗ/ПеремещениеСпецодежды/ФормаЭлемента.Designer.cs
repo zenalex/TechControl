@@ -71,6 +71,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.nsgInput2 = new NsgSoft.Forms.NsgInput();
             this.label3 = new System.Windows.Forms.Label();
             this.nsgInput3 = new NsgSoft.Forms.NsgInput();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nsgInput4 = new NsgSoft.Forms.NsgInput();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -94,6 +96,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -906,6 +909,45 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.nsgInput3.TabIndex = 13;
             this.nsgInput3.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(301, 9);
+            this.label4.Name = "label1";
+            this.label4.Size = new System.Drawing.Size(115, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Документ основание";
+            // 
+            // nsgInput4
+            // 
+            this.nsgInput4.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput4.ConfigurationName = "TechControl";
+            this.nsgInput4.DisableLeaveControlEvent = false;
+            this.nsgInput4.FullName = "УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды.ДокументОснование";
+            this.nsgInput4.FullTextSearch = false;
+            this.nsgInput4.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput4.IsButton = false;
+            this.nsgInput4.IsInitialized = true;
+            this.nsgInput4.IsPassword = false;
+            this.nsgInput4.Location = new System.Drawing.Point(425, 9);
+            this.nsgInput4.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput4.Mask = "";
+            this.nsgInput4.MetaDataName = "Метаданные";
+            this.nsgInput4.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput4.Name = "NsgInput";
+            this.nsgInput4.ObjectImages = null;
+            this.nsgInput4.ObjectIndex = null;
+            this.nsgInput4.ObjectStrings = null;
+            this.nsgInput4.Requsite = "ДокументОснование";
+            this.nsgInput4.SearchFieldName = "";
+            this.nsgInput4.ShowMultipleObjectInComboBox = false;
+            this.nsgInput4.ShowRowCount = 10;
+            this.nsgInput4.Size = new System.Drawing.Size(257, 20);
+            this.nsgInput4.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput4.TabIndex = 16;
+            this.nsgInput4.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // ПеремещениеСпецодеждыФормаЭлемента
             // 
             this.AllowDrop = true;
@@ -915,6 +957,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(795, 550);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.nsgInput4);
             this.Controls.Add(this.nsgIGrid1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.nsgInput3);
@@ -940,6 +984,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.Controls.SetChildIndex(this.nsgInput3, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.nsgIGrid1, 0);
+            this.Controls.SetChildIndex(this.nsgInput4, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).EndInit();
@@ -965,6 +1011,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1001,5 +1048,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         protected Учет.Размеры.ColumnDescriptor Размер;
         private NsgVisualMultipleObject vmoТаблица;
         private NsgIGrid nsgIGrid1;
+        protected System.Windows.Forms.Label label4;
+        protected NsgInput nsgInput4;
     }
 }

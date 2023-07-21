@@ -79,6 +79,8 @@ namespace TechControl.Метаданные.Учет
             this.nsgLabel5 = new NsgSoft.Forms.NsgLabel();
             this.nsgInput5 = new NsgSoft.Forms.NsgInput();
             this.nbФормированиеЦены = new NsgSoft.Design.NsgButton();
+            this.nsgLabel6 = new NsgSoft.Forms.NsgLabel();
+            this.nsgInput6 = new NsgSoft.Forms.NsgInput();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -105,6 +107,7 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbФормированиеЦены)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -527,7 +530,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgIGrid1.IsCanMultiSelect = false;
             this.nsgIGrid1.IsCanSingleSelect = false;
             this.nsgIGrid1.LineHeight = 20;
-            this.nsgIGrid1.Location = new System.Drawing.Point(100, 92);
+            this.nsgIGrid1.Location = new System.Drawing.Point(100, 139);
             this.nsgIGrid1.MarkReadOnly = false;
             this.nsgIGrid1.MasterObject = null;
             this.nsgIGrid1.Name = "NsgIGrid";
@@ -544,7 +547,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgIGrid1.ShowPanel = true;
             this.nsgIGrid1.ShowTotals = false;
             this.nsgIGrid1.ShowTree = false;
-            this.nsgIGrid1.Size = new System.Drawing.Size(629, 239);
+            this.nsgIGrid1.Size = new System.Drawing.Size(629, 192);
             this.nsgIGrid1.SourceObject = this.vmoТаблица;
             this.nsgIGrid1.TabIndex = 23;
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -938,7 +941,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgLabel2.ConfigurationName = "";
             this.nsgLabel2.FullName = "";
             this.nsgLabel2.IsInitialized = false;
-            this.nsgLabel2.Location = new System.Drawing.Point(14, 42);
+            this.nsgLabel2.Location = new System.Drawing.Point(14, 79);
             this.nsgLabel2.MetaDataName = "";
             this.nsgLabel2.Name = "nsgLabel1";
             this.nsgLabel2.Requsite = "";
@@ -958,7 +961,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput2.IsButton = false;
             this.nsgInput2.IsInitialized = true;
             this.nsgInput2.IsPassword = false;
-            this.nsgInput2.Location = new System.Drawing.Point(100, 39);
+            this.nsgInput2.Location = new System.Drawing.Point(100, 76);
             this.nsgInput2.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput2.Mask = "";
             this.nsgInput2.MetaDataName = "Метаданные";
@@ -982,7 +985,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgLabel4.ConfigurationName = "";
             this.nsgLabel4.FullName = "";
             this.nsgLabel4.IsInitialized = false;
-            this.nsgLabel4.Location = new System.Drawing.Point(14, 72);
+            this.nsgLabel4.Location = new System.Drawing.Point(14, 109);
             this.nsgLabel4.MetaDataName = "";
             this.nsgLabel4.Name = "nsgLabel1";
             this.nsgLabel4.Requsite = "";
@@ -1002,7 +1005,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput4.IsButton = false;
             this.nsgInput4.IsInitialized = true;
             this.nsgInput4.IsPassword = false;
-            this.nsgInput4.Location = new System.Drawing.Point(100, 69);
+            this.nsgInput4.Location = new System.Drawing.Point(100, 106);
             this.nsgInput4.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput4.Mask = "";
             this.nsgInput4.MetaDataName = "Метаданные";
@@ -1069,14 +1072,58 @@ namespace TechControl.Метаданные.Учет
             this.nbФормированиеЦены.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.nbФормированиеЦены.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.nbФормированиеЦены.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.nbФормированиеЦены.Location = new System.Drawing.Point(13, 123);
+            this.nbФормированиеЦены.Location = new System.Drawing.Point(1, 139);
             this.nbФормированиеЦены.Name = "NsgButton";
-            this.nbФормированиеЦены.Size = new System.Drawing.Size(75, 25);
+            this.nbФормированиеЦены.Size = new System.Drawing.Size(98, 30);
             this.nbФормированиеЦены.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
             this.nbФормированиеЦены.TabIndex = 26;
             this.nbФормированиеЦены.Text = "Сформировать цену";
             this.nbФормированиеЦены.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
             this.nbФормированиеЦены.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbФормированиеЦены_AsyncClick);
+            // 
+            // nsgLabel6
+            // 
+            this.nsgLabel6.AutoSize = true;
+            this.nsgLabel6.ConfigurationName = "";
+            this.nsgLabel6.FullName = "";
+            this.nsgLabel6.IsInitialized = false;
+            this.nsgLabel6.Location = new System.Drawing.Point(14, 47);
+            this.nsgLabel6.MetaDataName = "";
+            this.nsgLabel6.Name = "nsgLabel1";
+            this.nsgLabel6.Requsite = "";
+            this.nsgLabel6.Size = new System.Drawing.Size(115, 13);
+            this.nsgLabel6.TabIndex = 28;
+            this.nsgLabel6.Text = "Документ основание";
+            // 
+            // nsgInput6
+            // 
+            this.nsgInput6.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput6.ConfigurationName = "";
+            this.nsgInput6.DisableLeaveControlEvent = false;
+            this.nsgInput6.FullName = "ДокументОснование";
+            this.nsgInput6.FullTextSearch = false;
+            this.nsgInput6.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput6.IsButton = false;
+            this.nsgInput6.IsInitialized = true;
+            this.nsgInput6.IsPassword = false;
+            this.nsgInput6.Location = new System.Drawing.Point(132, 44);
+            this.nsgInput6.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput6.Mask = "";
+            this.nsgInput6.MetaDataName = "";
+            this.nsgInput6.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput6.Name = "NsgInput";
+            this.nsgInput6.ObjectImages = null;
+            this.nsgInput6.ObjectIndex = null;
+            this.nsgInput6.ObjectStrings = null;
+            this.nsgInput6.Requsite = "ДокументОснование";
+            this.nsgInput6.SearchFieldName = "";
+            this.nsgInput6.ShowMultipleObjectInComboBox = false;
+            this.nsgInput6.ShowRowCount = 10;
+            this.nsgInput6.Size = new System.Drawing.Size(255, 20);
+            this.nsgInput6.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput6.TabIndex = 27;
+            this.nsgInput6.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // ПриходнаяНакладнаяФормаЭлемента
             // 
@@ -1087,6 +1134,8 @@ namespace TechControl.Метаданные.Учет
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(741, 410);
+            this.Controls.Add(this.nsgLabel6);
+            this.Controls.Add(this.nsgInput6);
             this.Controls.Add(this.nbФормированиеЦены);
             this.Controls.Add(this.nsgLabel5);
             this.Controls.Add(this.nsgInput5);
@@ -1122,6 +1171,8 @@ namespace TechControl.Метаданные.Учет
             this.Controls.SetChildIndex(this.nsgInput5, 0);
             this.Controls.SetChildIndex(this.nsgLabel5, 0);
             this.Controls.SetChildIndex(this.nbФормированиеЦены, 0);
+            this.Controls.SetChildIndex(this.nsgInput6, 0);
+            this.Controls.SetChildIndex(this.nsgLabel6, 0);
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).EndInit();
@@ -1150,6 +1201,7 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbФормированиеЦены)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1193,5 +1245,7 @@ namespace TechControl.Метаданные.Учет
         protected NsgLabel nsgLabel5;
         protected NsgInput nsgInput5;
         protected NsgSoft.Design.NsgButton nbФормированиеЦены;
+        protected NsgLabel nsgLabel6;
+        protected NsgInput nsgInput6;
     }
 }

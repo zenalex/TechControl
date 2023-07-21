@@ -1407,8 +1407,6 @@
             <register name="УчетСпецодеждыИСИЗ.РегистрУчетСпецодежды" regime="Write" />
             <register name="УчетИнструмента.РегистрУчетИнструмента" regime="Write" />
             <register name="Учет.РегистрЦен" regime="Write" />
-            <register name="УчетСпецодеждыИСИЗ.РегистрЗаявкиПоставщикам" regime="Write" />
-            <register name="УчетСпецодеждыИСИЗ.РегистрЗаявкиНаСотрудников" regime="Write" />
             <register name="УчетСпецодеждыИСИЗ.РегистрРезерваЗнС" regime="Write" />
             <register name="УчетСпецодеждыИСИЗ.РегистрРезерваЗП" regime="Write" />
           </Registers>
@@ -9477,7 +9475,10 @@
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
-              <NsgObjectsFilter filter_type="None" />
+              <NsgObjectsFilter filter_type="List">
+                <param name="УчетСпецодеждыИСИЗ.ЗаявкаНаСотрудника" />
+                <param name="УчетСпецодеждыИСИЗ.ЗаявкиПоставщикам" />
+              </NsgObjectsFilter>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="e7de9a5a-955b-47bd-a388-776618255aed" type="NsgDataString" editoraccess="Full" name="Комментарий" visible="true" description="Комментарий" field="Kommentariij" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
               <NsgLanguageString type="presentation">
@@ -9538,6 +9539,8 @@
           <Registers>
             <register name="Учет.ОстаткиНоменклатуры" regime="Write" />
             <register name="Учет.РегистрЦен" regime="Write" />
+            <register name="УчетСпецодеждыИСИЗ.РегистрРезерваЗнС" regime="Write" />
+            <register name="УчетСпецодеждыИСИЗ.РегистрРезерваЗП" regime="Write" />
           </Registers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="f0a92172-bf62-4892-b526-f6da0f2e9290" type="NsgDataTable" editoraccess="Full" name="УчетПеремещениеТаблица" visible="true" description="Учет перемещение таблица" group="_SystemTables" table="_tab_UchetPeremeschenieT" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="TablePart" registerPeriod="None" registerPeriodCount="0">
@@ -12128,6 +12131,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
               <NsgObjectsFilter filter_type="List">
+                <param name="УчетСпецодеждыИСИЗ.ЗаявкаНаСотрудника" />
                 <param name="УчетСпецодеждыИСИЗ.ЗаявкиПоставщикам" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
@@ -13807,12 +13811,18 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="7365acb1-0530-4928-b2f9-4deb86daf848" type="NsgDataFloat" editoraccess="Full" name="Стоимость" visible="true" description="Стоимость" field="Stoimost" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Номенклатура" />
             <container name="Размер" />
             <container name="Количество" />
             <container name="Цена" />
+            <container name="Стоимость" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="cb8f66a7-5dcf-4273-98b5-7ea99b3d6f0f" type="NsgDataDocument" editoraccess="Full" name="ЗаявкиПоставщикам" visible="true" description="Документ" group="УчетСпецодеждыИСИЗ" table="_doc_ZajavkiPostavschikam" searchfield="_Code" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" NumberPeriod="None" HandleWithoutTransaction="False" usecommonjournal="true">
@@ -13913,6 +13923,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="69891216-e98f-4d7f-8527-763e9ddc605a" type="NsgDataDateTime" editoraccess="Full" name="ДатаЗавершенияИлиОтмены" visible="true" description="Дата завершения или отмены" field="DataZavershenijaI" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -13921,17 +13936,17 @@
             <container name="Сотрудник" />
             <container name="Объект" />
             <container name="Статус" />
+            <container name="ПричинаОтмены" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ПричинаОтмены" />
+            <container name="ДатаЗавершенияИлиОтмены" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
           </DataInterfaces>
           <Registers>
-            <register name="УчетСпецодеждыИСИЗ.РегистрЗаявкиПоставщикам" regime="Write" />
             <register name="УчетСпецодеждыИСИЗ.РегистрРезерваЗП" regime="Write" />
           </Registers>
         </NsgMultipleObject>
@@ -13983,11 +13998,17 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="17f2a2d3-ed63-453b-901d-e21fc36e8df0" type="NsgDataEnumElement" editoraccess="Full" name="Отменена" visible="true" description="Отменена" field="Otmenena" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="3">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Передана" />
             <container name="Новая" />
             <container name="Выполнена" />
+            <container name="Отменена" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="fa407f4b-e571-4f59-86d1-47889dd77285" type="NsgReportObject" editoraccess="Full" name="ПФЗаявкаПоставщику" visible="true" description="ПФ Заявка поставщику" group="ПечатныеФормыДокументов" table="_report_PFZajavkaPostavs" useFullTextIndex="true" visibleadminonly="false">
@@ -14178,6 +14199,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="35227e3b-fc4b-4f61-8aa4-e3db05b8b05f" type="NsgDataDateTime" editoraccess="Full" name="ДатаЗавершенияИлиОтмены" visible="true" description="Дата завершения или отмены" field="DataZavershenijaI" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -14186,17 +14212,17 @@
             <container name="Объект" />
             <container name="Контрагент" />
             <container name="Статус" />
+            <container name="ПричинаОтмены" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ПричинаОтмены" />
+            <container name="ДатаЗавершенияИлиОтмены" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
           </DataInterfaces>
           <Registers>
-            <register name="УчетСпецодеждыИСИЗ.РегистрЗаявкиНаСотрудников" regime="Write" />
             <register name="УчетСпецодеждыИСИЗ.РегистрРезерваЗнС" regime="Write" />
           </Registers>
         </NsgMultipleObject>
@@ -14224,6 +14250,7 @@
               </NsgLanguageString>
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
+                <param name="Учет.ПриходнаяНакладная" />
                 <param name="УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды" />
                 <param name="УчетСпецодеждыИСИЗ.ЗаявкаНаСотрудника" />
               </NsgObjectsFilter>
@@ -14269,6 +14296,11 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="77a86192-97ab-4ad9-845d-ef8be284b1f0" type="NsgDataFloat" editoraccess="Full" name="Количество" visible="true" description="Количество" field="Kolichestvo" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="162793ea-70bb-40aa-89aa-340bcfac76d2" type="NsgDataTypedReference" editoraccess="Full" name="ДокументЗаявкиНаСотрудника" visible="true" description="Документ заявки на сотрудника" field="DokumentZajavki" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="ЗаявкаНаСотрудника">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -14324,6 +14356,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="162793ea-70bb-40aa-89aa-340bcfac76d2" type="NsgDataTypedReference" editoraccess="Full" name="ДокументЗаявкиНаСотрудника" visible="true" description="Документ заявки на сотрудника" field="DokumentZajavki" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="ЗаявкаНаСотрудника">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers />
         </NsgMultipleObject>
@@ -14370,6 +14407,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="162793ea-70bb-40aa-89aa-340bcfac76d2" type="NsgDataTypedReference" editoraccess="Full" name="ДокументЗаявкиНаСотрудника" visible="true" description="Документ заявки на сотрудника" field="DokumentZajavki" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="ЗаявкаНаСотрудника">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers />
         </NsgMultipleObject>
@@ -14397,6 +14439,7 @@
               </NsgLanguageString>
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
+                <param name="Учет.ПриходнаяНакладная" />
                 <param name="УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды" />
                 <param name="УчетСпецодеждыИСИЗ.ЗаявкиПоставщикам" />
               </NsgObjectsFilter>
@@ -14442,6 +14485,11 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="dcfcb339-daa8-4d7f-b677-f54af8d73111" type="NsgDataFloat" editoraccess="Full" name="Количество" visible="true" description="Количество" field="Kolichestvo" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="5b7bac45-a14b-4ed8-830d-96e50b255bb9" type="NsgDataTypedReference" editoraccess="Full" name="ДокументЗаявкиПоставщикам" visible="true" description="Документ заявки поставщикам" field="DokumentZajavkiPo" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="ЗаявкиПоставщикам">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -14513,6 +14561,7 @@
               </NsgLanguageString>
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
+                <param name="Учет.ПриходнаяНакладная" />
                 <param name="УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды" />
                 <param name="УчетСпецодеждыИСИЗ.ЗаявкаНаСотрудника" />
               </NsgObjectsFilter>
@@ -14548,6 +14597,11 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="0b4bd6e9-329f-4cff-ab29-7debdbe03256" type="NsgDataTypedReference" editoraccess="Full" name="Объект" visible="true" description="Объект" field="Obekt" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" registerDistributionType="Filter" stringFormat="" refgroup="Мониторинг" refname="Объекты">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="162793ea-70bb-40aa-89aa-340bcfac76d2" type="NsgDataTypedReference" editoraccess="Full" name="ДокументЗаявкиНаСотрудника" visible="true" description="Документ заявки на сотрудника" field="DokumentZajavki" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" registerDistributionType="Filter" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="ЗаявкаНаСотрудника">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -14607,6 +14661,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="5b7bac45-a14b-4ed8-830d-96e50b255bb9" type="NsgDataTypedReference" editoraccess="Full" name="ДокументЗаявкиПоставщикам" visible="true" description="Документ заявки поставщикам" field="DokumentZajavkiPo" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="ЗаявкиПоставщикам">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers />
         </NsgMultipleObject>
@@ -14658,6 +14717,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="5b7bac45-a14b-4ed8-830d-96e50b255bb9" type="NsgDataTypedReference" editoraccess="Full" name="ДокументЗаявкиПоставщикам" visible="true" description="Документ заявки поставщикам" field="DokumentZajavkiPo" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="ЗаявкиПоставщикам">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers />
         </NsgMultipleObject>
@@ -14700,6 +14764,7 @@
               </NsgLanguageString>
               <NsgObjectsFilter filter_type="List">
                 <param name="Сервис.КорректировкаРегистра" />
+                <param name="Учет.ПриходнаяНакладная" />
                 <param name="УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды" />
                 <param name="УчетСпецодеждыИСИЗ.ЗаявкиПоставщикам" />
               </NsgObjectsFilter>
@@ -14745,6 +14810,11 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="dcfcb339-daa8-4d7f-b677-f54af8d73111" type="NsgDataFloat" editoraccess="Full" name="Количество" visible="true" description="Количество" field="Kolichestvo" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="5b7bac45-a14b-4ed8-830d-96e50b255bb9" type="NsgDataTypedReference" editoraccess="Full" name="ДокументЗаявкиПоставщикам" visible="true" description="Документ заявки поставщикам" field="DokumentZajavkiPo" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" registerDistributionType="Filter" stringFormat="" refgroup="УчетСпецодеждыИСИЗ" refname="ЗаявкиПоставщикам">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
