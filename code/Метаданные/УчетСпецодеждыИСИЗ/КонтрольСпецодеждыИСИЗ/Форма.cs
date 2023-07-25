@@ -11,6 +11,7 @@ using NsgSoft.Common;
 using NsgSoft.Database;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
+using NsgSoft.ReportDatabase;
 using TechControl.Метаданные.Мониторинг;
 using TechControl.Метаданные.Сервис;
 using TechControl.Метаданные.Учет;
@@ -818,6 +819,281 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             //ЗаполнитьТаблицуСпецодежды();
             //ЗаполнитьОстатки();
             //РаскраситьЯчейки();
+        }
+
+        private void nbЗаполнитьВозврат_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            ЗаполнитьТаблицуВозврата();
+        }
+
+        private void ЗаполнитьТаблицуВозврата() 
+        {
+            vmoВозврат.Data.BeginUpdateData();
+            vmoВозврат.Data.MemoryTable.Clear();
+            if (!СотрудникВозврат.Value.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Укажите сотрудника для возврата.");
+                vmoВозврат.Data.UpdateDataSync(this);
+                return;
+            }
+
+            var сотрудник = СотрудникВозврат.Value;
+
+            var рег = РегистрУчетСпецодежды.Новый();
+            рег.Сотрудник = сотрудник;
+            var остатки = рег.GetRests();
+
+            if (остатки.Count > 0)
+            {
+                foreach (var item in остатки.AllRows)
+                {
+                    var row = vmoВозврат.Data.MemoryTable.NewRow();
+                    row[Номенклатура_vmoВозврат.Name].Value = item[РегистрУчетСпецодежды.Names.НоменклатураСпецодеждыИСИЗ].ToReferent() as Номенклатура;
+                    row[Размер_vmoВозврат.Name].Value = item[РегистрУчетСпецодежды.Names.Размер].ToReferent() as Размеры;
+                    row[Комплект_vmoВозврат.Name].Value = item[РегистрУчетСпецодежды.Names.КомплектСпецодежды].ToReferent() as КомплектыСпецодежды;
+                    row[Количество_vmoВозврат.Name].Value = 1;
+                }
+
+                vmoВозврат.Data.MemoryTable.Collapse(new string[] { Номенклатура_vmoВозврат.Name, Размер_vmoВозврат.Name, Комплект_vmoВозврат.Name }, new string[] { Количество_vmoВозврат.Name }, false);
+            }
+            
+            vmoВозврат.Data.UpdateDataSync(this);
+        }
+
+        private void nsgInput6_Selected(object sender, EventArgs e)
+        {
+            ЗаполнитьТаблицуВозврата();
+        }
+
+        private void ОформитьВозврат() 
+        {
+            if (!ОбъектВозврат.Value.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Укажите объект для приема возвращаемого имущества.");
+                return;
+            }
+
+            if (!СотрудникВозврат.Value.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Укажите сотрудника для возврата.");
+                return;
+            }
+
+            var сотрудник = СотрудникВозврат.Value;
+            var объект = ОбъектВозврат.Value;
+
+            var возврат = ПеремещениеСпецодежды.Новый();
+            возврат.New();
+            возврат.ДатаДокумента = DateTime.Now;
+            возврат.Отправитель = сотрудник;
+            возврат.Получатель = объект;
+
+            foreach (var item in vmoВозврат.Data.MemoryTable.AllRows)
+            {
+                if (item[Принять_vmoВозврат].ToBoolean())
+                {
+                    var row = возврат.Таблица.NewRow();
+                    row.НоменклатураСпецодеждыИСИЗ = item[Номенклатура_vmoВозврат].ToReferent() as Номенклатура;
+                    row.КомплектСпецодежды = item[Комплект_vmoВозврат].ToReferent() as КомплектыСпецодежды;
+                    row.Размер = item[Размер_vmoВозврат].ToReferent() as Размеры;
+                    row.Количество = item[Количество_vmoВозврат].ToInt();
+                    row.Post();
+                }
+            }
+            if (возврат.Таблица.Count > 0)
+            {
+                возврат.Handle();
+
+                NsgSettings.MainForm.ShowObject(возврат, this);
+            }
+
+            ЗаполнитьТаблицуВозврата();
+        }
+
+        private void nbОформитьВозврат_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            ОформитьВозврат();
+        }
+
+        private void nbЗаполнитьЗаказы_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            ЗаполнитьТаблицуЗаказов();
+        }
+
+        private void ЗаполнитьТаблицуЗаказов() 
+        {
+            vmoЗаказы.Data.BeginUpdateData();
+            vmoЗаказы.Data.MemoryTable.Clear();
+
+            if (!ОбъектДляЗаказов.Value.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Укажите объект для формирования заказа.");
+                vmoЗаказы.Data.UpdateDataSync(this);
+                return;
+            }
+
+            var дата = ДатаОпределенияПотребностейДляЗаказа.Value != NsgService.MinDate ? ДатаОпределенияПотребностейДляЗаказа.Value : DateTime.Now;
+
+            var cmp = new NsgCompare();
+            cmp.Add(Сотрудники.Names.ДатаУвольнения, NsgService.MinDate);
+            cmp.Add(Сотрудники.Names.ОбъектВыдачиСпецодежды, ОбъектДляЗаказов.Value);
+
+            if (Подразделение.Value.Selected)
+            {
+                cmp.Add(Сотрудники.Names.Подразделение, Подразделение.Value);
+            }
+
+            var всеСотрудники = Сотрудники.Новый().FindAll(cmp);
+
+            var регРезервы = РегистрРезерваЗП.Новый();
+            регРезервы.Объект = ОбъектДляЗаказов.Value;
+            var резервы = регРезервы.GetRests(дата);
+
+            var регУчета = РегистрУчетСпецодежды.Новый();
+
+            var cmpРегУчета = new NsgCompare();
+            cmpРегУчета.Add(РегистрУчетСпецодежды.Names.Сотрудник, всеСотрудники, NsgComparison.In);
+
+            var остаткиНаСотрудниках = регУчета.GetRests(дата, cmpРегУчета);
+
+            foreach (var сотрудник in всеСотрудники)
+            {
+                if (сотрудник.Должность.Selected)
+                {
+                    foreach (var строкаТаблицыКомплектов in сотрудник.Должность.ТаблицаКомплектовСпецодежды.AllRows)
+                    {
+                        foreach (var строкаКомплекта in строкаТаблицыКомплектов.КомплектСпецодежды.ТаблицаКомплектаСпецодежды.AllRows)
+                        {
+                            var ном = строкаКомплекта.НоменклатураСпецодеждыИСИЗ;
+                            var размер = сотрудник.ПолучитьРазмер(ном);
+                            var количество = (int)строкаКомплекта.Количество;
+                            for (int i = 1; i <= количество; i++)
+                            {
+                                var cmpОстатки = new NsgCompare();
+                                cmpОстатки.Add(РегистрУчетСпецодежды.Names.Сотрудник, сотрудник);
+                                cmpОстатки.Add(РегистрУчетСпецодежды.Names.НоменклатураСпецодеждыИСИЗ, ном);
+                                cmpОстатки.Add(РегистрУчетСпецодежды.Names.Размер, размер);
+                                cmpОстатки.Add(РегистрУчетСпецодежды.Names.КомплектСпецодежды, строкаТаблицыКомплектов.КомплектСпецодежды);
+
+                                var остаток = остаткиНаСотрудниках.FindRow(cmpОстатки);
+                                if (остаток != null)
+                                {
+                                    количество--;
+                                    остаткиНаСотрудниках.DeleteRow(остаток);
+                                }
+                            }
+
+                            if (количество > 0)
+                            {
+                                var row = vmoЗаказы.Data.MemoryTable.NewRow();
+                                row[Номенклатура_vmoЗаказы].Value = ном;
+                                row[Размер_vmoЗаказы].Value = размер;
+                                row[Поставщик_vmoЗаказы].Value = ном.Поставщик;
+                                row[КоличествоТребуется_vmoЗаказы].Value = количество;
+                                row.Post();
+                            }
+                        }
+                    }
+                }
+            }
+
+            var колонкиКоллапса = new string[]
+            {
+                Номенклатура_vmoЗаказы.Name,
+                Размер_vmoЗаказы.Name,
+                Поставщик_vmoЗаказы.Name
+            };
+
+            var колонкиСуммирования = new string[]
+            {
+                КоличествоТребуется_vmoЗаказы.Name
+            };
+
+            vmoЗаказы.Data.MemoryTable.Collapse(колонкиКоллапса, колонкиСуммирования, false);
+
+            foreach (var item in vmoЗаказы.Data.MemoryTable.AllRows)
+            {
+                var ном = item[Номенклатура_vmoЗаказы].ToReferent() as Номенклатура;
+                var размер = item[Размер_vmoЗаказы].ToReferent() as Размеры;
+                var поставщик = item[Поставщик_vmoЗаказы].ToReferent() as Контрагенты;
+
+                var cmpРезервы = new NsgCompare();
+                cmpРезервы.Add(РегистрРезерваЗП.Names.Номенклатура, ном);
+                cmpРезервы.Add(РегистрРезерваЗП.Names.Размер, размер);
+                cmpРезервы.Add(РегистрРезерваЗП.Names.Поставщик, поставщик);
+                var строкаРезерва = резервы.FindRow(cmpРезервы);
+                if (строкаРезерва != null)
+                {
+                    item[УжеЗаказаноКоличество_vmoЗаказы].Value = (int)строкаРезерва[РегистрРезерваЗП.Names.Количество].ToDecimal();
+                }
+            }
+
+
+            vmoЗаказы.Data.UpdateDataSync(this);
+        }
+
+        private void nbСормироватьЗаказы_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            if (!ОбъектДляЗаказов.Value.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Укажите объект для формирования заказа.");
+                return;
+            }
+
+            Dictionary<Контрагенты, List<NsgMemoryTableRow>> словарьПоПоставщику = new Dictionary<Контрагенты, List<NsgMemoryTableRow>>();
+            foreach (var item in vmoЗаказы.Data.MemoryTable.AllRows)
+            {
+                if (item[Заказать_vmoЗаказы].ToBoolean())
+                {
+                    var поставщик = item[Поставщик_vmoЗаказы].ToReferent() as Контрагенты;
+                    if (поставщик != null)
+                    {
+                        if (!словарьПоПоставщику.ContainsKey(поставщик))
+                        {
+                            словарьПоПоставщику[поставщик] = new List<NsgMemoryTableRow>();
+                        }
+                        словарьПоПоставщику[поставщик].Add(item);
+                    }
+                }
+            }
+
+            foreach (var поставщик in словарьПоПоставщику.Keys)
+            {
+                var заявка = ЗаявкиПоставщикам.Новый();
+                заявка.New();
+                заявка.Поставщик = поставщик;
+                заявка.Объект = ОбъектДляЗаказов.Value;
+                заявка.Сотрудник = (NsgSettings.CurrentUser as Пользователи).Сотрудник;
+                foreach (var item in словарьПоПоставщику[поставщик])
+                {
+                    var строка = заявка.Таблица.NewRow();
+                    строка.Номенклатура = item[Номенклатура_vmoЗаказы].ToReferent() as Номенклатура;
+                    строка.Размер = item[Размер_vmoЗаказы].ToReferent() as Размеры;
+                    строка.Количество = item[ЗаказатьКоличество_vmoЗаказы].ToInt();
+                    строка.Post();
+                }
+                заявка.Post();
+
+                NsgSettings.MainForm.ShowObject(заявка, this);
+            }
+        }
+
+        private void nsgIGrid5_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.ColumnName == Заказать_vmoЗаказы.Name)
+            {
+                if (e.RowObject[Заказать_vmoЗаказы].ToBoolean())
+                {
+                    var требуется = e.RowObject[КоличествоТребуется_vmoЗаказы].ToInt();
+                    var заказано = e.RowObject[УжеЗаказаноКоличество_vmoЗаказы].ToInt();
+                    var заказать = требуется - заказано;
+                    if (заказать < 0)
+                    {
+                        заказать = 0;
+                    }
+                    e.RowObject[ЗаказатьКоличество_vmoЗаказы].Value = заказать;
+                }
+            }
         }
     }
     

@@ -73,6 +73,7 @@ namespace TechControl.Метаданные.Мониторинг
                 vmoТаблицаРазмеров.Data.UpdateDataSync(this);
             }
         }
+
     }
     
 
