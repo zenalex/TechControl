@@ -1031,9 +1031,9 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.nsgInput19.BackColor = System.Drawing.SystemColors.Window;
             this.nsgInput19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput19.ConfigurationName = "";
+            this.nsgInput19.ConfigurationName = "TechControl";
             this.nsgInput19.DisableLeaveControlEvent = false;
-            this.nsgInput19.FullName = "Подразделение";
+            this.nsgInput19.FullName = "Мониторинг.Сотрудники.Подразделение";
             this.nsgInput19.FullTextSearch = false;
             this.nsgInput19.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput19.IsButton = false;
@@ -1042,7 +1042,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput19.Location = new System.Drawing.Point(132, 272);
             this.nsgInput19.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput19.Mask = "";
-            this.nsgInput19.MetaDataName = "";
+            this.nsgInput19.MetaDataName = "Метаданные";
             this.nsgInput19.MinimumSize = new System.Drawing.Size(4, 20);
             this.nsgInput19.Name = "NsgInput";
             this.nsgInput19.ObjectImages = null;
@@ -1071,9 +1071,9 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.nsgInput8.BackColor = System.Drawing.SystemColors.Window;
             this.nsgInput8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput8.ConfigurationName = "TechControl";
+            this.nsgInput8.ConfigurationName = "";
             this.nsgInput8.DisableLeaveControlEvent = false;
-            this.nsgInput8.FullName = "Мониторинг.Сотрудники.Должность";
+            this.nsgInput8.FullName = "ОбъектВыдачиСпецодежды";
             this.nsgInput8.FullTextSearch = false;
             this.nsgInput8.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput8.IsButton = false;
@@ -1082,13 +1082,13 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput8.Location = new System.Drawing.Point(132, 242);
             this.nsgInput8.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput8.Mask = "";
-            this.nsgInput8.MetaDataName = "Метаданные";
+            this.nsgInput8.MetaDataName = "";
             this.nsgInput8.MinimumSize = new System.Drawing.Size(4, 20);
             this.nsgInput8.Name = "NsgInput";
             this.nsgInput8.ObjectImages = null;
             this.nsgInput8.ObjectIndex = null;
             this.nsgInput8.ObjectStrings = null;
-            this.nsgInput8.Requsite = "Должность";
+            this.nsgInput8.Requsite = "ОбъектВыдачиСпецодежды";
             this.nsgInput8.SearchFieldName = "";
             this.nsgInput8.ShowMultipleObjectInComboBox = false;
             this.nsgInput8.ShowRowCount = 10;
@@ -1110,9 +1110,9 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.nsgInput7.BackColor = System.Drawing.SystemColors.Window;
             this.nsgInput7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput7.ConfigurationName = "TechControl";
+            this.nsgInput7.ConfigurationName = "";
             this.nsgInput7.DisableLeaveControlEvent = false;
-            this.nsgInput7.FullName = "Мониторинг.Сотрудники.Должность";
+            this.nsgInput7.FullName = "ОсновнойОбъект";
             this.nsgInput7.FullTextSearch = false;
             this.nsgInput7.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput7.IsButton = false;
@@ -1121,13 +1121,13 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput7.Location = new System.Drawing.Point(132, 211);
             this.nsgInput7.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput7.Mask = "";
-            this.nsgInput7.MetaDataName = "Метаданные";
+            this.nsgInput7.MetaDataName = "";
             this.nsgInput7.MinimumSize = new System.Drawing.Size(4, 20);
             this.nsgInput7.Name = "NsgInput";
             this.nsgInput7.ObjectImages = null;
             this.nsgInput7.ObjectIndex = null;
             this.nsgInput7.ObjectStrings = null;
-            this.nsgInput7.Requsite = "Должность";
+            this.nsgInput7.Requsite = "ОсновнойОбъект";
             this.nsgInput7.SearchFieldName = "";
             this.nsgInput7.ShowMultipleObjectInComboBox = false;
             this.nsgInput7.ShowRowCount = 10;
