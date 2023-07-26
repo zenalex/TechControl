@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2023.7.18.0</ProductVersion>
+    <ProductVersion>2023.7.26.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -4170,6 +4170,17 @@
     <Compile Include="Метаданные\УчетСпецодеждыИСИЗ\РегистрРезерваЗП\УчетСпецодеждыИСИЗРегистрРезерваЗПНакопления_1.Строка.cs">
       <NsgOwnerGuid>95f4c838-6bc4-4bf1-9e7b-e630f222864f</NsgOwnerGuid>
       <NsgOwnerName>УчетСпецодеждыИСИЗРегистрРезерваЗПНакопления_1</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Перечисления\СтатусыЗаявокНаСотрудника\СтатусыЗаявокНаСотрудника.NsgInit.cs">
+      <NsgOwnerGuid>2f07747c-d98a-418d-8619-8b8c4ceb6492</NsgOwnerGuid>
+      <NsgOwnerName>СтатусыЗаявокНаСотрудника</NsgOwnerName>
+      <DependentUpon>СтатусыЗаявокНаСотрудника.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Перечисления\СтатусыЗаявокНаСотрудника\СтатусыЗаявокНаСотрудника.cs">
+      <NsgOwnerGuid>2f07747c-d98a-418d-8619-8b8c4ceb6492</NsgOwnerGuid>
+      <NsgOwnerName>СтатусыЗаявокНаСотрудника</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>

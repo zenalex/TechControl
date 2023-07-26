@@ -82,12 +82,12 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpОсновная = new System.Windows.Forms.TabPage();
             this.tpУправление = new System.Windows.Forms.TabPage();
-            this.vmoДопДанные = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Дата_vmoДопДанные = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.nbОтменить = new NsgSoft.Design.NsgButton();
+            this.nbЗавершить = new NsgSoft.Design.NsgButton();
             this.label6 = new System.Windows.Forms.Label();
             this.nsgInput5 = new NsgSoft.Forms.NsgInput();
-            this.nbЗавершить = new NsgSoft.Design.NsgButton();
-            this.nbОтменить = new NsgSoft.Design.NsgButton();
+            this.vmoДопДанные = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.Дата_vmoДопДанные = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -115,10 +115,10 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.tabControl1.SuspendLayout();
             this.tpОсновная.SuspendLayout();
             this.tpУправление.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vmoДопДанные)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbЗавершить)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbОтменить)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbЗавершить)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoДопДанные)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -421,6 +421,9 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.nsgIGrid1.AllowSaveColPositionToXML = true;
             this.nsgIGrid1.AllowSaveColWidthToXML = true;
             this.nsgIGrid1.AllowSaveSettingsToXML = true;
+            this.nsgIGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nsgIGrid1.AutoResizeCols = true;
             nsgIGridColumn1.AllowFilter = true;
             nsgIGridColumn1.AllowGroupSelect = false;
@@ -1098,23 +1101,35 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.tpУправление.UseVisualStyleBackColor = true;
             this.tpУправление.Visible = false;
             // 
-            // vmoДопДанные
+            // nbОтменить
             // 
-            this.vmoДопДанные.Columns.Collection.Add(this.Дата_vmoДопДанные);
-            this.vmoДопДанные.IsActive = true;
-            this.vmoДопДанные.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
-            this.vmoДопДанные.MetaDataName = "";
-            this.vmoДопДанные.FullName = "";
+            this.nbОтменить.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.nbОтменить.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nbОтменить.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nbОтменить.Location = new System.Drawing.Point(6, 66);
+            this.nbОтменить.Name = "NsgButton";
+            this.nbОтменить.ReadOnlyProvider = this.nsgVisualMultipleObject;
+            this.nbОтменить.Size = new System.Drawing.Size(158, 27);
+            this.nbОтменить.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.nbОтменить.TabIndex = 14;
+            this.nbОтменить.Text = "Отменить";
+            this.nbОтменить.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nbОтменить.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbОтменить_AsyncClick);
             // 
-            // Дата_vmoДопДанные
+            // nbЗавершить
             // 
-            this.Дата_vmoДопДанные.Caption = "Дата";
-            this.Дата_vmoДопДанные.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Дата_vmoДопДанные.Name = "Дата";
-            this.Дата_vmoДопДанные.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.Дата_vmoДопДанные.PropertyType = typeof(System.DateTime);
-            this.Дата_vmoДопДанные.SearchCondition.OwnerComponent = this.Дата_vmoДопДанные;
-            this.Дата_vmoДопДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.nbЗавершить.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.nbЗавершить.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nbЗавершить.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nbЗавершить.Location = new System.Drawing.Point(6, 33);
+            this.nbЗавершить.Name = "NsgButton";
+            this.nbЗавершить.ReadOnlyProvider = this.nsgVisualMultipleObject;
+            this.nbЗавершить.Size = new System.Drawing.Size(158, 27);
+            this.nbЗавершить.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.nbЗавершить.TabIndex = 13;
+            this.nbЗавершить.Text = "Завершить";
+            this.nbЗавершить.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nbЗавершить.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbЗавершить_AsyncClick);
             // 
             // label6
             // 
@@ -1154,35 +1169,23 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.nsgInput5.TabIndex = 12;
             this.nsgInput5.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // nbЗавершить
+            // vmoДопДанные
             // 
-            this.nbЗавершить.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.nbЗавершить.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nbЗавершить.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.nbЗавершить.Location = new System.Drawing.Point(6, 33);
-            this.nbЗавершить.Name = "NsgButton";
-            this.nbЗавершить.ReadOnlyProvider = this.nsgVisualMultipleObject;
-            this.nbЗавершить.Size = new System.Drawing.Size(158, 27);
-            this.nbЗавершить.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
-            this.nbЗавершить.TabIndex = 13;
-            this.nbЗавершить.Text = "Завершить";
-            this.nbЗавершить.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
-            this.nbЗавершить.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbЗавершить_AsyncClick);
+            this.vmoДопДанные.Columns.Collection.Add(this.Дата_vmoДопДанные);
+            this.vmoДопДанные.IsActive = true;
+            this.vmoДопДанные.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoДопДанные.MetaDataName = "";
+            this.vmoДопДанные.FullName = "";
             // 
-            // nbОтменить
+            // Дата_vmoДопДанные
             // 
-            this.nbОтменить.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.nbОтменить.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nbОтменить.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.nbОтменить.Location = new System.Drawing.Point(6, 66);
-            this.nbОтменить.Name = "NsgButton";
-            this.nbОтменить.ReadOnlyProvider = this.nsgVisualMultipleObject;
-            this.nbОтменить.Size = new System.Drawing.Size(158, 27);
-            this.nbОтменить.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
-            this.nbОтменить.TabIndex = 14;
-            this.nbОтменить.Text = "Отменить";
-            this.nbОтменить.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
-            this.nbОтменить.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbОтменить_AsyncClick);
+            this.Дата_vmoДопДанные.Caption = "Дата";
+            this.Дата_vmoДопДанные.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Дата_vmoДопДанные.Name = "Дата";
+            this.Дата_vmoДопДанные.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.Дата_vmoДопДанные.PropertyType = typeof(System.DateTime);
+            this.Дата_vmoДопДанные.SearchCondition.OwnerComponent = this.Дата_vmoДопДанные;
+            this.Дата_vmoДопДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // ЗаявкаНаСотрудникаФормаЭлемента
             // 
@@ -1236,10 +1239,10 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.tpОсновная.ResumeLayout(false);
             this.tpОсновная.PerformLayout();
             this.tpУправление.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vmoДопДанные)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbЗавершить)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbОтменить)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbЗавершить)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoДопДанные)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1285,11 +1288,11 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpОсновная;
         private System.Windows.Forms.TabPage tpУправление;
-        protected NsgVisualMultipleObject vmoДопДанные;
         protected NsgColumnDescriptor.DateTime Дата_vmoДопДанные;
         protected NsgSoft.Design.NsgButton nbОтменить;
         protected NsgSoft.Design.NsgButton nbЗавершить;
         protected System.Windows.Forms.Label label6;
         protected NsgInput nsgInput5;
+        private NsgVisualMultipleObject vmoДопДанные;
     }
 }
