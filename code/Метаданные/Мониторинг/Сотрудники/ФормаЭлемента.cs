@@ -59,6 +59,11 @@ namespace TechControl.Метаданные.Мониторинг
                 
                 vmoМерки.Data.UpdateDataSync(this);
             }
+
+            if (tabControl1.SelectedTab == tpМатЦенности)
+            {
+                ЗаполнитьТаблицуМатЦенностей();
+            }
         }
 
         private void nbЗаполнитьТаблицуРазмеров_AsyncClick(object sender, DoWorkEventArgs e)
@@ -74,6 +79,49 @@ namespace TechControl.Метаданные.Мониторинг
             }
         }
 
+        private void nsgIGrid3_GetAvailableTools(object sender, ref NsgSoft.Common.NsgWorkPanelTools tools)
+        {
+            tools = NsgSoft.Common.NsgWorkPanelTools.Settings;
+        }
+
+        private void ЗаполнитьТаблицуМатЦенностей() 
+        {
+            if (FormObject != null && FormObject is Сотрудники сотрудник)
+            {
+                vmoМатЦенности.Data.BeginUpdateData();
+                vmoМатЦенности.Data.MemoryTable.Clear();
+
+                var рег = РегистрУчетСпецодежды.Новый();
+                рег.Сотрудник = сотрудник;
+                var остатки = рег.GetRests();
+
+                foreach (var item in остатки.AllRows)
+                {
+                    var row = vmoМатЦенности.Data.MemoryTable.NewRow();
+                    row[Номенклатура_vmoМатЦенности].Value = item[РегистрУчетСпецодежды.Names.НоменклатураСпецодеждыИСИЗ].ToReferent() as Номенклатура;
+                    row[Комплект_vmoМатЦенности].Value = item[РегистрУчетСпецодежды.Names.КомплектСпецодежды].ToReferent() as КомплектыСпецодежды;
+                    row[Размер_vmoМатЦенности].Value = item[РегистрУчетСпецодежды.Names.Размер].ToReferent() as Размеры;
+                    row[Количество_vmoМатЦенности].Value = 1;
+                    row.Post();
+                }
+
+                var списокКоллапса = new string[]
+                {
+                    Номенклатура_vmoМатЦенности.Name,
+                    Комплект_vmoМатЦенности.Name,
+                    Размер_vmoМатЦенности.Name
+                };
+
+                var списокСуммирования = new string[]
+                {
+                    Количество_vmoМатЦенности.Name
+                };
+
+                vmoМатЦенности.Data.MemoryTable.Collapse(списокКоллапса, списокСуммирования, false);
+
+                vmoМатЦенности.Data.UpdateDataSync(this);
+            }
+        }
     }
     
 

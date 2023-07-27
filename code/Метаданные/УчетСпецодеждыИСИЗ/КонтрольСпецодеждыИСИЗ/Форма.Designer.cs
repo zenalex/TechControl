@@ -64,6 +64,13 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn28 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn29 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn30 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn31 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn32 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn33 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn34 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn35 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn36 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn37 = new NsgSoft.Forms.NsgIGridColumn();
             this.nsgIGrid2 = new NsgSoft.Forms.NsgIGrid();
             this.vmoСотрудники = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Сотрудник_vmoСотрудники = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
@@ -104,6 +111,16 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.Поставщик_vmoЗаказы = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.УжеЗаказаноКоличество_vmoЗаказы = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ЗаказатьКоличество_vmoЗаказы = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Комплект_vmoЗаказы = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды.ColumnDescriptor();
+            this.nsgIGrid6 = new NsgSoft.Forms.NsgIGrid();
+            this.vmoГотовыеКВыдаче = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.Сотрудник_vmoГотовыеКВыдаче = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Номенклатура_vmoГотовыеКВыдаче = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
+            this.Размер_vmoГотовыеКВыдаче = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
+            this.Комплект_vmoГотовыеКВыдаче = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды.ColumnDescriptor();
+            this.Объект_vmoГотовыеКВыдаче = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
+            this.Количество_vmoГотовыеКВыдаче = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.ДатаОповещения_vmoГотовыеКВыдаче = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpВыдача = new System.Windows.Forms.TabPage();
             this.nsgButton2 = new NsgSoft.Design.NsgButton();
@@ -146,6 +163,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.label7 = new System.Windows.Forms.Label();
             this.nsgInput7 = new NsgSoft.Forms.NsgInput();
             this.label6 = new System.Windows.Forms.Label();
+            this.tpГотовыКВыдаче = new System.Windows.Forms.TabPage();
             this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.ДатаНачалаЭксплуатации = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
@@ -154,7 +172,6 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.ОбъектДляЗаказов = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Подразделение = new TechControl.Метаданные.Мониторинг.Подразделения.ColumnDescriptor();
             this.ДатаОпределенияПотребностейДляЗаказа = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.Комплект_vmoЗаказы = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды.ColumnDescriptor();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -171,6 +188,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             ((System.ComponentModel.ISupportInitialize)(this.vmoВозврат)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoЗаказы)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoГотовыеКВыдаче)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tpВыдача.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton2)).BeginInit();
@@ -205,6 +224,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput7)).BeginInit();
+            this.tpГотовыКВыдаче.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCreateReport
@@ -318,6 +338,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             nsgIGridColumn1.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn1.DateFormat = null;
+            nsgIGridColumn1.ImportedFromVMO = false;
             nsgIGridColumn1.Name = "Сотрудник";
             nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn1.Root = this.nsgIGrid2.Columns.Collection;
@@ -332,6 +353,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             nsgIGridColumn2.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn2.DateFormat = null;
+            nsgIGridColumn2.ImportedFromVMO = false;
             nsgIGridColumn2.Name = "Подразделение";
             nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn2.Root = this.nsgIGrid2.Columns.Collection;
@@ -432,6 +454,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             nsgIGridColumn3.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn3.DateFormat = null;
+            nsgIGridColumn3.ImportedFromVMO = false;
             nsgIGridColumn3.Name = "Комплект";
             nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn3.Root = this.nsgIGrid3.Columns.Collection;
@@ -446,6 +469,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             nsgIGridColumn4.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn4.DateFormat = null;
+            nsgIGridColumn4.ImportedFromVMO = false;
             nsgIGridColumn4.Name = "Выбрано";
             nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn4.Root = this.nsgIGrid3.Columns.Collection;
@@ -536,6 +560,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn5.DateFormat = null;
+            nsgIGridColumn5.ImportedFromVMO = false;
             nsgIGridColumn5.Name = "Номенкатура";
             nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn5.Root = this.nsgIGrid1.Columns.Collection;
@@ -551,6 +576,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn6.DateFormat = null;
+            nsgIGridColumn6.ImportedFromVMO = false;
             nsgIGridColumn6.Name = "Комплект";
             nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn6.Root = this.nsgIGrid1.Columns.Collection;
@@ -566,6 +592,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn7.DateFormat = null;
+            nsgIGridColumn7.ImportedFromVMO = false;
             nsgIGridColumn7.Name = "Размер";
             nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn7.Root = this.nsgIGrid1.Columns.Collection;
@@ -581,6 +608,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn8.DateFormat = null;
+            nsgIGridColumn8.ImportedFromVMO = false;
             nsgIGridColumn8.Name = "ТребуетсяПоКомплекту";
             nsgIGridColumn8.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn8.Root = this.nsgIGrid1.Columns.Collection;
@@ -597,6 +625,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn9.DateFormat = null;
+            nsgIGridColumn9.ImportedFromVMO = false;
             nsgIGridColumn9.Name = "КоличествоНаСкладе";
             nsgIGridColumn9.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn9.Root = this.nsgIGrid1.Columns.Collection;
@@ -613,6 +642,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn10.DateFormat = null;
+            nsgIGridColumn10.ImportedFromVMO = false;
             nsgIGridColumn10.Name = "КоличествоВыданоРанее";
             nsgIGridColumn10.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn10.Root = this.nsgIGrid1.Columns.Collection;
@@ -629,6 +659,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn11.DateFormat = null;
+            nsgIGridColumn11.ImportedFromVMO = false;
             nsgIGridColumn11.Name = "ВсегоЗаконченСрок";
             nsgIGridColumn11.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn11.Root = this.nsgIGrid1.Columns.Collection;
@@ -645,6 +676,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn12.DateFormat = null;
+            nsgIGridColumn12.ImportedFromVMO = false;
             nsgIGridColumn12.Name = "УжеЗаказаноНаСотрудникаКоличество";
             nsgIGridColumn12.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn12.Root = this.nsgIGrid1.Columns.Collection;
@@ -661,6 +693,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn13.DateFormat = null;
+            nsgIGridColumn13.ImportedFromVMO = false;
             nsgIGridColumn13.Name = "ЗаказаноУПостащикаКоличество";
             nsgIGridColumn13.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn13.Root = this.nsgIGrid1.Columns.Collection;
@@ -677,6 +710,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn14.DateFormat = null;
+            nsgIGridColumn14.ImportedFromVMO = false;
             nsgIGridColumn14.Name = "КоличествоВыдать";
             nsgIGridColumn14.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn14.Root = this.nsgIGrid1.Columns.Collection;
@@ -693,6 +727,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn15.DateFormat = null;
+            nsgIGridColumn15.ImportedFromVMO = false;
             nsgIGridColumn15.Name = "Выдать";
             nsgIGridColumn15.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn15.Root = this.nsgIGrid1.Columns.Collection;
@@ -708,6 +743,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn16.DateFormat = null;
+            nsgIGridColumn16.ImportedFromVMO = false;
             nsgIGridColumn16.Name = "КоличествоЗаказать";
             nsgIGridColumn16.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn16.Root = this.nsgIGrid1.Columns.Collection;
@@ -723,6 +759,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn17.DateFormat = null;
+            nsgIGridColumn17.ImportedFromVMO = false;
             nsgIGridColumn17.Name = "Заказать";
             nsgIGridColumn17.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn17.Root = this.nsgIGrid1.Columns.Collection;
@@ -956,6 +993,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             nsgIGridColumn18.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn18.DateFormat = null;
+            nsgIGridColumn18.ImportedFromVMO = false;
             nsgIGridColumn18.Name = "Номенклатура";
             nsgIGridColumn18.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn18.Root = this.nsgIGrid4.Columns.Collection;
@@ -970,6 +1008,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             nsgIGridColumn19.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn19.DateFormat = null;
+            nsgIGridColumn19.ImportedFromVMO = false;
             nsgIGridColumn19.Name = "Размер";
             nsgIGridColumn19.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn19.Root = this.nsgIGrid4.Columns.Collection;
@@ -985,6 +1024,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn20.DateFormat = null;
+            nsgIGridColumn20.ImportedFromVMO = false;
             nsgIGridColumn20.Name = "Количество";
             nsgIGridColumn20.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn20.Root = this.nsgIGrid4.Columns.Collection;
@@ -1001,6 +1041,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn21.DateFormat = null;
+            nsgIGridColumn21.ImportedFromVMO = false;
             nsgIGridColumn21.Name = "Комплект";
             nsgIGridColumn21.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn21.Root = this.nsgIGrid4.Columns.Collection;
@@ -1016,6 +1057,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn22.DateFormat = null;
+            nsgIGridColumn22.ImportedFromVMO = false;
             nsgIGridColumn22.Name = "Принять";
             nsgIGridColumn22.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn22.Root = this.nsgIGrid4.Columns.Collection;
@@ -1141,6 +1183,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             nsgIGridColumn23.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn23.DateFormat = null;
+            nsgIGridColumn23.ImportedFromVMO = false;
             nsgIGridColumn23.Name = "Номенклатура";
             nsgIGridColumn23.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn23.Root = this.nsgIGrid5.Columns.Collection;
@@ -1155,6 +1198,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             nsgIGridColumn24.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn24.DateFormat = null;
+            nsgIGridColumn24.ImportedFromVMO = false;
             nsgIGridColumn24.Name = "Размер";
             nsgIGridColumn24.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn24.Root = this.nsgIGrid5.Columns.Collection;
@@ -1170,6 +1214,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn25.DateFormat = null;
+            nsgIGridColumn25.ImportedFromVMO = false;
             nsgIGridColumn25.Name = "Комплект";
             nsgIGridColumn25.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn25.Root = this.nsgIGrid5.Columns.Collection;
@@ -1185,6 +1230,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn26.DateFormat = null;
+            nsgIGridColumn26.ImportedFromVMO = false;
             nsgIGridColumn26.Name = "Поставщик";
             nsgIGridColumn26.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn26.Root = this.nsgIGrid5.Columns.Collection;
@@ -1200,6 +1246,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn27.DateFormat = null;
+            nsgIGridColumn27.ImportedFromVMO = false;
             nsgIGridColumn27.Name = "КоличествоТребуется";
             nsgIGridColumn27.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn27.Root = this.nsgIGrid5.Columns.Collection;
@@ -1216,6 +1263,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn28.DateFormat = null;
+            nsgIGridColumn28.ImportedFromVMO = false;
             nsgIGridColumn28.Name = "УжеЗаказаноКоличество";
             nsgIGridColumn28.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn28.Root = this.nsgIGrid5.Columns.Collection;
@@ -1232,6 +1280,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn29.DateFormat = null;
+            nsgIGridColumn29.ImportedFromVMO = false;
             nsgIGridColumn29.Name = "ЗаказатьКоличество";
             nsgIGridColumn29.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn29.Root = this.nsgIGrid5.Columns.Collection;
@@ -1248,6 +1297,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         "Visible",
         "Index"};
             nsgIGridColumn30.DateFormat = null;
+            nsgIGridColumn30.ImportedFromVMO = false;
             nsgIGridColumn30.Name = "Заказать";
             nsgIGridColumn30.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn30.Root = this.nsgIGrid5.Columns.Collection;
@@ -1386,6 +1436,262 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.ЗаказатьКоличество_vmoЗаказы.SearchCondition.OwnerComponent = this.ЗаказатьКоличество_vmoЗаказы;
             this.ЗаказатьКоличество_vmoЗаказы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // Комплект_vmoЗаказы
+            // 
+            this.Комплект_vmoЗаказы.Caption = "Комплект";
+            this.Комплект_vmoЗаказы.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Комплект_vmoЗаказы.Name = "Комплект";
+            this.Комплект_vmoЗаказы.NSGType = typeof(TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды);
+            this.Комплект_vmoЗаказы.PropertyType = typeof(TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды);
+            this.Комплект_vmoЗаказы.SearchCondition.OwnerComponent = this.Комплект_vmoЗаказы;
+            this.Комплект_vmoЗаказы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // nsgIGrid6
+            // 
+            this.nsgIGrid6.Action = NsgSoft.DataObjects.FormShowMode.None;
+            this.nsgIGrid6.AllowSaveColParamsToXML = true;
+            this.nsgIGrid6.AllowSaveColPositionToXML = true;
+            this.nsgIGrid6.AllowSaveColWidthToXML = true;
+            this.nsgIGrid6.AllowSaveSettingsToXML = true;
+            this.nsgIGrid6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nsgIGrid6.AutoResizeCols = true;
+            nsgIGridColumn31.AllowFilter = true;
+            nsgIGridColumn31.AllowGroupSelect = false;
+            nsgIGridColumn31.AllowResize = true;
+            nsgIGridColumn31.AutoResize = true;
+            nsgIGridColumn31.Caption = "";
+            nsgIGridColumn31.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn31.DateFormat = null;
+            nsgIGridColumn31.ImportedFromVMO = false;
+            nsgIGridColumn31.Name = "Сотрудник";
+            nsgIGridColumn31.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn31.Root = this.nsgIGrid6.Columns.Collection;
+            nsgIGridColumn31.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn31.UseAsHeaderImage = false;
+            nsgIGridColumn31.Width = 100;
+            nsgIGridColumn32.AllowFilter = true;
+            nsgIGridColumn32.AllowGroupSelect = false;
+            nsgIGridColumn32.AllowResize = true;
+            nsgIGridColumn32.AutoResize = true;
+            nsgIGridColumn32.Caption = "";
+            nsgIGridColumn32.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn32.DateFormat = null;
+            nsgIGridColumn32.ImportedFromVMO = false;
+            nsgIGridColumn32.Name = "Номенклатура";
+            nsgIGridColumn32.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn32.Root = this.nsgIGrid6.Columns.Collection;
+            nsgIGridColumn32.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn32.UseAsHeaderImage = false;
+            nsgIGridColumn32.Width = 100;
+            nsgIGridColumn33.AllowFilter = true;
+            nsgIGridColumn33.AllowGroupSelect = false;
+            nsgIGridColumn33.AllowResize = true;
+            nsgIGridColumn33.AutoResize = true;
+            nsgIGridColumn33.Caption = "";
+            nsgIGridColumn33.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn33.DateFormat = null;
+            nsgIGridColumn33.ImportedFromVMO = false;
+            nsgIGridColumn33.Name = "Размер";
+            nsgIGridColumn33.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn33.Root = this.nsgIGrid6.Columns.Collection;
+            nsgIGridColumn33.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn33.UseAsHeaderImage = false;
+            nsgIGridColumn33.Width = 100;
+            nsgIGridColumn34.AllowFilter = true;
+            nsgIGridColumn34.AllowGroupSelect = false;
+            nsgIGridColumn34.AllowResize = true;
+            nsgIGridColumn34.AutoResize = true;
+            nsgIGridColumn34.Caption = "";
+            nsgIGridColumn34.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn34.DateFormat = null;
+            nsgIGridColumn34.ImportedFromVMO = false;
+            nsgIGridColumn34.Name = "Комплект";
+            nsgIGridColumn34.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn34.Root = this.nsgIGrid6.Columns.Collection;
+            nsgIGridColumn34.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn34.UseAsHeaderImage = false;
+            nsgIGridColumn34.Width = 100;
+            nsgIGridColumn35.AllowFilter = true;
+            nsgIGridColumn35.AllowGroupSelect = false;
+            nsgIGridColumn35.AllowResize = true;
+            nsgIGridColumn35.AutoResize = true;
+            nsgIGridColumn35.Caption = "";
+            nsgIGridColumn35.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn35.DateFormat = null;
+            nsgIGridColumn35.ImportedFromVMO = false;
+            nsgIGridColumn35.Name = "Объект";
+            nsgIGridColumn35.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn35.Root = this.nsgIGrid6.Columns.Collection;
+            nsgIGridColumn35.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn35.UseAsHeaderImage = false;
+            nsgIGridColumn35.Width = 100;
+            nsgIGridColumn36.AllowFilter = true;
+            nsgIGridColumn36.AllowGroupSelect = false;
+            nsgIGridColumn36.AllowResize = true;
+            nsgIGridColumn36.AutoResize = true;
+            nsgIGridColumn36.Caption = "";
+            nsgIGridColumn36.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn36.DateFormat = null;
+            nsgIGridColumn36.ImportedFromVMO = false;
+            nsgIGridColumn36.Name = "Количество";
+            nsgIGridColumn36.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn36.Root = this.nsgIGrid6.Columns.Collection;
+            nsgIGridColumn36.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn36.TextPosition = System.Drawing.ContentAlignment.MiddleRight;
+            nsgIGridColumn36.UseAsHeaderImage = false;
+            nsgIGridColumn36.Width = 100;
+            nsgIGridColumn37.AllowFilter = true;
+            nsgIGridColumn37.AllowGroupSelect = false;
+            nsgIGridColumn37.AllowResize = true;
+            nsgIGridColumn37.AutoResize = true;
+            nsgIGridColumn37.Caption = "";
+            nsgIGridColumn37.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn37.DateFormat = null;
+            nsgIGridColumn37.ImportedFromVMO = false;
+            nsgIGridColumn37.Name = "ДатаОповещения";
+            nsgIGridColumn37.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn37.Root = this.nsgIGrid6.Columns.Collection;
+            nsgIGridColumn37.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn37.UseAsHeaderImage = false;
+            nsgIGridColumn37.Width = 100;
+            this.nsgIGrid6.Columns.Collection.Add(nsgIGridColumn31);
+            this.nsgIGrid6.Columns.Collection.Add(nsgIGridColumn32);
+            this.nsgIGrid6.Columns.Collection.Add(nsgIGridColumn33);
+            this.nsgIGrid6.Columns.Collection.Add(nsgIGridColumn34);
+            this.nsgIGrid6.Columns.Collection.Add(nsgIGridColumn35);
+            this.nsgIGrid6.Columns.Collection.Add(nsgIGridColumn36);
+            this.nsgIGrid6.Columns.Collection.Add(nsgIGridColumn37);
+            this.nsgIGrid6.Filter = false;
+            this.nsgIGrid6.FrozenColumns = 0;
+            this.nsgIGrid6.Grouping = true;
+            this.nsgIGrid6.Hierarhy = true;
+            this.nsgIGrid6.ImageList = null;
+            this.nsgIGrid6.IsCanMultiSelect = false;
+            this.nsgIGrid6.IsCanSingleSelect = false;
+            this.nsgIGrid6.LineHeight = 20;
+            this.nsgIGrid6.Location = new System.Drawing.Point(8, 3);
+            this.nsgIGrid6.MarkReadOnly = false;
+            this.nsgIGrid6.MasterObject = null;
+            this.nsgIGrid6.Name = "NsgIGrid";
+            this.nsgIGrid6.PageSelector = false;
+            this.nsgIGrid6.ReadOnly = false;
+            this.nsgIGrid6.RowChangeInterval = 200;
+            this.nsgIGrid6.RowHeaderImageList = null;
+            this.nsgIGrid6.RowMode = false;
+            this.nsgIGrid6.ScrollWidth = 0;
+            this.nsgIGrid6.SelectedRow = -1;
+            this.nsgIGrid6.ShowHeader = true;
+            this.nsgIGrid6.ShowLineImages = true;
+            this.nsgIGrid6.ShowLineNumbers = false;
+            this.nsgIGrid6.ShowPanel = true;
+            this.nsgIGrid6.ShowTotals = false;
+            this.nsgIGrid6.ShowTree = false;
+            this.nsgIGrid6.Size = new System.Drawing.Size(855, 473);
+            this.nsgIGrid6.SourceObject = this.vmoГотовыеКВыдаче;
+            this.nsgIGrid6.TabIndex = 0;
+            this.nsgIGrid6.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            // 
+            // vmoГотовыеКВыдаче
+            // 
+            this.vmoГотовыеКВыдаче.Columns.Collection.Add(this.Сотрудник_vmoГотовыеКВыдаче);
+            this.vmoГотовыеКВыдаче.Columns.Collection.Add(this.Номенклатура_vmoГотовыеКВыдаче);
+            this.vmoГотовыеКВыдаче.Columns.Collection.Add(this.Размер_vmoГотовыеКВыдаче);
+            this.vmoГотовыеКВыдаче.Columns.Collection.Add(this.Комплект_vmoГотовыеКВыдаче);
+            this.vmoГотовыеКВыдаче.Columns.Collection.Add(this.Объект_vmoГотовыеКВыдаче);
+            this.vmoГотовыеКВыдаче.Columns.Collection.Add(this.Количество_vmoГотовыеКВыдаче);
+            this.vmoГотовыеКВыдаче.Columns.Collection.Add(this.ДатаОповещения_vmoГотовыеКВыдаче);
+            this.vmoГотовыеКВыдаче.IsActive = true;
+            this.vmoГотовыеКВыдаче.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoГотовыеКВыдаче.MetaDataName = "";
+            this.vmoГотовыеКВыдаче.FullName = "";
+            // 
+            // Сотрудник_vmoГотовыеКВыдаче
+            // 
+            this.Сотрудник_vmoГотовыеКВыдаче.Caption = "Сотрудник";
+            this.Сотрудник_vmoГотовыеКВыдаче.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Сотрудник_vmoГотовыеКВыдаче.Name = "Сотрудник";
+            this.Сотрудник_vmoГотовыеКВыдаче.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoГотовыеКВыдаче.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoГотовыеКВыдаче.ReadOnly = true;
+            this.Сотрудник_vmoГотовыеКВыдаче.SearchCondition.OwnerComponent = this.Сотрудник_vmoГотовыеКВыдаче;
+            this.Сотрудник_vmoГотовыеКВыдаче.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Номенклатура_vmoГотовыеКВыдаче
+            // 
+            this.Номенклатура_vmoГотовыеКВыдаче.Caption = "Номенклатура";
+            this.Номенклатура_vmoГотовыеКВыдаче.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Номенклатура_vmoГотовыеКВыдаче.Name = "Номенклатура";
+            this.Номенклатура_vmoГотовыеКВыдаче.NSGType = typeof(TechControl.Метаданные.Учет.Номенклатура);
+            this.Номенклатура_vmoГотовыеКВыдаче.PropertyType = typeof(TechControl.Метаданные.Учет.Номенклатура);
+            this.Номенклатура_vmoГотовыеКВыдаче.ReadOnly = true;
+            this.Номенклатура_vmoГотовыеКВыдаче.SearchCondition.OwnerComponent = this.Номенклатура_vmoГотовыеКВыдаче;
+            this.Номенклатура_vmoГотовыеКВыдаче.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Размер_vmoГотовыеКВыдаче
+            // 
+            this.Размер_vmoГотовыеКВыдаче.Caption = "Размер";
+            this.Размер_vmoГотовыеКВыдаче.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Размер_vmoГотовыеКВыдаче.Name = "Размер";
+            this.Размер_vmoГотовыеКВыдаче.NSGType = typeof(TechControl.Метаданные.Учет.Размеры);
+            this.Размер_vmoГотовыеКВыдаче.PropertyType = typeof(TechControl.Метаданные.Учет.Размеры);
+            this.Размер_vmoГотовыеКВыдаче.ReadOnly = true;
+            this.Размер_vmoГотовыеКВыдаче.SearchCondition.OwnerComponent = this.Размер_vmoГотовыеКВыдаче;
+            this.Размер_vmoГотовыеКВыдаче.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Комплект_vmoГотовыеКВыдаче
+            // 
+            this.Комплект_vmoГотовыеКВыдаче.Caption = "Комплект";
+            this.Комплект_vmoГотовыеКВыдаче.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Комплект_vmoГотовыеКВыдаче.Name = "Комплект";
+            this.Комплект_vmoГотовыеКВыдаче.NSGType = typeof(TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды);
+            this.Комплект_vmoГотовыеКВыдаче.PropertyType = typeof(TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды);
+            this.Комплект_vmoГотовыеКВыдаче.ReadOnly = true;
+            this.Комплект_vmoГотовыеКВыдаче.SearchCondition.OwnerComponent = this.Комплект_vmoГотовыеКВыдаче;
+            this.Комплект_vmoГотовыеКВыдаче.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Объект_vmoГотовыеКВыдаче
+            // 
+            this.Объект_vmoГотовыеКВыдаче.Caption = "Объект";
+            this.Объект_vmoГотовыеКВыдаче.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Объект_vmoГотовыеКВыдаче.Name = "Объект";
+            this.Объект_vmoГотовыеКВыдаче.NSGType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
+            this.Объект_vmoГотовыеКВыдаче.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
+            this.Объект_vmoГотовыеКВыдаче.ReadOnly = true;
+            this.Объект_vmoГотовыеКВыдаче.SearchCondition.OwnerComponent = this.Объект_vmoГотовыеКВыдаче;
+            this.Объект_vmoГотовыеКВыдаче.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Количество_vmoГотовыеКВыдаче
+            // 
+            this.Количество_vmoГотовыеКВыдаче.CalcTotal = false;
+            this.Количество_vmoГотовыеКВыдаче.Caption = "Количество";
+            this.Количество_vmoГотовыеКВыдаче.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Количество_vmoГотовыеКВыдаче.Name = "Количество";
+            this.Количество_vmoГотовыеКВыдаче.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.Количество_vmoГотовыеКВыдаче.PropertyType = typeof(long);
+            this.Количество_vmoГотовыеКВыдаче.ReadOnly = true;
+            this.Количество_vmoГотовыеКВыдаче.SearchCondition.OwnerComponent = this.Количество_vmoГотовыеКВыдаче;
+            this.Количество_vmoГотовыеКВыдаче.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДатаОповещения_vmoГотовыеКВыдаче
+            // 
+            this.ДатаОповещения_vmoГотовыеКВыдаче.Caption = "ДатаОповещения";
+            this.ДатаОповещения_vmoГотовыеКВыдаче.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ДатаОповещения_vmoГотовыеКВыдаче.Name = "ДатаОповещения";
+            this.ДатаОповещения_vmoГотовыеКВыдаче.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.ДатаОповещения_vmoГотовыеКВыдаче.PropertyType = typeof(System.DateTime);
+            this.ДатаОповещения_vmoГотовыеКВыдаче.ReadOnly = true;
+            this.ДатаОповещения_vmoГотовыеКВыдаче.SearchCondition.OwnerComponent = this.ДатаОповещения_vmoГотовыеКВыдаче;
+            this.ДатаОповещения_vmoГотовыеКВыдаче.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // tabControl1
             // 
             this.tabControl1.AllowDrop = true;
@@ -1397,9 +1703,10 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.tabControl1.Controls.Add(this.tpОтчеты);
             this.tabControl1.Controls.Add(this.tpСотрудники);
             this.tabControl1.Controls.Add(this.tpОформлениеЗаказов);
+            this.tabControl1.Controls.Add(this.tpГотовыКВыдаче);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 4;
+            this.tabControl1.SelectedIndex = 5;
             this.tabControl1.Size = new System.Drawing.Size(879, 505);
             this.tabControl1.TabIndex = 9;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
@@ -1934,7 +2241,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.tpОформлениеЗаказов.TabIndex = 4;
             this.tpОформлениеЗаказов.Text = "ОформлениеЗаказов";
             this.tpОформлениеЗаказов.UseVisualStyleBackColor = true;
-            this.tpОформлениеЗаказов.Visible = true;
+            this.tpОформлениеЗаказов.Visible = false;
             // 
             // nbСормироватьЗаказы
             // 
@@ -2115,6 +2422,19 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.label6.TabIndex = 12;
             this.label6.Text = "Объект";
             // 
+            // tpГотовыКВыдаче
+            // 
+            this.tpГотовыКВыдаче.AllowDrop = true;
+            this.tpГотовыКВыдаче.Controls.Add(this.nsgIGrid6);
+            this.tpГотовыКВыдаче.Enabled = true;
+            this.tpГотовыКВыдаче.Location = new System.Drawing.Point(4, 22);
+            this.tpГотовыКВыдаче.Name = "tpГотовыКВыдаче";
+            this.tpГотовыКВыдаче.Size = new System.Drawing.Size(871, 479);
+            this.tpГотовыКВыдаче.TabIndex = 5;
+            this.tpГотовыКВыдаче.Text = "Готовы к выдаче";
+            this.tpГотовыКВыдаче.UseVisualStyleBackColor = true;
+            this.tpГотовыКВыдаче.Visible = true;
+            // 
             // Сотрудник
             // 
             this.Сотрудник.Caption = "Сотрудник";
@@ -2195,16 +2515,6 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.ДатаОпределенияПотребностейДляЗаказа.SearchCondition.OwnerComponent = this.ДатаОпределенияПотребностейДляЗаказа;
             this.ДатаОпределенияПотребностейДляЗаказа.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // Комплект_vmoЗаказы
-            // 
-            this.Комплект_vmoЗаказы.Caption = "Комплект";
-            this.Комплект_vmoЗаказы.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Комплект_vmoЗаказы.Name = "Комплект";
-            this.Комплект_vmoЗаказы.NSGType = typeof(TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды);
-            this.Комплект_vmoЗаказы.PropertyType = typeof(TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды);
-            this.Комплект_vmoЗаказы.SearchCondition.OwnerComponent = this.Комплект_vmoЗаказы;
-            this.Комплект_vmoЗаказы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
             // КонтрольСпецодеждыИСИЗФорма
             // 
             this.AllowDrop = true;
@@ -2246,6 +2556,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             ((System.ComponentModel.ISupportInitialize)(this.vmoВозврат)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoЗаказы)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoГотовыеКВыдаче)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tpВыдача.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nsgButton2)).EndInit();
@@ -2284,6 +2596,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput7)).EndInit();
+            this.tpГотовыКВыдаче.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2381,5 +2694,15 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         private System.Windows.Forms.TabControl tabControl1;
         private NsgVisualMultipleObject vmoЗаказы;
         protected КомплектыСпецодежды.ColumnDescriptor Комплект_vmoЗаказы;
+        private System.Windows.Forms.TabPage tpГотовыКВыдаче;
+        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoГотовыеКВыдаче;
+        private Учет.Номенклатура.ColumnDescriptor Номенклатура_vmoГотовыеКВыдаче;
+        private Учет.Размеры.ColumnDescriptor Размер_vmoГотовыеКВыдаче;
+        private КомплектыСпецодежды.ColumnDescriptor Комплект_vmoГотовыеКВыдаче;
+        private Мониторинг.Объекты.ColumnDescriptor Объект_vmoГотовыеКВыдаче;
+        private NsgColumnDescriptor.Int64 Количество_vmoГотовыеКВыдаче;
+        protected NsgColumnDescriptor.DateTime ДатаОповещения_vmoГотовыеКВыдаче;
+        private NsgIGrid nsgIGrid6;
+        private NsgVisualMultipleObject vmoГотовыеКВыдаче;
     }
 }
