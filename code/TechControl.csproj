@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2023.7.26.0</ProductVersion>
+    <ProductVersion>2023.7.31.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -4181,6 +4181,35 @@
     <Compile Include="Метаданные\Перечисления\СтатусыЗаявокНаСотрудника\СтатусыЗаявокНаСотрудника.cs">
       <NsgOwnerGuid>2f07747c-d98a-418d-8619-8b8c4ceb6492</NsgOwnerGuid>
       <NsgOwnerName>СтатусыЗаявокНаСотрудника</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Перечисления\СтатусыОповещений\СтатусыОповещений.NsgInit.cs">
+      <NsgOwnerGuid>57b4fb97-25a6-4ea4-8da3-bd56b8b35846</NsgOwnerGuid>
+      <NsgOwnerName>СтатусыОповещений</NsgOwnerName>
+      <DependentUpon>СтатусыОповещений.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Перечисления\СтатусыОповещений\СтатусыОповещений.cs">
+      <NsgOwnerGuid>57b4fb97-25a6-4ea4-8da3-bd56b8b35846</NsgOwnerGuid>
+      <NsgOwnerName>СтатусыОповещений</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеДокументы\Оповещения\Оповещения.NsgInit.cs">
+      <NsgOwnerGuid>afe65d00-d392-48f1-a6a5-a40f40dc0e7a</NsgOwnerGuid>
+      <NsgOwnerName>Оповещения</NsgOwnerName>
+      <DependentUpon>Оповещения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\СлужебныеДокументы\Оповещения\Оповещения.cs">
+      <NsgOwnerGuid>afe65d00-d392-48f1-a6a5-a40f40dc0e7a</NsgOwnerGuid>
+      <NsgOwnerName>Оповещения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Константы\КонстантыОбщие\КонстантыОбщие.NsgInit.cs">
+      <NsgOwnerGuid>07b2b411-23be-45bf-a802-4a8dde1d7e05</NsgOwnerGuid>
+      <NsgOwnerName>КонстантыОбщие</NsgOwnerName>
+      <DependentUpon>КонстантыОбщие.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Константы\КонстантыОбщие\КонстантыОбщие.cs">
+      <NsgOwnerGuid>07b2b411-23be-45bf-a802-4a8dde1d7e05</NsgOwnerGuid>
+      <NsgOwnerName>КонстантыОбщие</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
