@@ -15075,7 +15075,7 @@
             <presentation lang="(Default)" value="{Представление}" />
           </NsgLanguageString>
           <ObjectList>
-            <NsgSimpleObject Guid="937a4d1a-aef7-4dcb-8b83-f83b2bbcc3e3" type="NsgDataEnumElement" editoraccess="Full" name="Создан" visible="true" description="Создан" field="Sozdan" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
+            <NsgSimpleObject Guid="937a4d1a-aef7-4dcb-8b83-f83b2bbcc3e3" type="NsgDataEnumElement" editoraccess="Full" name="ТребуетсяОтправка" visible="true" description="Требуется отправка" field="Sozdan" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -15095,12 +15095,18 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="a7be8d15-f0d5-4b92-b9d6-4121a2342e0f" type="NsgDataEnumElement" editoraccess="Full" name="ОжидаетсяРазрешениеНаОтправку" visible="true" description="Ожидается разрешение на отправку" field="OzhidaetsjaRazres" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="4">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
-            <container name="Создан" />
+            <container name="ТребуетсяОтправка" />
             <container name="Отправлен" />
             <container name="ОтправленПовторно" />
             <container name="Выполнен" />
+            <container name="ОжидаетсяРазрешениеНаОтправку" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="07b2b411-23be-45bf-a802-4a8dde1d7e05" type="NsgDataDictionary" editoraccess="Full" name="КонстантыОбщие" visible="true" description="Справочник" group="Константы" table="_dic_KonstantyObschie" searchfield="Наименование" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="false">

@@ -4,13 +4,15 @@ using System.Text;
 using NsgSoft.DataObjects;
 using System.IO;
 using NsgSoft.Common;
-
-
+using TechControl.Метаданные.УчетСпецодеждыИСИЗ;
+using TechControl.Метаданные.Перечисления;
 
 namespace TechControl.Метаданные
 {
     public partial class Метаданные
     {
+
+        public Dictionary<ЗаявкаНаСотрудника, СтатусыЗаявокНаСотрудника> СтатусыДоИзменения = new Dictionary<ЗаявкаНаСотрудника, СтатусыЗаявокНаСотрудника>();
         #region Данные
         #endregion //Данные
 
