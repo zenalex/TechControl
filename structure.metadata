@@ -15049,18 +15049,18 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
-            <container name="ПрефиксКода" />
-            <container name="НомерКода" />
-            <container name="ДатаПоследнегоОповещения" />
             <container name="ДатаДокумента" />
-            <container name="Индекс" />
-            <container name="ДокументОснование" />
             <container name="Комментарий" />
+            <container name="ДатаПоследнегоОповещения" />
             <container name="СчетчикОтправки" />
             <container name="ДатаПервогоОповещения" />
             <container name="Статус" />
             <container name="Сообщение" />
             <container name="ПолучательОповещения" />
+            <container name="ПрефиксКода" />
+            <container name="НомерКода" />
+            <container name="Индекс" />
+            <container name="ДокументОснование" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -15186,16 +15186,52 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="Наименование" />
+            <container name="КоличествоДнейРезервирования" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Наименование" />
-            <container name="КоличествоДнейРезервирования" />
           </Containers>
           <DataInterfaces />
+        </NsgMultipleObject>
+        <NsgMultipleObject Guid="fb714f67-f0be-4e93-a355-ae5413271c0a" type="NsgDataEnum" editoraccess="Full" name="ВидыПериодов" visible="true" description="Перечисление" group="Перечисления" table="_enum_VidyPeriodov" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False">
+          <NsgLanguageString type="presentation">
+            <presentation lang="(Default)" value="" />
+          </NsgLanguageString>
+          <NsgLanguageString type="valuemask">
+            <presentation lang="(Default)" value="{Представление}" />
+          </NsgLanguageString>
+          <ObjectList>
+            <NsgSimpleObject Guid="ddf19c52-5445-44be-a4e8-9ce7a32417e8" type="NsgDataEnumElement" editoraccess="Full" name="Месяц" visible="true" description="Месяц" field="Mesjac" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="a6ce716b-c40e-4d86-a97f-bc269e1836a4" type="NsgDataEnumElement" editoraccess="Full" name="Квартал" visible="true" description="Квартал" field="Kvartal" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="1">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="0c8defc2-ea53-42be-b31c-b51a483bfaa0" type="NsgDataEnumElement" editoraccess="Full" name="Полугодие" visible="true" description="Полугодие" field="Polugodie" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="2">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="273caf39-ae2c-4742-bc29-cd6ed757e036" type="NsgDataEnumElement" editoraccess="Full" name="Год" visible="true" description="Год" field="God" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="3">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+          </ObjectList>
+          <Containers>
+            <container name="Месяц" />
+            <container name="Квартал" />
+            <container name="Полугодие" />
+            <container name="Год" />
+          </Containers>
         </NsgMultipleObject>
       </ObjectList>
     </NsgMetaData>

@@ -4212,4 +4212,15 @@
       <NsgOwnerName>КонстантыОбщие</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Перечисления\ВидыПериодов\ВидыПериодов.NsgInit.cs">
+      <NsgOwnerGuid>fb714f67-f0be-4e93-a355-ae5413271c0a</NsgOwnerGuid>
+      <NsgOwnerName>ВидыПериодов</NsgOwnerName>
+      <DependentUpon>ВидыПериодов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Перечисления\ВидыПериодов\ВидыПериодов.cs">
+      <NsgOwnerGuid>fb714f67-f0be-4e93-a355-ae5413271c0a</NsgOwnerGuid>
+      <NsgOwnerName>ВидыПериодов</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>

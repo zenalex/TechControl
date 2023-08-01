@@ -75,10 +75,13 @@ namespace TechControl.Метаданные.Учет
             this.nsgLabel9 = new NsgSoft.Forms.NsgLabel();
             this.nsgInput10 = new NsgSoft.Forms.NsgInput();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.nsgInput12 = new NsgSoft.Forms.NsgInput();
+            this.nsgInput13 = new NsgSoft.Forms.NsgInput();
             this.vmoАмортизация = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.СрокАмортизации_vmoАмортизация = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.КоличествоПериодов_vmoАмортизация = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.ПериодАмортизации_vmoАмортизация = new TechControl.Метаданные.Перечисления.ВидыПериодов.ColumnDescriptor();
+            this.nsgLabel12 = new NsgSoft.Forms.NsgLabel();
+            this.nsgInput12 = new NsgSoft.Forms.NsgInput();
             this.nsgLabel11 = new NsgSoft.Forms.NsgLabel();
             this.nsgInput11 = new NsgSoft.Forms.NsgInput();
             this.nsgLabel10 = new NsgSoft.Forms.NsgLabel();
@@ -111,8 +114,9 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput10)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoАмортизация)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput11)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1086,6 +1090,8 @@ namespace TechControl.Метаданные.Учет
             // groupBox1
             // 
             this.groupBox1.AllowDrop = true;
+            this.groupBox1.Controls.Add(this.nsgInput13);
+            this.groupBox1.Controls.Add(this.nsgLabel12);
             this.groupBox1.Controls.Add(this.nsgInput12);
             this.groupBox1.Controls.Add(this.nsgLabel11);
             this.groupBox1.Controls.Add(this.nsgInput11);
@@ -1094,46 +1100,47 @@ namespace TechControl.Метаданные.Учет
             this.groupBox1.Controls.Add(this.nsgLabel7);
             this.groupBox1.Location = new System.Drawing.Point(405, 68);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 144);
+            this.groupBox1.Size = new System.Drawing.Size(376, 199);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Амортизация";
             // 
-            // nsgInput12
+            // nsgInput13
             // 
-            this.nsgInput12.BackColor = System.Drawing.SystemColors.Window;
-            this.nsgInput12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput12.ConfigurationName = "";
-            this.nsgInput12.DisableLeaveControlEvent = false;
-            this.nsgInput12.FullName = "КоличествоПериодов";
-            this.nsgInput12.FullTextSearch = false;
-            this.nsgInput12.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput12.IsButton = false;
-            this.nsgInput12.IsInitialized = true;
-            this.nsgInput12.IsPassword = false;
-            this.nsgInput12.Location = new System.Drawing.Point(119, 89);
-            this.nsgInput12.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput12.Mask = "";
-            this.nsgInput12.MetaDataName = "";
-            this.nsgInput12.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput12.Name = "NsgInput";
-            this.nsgInput12.ObjectImages = null;
-            this.nsgInput12.ObjectIndex = null;
-            this.nsgInput12.ObjectStrings = null;
-            this.nsgInput12.Requsite = "КоличествоПериодов";
-            this.nsgInput12.SearchFieldName = "";
-            this.nsgInput12.ShowMultipleObjectInComboBox = false;
-            this.nsgInput12.ShowRowCount = 10;
-            this.nsgInput12.Size = new System.Drawing.Size(87, 20);
-            this.nsgInput12.SourceObject = this.vmoАмортизация;
-            this.nsgInput12.TabIndex = 2;
-            this.nsgInput12.VerticalAlignment = System.Drawing.StringAlignment.Center;
-            this.nsgInput12.EndEdit += new NsgSoft.Forms.NsgInput.EndEditEventHandler(this.nsgInput12_EndEdit);
+            this.nsgInput13.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput13.ConfigurationName = "";
+            this.nsgInput13.DisableLeaveControlEvent = false;
+            this.nsgInput13.FullName = "ПериодАмортизации";
+            this.nsgInput13.FullTextSearch = false;
+            this.nsgInput13.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput13.IsButton = false;
+            this.nsgInput13.IsInitialized = true;
+            this.nsgInput13.IsPassword = false;
+            this.nsgInput13.Location = new System.Drawing.Point(119, 78);
+            this.nsgInput13.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput13.Mask = "";
+            this.nsgInput13.MetaDataName = "";
+            this.nsgInput13.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput13.Name = "NsgInput";
+            this.nsgInput13.ObjectImages = null;
+            this.nsgInput13.ObjectIndex = null;
+            this.nsgInput13.ObjectStrings = null;
+            this.nsgInput13.Requsite = "ПериодАмортизации";
+            this.nsgInput13.SearchFieldName = "";
+            this.nsgInput13.ShowMultipleObjectInComboBox = false;
+            this.nsgInput13.ShowRowCount = 10;
+            this.nsgInput13.Size = new System.Drawing.Size(87, 20);
+            this.nsgInput13.SourceObject = this.vmoАмортизация;
+            this.nsgInput13.TabIndex = 29;
+            this.nsgInput13.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.nsgInput13.EndEdit += new NsgSoft.Forms.NsgInput.EndEditEventHandler(this.nsgInput13_EndEdit);
             // 
             // vmoАмортизация
             // 
             this.vmoАмортизация.Columns.Collection.Add(this.СрокАмортизации_vmoАмортизация);
             this.vmoАмортизация.Columns.Collection.Add(this.КоличествоПериодов_vmoАмортизация);
+            this.vmoАмортизация.Columns.Collection.Add(this.ПериодАмортизации_vmoАмортизация);
             this.vmoАмортизация.IsActive = true;
             this.vmoАмортизация.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
             this.vmoАмортизация.MetaDataName = "";
@@ -1161,12 +1168,68 @@ namespace TechControl.Метаданные.Учет
             this.КоличествоПериодов_vmoАмортизация.SearchCondition.OwnerComponent = this.КоличествоПериодов_vmoАмортизация;
             this.КоличествоПериодов_vmoАмортизация.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // ПериодАмортизации_vmoАмортизация
+            // 
+            this.ПериодАмортизации_vmoАмортизация.Caption = "ПериодАмортизации";
+            this.ПериодАмортизации_vmoАмортизация.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ПериодАмортизации_vmoАмортизация.Name = "ПериодАмортизации";
+            this.ПериодАмортизации_vmoАмортизация.NSGType = typeof(TechControl.Метаданные.Перечисления.ВидыПериодов);
+            this.ПериодАмортизации_vmoАмортизация.PropertyType = typeof(TechControl.Метаданные.Перечисления.ВидыПериодов);
+            this.ПериодАмортизации_vmoАмортизация.SearchCondition.OwnerComponent = this.ПериодАмортизации_vmoАмортизация;
+            this.ПериодАмортизации_vmoАмортизация.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // nsgLabel12
+            // 
+            this.nsgLabel12.AutoSize = true;
+            this.nsgLabel12.ConfigurationName = "";
+            this.nsgLabel12.FullName = "";
+            this.nsgLabel12.IsInitialized = false;
+            this.nsgLabel12.Location = new System.Drawing.Point(1, 78);
+            this.nsgLabel12.MetaDataName = "";
+            this.nsgLabel12.Name = "nsgLabel7";
+            this.nsgLabel12.Requsite = "";
+            this.nsgLabel12.Size = new System.Drawing.Size(115, 13);
+            this.nsgLabel12.TabIndex = 30;
+            this.nsgLabel12.Text = "Период амортизации";
+            this.nsgLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // nsgInput12
+            // 
+            this.nsgInput12.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput12.ConfigurationName = "";
+            this.nsgInput12.DisableLeaveControlEvent = false;
+            this.nsgInput12.FullName = "КоличествоПериодов";
+            this.nsgInput12.FullTextSearch = false;
+            this.nsgInput12.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput12.IsButton = false;
+            this.nsgInput12.IsInitialized = true;
+            this.nsgInput12.IsPassword = false;
+            this.nsgInput12.Location = new System.Drawing.Point(119, 107);
+            this.nsgInput12.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput12.Mask = "";
+            this.nsgInput12.MetaDataName = "";
+            this.nsgInput12.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput12.Name = "NsgInput";
+            this.nsgInput12.ObjectImages = null;
+            this.nsgInput12.ObjectIndex = null;
+            this.nsgInput12.ObjectStrings = null;
+            this.nsgInput12.Requsite = "КоличествоПериодов";
+            this.nsgInput12.SearchFieldName = "";
+            this.nsgInput12.ShowMultipleObjectInComboBox = false;
+            this.nsgInput12.ShowRowCount = 10;
+            this.nsgInput12.Size = new System.Drawing.Size(87, 20);
+            this.nsgInput12.SourceObject = this.vmoАмортизация;
+            this.nsgInput12.TabIndex = 2;
+            this.nsgInput12.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.nsgInput12.EndEdit += new NsgSoft.Forms.NsgInput.EndEditEventHandler(this.nsgInput12_EndEdit);
+            // 
             // nsgLabel11
             // 
             this.nsgLabel11.ConfigurationName = "";
             this.nsgLabel11.FullName = "";
             this.nsgLabel11.IsInitialized = false;
-            this.nsgLabel11.Location = new System.Drawing.Point(13, 80);
+            this.nsgLabel11.Location = new System.Drawing.Point(13, 98);
             this.nsgLabel11.MetaDataName = "";
             this.nsgLabel11.Name = "nsgLabel7";
             this.nsgLabel11.Requsite = "";
@@ -1187,7 +1250,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput11.IsButton = false;
             this.nsgInput11.IsInitialized = true;
             this.nsgInput11.IsPassword = false;
-            this.nsgInput11.Location = new System.Drawing.Point(119, 53);
+            this.nsgInput11.Location = new System.Drawing.Point(119, 49);
             this.nsgInput11.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput11.Mask = "";
             this.nsgInput11.MetaDataName = "";
@@ -1211,7 +1274,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgLabel10.ConfigurationName = "";
             this.nsgLabel10.FullName = "";
             this.nsgLabel10.IsInitialized = false;
-            this.nsgLabel10.Location = new System.Drawing.Point(0, 44);
+            this.nsgLabel10.Location = new System.Drawing.Point(0, 40);
             this.nsgLabel10.MetaDataName = "";
             this.nsgLabel10.Name = "nsgLabel7";
             this.nsgLabel10.Requsite = "";
@@ -1310,8 +1373,9 @@ namespace TechControl.Метаданные.Учет
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput10)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoАмортизация)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1367,5 +1431,8 @@ namespace TechControl.Метаданные.Учет
         protected NsgColumnDescriptor.Int64 СрокАмортизации_vmoАмортизация;
         protected NsgColumnDescriptor.Int64 КоличествоПериодов_vmoАмортизация;
         private NsgVisualMultipleObject vmoАмортизация;
+        protected NsgInput nsgInput13;
+        protected NsgLabel nsgLabel12;
+        protected Перечисления.ВидыПериодов.ColumnDescriptor ПериодАмортизации_vmoАмортизация;
     }
 }
