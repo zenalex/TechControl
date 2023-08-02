@@ -15,6 +15,7 @@ using NsgSoft.ReportData.Extensions;
 using NsgSoft.ReportDatabase;
 using TechControl.Метаданные._SystemTables;
 using TechControl.Метаданные.Мониторинг;
+using TechControl.Метаданные.Отчеты;
 using TechControl.Метаданные.Сервис;
 using TechControl.Метаданные.Учет;
 
@@ -37,6 +38,16 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             if (nsgVisualMultipleObject.Data.CurrentRow == null)
             {
                 nsgVisualMultipleObject.Data.CurrentRow = nsgVisualMultipleObject.Data.MemoryTable.NewRow();
+            }
+
+            if (vmoДанныеДляОтчетов.Data.CurrentRow == null)
+            {
+                vmoДанныеДляОтчетов.Data.CurrentRow = vmoДанныеДляОтчетов.Data.MemoryTable.NewRow();
+            }
+
+            if (vmoФильтр.Data.CurrentRow == null)
+            {
+                vmoФильтр.Data.CurrentRow = vmoФильтр.Data.MemoryTable.NewRow();
             }
 
             _первыйЗапуск = true;
@@ -474,6 +485,13 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                         }
                     }
                 }
+                else
+                {
+                    var cmp = Размер_vmoСписокСпецодежды.SearchCondition;
+                    cmp.Clear();
+                    cmp.Add(Размеры.Names.ВидСвойствНоменклатуры, номенклатура.ВидНоменклатуры);
+                    cmp.Add(Размеры.Names.ВидРазмернойСетки, номенклатура.ВидРазмернойСетки);
+                }
             }
 
             if (e.ColumnName == Выдать_vmoСписокСпецодежды.Name && !e.RowObject[СвободнаяВыдача_vmoСписокСпецодежды.Name].ToBoolean())
@@ -497,6 +515,13 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                     e.Cancel = true;
                     return;
                 }
+            }
+
+            if (e.ColumnName == Номенклатура_vmoСписокСпецодежды.Name)
+            {
+                var cmp = Номенклатура_vmoСписокСпецодежды.SearchCondition;
+                cmp.Clear();
+                cmp.Add(Номенклатура.Names.ТипНоменклатуры, ТипНоменклатуры.Спецодежда);
             }
         }
 
@@ -701,7 +726,14 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
 
         private void nbСпецодежда_AsyncClick(object sender, DoWorkEventArgs e)
         {
+            var отчетПоСпецодежде = NsgSettings.MainForm.GetObjectForm(ОтчетПоСпецодежде.Новый());
+            отчетПоСпецодежде.FormObject = ОтчетПоСпецодежде.Новый();
+            var отчетПоСпецодеждеФорма = отчетПоСпецодежде as ОтчетПоСпецодеждеФорма;
+            var date = ДатаОтчета_vmoДанныеДляОтчетов.Value != NsgService.MinDate ? ДатаОтчета_vmoДанныеДляОтчетов.Value :DateTime.Now ;
+            
+            NsgSettings.MainForm.ShowDockedForm(отчетПоСпецодеждеФорма);
 
+            отчетПоСпецодеждеФорма.УстановитьПараметрыФормы(nsgObjectFilter1.Compare, date);
         }
 
         private void nsgInput3_Selected(object sender, EventArgs e)
