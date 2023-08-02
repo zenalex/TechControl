@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using NsgSoft.Database;
@@ -61,6 +62,64 @@ namespace TechControl.Метаданные.Администрирование
             {
                 NsgSettings.MainForm.ShowMessage($"Удаляется {item}");
                 item.Delete();
+            }
+        }
+
+        private void nsgButton1_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            var cmp = new NsgCompare();
+            cmp.Add(Сотрудники.Names.ЗагрузочныйИдентификатор, string.Empty, NsgComparison.NotEqual);
+
+            var всеСотрудники = Сотрудники.Новый().FindAll(cmp);
+
+            var всеПодразделения = всеСотрудники.Where(x => x.Подразделение.Selected).Select(x => x.Подразделение).ToArray();
+
+            Dictionary<string, Подразделения> словарьПодразделений = new Dictionary<string, Подразделения>();
+            foreach (var подразделение in всеПодразделения)
+            {
+                if (!словарьПодразделений.ContainsKey(подразделение.ЗагрузочныйИдентификатор))
+                {
+                    словарьПодразделений[подразделение.ЗагрузочныйИдентификатор] = подразделение;
+                }
+            }
+
+
+            foreach (var item in всеСотрудники)
+            {
+                foreach (var загрИдент in словарьПодразделений.Keys)
+                {
+                    if (item.Подразделение.ЗагрузочныйИдентификатор == загрИдент && item.Подразделение != словарьПодразделений[загрИдент])
+                    {
+                        item.Edit();
+                        item.Подразделение = словарьПодразделений[загрИдент];
+                        item.Post();
+                        NsgSettings.MainForm.ShowMessage($"обработан {item}");
+                    }
+                }
+                
+            }
+
+            List<Guid> гуидыПодразделений = new List<Guid>();
+            
+
+            var cmpПодр = new NsgCompare();
+
+            var подразделения = Подразделения.Новый().FindAll(cmpПодр);
+            гуидыПодразделений = подразделения.Select(x => x.Идентификатор).ToList();
+
+            foreach (var подразделение in подразделения)
+            {
+                foreach (var загрИдент in словарьПодразделений.Keys)
+                {
+                    if (подразделение.ЗагрузочныйИдентификатор == загрИдент)
+                    {
+                        if (подразделение.Идентификатор != словарьПодразделений[загрИдент].Идентификатор)
+                        {
+                            подразделение.Delete();
+                            NsgSettings.MainForm.ShowMessage($"Удаляется {подразделение}");
+                        }
+                    }
+                }
             }
         }
     }

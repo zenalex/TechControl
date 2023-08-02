@@ -348,7 +348,7 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 else
                 {
-                    NsgSettings.MainForm.ShowMessage($"Для {видНоменклатуры} по меркам {this} не найден подходящий размер в справочнике", System.Windows.Forms.MessageBoxIcon.Warning);
+                    //NsgSettings.MainForm.ShowMessage($"Для {видНоменклатуры} по меркам {this} не найден подходящий размер в справочнике", System.Windows.Forms.MessageBoxIcon.Warning);
                     return размер;
                 }
             }
