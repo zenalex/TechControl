@@ -1452,6 +1452,213 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
                 vmoСписокСпецодежды.Data.UpdateDataSync(this);
             }
         }
+
+        private void nsgIGrid7_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.ColumnName == Переместить_vmoМеждуОбъектами.Name)
+            {
+                if (e.RowObject[Переместить_vmoМеждуОбъектами].ToBoolean())
+                {
+                    var остаток = e.RowObject[Остаток_vmoМеждуОбъектами].ToDecimal();
+                    if (остаток > 0)
+                    {
+                        e.RowObject[Количество_vmoМеждуОбъектами].Value = остаток;
+                    }
+                    else
+                    {
+                        e.RowObject[Количество_vmoМеждуОбъектами].Value = 0;
+                        e.RowObject[Переместить_vmoМеждуОбъектами].Value = false;
+                    }
+                }
+                else
+                {
+                    e.RowObject[Количество_vmoМеждуОбъектами].Value = 0;
+                }
+            }
+
+            if (e.ColumnName == Количество_vmoМеждуОбъектами.Name)
+            {
+                var колич = e.RowObject[Количество_vmoМеждуОбъектами].ToDecimal();
+                var остаток = e.RowObject[Остаток_vmoМеждуОбъектами].ToDecimal();
+                if (колич > остаток)
+                {
+                    e.RowObject[Количество_vmoМеждуОбъектами].Value = остаток;
+                }
+                else if (колич <= 0)
+                {
+                    e.RowObject[Количество_vmoМеждуОбъектами].Value = 0;
+                    e.RowObject[Переместить_vmoМеждуОбъектами].Value = false;
+                }
+            }
+
+            ЗаполнитьОстаткиДляПеремещений();
+        }
+
+        private void ЗаполнитьОстаткиДляПеремещений() 
+        {
+            if (!ОбъектОтправитель.Value.Selected || ОбъектОтправитель.Value == null)
+            {
+                return;
+            }
+            else
+            {
+                var объект = ОбъектОтправитель.Value;
+                var reg = ОстаткиНоменклатуры.Новый();
+
+                foreach (var item in vmoМеждуОбъектами.Data.MemoryTable.AllRows)
+                {
+                    var nom = item[Номенклатура_vmoМеждуОбъектами].ToReferent() as Номенклатура;
+
+                    decimal count = 0;
+
+                    if (nom != null && nom.Selected)
+                    {
+                        var размер = item[размер_vmoМеждуОбъектами].ToReferent() as Размеры;
+                        reg.Номенклатура = nom;
+                        reg.Объект = объект;
+                        if (nom.ВидРазмернойСетки.Selected)
+                        {
+                            if (размер != null && размер.Selected)
+                            {
+                                reg.Размер = размер;
+                                reg.GetRest();
+                                count = reg.Количество;
+                            }
+                            else
+                            {
+                                item[Переместить_vmoМеждуОбъектами].Value = false;
+                                item[Количество_vmoМеждуОбъектами].Value = 0;
+                            }
+                        }
+                        else
+                        {
+                            reg.GetRest();
+                            count = reg.Количество;
+                        }
+
+                        item[Остаток_vmoМеждуОбъектами].Value = count;
+                    }
+                    else
+                    {
+                        item[Переместить_vmoМеждуОбъектами].Value = false;
+                        item[Количество_vmoМеждуОбъектами].Value = 0;
+                    }
+                }
+
+                vmoМеждуОбъектами.Data.UpdateDataSync(this);
+            }
+        }
+
+        private void nsgIGrid7_CellRequestEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.ColumnName != Номенклатура_vmoМеждуОбъектами.Name)
+            {
+                var nom = e.RowObject[Номенклатура_vmoМеждуОбъектами.Name].ToReferent() as Номенклатура;
+                if (nom != null && nom.Selected)
+                {
+                    if (e.ColumnName == размер_vmoМеждуОбъектами.Name)
+                    {
+                        if (nom.ВидРазмернойСетки.Selected)
+                        {
+                            var cmp = размер_vmoМеждуОбъектами.SearchCondition;
+                            cmp.Clear();
+                            cmp.Add(Размеры.Names.ВидРазмернойСетки, nom.ВидРазмернойСетки);
+                            cmp.Add(Размеры.Names.ВидСвойствНоменклатуры, nom.ВидНоменклатуры);
+                        }
+                        else
+                        {
+                            e.Cancel = true;
+                            return;
+                        }
+                    }
+
+                    if (e.ColumnName == Переместить_vmoМеждуОбъектами.Name)
+                    {
+                        var остаток = e.RowObject[Остаток_vmoМеждуОбъектами].ToDecimal();
+                        if (остаток <= 0)
+                        {
+                            e.Cancel = true;
+                            return;
+                        }
+                    }
+
+                    if (e.ColumnName == Количество_vmoМеждуОбъектами.Name)
+                    {
+                        if (!e.RowObject[Переместить_vmoМеждуОбъектами].ToBoolean())
+                        {
+                            e.Cancel = true;
+                            return;
+                        }
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                    return;
+                }
+            }
+        }
+
+        private void nbМеждуОбъектами_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            if (ОбъектОтправитель.Value == null || !ОбъектОтправитель.Value.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Необходимо выбрать объект отправитель");
+                return;
+            }
+
+            if (ОбъектПолучатель.Value == null || !ОбъектПолучатель.Value.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Необходимо выбрать объект получатель");
+                return;
+            }
+
+            var отправитель = ОбъектОтправитель.Value;
+            var получатель = ОбъектПолучатель.Value;
+
+            try
+            {
+                NsgSettings.BeginTransaction();
+                var перемещение = ПеремещениеСпецодежды.Новый();
+                перемещение.New();
+                перемещение.Отправитель = отправитель;
+                перемещение.Получатель = получатель;
+                foreach (var item in vmoМеждуОбъектами.Data.MemoryTable.AllRows)
+                {
+                    var nom = item[Номенклатура_vmoМеждуОбъектами].ToReferent() as Номенклатура;
+                    var количество = item[Количество_vmoМеждуОбъектами].ToDecimal();
+                    var перемещать = item[Переместить_vmoМеждуОбъектами].ToBoolean();
+                    if (nom.Selected && количество > 0 && перемещать)
+                    {
+                        var размер = item[размер_vmoМеждуОбъектами].ToReferent() as Размеры;
+
+                        var строка = перемещение.Таблица.NewRow();
+                        строка.НоменклатураСпецодеждыИСИЗ = nom;
+                        строка.Размер = размер;
+                        строка.Количество = (long)количество;
+                        строка.Post();
+                    }
+                }
+                if (перемещение.Таблица.Count > 0)
+                {
+                    перемещение.Handle();
+
+                    NsgSettings.MainForm.ShowObject(перемещение, this);
+                }
+                else
+                {
+                    NsgSettings.MainForm.ShowMessage($"Не выбрано позиций для перемещения, или не указано количество");
+                }
+                NsgSettings.CommitTransaction();
+            }
+            catch (Exception ee)
+            {
+                NsgSettings.RollbackTransaction();
+                NsgSettings.MainForm.ShowMessage($"Ошибка перемещения {ee.Message}");
+            }
+
+            ЗаполнитьОстаткиДляПеремещений();
+        }
     }
     
 
