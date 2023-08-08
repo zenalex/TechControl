@@ -188,6 +188,15 @@ namespace TechControl.Метаданные.Отчеты
             nsgVisualMultipleObject.Data.UpdateDataSync(this);
         }
 
+        public void УстановитьПараметрыФормы(NsgCompare cmp, DateTime дата)
+        {
+            NsgSettings.MainForm.Invoke(new MethodInvoker(() =>
+            {
+                nsgObjectFilter1.Compare = cmp;
+            }), null);
+
+            ДатаОтчета_vmoДопДанные.Value = дата;
+        }
 
     }
 

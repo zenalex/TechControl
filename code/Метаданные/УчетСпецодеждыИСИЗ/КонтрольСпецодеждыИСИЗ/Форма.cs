@@ -721,7 +721,14 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
 
         private void nbЗакупки_AsyncClick(object sender, DoWorkEventArgs e)
         {
+            var отчетПоЗакупкам = NsgSettings.MainForm.GetObjectForm(ОтчетПоЗакупкам.Новый());
+            отчетПоЗакупкам.FormObject = ОтчетПоЗакупкам.Новый();
+            var отчетПоЗакупкамФорма = отчетПоЗакупкам as ОтчетПоЗакупкамФорма;
+            var date = ДатаОтчета_vmoДанныеДляОтчетов.Value != NsgService.MinDate ? ДатаОтчета_vmoДанныеДляОтчетов.Value : DateTime.Now;
 
+            NsgSettings.MainForm.ShowDockedForm(отчетПоЗакупкамФорма);
+
+            отчетПоЗакупкамФорма.УстановитьПараметрыФормы(nsgObjectFilter1.Compare, date);
         }
 
         private void nbСпецодежда_AsyncClick(object sender, DoWorkEventArgs e)
