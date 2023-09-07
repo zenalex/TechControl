@@ -8603,6 +8603,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="306d11c8-b6aa-4c97-9832-4b08edf0f85c" type="NsgDataEnumElement" editoraccess="Full" name="МатериальныеЦенности" visible="true" description="Материальные ценности" field="MaterialnyeCennosti" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="5">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Спецодежда" />
@@ -8610,6 +8615,7 @@
             <container name="Материалы" />
             <container name="Продукция" />
             <container name="Товары" />
+            <container name="МатериальныеЦенности" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="1c237bbd-078c-479e-a302-895f3e38bf9e" type="NsgDataDictionary" editoraccess="Full" name="КатегорияНоменклатуры" visible="true" description="Справочник" group="Учет" table="_dic_KategorijaNomenklatury" searchfield="Наименование" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="false">
@@ -12626,6 +12632,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="c8fb9466-ed72-4646-817a-f1dd785b40e6" type="NsgDataTypedReference" editoraccess="Full" name="ДокументПодтверждения" visible="true" description="Документ подтверждения" field="DokumentPodtverzh" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="ПодтверждениеПеремещения">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="79cf45d6-5d9a-4265-b313-39fa3c5aa375" type="NsgDataTable" editoraccess="Full" name="УчетИнструментаРегистрУчетИнструментаДвижения" visible="true" description="Учет инструмента учет инструмента движения" group="_SystemTables" table="_tab_UchetInstrumentaReg" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="RegisterCharacteristicsTable" registerPeriod="None" registerPeriodCount="1">
@@ -12687,6 +12698,11 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="e9d2ea50-2780-4dab-8831-e9ad70b4fefa" type="NsgDataTypedReference" editoraccess="Full" name="НоменклатураИнструмента" visible="true" description="Номенклатура инструмента" field="NomenklaturaInstr" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="Номенклатура">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="c8fb9466-ed72-4646-817a-f1dd785b40e6" type="NsgDataTypedReference" editoraccess="Full" name="ДокументПодтверждения" visible="true" description="Документ подтверждения" field="DokumentPodtverzh" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="ПодтверждениеПеремещения">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -12790,6 +12806,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="b000a524-78bc-45fa-8600-4509445d72b9" type="NsgDataBoolean" editoraccess="Full" name="ЭтоВозврат" visible="true" description="Это возврат" field="EHtoVozvrat" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -12801,6 +12822,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="ЭтоВозврат" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
