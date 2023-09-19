@@ -9430,6 +9430,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="a0e46baa-fe5c-461d-8439-731fa8c6429c" type="NsgDataTypedReference" editoraccess="Full" name="СвойствоНоменклатуры" visible="true" description="Свойство номенклатуры" field="SvoijstvoNomenkla" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="СвойствоНоменклатуры">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Количество" />
@@ -9437,6 +9442,7 @@
             <container name="Стоимость" />
             <container name="Номенклатура" />
             <container name="Размер" />
+            <container name="СвойствоНоменклатуры" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="938e8f62-e981-4c0d-b579-ac25e9c83e99" type="NsgDataDocument" editoraccess="Full" name="ПриходнаяНакладная" visible="true" description="Приходная накладная" group="Учет" table="_doc_PrikhodnajaNakladnaja" searchfield="_Code" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" NumberPeriod="None" HandleWithoutTransaction="False" usecommonjournal="true">
@@ -9614,6 +9620,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="e56a71f5-e8c4-4d68-beed-feedf517a9cd" type="NsgDataTypedReference" editoraccess="Full" name="СвойствоНоменклатуры" visible="true" description="Свойство номенклатуры" field="SvoijstvoNomenkla" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="СвойствоНоменклатуры">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Количество" />
@@ -9621,6 +9632,7 @@
             <container name="Стоимость" />
             <container name="Цена" />
             <container name="Размер" />
+            <container name="СвойствоНоменклатуры" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="ab8fc786-6aa4-4cb8-980b-11659254bf2f" type="NsgDataDocument" editoraccess="Full" name="Перемещение" visible="true" description="Перемещение" group="Учет" table="_doc_Peremeschenie" searchfield="_Code" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" NumberPeriod="None" HandleWithoutTransaction="False" usecommonjournal="true">
@@ -11707,6 +11719,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="bab9ae63-d290-490c-a499-389ac1846a1f" type="NsgDataTypedReference" editoraccess="Full" name="СвойствоНоменклатуры" visible="true" description="Свойство номенклатуры" field="SvoijstvoNomenkla" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Учет" refname="СвойствоНоменклатуры">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Количество" />
@@ -11715,6 +11732,7 @@
             <container name="ПолучениеПодтверждено" />
             <container name="СерийныйНомер" />
             <container name="Фотография" />
+            <container name="СвойствоНоменклатуры" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="918ba419-73b4-493a-9103-425fdbe5ddc9" type="NsgDataDocument" editoraccess="Full" name="ПодтверждениеПеремещения" visible="true" description="Подтверждение перемещения" group="Учет" table="_doc_PodtverzhdeniePerem" searchfield="_Code" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" NumberPeriod="None" HandleWithoutTransaction="False" usecommonjournal="true">
@@ -12818,11 +12836,11 @@
             <container name="Получатель" />
             <container name="Отправитель" />
             <container name="ТребуетсяПодтверждение" />
+            <container name="ЭтоВозврат" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ЭтоВозврат" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
