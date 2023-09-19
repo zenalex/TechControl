@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="printButton.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk1CAwAAAAAAADYAAAAoAAAAEQAAAA8AAAABABgAAAAAAAAAAADEDgAAxA4AAAAAAAAAAAAA1+Dg1+Dg
+        1+Dg1+Dg1+Dg1+Dg1+Dg1+Dg1+Dg1+Dg1+Dg1+Dg1+Dg1+Dg1+Dg1+Dg2eHhANfg4MxoAsxoAsxoAsxo
+        AsxoAsxoAsxoAsxoAsxoAsxoAsxoAsxoAsxoAsxoAsxoAtnh4QDY4OHMaAL//////Pj/+PD/8+f/8eP/
+        7Nn/6dP/5cr/4sX/3bv/27X/1av/06fMaALa4eIA2eHizGgC////////s7Gvs7Gv//Pn//Pns62os62o
+        /+XK/+LFs6qgs6qg/9SpzGgC2uLjANnh4sxoAv///////017/017///48P/48Jk1Apk1Av/p0//lygKZ
+        zAKZzP/as8xoAtri4wDZ4eLMaAL///////9Ne/9Ne///+/b/+PCZNQKZNQL/7Nn/6dMCmcwCmcz/27fM
+        aALa4uMA2uHizGgC//////////////////////v2//v2//Di//Di/+zZ/+zZ/+LF/+HCzGgC2+LjANri
+        48xoAv/////////////////////////79v/w4v/16v/w4v/s2f/ixf/jyMxoAtvj5ADa4+PMaAL/////
+        //+zraizraj///////+zraizraj/+PD/9euzraizraj/6dLMaALc5OQA2+PjzGgC////////zJmZzJmZ
+        ////////4oAM4oAM//z5//jwApkCApkC/+rWzGgC3eTkANvj5MxoAv///////8yZmcyZmf///////+KA
+        DOKADP/////8+QKZAgKZAv/w4cxoAt3k5QDc5OXMaAL/////////////////////////////////////
+        //7/+fP/+O//8uXMaALe5eYA3uXmzGgC33wC33wC33wC33wC33wC33wC33wC33wC33wC33wC33wC33wC
+        33wCzGgC4ObnAN/l5u7LqNJ1FdJ1FdJ1FdJ1FdJ1FdJ1FdJ1FdJ1FdJ1FdJ1FdJ1FdJ1FdJ1Fem9j+Hn
+        6ADe5OXg5efg5efg5ufg5ufg5ufg5ufg5ufg5ufg5ufg5ufg5ufg5ufg5ufg5efg5efg5ucA
+</value>
+  </data>
+  <metadata name="nsgVisualMultipleObject.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="vmo2NsgListViewElem.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>583, 17</value>
+  </metadata>
+  <data name="nsgFindTextBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <metadata name="nsgVisualMultipleObject2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>392, 17</value>
+  </metadata>
+  <data name="findTextBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAArpAAAK6QH9dc7TAAALIUlE
+        QVRoQ9WZB4zVZRbFQUCKihtggd1VzOwuCWEpIZAN65JgcCSIGcIShoEB6TAUqVJmlAHpvUvvvUlTYOi9
+        Sq9DUzoqHZQ2wLt7ft/yzT5G8Y06C7M3ueGR+Zd77j3n3vu9lyENLeMv9OdmGRctWpRz4cKFpefMmdNw
+        9uzZ3WfOnDl52rRpCdOnT982derUxMmTJ5+eMGHCmbFjx54ZPXr06eHDhycOGjRoe//+/Zf37Nlzyief
+        fNI7Li4upkWLFmWrVKmST8/MzHMfe9rbnj178uzevTtaPu7LL788vHbt2vvLli2zL774wj7//HNbsmSJ
+        LV++3FavXm0bN2607du3m66zXbt22b59+2z//v3uX91vW7dutVWrVtmCBQts3LhxJkBJ3bp1OxwfHz/p
+        ww8/bCBAf9YrX5T/NjCHDx/OeuLEiagjR46sVDB3CPCzzz6zGTNmmDJuc+fOdUEAgL8R1Lp162zTpk22
+        Y8cOFzwBHzx40BITE03PsjNnztjFixft0qVLduPGDbtz544lJSW5/3O9qmcfffTRXQFZ27hx40YFCxYM
+        rk7qTA/OoqCbK2OnlOmAqGGigI0cOdJECxM9HAjRx+bPn2+LFy82qrFy5cpkAFRg586dDsCBAwdMz3MA
+        Tp06ZefOnbNvvvnGLl++bNevX7cffvjB7t+/b8HGPZ9++qk1b978XP369ePz5cv3B4WW5T8R/oydPHmy
+        iF6+TwEFhgwZYr179zZx1wEYNWqUK/mkSZNMXDdx31UEAEuXLnUA1q9f/5MAfAVOnz5t58+ft2+//dau
+        XLniqgCAe/fu2cOHDy0QCNijR4+cYxcuXLBhw4YFBOJIeHh4RYX4svynq6GXvL1ly5abI0aMMPERblrf
+        vn1t4MCBNnToUFeBMWPG2MSJE12pZ82aZfPmzTMJ2gFYsWKFqWJOA1AoJQAlx86ePesAfPfdd3b16lW7
+        efOm3b5921WA4AEBpe7evevoxd8ePHhg27Zts5iYmFvlypWLUai55S+4oL1t2LChgDJ3tVevXnDQ1CWs
+        R48ergLqHDZ48GBXUnUUR6MpU6Yk60DdKFnEa9ascQB4IQAkfgfg6NGjDgAaIKsAuHbtmt26dcsFS+Bk
+        nWCpBsF///33DiBV4jNJaNCgwY2wsLAohZxL/t9KJCQkDCU4icc+/vhj69y5s3Xt2tUARBWgkUqZTCN0
+        AI3QAUKmGz0NACIGwFdffeUq4EUM/wksmD4++2QecFxDpaAbYKDtO++8M18h/12ezQWPCcA+Mg+A2NhY
+        69Spk3Xp0sW6d+/uqjBgwABDE9DL0whx80CETCfSM1wbVTV/BODYsWMOgBew539K+vA5OPtUiWupGKBJ
+        hNrscYVcV57XBY9JiFvIfJs2bax9+/aORuiAKqCFfv36JYs5mEbowAuZTkQrBYAXcTCAr7/+2gFAwJ7/
+        BOuzz79UI2X2CZx7AKFnBipVqrRfIcfJ33DBY8poHFlt2rSpq0LHjh0dlVJWwYvZ04h2ig4QsgdAJ2JY
+        eQCHDh1yAGihXsBkNpg+KbNPdbiGVsv1AOCz9PioaNGisxVyO/lrLnisQoUKr4kClwhQvdeB0Kh3VUDQ
+        vgpezJ5GXgdeyL6VpgRw/Phx10IRsOe/7/9k34s3OPtQxwPAaRqRkZHHMmXKNE4hR8oRcrJlEcdrqhUm
+        QQ+o1LZtW0clBO2r4FsqYh4/frxrp+jAC5lWyjBLCSB4ChMUGSbbBB4sXp99qMN1gAU0SapZs+bVHDly
+        TFWssfLCxEzg3mhJr4rjfRliBIRooRKVgErBVUDMWtQcjcgMOkDIHoDmSTIArSQOAB3IC5gsk3GCp33y
+        OVi8BA9Y9EMbj46OfpA3b16C7yUvI2eg/cheyJ49+5/E78VM082bNzt+QxdaqRc0WvBihkbogIGGkGml
+        DDMPYO/evQ6AH2JwGW5DFbKOwX8+AwBw6IS9iARpH7KoqKhA4cKF5yq+YXKm8ZMzIIVlLlWqVGF1l0OU
+        nGwwiGiPgIFeZB8A/IuYoRElRsi0Ul8BpjAbKAPIC5jM8ky4T+ahDYB4F/dQTTSngWV16tSxGjVqWNmy
+        ZdcqrrHyaPkf5U9O4Z+wrLqxvGhxjYx4cSEs+AinWZURK50HAUMhnM9oASBUgiqSTahAFRAylWC5Ayj3
+        kAyoqrOB64JkHQC1atWyihUrJkq0UxRTM/lf5WymIY3yvKyHNhEtHsBL3AsLGpBNAiFzZJchRYBwnY6D
+        M3SoHgAAy74E3ZjoNAQaAw2CwcnsadWqlTVr1swaNmzosl+1atWrorQXbXF5VnmqDRC5tEoMUjYDlJzS
+        UxEPgGwSOD0ennNoIVjvVImhhi6oDEMPzUA9uhl6AgDZp+vRvsl+3bp1oU7SY9H2lHvRPpX3T7NMaluv
+        6WVL4ScgoBGtjQ5BBZiuZBtKkG26jgeAiD0AuhrZRzNQhm6mU5hr0+3atbOWLVtakyZNTGsz1AkUKVIE
+        0Q6VhxRtKMtcokSJYnqptJiY3CmCqwB1+Bs8p+sEA/A6YV9C7HQ0f87w2W/dunUydd5//3176623Vuu9
+        DKtUizaUZRMf39XLbxA4PRwQVAENeBohbrpOSgBwnzbLzGANoQ3Df788fvDBB4468D4iIgLRTtY7m8r/
+        Ik+VaEOZE7U6RHOdxh4iaKjkq4CIoRE6CAaABug0rBi0WVow9GGmMBg7dOjghAt16tWrZ9WqVUO00/Su
+        XyXaUAaI3MracM2DAP07uAqeRsFCBgCtlAlNf2cwMcU5KJF9VhWoQ8vUmpCkcy/BI9p/yn+VaENZJmXo
+        DWVvJYMNPSBoVmTETNtEBwwwD4ADDgOOswP0YS1gUJF9+n6jRo2sdu3aAW2YaSbaUJalePHiJbRWnCBY
+        9EAVEDM0Qge+EwEAoHQg+E//90dW2ibUgfc6567RcxFtDXmaiDaUZX/vvfcqiQo3mcxQiSpAI9qp70QA
+        4HyAgNlcORCxTzG06PnwvnLlyoeDJm2aiTaUUd5XNHDaKKhHrL8IGjFDIy9kuhDbKes263efPn3cIQnh
+        0jKrV69+JWjSFpOnqWhDGSDyqDONo7vQmagCNPLrA1+tsBNx6IE+DC6GFtQR7x/kz5//fy7aUJY5V65c
+        YaLDJlolWyViRgeeQgwx+E/vh/v0fE3bQLFixZ6ZaEPZi2XKlCmnwO4TMOsF8wAhQyGGGBVicD0OniVt
+        p+6bIE+zSftb7SXRIgHKYAw3die4D+/p90xaWiZdp3z58gm6J17OsfCZiDaUZdQyNoa1AeP8QCU8hdAA
+        FKLvP951Fume5nKy/9yoE2wA6EfHwRhwdCS+3OJwgwZYH6AQAN588815uqehnK/O04dpo4znTJwaACVL
+        luR7nTry37ub04OpAq1Y2FIDQB1oum5BwHnczenBxO96/G4QCgDn3EKFCrEuV5M/8cXUczVRqArTNhQA
+        KhAWFkYL/Zf8d+7m9GAxMTFFdMJyP6uwaj8NgNZme/3111ncIuSvupvTiWXTjnOAVYLve9hOUwKgjUZH
+        R5v2/jG6voL8FXdnOrGM2m+i4uLikvz3R08DkDt37lG6Plz+krszHVnOqKioTrGxsff5lYatlEHGYZ5v
+        IQCgv1vOnDlH6Nqy8uzurnRk7DT5S5cu3Uy7/pH4+PiA/xoeAJwBIiMj72XNmnW4rvuH/Jmuz6k1dpt8
+        OqS8rXbZKzw8PEHL2yll/lZERMSpAgUKsEJ3l//t8bXp0qgEAuW7zPLyJvIu8t5yDi/vyvmpNF3sQT9n
+        ZBgg/MoeJgcQv2vR/zPJ/2+MTAd7GlqGDP8G9vFb6Hxi7ccAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="nsgVisualMultipleObject1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>201, 17</value>
+  </metadata>
+  <data name="nsgGroupsList.DisableComponents" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAJoBbXNjb3JsaWIsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1u
+        ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0sIG1zY29ybGliLCBWZXJzaW9u
+        PTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUB
+        AAAAMFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbU3lzdGVtLlN0cmluZwMAAAAGX2l0
+        ZW1zBV9zaXplCF92ZXJzaW9uBgAACAgCAAAACQMAAAAAAAAAAAAAAAwEAAAAS21zY29ybGliLCBWZXJz
+        aW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4
+        OREDAAAAAAAAAAs=
+</value>
+  </data>
+  <metadata name="vmo_tableDoc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>723, 56</value>
+  </metadata>
+  <metadata name="vmo_input.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>757, 17</value>
+  </metadata>
+  <metadata name="nsgОтчет.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>866, 17</value>
+  </metadata>
+  <data name="nsgReport1.ReportSource" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;
+&lt;StiSerializer version="1.0" application="StiReport"&gt;
+  &lt;Dictionary Ref="1" type="Dictionary" isKey="true"&gt;
+    &lt;Databases isList="true" count="0" /&gt;
+    &lt;DataSources isList="true" count="1"&gt;
+      &lt;nsgReportDataSource1 Ref="2" type="NsgSoft.ReportBuilder.Dictionary.StiUserSource" isKey="true"&gt;
+        &lt;Alias /&gt;
+        &lt;Columns isList="true" count="1"&gt;
+          &lt;value&gt;ЛюбойДокумент,NsgSoft.DataObjects.NsgReferencedObject&lt;/value&gt;
+        &lt;/Columns&gt;
+        &lt;Dictionary isRef="1" /&gt;
+        &lt;Name&gt;nsgReportDataSource1&lt;/Name&gt;
+        &lt;NameInSource&gt;nsgReportDataSource1&lt;/NameInSource&gt;
+      &lt;/nsgReportDataSource1&gt;
+    &lt;/DataSources&gt;
+    &lt;Relations isList="true" count="0" /&gt;
+    &lt;Report isRef="0" /&gt;
+    &lt;Variables isList="true" count="0" /&gt;
+  &lt;/Dictionary&gt;
+  &lt;GlobalizationStrings isList="true" count="0" /&gt;
+  &lt;Pages isList="true" count="1"&gt;
+    &lt;Страница1 Ref="3" type="Page" isKey="true"&gt;
+      &lt;Border&gt;None;Black;2;Solid;False;4;Black&lt;/Border&gt;
+      &lt;Brush&gt;Transparent&lt;/Brush&gt;
+      &lt;Components isList="true" count="3"&gt;
+        &lt;ЗаголовокОтчета1 Ref="4" type="ReportTitleBand" isKey="true"&gt;
+          &lt;Brush&gt;Transparent&lt;/Brush&gt;
+          &lt;ClientRectangle&gt;0,0.4,27.7,1.4&lt;/ClientRectangle&gt;
+          &lt;Components isList="true" count="1"&gt;
+            &lt;Текст1 Ref="5" type="Text" isKey="true"&gt;
+              &lt;Brush&gt;Transparent&lt;/Brush&gt;
+              &lt;ClientRectangle&gt;0,0,4,0.6&lt;/ClientRectangle&gt;
+              &lt;Conditions isList="true" count="0" /&gt;
+              &lt;Font&gt;Arial,9.75,Bold,Point,False,204&lt;/Font&gt;
+              &lt;LinesOfUnderline&gt;None&lt;/LinesOfUnderline&gt;
+              &lt;Margins&gt;0,0,0,0&lt;/Margins&gt;
+              &lt;Name&gt;Текст1&lt;/Name&gt;
+              &lt;Page isRef="3" /&gt;
+              &lt;Parent isRef="4" /&gt;
+              &lt;Restrictions&gt;All&lt;/Restrictions&gt;
+              &lt;Text&gt;Реестр Документов&lt;/Text&gt;
+              &lt;TextBrush&gt;Black&lt;/TextBrush&gt;
+              &lt;TextFormat Ref="6" type="GeneralFormat" isKey="true" /&gt;
+              &lt;Type&gt;Expression&lt;/Type&gt;
+            &lt;/Текст1&gt;
+          &lt;/Components&gt;
+          &lt;Conditions isList="true" count="0" /&gt;
+          &lt;Name&gt;ЗаголовокОтчета1&lt;/Name&gt;
+          &lt;Page isRef="3" /&gt;
+          &lt;Parent isRef="3" /&gt;
+          &lt;Restrictions&gt;All&lt;/Restrictions&gt;
+        &lt;/ЗаголовокОтчета1&gt;
+        &lt;ЗаголовокДанных1 Ref="7" type="HeaderBand" isKey="true"&gt;
+          &lt;Brush&gt;Transparent&lt;/Brush&gt;
+          &lt;ClientRectangle&gt;0,2.6,27.7,0.6&lt;/ClientRectangle&gt;
+          &lt;Components isList="true" count="0" /&gt;
+          &lt;Conditions isList="true" count="0" /&gt;
+          &lt;Name&gt;ЗаголовокДанных1&lt;/Name&gt;
+          &lt;Page isRef="3" /&gt;
+          &lt;Parent isRef="3" /&gt;
+          &lt;PrintIfEmpty&gt;True&lt;/PrintIfEmpty&gt;
+          &lt;Restrictions&gt;All&lt;/Restrictions&gt;
+        &lt;/ЗаголовокДанных1&gt;
+        &lt;Данные1 Ref="8" type="DataBand" isKey="true"&gt;
+          &lt;Brush&gt;Transparent&lt;/Brush&gt;
+          &lt;ClientRectangle&gt;0,4,27.7,0.4&lt;/ClientRectangle&gt;
+          &lt;Components isList="true" count="1"&gt;
+            &lt;Текст3 Ref="9" type="Text" isKey="true"&gt;
+              &lt;Border&gt;All;Black;1;Solid;False;4;Black&lt;/Border&gt;
+              &lt;Brush&gt;Transparent&lt;/Brush&gt;
+              &lt;ClientRectangle&gt;0,0,2,0.4&lt;/ClientRectangle&gt;
+              &lt;Conditions isList="true" count="0" /&gt;
+              &lt;Font&gt;Arial,9,Bold,Point,False,204&lt;/Font&gt;
+              &lt;HorAlignment&gt;Center&lt;/HorAlignment&gt;
+              &lt;LinesOfUnderline&gt;None&lt;/LinesOfUnderline&gt;
+              &lt;Margins&gt;0,0,0,0&lt;/Margins&gt;
+              &lt;Name&gt;Текст3&lt;/Name&gt;
+              &lt;Page isRef="3" /&gt;
+              &lt;Parent isRef="8" /&gt;
+              &lt;Restrictions&gt;All&lt;/Restrictions&gt;
+              &lt;Text&gt; Документ&lt;/Text&gt;
+              &lt;TextBrush&gt;Black&lt;/TextBrush&gt;
+              &lt;TextFormat Ref="10" type="GeneralFormat" isKey="true" /&gt;
+              &lt;Type&gt;Expression&lt;/Type&gt;
+              &lt;VertAlignment&gt;Center&lt;/VertAlignment&gt;
+            &lt;/Текст3&gt;
+          &lt;/Components&gt;
+          &lt;Conditions isList="true" count="0" /&gt;
+          &lt;DataRelationName /&gt;
+          &lt;DataSourceName&gt;nsgReportDataSource1&lt;/DataSourceName&gt;
+          &lt;Filters isList="true" count="0" /&gt;
+          &lt;Name&gt;Данные1&lt;/Name&gt;
+          &lt;Page isRef="3" /&gt;
+          &lt;Parent isRef="3" /&gt;
+          &lt;Restrictions&gt;All&lt;/Restrictions&gt;
+          &lt;Sort isList="true" count="0" /&gt;
+        &lt;/Данные1&gt;
+      &lt;/Components&gt;
+      &lt;Conditions isList="true" count="0" /&gt;
+      &lt;Guid&gt;de050307cd464d398be4b31a8f3ce735&lt;/Guid&gt;
+      &lt;Margins&gt;1,1,1,1&lt;/Margins&gt;
+      &lt;Name&gt;Страница1&lt;/Name&gt;
+      &lt;Orientation&gt;Landscape&lt;/Orientation&gt;
+      &lt;Page isRef="3" /&gt;
+      &lt;PageHeight&gt;21&lt;/PageHeight&gt;
+      &lt;PageWidth&gt;29.7&lt;/PageWidth&gt;
+      &lt;Report isRef="0" /&gt;
+      &lt;Watermark Ref="11" type="NsgSoft.ReportBuilder.Components.StiWatermark" isKey="true"&gt;
+        &lt;Font&gt;Arial,100&lt;/Font&gt;
+        &lt;TextBrush&gt;[50:0:0:0]&lt;/TextBrush&gt;
+      &lt;/Watermark&gt;
+    &lt;/Страница1&gt;
+  &lt;/Pages&gt;
+  &lt;PrinterSettings Ref="12" type="NsgSoft.ReportBuilder.Print.StiPrinterSettings" isKey="true" /&gt;
+  &lt;ReferencedAssemblies isList="true" count="13"&gt;
+    &lt;value&gt;System.Dll&lt;/value&gt;
+    &lt;value&gt;System.Drawing.Dll&lt;/value&gt;
+    &lt;value&gt;System.Windows.Forms.Dll&lt;/value&gt;
+    &lt;value&gt;System.Data.Dll&lt;/value&gt;
+    &lt;value&gt;System.Xml.Dll&lt;/value&gt;
+    &lt;value&gt;NsgSoft.ReportControls.Dll&lt;/value&gt;
+    &lt;value&gt;NsgSoft.ReportBase.Dll&lt;/value&gt;
+    &lt;value&gt;NsgSoft.ReportBuilder.Dll&lt;/value&gt;
+    &lt;value&gt;NsgSoft.Common.Dll&lt;/value&gt;
+    &lt;value&gt;NsgSoft.Database.Dll&lt;/value&gt;
+    &lt;value&gt;NsgSoft.DataObjects.Dll&lt;/value&gt;
+    &lt;value&gt;NsgSoft.Design.Dll&lt;/value&gt;
+    &lt;value&gt;NsgSoft.Forms.Dll&lt;/value&gt;
+  &lt;/ReferencedAssemblies&gt;
+  &lt;ReportAlias&gt;Отчет&lt;/ReportAlias&gt;
+  &lt;ReportChanged&gt;12/24/2007 6:58:58 PM&lt;/ReportChanged&gt;
+  &lt;ReportCreated&gt;12/20/2007 2:19:30 PM&lt;/ReportCreated&gt;
+  &lt;ReportGuid&gt;df91a4382ac1446f84cd36304482e526&lt;/ReportGuid&gt;
+  &lt;ReportName&gt;Отчет&lt;/ReportName&gt;
+  &lt;ReportUnit&gt;Centimeters&lt;/ReportUnit&gt;
+  &lt;ReportVersion&gt;2007.2&lt;/ReportVersion&gt;
+  &lt;Script&gt;using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using NsgSoft.ReportControls;
+using NsgSoft.ReportBase.Drawing;
+using NsgSoft.ReportBuilder;
+using NsgSoft.ReportBuilder.Dialogs;
+using NsgSoft.ReportBuilder.Components;
+
+namespace Reports
+{
+    
+    public class Отчет : NsgSoft.ReportBuilder.NsgReport
+    {
+        
+        public Отчет()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify#endregion StiReport Designer generated code - do not modify
+    }
+}&lt;/Script&gt;
+  &lt;ScriptLanguage&gt;CSharp&lt;/ScriptLanguage&gt;
+  &lt;Styles isList="true" count="0" /&gt;
+&lt;/StiSerializer&gt;</value>
+  </data>
+  <metadata name="saveFileDialogExport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>559, 56</value>
+  </metadata>
+</root>
