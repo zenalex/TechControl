@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2023.7.31.0</ProductVersion>
+    <ProductVersion>2023.9.21.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -4230,6 +4230,72 @@
     <Compile Include="Метаданные\Перечисления\ВидыПериодов\ВидыПериодов.cs">
       <NsgOwnerGuid>fb714f67-f0be-4e93-a355-ae5413271c0a</NsgOwnerGuid>
       <NsgOwnerName>ВидыПериодов</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоИнструменту\ОтчетПоИнструменту.NsgInit.cs">
+      <NsgOwnerGuid>27b64ee4-a29e-43f0-b11d-50e146068afa</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетПоИнструменту</NsgOwnerName>
+      <DependentUpon>ОтчетПоИнструменту.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоИнструменту\ОтчетПоИнструменту.cs">
+      <NsgOwnerGuid>27b64ee4-a29e-43f0-b11d-50e146068afa</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетПоИнструменту</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоИнструменту\Форма.Designer.cs">
+      <NsgOwnerGuid>27b64ee4-a29e-43f0-b11d-50e146068afa</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоИнструменту\Форма.cs">
+      <NsgOwnerGuid>27b64ee4-a29e-43f0-b11d-50e146068afa</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Отчеты\ОтчетПоИнструменту\Форма.resx">
+      <NsgOwnerGuid>27b64ee4-a29e-43f0-b11d-50e146068afa</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Справочники\ТипыОбъектов\ТипыОбъектов.NsgInit.cs">
+      <NsgOwnerGuid>00773bc9-dcda-4181-85fd-1262d39a83b1</NsgOwnerGuid>
+      <NsgOwnerName>ТипыОбъектов</NsgOwnerName>
+      <DependentUpon>ТипыОбъектов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Справочники\ТипыОбъектов\ТипыОбъектов.cs">
+      <NsgOwnerGuid>00773bc9-dcda-4181-85fd-1262d39a83b1</NsgOwnerGuid>
+      <NsgOwnerName>ТипыОбъектов</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Справочники\ТипыОбъектов\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>00773bc9-dcda-4181-85fd-1262d39a83b1</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Справочники\ТипыОбъектов\ФормаЭлемента.cs">
+      <NsgOwnerGuid>00773bc9-dcda-4181-85fd-1262d39a83b1</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Справочники\ТипыОбъектов\ФормаЭлемента.resx">
+      <NsgOwnerGuid>00773bc9-dcda-4181-85fd-1262d39a83b1</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Справочники\ТипыОбъектов\СправочникиТипыОбъектовТаблицаНоменлатуры.NsgInit.cs">
+      <NsgOwnerGuid>559bb1fa-02a3-40ad-af63-f50de23f7d34</NsgOwnerGuid>
+      <NsgOwnerName>СправочникиТипыОбъектовТаблицаНоменлатуры</NsgOwnerName>
+      <DependentUpon>СправочникиТипыОбъектовТаблицаНоменлатуры.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Справочники\ТипыОбъектов\СправочникиТипыОбъектовТаблицаНоменлатуры.cs">
+      <NsgOwnerGuid>559bb1fa-02a3-40ad-af63-f50de23f7d34</NsgOwnerGuid>
+      <NsgOwnerName>СправочникиТипыОбъектовТаблицаНоменлатуры</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Справочники\ТипыОбъектов\СправочникиТипыОбъектовТаблицаНоменлатуры.Строка.NsgInit.cs">
+      <NsgOwnerGuid>559bb1fa-02a3-40ad-af63-f50de23f7d34</NsgOwnerGuid>
+      <NsgOwnerName>СправочникиТипыОбъектовТаблицаНоменлатуры</NsgOwnerName>
+      <DependentUpon>СправочникиТипыОбъектовТаблицаНоменлатуры.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Справочники\ТипыОбъектов\СправочникиТипыОбъектовТаблицаНоменлатуры.Строка.cs">
+      <NsgOwnerGuid>559bb1fa-02a3-40ad-af63-f50de23f7d34</NsgOwnerGuid>
+      <NsgOwnerName>СправочникиТипыОбъектовТаблицаНоменлатуры</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>

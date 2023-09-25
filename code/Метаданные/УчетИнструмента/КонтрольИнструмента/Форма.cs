@@ -76,6 +76,8 @@ namespace TechControl.Метаданные.УчетИнструмента
                 return;
             }
 
+            vmoТаблицаВыдачи.Data.BeginUpdateData();
+            vmoТаблицаВыдачи.Data.MemoryTable.Clear();
             if (СотрудникПолучатель.Value.Selected)
             {
                 var должность = СотрудникПолучатель.Value.Должность;
@@ -86,18 +88,17 @@ namespace TechControl.Метаданные.УчетИнструмента
                         var номенклатура = item.Номенклатура;
                         if (номенклатура.Selected && (номенклатура.ТипНоменклатуры == ТипНоменклатуры.Инструменты || номенклатура.ТипНоменклатуры == ТипНоменклатуры.МатериальныеЦенности))
                         {
-                            var row = vmoТаблицаВыдачи.Data.MemoryTable.NewRow();
-                            row[Номенклатура_vmoТаблицаВыдачи].Value = номенклатура;
-                            row.Post();
+                            for (int i = 0; i < item.Количество; i++)
+                            {
+                                var row = vmoТаблицаВыдачи.Data.MemoryTable.NewRow();
+                                row[Номенклатура_vmoТаблицаВыдачи].Value = номенклатура;
+                                row.Post();
+                            }
                         }
                     }
                 }
             }
-        }
-
-        private void ЗаполнитьОстатки() 
-        {
-            
+            vmoТаблицаВыдачи.Data.UpdateDataSync(this);
         }
 
         private void nsgIGrid1_CellRequestEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
@@ -105,9 +106,10 @@ namespace TechControl.Метаданные.УчетИнструмента
             if (e.ColumnName == Выдать_vmoТаблицаВыдачи.Name)
             {
                 var объект = ОбъектВыдачи.Value;
-                if (!объект.Selected)
+                var сотрудник = СотрудникВыдачи.Value;
+                if (!объект.Selected && !сотрудник.Selected)
                 {
-                    NsgSettings.MainForm.ShowMessage("Необходимо указать объект выдачи.");
+                    NsgSettings.MainForm.ShowMessage("Необходимо указать объект или сотрудника выдачи.");
                     e.Cancel = true;
                     return;
                 }
@@ -117,13 +119,20 @@ namespace TechControl.Метаданные.УчетИнструмента
                 if (номенклатура.Selected)
                 {
                     var reg = РегистрУчетИнструмента.Новый();
-                    reg.Объект = объект;
+                    if (объект.Selected)
+                    {
+                        reg.Объект = объект;
+                    }
+                    if (сотрудник.Selected)
+                    {
+                        reg.Сотрудник = сотрудник;
+                    }
                     if (серийныйНомер != string.Empty)
                     {
                         reg.СерийныйНомер = серийныйНомер;
                         if (!reg.GetRest())
                         {
-                            NsgSettings.MainForm.ShowMessage("На объекте на зарегистрирована номенклатура с указанным серийным номером.");
+                            NsgSettings.MainForm.ShowMessage("На объекте или у сотрудника не зарегистрирована номенклатура с указанным серийным номером.");
                             e.Cancel = true;
                             return;
                         }
@@ -137,14 +146,21 @@ namespace TechControl.Метаданные.УчетИнструмента
                         var всеДвижения = движ.FindAll(cmp);
                         if (всеДвижения != null && всеДвижения.Length > 0)
                         {
-                            var ужеУказанныеСерийники = nsgVisualMultipleObject.Data.MemoryTable.AllRows.Select(x => x[СерийныйНомер_vmoТаблицаВыдачи].ToString()).ToArray();
+                            var ужеУказанныеСерийники = vmoТаблицаВыдачи.Data.MemoryTable.AllRows.Select(x => x[СерийныйНомер_vmoТаблицаВыдачи].ToString()).ToArray();
                             string серийник = string.Empty;
                             foreach (var номер in всеДвижения.Select(x => x.СерийныйНомер).Distinct().ToArray())
                             {
                                 if (!ужеУказанныеСерийники.Contains(номер))
                                 {
                                     reg.New();
-                                    reg.Объект = объект;
+                                    if (объект.Selected)
+                                    {
+                                        reg.Объект = объект;
+                                    }
+                                    if (сотрудник.Selected)
+                                    {
+                                        reg.Сотрудник = сотрудник;
+                                    }
                                     reg.СерийныйНомер = номер;
                                     if (reg.GetRest())
                                     {
@@ -176,9 +192,11 @@ namespace TechControl.Метаданные.УчетИнструмента
 
             if (e.ColumnName == СерийныйНомер_vmoТаблицаВыдачи.Name)
             {
-                if (!ОбъектВыдачи.Value.Selected)
+                var объект = ОбъектВыдачи.Value;
+                var сотрудник = СотрудникВыдачи.Value;
+                if (!объект.Selected && !сотрудник.Selected)
                 {
-                    NsgSettings.MainForm.ShowMessage("Необходимо указать объект выдачи.");
+                    NsgSettings.MainForm.ShowMessage("Необходимо указать объект или сотрудника выдачи.");
                     e.Cancel = true;
                     return;
                 }
@@ -188,7 +206,14 @@ namespace TechControl.Метаданные.УчетИнструмента
                 if (номенклатура.Selected)
                 {
                     var reg = РегистрУчетИнструмента.Новый();
-                    reg.Объект = ОбъектВыдачи.Value;
+                    if (объект.Selected)
+                    {
+                        reg.Объект = объект;
+                    }
+                    if (сотрудник.Selected)
+                    {
+                        reg.Сотрудник = сотрудник;
+                    }
                     reg.СерийныйНомер = серийныйНомер;
                     if (!reg.GetRest())
                     {
@@ -198,15 +223,14 @@ namespace TechControl.Метаданные.УчетИнструмента
                     }
                     else
                     {
-                        var объект = ОбъектВыдачи.Value;
-                        if (номенклатура.Selected && объект.Selected)
+                        if (номенклатура.Selected && (объект.Selected || сотрудник.Selected))
                         {
                             DialogResult dialogResult = DialogResult.None;
                             string серийник = string.Empty;
-                            var ужеУказанныеСерийники = nsgVisualMultipleObject.Data.MemoryTable.AllRows.Select(x => x[СерийныйНомер_vmoТаблицаВыдачи].ToString()).ToArray();
+                            var ужеУказанныеСерийники = vmoТаблицаВыдачи.Data.MemoryTable.AllRows.Select(x => x[СерийныйНомер_vmoТаблицаВыдачи].ToString()).ToArray();
                             Invoke(new MethodInvoker(() =>
                             {
-                                var iФормаВыбораСерийника = new ДопФормы.ФормаВыбораСерийника(номенклатура, объект, ужеУказанныеСерийники);
+                                var iФормаВыбораСерийника = new ДопФормы.ФормаВыбораСерийника(номенклатура, объект, сотрудник, ужеУказанныеСерийники);
                                 iФормаВыбораСерийника.ShowDialog(this);
                                 dialogResult = iФормаВыбораСерийника.DialogResult;
                                 if (dialogResult != DialogResult.OK)
@@ -217,7 +241,7 @@ namespace TechControl.Метаданные.УчетИнструмента
                                 серийник = iФормаВыбораСерийника.ВыбранныйСерийник;
                             }));
 
-                            e.RowObject[серийныйНомер].Value = серийник;
+                            e.RowObject[СерийныйНомер_vmoТаблицаВыдачи].Value = серийник;
                         }
                     }
                 }
@@ -227,9 +251,10 @@ namespace TechControl.Метаданные.УчетИнструмента
         private void nbВыдать_AsyncClick(object sender, DoWorkEventArgs e)
         {
             var объектВыдачи = ОбъектВыдачи.Value;
-            if (!объектВыдачи.Selected)
+            var сотрудникВыдачи = СотрудникВыдачи.Value;
+            if (!объектВыдачи.Selected && !сотрудникВыдачи.Selected)
             {
-                NsgSettings.MainForm.ShowMessage("Необходимо выбрать объект выдачи");
+                NsgSettings.MainForm.ShowMessage("Необходимо выбрать объект или сотрудника выдачи");
                 return;
             }
 
@@ -244,7 +269,15 @@ namespace TechControl.Метаданные.УчетИнструмента
             var перемещение = ПеремещениеИнструмента.Новый();
             перемещение.New();
             перемещение.ТребуетсяПодтверждение = cbТребуетсяПодтверждение.Checked;
-            перемещение.Отправитель = объектВыдачи;
+            if (объектВыдачи.Selected)
+            {
+                перемещение.Отправитель =  объектВыдачи;
+            }
+            else
+            {
+                перемещение.Отправитель = сотрудникВыдачи;
+            }
+            
             if (сотрудник.Selected)
             {
                 перемещение.Получатель = сотрудник;
@@ -254,7 +287,10 @@ namespace TechControl.Метаданные.УчетИнструмента
                 перемещение.Получатель = объект;
             }
 
-            foreach (var item in nsgVisualMultipleObject.Data.MemoryTable.AllRows)
+            перемещение.ОбъектПередавший = объектВыдачи;
+            перемещение.СотрудникПередавший = сотрудникВыдачи;
+
+            foreach (var item in vmoТаблицаВыдачи.Data.MemoryTable.AllRows)
             {
                 if (item[Выдать_vmoТаблицаВыдачи].ToBoolean())
                 {
@@ -299,6 +335,8 @@ namespace TechControl.Метаданные.УчетИнструмента
 
             var reg = РегистрУчетИнструмента.Новый();
             var остатки = reg.GetRests(cmp);
+            vmoТаблицаПодтверждения.Data.BeginUpdateData();
+            vmoТаблицаПодтверждения.Data.MemoryTable.Clear();
 
             foreach (var item in остатки.AllRows)
             {
@@ -312,6 +350,7 @@ namespace TechControl.Метаданные.УчетИнструмента
                     row.Post();
                 }
             }
+            vmoТаблицаПодтверждения.Data.UpdateDataSync(this);
         }
 
         private void nbОбработатьПодтверждения_AsyncClick(object sender, DoWorkEventArgs e)
@@ -325,12 +364,15 @@ namespace TechControl.Метаданные.УчетИнструмента
             var сотрудник = СотрудникПодтверждение.Value;
             if (объект.Selected)
             {
-                возврат.Отправитель = объект;
+                возврат.Получатель = объект;
             }
             else if (сотрудник.Selected)
             {
-                возврат.Отправитель = сотрудник;
+                возврат.Получатель = сотрудник;
             }
+            подтверждение.Объект = объект;
+            подтверждение.Сотрудник = сотрудник;
+
             foreach (var item in vmoТаблицаПодтверждения.Data.MemoryTable.AllRows)
             {
                 if (item[ПодтвердитьПолучение_vmoТаблицаПодтверждения].ToBoolean())
@@ -384,16 +426,34 @@ namespace TechControl.Метаданные.УчетИнструмента
             }
 
             var всеИнструменты = рег.GetRests();
+            Dictionary<string, NsgMemoryTableRow> словарьОстатков = new Dictionary<string, NsgMemoryTableRow>();
+            foreach (var item in всеИнструменты.AllRows)
+            {
+                var серийник = item[РегистрУчетИнструмента.Names.СерийныйНомер].ToString();
+                if (словарьОстатков.ContainsKey(серийник))
+                {
+                    var текущаяДата = item[РегистрУчетИнструмента.Names.Дата].ToDateTime();
+                    var датаВСтроке = словарьОстатков[серийник][РегистрУчетИнструмента.Names.Дата].ToDateTime();
+                    if (датаВСтроке < текущаяДата)
+                    {
+                        словарьОстатков[серийник] = item;
+                    }
+                }
+                else
+                {
+                    словарьОстатков[серийник] = item;
+                }
+            }
             vmoСменаСерийников.Data.BeginUpdateData();
             vmoСменаСерийников.Data.MemoryTable.Clear();
 
-            foreach (var item in всеИнструменты.AllRows)
+            foreach (var item in словарьОстатков)
             {
                 var row = vmoСменаСерийников.Data.MemoryTable.NewRow();
-                row[Номенклатура_vmoСменаСерийников].Value = item[РегистрУчетИнструмента.Names.НоменклатураИнструмента].ToReferent() as Номенклатура;
-                row[ТекущийСерийник_vmoСменаСерийников].Value = item[РегистрУчетИнструмента.Names.СерийныйНомер].ToString();
-                row[Объект_vmoСменаСерийников].Value = item[РегистрУчетИнструмента.Names.Объект].ToReferent() as Объекты;
-                row[Сотрудник_vmoСменаСерийников].Value = item[РегистрУчетИнструмента.Names.Сотрудник].ToReferent() as Сотрудники;
+                row[Номенклатура_vmoСменаСерийников].Value = item.Value[РегистрУчетИнструмента.Names.НоменклатураИнструмента].ToReferent() as Номенклатура;
+                row[ТекущийСерийник_vmoСменаСерийников].Value = item.Value[РегистрУчетИнструмента.Names.СерийныйНомер].ToString();
+                row[Объект_vmoСменаСерийников].Value = item.Value[РегистрУчетИнструмента.Names.Объект].ToReferent() as Объекты;
+                row[Сотрудник_vmoСменаСерийников].Value = item.Value[РегистрУчетИнструмента.Names.Сотрудник].ToReferent() as Сотрудники;
                 row.Post();
             }
             vmoСменаСерийников.Data.UpdateDataSync(this);
@@ -428,20 +488,24 @@ namespace TechControl.Метаданные.УчетИнструмента
                             if (текущийСерийник != string.Empty)
                             {
                                 УчетИнструментаРегистрУчетИнструментаДвижения движСтарый = УчетИнструментаРегистрУчетИнструментаДвижения.Новый();
+                                //РегистрУчетИнструмента движСтарый = РегистрУчетИнструмента.Новый();
                                 var cmpСтарый = new NsgCompare();
                                 cmpСтарый.Add(УчетИнструментаРегистрУчетИнструментаДвижения.Names.СерийныйНомер, текущийСерийник);
-                                var всеЗаписиСТекущимСерийником = движСтарый.FindAll(cmp);
-                                if (всеЗаписиСТекущимСерийником.Length > 0)
+                                //cmpСтарый.Add(РегистрУчетИнструмента.Names.СерийныйНомер, текущийСерийник);
+                                var всеЗаписиСТекущимСерийником = движСтарый.SelectCount(cmpСтарый);
+                                if (всеЗаписиСТекущимСерийником > 0)
                                 {
                                     try
                                     {
                                         NsgSettings.BeginTransaction();
-                                        foreach (var запись in всеЗаписиСТекущимСерийником)
-                                        {
-                                            запись.Edit();
-                                            запись.СерийныйНомер = новыйСерийник;
-                                            запись.Post();
-                                        }
+                                        движСтарый.СерийныйНомер = новыйСерийник;
+                                        движСтарый.UpdateArray(cmpСтарый, движСтарый.ObjectList[УчетИнструментаРегистрУчетИнструментаДвижения.Names.СерийныйНомер]);
+                                        //foreach (var запись in всеЗаписиСТекущимСерийником)
+                                        //{
+                                        //    запись.Edit();
+                                        //    запись.СерийныйНомер = новыйСерийник;
+                                        //    запись.Post();
+                                        //}
                                         NsgSettings.CommitTransaction();
                                         NsgSettings.MainForm.ShowMessage($"{новыйСерийник} присвоен в {текущийСерийник}");
                                     }
@@ -459,6 +523,84 @@ namespace TechControl.Метаданные.УчетИнструмента
             }
 
             nbПоказатьИнструменты_AsyncClick(null, null);
+        }
+
+        private void nsgIGrid2_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.ColumnName == ПодтвердитьПолучение_vmoТаблицаПодтверждения.Name)
+            {
+                if (e.RowObject[ПодтвердитьПолучение_vmoТаблицаПодтверждения].ToBoolean())
+                {
+                    e.RowObject[ОформитьВозврать_vmoТаблицаПодтверждения].Value = false;
+                }
+            }
+
+            if (e.ColumnName == ОформитьВозврать_vmoТаблицаПодтверждения.Name)
+            {
+                if (e.RowObject[ОформитьВозврать_vmoТаблицаПодтверждения].ToBoolean())
+                {
+                    e.RowObject[ПодтвердитьПолучение_vmoТаблицаПодтверждения].Value = false;
+                }
+            }
+        }
+
+        private void nsgIGrid3_CellRequestEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.ColumnName == Подтвердить_vmoСменаСерийников.Name)
+            {
+                var новыйСерийник = e.RowObject[НовыйСерийник_vmoСменаСерийников].ToString();
+                if (новыйСерийник == string.Empty)
+                {
+                    NsgSettings.MainForm.ShowMessage("Необходимо указать новый серийный номер");
+                    e.Cancel = true;
+                    return;
+                }
+                else
+                {
+                    УчетИнструментаРегистрУчетИнструментаДвижения движСтарый = УчетИнструментаРегистрУчетИнструментаДвижения.Новый();
+                    var cmpСтарый = new NsgCompare();
+                    cmpСтарый.Add(УчетИнструментаРегистрУчетИнструментаДвижения.Names.СерийныйНомер, новыйСерийник);
+                    if (движСтарый.SelectCount(cmpСтарый) > 0)
+                    {
+                        NsgSettings.MainForm.ShowMessage("Указанный новый серийный номер уже занят. Проверьте правильность заполнения данных.");
+                        e.Cancel = true;
+                        return;
+                    } 
+                }
+            }
+        }
+
+        private void nbЗаполнитьПоОбъекту_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            if (!ОбъектПолучатель.Value.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Необходимо выбрать объект");
+                return;
+            }
+
+            vmoТаблицаВыдачи.Data.BeginUpdateData();
+            vmoТаблицаВыдачи.Data.MemoryTable.Clear();
+            if (ОбъектПолучатель.Value.Selected)
+            {
+                var тип = ОбъектПолучатель.Value.ТипОбъекта;
+                if (тип.Selected)
+                {
+                    foreach (var item in тип.ТаблицаНоменлатуры.AllRows)
+                    {
+                        var номенклатура = item.Номенклатура;
+                        if (номенклатура.Selected && (номенклатура.ТипНоменклатуры == ТипНоменклатуры.Инструменты || номенклатура.ТипНоменклатуры == ТипНоменклатуры.МатериальныеЦенности))
+                        {
+                            for (int i = 0; i < item.Количество; i++)
+                            {
+                                var row = vmoТаблицаВыдачи.Data.MemoryTable.NewRow();
+                                row[Номенклатура_vmoТаблицаВыдачи].Value = номенклатура;
+                                row.Post();
+                            }
+                        }
+                    }
+                }
+            }
+            vmoТаблицаВыдачи.Data.UpdateDataSync(this);
         }
     }
     

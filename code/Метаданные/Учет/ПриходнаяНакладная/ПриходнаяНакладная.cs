@@ -20,7 +20,7 @@ namespace TechControl.Метаданные.Учет
         protected override bool Handling()
         {
             bool снятиеРезервов = true;
-            if (ДокументОснование.Selected)
+            if (ДокументОснование != null && ДокументОснование.Selected)
             {
                 if (ДокументОснование is ЗаявкаНаСотрудника заявкаНаСотрудника)
                 {

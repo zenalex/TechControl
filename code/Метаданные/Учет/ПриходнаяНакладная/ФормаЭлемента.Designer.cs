@@ -421,7 +421,6 @@ namespace TechControl.Метаданные.Учет
             nsgIGridColumn1.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn1.DateFormat = null;
-            nsgIGridColumn1.ImportedFromVMO = false;
             nsgIGridColumn1.InitiateRowEdit = true;
             nsgIGridColumn1.Name = "Владелец";
             nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -439,7 +438,6 @@ namespace TechControl.Метаданные.Учет
         "Visible",
         "Index"};
             nsgIGridColumn2.DateFormat = null;
-            nsgIGridColumn2.ImportedFromVMO = false;
             nsgIGridColumn2.InitiateRowEdit = true;
             nsgIGridColumn2.Name = "Номенклатура";
             nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -456,7 +454,6 @@ namespace TechControl.Метаданные.Учет
         "Visible",
         "Index"};
             nsgIGridColumn3.DateFormat = null;
-            nsgIGridColumn3.ImportedFromVMO = false;
             nsgIGridColumn3.InitiateRowEdit = true;
             nsgIGridColumn3.Name = "СвойствоНоменклатуры";
             nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -473,7 +470,6 @@ namespace TechControl.Метаданные.Учет
         "Visible",
         "Index"};
             nsgIGridColumn4.DateFormat = null;
-            nsgIGridColumn4.ImportedFromVMO = false;
             nsgIGridColumn4.InitiateRowEdit = true;
             nsgIGridColumn4.Name = "Количество";
             nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -491,7 +487,6 @@ namespace TechControl.Метаданные.Учет
         "Visible",
         "Index"};
             nsgIGridColumn5.DateFormat = null;
-            nsgIGridColumn5.ImportedFromVMO = false;
             nsgIGridColumn5.InitiateRowEdit = true;
             nsgIGridColumn5.Name = "Цена";
             nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -508,7 +503,6 @@ namespace TechControl.Метаданные.Учет
         "Visible",
         "Index"};
             nsgIGridColumn6.DateFormat = null;
-            nsgIGridColumn6.ImportedFromVMO = false;
             nsgIGridColumn6.InitiateRowEdit = true;
             nsgIGridColumn6.Name = "Стоимость";
             nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
@@ -1099,9 +1093,9 @@ namespace TechControl.Метаданные.Учет
             // 
             this.nsgInput6.BackColor = System.Drawing.SystemColors.Window;
             this.nsgInput6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nsgInput6.ConfigurationName = "";
+            this.nsgInput6.ConfigurationName = "TechControl";
             this.nsgInput6.DisableLeaveControlEvent = false;
-            this.nsgInput6.FullName = "ДокументОснование";
+            this.nsgInput6.FullName = "Учет.ПриходнаяНакладная.ДокументОснование";
             this.nsgInput6.FullTextSearch = false;
             this.nsgInput6.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.nsgInput6.IsButton = false;
@@ -1110,7 +1104,7 @@ namespace TechControl.Метаданные.Учет
             this.nsgInput6.Location = new System.Drawing.Point(132, 44);
             this.nsgInput6.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput6.Mask = "";
-            this.nsgInput6.MetaDataName = "";
+            this.nsgInput6.MetaDataName = "Метаданные";
             this.nsgInput6.MinimumSize = new System.Drawing.Size(4, 20);
             this.nsgInput6.Name = "NsgInput";
             this.nsgInput6.ObjectImages = null;
