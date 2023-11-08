@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2023.9.21.0</ProductVersion>
+    <ProductVersion>2023.10.16.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -4221,5 +4221,116 @@
       <NsgOwnerGuid>559bb1fa-02a3-40ad-af63-f50de23f7d34</NsgOwnerGuid>
       <NsgOwnerName>СправочникиТипыОбъектовТаблицаНоменлатуры</NsgOwnerName>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФПриказОНазначенииСотрудника\ПФПриказОНазначенииСотрудника.NsgInit.cs">
+      <NsgOwnerGuid>89f008ba-847b-433e-8363-24cdfe0deb3b</NsgOwnerGuid>
+      <NsgOwnerName>ПФПриказОНазначенииСотрудника</NsgOwnerName>
+      <DependentUpon>ПФПриказОНазначенииСотрудника.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФПриказОНазначенииСотрудника\ПФПриказОНазначенииСотрудника.cs">
+      <NsgOwnerGuid>89f008ba-847b-433e-8363-24cdfe0deb3b</NsgOwnerGuid>
+      <NsgOwnerName>ПФПриказОНазначенииСотрудника</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФПриказОНазначенииСотрудника\Форма.Designer.cs">
+      <NsgOwnerGuid>89f008ba-847b-433e-8363-24cdfe0deb3b</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФПриказОНазначенииСотрудника\Форма.cs">
+      <NsgOwnerGuid>89f008ba-847b-433e-8363-24cdfe0deb3b</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\ПечатныеФормыДокументов\ПФПриказОНазначенииСотрудника\Форма.resx">
+      <NsgOwnerGuid>89f008ba-847b-433e-8363-24cdfe0deb3b</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\УчетСотрудников\РегистрУчетСотрудников\РегистрУчетСотрудников.NsgInit.cs">
+      <NsgOwnerGuid>dd66f499-8982-45ce-89c4-0189b3fef43b</NsgOwnerGuid>
+      <NsgOwnerName>РегистрУчетСотрудников</NsgOwnerName>
+      <DependentUpon>РегистрУчетСотрудников.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\РегистрУчетСотрудников\РегистрУчетСотрудников.cs">
+      <NsgOwnerGuid>dd66f499-8982-45ce-89c4-0189b3fef43b</NsgOwnerGuid>
+      <NsgOwnerName>РегистрУчетСотрудников</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\РегистрУчетСотрудников\УчетСотрудниковРегистрУчетСотрудниковДвижения.NsgInit.cs">
+      <NsgOwnerGuid>e6a6fc8d-87f8-4ba1-80c8-a14d7421492a</NsgOwnerGuid>
+      <NsgOwnerName>УчетСотрудниковРегистрУчетСотрудниковДвижения</NsgOwnerName>
+      <DependentUpon>УчетСотрудниковРегистрУчетСотрудниковДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\РегистрУчетСотрудников\УчетСотрудниковРегистрУчетСотрудниковДвижения.cs">
+      <NsgOwnerGuid>e6a6fc8d-87f8-4ba1-80c8-a14d7421492a</NsgOwnerGuid>
+      <NsgOwnerName>УчетСотрудниковРегистрУчетСотрудниковДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\РегистрУчетСотрудников\УчетСотрудниковРегистрУчетСотрудниковДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>e6a6fc8d-87f8-4ba1-80c8-a14d7421492a</NsgOwnerGuid>
+      <NsgOwnerName>УчетСотрудниковРегистрУчетСотрудниковДвижения</NsgOwnerName>
+      <DependentUpon>УчетСотрудниковРегистрУчетСотрудниковДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\РегистрУчетСотрудников\УчетСотрудниковРегистрУчетСотрудниковДвижения.Строка.cs">
+      <NsgOwnerGuid>e6a6fc8d-87f8-4ba1-80c8-a14d7421492a</NsgOwnerGuid>
+      <NsgOwnerName>УчетСотрудниковРегистрУчетСотрудниковДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\НазначенияСотрудников\УчетСотрудниковНазначенияСотрудниковТаблица.NsgInit.cs">
+      <NsgOwnerGuid>d98086c0-116a-43d6-ae77-808cfbc994b6</NsgOwnerGuid>
+      <NsgOwnerName>УчетСотрудниковНазначенияСотрудниковТаблица</NsgOwnerName>
+      <DependentUpon>УчетСотрудниковНазначенияСотрудниковТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\НазначенияСотрудников\УчетСотрудниковНазначенияСотрудниковТаблица.cs">
+      <NsgOwnerGuid>d98086c0-116a-43d6-ae77-808cfbc994b6</NsgOwnerGuid>
+      <NsgOwnerName>УчетСотрудниковНазначенияСотрудниковТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\НазначенияСотрудников\УчетСотрудниковНазначенияСотрудниковТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>d98086c0-116a-43d6-ae77-808cfbc994b6</NsgOwnerGuid>
+      <NsgOwnerName>УчетСотрудниковНазначенияСотрудниковТаблица</NsgOwnerName>
+      <DependentUpon>УчетСотрудниковНазначенияСотрудниковТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\НазначенияСотрудников\УчетСотрудниковНазначенияСотрудниковТаблица.Строка.cs">
+      <NsgOwnerGuid>d98086c0-116a-43d6-ae77-808cfbc994b6</NsgOwnerGuid>
+      <NsgOwnerName>УчетСотрудниковНазначенияСотрудниковТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\ПриказОНазначенииСотрудника\ПриказОНазначенииСотрудника.NsgInit.cs">
+      <NsgOwnerGuid>dffa0ca6-19b7-44e4-a81d-cb53add5ae91</NsgOwnerGuid>
+      <NsgOwnerName>ПриказОНазначенииСотрудника</NsgOwnerName>
+      <DependentUpon>ПриказОНазначенииСотрудника.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\ПриказОНазначенииСотрудника\ПриказОНазначенииСотрудника.cs">
+      <NsgOwnerGuid>dffa0ca6-19b7-44e4-a81d-cb53add5ae91</NsgOwnerGuid>
+      <NsgOwnerName>ПриказОНазначенииСотрудника</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\НазначенияСотрудников\НазначенияСотрудников.NsgInit.cs">
+      <NsgOwnerGuid>3a993b38-0b5b-4a7d-9c64-f831d1544175</NsgOwnerGuid>
+      <NsgOwnerName>НазначенияСотрудников</NsgOwnerName>
+      <DependentUpon>НазначенияСотрудников.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\НазначенияСотрудников\НазначенияСотрудников.cs">
+      <NsgOwnerGuid>3a993b38-0b5b-4a7d-9c64-f831d1544175</NsgOwnerGuid>
+      <NsgOwnerName>НазначенияСотрудников</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\УчетСотрудников\УправлениеСотрудниками\УправлениеСотрудниками.NsgInit.cs">
+      <NsgOwnerGuid>58387771-8f1c-46c0-ae71-1ccdfad7689f</NsgOwnerGuid>
+      <NsgOwnerName>УправлениеСотрудниками</NsgOwnerName>
+      <DependentUpon>УправлениеСотрудниками.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\УправлениеСотрудниками\УправлениеСотрудниками.cs">
+      <NsgOwnerGuid>58387771-8f1c-46c0-ae71-1ccdfad7689f</NsgOwnerGuid>
+      <NsgOwnerName>УправлениеСотрудниками</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\УправлениеСотрудниками\Форма.Designer.cs">
+      <NsgOwnerGuid>58387771-8f1c-46c0-ae71-1ccdfad7689f</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\УправлениеСотрудниками\Форма.cs">
+      <NsgOwnerGuid>58387771-8f1c-46c0-ae71-1ccdfad7689f</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\УчетСотрудников\УправлениеСотрудниками\Форма.resx">
+      <NsgOwnerGuid>58387771-8f1c-46c0-ae71-1ccdfad7689f</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
