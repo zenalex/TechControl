@@ -4333,4 +4333,24 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаКомплектованияСмен.NsgInit.cs">
+      <NsgOwnerGuid>af7a8df4-27b7-4e9f-a193-bc4c236eed23</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаКомплектованияСмен</NsgOwnerName>
+      <DependentUpon>МониторингОбъектыТаблицаКомплектованияСмен.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаКомплектованияСмен.cs">
+      <NsgOwnerGuid>af7a8df4-27b7-4e9f-a193-bc4c236eed23</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаКомплектованияСмен</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаКомплектованияСмен.Строка.NsgInit.cs">
+      <NsgOwnerGuid>af7a8df4-27b7-4e9f-a193-bc4c236eed23</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаКомплектованияСмен</NsgOwnerName>
+      <DependentUpon>МониторингОбъектыТаблицаКомплектованияСмен.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаКомплектованияСмен.Строка.cs">
+      <NsgOwnerGuid>af7a8df4-27b7-4e9f-a193-bc4c236eed23</NsgOwnerGuid>
+      <NsgOwnerName>МониторингОбъектыТаблицаКомплектованияСмен</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>
