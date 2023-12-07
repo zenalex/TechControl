@@ -36,6 +36,18 @@ namespace TechControl.Метаданные.Мониторинг
                 row.Post();
             }
         }
+
+        public bool ТребуетсяВыходНаРаботу(DateTime дата) 
+        {
+            foreach (var item in ТаблицаГрафик.AllRows)
+            {
+                if (item.ДеньНедели == ДеньНедели.ByDayOfWeek[дата.DayOfWeek] && item.ВремяНачалаРабочегоДня.TimeOfDay <= дата.TimeOfDay && item.ВремяКонцаРабочегоДня.TimeOfDay >= дата.TimeOfDay)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
 }
