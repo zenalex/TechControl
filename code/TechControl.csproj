@@ -4431,4 +4431,24 @@
       <NsgOwnerName>МониторингОбъектыТаблицаКомплектованияСмен</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТаблицаДопущенныеДоУправленияДолжности.NsgInit.cs">
+      <NsgOwnerGuid>3e13e886-0693-4302-8131-6d87334ae9e3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТаблицаДопущенныеДоУправленияДолжности</NsgOwnerName>
+      <DependentUpon>МониторингТехникаТаблицаДопущенныеДоУправленияДолжности.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТаблицаДопущенныеДоУправленияДолжности.cs">
+      <NsgOwnerGuid>3e13e886-0693-4302-8131-6d87334ae9e3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТаблицаДопущенныеДоУправленияДолжности</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТаблицаДопущенныеДоУправленияДолжности.Строка.NsgInit.cs">
+      <NsgOwnerGuid>3e13e886-0693-4302-8131-6d87334ae9e3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТаблицаДопущенныеДоУправленияДолжности</NsgOwnerName>
+      <DependentUpon>МониторингТехникаТаблицаДопущенныеДоУправленияДолжности.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТаблицаДопущенныеДоУправленияДолжности.Строка.cs">
+      <NsgOwnerGuid>3e13e886-0693-4302-8131-6d87334ae9e3</NsgOwnerGuid>
+      <NsgOwnerName>МониторингТехникаТаблицаДопущенныеДоУправленияДолжности</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
 </Project>

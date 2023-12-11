@@ -49,7 +49,7 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void nsgIGridТарифыПерсонала_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
         {
-            if (e.ColumnName == Тариф_vmoТарифыПерсонал.Name && e.RowObject[Стоимость_vmoТарифыПерсонал].ToDecimal() == 0)
+            if (e.ColumnName == Тариф_vmoТарифыПерсонал.Name)
             {
                 e.RowObject[Стоимость_vmoТарифыПерсонал].Value = (e.CellObject.ToReferent() as Тарифы).Стоимость;
             }

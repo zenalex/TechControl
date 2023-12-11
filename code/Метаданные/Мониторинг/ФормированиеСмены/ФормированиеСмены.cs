@@ -156,6 +156,11 @@ namespace TechControl.Метаданные.Мониторинг
                     i.Post();
                 }
             }
+
+            if (НомерСмены == 0)
+            {
+                НомерСмены = 1;
+            }
             return base.BasePost();
         }
 

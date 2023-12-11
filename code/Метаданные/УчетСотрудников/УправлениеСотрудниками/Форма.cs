@@ -42,11 +42,13 @@ namespace TechControl.Метаданные.УчетСотрудников
         {
             var объект = Объект.Value;
             var дата = Дата.Value;
+            var номерСмены = НомерСмены.Value;
 
             var фомированиеСмены = ФормированиеСмены.Новый();
             var cmp = new NsgCompare();
             cmp.Add(ФормированиеСмены.Names.ДатаДокумента, NsgService.BeginOfDay(дата), NsgComparison.GreaterOrEqual);
             cmp.Add(ФормированиеСмены.Names.ДатаДокумента, NsgService.EndOfDay(дата), NsgComparison.LessOrEqual);
+            cmp.Add(ФормированиеСмены.Names.НомерСмены, номерСмены);
             cmp.Add(ФормированиеСмены.Names.Объект, объект);
             cmp.Add(ФормированиеСмены.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
             if (фомированиеСмены.Find(cmp))
@@ -62,7 +64,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                 {
                     if (item.РежимРаботы.ТребуетсяВыходНаРаботу(дата))
                     {
-                        if (item.Должность.Selected)
+                        if (item.Должность.Selected || item.Техника.Selected)
                         {
                             var количество = item.КоличествоДолжностей == 0 ? 1 : item.КоличествоДолжностей;
                             
@@ -73,6 +75,8 @@ namespace TechControl.Метаданные.УчетСотрудников
                                 row[дата_vmoТаблица].Value = дата;
                                 row[НачалоСмены_vmoТаблица].Value = дата;
                                 row[Должность_vmoТаблица].Value = item.Должность;
+                                row[Техника_vmoТаблица].Value = item.Техника;
+                                row[НомерСмены_vmoТаблица].Value = номерСмены;
                                 row.Post();
                             }
                         }
@@ -89,12 +93,17 @@ namespace TechControl.Метаданные.УчетСотрудников
             {
                 var объект = e.RowObject[Объект_vmoТаблица.Name].ToReferent() as Объекты;
                 var должность = e.RowObject[Должность_vmoТаблица.Name].ToReferent() as Должности;
+                var техника = e.RowObject[Техника_vmoТаблица.Name].ToReferent() as Техника;
                 if (объект.Selected)
                 {
                     Guid[] сотрудникиНаОбъекте = null;
                     if (должность.Selected)
                     {
                         сотрудникиНаОбъекте = объект.ТаблицаПерсонал.AllRows.Where(x => x.Должность == должность).Select(x => x.Сотрудник.Идентификатор).ToArray();
+                    }
+                    else if (техника.Selected)
+                    {
+                        сотрудникиНаОбъекте = объект.ТаблицаПерсонал.AllRows.Where(x => x.Сотрудник.ДопущенКУправлению(техника)).Select(x => x.Сотрудник.Идентификатор).ToArray();
                     }
                     else
                     {
@@ -125,33 +134,36 @@ namespace TechControl.Метаданные.УчетСотрудников
                 var перваяСтрока = vmoТаблица.Data.MemoryTable.AllRows.First();
                 var дата = перваяСтрока[дата_vmoТаблица].ToDateTime();
                 var объект = перваяСтрока[Объект_vmoТаблица].ToReferent() as Объекты;
+                var номерСмены = перваяСтрока[НомерСмены_vmoТаблица].ToInt();
 
                 var фомированиеСмены = ФормированиеСмены.Новый();
                 фомированиеСмены.New();
                 фомированиеСмены.ДатаДокумента = дата;
                 фомированиеСмены.Объект = объект;
+                фомированиеСмены.НомерСмены = номерСмены;
+
                 var заполняемТехнику = vmoТаблица.Data.MemoryTable.AllRows.Any(x => (x[Техника_vmoТаблица].ToReferent() as Техника).Selected);
                 var заполняемПерсонал = vmoТаблица.Data.MemoryTable.AllRows.Any(x => (x[Сотрудник_vmoТаблица].ToReferent() as Сотрудники).Selected);
                 foreach (var item in vmoТаблица.Data.MemoryTable.AllRows)
                 {
+                    var техника = item[Техника_vmoТаблица].ToReferent() as Техника;
+                    var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as Сотрудники;
                     if (заполняемТехнику)
                     {
-                        var техника = item[Техника_vmoТаблица].ToReferent() as Техника;
                         if (техника.Selected)
                         {
                             var строкаТехника = фомированиеСмены.Таблица.NewRow();
                             строкаТехника.Техника = техника;
                             строкаТехника.Время = item[НачалоСмены_vmoТаблица].ToDateTime();
                             строкаТехника.Длительность = item[Длительность_vmoТаблица].ToDecimal();
-                            строкаТехника.Сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as Сотрудники;
+                            строкаТехника.Сотрудник = сотрудник;
                             строкаТехника.Тариф = item[Тариф_vmoТаблица].ToReferent() as Тарифы;
                             строкаТехника.Post();
                         }
                     }
                     if (заполняемПерсонал)
                     {
-                        var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as Сотрудники;
-                        if (сотрудник.Selected)
+                        if (сотрудник.Selected && !техника.Selected)
                         {
                             var строкаПерсонал = фомированиеСмены.ТаблицаПерсонал.NewRow();
                             строкаПерсонал.Время = item[НачалоСмены_vmoТаблица].ToDateTime();
@@ -160,12 +172,38 @@ namespace TechControl.Метаданные.УчетСотрудников
                             строкаПерсонал.Тариф = item[Тариф_vmoТаблица].ToReferent() as Тарифы;
                             строкаПерсонал.Post();
                         }
-                        
                     }
-                    фомированиеСмены.Handle();
-
-                    NsgSettings.MainForm.ShowObject(фомированиеСмены, this);
                 }
+
+                фомированиеСмены.Handle();
+
+                NsgSettings.MainForm.ShowObject(фомированиеСмены, this);
+            }
+        }
+
+        private void nsgInput3_EndEdit(object sender, EndEditEventArgs e)
+        {
+            if (НомерСмены.Value > 3)
+            {
+                НомерСмены.Value = 3;
+            }
+
+            if (НомерСмены.Value < 1)
+            {
+                НомерСмены.Value = 1;
+            }
+        }
+
+        protected override void OnSetFormObject(NsgMultipleObject formObject)
+        {
+            base.OnSetFormObject(formObject);
+            if (НомерСмены.Value < 1)
+            {
+                НомерСмены.Value = 1;
+            }
+            if (НомерСмены.Value > 3)
+            {
+                НомерСмены.Value = 3;
             }
         }
     }
