@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2023.10.16.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -4412,24 +4412,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаКомплектованияСмен.NsgInit.cs">
-      <NsgOwnerGuid>af7a8df4-27b7-4e9f-a193-bc4c236eed23</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаКомплектованияСмен</NsgOwnerName>
-      <DependentUpon>МониторингОбъектыТаблицаКомплектованияСмен.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаКомплектованияСмен.cs">
-      <NsgOwnerGuid>af7a8df4-27b7-4e9f-a193-bc4c236eed23</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаКомплектованияСмен</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаКомплектованияСмен.Строка.NsgInit.cs">
-      <NsgOwnerGuid>af7a8df4-27b7-4e9f-a193-bc4c236eed23</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаКомплектованияСмен</NsgOwnerName>
-      <DependentUpon>МониторингОбъектыТаблицаКомплектованияСмен.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаКомплектованияСмен.Строка.cs">
-      <NsgOwnerGuid>af7a8df4-27b7-4e9f-a193-bc4c236eed23</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаКомплектованияСмен</NsgOwnerName>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\Мониторинг\Техника\МониторингТехникаТаблицаДопущенныеДоУправленияДолжности.NsgInit.cs">
@@ -4450,5 +4432,49 @@
       <NsgOwnerGuid>3e13e886-0693-4302-8131-6d87334ae9e3</NsgOwnerGuid>
       <NsgOwnerName>МониторингТехникаТаблицаДопущенныеДоУправленияДолжности</NsgOwnerName>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\ГрафикРаботыОбъекта\ГрафикРаботыОбъекта.NsgInit.cs">
+      <NsgOwnerGuid>fc09775c-450b-4e3c-b58d-9730c507e89d</NsgOwnerGuid>
+      <NsgOwnerName>ГрафикРаботыОбъекта</NsgOwnerName>
+      <DependentUpon>ГрафикРаботыОбъекта.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ГрафикРаботыОбъекта\ГрафикРаботыОбъекта.cs">
+      <NsgOwnerGuid>fc09775c-450b-4e3c-b58d-9730c507e89d</NsgOwnerGuid>
+      <NsgOwnerName>ГрафикРаботыОбъекта</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ГрафикРаботыОбъекта\ДокументыГрафикРаботыОбъектаТаблица.NsgInit.cs">
+      <NsgOwnerGuid>1e47e65a-df14-4b73-96d7-0dc7cdf6be70</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыГрафикРаботыОбъектаТаблица</NsgOwnerName>
+      <DependentUpon>ДокументыГрафикРаботыОбъектаТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ГрафикРаботыОбъекта\ДокументыГрафикРаботыОбъектаТаблица.cs">
+      <NsgOwnerGuid>1e47e65a-df14-4b73-96d7-0dc7cdf6be70</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыГрафикРаботыОбъектаТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ГрафикРаботыОбъекта\ДокументыГрафикРаботыОбъектаТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>1e47e65a-df14-4b73-96d7-0dc7cdf6be70</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыГрафикРаботыОбъектаТаблица</NsgOwnerName>
+      <DependentUpon>ДокументыГрафикРаботыОбъектаТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ГрафикРаботыОбъекта\ДокументыГрафикРаботыОбъектаТаблица.Строка.cs">
+      <NsgOwnerGuid>1e47e65a-df14-4b73-96d7-0dc7cdf6be70</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыГрафикРаботыОбъектаТаблица</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\ГрафикРаботыОбъекта\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>fc09775c-450b-4e3c-b58d-9730c507e89d</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ГрафикРаботыОбъекта\ФормаЭлемента.cs">
+      <NsgOwnerGuid>fc09775c-450b-4e3c-b58d-9730c507e89d</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Документы\ГрафикРаботыОбъекта\ФормаЭлемента.resx">
+      <NsgOwnerGuid>fc09775c-450b-4e3c-b58d-9730c507e89d</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

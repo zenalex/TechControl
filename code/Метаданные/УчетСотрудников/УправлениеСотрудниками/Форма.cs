@@ -60,29 +60,28 @@ namespace TechControl.Метаданные.УчетСотрудников
             vmoТаблица.Data.MemoryTable.Clear();
             if (дата != NsgService.MinDate && объект.Selected)
             {
-                foreach (var item in объект.ТаблицаКомплектованияСмен.AllRows)
+                var графикРаботыОбъекта = объект.ДействующийНаДатуГрафикРаботы(дата);
+                var параметры = графикРаботыОбъекта.ПараметрыВыходаНАСменуНаДату(дата, (int)номерСмены);
+                foreach (var item in параметры)
                 {
-                    if (item.РежимРаботы.ТребуетсяВыходНаРаботу(дата))
+                    if (item.Value && (item.Key.Item1.Selected || item.Key.Item1.Selected))
                     {
-                        if (item.Должность.Selected || item.Техника.Selected)
+                        var количество = item.Key.Item3 == 0 ? 1 : item.Key.Item3;
+
+                        for (int i = 1; i <= количество; i++)
                         {
-                            var количество = item.КоличествоДолжностей == 0 ? 1 : item.КоличествоДолжностей;
-                            
-                            for (int i = 1; i <= количество; i++)
-                            {
-                                var row = vmoТаблица.Data.MemoryTable.NewRow();
-                                row[Объект_vmoТаблица].Value = объект;
-                                row[дата_vmoТаблица].Value = дата;
-                                row[НачалоСмены_vmoТаблица].Value = дата;
-                                row[Должность_vmoТаблица].Value = item.Должность;
-                                row[Техника_vmoТаблица].Value = item.Техника;
-                                row[НомерСмены_vmoТаблица].Value = номерСмены;
-                                row.Post();
-                            }
+                            var row = vmoТаблица.Data.MemoryTable.NewRow();
+                            row[Объект_vmoТаблица].Value = объект;
+                            row[дата_vmoТаблица].Value = дата;
+                            row[НачалоСмены_vmoТаблица].Value = дата;
+                            row[Должность_vmoТаблица].Value = item.Key.Item1;
+                            row[ГруппаСпецТехники_vmoТаблица].Value = item.Key.Item2;
+                            row[НомерСмены_vmoТаблица].Value = номерСмены;
+                            row.Post();
                         }
                     }
                 }
-                
+
             }
             vmoТаблица.Data.UpdateDataSync(this);
         }

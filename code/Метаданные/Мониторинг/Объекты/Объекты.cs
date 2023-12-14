@@ -6,6 +6,8 @@ using NsgSoft.Database;
 using System.IO;
 using NsgSoft.Common;
 using TechControl.Метаданные._SystemTables;
+using TechControl.Метаданные.Документы;
+using System.Linq;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -37,6 +39,26 @@ namespace TechControl.Метаданные.Мониторинг
                 ЗаправочнаяЕмкость = r;
             }
             return base.BasePost();
+        }
+
+        public ГрафикРаботыОбъекта ДействующийНаДатуГрафикРаботы(DateTime дата) 
+        {
+            var cmp = new NsgCompare();
+            cmp.Add(ГрафикРаботыОбъекта.Names.ДатаНачалаДействияГрафика, дата, NsgComparison.LessOrEqual);
+            cmp.Add(ГрафикРаботыОбъекта.Names.ДатаНачалаДействияГрафика, NsgService.MinDate, NsgComparison.NotEqual);
+            cmp.Add(ГрафикРаботыОбъекта.Names.Объект, this);
+            cmp.Add(ГрафикРаботыОбъекта.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+
+            var графики = ГрафикРаботыОбъекта.Новый().FindAll(cmp);
+            if (графики.Length > 0)
+            {
+                return графики.OrderByDescending(x => x.ДатаНачалаДействияГрафика).First();
+            }
+            else
+            {
+                NsgSettings.MainForm.ShowMessage("На объекте отсуттствуют действующие графики работы");
+                return ГрафикРаботыОбъекта.Новый();
+            }
         }
     }
 
