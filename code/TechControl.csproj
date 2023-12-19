@@ -4477,4 +4477,92 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\НастройкиПраздников\НастройкиПраздников.NsgInit.cs">
+      <NsgOwnerGuid>bf230b42-3fcd-424c-b4e4-cfb181bf8f4f</NsgOwnerGuid>
+      <NsgOwnerName>НастройкиПраздников</NsgOwnerName>
+      <DependentUpon>НастройкиПраздников.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\НастройкиПраздников\НастройкиПраздников.cs">
+      <NsgOwnerGuid>bf230b42-3fcd-424c-b4e4-cfb181bf8f4f</NsgOwnerGuid>
+      <NsgOwnerName>НастройкиПраздников</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\НастройкиПраздников\ДокументыНастройкиПраздниковТаблицаПраздников.NsgInit.cs">
+      <NsgOwnerGuid>8f65688c-0326-4f70-a923-a252c0135cb9</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыНастройкиПраздниковТаблицаПраздников</NsgOwnerName>
+      <DependentUpon>ДокументыНастройкиПраздниковТаблицаПраздников.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\НастройкиПраздников\ДокументыНастройкиПраздниковТаблицаПраздников.cs">
+      <NsgOwnerGuid>8f65688c-0326-4f70-a923-a252c0135cb9</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыНастройкиПраздниковТаблицаПраздников</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\НастройкиПраздников\ДокументыНастройкиПраздниковТаблицаПраздников.Строка.NsgInit.cs">
+      <NsgOwnerGuid>8f65688c-0326-4f70-a923-a252c0135cb9</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыНастройкиПраздниковТаблицаПраздников</NsgOwnerName>
+      <DependentUpon>ДокументыНастройкиПраздниковТаблицаПраздников.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\НастройкиПраздников\ДокументыНастройкиПраздниковТаблицаПраздников.Строка.cs">
+      <NsgOwnerGuid>8f65688c-0326-4f70-a923-a252c0135cb9</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыНастройкиПраздниковТаблицаПраздников</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\НастройкиПраздников\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>bf230b42-3fcd-424c-b4e4-cfb181bf8f4f</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\НастройкиПраздников\ФормаЭлемента.cs">
+      <NsgOwnerGuid>bf230b42-3fcd-424c-b4e4-cfb181bf8f4f</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Документы\НастройкиПраздников\ФормаЭлемента.resx">
+      <NsgOwnerGuid>bf230b42-3fcd-424c-b4e4-cfb181bf8f4f</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\ОтработанныеМесяцы\ОтработанныеМесяцы.NsgInit.cs">
+      <NsgOwnerGuid>e00f0a58-1bcd-42e2-ac98-1801d686589b</NsgOwnerGuid>
+      <NsgOwnerName>ОтработанныеМесяцы</NsgOwnerName>
+      <DependentUpon>ОтработанныеМесяцы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ОтработанныеМесяцы\ОтработанныеМесяцы.cs">
+      <NsgOwnerGuid>e00f0a58-1bcd-42e2-ac98-1801d686589b</NsgOwnerGuid>
+      <NsgOwnerName>ОтработанныеМесяцы</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ОтработанныеМесяцы\ДокументыОтработанныеМесяцыТаблица.NsgInit.cs">
+      <NsgOwnerGuid>8dcec5fe-e3c0-4dbc-9caf-80261c74f684</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыОтработанныеМесяцыТаблица</NsgOwnerName>
+      <DependentUpon>ДокументыОтработанныеМесяцыТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ОтработанныеМесяцы\ДокументыОтработанныеМесяцыТаблица.cs">
+      <NsgOwnerGuid>8dcec5fe-e3c0-4dbc-9caf-80261c74f684</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыОтработанныеМесяцыТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ОтработанныеМесяцы\ДокументыОтработанныеМесяцыТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>8dcec5fe-e3c0-4dbc-9caf-80261c74f684</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыОтработанныеМесяцыТаблица</NsgOwnerName>
+      <DependentUpon>ДокументыОтработанныеМесяцыТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ОтработанныеМесяцы\ДокументыОтработанныеМесяцыТаблица.Строка.cs">
+      <NsgOwnerGuid>8dcec5fe-e3c0-4dbc-9caf-80261c74f684</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыОтработанныеМесяцыТаблица</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\ОтработанныеМесяцы\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>e00f0a58-1bcd-42e2-ac98-1801d686589b</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ОтработанныеМесяцы\ФормаЭлемента.cs">
+      <NsgOwnerGuid>e00f0a58-1bcd-42e2-ac98-1801d686589b</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Документы\ОтработанныеМесяцы\ФормаЭлемента.resx">
+      <NsgOwnerGuid>e00f0a58-1bcd-42e2-ac98-1801d686589b</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

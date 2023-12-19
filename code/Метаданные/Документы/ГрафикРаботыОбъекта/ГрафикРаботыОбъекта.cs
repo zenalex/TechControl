@@ -37,31 +37,39 @@ namespace TechControl.Метаданные.Документы
             else
             {
                 var пары = ДолжностиИТехникаИзГрафика();
+                var выходной = НастройкиПраздников.ЯвляетсяВыходным(датаВыхода, Объект);
                 foreach (var item in пары)
                 {
-                    if (номерСмены == 1)
+                    if (выходной)
                     {
-                        параметры[item] = Таблица.AllRows.Any(x => x.Должность == item.Item1
-                        && x.ГруппаСпецТехники == item.Item2
-                        && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
-                        && x.ВремяНачалаСмены1.TimeOfDay <= датаВыхода.TimeOfDay
-                        && (x.ВремяНачалаСмены1.AddHours((double)x.ДлительностьСмены1ВЧасах).TimeOfDay >= датаВыхода.TimeOfDay || датаВыхода.AddHours((double)x.ДлительностьСмены1ВЧасах).Day != датаВыхода.Day));
+                        параметры[item] = false;
                     }
-                    if (номерСмены == 2)
+                    else
                     {
-                        параметры[item] = Таблица.AllRows.Any(x => x.Должность == item.Item1
-                        && x.ГруппаСпецТехники == item.Item2
-                        && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
-                        && x.ВремяНачалаСмены2.TimeOfDay <= датаВыхода.TimeOfDay
-                        && (x.ВремяНачалаСмены2.AddHours((double)x.ДлительностьСмены2ВЧасах).TimeOfDay >= датаВыхода.TimeOfDay || датаВыхода.AddHours((double)x.ДлительностьСмены2ВЧасах).Day != датаВыхода.Day));
-                    }
-                    if (номерСмены == 3)
-                    {
-                        параметры[item] = Таблица.AllRows.Any(x => x.Должность == item.Item1
-                        && x.ГруппаСпецТехники == item.Item2
-                        && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
-                        && x.ВремяНачалаСмены3.TimeOfDay <= датаВыхода.TimeOfDay
-                        && (x.ВремяНачалаСмены3.AddHours((double)x.ДлительностьСмены3ВЧасах).TimeOfDay >= датаВыхода.TimeOfDay || датаВыхода.AddHours((double)x.ДлительностьСмены3ВЧасах).Day != датаВыхода.Day));
+                        if (номерСмены == 1)
+                        {
+                            параметры[item] = Таблица.AllRows.Any(x => x.Должность == item.Item1
+                            && x.ГруппаСпецТехники == item.Item2
+                            && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
+                            && x.ВремяНачалаСмены1.TimeOfDay <= датаВыхода.TimeOfDay
+                            && (x.ВремяНачалаСмены1.AddHours((double)x.ДлительностьСмены1ВЧасах).TimeOfDay >= датаВыхода.TimeOfDay || датаВыхода.AddHours((double)x.ДлительностьСмены1ВЧасах).Day != датаВыхода.Day));
+                        }
+                        if (номерСмены == 2)
+                        {
+                            параметры[item] = Таблица.AllRows.Any(x => x.Должность == item.Item1
+                            && x.ГруппаСпецТехники == item.Item2
+                            && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
+                            && x.ВремяНачалаСмены2.TimeOfDay <= датаВыхода.TimeOfDay
+                            && (x.ВремяНачалаСмены2.AddHours((double)x.ДлительностьСмены2ВЧасах).TimeOfDay >= датаВыхода.TimeOfDay || датаВыхода.AddHours((double)x.ДлительностьСмены2ВЧасах).Day != датаВыхода.Day));
+                        }
+                        if (номерСмены == 3)
+                        {
+                            параметры[item] = Таблица.AllRows.Any(x => x.Должность == item.Item1
+                            && x.ГруппаСпецТехники == item.Item2
+                            && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
+                            && x.ВремяНачалаСмены3.TimeOfDay <= датаВыхода.TimeOfDay
+                            && (x.ВремяНачалаСмены3.AddHours((double)x.ДлительностьСмены3ВЧасах).TimeOfDay >= датаВыхода.TimeOfDay || датаВыхода.AddHours((double)x.ДлительностьСмены3ВЧасах).Day != датаВыхода.Day));
+                        }
                     }
                 }
             }

@@ -212,10 +212,10 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 else
                 {
-                    foreach (var kvp in ДеньНедели.ByDayOfWeek)
+                    foreach (var kvp in ДеньНедели.AllValues)
                     {
                         var item = vmoГрафикРаботы.Data.MemoryTable.NewRow();
-                        item[ДеньНедели_vmoТаблицаГрафикаРаботы].Value = kvp.Value;
+                        item[ДеньНедели_vmoТаблицаГрафикаРаботы].Value = kvp;
                         item[Должность_vmoТаблицаГрафикаРаботы].Value = должность;
                         item[ГруппаСпецТехники_vmoТаблицаГрафикаРаботы].Value = группаСПТехн;
                         item[Количество_vmoТаблицаГрафикаРаботы].Value = e.RowObject[Количество_vmoГруппировка].ToInt();
@@ -390,24 +390,24 @@ namespace TechControl.Метаданные.Мониторинг
 
                 foreach (var item in должности)
                 {
-                    foreach (var день in ДеньНедели.ByDayOfWeek)
+                    foreach (var день in ДеньНедели.AllValues)
                     {
                         var row = vmoТаблицаГрафикаРаботы.Data.MemoryTable.NewRow();
                         row[Должность_vmoТаблицаГрафикаРаботы].Value = item.Key;
                         row[Количество_vmoТаблицаГрафикаРаботы].Value = item.Value;
-                        row[ДеньНедели_vmoТаблицаГрафикаРаботы].Value = день.Value;
+                        row[ДеньНедели_vmoТаблицаГрафикаРаботы].Value = день;
                         row.Post();
                     }
                 }
 
                 foreach (var item in группыСпТехн)
                 {
-                    foreach (var день in ДеньНедели.ByDayOfWeek)
+                    foreach (var день in ДеньНедели.AllValues)
                     {
                         var row = vmoТаблицаГрафикаРаботы.Data.MemoryTable.NewRow();
                         row[ГруппаСпецТехники_vmoТаблицаГрафикаРаботы].Value = item.Key;
                         row[Количество_vmoТаблицаГрафикаРаботы].Value = item.Value;
-                        row[ДеньНедели_vmoТаблицаГрафикаРаботы].Value = день.Value;
+                        row[ДеньНедели_vmoТаблицаГрафикаРаботы].Value = день;
                         row.Post();
                     }
                 }

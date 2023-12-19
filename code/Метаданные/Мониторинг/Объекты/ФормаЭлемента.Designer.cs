@@ -1497,6 +1497,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn15.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn15.DateFormat = null;
+            nsgIGridColumn15.ImportedFromVMO = false;
             nsgIGridColumn15.Name = "Должность";
             nsgIGridColumn15.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn15.Root = this.nsgIGrid6.Columns.Collection;
@@ -1511,6 +1512,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn16.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn16.DateFormat = null;
+            nsgIGridColumn16.ImportedFromVMO = false;
             nsgIGridColumn16.Name = "ГруппаСпецТехники";
             nsgIGridColumn16.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn16.Root = this.nsgIGrid6.Columns.Collection;
@@ -1525,6 +1527,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn17.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn17.DateFormat = null;
+            nsgIGridColumn17.ImportedFromVMO = false;
             nsgIGridColumn17.Name = "ДеньНедели";
             nsgIGridColumn17.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn17.Root = this.nsgIGrid6.Columns.Collection;
@@ -1539,6 +1542,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn18.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn18.DateFormat = null;
+            nsgIGridColumn18.ImportedFromVMO = false;
             nsgIGridColumn18.Name = "ДатаКонкретныйДень";
             nsgIGridColumn18.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn18.Root = this.nsgIGrid6.Columns.Collection;
@@ -1553,6 +1557,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn19.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn19.DateFormat = null;
+            nsgIGridColumn19.ImportedFromVMO = false;
             nsgIGridColumn19.Name = "Выходной";
             nsgIGridColumn19.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn19.Root = this.nsgIGrid6.Columns.Collection;
@@ -1569,6 +1574,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Format"};
             nsgIGridColumn20.DateFormat = null;
             nsgIGridColumn20.Format = "HH:mm";
+            nsgIGridColumn20.ImportedFromVMO = false;
             nsgIGridColumn20.Name = "ВремяНачалаСмены1";
             nsgIGridColumn20.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn20.Root = this.nsgIGrid6.Columns.Collection;
@@ -1585,6 +1591,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Format"};
             nsgIGridColumn21.DateFormat = null;
             nsgIGridColumn21.Format = "HH:mm";
+            nsgIGridColumn21.ImportedFromVMO = false;
             nsgIGridColumn21.Name = "ВремяНачалаСмены2";
             nsgIGridColumn21.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn21.Root = this.nsgIGrid6.Columns.Collection;
@@ -1601,6 +1608,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Format"};
             nsgIGridColumn22.DateFormat = null;
             nsgIGridColumn22.Format = "HH:mm";
+            nsgIGridColumn22.ImportedFromVMO = false;
             nsgIGridColumn22.Name = "ВремяНачалаСмены3";
             nsgIGridColumn22.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn22.Root = this.nsgIGrid6.Columns.Collection;
@@ -1615,6 +1623,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn23.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn23.DateFormat = null;
+            nsgIGridColumn23.ImportedFromVMO = false;
             nsgIGridColumn23.Name = "ДлительностьСмены1Часы";
             nsgIGridColumn23.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn23.Root = this.nsgIGrid6.Columns.Collection;
@@ -1629,6 +1638,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn24.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn24.DateFormat = null;
+            nsgIGridColumn24.ImportedFromVMO = false;
             nsgIGridColumn24.Name = "ДлительностьСмены2Часы";
             nsgIGridColumn24.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn24.Root = this.nsgIGrid6.Columns.Collection;
@@ -1643,6 +1653,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn25.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn25.DateFormat = null;
+            nsgIGridColumn25.ImportedFromVMO = false;
             nsgIGridColumn25.Name = "ДлительностьСмены3Часы";
             nsgIGridColumn25.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn25.Root = this.nsgIGrid6.Columns.Collection;
@@ -1657,6 +1668,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn26.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn26.DateFormat = null;
+            nsgIGridColumn26.ImportedFromVMO = false;
             nsgIGridColumn26.Name = "Количество";
             nsgIGridColumn26.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn26.Root = this.nsgIGrid6.Columns.Collection;
@@ -2116,6 +2128,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn32.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn32.DateFormat = null;
+            nsgIGridColumn32.ImportedFromVMO = false;
             nsgIGridColumn32.Name = "Должность";
             nsgIGridColumn32.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn32.Root = this.nsgIGrid7.Columns.Collection;
@@ -2130,6 +2143,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn33.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn33.DateFormat = null;
+            nsgIGridColumn33.ImportedFromVMO = false;
             nsgIGridColumn33.Name = "ГруппаСпецТехники";
             nsgIGridColumn33.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn33.Root = this.nsgIGrid7.Columns.Collection;
@@ -2144,6 +2158,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn34.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn34.DateFormat = null;
+            nsgIGridColumn34.ImportedFromVMO = false;
             nsgIGridColumn34.Name = "Количество";
             nsgIGridColumn34.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn34.Root = this.nsgIGrid7.Columns.Collection;
@@ -2161,6 +2176,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Format"};
             nsgIGridColumn35.DateFormat = null;
             nsgIGridColumn35.Format = "HH:mm";
+            nsgIGridColumn35.ImportedFromVMO = false;
             nsgIGridColumn35.Name = "ВремяНачалаСмены1";
             nsgIGridColumn35.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn35.Root = this.nsgIGrid7.Columns.Collection;
@@ -2177,6 +2193,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Format"};
             nsgIGridColumn36.DateFormat = null;
             nsgIGridColumn36.Format = "HH:mm";
+            nsgIGridColumn36.ImportedFromVMO = false;
             nsgIGridColumn36.Name = "ВремяНачалаСмены2";
             nsgIGridColumn36.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn36.Root = this.nsgIGrid7.Columns.Collection;
@@ -2193,6 +2210,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Format"};
             nsgIGridColumn37.DateFormat = null;
             nsgIGridColumn37.Format = "HH:mm";
+            nsgIGridColumn37.ImportedFromVMO = false;
             nsgIGridColumn37.Name = "ВремяНачалаСмены3";
             nsgIGridColumn37.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn37.Root = this.nsgIGrid7.Columns.Collection;
@@ -2207,6 +2225,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn38.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn38.DateFormat = null;
+            nsgIGridColumn38.ImportedFromVMO = false;
             nsgIGridColumn38.Name = "ДлительностьСмены1";
             nsgIGridColumn38.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn38.Root = this.nsgIGrid7.Columns.Collection;
@@ -2221,6 +2240,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn39.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn39.DateFormat = null;
+            nsgIGridColumn39.ImportedFromVMO = false;
             nsgIGridColumn39.Name = "ДлительностьСмены2";
             nsgIGridColumn39.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn39.Root = this.nsgIGrid7.Columns.Collection;
@@ -2235,6 +2255,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn40.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn40.DateFormat = null;
+            nsgIGridColumn40.ImportedFromVMO = false;
             nsgIGridColumn40.Name = "ДлительностьСмены3";
             nsgIGridColumn40.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn40.Root = this.nsgIGrid7.Columns.Collection;

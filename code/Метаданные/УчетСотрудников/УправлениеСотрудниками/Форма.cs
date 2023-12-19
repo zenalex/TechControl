@@ -10,6 +10,7 @@ using NsgSoft.Common;
 using NsgSoft.Database;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
+using TechControl.Метаданные.Документы;
 using TechControl.Метаданные.Мониторинг;
 
 namespace TechControl.Метаданные.УчетСотрудников
@@ -64,7 +65,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                 var параметры = графикРаботыОбъекта.ПараметрыВыходаНАСменуНаДату(дата, (int)номерСмены);
                 foreach (var item in параметры)
                 {
-                    if (item.Value && (item.Key.Item1.Selected || item.Key.Item1.Selected))
+                    if (item.Value && (item.Key.Item1.Selected || item.Key.Item2.Selected))
                     {
                         var количество = item.Key.Item3 == 0 ? 1 : item.Key.Item3;
 
@@ -204,6 +205,89 @@ namespace TechControl.Метаданные.УчетСотрудников
             {
                 НомерСмены.Value = 3;
             }
+        }
+
+        private void nbСохрнитьИтоги_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            var месяцИтогов = new DateTime(МесяцИтогов_vmoИтоги.Value.Year, МесяцИтогов_vmoИтоги.Value.Month, 1).Date;
+            var объект = Объект_vmoИтоги.Value;
+
+            if (!объект.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage($"Не выбран объект");
+                e.Cancel = true;
+                return;
+            }
+            if (vmoТаблицаИтогов.Data.MemoryTable.Count == 0)
+            {
+                NsgSettings.MainForm.ShowMessage($"Не заполнена таблица итогов");
+                e.Cancel = true;
+                return;
+            }
+
+            var cmp = new NsgCompare();
+            cmp.Add(ОтработанныеМесяцы.Names.МесяцИтогов, месяцИтогов);
+            cmp.Add(ОтработанныеМесяцы.Names.Объект, объект);
+            cmp.Add(ОтработанныеМесяцы.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+
+            var отработанныйМесяц = ОтработанныеМесяцы.Новый();
+            if (отработанныйМесяц.Find(cmp))
+            {
+                NsgSettings.MainForm.ShowObject(отработанныйМесяц, this);
+                NsgSettings.MainForm.ShowMessage($"на данный месяц уже имеется итоговый документ");
+                e.Cancel = true;
+                return;
+            }
+            else
+            {
+                отработанныйМесяц.New();
+                отработанныйМесяц.МесяцИтогов = месяцИтогов;
+                отработанныйМесяц.Объект = объект;
+
+                foreach (var item in vmoТаблицаИтогов.Data.MemoryTable.AllRows)
+                {
+                    var row = отработанныйМесяц.Таблица.NewRow();
+                    row.Сотрудник = item[Сотрудник_vmoТаблицаИтогов].ToReferent() as Сотрудники;
+                    row.Техника = item[Техника_vmoТаблицаИтогов].ToReferent() as Техника;
+                    row.Тариф = item[Тариф_vmoТаблицаИтогов].ToReferent() as Тарифы;
+                    row.Д1 = item[Дл1_vmoТаблицаИтогов].ToDecimal();
+                    row.Д2 = item[Дл2_vmoТаблицаИтогов].ToDecimal();
+                    row.Д3 = item[Дл3_vmoТаблицаИтогов].ToDecimal();
+                    row.Д4 = item[Дл4_vmoТаблицаИтогов].ToDecimal();
+                    row.Д5 = item[Дл5_vmoТаблицаИтогов].ToDecimal();
+                    row.Д6 = item[Дл6_vmoТаблицаИтогов].ToDecimal();
+                    row.Д7 = item[Дл7_vmoТаблицаИтогов].ToDecimal();
+                    row.Д8 = item[Дл8_vmoТаблицаИтогов].ToDecimal();
+                    row.Д9 = item[Дл9_vmoТаблицаИтогов].ToDecimal();
+                    row.Д10 = item[Дл10_vmoТаблицаИтогов].ToDecimal();
+                    row.Д11 = item[Дл11_vmoТаблицаИтогов].ToDecimal();
+                    row.Д12 = item[Дл12_vmoТаблицаИтогов].ToDecimal();
+                    row.Д13 = item[Дл13_vmoТаблицаИтогов].ToDecimal();
+                    row.Д14 = item[Дл14_vmoТаблицаИтогов].ToDecimal();
+                    row.Д15 = item[Дл15_vmoТаблицаИтогов].ToDecimal();
+                    row.Д16 = item[Дл16_vmoТаблицаИтогов].ToDecimal();
+                    row.Д17 = item[Дл17_vmoТаблицаИтогов].ToDecimal();
+                    row.Д18 = item[Дл18_vmoТаблицаИтогов].ToDecimal();
+                    row.Д19 = item[Дл19_vmoТаблицаИтогов].ToDecimal();
+                    row.Д20 = item[Дл20_vmoТаблицаИтогов].ToDecimal();
+                    row.Д21 = item[Дл21_vmoТаблицаИтогов].ToDecimal();
+                    row.Д22 = item[Дл22_vmoТаблицаИтогов].ToDecimal();
+                    row.Д23 = item[Дл23_vmoТаблицаИтогов].ToDecimal();
+                    row.Д24 = item[Дл24_vmoТаблицаИтогов].ToDecimal();
+                    row.Д25 = item[Дл25_vmoТаблицаИтогов].ToDecimal();
+                    row.Д26 = item[Дл26_vmoТаблицаИтогов].ToDecimal();
+                    row.Д27 = item[Дл27_vmoТаблицаИтогов].ToDecimal();
+                    row.Д28 = item[Дл28_vmoТаблицаИтогов].ToDecimal();
+                    row.Д29 = item[Дл29_vmoТаблицаИтогов].ToDecimal();
+                    row.Д30 = item[Дл30_vmoТаблицаИтогов].ToDecimal();
+                    row.Д31 = item[Дл31_vmoТаблицаИтогов].ToDecimal();
+                    row.Post();
+                }
+
+                отработанныйМесяц.Post();
+                NsgSettings.MainForm.ShowObject(отработанныйМесяц, this);
+            }
+
         }
     }
     

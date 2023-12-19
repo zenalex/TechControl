@@ -10,17 +10,29 @@ namespace TechControl.Метаданные.Мониторинг
     
     public partial class ДеньНедели
 	{
-		#region Данные
-		#endregion //Данные
+        #region Данные
+        #endregion //Данные
 
-		#region Конструкторы
-		#endregion //Конструкторы
+        #region Конструкторы
+        #endregion //Конструкторы
 
-		#region Свойства
-		#endregion //Свойства
+        #region Свойства
+        #endregion //Свойства
 
-		#region Методы
-		public static Dictionary<DayOfWeek, ДеньНедели> ByDayOfWeek = new Dictionary<DayOfWeek, ДеньНедели>()
+        #region Методы
+        public static List<ДеньНедели> AllValues = new List<ДеньНедели>()
+        {
+            ДеньНедели.Понедельник,
+            ДеньНедели.Вторник,
+            ДеньНедели.Среда,
+            ДеньНедели.Четверг,
+            ДеньНедели.Пятница,
+            ДеньНедели.Суббота,
+            ДеньНедели.Воскресенье,
+            ДеньНедели.Праздничный
+        };
+
+        public static Dictionary<DayOfWeek, ДеньНедели> ByDayOfWeek = new Dictionary<DayOfWeek, ДеньНедели>()
 		{
 			[System.DayOfWeek.Monday] = ДеньНедели.Понедельник,
 			[System.DayOfWeek.Tuesday] = ДеньНедели.Вторник,
