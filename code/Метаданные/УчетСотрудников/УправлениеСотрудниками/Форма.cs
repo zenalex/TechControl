@@ -10,6 +10,7 @@ using NsgSoft.Common;
 using NsgSoft.Database;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
+using TechControl.Метаданные._SystemTables;
 using TechControl.Метаданные.Документы;
 using TechControl.Метаданные.Мониторинг;
 
@@ -65,19 +66,22 @@ namespace TechControl.Метаданные.УчетСотрудников
                 var параметры = графикРаботыОбъекта.ПараметрыВыходаНАСменуНаДату(дата, (int)номерСмены);
                 foreach (var item in параметры)
                 {
-                    if (item.Value && (item.Key.Item1.Selected || item.Key.Item2.Selected))
+                    if (item.Value.Item1 && (item.Key.Item2.Selected || item.Key.Item3.Selected))
                     {
-                        var количество = item.Key.Item3 == 0 ? 1 : item.Key.Item3;
+                        var количество = item.Key.Item4 == 0 ? 1 : item.Key.Item4;
 
                         for (int i = 1; i <= количество; i++)
                         {
                             var row = vmoТаблица.Data.MemoryTable.NewRow();
                             row[Объект_vmoТаблица].Value = объект;
                             row[дата_vmoТаблица].Value = дата;
-                            row[НачалоСмены_vmoТаблица].Value = дата;
-                            row[Должность_vmoТаблица].Value = item.Key.Item1;
-                            row[ГруппаСпецТехники_vmoТаблица].Value = item.Key.Item2;
+                            var началоСмены = new DateTime(дата.Year, дата.Month, дата.Day, item.Value.Item2.Hour, item.Value.Item2.Minute, item.Value.Item2.Second);
+                            row[НачалоСмены_vmoТаблица].Value = началоСмены;
+                            row[КодГруппы_vmoТаблица].Value = item.Key.Item1;
+                            row[Должность_vmoТаблица].Value = item.Key.Item2;
+                            row[ГруппаСпецТехники_vmoТаблица].Value = item.Key.Item3;
                             row[НомерСмены_vmoТаблица].Value = номерСмены;
+                            row[Длительность_vmoТаблица].Value = item.Value.Item3;
                             row.Post();
                         }
                     }
@@ -148,6 +152,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                 {
                     var техника = item[Техника_vmoТаблица].ToReferent() as Техника;
                     var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as Сотрудники;
+                    var должность = item[Должность_vmoТаблица].ToReferent() as Должности;
                     if (заполняемТехнику)
                     {
                         if (техника.Selected)
@@ -157,7 +162,9 @@ namespace TechControl.Метаданные.УчетСотрудников
                             строкаТехника.Время = item[НачалоСмены_vmoТаблица].ToDateTime();
                             строкаТехника.Длительность = item[Длительность_vmoТаблица].ToDecimal();
                             строкаТехника.Сотрудник = сотрудник;
+                            строкаТехника.Должность = должность;
                             строкаТехника.Тариф = item[Тариф_vmoТаблица].ToReferent() as Тарифы;
+                            строкаТехника.КодГруппы = item[КодГруппы_vmoТаблица].ToString();
                             строкаТехника.Post();
                         }
                     }
@@ -169,7 +176,9 @@ namespace TechControl.Метаданные.УчетСотрудников
                             строкаПерсонал.Время = item[НачалоСмены_vmoТаблица].ToDateTime();
                             строкаПерсонал.Длительность = item[Длительность_vmoТаблица].ToDecimal();
                             строкаПерсонал.Сотрудник = сотрудник;
+                            строкаПерсонал.Должность = должность;
                             строкаПерсонал.Тариф = item[Тариф_vmoТаблица].ToReferent() as Тарифы;
+                            строкаПерсонал.КодГруппы = item[КодГруппы_vmoТаблица].ToString();
                             строкаПерсонал.Post();
                         }
                     }
@@ -197,6 +206,10 @@ namespace TechControl.Метаданные.УчетСотрудников
         protected override void OnSetFormObject(NsgMultipleObject formObject)
         {
             base.OnSetFormObject(formObject);
+            if (vmoИтоги.Data.CurrentRow == null)
+            {
+                vmoИтоги.Data.CurrentRow = vmoИтоги.Data.MemoryTable.NewRow();
+            }
             if (НомерСмены.Value < 1)
             {
                 НомерСмены.Value = 1;
@@ -209,9 +222,15 @@ namespace TechControl.Метаданные.УчетСотрудников
 
         private void nbСохрнитьИтоги_AsyncClick(object sender, DoWorkEventArgs e)
         {
-            var месяцИтогов = new DateTime(МесяцИтогов_vmoИтоги.Value.Year, МесяцИтогов_vmoИтоги.Value.Month, 1).Date;
+            var месяцИтогов = NsgService.BeginOfMonth(МесяцИтогов_vmoИтоги.Value);
             var объект = Объект_vmoИтоги.Value;
 
+            if (месяцИтогов == NsgService.MinDate)
+            {
+                NsgSettings.MainForm.ShowMessage($"Не указан итоговый месяц");
+                e.Cancel = true;
+                return;
+            }
             if (!объект.Selected)
             {
                 NsgSettings.MainForm.ShowMessage($"Не выбран объект");
@@ -250,6 +269,8 @@ namespace TechControl.Метаданные.УчетСотрудников
                     row.Сотрудник = item[Сотрудник_vmoТаблицаИтогов].ToReferent() as Сотрудники;
                     row.Техника = item[Техника_vmoТаблицаИтогов].ToReferent() as Техника;
                     row.Тариф = item[Тариф_vmoТаблицаИтогов].ToReferent() as Тарифы;
+                    row.КодГруппы = item[КодГруппы_vmoТаблицаИтогов].ToString();
+                    //row.Объект = объект;
                     row.Д1 = item[Дл1_vmoТаблицаИтогов].ToDecimal();
                     row.Д2 = item[Дл2_vmoТаблицаИтогов].ToDecimal();
                     row.Д3 = item[Дл3_vmoТаблицаИтогов].ToDecimal();
@@ -285,8 +306,292 @@ namespace TechControl.Метаданные.УчетСотрудников
                 }
 
                 отработанныйМесяц.Post();
+                NsgSettings.MainForm.ShowMessage($"Итоговый документ за {месяцИтогов:Y} создан удачно");
                 NsgSettings.MainForm.ShowObject(отработанныйМесяц, this);
             }
+
+        }
+
+        private void nsgIGrid2_CellRequestEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            var контрагент = Контрагент_vmoИтоги.Value;
+            var объект = Объект_vmoИтоги.Value;
+
+            if (e.ColumnName == Сотрудник_vmoТаблицаИтогов.Name)
+            {
+                var cmp = Сотрудник_vmoТаблицаИтогов.SearchCondition;
+                cmp.Clear();
+                if (объект.Selected)
+                {
+                    var idСотрудниковОбъекта = объект.ТаблицаПерсонал.AllRows.Select(x => x.Сотрудник.Идентификатор).ToArray();
+                    cmp.Add(Сотрудники.Names.Идентификатор, idСотрудниковОбъекта, NsgComparison.In);
+                }
+                else if (контрагент.Selected)
+                {
+                    var cmpОбъекты = new NsgCompare();
+                    cmpОбъекты.Add(Объекты.Names.Заказчик, контрагент);
+                    cmpОбъекты.Add(Объекты.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+                    var всеОбъекты = Объекты.Новый().FindAll(cmpОбъекты);
+
+                    var cmpСписокСотрудников = new NsgCompare();
+                    cmpСписокСотрудников.Add(МониторингОбъектыТаблицаПерсонал.Names.Владелец, всеОбъекты, NsgComparison.In);
+                    var idСотрудниковОбъекта = МониторингОбъектыТаблицаПерсонал.Новый().FindAllRequisits(cmpСписокСотрудников, МониторингОбъектыТаблицаПерсонал.Names.Сотрудник)
+                        .AllRows
+                        .Select(x => x[МониторингОбъектыТаблицаПерсонал.Names.Сотрудник].ToReferent().Guid)
+                        .ToArray();
+
+                    cmp.Add(Сотрудники.Names.Идентификатор, idСотрудниковОбъекта, NsgComparison.In);
+                }
+            }
+
+            if (e.ColumnName == Тариф_vmoТаблицаИтогов.Name)
+            {
+                var cmp = Тариф_vmoТаблицаИтогов.SearchCondition;
+                cmp.Clear();
+                var техника = e.RowObject[Техника_vmoТаблицаИтогов].ToReferent() as Техника;
+
+                if (объект.Selected)
+                {
+                    Guid[] idТарифовОбъекта = null; 
+                    if (техника.Selected)
+                    {
+                        idТарифовОбъекта = объект.ТаблицаТарифы
+                            .AllRows
+                            .Where(x => x.ГруппаСпецТехники == техника.ГруппаСпецТехники)
+                            .Select(x => x.Тариф.Идентификатор)
+                            .ToArray();
+                    }
+                    else
+                    {
+                        idТарифовОбъекта = объект.ТаблицаТарифыСотрудников
+                            .AllRows
+                            .Select(x => x.Тариф.Идентификатор)
+                            .ToArray();
+                    }
+                    cmp.Add(Тарифы.Names.Идентификатор, idТарифовОбъекта, NsgComparison.In);
+                }
+                else if (контрагент.Selected)
+                {
+                    var cmpОбъекты = new NsgCompare();
+                    cmpОбъекты.Add(Объекты.Names.Заказчик, контрагент);
+                    cmpОбъекты.Add(Объекты.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+                    var всеОбъекты = Объекты.Новый().FindAll(cmpОбъекты);
+
+                    Guid[] idТарифовОбъекта = null;
+                    if (техника.Selected)
+                    {
+                        var cmpСписокТарифов = new NsgCompare();
+                        cmpСписокТарифов.Add(МониторингОбъектыТаблицаТарифы.Names.Владелец, всеОбъекты, NsgComparison.In);
+                        cmpСписокТарифов.Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, техника.ГруппаСпецТехники);
+                        idТарифовОбъекта = МониторингОбъектыТаблицаТарифы.Новый().FindAllRequisits(cmpСписокТарифов, МониторингОбъектыТаблицаТарифы.Names.Тариф)
+                            .AllRows
+                            .Select(x => x[МониторингОбъектыТаблицаТарифы.Names.Тариф].ToReferent().Guid) 
+                            .ToArray();
+
+                    }
+                    else
+                    {
+                        var cmpСписокТарифов = new NsgCompare();
+                        cmpСписокТарифов.Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Владелец, всеОбъекты, NsgComparison.In);
+                        idТарифовОбъекта = МониторингОбъектыТаблицаТарифыСотрудников.Новый().FindAllRequisits(cmpСписокТарифов, МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф)
+                            .AllRows
+                            .Select(x => x[МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф].ToReferent().Guid)
+                            .ToArray();
+                    }
+
+                    cmp.Add(Тарифы.Names.Идентификатор, idТарифовОбъекта, NsgComparison.In);
+                }
+                
+                
+            }
+
+            if (e.ColumnName == Техника_vmoТаблицаИтогов.Name)
+            {
+                var cmp = Техника_vmoТаблицаИтогов.SearchCondition;
+                cmp.Clear();
+                if (объект.Selected)
+                {
+                    var idТехникиОбъекта = объект.ТаблицаТехника.AllRows.Select(x => x.Техника.Идентификатор).ToArray();
+                    cmp.Add(Техника.Names.Идентификатор, idТехникиОбъекта, NsgComparison.In);
+                }
+                else if (контрагент.Selected)
+                {
+                    var cmpОбъекты = new NsgCompare();
+                    cmpОбъекты.Add(Объекты.Names.Заказчик, контрагент);
+                    cmpОбъекты.Add(Объекты.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+                    var всеОбъекты = Объекты.Новый().FindAll(cmpОбъекты);
+
+                    var cmpСписокТехники = new NsgCompare();
+                    cmpСписокТехники.Add(МониторингОбъектыТаблицаТехника.Names.Владелец, всеОбъекты, NsgComparison.In);
+                    var idСотрудниковОбъекта = МониторингОбъектыТаблицаТехника.Новый().FindAllRequisits(cmpСписокТехники, МониторингОбъектыТаблицаТехника.Names.Техника)
+                        .AllRows
+                        .Select(x => x[МониторингОбъектыТаблицаТехника.Names.Техника].ToReferent().Guid)
+                        .ToArray();
+
+                    cmp.Add(Техника.Names.Идентификатор, idСотрудниковОбъекта, NsgComparison.In);
+                }
+            }
+        }
+
+        private void nbЗаполнитьИтоги_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            var объект = Объект_vmoИтоги.Value;
+            if (!объект.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Необходимо указать объект");
+                e.Cancel = true;
+                return;
+            }
+            var месяцИтогов = МесяцИтогов_vmoИтоги.Value.Date;
+
+            if (месяцИтогов == NsgService.MinDate)
+            {
+                NsgSettings.MainForm.ShowMessage("Необходимо выбрать месяц итогов");
+                e.Cancel = true;
+                return;
+            }
+
+            var cmp = new NsgCompare();
+            cmp.Add(ФормированиеСмены.Names.Объект, объект);
+            cmp.Add(ФормированиеСмены.Names.ДатаДокумента, NsgService.BeginOfMonth(месяцИтогов), NsgComparison.GreaterOrEqual);
+            cmp.Add(ФормированиеСмены.Names.ДатаДокумента, NsgService.EndOfMonth(месяцИтогов), NsgComparison.LessOrEqual);
+            cmp.Add(ФормированиеСмены.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            var всеСмены = ФормированиеСмены.Новый().FindAll(cmp);
+            var гуиды = всеСмены.Select(x => x.Идентификатор).ToArray();
+            var cmpСменыТехника = new NsgCompare();
+            cmpСменыТехника.Add(МониторингФормированиеСменыТаблица.Names.Владелец, гуиды, NsgComparison.In);
+            var сменыТехники = МониторингФормированиеСменыТаблица.Новый().FindAll(cmpСменыТехника);
+
+            var cmpСменыПерсонал = new NsgCompare();
+            cmpСменыПерсонал.Add(МониторингФормированиеСменыТаблицаПерсонал.Names.Владелец, гуиды, NsgComparison.In);
+            var сменыПерсонала = МониторингФормированиеСменыТаблицаПерсонал.Новый().FindAll(cmpСменыПерсонал);
+
+            vmoТаблицаИтогов.Data.BeginUpdateData();
+            vmoТаблицаИтогов.Data.MemoryTable.Clear();
+
+            HashSet<Tuple<string, Техника, Сотрудники, Должности>> рабочаяТехника = new HashSet<Tuple<string, Техника, Сотрудники, Должности>>();
+            foreach (var item in сменыТехники)
+            {
+                рабочаяТехника.Add(new Tuple<string, Техника, Сотрудники, Должности>(item.КодГруппы, item.Техника, item.Сотрудник, item.Должность));
+            }
+
+            HashSet<Tuple<string, Должности, Сотрудники>> рабочийПерсонал = new HashSet<Tuple<string, Должности, Сотрудники>>();
+
+            foreach (var item in сменыПерсонала)
+            {
+                рабочийПерсонал.Add(new Tuple<string, Должности, Сотрудники>(item.КодГруппы, item.Должность, item.Сотрудник));
+            }
+
+            var всегоДней = NsgService.EndOfMonth(месяцИтогов).Day;
+            foreach (var item in рабочаяТехника)
+            {
+                var row = vmoТаблицаИтогов.Data.MemoryTable.NewRow();
+                row[КодГруппы_vmoТаблицаИтогов].Value = item.Item1;
+                row[Техника_vmoТаблицаИтогов].Value = item.Item2;
+                row[ГруппаСпТехн_vmoТаблицаИтогов].Value = item.Item2.ГруппаСпецТехники;
+                row[Сотрудник_vmoТаблицаИтогов].Value = item.Item3;
+                row[Должность_vmoТаблицаИтогов].Value = item.Item4;
+                for (int i = 1; i <= всегоДней; i++)
+                {
+                    var строка = сменыТехники.First(x => x.КодГруппы == item.Item1 && x.Техника == item.Item2 && x.Сотрудник == item.Item3 && x.Должность == item.Item4 && x.Время.Day == i);
+                    if (строка != null)
+                    {
+                        row["Дл" + i].Value = строка.Длительность;
+                    }
+                }
+                row.Post();
+            }
+
+            foreach (var item in рабочийПерсонал)
+            {
+                var row = vmoТаблицаИтогов.Data.MemoryTable.NewRow();
+                row[КодГруппы_vmoТаблицаИтогов].Value = item.Item1;
+                row[Сотрудник_vmoТаблицаИтогов].Value = item.Item3;
+                row[Должность_vmoТаблицаИтогов].Value = item.Item2;
+                for (int i = 1; i <= всегоДней; i++)
+                {
+                    var строка = сменыПерсонала.First(x => x.КодГруппы == item.Item1 && x.Должность == item.Item2 && x.Сотрудник == item.Item3 && x.Время.Day == i);
+                    if (строка != null)
+                    {
+                        row["Дл" + i].Value = строка.Длительность;
+                    }
+                }
+                row.Post();
+            }
+            
+        }
+
+        private void nbЗаполнитьПоГрафику_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            var объект = Объект_vmoИтоги.Value;
+            if (!объект.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Необходимо указать объект");
+                e.Cancel = true;
+                return;
+            }
+            var месяцИтогов = МесяцИтогов_vmoИтоги.Value.Date;
+
+            if (месяцИтогов == NsgService.MinDate)
+            {
+                NsgSettings.MainForm.ShowMessage("Необходимо выбрать месяц итогов");
+                e.Cancel = true;
+                return;
+            }
+
+            vmoТаблицаИтогов.Data.BeginUpdateData();
+            vmoТаблицаИтогов.Data.MemoryTable.Clear();
+
+            var всегоДней = NsgService.EndOfMonth(месяцИтогов).Day;
+            for (int i = 1; i <= всегоДней; i++)
+            {
+                var дата = new DateTime(месяцИтогов.Year, месяцИтогов.Month, i);
+
+                var графикРаботыОбъекта = объект.ДействующийНаДатуГрафикРаботы(дата);
+                if (графикРаботыОбъекта.Selected)
+                {
+                    for (int номерСмены = 1; номерСмены <= 3; номерСмены++)
+                    {
+                        var параметры = графикРаботыОбъекта.ПараметрыВыходаНАСменуНаДату(дата, (int)номерСмены);
+                        foreach (var item in параметры)
+                        {
+                            if (item.Value.Item1 && (item.Key.Item2.Selected || item.Key.Item3.Selected))
+                            {
+                                var количество = item.Key.Item4 == 0 ? 1 : item.Key.Item4;
+
+                                var строки = vmoТаблицаИтогов.Data.MemoryTable
+                                    .FindRows(new NsgCompare()
+                                    .Add(КодГруппы_vmoТаблицаИтогов.Name, item.Key.Item1)
+                                    .Add(ГруппаСпТехн_vmoТаблицаИтогов.Name, item.Key.Item3)
+                                    .Add(Должность_vmoТаблицаИтогов.Name, item.Key.Item2)
+                                    .Add(КоличествоДляСравнения_vmoТаблицаИтогов.Name, item.Key.Item4));
+
+                                for (int j = 0; j < количество; j++)
+                                {
+                                    var суммируемаяКолонка = i.ToString();
+                                    NsgMemoryTableRow row = null;
+                                    if (строки != null && строки.Length > 0 && строки.Length > j)
+                                    {
+                                        row = строки[j];
+                                        row[суммируемаяКолонка].Value = row[суммируемаяКолонка].ToDecimal() + item.Value.Item3;
+                                    }
+                                    else
+                                    {
+                                        row = vmoТаблицаИтогов.Data.MemoryTable.NewRow();
+                                        row[суммируемаяКолонка].Value = item.Value.Item3;
+                                        row[КодГруппы_vmoТаблицаИтогов].Value = item.Key.Item1;
+                                        row[ГруппаСпТехн_vmoТаблицаИтогов].Value = item.Key.Item3;
+                                        row[Должность_vmoТаблицаИтогов].Value = item.Key.Item2;
+                                        row[КоличествоДляСравнения_vmoТаблицаИтогов].Value = item.Key.Item4;
+                                        row.Post();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            vmoТаблицаИтогов.Data.UpdateDataSync(this);
 
         }
     }

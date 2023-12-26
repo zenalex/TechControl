@@ -40,6 +40,35 @@ namespace TechControl.Метаданные.Документы
                 return false;
             }
         }
+
+        public void ЗаполнитьТаблицуАвтоматически() 
+        {
+            if (Год != NsgService.MinDate)
+            {
+                ТаблицаПраздников.DeleteAll();
+                var началоГода = new DateTime(Год.Year, 1, 1);
+                var конецГода = new DateTime(Год.Year, 12, 31);
+                var текущаяДата = началоГода;
+                while (текущаяДата <= конецГода)
+                {
+                    //if (текущаяДата.DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        var row = ТаблицаПраздников.NewRow();
+                        row.Дата = текущаяДата;
+                        row.Post();
+                    }
+                    
+
+                    текущаяДата = текущаяДата.AddDays(1);
+                }
+            }
+        }
+
+        //public static DateTime[] БезусловноПраздничныеДни = new DateTime[]
+        //{
+        //    new DateTime()
+        //};
+
     }
 
 }

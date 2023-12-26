@@ -45,6 +45,15 @@ namespace TechControl.Метаданные.Мониторинг
 
         #endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
 
+        protected override void OnSetFormObject(NsgMultipleObject formObject)
+        {
+            base.OnSetFormObject(formObject);
+            if (vmoГрафикРаботы.Data.CurrentRow == null)
+            {
+                vmoГрафикРаботы.Data.CurrentRow = vmoГрафикРаботы.Data.MemoryTable.NewRow();
+            }
+        }
+
         private void nsgIGridТарифыТехники_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
         {
             if (e.ColumnName == Тариф.Name && e.RowObject[Стоимость].ToDecimal() == 0)
@@ -115,6 +124,7 @@ namespace TechControl.Метаданные.Мониторинг
                 row[ДлительностьСмены1Часы_vmoТаблицаГрафикаРаботы].Value = item.ДлительностьСмены1ВЧасах;
                 row[ДлительностьСмены2Часы_vmoТаблицаГрафикаРаботы].Value = item.ДлительностьСмены2ВЧасах;
                 row[ДлительностьСмены3Часы_vmoТаблицаГрафикаРаботы].Value = item.ДлительностьСмены3ВЧасах;
+                row[Количество_vmoТаблицаГрафикаРаботы].Value = item.Количество;
                 row.Post();
             }
 
@@ -127,23 +137,28 @@ namespace TechControl.Метаданные.Мониторинг
         {
             vmoГруппировкаГрафикаРаботы.Data.BeginUpdateData();
             vmoГруппировкаГрафикаРаботы.Data.MemoryTable.Clear();
-
-            List<Tuple<Должности, ГруппыСпецТехники, long>> группировки = new List<Tuple<Должности, ГруппыСпецТехники, long>>();
+            var датаНачалаГрафика = ДатаНачалаДействияГрафика_vmoГрафикРаботы.Value.Date;
+            List<Tuple<string, Должности, ГруппыСпецТехники, long>> группировки = new List<Tuple<string, Должности, ГруппыСпецТехники, long>>();
             foreach (var item in vmoТаблицаГрафикаРаботы.Data.MemoryTable.AllRows)
             {
                 var должность = item[Должность_vmoТаблицаГрафикаРаботы].ToReferent() as Должности;
                 var группаСпТех = item[ГруппаСпецТехники_vmoТаблицаГрафикаРаботы].ToReferent() as ГруппыСпецТехники;
                 var колич = item[Количество_vmoТаблицаГрафикаРаботы].ToInt();
+                var кодГруппы = item[КодГруппы_vmoТаблицаГрафикаРаботы].ToString();
 
-                группировки.Add(new Tuple<Должности, ГруппыСпецТехники, long>(должность, группаСпТех, колич));
+                группировки.Add(new Tuple<string, Должности, ГруппыСпецТехники, long>(кодГруппы, должность, группаСпТех, колич));
             }
             группировки = группировки.Distinct().ToList();
             foreach (var item in группировки)
             {
                 var row = vmoГруппировкаГрафикаРаботы.Data.MemoryTable.NewRow();
-                row[Должность_vmoГруппировка].Value = item.Item1;
-                row[ГруппаСпецТехники_vmoГруппировка].Value = item.Item2;
-                row[Количество_vmoГруппировка].Value = item.Item3;
+                row[КодГруппы_vmoГруппировка].Value = item.Item1;
+                row[Должность_vmoГруппировка].Value = item.Item2;
+                row[ГруппаСпецТехники_vmoГруппировка].Value = item.Item3;
+                row[Количество_vmoГруппировка].Value = item.Item4;
+                row[ВремяНачалаСмены1_vmoГруппировка].Value = датаНачалаГрафика;
+                row[ВремяНачалаСмены2_vmoГруппировка].Value = датаНачалаГрафика;
+                row[ВремяНачалаСмены3_vmoГруппировка].Value = датаНачалаГрафика;
                 row.Post();
             }
 
@@ -171,6 +186,7 @@ namespace TechControl.Метаданные.Мониторинг
                 cmp.Clear();
                 cmp.Add(Должность_vmoТаблицаГрафикаРаботы.Name, Должность_vmoГруппировка.Value);
                 cmp.Add(ГруппаСпецТехники_vmoТаблицаГрафикаРаботы.Name, ГруппаСпецТехники_vmoГруппировка.Value);
+                cmp.Add(КодГруппы_vmoТаблицаГрафикаРаботы.Name, КодГруппы_vmoГруппировка.Value);
 
                 vmoТаблицаГрафикаРаботы.Data.UpdateDataSync(this);
             }
@@ -180,6 +196,7 @@ namespace TechControl.Метаданные.Мониторинг
         {
             var должность = e.RowObject[Должность_vmoГруппировка].ToReferent() as Должности;
             var группаСПТехн = e.RowObject[ГруппаСпецТехники_vmoГруппировка].ToReferent() as ГруппыСпецТехники;
+            var кодГруппы = e.RowObject[КодГруппы_vmoГруппировка].ToString();
 
             if ((должность != null && должность.Selected) || (группаСПТехн != null && группаСПТехн.Selected))
             {
@@ -187,6 +204,7 @@ namespace TechControl.Метаданные.Мониторинг
                 var cmpДолжнИГруппа = new NsgCompare();
                 cmpДолжнИГруппа.Add(Должность_vmoТаблицаГрафикаРаботы.Name, должность);
                 cmpДолжнИГруппа.Add(ГруппаСпецТехники_vmoТаблицаГрафикаРаботы.Name, группаСПТехн);
+                cmpДолжнИГруппа.Add(КодГруппы_vmoТаблицаГрафикаРаботы.Name, кодГруппы);
                 cmp.Add(cmpДолжнИГруппа);
                 var cmpДатаИВых = new NsgCompare();
                 cmpДатаИВых.Add(ДатаКонкретныйДень_vmoТаблицаГрафикаРаботы.Name, NsgService.MinDate);
@@ -201,6 +219,7 @@ namespace TechControl.Метаданные.Мониторинг
                     {
                         item[Должность_vmoТаблицаГрафикаРаботы].Value = должность;
                         item[ГруппаСпецТехники_vmoТаблицаГрафикаРаботы].Value = группаСПТехн;
+                        item[КодГруппы_vmoТаблицаГрафикаРаботы].Value = кодГруппы;
                         item[Количество_vmoТаблицаГрафикаРаботы].Value = e.RowObject[Количество_vmoГруппировка].ToInt();
                         item[ВремяНачаСмены1_vmoТаблицаГрафикаРаботы].Value = e.RowObject[ВремяНачалаСмены1_vmoГруппировка].ToDateTime();
                         item[ВремяНачалаСмены2_vmoТаблицаГрафикаРаботы].Value = e.RowObject[ВремяНачалаСмены2_vmoГруппировка].ToDateTime();
@@ -212,9 +231,11 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 else
                 {
+                    кодГруппы = Guid.NewGuid().ToString();
                     foreach (var kvp in ДеньНедели.AllValues)
                     {
                         var item = vmoГрафикРаботы.Data.MemoryTable.NewRow();
+                        item[КодГруппы_vmoТаблицаГрафикаРаботы].Value = кодГруппы;
                         item[ДеньНедели_vmoТаблицаГрафикаРаботы].Value = kvp;
                         item[Должность_vmoТаблицаГрафикаРаботы].Value = должность;
                         item[ГруппаСпецТехники_vmoТаблицаГрафикаРаботы].Value = группаСПТехн;
@@ -269,14 +290,53 @@ namespace TechControl.Метаданные.Мониторинг
                     график.New();
                 }
 
-                график.ДатаНачалаДействияГрафика = ДатаНачалаДействияГрафика_vmoГрафикРаботы.Value;
+                график.ДатаНачалаДействияГрафика = ДатаНачалаДействияГрафика_vmoГрафикРаботы.Value.Date;
                 график.Объект = FormObject as Объекты;
+                List<Guid> обработанныеСтроки = new List<Guid>();
                 foreach (var item in vmoТаблицаГрафикаРаботы.Data.MemoryTable.AllRows)
                 {
-                    var row = график.Таблица.NewRow();
-                    row.Должность = item[Должность_vmoТаблицаГрафикаРаботы].ToReferent() as Должности;
-                    row.ГруппаСпецТехники = item[ГруппаСпецТехники_vmoТаблицаГрафикаРаботы].ToReferent() as ГруппыСпецТехники;
-                    row.ДеньНедели = item[ДеньНедели_vmoТаблицаГрафикаРаботы].ToReferent() as ДеньНедели;
+                    var должность = item[Должность_vmoТаблицаГрафикаРаботы].ToReferent() as Должности;
+                    var группаСпТехн = item[ГруппаСпецТехники_vmoТаблицаГрафикаРаботы].ToReferent() as ГруппыСпецТехники;
+                    var деньНедели = item[ДеньНедели_vmoТаблицаГрафикаРаботы].ToReferent() as ДеньНедели;
+                    var колич = item[Количество_vmoТаблицаГрафикаРаботы].ToInt();
+                    var кодГруппы = item[КодГруппы_vmoТаблицаГрафикаРаботы].ToString();
+                    var cmp = new NsgCompare();
+                    cmp.Add(ДокументыГрафикРаботыОбъектаТаблица.Names.КодГруппы, кодГруппы);
+                    cmp.Add(ДокументыГрафикРаботыОбъектаТаблица.Names.Должность, должность);
+                    cmp.Add(ДокументыГрафикРаботыОбъектаТаблица.Names.ГруппаСпецТехники, группаСпТехн);
+                    cmp.Add(ДокументыГрафикРаботыОбъектаТаблица.Names.ДеньНедели, деньНедели);
+
+                    ДокументыГрафикРаботыОбъектаТаблица.Строка row = null;
+
+                    var подходящиеСтроки = график.Таблица.FindRows(cmp);
+                    if (подходящиеСтроки != null && подходящиеСтроки.Length > 0)
+                    {
+                        if (подходящиеСтроки.Length == 1)
+                        {
+                            row = подходящиеСтроки.First();
+                        }
+                        else
+                        {
+                            подходящиеСтроки = подходящиеСтроки.Where(x => x.Количество == колич && !обработанныеСтроки.Contains(x.Идентификатор)).ToArray();
+                            if (подходящиеСтроки.Length > 0)
+                            {
+                                row = подходящиеСтроки.First();
+                                if (row != null)
+                                {
+                                    обработанныеСтроки.Add(row.Идентификатор);
+                                }
+                            }
+                        }
+                    }
+
+                    if (row == null)
+                    {
+                        row = график.Таблица.NewRow();
+                    }
+                    
+                    row.Должность = должность;
+                    row.ГруппаСпецТехники = группаСпТехн;
+                    row.ДеньНедели = деньНедели;
                     row.ДатаКонкретныйДень = item[ДатаКонкретныйДень_vmoТаблицаГрафикаРаботы].ToDateTime();
                     row.Выходной = item[Выходной_vmoТаблицаГрафикаРаботы].ToBoolean();
                     row.ВремяНачалаСмены1 = item[ВремяНачаСмены1_vmoТаблицаГрафикаРаботы].ToDateTime();
@@ -285,7 +345,8 @@ namespace TechControl.Метаданные.Мониторинг
                     row.ДлительностьСмены1ВЧасах = item[ДлительностьСмены1Часы_vmoТаблицаГрафикаРаботы].ToDecimal();
                     row.ДлительностьСмены2ВЧасах = item[ДлительностьСмены2Часы_vmoТаблицаГрафикаРаботы].ToDecimal();
                     row.ДлительностьСмены3ВЧасах = item[ДлительностьСмены3Часы_vmoТаблицаГрафикаРаботы].ToDecimal();
-                    row.Количество = item[Количество_vmoТаблицаГрафикаРаботы].ToInt();
+                    row.Количество = колич;
+                    row.КодГруппы = кодГруппы;
 
                     row.Post();
                 }
@@ -333,6 +394,13 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void nbЗаполнитьПоПерсоналу_AsyncClick(object sender, DoWorkEventArgs e)
         {
+            var началоДействияГрафика = ДатаНачалаДействияГрафика_vmoГрафикРаботы.Value.Date;
+            if (началоДействияГрафика == NsgService.MinDate || началоДействияГрафика == DateTime.MinValue)
+            {
+                NsgSettings.MainForm.ShowMessage("Необходимо указать дату начала действия графика");
+                e.Cancel = true;
+                return;
+            }
             if (ТаблицаПерсонал.Value.Count > 0 || ТаблицаТехника.Value.Count > 0)
             {
                 vmoТаблицаГрафикаРаботы.Data.BeginUpdateData();
@@ -390,29 +458,42 @@ namespace TechControl.Метаданные.Мониторинг
 
                 foreach (var item in должности)
                 {
+                    var кодГруппы = Guid.NewGuid().ToString();
+
                     foreach (var день in ДеньНедели.AllValues)
                     {
                         var row = vmoТаблицаГрафикаРаботы.Data.MemoryTable.NewRow();
                         row[Должность_vmoТаблицаГрафикаРаботы].Value = item.Key;
                         row[Количество_vmoТаблицаГрафикаРаботы].Value = item.Value;
                         row[ДеньНедели_vmoТаблицаГрафикаРаботы].Value = день;
+                        row[ВремяНачаСмены1_vmoТаблицаГрафикаРаботы].Value = началоДействияГрафика;
+                        row[ВремяНачалаСмены2_vmoТаблицаГрафикаРаботы].Value = началоДействияГрафика;
+                        row[ВремяНачалаСмены3_vmoТаблицаГрафикаРаботы].Value = началоДействияГрафика;
+                        row[КодГруппы_vmoТаблицаГрафикаРаботы].Value = кодГруппы;
                         row.Post();
                     }
                 }
 
                 foreach (var item in группыСпТехн)
                 {
+                    var кодГруппы = Guid.NewGuid().ToString();
+
                     foreach (var день in ДеньНедели.AllValues)
                     {
                         var row = vmoТаблицаГрафикаРаботы.Data.MemoryTable.NewRow();
                         row[ГруппаСпецТехники_vmoТаблицаГрафикаРаботы].Value = item.Key;
                         row[Количество_vmoТаблицаГрафикаРаботы].Value = item.Value;
                         row[ДеньНедели_vmoТаблицаГрафикаРаботы].Value = день;
+                        row[ВремяНачаСмены1_vmoТаблицаГрафикаРаботы].Value = началоДействияГрафика;
+                        row[ВремяНачалаСмены2_vmoТаблицаГрафикаРаботы].Value = началоДействияГрафика;
+                        row[ВремяНачалаСмены3_vmoТаблицаГрафикаРаботы].Value = началоДействияГрафика;
+                        row[КодГруппы_vmoТаблицаГрафикаРаботы].Value = кодГруппы;
                         row.Post();
                     }
                 }
 
                 ОбновитьГруппировкиГрафика();
+                ОбновитьФильтрыНаГрафик();
 
                 vmoТаблицаГрафикаРаботы.Data.UpdateDataSync(this);
             }

@@ -193,6 +193,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Windows.iGridLib.iGrid.dll</HintPath>
     </Reference>
+    <Reference Include="Stimulsoft.Controls.Win">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\DLL\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -4562,6 +4565,30 @@
     <EmbeddedResource Include="Метаданные\Документы\ОтработанныеМесяцы\ФормаЭлемента.resx">
       <NsgOwnerGuid>e00f0a58-1bcd-42e2-ac98-1801d686589b</NsgOwnerGuid>
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФОтработанныеМесяцы\ПФОтработанныеМесяцы.NsgInit.cs">
+      <NsgOwnerGuid>4e707588-f4d2-422e-a6f1-35a671e0b9e5</NsgOwnerGuid>
+      <NsgOwnerName>ПФОтработанныеМесяцы</NsgOwnerName>
+      <DependentUpon>ПФОтработанныеМесяцы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФОтработанныеМесяцы\ПФОтработанныеМесяцы.cs">
+      <NsgOwnerGuid>4e707588-f4d2-422e-a6f1-35a671e0b9e5</NsgOwnerGuid>
+      <NsgOwnerName>ПФОтработанныеМесяцы</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФОтработанныеМесяцы\Форма.Designer.cs">
+      <NsgOwnerGuid>4e707588-f4d2-422e-a6f1-35a671e0b9e5</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФОтработанныеМесяцы\Форма.cs">
+      <NsgOwnerGuid>4e707588-f4d2-422e-a6f1-35a671e0b9e5</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\ПечатныеФормыДокументов\ПФОтработанныеМесяцы\Форма.resx">
+      <NsgOwnerGuid>4e707588-f4d2-422e-a6f1-35a671e0b9e5</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

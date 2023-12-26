@@ -266,6 +266,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.ДоговорСсылка = new TechControl.Метаданные.Мониторинг.Договоры.ColumnDescriptor();
             this.ТипОбъекта = new TechControl.Метаданные.Справочники.ТипыОбъектов.ColumnDescriptor();
             this.Родитель = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
+            this.КодГруппы_vmoТаблицаГрафикаРаботы = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.КодГруппы_vmoГруппировка = new NsgSoft.Forms.NsgColumnDescriptor.String();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -1732,6 +1734,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoТаблицаГрафикаРаботы.Columns.Collection.Add(this.ДлительностьСмены2Часы_vmoТаблицаГрафикаРаботы);
             this.vmoТаблицаГрафикаРаботы.Columns.Collection.Add(this.ДлительностьСмены3Часы_vmoТаблицаГрафикаРаботы);
             this.vmoТаблицаГрафикаРаботы.Columns.Collection.Add(this.Количество_vmoТаблицаГрафикаРаботы);
+            this.vmoТаблицаГрафикаРаботы.Columns.Collection.Add(this.КодГруппы_vmoТаблицаГрафикаРаботы);
             this.vmoТаблицаГрафикаРаботы.IsActive = true;
             this.vmoТаблицаГрафикаРаботы.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
             this.vmoТаблицаГрафикаРаботы.MetaDataName = "";
@@ -2314,6 +2317,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoГруппировкаГрафикаРаботы.Columns.Collection.Add(this.ДлительностьСмены1_vmoГруппировка);
             this.vmoГруппировкаГрафикаРаботы.Columns.Collection.Add(this.ДлительностьСмены2_vmoГруппировка);
             this.vmoГруппировкаГрафикаРаботы.Columns.Collection.Add(this.ДлительностьСмены3_vmoГруппировка);
+            this.vmoГруппировкаГрафикаРаботы.Columns.Collection.Add(this.КодГруппы_vmoГруппировка);
             this.vmoГруппировкаГрафикаРаботы.IsActive = true;
             this.vmoГруппировкаГрафикаРаботы.CurrentRowChanged += new NsgSoft.Forms.CurrentRowChangedEventHandler(this.vmoГруппировкаГрафикаРаботы_CurrentRowChanged);
             this.vmoГруппировкаГрафикаРаботы.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
@@ -4181,6 +4185,28 @@ namespace TechControl.Метаданные.Мониторинг
             this.Родитель.SearchCondition.OwnerComponent = this.Родитель;
             this.Родитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // КодГруппы_vmoТаблицаГрафикаРаботы
+            // 
+            this.КодГруппы_vmoТаблицаГрафикаРаботы.Caption = "КодГруппы";
+            this.КодГруппы_vmoТаблицаГрафикаРаботы.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.КодГруппы_vmoТаблицаГрафикаРаботы.Name = "КодГруппы";
+            this.КодГруппы_vmoТаблицаГрафикаРаботы.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.КодГруппы_vmoТаблицаГрафикаРаботы.PropertyType = typeof(string);
+            this.КодГруппы_vmoТаблицаГрафикаРаботы.SearchCondition.OwnerComponent = this.КодГруппы_vmoТаблицаГрафикаРаботы;
+            this.КодГруппы_vmoТаблицаГрафикаРаботы.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.КодГруппы_vmoТаблицаГрафикаРаботы.Visible = false;
+            // 
+            // КодГруппы_vmoГруппировка
+            // 
+            this.КодГруппы_vmoГруппировка.Caption = "КодГруппы";
+            this.КодГруппы_vmoГруппировка.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.КодГруппы_vmoГруппировка.Name = "КодГруппы";
+            this.КодГруппы_vmoГруппировка.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.КодГруппы_vmoГруппировка.PropertyType = typeof(string);
+            this.КодГруппы_vmoГруппировка.SearchCondition.OwnerComponent = this.КодГруппы_vmoГруппировка;
+            this.КодГруппы_vmoГруппировка.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.КодГруппы_vmoГруппировка.Visible = false;
+            // 
             // ОбъектыФормаЭлемента
             // 
             this.AllowDrop = true;
@@ -4469,5 +4495,7 @@ namespace TechControl.Метаданные.Мониторинг
         private NsgVisualMultipleObject vmoГруппировкаГрафикаРаботы;
         private NsgIGrid nsgIGrid7;
         protected NsgSoft.Design.NsgButton nbЗаполнитьПоПерсоналу;
+        protected NsgColumnDescriptor.String КодГруппы_vmoТаблицаГрафикаРаботы;
+        protected NsgColumnDescriptor.String КодГруппы_vmoГруппировка;
     }
 }

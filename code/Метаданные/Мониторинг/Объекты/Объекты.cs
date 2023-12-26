@@ -56,7 +56,7 @@ namespace TechControl.Метаданные.Мониторинг
             }
             else
             {
-                NsgSettings.MainForm.ShowMessage("На объекте отсуттствуют действующие графики работы");
+                NsgSettings.MainForm.ShowMessage($"На объекте отсуттствуют действующие на {дата} графики работы"); 
                 return ГрафикРаботыОбъекта.Новый();
             }
         }
