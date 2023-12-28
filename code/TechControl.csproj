@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2023.10.16.0</ProductVersion>
+    <ProductVersion>2023.12.28.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -4591,5 +4591,40 @@
       <DependentUpon>Форма.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\УчетСотрудников\Документы\Документы.NsgInit.cs">
+      <NsgOwnerGuid>3cc6be40-1caa-4254-858e-0d394a5c2b42</NsgOwnerGuid>
+      <NsgOwnerName>Документы</NsgOwnerName>
+      <DependentUpon>Документы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\Документы\Документы.cs">
+      <NsgOwnerGuid>3cc6be40-1caa-4254-858e-0d394a5c2b42</NsgOwnerGuid>
+      <NsgOwnerName>Документы</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\Документы\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>3cc6be40-1caa-4254-858e-0d394a5c2b42</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\Документы\ФормаЭлемента.cs">
+      <NsgOwnerGuid>3cc6be40-1caa-4254-858e-0d394a5c2b42</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\УчетСотрудников\Документы\ФормаЭлемента.resx">
+      <NsgOwnerGuid>3cc6be40-1caa-4254-858e-0d394a5c2b42</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\УчетСотрудников\ВидыДокументов\ВидыДокументов.NsgInit.cs">
+      <NsgOwnerGuid>49a8285a-ff7b-4cdc-8c74-2b1a6e1b3e5f</NsgOwnerGuid>
+      <NsgOwnerName>ВидыДокументов</NsgOwnerName>
+      <DependentUpon>ВидыДокументов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\ВидыДокументов\ВидыДокументов.cs">
+      <NsgOwnerGuid>49a8285a-ff7b-4cdc-8c74-2b1a6e1b3e5f</NsgOwnerGuid>
+      <NsgOwnerName>ВидыДокументов</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
