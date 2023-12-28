@@ -2577,6 +2577,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="affaf119-d9e9-4749-9a25-e5560fc82479" type="NsgDataString" editoraccess="Full" name="ЗагрузочныйИдентификатор" visible="true" description="Загрузочный идентификатор" field="ZagruzochnyijIden" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -2602,6 +2607,7 @@
             <container name="ЗаправочнаяЕмкость" />
             <container name="ДоговорСсылка" />
             <container name="ТипОбъекта" />
+            <container name="ЗагрузочныйИдентификатор" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -4716,6 +4722,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="8adade55-23f0-41d3-951e-3bc9d57cc93b" type="NsgDataString" editoraccess="Full" name="ЗагрузочныйИдентификатор" visible="true" description="Загрузочный идентификатор" field="ZagruzochnyijIden" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -4727,6 +4738,7 @@
             <container name="ИНН" />
             <container name="АккаунтПользователя" />
             <container name="ЯвляетсяПоставщикомСпецодежды" />
+            <container name="ЗагрузочныйИдентификатор" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -6401,12 +6413,18 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="a82f6db9-5b6d-4d94-8917-444fda57c932" type="NsgDataString" editoraccess="Full" name="ЗагрузочныйИдентификатор" visible="true" description="Загрузочный идентификатор" field="ZagruzochnyijIden" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
             <container name="Стоимость" />
             <container name="ИконкаТарифа" />
             <container name="АккаунтПользователя" />
+            <container name="ЗагрузочныйИдентификатор" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -11342,6 +11360,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="de5e0324-9ac3-4268-a7fb-2c52acd0df3e" type="NsgDataString" editoraccess="Full" name="ЗагрузочныйИдентификатор" visible="true" description="Загрузочный идентификатор" field="ZagruzochnyijIden" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" length="50">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -11352,6 +11375,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ЗагрузочныйИдентификатор" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
