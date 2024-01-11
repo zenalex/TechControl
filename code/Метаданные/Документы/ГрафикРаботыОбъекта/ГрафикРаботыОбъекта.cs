@@ -34,7 +34,7 @@ namespace TechControl.Метаданные.Документы
         /// <param name="датаВыхода"></param>
         /// <param name="номерСмены"></param>
         /// <returns></returns>
-        public Dictionary<Tuple<string, Должности, ГруппыСпецТехники, long>, Tuple<bool, System.DateTime, decimal>> ПараметрыВыходаНАСменуНаДату(System.DateTime датаВыхода, int номерСмены)
+        public Dictionary<Tuple<string, Должности, ГруппыСпецТехники, long>, Tuple<bool, System.DateTime, decimal>> ПараметрыВыходаНАСменуНаДату(System.DateTime датаВыхода)
         {
             var параметры = new Dictionary<Tuple<string, Должности, ГруппыСпецТехники, long>, Tuple<bool, System.DateTime, decimal>>();
             if (Таблица.Count == 0)
@@ -56,7 +56,7 @@ namespace TechControl.Метаданные.Документы
                         bool выход = false;
                         System.DateTime времяВыхода = NsgService.MinDate;
                         decimal длительность = 0;
-                        if (номерСмены == 1)
+                        //if (номерСмены == 1)
                         {
                             выход = Таблица.AllRows.Any(x => x.КодГруппы == item.Item1 
                             && x.Должность == item.Item2
@@ -78,52 +78,52 @@ namespace TechControl.Метаданные.Документы
                                 && x.ДлительностьСмены1ВЧасах != 0).ДлительностьСмены1ВЧасах;
                             }
                         }
-                        if (номерСмены == 2)
-                        {
-                            выход = Таблица.AllRows.Any(x => x.КодГруппы == item.Item1
-                            && x.Должность == item.Item2
-                            && x.ГруппаСпецТехники == item.Item3
-                            && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
-                            && x.ДлительностьСмены2ВЧасах != 0);
+                        //if (номерСмены == 2)
+                        //{
+                        //    выход = Таблица.AllRows.Any(x => x.КодГруппы == item.Item1
+                        //    && x.Должность == item.Item2
+                        //    && x.ГруппаСпецТехники == item.Item3
+                        //    && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
+                        //    && x.ДлительностьСмены2ВЧасах != 0);
 
-                            if (выход)
-                            {
-                                времяВыхода = Таблица.AllRows.First(x => x.КодГруппы == item.Item1
-                                && x.Должность == item.Item2
-                                && x.ГруппаСпецТехники == item.Item3
-                                && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
-                                && x.ДлительностьСмены2ВЧасах != 0).ВремяНачалаСмены2;
+                        //    if (выход)
+                        //    {
+                        //        времяВыхода = Таблица.AllRows.First(x => x.КодГруппы == item.Item1
+                        //        && x.Должность == item.Item2
+                        //        && x.ГруппаСпецТехники == item.Item3
+                        //        && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
+                        //        && x.ДлительностьСмены2ВЧасах != 0).ВремяНачалаСмены2;
 
-                                длительность = Таблица.AllRows.First(x => x.КодГруппы == item.Item1
-                                && x.Должность == item.Item2
-                                && x.ГруппаСпецТехники == item.Item3
-                                && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
-                                && x.ДлительностьСмены2ВЧасах != 0).ДлительностьСмены2ВЧасах;
-                            }
-                        }
-                        if (номерСмены == 3)
-                        {
-                            выход = Таблица.AllRows.Any(x => x.КодГруппы == item.Item1
-                            && x.Должность == item.Item2
-                            && x.ГруппаСпецТехники == item.Item3
-                            && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
-                            && x.ДлительностьСмены3ВЧасах != 0);
+                        //        длительность = Таблица.AllRows.First(x => x.КодГруппы == item.Item1
+                        //        && x.Должность == item.Item2
+                        //        && x.ГруппаСпецТехники == item.Item3
+                        //        && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
+                        //        && x.ДлительностьСмены2ВЧасах != 0).ДлительностьСмены2ВЧасах;
+                        //    }
+                        //}
+                        //if (номерСмены == 3)
+                        //{
+                        //    выход = Таблица.AllRows.Any(x => x.КодГруппы == item.Item1
+                        //    && x.Должность == item.Item2
+                        //    && x.ГруппаСпецТехники == item.Item3
+                        //    && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
+                        //    && x.ДлительностьСмены3ВЧасах != 0);
 
-                            if (выход)
-                            {
-                                времяВыхода = Таблица.AllRows.First(x => x.КодГруппы == item.Item1
-                                && x.Должность == item.Item2
-                                && x.ГруппаСпецТехники == item.Item3
-                                && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
-                                && x.ДлительностьСмены3ВЧасах != 0).ВремяНачалаСмены3;
+                        //    if (выход)
+                        //    {
+                        //        времяВыхода = Таблица.AllRows.First(x => x.КодГруппы == item.Item1
+                        //        && x.Должность == item.Item2
+                        //        && x.ГруппаСпецТехники == item.Item3
+                        //        && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
+                        //        && x.ДлительностьСмены3ВЧасах != 0).ВремяНачалаСмены3;
 
-                                длительность = Таблица.AllRows.First(x => x.КодГруппы == item.Item1
-                                && x.Должность == item.Item2
-                                && x.ГруппаСпецТехники == item.Item3
-                                && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
-                                && x.ДлительностьСмены3ВЧасах != 0).ДлительностьСмены3ВЧасах;
-                            }
-                        }
+                        //        длительность = Таблица.AllRows.First(x => x.КодГруппы == item.Item1
+                        //        && x.Должность == item.Item2
+                        //        && x.ГруппаСпецТехники == item.Item3
+                        //        && ДеньНедели.ByDayOfWeek[датаВыхода.DayOfWeek] == x.ДеньНедели
+                        //        && x.ДлительностьСмены3ВЧасах != 0).ДлительностьСмены3ВЧасах;
+                        //    }
+                        //}
 
                         параметры[item] = new Tuple<bool, System.DateTime, decimal>(выход, времяВыхода, длительность);
                     }
@@ -154,6 +154,28 @@ namespace TechControl.Метаданные.Документы
                 пары = доступныеДолжностиИТехника.Distinct().ToArray();
             }
             return пары;
+        }
+
+        public System.DateTime РассчитатьВремяНачалаРаботы() 
+        {
+            System.DateTime искомаяДата = NsgService.MinDate;
+            if (Таблица.Count > 0)
+            {
+                искомаяДата = Таблица.AllRows.Select(x => x.ВремяНачалаСмены1).OrderBy(y => y).First();
+            }
+
+            return искомаяДата;
+        }
+
+        public System.DateTime РассчитатьВремяОкончанияРаботы()
+        {
+            System.DateTime искомаяДата = NsgService.MinDate;
+            if (Таблица.Count > 0)
+            {
+                искомаяДата = Таблица.AllRows.Select(x => x.ВремяНачалаСмены1.AddHours((double)x.ДлительностьСмены1ВЧасах)).OrderByDescending(y => y).First();
+            }
+
+            return искомаяДата;
         }
     }
 

@@ -158,27 +158,27 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="vmoПерсонал.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 54</value>
+    <value>200, 17</value>
   </metadata>
   <metadata name="vmoТехника.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 91</value>
+    <value>333, 17</value>
   </metadata>
   <metadata name="vmoТарифы.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 128</value>
+    <value>455, 17</value>
   </metadata>
   <metadata name="vmoСистемыСлежения.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 165</value>
+    <value>577, 17</value>
   </metadata>
   <metadata name="vmoТаблицаГрафикаРаботы.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 202</value>
+    <value>761, 17</value>
   </metadata>
   <metadata name="vmoТарифыПерсонал.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 239</value>
+    <value>973, 17</value>
   </metadata>
   <metadata name="vmoГруппировкаГрафикаРаботы.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 276</value>
+    <value>1150, 17</value>
   </metadata>
   <metadata name="vmoГрафикРаботы.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 313</value>
+    <value>17, 54</value>
   </metadata>
 </root>

@@ -157,10 +157,6 @@ namespace TechControl.Метаданные.Мониторинг
                 }
             }
 
-            if (НомерСмены == 0)
-            {
-                НомерСмены = 1;
-            }
             return base.BasePost();
         }
 

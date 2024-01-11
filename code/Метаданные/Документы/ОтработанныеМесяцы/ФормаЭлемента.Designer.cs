@@ -136,6 +136,44 @@ namespace TechControl.Метаданные.Документы
             this.Контрагент = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.МесяцИтогов = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.bgwЗаполнениеДанныхПоГрафику = new NsgSoft.Forms.NsgBackgroundWorker(this.components);
+            this.nbАнализ = new NsgSoft.Design.NsgButton();
+            this.vmoДанныеГрафика = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.Должность_vmoДанныеГрафика = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
+            this.ГруппаСпТехн_vmoДанныеГрафика = new TechControl.Метаданные.Мониторинг.ГруппыСпецТехники.ColumnDescriptor();
+            this.КоличДляСравнения_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.КодГруппы_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.ДГ1_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ2_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ3_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ4_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ5_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ6_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ7_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ8_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ9_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ10_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ11_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ12_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ13_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ14_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ15_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ16_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ17_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ18_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ19_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ20_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ21_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ22_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ23_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ24_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ25_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ26_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ27_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.Дг28_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ29_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ30_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
+            this.ДГ31_vmoДанныеГрафика = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -159,6 +197,8 @@ namespace TechControl.Метаданные.Документы
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbАнализ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoДанныеГрафика)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -1159,6 +1199,7 @@ namespace TechControl.Метаданные.Документы
             this.nsgIGrid1.SourceObject = this.vmoТаблица;
             this.nsgIGrid1.TabIndex = 16;
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            this.nsgIGrid1.CellEndEdit += new NsgSoft.Forms.NsgIGrid.NsgIGridCellEventHandler(this.nsgIGrid1_CellEndEdit);
             this.vmoТаблица.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
             nsgObjectDescriptor2.ConfigurationName = "TechControl";
             this.vmoТаблица.MetaDataName = "Метаданные";
@@ -1974,6 +2015,459 @@ namespace TechControl.Метаданные.Документы
             this.МесяцИтогов.SearchCondition.OwnerComponent = this.МесяцИтогов;
             this.МесяцИтогов.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // bgwЗаполнениеДанныхПоГрафику
+            // 
+            this.bgwЗаполнениеДанныхПоГрафику.CancelForbidden = false;
+            this.bgwЗаполнениеДанныхПоГрафику.CurrentProgressValue = 0;
+            this.bgwЗаполнениеДанныхПоГрафику.Description = "";
+            this.bgwЗаполнениеДанныхПоГрафику.EventGeneratorObject = null;
+            this.bgwЗаполнениеДанныхПоГрафику.MaxProgressValue = 100;
+            this.bgwЗаполнениеДанныхПоГрафику.Name = "NsgBackgroundWorker";
+            this.bgwЗаполнениеДанныхПоГрафику.OwnerForm = this;
+            this.bgwЗаполнениеДанныхПоГрафику.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
+            this.bgwЗаполнениеДанныхПоГрафику.ProgressObject = null;
+            this.bgwЗаполнениеДанныхПоГрафику.ProgressProcentage = 0;
+            this.bgwЗаполнениеДанныхПоГрафику.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwЗаполнениеДанныхПоГрафику_RunWorkerCompleted);
+            this.bgwЗаполнениеДанныхПоГрафику.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwЗаполнениеДанныхПоГрафику_DoWork);
+            // 
+            // nbАнализ
+            // 
+            this.nbАнализ.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.nbАнализ.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nbАнализ.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nbАнализ.Location = new System.Drawing.Point(471, 61);
+            this.nbАнализ.Name = "NsgButton";
+            this.nbАнализ.Size = new System.Drawing.Size(163, 25);
+            this.nbАнализ.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.nbАнализ.TabIndex = 17;
+            this.nbАнализ.Text = "Сравнить с расписанием";
+            this.nbАнализ.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nbАнализ.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbАнализ_AsyncClick);
+            // 
+            // vmoДанныеГрафика
+            // 
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.Должность_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ГруппаСпТехн_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.КоличДляСравнения_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.КодГруппы_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ1_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ2_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ3_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ4_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ5_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ6_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ7_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ8_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ9_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ10_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ11_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ12_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ13_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ14_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ15_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ16_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ17_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ18_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ19_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ20_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ21_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ22_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ23_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ24_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ25_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ26_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ27_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.Дг28_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ29_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ30_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.Columns.Collection.Add(this.ДГ31_vmoДанныеГрафика);
+            this.vmoДанныеГрафика.IsActive = true;
+            this.vmoДанныеГрафика.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoДанныеГрафика.MetaDataName = "";
+            this.vmoДанныеГрафика.FullName = "";
+            // 
+            // Должность_vmoДанныеГрафика
+            // 
+            this.Должность_vmoДанныеГрафика.Caption = "Должность";
+            this.Должность_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Должность_vmoДанныеГрафика.Name = "Должность";
+            this.Должность_vmoДанныеГрафика.NSGType = typeof(TechControl.Метаданные.Мониторинг.Должности);
+            this.Должность_vmoДанныеГрафика.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Должности);
+            this.Должность_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.Должность_vmoДанныеГрафика;
+            this.Должность_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ГруппаСпТехн_vmoДанныеГрафика
+            // 
+            this.ГруппаСпТехн_vmoДанныеГрафика.Caption = "ГруппаСпТехн";
+            this.ГруппаСпТехн_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ГруппаСпТехн_vmoДанныеГрафика.Name = "ГруппаСпТехн";
+            this.ГруппаСпТехн_vmoДанныеГрафика.NSGType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
+            this.ГруппаСпТехн_vmoДанныеГрафика.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ГруппыСпецТехники);
+            this.ГруппаСпТехн_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ГруппаСпТехн_vmoДанныеГрафика;
+            this.ГруппаСпТехн_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // КоличДляСравнения_vmoДанныеГрафика
+            // 
+            this.КоличДляСравнения_vmoДанныеГрафика.CalcTotal = false;
+            this.КоличДляСравнения_vmoДанныеГрафика.Caption = "КоличествоДляСравнения";
+            this.КоличДляСравнения_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.КоличДляСравнения_vmoДанныеГрафика.Name = "КоличествоДляСравнения";
+            this.КоличДляСравнения_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.КоличДляСравнения_vmoДанныеГрафика.PropertyType = typeof(long);
+            this.КоличДляСравнения_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.КоличДляСравнения_vmoДанныеГрафика;
+            this.КоличДляСравнения_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // КодГруппы_vmoДанныеГрафика
+            // 
+            this.КодГруппы_vmoДанныеГрафика.Caption = "КодГруппы";
+            this.КодГруппы_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.КодГруппы_vmoДанныеГрафика.Name = "КодГруппы";
+            this.КодГруппы_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.КодГруппы_vmoДанныеГрафика.PropertyType = typeof(string);
+            this.КодГруппы_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.КодГруппы_vmoДанныеГрафика;
+            this.КодГруппы_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ1_vmoДанныеГрафика
+            // 
+            this.ДГ1_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ1_vmoДанныеГрафика.Caption = "1";
+            this.ДГ1_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ1_vmoДанныеГрафика.Name = "1";
+            this.ДГ1_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ1_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ1_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ1_vmoДанныеГрафика;
+            this.ДГ1_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ2_vmoДанныеГрафика
+            // 
+            this.ДГ2_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ2_vmoДанныеГрафика.Caption = "2";
+            this.ДГ2_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ2_vmoДанныеГрафика.Name = "2";
+            this.ДГ2_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ2_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ2_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ2_vmoДанныеГрафика;
+            this.ДГ2_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ3_vmoДанныеГрафика
+            // 
+            this.ДГ3_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ3_vmoДанныеГрафика.Caption = "3";
+            this.ДГ3_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ3_vmoДанныеГрафика.Name = "3";
+            this.ДГ3_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ3_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ3_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ3_vmoДанныеГрафика;
+            this.ДГ3_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ4_vmoДанныеГрафика
+            // 
+            this.ДГ4_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ4_vmoДанныеГрафика.Caption = "4";
+            this.ДГ4_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ4_vmoДанныеГрафика.Name = "4";
+            this.ДГ4_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ4_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ4_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ4_vmoДанныеГрафика;
+            this.ДГ4_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ5_vmoДанныеГрафика
+            // 
+            this.ДГ5_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ5_vmoДанныеГрафика.Caption = "5";
+            this.ДГ5_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ5_vmoДанныеГрафика.Name = "5";
+            this.ДГ5_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ5_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ5_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ5_vmoДанныеГрафика;
+            this.ДГ5_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ6_vmoДанныеГрафика
+            // 
+            this.ДГ6_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ6_vmoДанныеГрафика.Caption = "6";
+            this.ДГ6_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ6_vmoДанныеГрафика.Name = "6";
+            this.ДГ6_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ6_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ6_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ6_vmoДанныеГрафика;
+            this.ДГ6_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ7_vmoДанныеГрафика
+            // 
+            this.ДГ7_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ7_vmoДанныеГрафика.Caption = "7";
+            this.ДГ7_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ7_vmoДанныеГрафика.Name = "7";
+            this.ДГ7_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ7_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ7_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ7_vmoДанныеГрафика;
+            this.ДГ7_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ8_vmoДанныеГрафика
+            // 
+            this.ДГ8_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ8_vmoДанныеГрафика.Caption = "8";
+            this.ДГ8_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ8_vmoДанныеГрафика.Name = "8";
+            this.ДГ8_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ8_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ8_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ8_vmoДанныеГрафика;
+            this.ДГ8_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ9_vmoДанныеГрафика
+            // 
+            this.ДГ9_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ9_vmoДанныеГрафика.Caption = "9";
+            this.ДГ9_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ9_vmoДанныеГрафика.Name = "9";
+            this.ДГ9_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ9_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ9_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ9_vmoДанныеГрафика;
+            this.ДГ9_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ10_vmoДанныеГрафика
+            // 
+            this.ДГ10_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ10_vmoДанныеГрафика.Caption = "10";
+            this.ДГ10_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ10_vmoДанныеГрафика.Name = "10";
+            this.ДГ10_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ10_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ10_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ10_vmoДанныеГрафика;
+            this.ДГ10_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ11_vmoДанныеГрафика
+            // 
+            this.ДГ11_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ11_vmoДанныеГрафика.Caption = "11";
+            this.ДГ11_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ11_vmoДанныеГрафика.Name = "11";
+            this.ДГ11_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ11_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ11_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ11_vmoДанныеГрафика;
+            this.ДГ11_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ12_vmoДанныеГрафика
+            // 
+            this.ДГ12_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ12_vmoДанныеГрафика.Caption = "12";
+            this.ДГ12_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ12_vmoДанныеГрафика.Name = "12";
+            this.ДГ12_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ12_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ12_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ12_vmoДанныеГрафика;
+            this.ДГ12_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ13_vmoДанныеГрафика
+            // 
+            this.ДГ13_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ13_vmoДанныеГрафика.Caption = "13";
+            this.ДГ13_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ13_vmoДанныеГрафика.Name = "13";
+            this.ДГ13_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ13_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ13_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ13_vmoДанныеГрафика;
+            this.ДГ13_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ14_vmoДанныеГрафика
+            // 
+            this.ДГ14_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ14_vmoДанныеГрафика.Caption = "14";
+            this.ДГ14_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ14_vmoДанныеГрафика.Name = "14";
+            this.ДГ14_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ14_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ14_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ14_vmoДанныеГрафика;
+            this.ДГ14_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ15_vmoДанныеГрафика
+            // 
+            this.ДГ15_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ15_vmoДанныеГрафика.Caption = "15";
+            this.ДГ15_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ15_vmoДанныеГрафика.Name = "15";
+            this.ДГ15_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ15_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ15_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ15_vmoДанныеГрафика;
+            this.ДГ15_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ16_vmoДанныеГрафика
+            // 
+            this.ДГ16_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ16_vmoДанныеГрафика.Caption = "16";
+            this.ДГ16_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ16_vmoДанныеГрафика.Name = "16";
+            this.ДГ16_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ16_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ16_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ16_vmoДанныеГрафика;
+            this.ДГ16_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ17_vmoДанныеГрафика
+            // 
+            this.ДГ17_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ17_vmoДанныеГрафика.Caption = "17";
+            this.ДГ17_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ17_vmoДанныеГрафика.Name = "17";
+            this.ДГ17_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ17_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ17_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ17_vmoДанныеГрафика;
+            this.ДГ17_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ18_vmoДанныеГрафика
+            // 
+            this.ДГ18_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ18_vmoДанныеГрафика.Caption = "18";
+            this.ДГ18_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ18_vmoДанныеГрафика.Name = "18";
+            this.ДГ18_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ18_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ18_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ18_vmoДанныеГрафика;
+            this.ДГ18_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ19_vmoДанныеГрафика
+            // 
+            this.ДГ19_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ19_vmoДанныеГрафика.Caption = "19";
+            this.ДГ19_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ19_vmoДанныеГрафика.Name = "19";
+            this.ДГ19_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ19_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ19_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ19_vmoДанныеГрафика;
+            this.ДГ19_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ20_vmoДанныеГрафика
+            // 
+            this.ДГ20_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ20_vmoДанныеГрафика.Caption = "20";
+            this.ДГ20_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ20_vmoДанныеГрафика.Name = "20";
+            this.ДГ20_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ20_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ20_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ20_vmoДанныеГрафика;
+            this.ДГ20_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ21_vmoДанныеГрафика
+            // 
+            this.ДГ21_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ21_vmoДанныеГрафика.Caption = "21";
+            this.ДГ21_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ21_vmoДанныеГрафика.Name = "21";
+            this.ДГ21_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ21_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ21_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ21_vmoДанныеГрафика;
+            this.ДГ21_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ22_vmoДанныеГрафика
+            // 
+            this.ДГ22_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ22_vmoДанныеГрафика.Caption = "22";
+            this.ДГ22_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ22_vmoДанныеГрафика.Name = "22";
+            this.ДГ22_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ22_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ22_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ22_vmoДанныеГрафика;
+            this.ДГ22_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ23_vmoДанныеГрафика
+            // 
+            this.ДГ23_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ23_vmoДанныеГрафика.Caption = "23";
+            this.ДГ23_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ23_vmoДанныеГрафика.Name = "23";
+            this.ДГ23_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ23_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ23_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ23_vmoДанныеГрафика;
+            this.ДГ23_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ24_vmoДанныеГрафика
+            // 
+            this.ДГ24_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ24_vmoДанныеГрафика.Caption = "24";
+            this.ДГ24_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ24_vmoДанныеГрафика.Name = "24";
+            this.ДГ24_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ24_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ24_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ24_vmoДанныеГрафика;
+            this.ДГ24_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ25_vmoДанныеГрафика
+            // 
+            this.ДГ25_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ25_vmoДанныеГрафика.Caption = "25";
+            this.ДГ25_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ25_vmoДанныеГрафика.Name = "25";
+            this.ДГ25_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ25_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ25_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ25_vmoДанныеГрафика;
+            this.ДГ25_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ26_vmoДанныеГрафика
+            // 
+            this.ДГ26_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ26_vmoДанныеГрафика.Caption = "26";
+            this.ДГ26_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ26_vmoДанныеГрафика.Name = "26";
+            this.ДГ26_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ26_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ26_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ26_vmoДанныеГрафика;
+            this.ДГ26_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ27_vmoДанныеГрафика
+            // 
+            this.ДГ27_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ27_vmoДанныеГрафика.Caption = "27";
+            this.ДГ27_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ27_vmoДанныеГрафика.Name = "27";
+            this.ДГ27_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ27_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ27_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ27_vmoДанныеГрафика;
+            this.ДГ27_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Дг28_vmoДанныеГрафика
+            // 
+            this.Дг28_vmoДанныеГрафика.CalcTotal = false;
+            this.Дг28_vmoДанныеГрафика.Caption = "28";
+            this.Дг28_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Дг28_vmoДанныеГрафика.Name = "28";
+            this.Дг28_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.Дг28_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.Дг28_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.Дг28_vmoДанныеГрафика;
+            this.Дг28_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ29_vmoДанныеГрафика
+            // 
+            this.ДГ29_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ29_vmoДанныеГрафика.Caption = "29";
+            this.ДГ29_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ29_vmoДанныеГрафика.Name = "29";
+            this.ДГ29_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ29_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ29_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ29_vmoДанныеГрафика;
+            this.ДГ29_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ30_vmoДанныеГрафика
+            // 
+            this.ДГ30_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ30_vmoДанныеГрафика.Caption = "30";
+            this.ДГ30_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ30_vmoДанныеГрафика.Name = "30";
+            this.ДГ30_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ30_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ30_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ30_vmoДанныеГрафика;
+            this.ДГ30_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ДГ31_vmoДанныеГрафика
+            // 
+            this.ДГ31_vmoДанныеГрафика.CalcTotal = false;
+            this.ДГ31_vmoДанныеГрафика.Caption = "31";
+            this.ДГ31_vmoДанныеГрафика.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.ДГ31_vmoДанныеГрафика.Name = "31";
+            this.ДГ31_vmoДанныеГрафика.NSGType = typeof(NsgSoft.DataObjects.NsgDataFloat);
+            this.ДГ31_vmoДанныеГрафика.PropertyType = typeof(decimal);
+            this.ДГ31_vmoДанныеГрафика.SearchCondition.OwnerComponent = this.ДГ31_vmoДанныеГрафика;
+            this.ДГ31_vmoДанныеГрафика.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // ОтработанныеМесяцыФормаЭлемента
             // 
             this.AllowDrop = true;
@@ -1983,6 +2477,7 @@ namespace TechControl.Метаданные.Документы
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(741, 503);
+            this.Controls.Add(this.nbАнализ);
             this.Controls.Add(this.nsgIGrid1);
             this.Controls.Add(this.nsgInput3);
             this.Controls.Add(this.label3);
@@ -2008,6 +2503,7 @@ namespace TechControl.Метаданные.Документы
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.nsgInput3, 0);
             this.Controls.SetChildIndex(this.nsgIGrid1, 0);
+            this.Controls.SetChildIndex(this.nbАнализ, 0);
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).EndInit();
@@ -2033,6 +2529,8 @@ namespace TechControl.Метаданные.Документы
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbАнализ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoДанныеГрафика)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2101,5 +2599,43 @@ namespace TechControl.Метаданные.Документы
         private Мониторинг.Должности.ColumnDescriptor Должность;
         protected Мониторинг.ГруппыСпецТехники.ColumnDescriptor ГруппаСпецТехники;
         private NsgIGrid nsgIGrid1;
+        protected NsgSoft.Design.NsgButton nbАнализ;
+        protected Мониторинг.Должности.ColumnDescriptor Должность_vmoДанныеГрафика;
+        private Мониторинг.ГруппыСпецТехники.ColumnDescriptor ГруппаСпТехн_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Int64 КоличДляСравнения_vmoДанныеГрафика;
+        protected NsgColumnDescriptor.String КодГруппы_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ1_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ2_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ3_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ4_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ5_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ6_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ7_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ8_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ9_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ10_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ11_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ12_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ13_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ14_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ15_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ16_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ17_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ18_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ19_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ20_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ21_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ22_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ23_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ24_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ25_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ26_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ27_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal Дг28_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ29_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ30_vmoДанныеГрафика;
+        private NsgColumnDescriptor.Decimal ДГ31_vmoДанныеГрафика;
+        private NsgVisualMultipleObject vmoДанныеГрафика;
+        private NsgBackgroundWorker bgwЗаполнениеДанныхПоГрафику;
     }
 }
