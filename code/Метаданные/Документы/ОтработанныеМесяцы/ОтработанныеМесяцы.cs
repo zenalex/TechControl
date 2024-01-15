@@ -54,8 +54,6 @@ namespace TechControl.Метаданные.Документы
                 foreach (var item in рабочаяТехника)
                 {
                     var row = Таблица.NewRow();
-                    row.Техника = item.Item1;
-                    row.ГруппаСпецТехники = item.Item1.ГруппаСпецТехники;
                     row.Сотрудник = item.Item2;
                     row.Должность = item.Item3;
                     for (int i = 1; i <= всегоДней; i++)

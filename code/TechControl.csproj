@@ -4627,4 +4627,72 @@
       <NsgOwnerName>ВидыДокументов</NsgOwnerName>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\ЭСМ\ДокументыЭСМТаблица.NsgInit.cs">
+      <NsgOwnerGuid>7298b4fc-60d5-4197-9253-186bd3b9d399</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЭСМТаблица</NsgOwnerName>
+      <DependentUpon>ДокументыЭСМТаблица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЭСМ\ДокументыЭСМТаблица.cs">
+      <NsgOwnerGuid>7298b4fc-60d5-4197-9253-186bd3b9d399</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЭСМТаблица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЭСМ\ДокументыЭСМТаблица.Строка.NsgInit.cs">
+      <NsgOwnerGuid>7298b4fc-60d5-4197-9253-186bd3b9d399</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЭСМТаблица</NsgOwnerName>
+      <DependentUpon>ДокументыЭСМТаблица.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЭСМ\ДокументыЭСМТаблица.Строка.cs">
+      <NsgOwnerGuid>7298b4fc-60d5-4197-9253-186bd3b9d399</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЭСМТаблица</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\ЭСМ\ЭСМ.NsgInit.cs">
+      <NsgOwnerGuid>9b94b094-9ef7-4cf6-95aa-322ee66ca587</NsgOwnerGuid>
+      <NsgOwnerName>ЭСМ</NsgOwnerName>
+      <DependentUpon>ЭСМ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЭСМ\ЭСМ.cs">
+      <NsgOwnerGuid>9b94b094-9ef7-4cf6-95aa-322ee66ca587</NsgOwnerGuid>
+      <NsgOwnerName>ЭСМ</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЭСМ\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>9b94b094-9ef7-4cf6-95aa-322ee66ca587</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЭСМ\ФормаЭлемента.cs">
+      <NsgOwnerGuid>9b94b094-9ef7-4cf6-95aa-322ee66ca587</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Документы\ЭСМ\ФормаЭлемента.resx">
+      <NsgOwnerGuid>9b94b094-9ef7-4cf6-95aa-322ee66ca587</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЭСМ\ПФЭСМ.NsgInit.cs">
+      <NsgOwnerGuid>d7876d16-f741-444f-8825-30b34d6d0823</NsgOwnerGuid>
+      <NsgOwnerName>ПФЭСМ</NsgOwnerName>
+      <DependentUpon>ПФЭСМ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЭСМ\ПФЭСМ.cs">
+      <NsgOwnerGuid>d7876d16-f741-444f-8825-30b34d6d0823</NsgOwnerGuid>
+      <NsgOwnerName>ПФЭСМ</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЭСМ\Форма.Designer.cs">
+      <NsgOwnerGuid>d7876d16-f741-444f-8825-30b34d6d0823</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\ПечатныеФормыДокументов\ПФЭСМ\Форма.cs">
+      <NsgOwnerGuid>d7876d16-f741-444f-8825-30b34d6d0823</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\ПечатныеФормыДокументов\ПФЭСМ\Форма.resx">
+      <NsgOwnerGuid>d7876d16-f741-444f-8825-30b34d6d0823</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
