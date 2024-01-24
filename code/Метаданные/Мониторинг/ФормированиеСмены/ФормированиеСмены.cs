@@ -196,7 +196,7 @@ namespace TechControl.Метаданные.Мониторинг
                         System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
                 }
-                if (!i.Сотрудник.Selected)
+                if (!i.Сотрудник.Selected && tariff.ТребуетсяСотрудник)
                 {
                     NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран сотрудник",
                         System.Windows.Forms.MessageBoxIcon.Error);

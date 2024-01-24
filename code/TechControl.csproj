@@ -4695,4 +4695,65 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\ЭСМ\ДокументыЭСМТаблицаДокументов.NsgInit.cs">
+      <NsgOwnerGuid>65ef6190-afe2-49df-b0ef-767461e0a81d</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЭСМТаблицаДокументов</NsgOwnerName>
+      <DependentUpon>ДокументыЭСМТаблицаДокументов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЭСМ\ДокументыЭСМТаблицаДокументов.cs">
+      <NsgOwnerGuid>65ef6190-afe2-49df-b0ef-767461e0a81d</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЭСМТаблицаДокументов</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЭСМ\ДокументыЭСМТаблицаДокументов.Строка.NsgInit.cs">
+      <NsgOwnerGuid>65ef6190-afe2-49df-b0ef-767461e0a81d</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЭСМТаблицаДокументов</NsgOwnerName>
+      <DependentUpon>ДокументыЭСМТаблицаДокументов.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЭСМ\ДокументыЭСМТаблицаДокументов.Строка.cs">
+      <NsgOwnerGuid>65ef6190-afe2-49df-b0ef-767461e0a81d</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЭСМТаблицаДокументов</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\Доверенности\Доверенности.NsgInit.cs">
+      <NsgOwnerGuid>ce3cce95-13c5-4308-8767-88a37c5f51ff</NsgOwnerGuid>
+      <NsgOwnerName>Доверенности</NsgOwnerName>
+      <DependentUpon>Доверенности.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\Доверенности\Доверенности.cs">
+      <NsgOwnerGuid>ce3cce95-13c5-4308-8767-88a37c5f51ff</NsgOwnerGuid>
+      <NsgOwnerName>Доверенности</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\Доверенности\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>ce3cce95-13c5-4308-8767-88a37c5f51ff</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\Доверенности\ФормаЭлемента.cs">
+      <NsgOwnerGuid>ce3cce95-13c5-4308-8767-88a37c5f51ff</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Документы\Доверенности\ФормаЭлемента.resx">
+      <NsgOwnerGuid>ce3cce95-13c5-4308-8767-88a37c5f51ff</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\Договоры\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>35ae64dc-e8b5-48b7-b31d-ff22fdb66647</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\Договоры\ФормаЭлемента.cs">
+      <NsgOwnerGuid>35ae64dc-e8b5-48b7-b31d-ff22fdb66647</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Мониторинг\Договоры\ФормаЭлемента.resx">
+      <NsgOwnerGuid>35ae64dc-e8b5-48b7-b31d-ff22fdb66647</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

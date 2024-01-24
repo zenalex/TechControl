@@ -66,6 +66,15 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpОсновные = new System.Windows.Forms.TabPage();
             this.tpКомплекты = new System.Windows.Forms.TabPage();
+            this.tpТаблНоменклатуры = new System.Windows.Forms.TabPage();
+            this.nsgIGrid2 = new NsgSoft.Forms.NsgIGrid();
+            this.vmoТаблицаНоменклатуры = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.Идентификатор_vmoТаблицаНоменклатуры = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
+            this.Автоинкремент_vmoТаблицаНоменклатуры = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Владелец_vmoТаблицаНоменклатуры = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
+            this.НомерСтроки_vmoТаблицаНоменклатуры = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
+            this.Номенклатура = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Идентификатор = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
             this.Автоинкремент = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.ЭтоГруппа = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
@@ -85,15 +94,10 @@ namespace TechControl.Метаданные.Мониторинг
             this.ТаблицаКомплектовСпецодежды = new TechControl.Метаданные._SystemTables.МониторингДолжностиТаблицаКомплектовСпецодежды.ColumnDescriptor();
             this.ЗагрузочныйИдентификатор = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ТаблицаНеобязательнойНоменклатуры = new TechControl.Метаданные._SystemTables.МониторингДолжностиТаблицаНеобязательнойНоменклатуры.ColumnDescriptor();
+            this.НаименованиеРодительныйПадеж = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Родитель = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
-            this.vmoТаблицаНоменклатуры = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Идентификатор_vmoТаблицаНоменклатуры = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
-            this.Автоинкремент_vmoТаблицаНоменклатуры = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Владелец_vmoТаблицаНоменклатуры = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
-            this.НомерСтроки_vmoТаблицаНоменклатуры = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Номенклатура = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
-            this.tpТаблНоменклатуры = new System.Windows.Forms.TabPage();
-            this.nsgIGrid2 = new NsgSoft.Forms.NsgIGrid();
+            this.nsgInput7 = new NsgSoft.Forms.NsgInput();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -123,9 +127,11 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControl1.SuspendLayout();
             this.tpОсновные.SuspendLayout();
             this.tpКомплекты.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vmoТаблицаНоменклатуры)).BeginInit();
             this.tpТаблНоменклатуры.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoТаблицаНоменклатуры)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput7)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -421,6 +427,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ТаблицаКомплектовСпецодежды);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ЗагрузочныйИдентификатор);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.ТаблицаНеобязательнойНоменклатуры);
+            this.nsgVisualMultipleObject.Columns.Collection.Add(this.НаименованиеРодительныйПадеж);
             this.nsgVisualMultipleObject.Columns.Collection.Add(this.Родитель);
             this.nsgVisualMultipleObject.IsActive = true;
             this.nsgVisualMultipleObject.MetaDataName = "Метаданные";
@@ -861,13 +868,14 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControl1.Controls.Add(this.tpТаблНоменклатуры);
             this.tabControl1.Location = new System.Drawing.Point(6, 12);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 2;
+            this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1010, 479);
             this.tabControl1.TabIndex = 21;
             // 
             // tpОсновные
             // 
             this.tpОсновные.AllowDrop = true;
+            this.tpОсновные.Controls.Add(this.groupBox1);
             this.tpОсновные.Controls.Add(this.nsgInput1);
             this.tpОсновные.Controls.Add(this.label6);
             this.tpОсновные.Controls.Add(this.label1);
@@ -888,7 +896,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpОсновные.TabIndex = 0;
             this.tpОсновные.Text = "Основные";
             this.tpОсновные.UseVisualStyleBackColor = true;
-            this.tpОсновные.Visible = false;
+            this.tpОсновные.Visible = true;
             // 
             // tpКомплекты
             // 
@@ -903,6 +911,155 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpКомплекты.Text = "Комплекты спецодежды";
             this.tpКомплекты.UseVisualStyleBackColor = true;
             this.tpКомплекты.Visible = false;
+            // 
+            // tpТаблНоменклатуры
+            // 
+            this.tpТаблНоменклатуры.AllowDrop = true;
+            this.tpТаблНоменклатуры.Controls.Add(this.nsgIGrid2);
+            this.tpТаблНоменклатуры.Enabled = true;
+            this.tpТаблНоменклатуры.Location = new System.Drawing.Point(4, 22);
+            this.tpТаблНоменклатуры.Name = "tpТаблНоменклатуры";
+            this.tpТаблНоменклатуры.Size = new System.Drawing.Size(1002, 453);
+            this.tpТаблНоменклатуры.TabIndex = 2;
+            this.tpТаблНоменклатуры.Text = "Номенклатура";
+            this.tpТаблНоменклатуры.UseVisualStyleBackColor = true;
+            this.tpТаблНоменклатуры.Visible = false;
+            // 
+            // nsgIGrid2
+            // 
+            this.nsgIGrid2.Action = NsgSoft.DataObjects.FormShowMode.None;
+            this.nsgIGrid2.AllowSaveColParamsToXML = true;
+            this.nsgIGrid2.AllowSaveColPositionToXML = true;
+            this.nsgIGrid2.AllowSaveColWidthToXML = true;
+            this.nsgIGrid2.AllowSaveSettingsToXML = true;
+            this.nsgIGrid2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nsgIGrid2.AutoResizeCols = true;
+            this.nsgIGrid2.Filter = false;
+            this.nsgIGrid2.FrozenColumns = 0;
+            this.nsgIGrid2.Grouping = true;
+            this.nsgIGrid2.Hierarhy = true;
+            this.nsgIGrid2.ImageList = null;
+            this.nsgIGrid2.IsCanMultiSelect = false;
+            this.nsgIGrid2.IsCanSingleSelect = false;
+            this.nsgIGrid2.LineHeight = 20;
+            this.nsgIGrid2.Location = new System.Drawing.Point(3, 3);
+            this.nsgIGrid2.MarkReadOnly = false;
+            this.nsgIGrid2.MasterObject = null;
+            this.nsgIGrid2.Name = "NsgIGrid";
+            this.nsgIGrid2.PageSelector = false;
+            this.nsgIGrid2.ReadOnly = false;
+            this.nsgIGrid2.RowChangeInterval = 200;
+            this.nsgIGrid2.RowHeaderImageList = null;
+            this.nsgIGrid2.RowMode = false;
+            this.nsgIGrid2.ScrollWidth = 0;
+            this.nsgIGrid2.SelectedRow = -1;
+            this.nsgIGrid2.ShowHeader = true;
+            this.nsgIGrid2.ShowLineImages = true;
+            this.nsgIGrid2.ShowLineNumbers = false;
+            this.nsgIGrid2.ShowPanel = true;
+            this.nsgIGrid2.ShowTotals = false;
+            this.nsgIGrid2.ShowTree = false;
+            this.nsgIGrid2.Size = new System.Drawing.Size(996, 447);
+            this.nsgIGrid2.SourceObject = this.vmoТаблицаНоменклатуры;
+            this.nsgIGrid2.TabIndex = 0;
+            this.nsgIGrid2.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            this.vmoТаблицаНоменклатуры.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
+            nsgObjectDescriptor4.ConfigurationName = "TechControl";
+            this.vmoТаблицаНоменклатуры.MetaDataName = "Метаданные";
+            this.vmoТаблицаНоменклатуры.FullName = "_SystemTables.МониторингДолжностиТаблицаНеобязательнойНоменклатуры.Владелец";
+            // 
+            // vmoТаблицаНоменклатуры
+            // 
+            nsgObjectDescriptor3.ConfigurationName = "TechControl";
+            nsgObjectDescriptor3.FullName = "_SystemTables.МониторингДолжностиТаблицаНеобязательнойНоменклатуры.Владелец";
+            nsgObjectDescriptor3.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding2.DetailField = nsgObjectDescriptor3;
+            nsgObjectDescriptor4.FullName = "Мониторинг.Должности.ТаблицаНеобязательнойНоменклатуры";
+            nsgObjectDescriptor4.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding2.MasterField = nsgObjectDescriptor4;
+            nsgMasterDetailBinding2.Type = NsgSoft.Forms.NsgBindingType.Tables;
+            this.vmoТаблицаНоменклатуры.Columns.Collection.Add(this.Идентификатор_vmoТаблицаНоменклатуры);
+            this.vmoТаблицаНоменклатуры.Columns.Collection.Add(this.Автоинкремент_vmoТаблицаНоменклатуры);
+            this.vmoТаблицаНоменклатуры.Columns.Collection.Add(this.Владелец_vmoТаблицаНоменклатуры);
+            this.vmoТаблицаНоменклатуры.Columns.Collection.Add(this.НомерСтроки_vmoТаблицаНоменклатуры);
+            this.vmoТаблицаНоменклатуры.Columns.Collection.Add(this.Номенклатура);
+            this.vmoТаблицаНоменклатуры.IsActive = true;
+            this.vmoТаблицаНоменклатуры.MasterComponent = this.nsgVisualMultipleObject;
+            this.vmoТаблицаНоменклатуры.Binding = nsgMasterDetailBinding2;
+            // 
+            // Идентификатор_vmoТаблицаНоменклатуры
+            // 
+            this.Идентификатор_vmoТаблицаНоменклатуры.AutoGenerated = true;
+            this.Идентификатор_vmoТаблицаНоменклатуры.Caption = "Идентификатор";
+            this.Идентификатор_vmoТаблицаНоменклатуры.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Идентификатор_vmoТаблицаНоменклатуры.Name = "Идентификатор";
+            this.Идентификатор_vmoТаблицаНоменклатуры.NSGType = typeof(NsgSoft.DataObjects.NsgDataGuid);
+            this.Идентификатор_vmoТаблицаНоменклатуры.PropertyType = typeof(System.Guid);
+            this.Идентификатор_vmoТаблицаНоменклатуры.SearchCondition.OwnerComponent = this.Идентификатор_vmoТаблицаНоменклатуры;
+            this.Идентификатор_vmoТаблицаНоменклатуры.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Идентификатор_vmoТаблицаНоменклатуры.Visible = false;
+            // 
+            // Автоинкремент_vmoТаблицаНоменклатуры
+            // 
+            this.Автоинкремент_vmoТаблицаНоменклатуры.AutoGenerated = true;
+            this.Автоинкремент_vmoТаблицаНоменклатуры.CalcTotal = false;
+            this.Автоинкремент_vmoТаблицаНоменклатуры.Caption = "Автоинкремент";
+            this.Автоинкремент_vmoТаблицаНоменклатуры.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Автоинкремент_vmoТаблицаНоменклатуры.Name = "Автоинкремент";
+            this.Автоинкремент_vmoТаблицаНоменклатуры.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.Автоинкремент_vmoТаблицаНоменклатуры.PropertyType = typeof(long);
+            this.Автоинкремент_vmoТаблицаНоменклатуры.SearchCondition.OwnerComponent = this.Автоинкремент_vmoТаблицаНоменклатуры;
+            this.Автоинкремент_vmoТаблицаНоменклатуры.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Автоинкремент_vmoТаблицаНоменклатуры.Visible = false;
+            // 
+            // Владелец_vmoТаблицаНоменклатуры
+            // 
+            this.Владелец_vmoТаблицаНоменклатуры.AutoGenerated = true;
+            this.Владелец_vmoТаблицаНоменклатуры.Caption = "Владелец";
+            this.Владелец_vmoТаблицаНоменклатуры.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Владелец_vmoТаблицаНоменклатуры.Name = "Владелец";
+            this.Владелец_vmoТаблицаНоменклатуры.NSGType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец_vmoТаблицаНоменклатуры.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
+            this.Владелец_vmoТаблицаНоменклатуры.SearchCondition.OwnerComponent = this.Владелец_vmoТаблицаНоменклатуры;
+            this.Владелец_vmoТаблицаНоменклатуры.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // НомерСтроки_vmoТаблицаНоменклатуры
+            // 
+            this.НомерСтроки_vmoТаблицаНоменклатуры.AutoGenerated = true;
+            this.НомерСтроки_vmoТаблицаНоменклатуры.CalcTotal = false;
+            this.НомерСтроки_vmoТаблицаНоменклатуры.Caption = "НомерСтроки";
+            this.НомерСтроки_vmoТаблицаНоменклатуры.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.НомерСтроки_vmoТаблицаНоменклатуры.Name = "НомерСтроки";
+            this.НомерСтроки_vmoТаблицаНоменклатуры.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
+            this.НомерСтроки_vmoТаблицаНоменклатуры.PropertyType = typeof(long);
+            this.НомерСтроки_vmoТаблицаНоменклатуры.SearchCondition.OwnerComponent = this.НомерСтроки_vmoТаблицаНоменклатуры;
+            this.НомерСтроки_vmoТаблицаНоменклатуры.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.НомерСтроки_vmoТаблицаНоменклатуры.Visible = false;
+            // 
+            // Номенклатура
+            // 
+            this.Номенклатура.AutoGenerated = true;
+            this.Номенклатура.Caption = "Номенклатура";
+            this.Номенклатура.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.Номенклатура.Name = "Номенклатура";
+            this.Номенклатура.NSGType = typeof(TechControl.Метаданные.Учет.Номенклатура);
+            this.Номенклатура.PropertyType = typeof(TechControl.Метаданные.Учет.Номенклатура);
+            this.Номенклатура.SearchCondition.OwnerComponent = this.Номенклатура;
+            this.Номенклатура.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AllowDrop = true;
+            this.groupBox1.Controls.Add(this.nsgInput7);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Location = new System.Drawing.Point(6, 199);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(442, 44);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Для документов";
             // 
             // Идентификатор
             // 
@@ -1124,6 +1281,17 @@ namespace TechControl.Метаданные.Мониторинг
             this.ТаблицаНеобязательнойНоменклатуры.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             this.ТаблицаНеобязательнойНоменклатуры.Visible = false;
             // 
+            // НаименованиеРодительныйПадеж
+            // 
+            this.НаименованиеРодительныйПадеж.AutoGenerated = true;
+            this.НаименованиеРодительныйПадеж.Caption = "НаименованиеРодительныйПадеж";
+            this.НаименованиеРодительныйПадеж.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
+            this.НаименованиеРодительныйПадеж.Name = "НаименованиеРодительныйПадеж";
+            this.НаименованиеРодительныйПадеж.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.НаименованиеРодительныйПадеж.PropertyType = typeof(string);
+            this.НаименованиеРодительныйПадеж.SearchCondition.OwnerComponent = this.НаименованиеРодительныйПадеж;
+            this.НаименованиеРодительныйПадеж.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // Родитель
             // 
             this.Родитель.AutoGenerated = true;
@@ -1134,143 +1302,45 @@ namespace TechControl.Метаданные.Мониторинг
             this.Родитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Должности);
             this.Родитель.SearchCondition.OwnerComponent = this.Родитель;
             this.Родитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.vmoТаблицаНоменклатуры.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
-            nsgObjectDescriptor4.ConfigurationName = "TechControl";
-            this.vmoТаблицаНоменклатуры.MetaDataName = "Метаданные";
-            this.vmoТаблицаНоменклатуры.FullName = "_SystemTables.МониторингДолжностиТаблицаНеобязательнойНоменклатуры.Владелец";
             // 
-            // vmoТаблицаНоменклатуры
+            // nsgInput7
             // 
-            nsgObjectDescriptor3.ConfigurationName = "TechControl";
-            nsgObjectDescriptor3.FullName = "_SystemTables.МониторингДолжностиТаблицаНеобязательнойНоменклатуры.Владелец";
-            nsgObjectDescriptor3.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding2.DetailField = nsgObjectDescriptor3;
-            nsgObjectDescriptor4.FullName = "Мониторинг.Должности.ТаблицаНеобязательнойНоменклатуры";
-            nsgObjectDescriptor4.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding2.MasterField = nsgObjectDescriptor4;
-            nsgMasterDetailBinding2.Type = NsgSoft.Forms.NsgBindingType.Tables;
-            this.vmoТаблицаНоменклатуры.Columns.Collection.Add(this.Идентификатор_vmoТаблицаНоменклатуры);
-            this.vmoТаблицаНоменклатуры.Columns.Collection.Add(this.Автоинкремент_vmoТаблицаНоменклатуры);
-            this.vmoТаблицаНоменклатуры.Columns.Collection.Add(this.Владелец_vmoТаблицаНоменклатуры);
-            this.vmoТаблицаНоменклатуры.Columns.Collection.Add(this.НомерСтроки_vmoТаблицаНоменклатуры);
-            this.vmoТаблицаНоменклатуры.Columns.Collection.Add(this.Номенклатура);
-            this.vmoТаблицаНоменклатуры.IsActive = true;
-            this.vmoТаблицаНоменклатуры.MasterComponent = this.nsgVisualMultipleObject;
-            this.vmoТаблицаНоменклатуры.Binding = nsgMasterDetailBinding2;
+            this.nsgInput7.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput7.ConfigurationName = "";
+            this.nsgInput7.DisableLeaveControlEvent = false;
+            this.nsgInput7.FullName = "НаименованиеРодительныйПадеж";
+            this.nsgInput7.FullTextSearch = false;
+            this.nsgInput7.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput7.IsButton = false;
+            this.nsgInput7.IsInitialized = true;
+            this.nsgInput7.IsPassword = false;
+            this.nsgInput7.Location = new System.Drawing.Point(151, 16);
+            this.nsgInput7.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput7.Mask = "";
+            this.nsgInput7.MetaDataName = "";
+            this.nsgInput7.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput7.Name = "NsgInput";
+            this.nsgInput7.ObjectImages = null;
+            this.nsgInput7.ObjectIndex = null;
+            this.nsgInput7.ObjectStrings = null;
+            this.nsgInput7.Requsite = "НаименованиеРодительныйПадеж";
+            this.nsgInput7.SearchFieldName = "";
+            this.nsgInput7.ShowMultipleObjectInComboBox = false;
+            this.nsgInput7.ShowRowCount = 10;
+            this.nsgInput7.Size = new System.Drawing.Size(280, 20);
+            this.nsgInput7.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput7.TabIndex = 11;
+            this.nsgInput7.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // Идентификатор_vmoТаблицаНоменклатуры
+            // label7
             // 
-            this.Идентификатор_vmoТаблицаНоменклатуры.AutoGenerated = true;
-            this.Идентификатор_vmoТаблицаНоменклатуры.Caption = "Идентификатор";
-            this.Идентификатор_vmoТаблицаНоменклатуры.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Идентификатор_vmoТаблицаНоменклатуры.Name = "Идентификатор";
-            this.Идентификатор_vmoТаблицаНоменклатуры.NSGType = typeof(NsgSoft.DataObjects.NsgDataGuid);
-            this.Идентификатор_vmoТаблицаНоменклатуры.PropertyType = typeof(System.Guid);
-            this.Идентификатор_vmoТаблицаНоменклатуры.SearchCondition.OwnerComponent = this.Идентификатор_vmoТаблицаНоменклатуры;
-            this.Идентификатор_vmoТаблицаНоменклатуры.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.Идентификатор_vmoТаблицаНоменклатуры.Visible = false;
-            // 
-            // Автоинкремент_vmoТаблицаНоменклатуры
-            // 
-            this.Автоинкремент_vmoТаблицаНоменклатуры.AutoGenerated = true;
-            this.Автоинкремент_vmoТаблицаНоменклатуры.CalcTotal = false;
-            this.Автоинкремент_vmoТаблицаНоменклатуры.Caption = "Автоинкремент";
-            this.Автоинкремент_vmoТаблицаНоменклатуры.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Автоинкремент_vmoТаблицаНоменклатуры.Name = "Автоинкремент";
-            this.Автоинкремент_vmoТаблицаНоменклатуры.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.Автоинкремент_vmoТаблицаНоменклатуры.PropertyType = typeof(long);
-            this.Автоинкремент_vmoТаблицаНоменклатуры.SearchCondition.OwnerComponent = this.Автоинкремент_vmoТаблицаНоменклатуры;
-            this.Автоинкремент_vmoТаблицаНоменклатуры.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.Автоинкремент_vmoТаблицаНоменклатуры.Visible = false;
-            // 
-            // Владелец_vmoТаблицаНоменклатуры
-            // 
-            this.Владелец_vmoТаблицаНоменклатуры.AutoGenerated = true;
-            this.Владелец_vmoТаблицаНоменклатуры.Caption = "Владелец";
-            this.Владелец_vmoТаблицаНоменклатуры.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Владелец_vmoТаблицаНоменклатуры.Name = "Владелец";
-            this.Владелец_vmoТаблицаНоменклатуры.NSGType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
-            this.Владелец_vmoТаблицаНоменклатуры.PropertyType = typeof(NsgSoft.DataObjects.NsgReferencedObject);
-            this.Владелец_vmoТаблицаНоменклатуры.SearchCondition.OwnerComponent = this.Владелец_vmoТаблицаНоменклатуры;
-            this.Владелец_vmoТаблицаНоменклатуры.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // НомерСтроки_vmoТаблицаНоменклатуры
-            // 
-            this.НомерСтроки_vmoТаблицаНоменклатуры.AutoGenerated = true;
-            this.НомерСтроки_vmoТаблицаНоменклатуры.CalcTotal = false;
-            this.НомерСтроки_vmoТаблицаНоменклатуры.Caption = "НомерСтроки";
-            this.НомерСтроки_vmoТаблицаНоменклатуры.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.НомерСтроки_vmoТаблицаНоменклатуры.Name = "НомерСтроки";
-            this.НомерСтроки_vmoТаблицаНоменклатуры.NSGType = typeof(NsgSoft.DataObjects.NsgDataInteger);
-            this.НомерСтроки_vmoТаблицаНоменклатуры.PropertyType = typeof(long);
-            this.НомерСтроки_vmoТаблицаНоменклатуры.SearchCondition.OwnerComponent = this.НомерСтроки_vmoТаблицаНоменклатуры;
-            this.НомерСтроки_vmoТаблицаНоменклатуры.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.НомерСтроки_vmoТаблицаНоменклатуры.Visible = false;
-            // 
-            // Номенклатура
-            // 
-            this.Номенклатура.AutoGenerated = true;
-            this.Номенклатура.Caption = "Номенклатура";
-            this.Номенклатура.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
-            this.Номенклатура.Name = "Номенклатура";
-            this.Номенклатура.NSGType = typeof(TechControl.Метаданные.Учет.Номенклатура);
-            this.Номенклатура.PropertyType = typeof(TechControl.Метаданные.Учет.Номенклатура);
-            this.Номенклатура.SearchCondition.OwnerComponent = this.Номенклатура;
-            this.Номенклатура.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // tpТаблНоменклатуры
-            // 
-            this.tpТаблНоменклатуры.AllowDrop = true;
-            this.tpТаблНоменклатуры.Controls.Add(this.nsgIGrid2);
-            this.tpТаблНоменклатуры.Enabled = true;
-            this.tpТаблНоменклатуры.Location = new System.Drawing.Point(4, 22);
-            this.tpТаблНоменклатуры.Name = "tpТаблНоменклатуры";
-            this.tpТаблНоменклатуры.Size = new System.Drawing.Size(1002, 453);
-            this.tpТаблНоменклатуры.TabIndex = 2;
-            this.tpТаблНоменклатуры.Text = "Номенклатура";
-            this.tpТаблНоменклатуры.UseVisualStyleBackColor = true;
-            this.tpТаблНоменклатуры.Visible = true;
-            // 
-            // nsgIGrid2
-            // 
-            this.nsgIGrid2.Action = NsgSoft.DataObjects.FormShowMode.None;
-            this.nsgIGrid2.AllowSaveColParamsToXML = true;
-            this.nsgIGrid2.AllowSaveColPositionToXML = true;
-            this.nsgIGrid2.AllowSaveColWidthToXML = true;
-            this.nsgIGrid2.AllowSaveSettingsToXML = true;
-            this.nsgIGrid2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nsgIGrid2.AutoResizeCols = true;
-            this.nsgIGrid2.Filter = false;
-            this.nsgIGrid2.FrozenColumns = 0;
-            this.nsgIGrid2.Grouping = true;
-            this.nsgIGrid2.Hierarhy = true;
-            this.nsgIGrid2.ImageList = null;
-            this.nsgIGrid2.IsCanMultiSelect = false;
-            this.nsgIGrid2.IsCanSingleSelect = false;
-            this.nsgIGrid2.LineHeight = 20;
-            this.nsgIGrid2.Location = new System.Drawing.Point(3, 3);
-            this.nsgIGrid2.MarkReadOnly = false;
-            this.nsgIGrid2.MasterObject = null;
-            this.nsgIGrid2.Name = "NsgIGrid";
-            this.nsgIGrid2.PageSelector = false;
-            this.nsgIGrid2.ReadOnly = false;
-            this.nsgIGrid2.RowChangeInterval = 200;
-            this.nsgIGrid2.RowHeaderImageList = null;
-            this.nsgIGrid2.RowMode = false;
-            this.nsgIGrid2.ScrollWidth = 0;
-            this.nsgIGrid2.SelectedRow = -1;
-            this.nsgIGrid2.ShowHeader = true;
-            this.nsgIGrid2.ShowLineImages = true;
-            this.nsgIGrid2.ShowLineNumbers = false;
-            this.nsgIGrid2.ShowPanel = true;
-            this.nsgIGrid2.ShowTotals = false;
-            this.nsgIGrid2.ShowTree = false;
-            this.nsgIGrid2.Size = new System.Drawing.Size(996, 447);
-            this.nsgIGrid2.SourceObject = this.vmoТаблицаНоменклатуры;
-            this.nsgIGrid2.TabIndex = 0;
-            this.nsgIGrid2.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 19);
+            this.label7.Name = "label1";
+            this.label7.Size = new System.Drawing.Size(142, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Наименование Род.Падеж";
             // 
             // ДолжностиФормаЭлемента
             // 
@@ -1326,9 +1396,12 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpОсновные.ResumeLayout(false);
             this.tpОсновные.PerformLayout();
             this.tpКомплекты.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vmoТаблицаНоменклатуры)).EndInit();
             this.tpТаблНоменклатуры.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoТаблицаНоменклатуры)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1357,6 +1430,13 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.Int64 Количество;
         private NsgIGrid nsgIGrid1;
         private NsgVisualMultipleObject vmoТаблицаКомплектов;
+        private System.Windows.Forms.TabPage tpТаблНоменклатуры;
+        protected NsgIGrid nsgIGrid2;
+        protected NsgColumnDescriptor.Guid Идентификатор_vmoТаблицаНоменклатуры;
+        protected NsgColumnDescriptor.Int64 Автоинкремент_vmoТаблицаНоменклатуры;
+        protected NsgColumnDescriptor.MultipleObject Владелец_vmoТаблицаНоменклатуры;
+        protected NsgColumnDescriptor.Int64 НомерСтроки_vmoТаблицаНоменклатуры;
+        protected Учет.Номенклатура.ColumnDescriptor Номенклатура;
         protected NsgColumnDescriptor.Guid Идентификатор;
         protected NsgColumnDescriptor.Int64 Автоинкремент;
         protected NsgColumnDescriptor.Boolean ЭтоГруппа;
@@ -1376,14 +1456,11 @@ namespace TechControl.Метаданные.Мониторинг
         protected _SystemTables.МониторингДолжностиТаблицаКомплектовСпецодежды.ColumnDescriptor ТаблицаКомплектовСпецодежды;
         protected NsgColumnDescriptor.String ЗагрузочныйИдентификатор;
         protected _SystemTables.МониторингДолжностиТаблицаНеобязательнойНоменклатуры.ColumnDescriptor ТаблицаНеобязательнойНоменклатуры;
+        protected NsgColumnDescriptor.String НаименованиеРодительныйПадеж;
         protected Должности.ColumnDescriptor Родитель;
-        private System.Windows.Forms.TabPage tpТаблНоменклатуры;
-        protected NsgIGrid nsgIGrid2;
-        protected NsgVisualMultipleObject vmoТаблицаНоменклатуры;
-        protected NsgColumnDescriptor.Guid Идентификатор_vmoТаблицаНоменклатуры;
-        protected NsgColumnDescriptor.Int64 Автоинкремент_vmoТаблицаНоменклатуры;
-        protected NsgColumnDescriptor.MultipleObject Владелец_vmoТаблицаНоменклатуры;
-        protected NsgColumnDescriptor.Int64 НомерСтроки_vmoТаблицаНоменклатуры;
-        protected Учет.Номенклатура.ColumnDescriptor Номенклатура;
+        private System.Windows.Forms.GroupBox groupBox1;
+        protected NsgInput nsgInput7;
+        protected System.Windows.Forms.Label label7;
+        private NsgVisualMultipleObject vmoТаблицаНоменклатуры;
     }
 }

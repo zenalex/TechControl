@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using NsgSoft.Common;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
 
@@ -23,23 +24,38 @@ namespace TechControl.Метаданные.Мониторинг
             InitializeComponent();
 		}
 
-		#region #Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
+        #region #Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
 
-		#region #Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
+        #endregion //#Comments_Data# NsgSoft.Forms.NsgMultipleObjectElementForm
 
-		#region #Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
+        #region #Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
 
-		#region #Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
-		
-		#endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
+        #endregion //#Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectElementForm
 
-	}
+        #region #Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
+
+        #endregion //#Comments_Methods# NsgSoft.Forms.NsgMultipleObjectElementForm
+
+        #region #Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
+
+        #endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectElementForm
+
+        private void nsgInput2_DoubleClick(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Image img = Image.FromFile(openFileDialog.FileName);
+                    Картинка.Value = img;
+                }
+                catch
+                {
+                    NsgMessage.ShowError(this, NsgExceptions.FileImageInvalid, openFileDialog.FileName);
+                }
+            }
+        }
+    }
     
 
 

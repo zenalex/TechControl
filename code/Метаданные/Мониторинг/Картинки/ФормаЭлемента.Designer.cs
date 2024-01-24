@@ -51,6 +51,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.label2 = new System.Windows.Forms.Label();
             this.nsgInput1 = new NsgSoft.Forms.NsgInput();
             this.nsgInput2 = new NsgSoft.Forms.NsgInput();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -67,6 +68,7 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.showInListButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentStructure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elementRightsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).BeginInit();
@@ -110,6 +112,7 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.nsgToolStrip2.AllowDrop = true;
             this.nsgToolStrip2.CausesValidation = false;
+            this.nsgToolStrip2.Controls.Add(this.elementRightsButton);
             this.nsgToolStrip2.Controls.Add(this.documentStructure);
             this.nsgToolStrip2.Controls.Add(this.showInListButton);
             this.nsgToolStrip2.Controls.Add(this.btnUsersActions);
@@ -327,6 +330,21 @@ namespace TechControl.Метаданные.Мониторинг
             this.documentStructure.TabIndex = 17;
             this.documentStructure.Text = "Структура документов";
             this.documentStructure.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // elementRightsButton
+            // 
+            this.elementRightsButton.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.elementRightsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.elementRightsButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.elementRightsButton.Container = this.documentButton;
+            this.elementRightsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.elementRightsButton.Location = new System.Drawing.Point(447, 1);
+            this.elementRightsButton.Name = "elementRightsButton";
+            this.elementRightsButton.Size = new System.Drawing.Size(88, 26);
+            this.elementRightsButton.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.elementRightsButton.TabIndex = 18;
+            this.elementRightsButton.Text = "Права пользователей";
+            this.elementRightsButton.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nsgVisualMultipleObject
             // 
@@ -579,6 +597,11 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgInput2.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput2.TabIndex = 12;
             this.nsgInput2.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.nsgInput2.DoubleClick += new System.EventHandler(this.nsgInput2_DoubleClick);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // КартинкиФормаЭлемента
             // 
@@ -626,6 +649,7 @@ namespace TechControl.Метаданные.Мониторинг
             ((System.ComponentModel.ISupportInitialize)(this.showInListButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentStructure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elementRightsButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).EndInit();
@@ -653,5 +677,6 @@ namespace TechControl.Метаданные.Мониторинг
         private System.Windows.Forms.Label label2;
         protected NsgInput nsgInput1;
         protected NsgInput nsgInput2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }

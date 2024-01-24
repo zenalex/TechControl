@@ -545,6 +545,14 @@ namespace TechControl.Метаданные.Мониторинг
             
             
         }
+
+        private void nsgIGrid3_AfterAction(object sender, NsgIGrid.NsgIGridCellEventArgs e, NsgSoft.Design.NsgWorkToolPanel.InvokeToolProcessingEventArgs args)
+        {
+            if (args.ToolType == NsgWorkPanelTools.CreateNewElement)
+            {
+                e.RowObject[ТребуетсяСотрудник].Value = true;
+            }
+        }
     }
     
 
