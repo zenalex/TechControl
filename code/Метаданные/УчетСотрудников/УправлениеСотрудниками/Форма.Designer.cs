@@ -139,6 +139,10 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tpИтоги = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdb3Decade = new System.Windows.Forms.RadioButton();
+            this.rdb2Decade = new System.Windows.Forms.RadioButton();
+            this.rdb1Decade = new System.Windows.Forms.RadioButton();
             this.nbСформироватьСменыИЭСМ = new NsgSoft.Design.NsgButton();
             this.nbЗаполнитьПоГрафику = new NsgSoft.Design.NsgButton();
             this.nsgInput8 = new NsgSoft.Forms.NsgInput();
@@ -172,6 +176,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).BeginInit();
             this.tpИтоги.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbСформироватьСменыИЭСМ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнитьПоГрафику)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput8)).BeginInit();
@@ -219,12 +224,14 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.printButton.ButtonText = "Печать";
             this.printButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.printButton.ImageKey = "Print";
+            this.printButton.IsActive = false;
             this.printButton.Location = new System.Drawing.Point(768, 0);
             this.printButton.Name = "printButton";
             this.printButton.ShowImage = false;
             this.printButton.ShowText = false;
             this.printButton.Size = new System.Drawing.Size(20, 30);
             this.printButton.TabIndex = 1;
+            this.printButton.Visible = false;
             // 
             // formSettingsButton
             // 
@@ -1161,7 +1168,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgIGrid2.IsCanMultiSelect = false;
             this.nsgIGrid2.IsCanSingleSelect = false;
             this.nsgIGrid2.LineHeight = 20;
-            this.nsgIGrid2.Location = new System.Drawing.Point(9, 146);
+            this.nsgIGrid2.Location = new System.Drawing.Point(9, 229);
             this.nsgIGrid2.MarkReadOnly = false;
             this.nsgIGrid2.MasterObject = null;
             this.nsgIGrid2.Name = "NsgIGrid";
@@ -1178,7 +1185,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgIGrid2.ShowPanel = true;
             this.nsgIGrid2.ShowTotals = false;
             this.nsgIGrid2.ShowTree = false;
-            this.nsgIGrid2.Size = new System.Drawing.Size(757, 261);
+            this.nsgIGrid2.Size = new System.Drawing.Size(757, 178);
             this.nsgIGrid2.SourceObject = this.vmoТаблицаИтогов;
             this.nsgIGrid2.TabIndex = 9;
             this.nsgIGrid2.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -1786,6 +1793,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             // tpИтоги
             // 
             this.tpИтоги.AllowDrop = true;
+            this.tpИтоги.Controls.Add(this.groupBox1);
             this.tpИтоги.Controls.Add(this.nbСформироватьСменыИЭСМ);
             this.tpИтоги.Controls.Add(this.nbЗаполнитьПоГрафику);
             this.tpИтоги.Controls.Add(this.nsgInput8);
@@ -1804,6 +1812,55 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.tpИтоги.Text = "Итоги";
             this.tpИтоги.UseVisualStyleBackColor = true;
             this.tpИтоги.Visible = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AllowDrop = true;
+            this.groupBox1.Controls.Add(this.rdb3Decade);
+            this.groupBox1.Controls.Add(this.rdb2Decade);
+            this.groupBox1.Controls.Add(this.rdb1Decade);
+            this.groupBox1.Location = new System.Drawing.Point(11, 67);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(209, 92);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Выбор декады";
+            // 
+            // rdb3Decade
+            // 
+            this.rdb3Decade.AutoSize = true;
+            this.rdb3Decade.Location = new System.Drawing.Point(23, 65);
+            this.rdb3Decade.Name = "radioButton1";
+            this.rdb3Decade.Size = new System.Drawing.Size(171, 17);
+            this.rdb3Decade.TabIndex = 2;
+            this.rdb3Decade.TabStop = true;
+            this.rdb3Decade.Text = "3 декада (21 - конец месяца)";
+            this.rdb3Decade.UseVisualStyleBackColor = true;
+            this.rdb3Decade.CheckedChanged += new System.EventHandler(this.rdb3Decade_CheckedChanged);
+            // 
+            // rdb2Decade
+            // 
+            this.rdb2Decade.AutoSize = true;
+            this.rdb2Decade.Location = new System.Drawing.Point(23, 42);
+            this.rdb2Decade.Name = "radioButton1";
+            this.rdb2Decade.Size = new System.Drawing.Size(112, 17);
+            this.rdb2Decade.TabIndex = 1;
+            this.rdb2Decade.TabStop = true;
+            this.rdb2Decade.Text = "2 декада (11 - 20)";
+            this.rdb2Decade.UseVisualStyleBackColor = true;
+            this.rdb2Decade.CheckedChanged += new System.EventHandler(this.rdb2Decade_CheckedChanged);
+            // 
+            // rdb1Decade
+            // 
+            this.rdb1Decade.AutoSize = true;
+            this.rdb1Decade.Location = new System.Drawing.Point(23, 19);
+            this.rdb1Decade.Name = "rdb1Decade";
+            this.rdb1Decade.Size = new System.Drawing.Size(100, 17);
+            this.rdb1Decade.TabIndex = 0;
+            this.rdb1Decade.TabStop = true;
+            this.rdb1Decade.Text = "1 декада (1-10)";
+            this.rdb1Decade.UseVisualStyleBackColor = true;
+            this.rdb1Decade.CheckedChanged += new System.EventHandler(this.rdb1Decade_CheckedChanged);
             // 
             // nbСформироватьСменыИЭСМ
             // 
@@ -1846,7 +1903,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgInput8.IsButton = false;
             this.nsgInput8.IsInitialized = true;
             this.nsgInput8.IsPassword = false;
-            this.nsgInput8.Location = new System.Drawing.Point(86, 6);
+            this.nsgInput8.Location = new System.Drawing.Point(88, 37);
             this.nsgInput8.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput8.Mask = "";
             this.nsgInput8.MetaDataName = "";
@@ -1929,7 +1986,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 6);
+            this.label8.Location = new System.Drawing.Point(8, 37);
             this.label8.Name = "label4";
             this.label8.Size = new System.Drawing.Size(77, 13);
             this.label8.TabIndex = 12;
@@ -1942,7 +1999,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nbСохрнитьИтоги.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.nbСохрнитьИтоги.Location = new System.Drawing.Point(405, 118);
             this.nbСохрнитьИтоги.Name = "NsgButton";
-            this.nbСохрнитьИтоги.Size = new System.Drawing.Size(178, 25);
+            this.nbСохрнитьИтоги.Size = new System.Drawing.Size(178, 31);
             this.nbСохрнитьИтоги.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
             this.nbСохрнитьИтоги.TabIndex = 11;
             this.nbСохрнитьИтоги.Text = "Сформировать табель за месяц";
@@ -1975,7 +2032,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgInput5.IsButton = false;
             this.nsgInput5.IsInitialized = true;
             this.nsgInput5.IsPassword = false;
-            this.nsgInput5.Location = new System.Drawing.Point(74, 36);
+            this.nsgInput5.Location = new System.Drawing.Point(56, 11);
             this.nsgInput5.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput5.Mask = "";
             this.nsgInput5.MetaDataName = "";
@@ -1988,7 +2045,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgInput5.SearchFieldName = "";
             this.nsgInput5.ShowMultipleObjectInComboBox = false;
             this.nsgInput5.ShowRowCount = 10;
-            this.nsgInput5.Size = new System.Drawing.Size(320, 20);
+            this.nsgInput5.Size = new System.Drawing.Size(308, 20);
             this.nsgInput5.SourceObject = this.vmoИтоги;
             this.nsgInput5.TabIndex = 4;
             this.nsgInput5.VerticalAlignment = System.Drawing.StringAlignment.Center;
@@ -1996,7 +2053,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 36);
+            this.label5.Location = new System.Drawing.Point(8, 11);
             this.label5.Name = "label4";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 3;
@@ -2043,6 +2100,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.SelectedObject = null;
             this.TabText = "NsgMultipleObjectBaseForm";
             this.Text = "NsgReportForm";
+            this.UseDefaultButtons = false;
             this.Controls.SetChildIndex(this.panelButtonReportForm, 0);
             this.Controls.SetChildIndex(this.tabControl1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).EndInit();
@@ -2065,6 +2123,8 @@ namespace TechControl.Метаданные.УчетСотрудников
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput1)).EndInit();
             this.tpИтоги.ResumeLayout(false);
             this.tpИтоги.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbСформироватьСменыИЭСМ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнитьПоГрафику)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput8)).EndInit();
@@ -2154,5 +2214,9 @@ namespace TechControl.Метаданные.УчетСотрудников
         private NsgVisualMultipleObject vmoТаблицаИтогов;
         protected NsgColumnDescriptor.String КодГруппы_vmoТаблицаИтогов;
         protected NsgSoft.Design.NsgButton nbСформироватьСменыИЭСМ;
+        private System.Windows.Forms.GroupBox groupBox1;
+        protected System.Windows.Forms.RadioButton rdb3Decade;
+        protected System.Windows.Forms.RadioButton rdb2Decade;
+        private System.Windows.Forms.RadioButton rdb1Decade;
     }
 }

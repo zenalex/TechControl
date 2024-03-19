@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2023.12.28.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
+    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -4755,5 +4755,47 @@
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Перечисления\ВидыРежимовРаботы\ВидыРежимовРаботы.NsgInit.cs">
+      <NsgOwnerGuid>cbddc276-cf50-4893-80e3-48a3def83b80</NsgOwnerGuid>
+      <NsgOwnerName>ВидыРежимовРаботы</NsgOwnerName>
+      <DependentUpon>ВидыРежимовРаботы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Перечисления\ВидыРежимовРаботы\ВидыРежимовРаботы.cs">
+      <NsgOwnerGuid>cbddc276-cf50-4893-80e3-48a3def83b80</NsgOwnerGuid>
+      <NsgOwnerName>ВидыРежимовРаботы</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\ПланированиеГрафиковРаботы\ПланированиеГрафиковРаботы.NsgInit.cs">
+      <NsgOwnerGuid>f646a19c-9fca-4aa1-a681-30f0eace6117</NsgOwnerGuid>
+      <NsgOwnerName>ПланированиеГрафиковРаботы</NsgOwnerName>
+      <DependentUpon>ПланированиеГрафиковРаботы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\ПланированиеГрафиковРаботы\ПланированиеГрафиковРаботы.cs">
+      <NsgOwnerGuid>f646a19c-9fca-4aa1-a681-30f0eace6117</NsgOwnerGuid>
+      <NsgOwnerName>ПланированиеГрафиковРаботы</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\ПланированиеГрафиковРаботы\Форма.Designer.cs">
+      <NsgOwnerGuid>f646a19c-9fca-4aa1-a681-30f0eace6117</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\ПланированиеГрафиковРаботы\Форма.cs">
+      <NsgOwnerGuid>f646a19c-9fca-4aa1-a681-30f0eace6117</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\УчетСотрудников\ПланированиеГрафиковРаботы\Форма.resx">
+      <NsgOwnerGuid>f646a19c-9fca-4aa1-a681-30f0eace6117</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Документы\ПлановыйГрафикРаботы\ПлановыйГрафикРаботы.NsgInit.cs">
+      <NsgOwnerGuid>08a635bd-6ee8-4af1-a6c6-ab27af90155e</NsgOwnerGuid>
+      <NsgOwnerName>ПлановыйГрафикРаботы</NsgOwnerName>
+      <DependentUpon>ПлановыйГрафикРаботы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ПлановыйГрафикРаботы\ПлановыйГрафикРаботы.cs">
+      <NsgOwnerGuid>08a635bd-6ee8-4af1-a6c6-ab27af90155e</NsgOwnerGuid>
+      <NsgOwnerName>ПлановыйГрафикРаботы</NsgOwnerName>
+    </Compile>
   </ItemGroup>
 </Project>
