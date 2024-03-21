@@ -12,6 +12,7 @@ using NsgSoft.DataObjects;
 using NsgSoft.Forms;
 using TechControl.Метаданные._SystemTables;
 using TechControl.Метаданные.Документы;
+using TechControl.Метаданные.Регистры;
 using static NsgSoft.Graphs.NsgTimePlot;
 
 
@@ -375,7 +376,7 @@ namespace TechControl.Метаданные.Мониторинг
                     var совмещаемыеДолжности = сотрудникиНаОбъектке.SelectMany(x => x.ТаблицаСовмещаемыхДолжностей.AllRows.Select(y => y.Должность)).ToArray();
                     var доступныеДолжности = основныеДолжности.Concat(совмещаемыеДолжности).Distinct().Select(x => x.Идентификатор).ToArray();
 
-                    cmp.Add(Должности.Names.Идентификатор, доступныеДолжности, NsgComparison.In);
+                    cmp.Add(Мониторинг.Должности.Names.Идентификатор, доступныеДолжности, NsgComparison.In);
                 }
             }
 
@@ -551,6 +552,30 @@ namespace TechControl.Метаданные.Мониторинг
             if (args.ToolType == NsgWorkPanelTools.CreateNewElement)
             {
                 e.RowObject[ТребуетсяСотрудник].Value = true;
+            }
+        }
+
+        private void nsgIGrid8_BeforeAction(object sender, NsgIGrid.NsgIGridCellEventArgs e, NsgSoft.Design.NsgWorkToolPanel.InvokeToolProcessingEventArgs args)
+        {
+            if (args.ToolType == NsgWorkPanelTools.CreateNewElement)
+            {
+                e.Cancel = true;
+                РегистрПерсоналОбъекта персоналОбъекта = РегистрПерсоналОбъекта.Новый();
+                персоналОбъекта.New();
+                персоналОбъекта.Объект = nsgVisualMultipleObject.Data.CurrentRow as Объекты;
+                NsgSettings.MainForm.ShowObject(персоналОбъекта, this);
+            }
+        }
+
+        private void nsgIGrid9_BeforeAction(object sender, NsgIGrid.NsgIGridCellEventArgs e, NsgSoft.Design.NsgWorkToolPanel.InvokeToolProcessingEventArgs args)
+        {
+            if (args.ToolType == NsgWorkPanelTools.CreateNewElement)
+            {
+                e.Cancel = true;
+                РегистрТарифыПерсоналаОбъекта тарифыПерсоналаОбъекта = РегистрТарифыПерсоналаОбъекта.Новый();
+                тарифыПерсоналаОбъекта.New();
+                тарифыПерсоналаОбъекта.Объект = nsgVisualMultipleObject.Data.CurrentRow as Объекты;
+                NsgSettings.MainForm.ShowObject(тарифыПерсоналаОбъекта, this);
             }
         }
     }

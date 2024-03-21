@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2023.12.28.0</ProductVersion>
+    <ProductVersion>2024.3.20.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -4796,6 +4796,136 @@
     <Compile Include="Метаданные\Документы\ПлановыйГрафикРаботы\ПлановыйГрафикРаботы.cs">
       <NsgOwnerGuid>08a635bd-6ee8-4af1-a6c6-ab27af90155e</NsgOwnerGuid>
       <NsgOwnerName>ПлановыйГрафикРаботы</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Регистры\РегистрПерсоналОбъекта\РегистрПерсоналОбъекта.NsgInit.cs">
+      <NsgOwnerGuid>0ed2024d-b06f-45d3-b705-84c3794536ce</NsgOwnerGuid>
+      <NsgOwnerName>РегистрПерсоналОбъекта</NsgOwnerName>
+      <DependentUpon>РегистрПерсоналОбъекта.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрПерсоналОбъекта\РегистрПерсоналОбъекта.cs">
+      <NsgOwnerGuid>0ed2024d-b06f-45d3-b705-84c3794536ce</NsgOwnerGuid>
+      <NsgOwnerName>РегистрПерсоналОбъекта</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТехникаОбъекта\РегистрыРегистрТехникаОбъектаДвижения.NsgInit.cs">
+      <NsgOwnerGuid>6df6157e-2916-4f55-8dfd-3fca751c151c</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТехникаОбъектаДвижения</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрТехникаОбъектаДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТехникаОбъекта\РегистрыРегистрТехникаОбъектаДвижения.cs">
+      <NsgOwnerGuid>6df6157e-2916-4f55-8dfd-3fca751c151c</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТехникаОбъектаДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТехникаОбъекта\РегистрыРегистрТехникаОбъектаДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>6df6157e-2916-4f55-8dfd-3fca751c151c</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТехникаОбъектаДвижения</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрТехникаОбъектаДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТехникаОбъекта\РегистрыРегистрТехникаОбъектаДвижения.Строка.cs">
+      <NsgOwnerGuid>6df6157e-2916-4f55-8dfd-3fca751c151c</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТехникаОбъектаДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрПерсоналОбъекта\РегистрыРегистрПерсоналОбъектаДвижения.NsgInit.cs">
+      <NsgOwnerGuid>3204e112-4eaf-49ea-b83c-4826a641dd85</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрПерсоналОбъектаДвижения</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрПерсоналОбъектаДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрПерсоналОбъекта\РегистрыРегистрПерсоналОбъектаДвижения.cs">
+      <NsgOwnerGuid>3204e112-4eaf-49ea-b83c-4826a641dd85</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрПерсоналОбъектаДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрПерсоналОбъекта\РегистрыРегистрПерсоналОбъектаДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>3204e112-4eaf-49ea-b83c-4826a641dd85</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрПерсоналОбъектаДвижения</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрПерсоналОбъектаДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрПерсоналОбъекта\РегистрыРегистрПерсоналОбъектаДвижения.Строка.cs">
+      <NsgOwnerGuid>3204e112-4eaf-49ea-b83c-4826a641dd85</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрПерсоналОбъектаДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТехникаОбъекта\РегистрТехникаОбъекта.NsgInit.cs">
+      <NsgOwnerGuid>ba136756-dfcd-44dd-8e8c-c261e0af6f29</NsgOwnerGuid>
+      <NsgOwnerName>РегистрТехникаОбъекта</NsgOwnerName>
+      <DependentUpon>РегистрТехникаОбъекта.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТехникаОбъекта\РегистрТехникаОбъекта.cs">
+      <NsgOwnerGuid>ba136756-dfcd-44dd-8e8c-c261e0af6f29</NsgOwnerGuid>
+      <NsgOwnerName>РегистрТехникаОбъекта</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыПерсоналаОбъекта\РегистрыРегистрТарифыПерсоналаОбъектаДвижения.NsgInit.cs">
+      <NsgOwnerGuid>eebe78d9-071e-4855-b499-3db21dfc3e4a</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТарифыПерсоналаОбъектаДвижения</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрТарифыПерсоналаОбъектаДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыПерсоналаОбъекта\РегистрыРегистрТарифыПерсоналаОбъектаДвижения.cs">
+      <NsgOwnerGuid>eebe78d9-071e-4855-b499-3db21dfc3e4a</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТарифыПерсоналаОбъектаДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыПерсоналаОбъекта\РегистрыРегистрТарифыПерсоналаОбъектаДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>eebe78d9-071e-4855-b499-3db21dfc3e4a</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТарифыПерсоналаОбъектаДвижения</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрТарифыПерсоналаОбъектаДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыПерсоналаОбъекта\РегистрыРегистрТарифыПерсоналаОбъектаДвижения.Строка.cs">
+      <NsgOwnerGuid>eebe78d9-071e-4855-b499-3db21dfc3e4a</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТарифыПерсоналаОбъектаДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыПерсоналаОбъекта\РегистрТарифыПерсоналаОбъекта.NsgInit.cs">
+      <NsgOwnerGuid>4be8e95d-3344-45b7-b97c-ddbd14535c04</NsgOwnerGuid>
+      <NsgOwnerName>РегистрТарифыПерсоналаОбъекта</NsgOwnerName>
+      <DependentUpon>РегистрТарифыПерсоналаОбъекта.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыПерсоналаОбъекта\РегистрТарифыПерсоналаОбъекта.cs">
+      <NsgOwnerGuid>4be8e95d-3344-45b7-b97c-ddbd14535c04</NsgOwnerGuid>
+      <NsgOwnerName>РегистрТарифыПерсоналаОбъекта</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыТехникиОбъекта\РегистрТарифыТехникиОбъекта.NsgInit.cs">
+      <NsgOwnerGuid>eb3269a3-e898-412f-90ee-9150753d64a0</NsgOwnerGuid>
+      <NsgOwnerName>РегистрТарифыТехникиОбъекта</NsgOwnerName>
+      <DependentUpon>РегистрТарифыТехникиОбъекта.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыТехникиОбъекта\РегистрТарифыТехникиОбъекта.cs">
+      <NsgOwnerGuid>eb3269a3-e898-412f-90ee-9150753d64a0</NsgOwnerGuid>
+      <NsgOwnerName>РегистрТарифыТехникиОбъекта</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыТехникиОбъекта\РегистрыРегистрТарифыТехникиОбъектаДвижения.NsgInit.cs">
+      <NsgOwnerGuid>c008463c-3e29-438d-b7ed-1b705e668cc7</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТарифыТехникиОбъектаДвижения</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрТарифыТехникиОбъектаДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыТехникиОбъекта\РегистрыРегистрТарифыТехникиОбъектаДвижения.cs">
+      <NsgOwnerGuid>c008463c-3e29-438d-b7ed-1b705e668cc7</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТарифыТехникиОбъектаДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыТехникиОбъекта\РегистрыРегистрТарифыТехникиОбъектаДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>c008463c-3e29-438d-b7ed-1b705e668cc7</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТарифыТехникиОбъектаДвижения</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрТарифыТехникиОбъектаДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрТарифыТехникиОбъекта\РегистрыРегистрТарифыТехникиОбъектаДвижения.Строка.cs">
+      <NsgOwnerGuid>c008463c-3e29-438d-b7ed-1b705e668cc7</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрТарифыТехникиОбъектаДвижения</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\ПлановыйГрафикРаботы\ДокументыПлановыйГрафикРаботыТаблицаПодробныйГрафик.NsgInit.cs">
+      <NsgOwnerGuid>fadceb33-62e1-4645-ae76-a636f791cd35</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыПлановыйГрафикРаботыТаблицаПодробныйГрафик</NsgOwnerName>
+      <DependentUpon>ДокументыПлановыйГрафикРаботыТаблицаПодробныйГрафик.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ПлановыйГрафикРаботы\ДокументыПлановыйГрафикРаботыТаблицаПодробныйГрафик.cs">
+      <NsgOwnerGuid>fadceb33-62e1-4645-ae76-a636f791cd35</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыПлановыйГрафикРаботыТаблицаПодробныйГрафик</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ПлановыйГрафикРаботы\ДокументыПлановыйГрафикРаботыТаблицаПодробныйГрафик.Строка.NsgInit.cs">
+      <NsgOwnerGuid>fadceb33-62e1-4645-ae76-a636f791cd35</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыПлановыйГрафикРаботыТаблицаПодробныйГрафик</NsgOwnerName>
+      <DependentUpon>ДокументыПлановыйГрафикРаботыТаблицаПодробныйГрафик.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ПлановыйГрафикРаботы\ДокументыПлановыйГрафикРаботыТаблицаПодробныйГрафик.Строка.cs">
+      <NsgOwnerGuid>fadceb33-62e1-4645-ae76-a636f791cd35</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыПлановыйГрафикРаботыТаблицаПодробныйГрафик</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
