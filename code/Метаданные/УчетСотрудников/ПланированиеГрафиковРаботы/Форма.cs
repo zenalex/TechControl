@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -251,6 +252,44 @@ namespace TechControl.Метаданные.УчетСотрудников
                     }
                 }
             }
+        }
+
+        private void ЗаполнитьСтрокуПоГрафику(NsgMemoryTableRow row, ПлановыйГрафикРаботы график, DateTime месяц, Объекты объект)
+        {
+            int деньНачала = 1;
+            var началоОтсчета = 1;
+            bool первый = true;
+
+            if (график != null && график.Selected)
+            {
+                row[ВидРежимаРаботы_vmoТаблицаМесяца].Value = график.ВидРежимаРаботы;
+                if (график.МесяцГрафика.Month != месяц.Month && график.ВидРежимаРаботы == ВидыРежимовРаботы.ДваЧерезДва)
+                {
+                    первый = график.ДатаПоследнегоРабочегоДня.Day != график.МесяцГрафика.DaysInMonth();
+                }
+                else
+                {
+                    деньНачала = график.ДатаПервогоРабочегоДня.Day;
+                }
+
+                //foreach (var item in график.та)
+                //{
+
+                //}
+            }
+
+            for (int i = 1; i <= месяц.DaysInMonth(); i++)
+            {
+                if (row[i.ToString()].ToBoolean())
+                {
+                    началоОтсчета = i;
+                    break;
+                }
+            }
+
+            var видРежимаРаботы = row[ВидРежимаРаботы_vmoТаблицаМесяца].ToReferent() as ВидыРежимовРаботы;
+
+            
         }
 
         private void nsgInput2_Selected(object sender, EventArgs e)
