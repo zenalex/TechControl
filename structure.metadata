@@ -16164,6 +16164,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="da309a51-bad7-4cea-ad69-27d1980d8949" type="NsgDataEnumReference" editoraccess="Full" name="ВидРежимаРаботы" visible="true" description="Вид режима работы" field="VidRezhimaRaboty" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Перечисления" refname="ВидыРежимовРаботы">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаКонкретныйДень" />
@@ -16175,6 +16180,7 @@
             <container name="ДлительностьСмены1ВЧасах" />
             <container name="Количество" />
             <container name="КодГруппы" />
+            <container name="ВидРежимаРаботы" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="fc09775c-450b-4e3c-b58d-9730c507e89d" type="NsgDataDocument" editoraccess="Full" name="ГрафикРаботыОбъекта" visible="true" description="Документ" group="Документы" table="_doc_GrafikRabotyObekta" searchfield="_Code" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" NumberPeriod="None" HandleWithoutTransaction="False" usecommonjournal="true">

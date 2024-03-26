@@ -5,6 +5,7 @@ using NsgSoft.DataObjects;
 using NsgSoft.Database;
 using System.IO;
 using NsgSoft.Common;
+using System.Linq;
 
 
 
@@ -13,17 +14,10 @@ namespace TechControl.Метаданные.Документы
     
     public partial class ПлановыйГрафикРаботы
     {
-        #region Данные
-        #endregion //Данные
-
-        #region Конструкторы
-        #endregion //Конструкторы
-
-        #region Свойства
-        #endregion //Свойства
-
-        #region Методы
-        #endregion //Методы
+        public bool ТребуетсяВыход(DateTime дата) 
+        {
+            return ТаблицаПодробныйГрафик.AllRows.First(x => x.ДеньМесяца == дата.Day).РабочийДень;
+        }
     }
 
 }

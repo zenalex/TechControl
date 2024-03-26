@@ -79,8 +79,8 @@ namespace TechControl.Метаданные.УчетСотрудников
                 return;
             }
 
-            var сотрудники = объект.ТаблицаПерсонал.AllRows.Select(x => x.Сотрудник).ToArray();
-            if (сотрудники.Length == 0)
+            var сотрудники = объект.СписокПерсонала();
+            if (сотрудники.Count == 0)
             {
                 NsgSettings.MainForm.ShowMessage($"В объекте {объект}, не заполнена таблица персонала");
                 return;

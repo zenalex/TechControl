@@ -86,7 +86,71 @@ namespace TechControl.Метаданные.УчетСотрудников
                 }
 
             }
+            ЗаполнитьТехникуИСотрудников();
             vmoТаблица.Data.UpdateDataSync(this);
+        }
+
+        private void ЗаполнитьТехникуИСотрудников() 
+        {
+            var объект = Объект.Value;
+            var дата = Дата.Value;
+
+            var сотрудники = объект.СписокПерсонала();
+            var выходНаРаботу = объект.ПланируемыеПараметрыВыходаСотрудниковНаРаботу(дата);
+
+            var техника = объект.СписокТехникиОбъекта();
+
+            List<Техника> техникаВТаблице = new List<Техника>();
+            List<Сотрудники> сотрудникиВТаблице = new List<Сотрудники>();
+            foreach (var item in vmoТаблица.Data.MemoryTable.AllRows)
+            {
+                var группаСпТехн = item[ГруппаСпецТехники_vmoТаблица].ToReferent() as ГруппыСпецТехники;
+                var техн = item[Техника_vmoТаблица].ToReferent() as Техника;
+                if (группаСпТехн != null && группаСпТехн.Selected && техн != null && !техн.Selected)
+                {
+                    техн = техника.FirstOrDefault(x => x.ГруппаСпецТехники == группаСпТехн);
+                    if (техн != null)
+                    {
+                        if (!техникаВТаблице.Contains(техн))
+                        {
+                            item[Техника_vmoТаблица].Value = техн;
+                        }
+                        техникаВТаблице.Add(техн);
+                    }
+                }
+                else
+                {
+                    var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as Сотрудники;
+                    if ((сотрудник != null && !сотрудник.Selected) || сотрудник == null)
+                    {
+                        var должность = item[Должность_vmoТаблица].ToReferent() as Должности;
+                        if (должность != null && должность.Selected)
+                        {
+                            var подходящиеСотрудники = сотрудники.Where(x => x.Item2 == должность).Select(x => x.Item1).ToArray();
+                            foreach (var сотр in подходящиеСотрудники)
+                            {
+                                if (выходНаРаботу.ContainsKey(сотр))
+                                {
+                                    if (!сотрудникиВТаблице.Contains(сотр) && выходНаРаботу[сотр])
+                                    {
+                                        item[Сотрудник_vmoТаблица].Value = сотр;
+                                    }
+                                    сотрудникиВТаблице.Add(сотр);
+                                }
+                                else
+                                {
+                                    if (!сотрудникиВТаблице.Contains(сотр))
+                                    {
+                                        item[Сотрудник_vmoТаблица].Value = сотр;
+                                    }
+                                    сотрудникиВТаблице.Add(сотр);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            //vmoТаблица.Data.UpdateDataSync(this);
         }
 
         private void nsgIGrid1_CellRequestEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
@@ -101,19 +165,41 @@ namespace TechControl.Метаданные.УчетСотрудников
                     Guid[] сотрудникиНаОбъекте = null;
                     if (должность.Selected)
                     {
-                        сотрудникиНаОбъекте = объект.ТаблицаПерсонал.AllRows.Where(x => x.Должность == должность).Select(x => x.Сотрудник.Идентификатор).ToArray();
+                        сотрудникиНаОбъекте = объект.СписокПерсонала().Select(x => x.Item1.Идентификатор).ToArray();
                     }
                     else if (техника.Selected)
                     {
-                        сотрудникиНаОбъекте = объект.ТаблицаПерсонал.AllRows.Where(x => x.Сотрудник.ДопущенКУправлению(техника)).Select(x => x.Сотрудник.Идентификатор).ToArray();
+                        сотрудникиНаОбъекте = объект.СписокПерсонала().Where(x => x.Item1.ДопущенКУправлению(техника)).Select(x => x.Item1.Идентификатор).ToArray();
                     }
                     else
                     {
-                        сотрудникиНаОбъекте = объект.ТаблицаПерсонал.AllRows.Select(x => x.Сотрудник.Идентификатор).ToArray();
+                        сотрудникиНаОбъекте = объект.СписокПерсонала().Select(x => x.Item1.Идентификатор).ToArray();
                     }
                     var cmp = Сотрудник_vmoТаблица.SearchCondition;
                     cmp.Clear();
                     cmp.Add(Сотрудники.Names.Идентификатор, сотрудникиНаОбъекте, NsgComparison.In);
+                }
+            }
+
+            if (e.ColumnName == Техника_vmoТаблица.Name)
+            {
+                var объект = e.RowObject[Объект_vmoТаблица.Name].ToReferent() as Объекты;
+                var грСпТех = e.RowObject[ГруппаСпецТехники_vmoТаблица.Name].ToReferent() as ГруппыСпецТехники;
+                var техника = e.RowObject[Техника_vmoТаблица.Name].ToReferent() as Техника;
+                if (объект.Selected)
+                {
+                    Guid[] техникаНаОбъекте = null;
+                    if (грСпТех.Selected)
+                    {
+                        техникаНаОбъекте = объект.СписокТехникиОбъекта().Where(x => x.ГруппаСпецТехники == грСпТех).Select(x => x.Идентификатор).ToArray();
+                    }
+                    else 
+                    {
+                        техникаНаОбъекте = объект.СписокТехникиОбъекта().Select(x => x.Идентификатор).ToArray();
+                    }
+                    var cmp = Техника_vmoТаблица.SearchCondition;
+                    cmp.Clear();
+                    cmp.Add(Техника.Names.Идентификатор, техникаНаОбъекте, NsgComparison.In);
                 }
             }
         }
@@ -878,6 +964,26 @@ namespace TechControl.Метаданные.УчетСотрудников
                         }
                         break;
                     }
+                }
+            }
+        }
+
+        private void bgwАнализТаблицы_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void АнализТаблицы() 
+        {
+            var объект = Объект.Value;
+            var дата = Дата.Value.Date;
+            if (объект.Selected && дата == NsgService.MinDate) 
+            {
+                foreach (var item in vmoТаблица.Data.MemoryTable.AllRows)
+                {
+                    var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as Сотрудники;
+                    var техника = item[Техника_vmoТаблица].ToReferent() as Техника;
+                    var длительность = item[Длительность_vmoТаблица].ToDecimal();
                 }
             }
         }

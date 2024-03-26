@@ -159,6 +159,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.label5 = new System.Windows.Forms.Label();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Дата = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.bgwАнализТаблицы = new NsgSoft.Forms.NsgBackgroundWorker(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -593,6 +594,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn9.DateFormat = null;
+            nsgIGridColumn9.ImportedFromVMO = false;
             nsgIGridColumn9.Name = "Должность";
             nsgIGridColumn9.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn9.Root = this.nsgIGrid2.Columns.Collection;
@@ -608,6 +610,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn10.DateFormat = null;
+            nsgIGridColumn10.ImportedFromVMO = false;
             nsgIGridColumn10.Name = "Сотрудник";
             nsgIGridColumn10.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn10.Root = this.nsgIGrid2.Columns.Collection;
@@ -623,6 +626,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn11.DateFormat = null;
+            nsgIGridColumn11.ImportedFromVMO = false;
             nsgIGridColumn11.Name = "ГруппаСпТехн";
             nsgIGridColumn11.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn11.Root = this.nsgIGrid2.Columns.Collection;
@@ -638,6 +642,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn12.DateFormat = null;
+            nsgIGridColumn12.ImportedFromVMO = false;
             nsgIGridColumn12.Name = "Техника";
             nsgIGridColumn12.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn12.Root = this.nsgIGrid2.Columns.Collection;
@@ -653,6 +658,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn13.DateFormat = null;
+            nsgIGridColumn13.ImportedFromVMO = false;
             nsgIGridColumn13.Name = "Тариф";
             nsgIGridColumn13.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn13.Root = this.nsgIGrid2.Columns.Collection;
@@ -668,6 +674,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn14.DateFormat = null;
+            nsgIGridColumn14.ImportedFromVMO = false;
             nsgIGridColumn14.Name = "1";
             nsgIGridColumn14.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn14.Root = this.nsgIGrid2.Columns.Collection;
@@ -683,6 +690,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn15.DateFormat = null;
+            nsgIGridColumn15.ImportedFromVMO = false;
             nsgIGridColumn15.Name = "2";
             nsgIGridColumn15.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn15.Root = this.nsgIGrid2.Columns.Collection;
@@ -698,6 +706,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn16.DateFormat = null;
+            nsgIGridColumn16.ImportedFromVMO = false;
             nsgIGridColumn16.Name = "3";
             nsgIGridColumn16.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn16.Root = this.nsgIGrid2.Columns.Collection;
@@ -713,6 +722,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn17.DateFormat = null;
+            nsgIGridColumn17.ImportedFromVMO = false;
             nsgIGridColumn17.Name = "4";
             nsgIGridColumn17.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn17.Root = this.nsgIGrid2.Columns.Collection;
@@ -728,6 +738,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn18.DateFormat = null;
+            nsgIGridColumn18.ImportedFromVMO = false;
             nsgIGridColumn18.Name = "5";
             nsgIGridColumn18.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn18.Root = this.nsgIGrid2.Columns.Collection;
@@ -743,6 +754,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn19.DateFormat = null;
+            nsgIGridColumn19.ImportedFromVMO = false;
             nsgIGridColumn19.Name = "6";
             nsgIGridColumn19.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn19.Root = this.nsgIGrid2.Columns.Collection;
@@ -758,6 +770,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn20.DateFormat = null;
+            nsgIGridColumn20.ImportedFromVMO = false;
             nsgIGridColumn20.Name = "7";
             nsgIGridColumn20.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn20.Root = this.nsgIGrid2.Columns.Collection;
@@ -773,6 +786,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn21.DateFormat = null;
+            nsgIGridColumn21.ImportedFromVMO = false;
             nsgIGridColumn21.Name = "8";
             nsgIGridColumn21.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn21.Root = this.nsgIGrid2.Columns.Collection;
@@ -788,6 +802,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn22.DateFormat = null;
+            nsgIGridColumn22.ImportedFromVMO = false;
             nsgIGridColumn22.Name = "9";
             nsgIGridColumn22.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn22.Root = this.nsgIGrid2.Columns.Collection;
@@ -803,6 +818,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn23.DateFormat = null;
+            nsgIGridColumn23.ImportedFromVMO = false;
             nsgIGridColumn23.Name = "10";
             nsgIGridColumn23.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn23.Root = this.nsgIGrid2.Columns.Collection;
@@ -818,6 +834,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn24.DateFormat = null;
+            nsgIGridColumn24.ImportedFromVMO = false;
             nsgIGridColumn24.Name = "11";
             nsgIGridColumn24.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn24.Root = this.nsgIGrid2.Columns.Collection;
@@ -833,6 +850,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn25.DateFormat = null;
+            nsgIGridColumn25.ImportedFromVMO = false;
             nsgIGridColumn25.Name = "12";
             nsgIGridColumn25.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn25.Root = this.nsgIGrid2.Columns.Collection;
@@ -848,6 +866,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn26.DateFormat = null;
+            nsgIGridColumn26.ImportedFromVMO = false;
             nsgIGridColumn26.Name = "13";
             nsgIGridColumn26.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn26.Root = this.nsgIGrid2.Columns.Collection;
@@ -863,6 +882,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn27.DateFormat = null;
+            nsgIGridColumn27.ImportedFromVMO = false;
             nsgIGridColumn27.Name = "14";
             nsgIGridColumn27.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn27.Root = this.nsgIGrid2.Columns.Collection;
@@ -878,6 +898,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn28.DateFormat = null;
+            nsgIGridColumn28.ImportedFromVMO = false;
             nsgIGridColumn28.Name = "15";
             nsgIGridColumn28.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn28.Root = this.nsgIGrid2.Columns.Collection;
@@ -893,6 +914,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn29.DateFormat = null;
+            nsgIGridColumn29.ImportedFromVMO = false;
             nsgIGridColumn29.Name = "16";
             nsgIGridColumn29.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn29.Root = this.nsgIGrid2.Columns.Collection;
@@ -908,6 +930,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn30.DateFormat = null;
+            nsgIGridColumn30.ImportedFromVMO = false;
             nsgIGridColumn30.Name = "17";
             nsgIGridColumn30.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn30.Root = this.nsgIGrid2.Columns.Collection;
@@ -923,6 +946,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn31.DateFormat = null;
+            nsgIGridColumn31.ImportedFromVMO = false;
             nsgIGridColumn31.Name = "18";
             nsgIGridColumn31.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn31.Root = this.nsgIGrid2.Columns.Collection;
@@ -938,6 +962,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn32.DateFormat = null;
+            nsgIGridColumn32.ImportedFromVMO = false;
             nsgIGridColumn32.Name = "19";
             nsgIGridColumn32.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn32.Root = this.nsgIGrid2.Columns.Collection;
@@ -953,6 +978,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn33.DateFormat = null;
+            nsgIGridColumn33.ImportedFromVMO = false;
             nsgIGridColumn33.Name = "20";
             nsgIGridColumn33.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn33.Root = this.nsgIGrid2.Columns.Collection;
@@ -968,6 +994,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn34.DateFormat = null;
+            nsgIGridColumn34.ImportedFromVMO = false;
             nsgIGridColumn34.Name = "21";
             nsgIGridColumn34.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn34.Root = this.nsgIGrid2.Columns.Collection;
@@ -983,6 +1010,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn35.DateFormat = null;
+            nsgIGridColumn35.ImportedFromVMO = false;
             nsgIGridColumn35.Name = "22";
             nsgIGridColumn35.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn35.Root = this.nsgIGrid2.Columns.Collection;
@@ -998,6 +1026,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn36.DateFormat = null;
+            nsgIGridColumn36.ImportedFromVMO = false;
             nsgIGridColumn36.Name = "23";
             nsgIGridColumn36.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn36.Root = this.nsgIGrid2.Columns.Collection;
@@ -1013,6 +1042,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn37.DateFormat = null;
+            nsgIGridColumn37.ImportedFromVMO = false;
             nsgIGridColumn37.Name = "24";
             nsgIGridColumn37.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn37.Root = this.nsgIGrid2.Columns.Collection;
@@ -1028,6 +1058,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn38.DateFormat = null;
+            nsgIGridColumn38.ImportedFromVMO = false;
             nsgIGridColumn38.Name = "25";
             nsgIGridColumn38.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn38.Root = this.nsgIGrid2.Columns.Collection;
@@ -1043,6 +1074,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn39.DateFormat = null;
+            nsgIGridColumn39.ImportedFromVMO = false;
             nsgIGridColumn39.Name = "26";
             nsgIGridColumn39.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn39.Root = this.nsgIGrid2.Columns.Collection;
@@ -1058,6 +1090,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn40.DateFormat = null;
+            nsgIGridColumn40.ImportedFromVMO = false;
             nsgIGridColumn40.Name = "27";
             nsgIGridColumn40.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn40.Root = this.nsgIGrid2.Columns.Collection;
@@ -1073,6 +1106,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn41.DateFormat = null;
+            nsgIGridColumn41.ImportedFromVMO = false;
             nsgIGridColumn41.Name = "28";
             nsgIGridColumn41.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn41.Root = this.nsgIGrid2.Columns.Collection;
@@ -1088,6 +1122,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn42.DateFormat = null;
+            nsgIGridColumn42.ImportedFromVMO = false;
             nsgIGridColumn42.Name = "29";
             nsgIGridColumn42.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn42.Root = this.nsgIGrid2.Columns.Collection;
@@ -1103,6 +1138,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn43.DateFormat = null;
+            nsgIGridColumn43.ImportedFromVMO = false;
             nsgIGridColumn43.Name = "30";
             nsgIGridColumn43.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn43.Root = this.nsgIGrid2.Columns.Collection;
@@ -1118,6 +1154,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         "Visible",
         "Index"};
             nsgIGridColumn44.DateFormat = null;
+            nsgIGridColumn44.ImportedFromVMO = false;
             nsgIGridColumn44.Name = "31";
             nsgIGridColumn44.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn44.Root = this.nsgIGrid2.Columns.Collection;
@@ -1168,7 +1205,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgIGrid2.IsCanMultiSelect = false;
             this.nsgIGrid2.IsCanSingleSelect = false;
             this.nsgIGrid2.LineHeight = 20;
-            this.nsgIGrid2.Location = new System.Drawing.Point(9, 229);
+            this.nsgIGrid2.Location = new System.Drawing.Point(9, 196);
             this.nsgIGrid2.MarkReadOnly = false;
             this.nsgIGrid2.MasterObject = null;
             this.nsgIGrid2.Name = "NsgIGrid";
@@ -1185,7 +1222,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgIGrid2.ShowPanel = true;
             this.nsgIGrid2.ShowTotals = false;
             this.nsgIGrid2.ShowTree = false;
-            this.nsgIGrid2.Size = new System.Drawing.Size(757, 178);
+            this.nsgIGrid2.Size = new System.Drawing.Size(757, 211);
             this.nsgIGrid2.SourceObject = this.vmoТаблицаИтогов;
             this.nsgIGrid2.TabIndex = 9;
             this.nsgIGrid2.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -1660,7 +1697,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.tabControl1.Controls.Add(this.tpИтоги);
             this.tabControl1.Location = new System.Drawing.Point(6, 3);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 1;
+            this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(782, 439);
             this.tabControl1.TabIndex = 9;
             // 
@@ -1682,7 +1719,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.tpФормирование.TabIndex = 0;
             this.tpФормирование.Text = "Формирование смены";
             this.tpФормирование.UseVisualStyleBackColor = true;
-            this.tpФормирование.Visible = false;
+            this.tpФормирование.Visible = true;
             // 
             // nbСформироватьСмену
             // 
@@ -1811,7 +1848,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.tpИтоги.TabIndex = 1;
             this.tpИтоги.Text = "Итоги";
             this.tpИтоги.UseVisualStyleBackColor = true;
-            this.tpИтоги.Visible = true;
+            this.tpИтоги.Visible = false;
             // 
             // groupBox1
             // 
@@ -2079,6 +2116,20 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.Дата.SearchCondition.OwnerComponent = this.Дата;
             this.Дата.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // bgwАнализТаблицы
+            // 
+            this.bgwАнализТаблицы.CancelForbidden = false;
+            this.bgwАнализТаблицы.CurrentProgressValue = 0;
+            this.bgwАнализТаблицы.Description = "";
+            this.bgwАнализТаблицы.EventGeneratorObject = null;
+            this.bgwАнализТаблицы.MaxProgressValue = 100;
+            this.bgwАнализТаблицы.Name = "bgwАнализТаблицы";
+            this.bgwАнализТаблицы.OwnerForm = this;
+            this.bgwАнализТаблицы.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
+            this.bgwАнализТаблицы.ProgressObject = null;
+            this.bgwАнализТаблицы.ProgressProcentage = 0;
+            this.bgwАнализТаблицы.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwАнализТаблицы_DoWork);
+            // 
             // УправлениеСотрудникамиФорма
             // 
             this.AllowDrop = true;
@@ -2218,5 +2269,6 @@ namespace TechControl.Метаданные.УчетСотрудников
         protected System.Windows.Forms.RadioButton rdb3Decade;
         protected System.Windows.Forms.RadioButton rdb2Decade;
         private System.Windows.Forms.RadioButton rdb1Decade;
+        protected NsgBackgroundWorker bgwАнализТаблицы;
     }
 }
