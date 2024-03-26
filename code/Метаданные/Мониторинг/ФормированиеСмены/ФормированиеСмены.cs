@@ -6,6 +6,8 @@ using NsgSoft.Database;
 using System.IO;
 using NsgSoft.Common;
 using TechControl.Метаданные._SystemTables;
+using TechControl.Метаданные.Регистры;
+using System.Linq;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -48,18 +50,18 @@ namespace TechControl.Метаданные.Мониторинг
                     i.Время = this.ДатаДокумента.Date.Add(dateTime.Subtract(dateTime.Date));
                     if (!i.Тариф.Selected)
                     {
-                        var tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
-                            .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
-                            .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                        var tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                            .Add(РегистрТарифыТехникиОбъекта.Names.ИспользоватьПоУмолчанию, true)
+                            .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
                         if (tariff == null)
                         {
-                            tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
-                                .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
-                                .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                            tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                                .Add(РегистрТарифыТехникиОбъекта.Names.ИспользоватьПоУмолчанию, true)
+                                .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
                         }
                         if (tariff != null)
                         {
-                            i.Тариф = tariff.Тариф;
+                            i.Тариф = tariff[РегистрТарифыТехникиОбъекта.Names.Тариф].ToReferent() as Тарифы;
                         }
                     }
                     i.Post();
@@ -91,18 +93,18 @@ namespace TechControl.Метаданные.Мониторинг
                     i.Время = this.ДатаДокумента.Date.Add(dateTime.Subtract(dateTime.Date));
                     if (!i.Тариф.Selected)
                     {
-                        var tariff = this.Объект.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
-                            .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.ИспользоватьПоУмолчанию, true)
-                            .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Должность, i.Сотрудник.Должность));
+                        var tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+                            .Add(РегистрТарифыПерсоналаОбъекта.Names.ИспоьзоватьПоУмолчанию, true)
+                            .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, i.Сотрудник.Должность));
                         if (tariff == null)
                         {
-                            tariff = this.Объект.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
-                                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.ИспользоватьПоУмолчанию, true)
-                                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Должность, Должности.Новый()));
+                            tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+                                .Add(РегистрТарифыПерсоналаОбъекта.Names.ИспоьзоватьПоУмолчанию, true)
+                                .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, Должности.Новый()));
                         }
                         if (tariff != null)
                         {
-                            i.Тариф = tariff.Тариф;
+                            i.Тариф = tariff[РегистрТарифыПерсоналаОбъекта.Names.Тариф].ToReferent() as Тарифы;
                         }
                     }
                     i.Post();
@@ -117,18 +119,18 @@ namespace TechControl.Метаданные.Мониторинг
                     if (i.НомерСмены < 0 || i.НомерСмены > 3) i.НомерСмены = 0;
                     if (!i.Тариф.Selected)
                     {
-                        var tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
-                            .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
-                            .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                        var tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                            .Add(РегистрТарифыТехникиОбъекта.Names.ИспользоватьПоУмолчанию, true)
+                            .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
                         if (tariff == null)
                         {
-                            tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
-                                .Add(МониторингОбъектыТаблицаТарифы.Names.ИспользоватьПоУмолчанию, true)
-                                .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                            tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                                .Add(РегистрТарифыТехникиОбъекта.Names.ИспользоватьПоУмолчанию, true)
+                                .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
                         }
                         if (tariff != null)
                         {
-                            i.Тариф = tariff.Тариф;
+                            i.Тариф = tariff[РегистрТарифыТехникиОбъекта.Names.Тариф].ToReferent() as Тарифы;
                         }
                     }
                     i.Post();
@@ -139,18 +141,18 @@ namespace TechControl.Метаданные.Мониторинг
                     if (i.НомерСмены < 0 || i.НомерСмены > 3) i.НомерСмены = 0;
                     if (!i.Тариф.Selected)
                     {
-                        var tariff = this.Объект.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
-                            .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.ИспользоватьПоУмолчанию, true)
-                            .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Должность, i.Сотрудник.Должность));
+                        var tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+                            .Add(РегистрТарифыПерсоналаОбъекта.Names.ИспоьзоватьПоУмолчанию, true)
+                            .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, i.Сотрудник.Должность));
                         if (tariff == null)
                         {
-                            tariff = this.Объект.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
-                                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.ИспользоватьПоУмолчанию, true)
-                                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Должность, Должности.Новый()));
+                            tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+                                .Add(РегистрТарифыПерсоналаОбъекта.Names.ИспоьзоватьПоУмолчанию, true)
+                                .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, Должности.Новый()));
                         }
                         if (tariff != null)
                         {
-                            i.Тариф = tariff.Тариф;
+                            i.Тариф = tariff[РегистрТарифыПерсоналаОбъекта.Names.Тариф].ToReferent() as Тарифы;
                         }
                     }
                     i.Post();
@@ -180,14 +182,14 @@ namespace TechControl.Метаданные.Мониторинг
                         System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
                 }
-                var tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
-                    .Add(МониторингОбъектыТаблицаТарифы.Names.Тариф, i.Тариф)
-                    .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                var tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                    .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
+                    .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
                 if (tariff == null)
                 {
-                    tariff = this.Объект.ТаблицаТарифы.FindRow(new NsgCompare()
-                        .Add(МониторингОбъектыТаблицаТарифы.Names.Тариф, i.Тариф)
-                        .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                    tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                        .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
+                        .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
                 }
                 if (tariff == null)
                 {
@@ -196,7 +198,7 @@ namespace TechControl.Метаданные.Мониторинг
                         System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
                 }
-                if (!i.Сотрудник.Selected && tariff.ТребуетсяСотрудник)
+                if (!i.Сотрудник.Selected && tariff[РегистрТарифыТехникиОбъекта.Names.ТребуетсяСотрудник].ToBoolean())
                 {
                     NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран сотрудник",
                         System.Windows.Forms.MessageBoxIcon.Error);
@@ -511,25 +513,8 @@ namespace TechControl.Метаданные.Мониторинг
             //    NsgSettings.MainForm.ShowMessage("Не выбран объект", MessageBoxIcon.Exclamation);
             //    return;
             //}
-            List<Техника> техникаОбъекта = new List<Техника>();
-            foreach (var i in this.Объект.ТаблицаТехника.Rows)
-            {
-                //if (vmoТаблица.Data.DataTable.FindRow(new NsgCompare().Add(МониторингФормированиеСменыТаблица.Names.Техника, i.Техника)) == null)
-                {
-                    //МониторингФормированиеСменыТаблица.Строка row = vmoТаблица.Data.DataTable.NewRow() as МониторингФормированиеСменыТаблица.Строка;
-                    //row.Техника = i.Техника;
-                    //row.Post();
-                    техникаОбъекта.Add(i.Техника);
-                }
-            }
-            List<Сотрудники> персоналОбъекта = new List<Сотрудники>();
-            foreach (var i in this.Объект.ТаблицаПерсонал.Rows)
-            {
-                //if (vmoТаблицаПерсонал.Data.DataTable.FindRow(new NsgCompare().Add(МониторингФормированиеСменыТаблицаПерсонал.Names.Сотрудник, i.Сотрудник)) == null)
-                {
-                    персоналОбъекта.Add(i.Сотрудник);
-                }
-            }
+            List<Техника> техникаОбъекта = Объект.СписокТехникиОбъекта().ToList();
+            List<Сотрудники> персоналОбъекта = Объект.СписокПерсонала().Select(x => x.Item1).ToList();
             ФиксацияИстории фиксацияИстории = ФиксацияИстории.Новый();
             NsgCompare cmp = new NsgCompare()
                 .Add(ФиксацияИстории.Names.Объект, this.Объект)

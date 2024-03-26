@@ -146,153 +146,154 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void bЗагрузитьИзТитана_AsyncClick(object sender, DoWorkEventArgs e)
         {
-            if (MessageBox.Show("Если данные уже загружались, они будут продублированы. Продолжить?", "", MessageBoxButtons.YesNo)
-                != DialogResult.Yes) return;
+            //if (MessageBox.Show("Если данные уже загружались, они будут продублированы. Продолжить?", "", MessageBoxButtons.YesNo)
+            //    != DialogResult.Yes) return;
 
-            var jsonSerializer =
-                JsonSerializer.Create(new JsonSerializerSettings { Formatting = Newtonsoft.Json.Formatting.Indented });
-            FileStream stream = new FileStream("titanControl.json", FileMode.Open, FileAccess.Read);
-            using (StreamReader streamReader = new StreamReader(stream))
-            {
-                JsonTextReader jtr = new JsonTextReader(streamReader);
-                Dictionary<string, IEnumerable<object>> dict = jsonSerializer.Deserialize<Dictionary<string, IEnumerable<object>>>(jtr);
+            //var jsonSerializer =
+            //    JsonSerializer.Create(new JsonSerializerSettings { Formatting = Newtonsoft.Json.Formatting.Indented });
+            //FileStream stream = new FileStream("titanControl.json", FileMode.Open, FileAccess.Read);
+            //using (StreamReader streamReader = new StreamReader(stream))
+            //{
+            //    JsonTextReader jtr = new JsonTextReader(streamReader);
+            //    Dictionary<string, IEnumerable<object>> dict = jsonSerializer.Deserialize<Dictionary<string, IEnumerable<object>>>(jtr);
 
-                Dictionary<string, Сотрудники> всеСотрудники = new Dictionary<string, Сотрудники>();
-                Dictionary<string, Контрагенты> всеКонтрагенты = new Dictionary<string, Контрагенты>();
-                Dictionary<string, Тарифы> всеТарифы = new Dictionary<string, Тарифы>();
-                Dictionary<string, Объекты> всеОбъекты = new Dictionary<string, Объекты>();
+            //    Dictionary<string, Сотрудники> всеСотрудники = new Dictionary<string, Сотрудники>();
+            //    Dictionary<string, Контрагенты> всеКонтрагенты = new Dictionary<string, Контрагенты>();
+            //    Dictionary<string, Тарифы> всеТарифы = new Dictionary<string, Тарифы>();
+            //    Dictionary<string, Объекты> всеОбъекты = new Dictionary<string, Объекты>();
 
-                List<ТитанКонтроль.Сотрудник> сотрудникиDict = new List<ТитанКонтроль.Сотрудник>();
-                foreach (var i in dict["sotrudniki"])
-                    сотрудникиDict.Add((i as Newtonsoft.Json.Linq.JObject)?.ToObject<ТитанКонтроль.Сотрудник>());
+            //    List<ТитанКонтроль.Сотрудник> сотрудникиDict = new List<ТитанКонтроль.Сотрудник>();
+            //    foreach (var i in dict["sotrudniki"])
+            //        сотрудникиDict.Add((i as Newtonsoft.Json.Linq.JObject)?.ToObject<ТитанКонтроль.Сотрудник>());
 
-                List<ТитанКонтроль.Контрагент> контрагентыDict = new List<ТитанКонтроль.Контрагент>();
-                foreach (var i in dict["kontragents"])
-                    контрагентыDict.Add((i as Newtonsoft.Json.Linq.JObject)?.ToObject<ТитанКонтроль.Контрагент>());
+            //    List<ТитанКонтроль.Контрагент> контрагентыDict = new List<ТитанКонтроль.Контрагент>();
+            //    foreach (var i in dict["kontragents"])
+            //        контрагентыDict.Add((i as Newtonsoft.Json.Linq.JObject)?.ToObject<ТитанКонтроль.Контрагент>());
 
-                List<ТитанКонтроль.ТарифыСотрудниковНаОбъектах> тарифыDict = new List<ТитанКонтроль.ТарифыСотрудниковНаОбъектах>();
-                foreach (var i in dict["tariffs"])
-                    тарифыDict.Add((i as Newtonsoft.Json.Linq.JObject)?.ToObject<ТитанКонтроль.ТарифыСотрудниковНаОбъектах>());
+            //    List<ТитанКонтроль.ТарифыСотрудниковНаОбъектах> тарифыDict = new List<ТитанКонтроль.ТарифыСотрудниковНаОбъектах>();
+            //    foreach (var i in dict["tariffs"])
+            //        тарифыDict.Add((i as Newtonsoft.Json.Linq.JObject)?.ToObject<ТитанКонтроль.ТарифыСотрудниковНаОбъектах>());
 
-                List<ТитанКонтроль.Объекты> объектыDict = new List<ТитанКонтроль.Объекты>();
-                foreach (var i in dict["workObjects"])
-                    объектыDict.Add((i as Newtonsoft.Json.Linq.JObject)?.ToObject<ТитанКонтроль.Объекты>());
+            //    List<ТитанКонтроль.Объекты> объектыDict = new List<ТитанКонтроль.Объекты>();
+            //    foreach (var i in dict["workObjects"])
+            //        объектыDict.Add((i as Newtonsoft.Json.Linq.JObject)?.ToObject<ТитанКонтроль.Объекты>());
 
-                Сотрудники сотрудники = Сотрудники.Новый();
-                Контрагенты контрагенты = Контрагенты.Новый();
-                Тарифы тарифы = Тарифы.Новый();
-                Объекты объекты = Объекты.Новый();
+            //    Сотрудники сотрудники = Сотрудники.Новый();
+            //    Контрагенты контрагенты = Контрагенты.Новый();
+            //    Тарифы тарифы = Тарифы.Новый();
+            //    Объекты объекты = Объекты.Новый();
 
-                Договоры договоры = Договоры.Новый();
+            //    Договоры договоры = Договоры.Новый();
 
-                ReportProgress(-1, "Сотрудники");
-                foreach (ТитанКонтроль.Сотрудник i in сотрудникиDict)
-                {
-                    сотрудники.New();
-                    string name = string.Empty;
-                    сотрудники.Имя = i.FirstName;
-                    сотрудники.Отчество = i.MiddleName;
-                    сотрудники.Фамилия = i.LastName;
-                    if (!string.IsNullOrWhiteSpace(сотрудники.Фамилия)) name += сотрудники.Фамилия + ' ';
-                    if (!string.IsNullOrWhiteSpace(сотрудники.Имя)) name += сотрудники.Имя + ' ';
-                    if (!string.IsNullOrWhiteSpace(сотрудники.Отчество)) name += сотрудники.Отчество;
-                    сотрудники.Наименование = name.Trim();
-                    if (string.IsNullOrWhiteSpace(сотрудники.Наименование))
-                        сотрудники.Наименование = "Сотрудник не заполнен (" + i.Id + ")";
-                    сотрудники.ДатаРождения = i.BirthDate;
-                    сотрудники.ДатаПриемаНаРаботу = i.EmploymentDate;
-                    сотрудники.ДатаУвольнения = i.FiringDate;
-                    сотрудники.НомерТелефона = i.Phone;
-                    сотрудники.ТабельныйНомер = i.PersonnelNumber;
-                    сотрудники.Post();
-                    всеСотрудники.Add(i.Id, сотрудники);
-                    сотрудники = Сотрудники.Новый();
-                }
-                ReportProgress(-1, "Контрагенты");
-                foreach (ТитанКонтроль.Контрагент i in контрагентыDict)
-                {
-                    контрагенты.New();
-                    string name = string.Empty;
-                    контрагенты.Наименование = i.Name;
-                    контрагенты.ИНН = i.INN;
-                    контрагенты.Адрес = i.Address;
-                    if (string.IsNullOrWhiteSpace(контрагенты.Наименование))
-                        контрагенты.Наименование = i.Address;
-                    if (string.IsNullOrWhiteSpace(контрагенты.Наименование))
-                        контрагенты.Наименование = i.INN;
-                    if (string.IsNullOrWhiteSpace(контрагенты.Наименование))
-                        контрагенты.Наименование = "Сотрудник не заполнен (" + i.Id + ")";
-                    контрагенты.ЯвляетсяНашейФирмой = i.IsFirma;
-                    контрагенты.Post();
-                    всеКонтрагенты.Add(i.Id, контрагенты);
-                    контрагенты = Контрагенты.Новый();
-                }
-                ReportProgress(-1, "Тарифы");
-                foreach (ТитанКонтроль.ТарифыСотрудниковНаОбъектах i in тарифыDict)
-                {
-                    if (тарифы.Find(new NsgCompare().Add(Тарифы.Names.Наименование, i.Tariff))) continue;
-                    тарифы.New();
-                    тарифы.Наименование = i.Tariff;
-                    тарифы.Стоимость = i.Sum;
-                    тарифы.Post();
-                    всеТарифы.Add(i.Tariff, тарифы);
-                    тарифы = Тарифы.Новый();
-                }
-                ReportProgress(-1, "Объекты");
-                foreach (ТитанКонтроль.Объекты i in объектыDict)
-                {
-                    объекты.New();
-                    объекты.Наименование = i.Name;
-                    if (string.IsNullOrWhiteSpace(объекты.Наименование))
-                        объекты.Наименование = i.Address;
-                    if (string.IsNullOrWhiteSpace(объекты.Наименование))
-                        объекты.Наименование = "Объект не заполнен (" + i.Id + ")";
-                    объекты.Адрес = i.Address;
-                    if (всеКонтрагенты.TryGetValue(i.Zakazchik, out Контрагенты ка))
-                        объекты.Заказчик = ка;
-                    объекты.Договор = i.Dogovor;
-                    if (договоры.Find(new NsgCompare().Add(Договоры.Names.Наименование, i.Dogovor)))
-                    {
-                        объекты.ДоговорСсылка = договоры;
-                    }
-                    else
-                    {
-                        договоры.New();
-                        договоры.Наименование = i.Dogovor;
-                        договоры.Post();
-                        объекты.ДоговорСсылка = договоры;
-                    }
-                    if (всеКонтрагенты.TryGetValue(i.Firma, out Контрагенты фи))
-                        объекты.Фирма = фи;
-                    foreach (ТитанКонтроль.ТарифыСотрудниковНаОбъектах j in тарифыDict)
-                    {
-                        if (j.WorkObject != i.Id) continue;
+            //    ReportProgress(-1, "Сотрудники");
+            //    foreach (ТитанКонтроль.Сотрудник i in сотрудникиDict)
+            //    {
+            //        сотрудники.New();
+            //        string name = string.Empty;
+            //        сотрудники.Имя = i.FirstName;
+            //        сотрудники.Отчество = i.MiddleName;
+            //        сотрудники.Фамилия = i.LastName;
+            //        if (!string.IsNullOrWhiteSpace(сотрудники.Фамилия)) name += сотрудники.Фамилия + ' ';
+            //        if (!string.IsNullOrWhiteSpace(сотрудники.Имя)) name += сотрудники.Имя + ' ';
+            //        if (!string.IsNullOrWhiteSpace(сотрудники.Отчество)) name += сотрудники.Отчество;
+            //        сотрудники.Наименование = name.Trim();
+            //        if (string.IsNullOrWhiteSpace(сотрудники.Наименование))
+            //            сотрудники.Наименование = "Сотрудник не заполнен (" + i.Id + ")";
+            //        сотрудники.ДатаРождения = i.BirthDate;
+            //        сотрудники.ДатаПриемаНаРаботу = i.EmploymentDate;
+            //        сотрудники.ДатаУвольнения = i.FiringDate;
+            //        сотрудники.НомерТелефона = i.Phone;
+            //        сотрудники.ТабельныйНомер = i.PersonnelNumber;
+            //        сотрудники.Post();
+            //        всеСотрудники.Add(i.Id, сотрудники);
+            //        сотрудники = Сотрудники.Новый();
+            //    }
+            //    ReportProgress(-1, "Контрагенты");
+            //    foreach (ТитанКонтроль.Контрагент i in контрагентыDict)
+            //    {
+            //        контрагенты.New();
+            //        string name = string.Empty;
+            //        контрагенты.Наименование = i.Name;
+            //        контрагенты.ИНН = i.INN;
+            //        контрагенты.Адрес = i.Address;
+            //        if (string.IsNullOrWhiteSpace(контрагенты.Наименование))
+            //            контрагенты.Наименование = i.Address;
+            //        if (string.IsNullOrWhiteSpace(контрагенты.Наименование))
+            //            контрагенты.Наименование = i.INN;
+            //        if (string.IsNullOrWhiteSpace(контрагенты.Наименование))
+            //            контрагенты.Наименование = "Сотрудник не заполнен (" + i.Id + ")";
+            //        контрагенты.ЯвляетсяНашейФирмой = i.IsFirma;
+            //        контрагенты.Post();
+            //        всеКонтрагенты.Add(i.Id, контрагенты);
+            //        контрагенты = Контрагенты.Новый();
+            //    }
+            //    ReportProgress(-1, "Тарифы");
+            //    foreach (ТитанКонтроль.ТарифыСотрудниковНаОбъектах i in тарифыDict)
+            //    {
+            //        if (тарифы.Find(new NsgCompare().Add(Тарифы.Names.Наименование, i.Tariff))) continue;
+            //        тарифы.New();
+            //        тарифы.Наименование = i.Tariff;
+            //        тарифы.Стоимость = i.Sum;
+            //        тарифы.Post();
+            //        всеТарифы.Add(i.Tariff, тарифы);
+            //        тарифы = Тарифы.Новый();
+            //    }
+            //    ReportProgress(-1, "Объекты");
+            //    foreach (ТитанКонтроль.Объекты i in объектыDict)
+            //    {
+            //        объекты.New();
+            //        объекты.Наименование = i.Name;
+            //        if (string.IsNullOrWhiteSpace(объекты.Наименование))
+            //            объекты.Наименование = i.Address;
+            //        if (string.IsNullOrWhiteSpace(объекты.Наименование))
+            //            объекты.Наименование = "Объект не заполнен (" + i.Id + ")";
+            //        объекты.Адрес = i.Address;
+            //        if (всеКонтрагенты.TryGetValue(i.Zakazchik, out Контрагенты ка))
+            //            объекты.Заказчик = ка;
+            //        объекты.Договор = i.Dogovor;
+            //        if (договоры.Find(new NsgCompare().Add(Договоры.Names.Наименование, i.Dogovor)))
+            //        {
+            //            объекты.ДоговорСсылка = договоры;
+            //        }
+            //        else
+            //        {
+            //            договоры.New();
+            //            договоры.Наименование = i.Dogovor;
+            //            договоры.Post();
+            //            объекты.ДоговорСсылка = договоры;
+            //        }
+            //        if (всеКонтрагенты.TryGetValue(i.Firma, out Контрагенты фи))
+            //            объекты.Фирма = фи;
+            //        foreach (ТитанКонтроль.ТарифыСотрудниковНаОбъектах j in тарифыDict)
+            //        {
+            //            if (j.WorkObject != i.Id) continue;
 
-                        if (всеСотрудники.TryGetValue(j.Sotrudnik, out Сотрудники со) &&
-                            объекты.ТаблицаПерсонал.FindRow(new NsgCompare()
-                                .Add(МониторингОбъектыТаблицаПерсонал.Names.Сотрудник, со)) == null)
-                        {
-                            var row = объекты.ТаблицаПерсонал.NewRow();
-                            row.Сотрудник = со;
-                            row.Post();
-                        }
 
-                        if (всеТарифы.TryGetValue(j.Tariff, out Тарифы та) &&
-                            объекты.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
-                                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, та)
-                                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Стоимость, j.Sum)) == null)
-                        {
-                            var rowT = объекты.ТаблицаТарифыСотрудников.NewRow();
-                            rowT.Тариф = та;
-                            rowT.Стоимость = j.Sum;
-                            rowT.Post();
-                        }
-                    }
-                    объекты.Post();
-                    всеОбъекты.Add(i.Id, объекты);
-                    объекты = Объекты.Новый();
-                }
-            }
+            //            if (всеСотрудники.TryGetValue(j.Sotrudnik, out Сотрудники со) &&
+            //                объекты.ТаблицаПерсонал.FindRow(new NsgCompare()
+            //                    .Add(МониторингОбъектыТаблицаПерсонал.Names.Сотрудник, со)) == null)
+            //            {
+            //                var row = объекты.ТаблицаПерсонал.NewRow();
+            //                row.Сотрудник = со;
+            //                row.Post();
+            //            }
+
+            //            if (всеТарифы.TryGetValue(j.Tariff, out Тарифы та) &&
+            //                объекты.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
+            //                    .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, та)
+            //                    .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Стоимость, j.Sum)) == null)
+            //            {
+            //                var rowT = объекты.ТаблицаТарифыСотрудников.NewRow();
+            //                rowT.Тариф = та;
+            //                rowT.Стоимость = j.Sum;
+            //                rowT.Post();
+            //            }
+            //        }
+            //        объекты.Post();
+            //        всеОбъекты.Add(i.Id, объекты);
+            //        объекты = Объекты.Новый();
+            //    }
+            //}
         }
 
         public class ТитанКонтроль

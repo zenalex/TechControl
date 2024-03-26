@@ -50,13 +50,14 @@ namespace TechControl.Метаданные.Мониторинг
         {
             if (Объект.Selected)
             {
-                foreach (var i in Объект.Value.ТаблицаТехника.Rows)
+                var списокТехники = Объект.Value.СписокТехникиОбъекта();
+                foreach (var i in списокТехники)
                 {
-                    if (vmoТаблица.Data.DataTable.FindRow(new NsgCompare().Add(_SystemTables.МониторингОбъектыТаблицаТехника.Names.Техника, i.Техника)) == null)
+                    if (vmoТаблица.Data.DataTable.FindRow(new NsgCompare().Add(Заправка.Names.Техника, i)) == null)
                     {
                         var row = vmoТаблица.Data.DataTable.NewRow();
                         row[Заправка.Names.Объект].Value = Объект.Value;
-                        row[Заправка.Names.Техника].Value = i.Техника;
+                        row[Заправка.Names.Техника].Value = i;
                         row.Post();
                     }
                 }

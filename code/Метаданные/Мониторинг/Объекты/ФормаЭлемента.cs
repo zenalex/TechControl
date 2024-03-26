@@ -365,13 +365,15 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void nsgIGrid7_CellRequestEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
         {
+            var объект = FormObject as Объекты;
             if (e.ColumnName == Должность_vmoГруппировка.Name)
             {
                 var cmp = Должность_vmoГруппировка.SearchCondition;
                 cmp.Clear();
-                if (ТаблицаПерсонал.Value.Count > 0)
+                var списокПерсонала = объект.СписокПерсонала();
+                if (списокПерсонала.Count > 0)
                 {
-                    var сотрудникиНаОбъектке = ТаблицаПерсонал.Value.AllRows.Select(x => (x[Сотрудник].ToReferent() as Сотрудники)).ToArray();
+                    var сотрудникиНаОбъектке = списокПерсонала.Select(x => x.Item1).ToArray();
                     var основныеДолжности = сотрудникиНаОбъектке.Select(x => x.Должность).ToArray();
                     var совмещаемыеДолжности = сотрудникиНаОбъектке.SelectMany(x => x.ТаблицаСовмещаемыхДолжностей.AllRows.Select(y => y.Должность)).ToArray();
                     var доступныеДолжности = основныеДолжности.Concat(совмещаемыеДолжности).Distinct().Select(x => x.Идентификатор).ToArray();
@@ -384,9 +386,10 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 var cmp = Должность_vmoГруппировка.SearchCondition;
                 cmp.Clear();
-                if (ТаблицаТехника.Value.Count > 0)
+                var списокТехники = объект.СписокТехникиОбъекта();
+                if (списокТехники.Length > 0)
                 {
-                    var техникаНаОбъектке = ТаблицаТехника.Value.AllRows.Select(x => (x[Техника].ToReferent() as Мониторинг.Техника)).ToArray();
+                    var техникаНаОбъектке = списокТехники;
                     var группыМпецТехники = техникаНаОбъектке.Select(x => x.ГруппаСпецТехники).Distinct().Select(x => x.Идентификатор).ToArray();
 
                     cmp.Add(ГруппыСпецТехники.Names.Идентификатор, группыМпецТехники, NsgComparison.In);
@@ -403,7 +406,10 @@ namespace TechControl.Метаданные.Мониторинг
                 e.Cancel = true;
                 return;
             }
-            if (ТаблицаПерсонал.Value.Count > 0 || ТаблицаТехника.Value.Count > 0)
+            var объект = FormObject as Объекты;
+            var списокПерсонала = объект.СписокПерсонала();
+            var списокТехники = объект.СписокТехникиОбъекта();
+            if (списокПерсонала.Count > 0 || списокТехники.Length > 0)
             {
                 vmoТаблицаГрафикаРаботы.Data.BeginUpdateData();
                 vmoТаблицаГрафикаРаботы.Data.MemoryTable.Clear();
@@ -411,9 +417,9 @@ namespace TechControl.Метаданные.Мониторинг
                 Dictionary<Должности, int> должности = new Dictionary<Должности, int>();
                 Dictionary<ГруппыСпецТехники, int> группыСпТехн = new Dictionary<ГруппыСпецТехники, int>();
 
-                foreach (var item in ТаблицаПерсонал.Value.AllRows)
+                foreach (var item in списокПерсонала)
                 {
-                    var должн = item.Сотрудник.Должность;
+                    var должн = item.Item2;
                     if (должн.Selected)
                     {
                         if (!должности.ContainsKey(должн))
@@ -425,7 +431,7 @@ namespace TechControl.Метаданные.Мониторинг
                             должности[должн]++;
                         }
 
-                        foreach (var совм in item.Сотрудник.ТаблицаСовмещаемыхДолжностей.AllRows)
+                        foreach (var совм in item.Item1.ТаблицаСовмещаемыхДолжностей.AllRows)
                         {
                             if (совм.Должность.Selected)
                             {
@@ -442,9 +448,9 @@ namespace TechControl.Метаданные.Мониторинг
                     }
                 }
 
-                foreach (var item in ТаблицаТехника.Value.AllRows)
+                foreach (var item in списокТехники)
                 {
-                    var грСпТехн = item.Техника.ГруппаСпецТехники;
+                    var грСпТехн = item.ГруппаСпецТехники;
                     if (грСпТехн.Selected)
                     {
                         if (!группыСпТехн.ContainsKey(грСпТехн))

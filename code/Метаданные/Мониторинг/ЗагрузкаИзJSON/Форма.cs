@@ -12,6 +12,7 @@ using NsgSoft.Common;
 using NsgSoft.Database;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
+using NsgSoft.ReportData.Extensions;
 using TechControl.Метаданные._SystemTables;
 using TechControl.Метаданные.Сервис;
 
@@ -762,68 +763,69 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void bСохранитьТарифыВОбъектах_AsyncClick(object sender, DoWorkEventArgs e)
         {
-            var dialog = MessageBox.Show("Сохранить тарифы и сотрудников в объектах?", "Подтверждение", MessageBoxButtons.OKCancel);
-            if (dialog != DialogResult.OK) return;
+            //var dialog = MessageBox.Show("Сохранить тарифы и сотрудников в объектах?", "Подтверждение", MessageBoxButtons.OKCancel);
+            //if (dialog != DialogResult.OK) return;
 
-            NsgTracer.WriteInfo("Загрузка из JSON - тарифы в объектах, начало");
+            //NsgTracer.WriteInfo("Загрузка из JSON - тарифы в объектах, начало");
 
-            //Тарифы тарифы = Тарифы.Новый();
+            ////Тарифы тарифы = Тарифы.Новый();
 
-            //var goodsIds = vmoТарифы.Data.MemoryTable.ColumnToArray(Наименование_т.Name, new NsgCompare()
-            //    .Add(Выбор_т.Name, true), true);
+            ////var goodsIds = vmoТарифы.Data.MemoryTable.ColumnToArray(Наименование_т.Name, new NsgCompare()
+            ////    .Add(Выбор_т.Name, true), true);
 
-            //var тарифыСущ = тарифы.FindAll(new NsgCompare()
-            //    .Add(Сотрудники.Names.СостояниеДокумента, СостоянияОбъекта.Удален, NsgComparison.NotEqual)
-            //    .Add(Сотрудники.Names.Наименование, goodsIds, NsgComparison.In));
-            //Dictionary<string, Тарифы> тарифыDict = new Dictionary<string, Тарифы>();
-            //foreach (Тарифы i in тарифыСущ)
+            ////var тарифыСущ = тарифы.FindAll(new NsgCompare()
+            ////    .Add(Сотрудники.Names.СостояниеДокумента, СостоянияОбъекта.Удален, NsgComparison.NotEqual)
+            ////    .Add(Сотрудники.Names.Наименование, goodsIds, NsgComparison.In));
+            ////Dictionary<string, Тарифы> тарифыDict = new Dictionary<string, Тарифы>();
+            ////foreach (Тарифы i in тарифыСущ)
+            ////{
+            ////    тарифыDict.Add(i.Наименование, i);
+            ////}
+
+            //var объекты = vmoТарифы.Data.MemoryTable.ColumnToArray(Объект_т.Name, new NsgCompare().Add(Выбор_т.Name, true), true)
+            //    .Select(i => i.ToReferent() as Объекты);
+
+            //int count = 0;
+            //foreach (var объект in /*vmoТарифы.Data.MemoryTable.Rows*/объекты)
             //{
-            //    тарифыDict.Add(i.Наименование, i);
+            //    if (!объект.Selected) continue;
+            //    ReportProgress(-1, (++count).ToString() + ". " + объект);
+
+            //    var rows = vmoТарифы.Data.MemoryTable.FindRows(new NsgCompare().Add(Выбор_т.Name, true)
+            //        .Add(Объект_т.Name, объект)
+            //        .Add(Найдено_т.Name, Тарифы.Новый(), NsgComparison.NotEqual));
+
+            //    объект.Edit();
+
+            //    foreach (var row in rows)
+            //    {
+            //        var тариф = row[Найдено_т].ToReferent() as Тарифы;
+            //        var sum = row[Стоимость_т].ToDecimal();
+
+            //        var сотрудник = row[Сотрудник_т].ToReferent() as Сотрудники;
+            //        var списокСотрудников = объект.СписокПерсонала();
+            //        if (сотрудник.Selected && списокСотрудников.Any(x => x.Item1) объект.ТаблицаПерсонал.FindRow(new NsgCompare()
+            //            .Add(МониторингОбъектыТаблицаПерсонал.Names.Сотрудник, сотрудник)) == null)
+            //        {
+            //            var persRow = объект.ТаблицаПерсонал.NewRow();
+            //            persRow.Сотрудник = сотрудник;
+            //            persRow.Post();
+            //        }
+
+            //        var tarRow = объект.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
+            //            .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, тариф));
+            //        if (tarRow == null)
+            //        {
+            //            tarRow = объект.ТаблицаТарифыСотрудников.NewRow();
+            //            tarRow.Тариф = тариф;
+            //        }
+            //        else tarRow.Edit();
+            //        tarRow.Стоимость = sum;
+            //        tarRow.Post();
+            //    }
+
+            //    объект.Post();
             //}
-
-            var объекты = vmoТарифы.Data.MemoryTable.ColumnToArray(Объект_т.Name, new NsgCompare().Add(Выбор_т.Name, true), true)
-                .Select(i => i.ToReferent() as Объекты);
-
-            int count = 0;
-            foreach (var объект in /*vmoТарифы.Data.MemoryTable.Rows*/объекты)
-            {
-                if (!объект.Selected) continue;
-                ReportProgress(-1, (++count).ToString() + ". " + объект);
-
-                var rows = vmoТарифы.Data.MemoryTable.FindRows(new NsgCompare().Add(Выбор_т.Name, true)
-                    .Add(Объект_т.Name, объект)
-                    .Add(Найдено_т.Name, Тарифы.Новый(), NsgComparison.NotEqual));
-
-                объект.Edit();
-
-                foreach (var row in rows)
-                {
-                    var тариф = row[Найдено_т].ToReferent() as Тарифы;
-                    var sum = row[Стоимость_т].ToDecimal();
-
-                    var сотрудник = row[Сотрудник_т].ToReferent() as Сотрудники;
-                    if (сотрудник.Selected && объект.ТаблицаПерсонал.FindRow(new NsgCompare()
-                        .Add(МониторингОбъектыТаблицаПерсонал.Names.Сотрудник, сотрудник)) == null)
-                    {
-                        var persRow = объект.ТаблицаПерсонал.NewRow();
-                        persRow.Сотрудник = сотрудник;
-                        persRow.Post();
-                    }
-
-                    var tarRow = объект.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
-                        .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, тариф));
-                    if (tarRow == null)
-                    {
-                        tarRow = объект.ТаблицаТарифыСотрудников.NewRow();
-                        tarRow.Тариф = тариф;
-                    }
-                    else tarRow.Edit();
-                    tarRow.Стоимость = sum;
-                    tarRow.Post();
-                }
-
-                объект.Post();
-            }
         }
 
         private void bСохранитьТарифыВОбъектах_AsyncClickCompleted(object sender, RunWorkerCompletedEventArgs e)

@@ -23,11 +23,10 @@ namespace TechControl.Метаданные.Мониторинг
                     .Rows[0][Names.ЗаправочнаяЕмкость].ToReferent() as Техника;
                 if (!r.Selected)
                 {
-                    var row = ТаблицаТехника.FindRow(new NsgCompare()
-                        .Add(МониторингОбъектыТаблицаТехника.Names.Техника, Техника.Новый(), NsgComparison.NotEqual));
+                    var row = СписокТехникиОбъекта().FirstOrDefault();
                     if (row != null)
                     {
-                        r = row[МониторингОбъектыТаблицаТехника.Names.Техника].ToReferent() as Техника;
+                        r = row;
                     }
                     else
                     {
@@ -64,7 +63,7 @@ namespace TechControl.Метаданные.Мониторинг
 
         public List<Tuple<Сотрудники, Должности>> СписокПерсонала() 
         {
-            List<Tuple<Сотрудники, Должности>> сотрудники = null;
+            List<Tuple<Сотрудники, Должности>> сотрудники = new List<Tuple<Сотрудники, Должности>>();
             var reg = РегистрПерсоналОбъекта.Новый();
             reg.Объект = this;
             var список = reg.GetRests();
@@ -77,7 +76,7 @@ namespace TechControl.Метаданные.Мониторинг
 
         public Dictionary<Сотрудники, bool> ПланируемыеПараметрыВыходаСотрудниковНаРаботу(DateTime дата) 
         {
-            Dictionary<Сотрудники, bool> параметры = null;
+            Dictionary<Сотрудники, bool> параметры = new Dictionary<Сотрудники, bool>();
             var персонал = СписокПерсонала();
             if (персонал != null && персонал.Count > 0)
             {
@@ -107,7 +106,7 @@ namespace TechControl.Метаданные.Мониторинг
 
         public Техника[] СписокТехникиОбъекта() 
         {
-            Техника[] списокТехники = null;
+            Техника[] списокТехники = new Техника[0];
             var reg = РегистрТехникаОбъекта.Новый();
             reg.Объект = this;
             var список = reg.GetRests();
@@ -116,6 +115,20 @@ namespace TechControl.Метаданные.Мониторинг
                 .Select(x => x[РегистрТехникаОбъекта.Names.Техника].ToReferent() as Техника)
                 .ToArray();
             return списокТехники;
+        }
+
+        public NsgMemoryTable ДействующиеТарифыПерсонала()
+        {
+            var reg = РегистрТарифыПерсоналаОбъекта.Новый();
+            reg.Объект = this;
+            return reg.GetRests();
+        }
+
+        public NsgMemoryTable ДействующиеТарифыТехники()
+        {
+            var reg = РегистрТарифыТехникиОбъекта.Новый();
+            reg.Объект = this;
+            return reg.GetRests();
         }
     }
 

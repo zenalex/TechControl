@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2024.3.20.0</ProductVersion>
+    <ProductVersion>2024.3.26.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -1544,42 +1544,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаПерсонал.NsgInit.cs">
-      <NsgOwnerGuid>6fb73fff-fe32-43cf-ba88-1f94aeff7aa0</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаПерсонал</NsgOwnerName>
-      <DependentUpon>МониторингОбъектыТаблицаПерсонал.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаПерсонал.cs">
-      <NsgOwnerGuid>6fb73fff-fe32-43cf-ba88-1f94aeff7aa0</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаПерсонал</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаПерсонал.Строка.NsgInit.cs">
-      <NsgOwnerGuid>6fb73fff-fe32-43cf-ba88-1f94aeff7aa0</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаПерсонал</NsgOwnerName>
-      <DependentUpon>МониторингОбъектыТаблицаПерсонал.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаПерсонал.Строка.cs">
-      <NsgOwnerGuid>6fb73fff-fe32-43cf-ba88-1f94aeff7aa0</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаПерсонал</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТехника.NsgInit.cs">
-      <NsgOwnerGuid>12f0f4cb-dc26-49e8-ac30-c89da8dd6b9c</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТехника</NsgOwnerName>
-      <DependentUpon>МониторингОбъектыТаблицаТехника.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТехника.cs">
-      <NsgOwnerGuid>12f0f4cb-dc26-49e8-ac30-c89da8dd6b9c</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТехника</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТехника.Строка.NsgInit.cs">
-      <NsgOwnerGuid>12f0f4cb-dc26-49e8-ac30-c89da8dd6b9c</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТехника</NsgOwnerName>
-      <DependentUpon>МониторингОбъектыТаблицаТехника.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТехника.Строка.cs">
-      <NsgOwnerGuid>12f0f4cb-dc26-49e8-ac30-c89da8dd6b9c</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТехника</NsgOwnerName>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\Мониторинг\ФормированиеСмены\ФормаЭлемента.Designer.cs">
@@ -1890,24 +1854,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифы.NsgInit.cs">
-      <NsgOwnerGuid>cccd9497-6899-48ef-beac-258402bb32a6</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТарифы</NsgOwnerName>
-      <DependentUpon>МониторингОбъектыТаблицаТарифы.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифы.cs">
-      <NsgOwnerGuid>cccd9497-6899-48ef-beac-258402bb32a6</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТарифы</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифы.Строка.NsgInit.cs">
-      <NsgOwnerGuid>cccd9497-6899-48ef-beac-258402bb32a6</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТарифы</NsgOwnerName>
-      <DependentUpon>МониторингОбъектыТаблицаТарифы.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифы.Строка.cs">
-      <NsgOwnerGuid>cccd9497-6899-48ef-beac-258402bb32a6</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТарифы</NsgOwnerName>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\Мониторинг\ОтчетАрендаПоМесяцам\ОтчетАрендаПоМесяцам.NsgInit.cs">
@@ -2453,24 +2399,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифыСотрудников.NsgInit.cs">
-      <NsgOwnerGuid>5ed09e42-0ccc-43b3-b8ba-e7494d79e87a</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТарифыСотрудников</NsgOwnerName>
-      <DependentUpon>МониторингОбъектыТаблицаТарифыСотрудников.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифыСотрудников.cs">
-      <NsgOwnerGuid>5ed09e42-0ccc-43b3-b8ba-e7494d79e87a</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТарифыСотрудников</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифыСотрудников.Строка.NsgInit.cs">
-      <NsgOwnerGuid>5ed09e42-0ccc-43b3-b8ba-e7494d79e87a</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТарифыСотрудников</NsgOwnerName>
-      <DependentUpon>МониторингОбъектыТаблицаТарифыСотрудников.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Мониторинг\Объекты\МониторингОбъектыТаблицаТарифыСотрудников.Строка.cs">
-      <NsgOwnerGuid>5ed09e42-0ccc-43b3-b8ba-e7494d79e87a</NsgOwnerGuid>
-      <NsgOwnerName>МониторингОбъектыТаблицаТарифыСотрудников</NsgOwnerName>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

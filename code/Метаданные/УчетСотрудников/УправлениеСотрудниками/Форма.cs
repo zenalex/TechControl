@@ -14,6 +14,7 @@ using NsgSoft.ReportData.Extensions;
 using TechControl.Метаданные._SystemTables;
 using TechControl.Метаданные.Документы;
 using TechControl.Метаданные.Мониторинг;
+using TechControl.Метаданные.Регистры;
 
 namespace TechControl.Метаданные.УчетСотрудников
 {
@@ -390,7 +391,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                 cmp.Clear();
                 if (объект.Selected)
                 {
-                    var idСотрудниковОбъекта = объект.ТаблицаПерсонал.AllRows.Select(x => x.Сотрудник.Идентификатор).ToArray();
+                    var idСотрудниковОбъекта = объект.СписокПерсонала().Select(x => x.Item1.Идентификатор).ToArray();
                     cmp.Add(Сотрудники.Names.Идентификатор, idСотрудниковОбъекта, NsgComparison.In);
                     var должн = e.RowObject[Должность_vmoТаблицаИтогов].ToReferent() as Должности;
                     if (должн != null && должн.Selected)
@@ -416,10 +417,10 @@ namespace TechControl.Метаданные.УчетСотрудников
                     var всеОбъекты = Объекты.Новый().FindAll(cmpОбъекты);
 
                     var cmpСписокСотрудников = new NsgCompare();
-                    cmpСписокСотрудников.Add(МониторингОбъектыТаблицаПерсонал.Names.Владелец, всеОбъекты, NsgComparison.In);
-                    var idСотрудниковОбъекта = МониторингОбъектыТаблицаПерсонал.Новый().FindAllRequisits(cmpСписокСотрудников, МониторингОбъектыТаблицаПерсонал.Names.Сотрудник)
+                    cmpСписокСотрудников.Add(РегистрПерсоналОбъекта.Names.Объект, всеОбъекты, NsgComparison.In);
+                    var idСотрудниковОбъекта = РегистрПерсоналОбъекта.Новый().GetRests(cmpСписокСотрудников)
                         .AllRows
-                        .Select(x => x[МониторингОбъектыТаблицаПерсонал.Names.Сотрудник].ToReferent().Guid)
+                        .Select(x => x[РегистрПерсоналОбъекта.Names.Сотрудники].ToReferent().Guid)
                         .ToArray();
 
                     cmp.Add(Сотрудники.Names.Идентификатор, idСотрудниковОбъекта, NsgComparison.In);
@@ -437,54 +438,21 @@ namespace TechControl.Метаданные.УчетСотрудников
                     Guid[] idТарифовОбъекта = null; 
                     if (техника.Selected)
                     {
-                        idТарифовОбъекта = объект.ТаблицаТарифы
+                        idТарифовОбъекта = объект.ДействующиеТарифыТехники()
                             .AllRows
-                            .Where(x => x.ГруппаСпецТехники == техника.ГруппаСпецТехники)
-                            .Select(x => x.Тариф.Идентификатор)
+                            .Where(x => (x[РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники].ToReferent() as ГруппыСпецТехники) == техника.ГруппаСпецТехники)
+                            .Select(x => (x[РегистрТарифыТехникиОбъекта.Names.Тариф].ToReferent() as Тарифы).Идентификатор)
                             .ToArray();
                     }
                     else
                     {
-                        idТарифовОбъекта = объект.ТаблицаТарифыСотрудников
+                        idТарифовОбъекта = объект.ДействующиеТарифыПерсонала()
                             .AllRows
-                            .Select(x => x.Тариф.Идентификатор)
+                            .Select(x => (x[РегистрТарифыПерсоналаОбъекта.Names.Тариф].ToReferent() as Тарифы).Идентификатор)
                             .ToArray();
                     }
                     cmp.Add(Тарифы.Names.Идентификатор, idТарифовОбъекта, NsgComparison.In);
                 }
-                else if (контрагент.Selected)
-                {
-                    var cmpОбъекты = new NsgCompare();
-                    cmpОбъекты.Add(Объекты.Names.Заказчик, контрагент);
-                    cmpОбъекты.Add(Объекты.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
-                    var всеОбъекты = Объекты.Новый().FindAll(cmpОбъекты);
-
-                    Guid[] idТарифовОбъекта = null;
-                    if (техника.Selected)
-                    {
-                        var cmpСписокТарифов = new NsgCompare();
-                        cmpСписокТарифов.Add(МониторингОбъектыТаблицаТарифы.Names.Владелец, всеОбъекты, NsgComparison.In);
-                        cmpСписокТарифов.Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, техника.ГруппаСпецТехники);
-                        idТарифовОбъекта = МониторингОбъектыТаблицаТарифы.Новый().FindAllRequisits(cmpСписокТарифов, МониторингОбъектыТаблицаТарифы.Names.Тариф)
-                            .AllRows
-                            .Select(x => x[МониторингОбъектыТаблицаТарифы.Names.Тариф].ToReferent().Guid) 
-                            .ToArray();
-
-                    }
-                    else
-                    {
-                        var cmpСписокТарифов = new NsgCompare();
-                        cmpСписокТарифов.Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Владелец, всеОбъекты, NsgComparison.In);
-                        idТарифовОбъекта = МониторингОбъектыТаблицаТарифыСотрудников.Новый().FindAllRequisits(cmpСписокТарифов, МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф)
-                            .AllRows
-                            .Select(x => x[МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф].ToReferent().Guid)
-                            .ToArray();
-                    }
-
-                    cmp.Add(Тарифы.Names.Идентификатор, idТарифовОбъекта, NsgComparison.In);
-                }
-                
-                
             }
 
             if (e.ColumnName == Техника_vmoТаблицаИтогов.Name)
@@ -493,29 +461,13 @@ namespace TechControl.Метаданные.УчетСотрудников
                 cmp.Clear();
                 if (объект.Selected)
                 {
-                    var idТехникиОбъекта = объект.ТаблицаТехника.AllRows.Select(x => x.Техника.Идентификатор).ToArray();
+                    var idТехникиОбъекта = объект.СписокТехникиОбъекта().Select(x => x.Идентификатор).ToArray();
                     cmp.Add(Техника.Names.Идентификатор, idТехникиОбъекта, NsgComparison.In);
                     var группаСпТехн = e.RowObject[ГруппаСпТехн_vmoТаблицаИтогов].ToReferent() as ГруппыСпецТехники;
                     if (группаСпТехн != null && группаСпТехн.Selected)
                     {
                         cmp.Add(Техника.Names.ГруппаСпецТехники, группаСпТехн);
                     }
-                }
-                else if (контрагент.Selected)
-                {
-                    var cmpОбъекты = new NsgCompare();
-                    cmpОбъекты.Add(Объекты.Names.Заказчик, контрагент);
-                    cmpОбъекты.Add(Объекты.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
-                    var всеОбъекты = Объекты.Новый().FindAll(cmpОбъекты);
-
-                    var cmpСписокТехники = new NsgCompare();
-                    cmpСписокТехники.Add(МониторингОбъектыТаблицаТехника.Names.Владелец, всеОбъекты, NsgComparison.In);
-                    var idСотрудниковОбъекта = МониторингОбъектыТаблицаТехника.Новый().FindAllRequisits(cmpСписокТехники, МониторингОбъектыТаблицаТехника.Names.Техника)
-                        .AllRows
-                        .Select(x => x[МониторингОбъектыТаблицаТехника.Names.Техника].ToReferent().Guid)
-                        .ToArray();
-
-                    cmp.Add(Техника.Names.Идентификатор, idСотрудниковОбъекта, NsgComparison.In);
                 }
             }
         }
@@ -632,10 +584,8 @@ namespace TechControl.Метаданные.УчетСотрудников
 
             vmoТаблицаИтогов.Data.BeginUpdateData();
             vmoТаблицаИтогов.Data.MemoryTable.Clear();
-            NsgMemoryTable таблицаСотрудников = new NsgMemoryTable(Метаданные.Новый());
-            NsgMemoryTable таблицаТехники = new NsgMemoryTable(Метаданные.Новый());
-            объект.ТаблицаПерсонал.CopyTo(таблицаСотрудников);
-            объект.ТаблицаТехника.CopyTo(таблицаТехники);
+            var таблицаСотрудников = new List<Tuple<Сотрудники, Должности>> (объект.СписокПерсонала());
+            var таблицаТехники = объект.СписокТехникиОбъекта().ToList();
 
             var всегоДней = NsgService.EndOfMonth(месяцИтогов).Day;
             for (int i = 1; i <= всегоДней; i++)
@@ -696,23 +646,23 @@ namespace TechControl.Метаданные.УчетСотрудников
 
         }
 
-        private Техника ВыбратьТехнику(NsgMemoryTable table, NsgMemoryTableRow row)
+        private Техника ВыбратьТехнику(List<Техника> table, NsgMemoryTableRow row)
         {
             var техника = Техника.Новый();
             var группаСпТехн = row[ГруппаСпТехн_vmoТаблицаИтогов].ToReferent() as ГруппыСпецТехники;
             if (группаСпТехн != null && группаСпТехн.Selected)
             {
-                var строка = table.AllRows.FirstOrDefault(x => (x[МониторингОбъектыТаблицаТехника.Names.Техника].ToReferent() as Техника).ГруппаСпецТехники == группаСпТехн);
-                if (строка != null)
+                var tehn = table.FirstOrDefault(x => x.ГруппаСпецТехники == группаСпТехн);
+                if (tehn != null)
                 {
-                    техника = строка[МониторингОбъектыТаблицаТехника.Names.Техника].ToReferent() as Техника;
-                    table.DeleteRow(строка);
+                    техника = tehn;
+                    table.Remove(tehn);
                 }
             }
             return техника;
         }
 
-        private Сотрудники ВыбратьСотрудника(NsgMemoryTable table, NsgMemoryTableRow row) 
+        private Сотрудники ВыбратьСотрудника(List<Tuple<Сотрудники, Должности>> table, NsgMemoryTableRow row) 
         {
             var сотрудник = Сотрудники.Новый();
             var группаСпТехн = row[ГруппаСпТехн_vmoТаблицаИтогов].ToReferent() as ГруппыСпецТехники;
@@ -721,30 +671,30 @@ namespace TechControl.Метаданные.УчетСотрудников
                 var техника = row[Техника_vmoТаблицаИтогов].ToReferent() as Техника;
                 if (техника != null && техника.Selected)
                 {
-                    var строка = table.AllRows.FirstOrDefault(x => (x[МониторингОбъектыТаблицаПерсонал.Names.Сотрудник].ToReferent() as Сотрудники).ДопущенКУправлению(техника));
-                    if (строка != null)
+                    var tehn = table.FirstOrDefault(x => x.Item1.ДопущенКУправлению(техника));
+                    if (tehn != null)
                     {
-                        сотрудник = строка[МониторингОбъектыТаблицаПерсонал.Names.Сотрудник].ToReferent() as Сотрудники;
-                        table.DeleteRow(строка);
+                        сотрудник = tehn.Item1;
+                        table.Remove(tehn);
                     }
                 }
             }
             else
             {
                 var должность = row[Должность_vmoТаблицаИтогов].ToReferent() as Должности;
-                var искомаяСтрока = table.AllRows.FirstOrDefault(x => (x[МониторингОбъектыТаблицаПерсонал.Names.Сотрудник].ToReferent() as Сотрудники).Должность == должность);
+                var искомаяСтрока = table.FirstOrDefault(x => x.Item2 == должность);
                 if (искомаяСтрока != null)
                 {
-                    сотрудник = искомаяСтрока[МониторингОбъектыТаблицаПерсонал.Names.Сотрудник].ToReferent() as Сотрудники;
-                    table.DeleteRow(искомаяСтрока);
+                    сотрудник = искомаяСтрока.Item1;
+                    table.Remove(искомаяСтрока);
                 }
                 else
                 {
-                    искомаяСтрока = table.AllRows.FirstOrDefault(x => (x[МониторингОбъектыТаблицаПерсонал.Names.Сотрудник].ToReferent() as Сотрудники).ТаблицаСовмещаемыхДолжностей.AllRows.Any(y => y.Должность == должность));
+                    искомаяСтрока = table.FirstOrDefault(x => x.Item1.ТаблицаСовмещаемыхДолжностей.AllRows.Any(y => y.Должность == должность));
                     if (искомаяСтрока != null)
                     {
-                        сотрудник = искомаяСтрока[МониторингОбъектыТаблицаПерсонал.Names.Сотрудник].ToReferent() as Сотрудники;
-                        table.DeleteRow(искомаяСтрока);
+                        сотрудник = искомаяСтрока.Item1;
+                        table.Remove(искомаяСтрока);
                     }
                 }
             }

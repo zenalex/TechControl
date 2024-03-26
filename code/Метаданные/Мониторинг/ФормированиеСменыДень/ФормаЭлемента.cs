@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
@@ -10,6 +11,7 @@ using NsgSoft.Database;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
 using TechControl.Метаданные._SystemTables;
+using TechControl.Метаданные.Регистры;
 
 namespace TechControl.Метаданные.Мониторинг
 {
@@ -61,26 +63,11 @@ namespace TechControl.Метаданные.Мониторинг
             if (Объект.Selected)
             {
                 previousWO = this.Объект.Value.Идентификатор;
-                List<Техника> техникаОбъекта = new List<Техника>();
-                foreach (var i in this.Объект.Value.ТаблицаТехника.Rows)
-                {
-                    техникаОбъекта.Add(i.Техника);
-                }
-                List<Сотрудники> персоналОбъекта = new List<Сотрудники>();
-                foreach (var i in this.Объект.Value.ТаблицаПерсонал.Rows)
-                {
-                    персоналОбъекта.Add(i.Сотрудник);
-                }
-                List<Тарифы> тарифыОбъекта = new List<Тарифы>();
-                foreach (var i in this.Объект.Value.ТаблицаТарифы.Rows)
-                {
-                    тарифыОбъекта.Add(i.Тариф);
-                }
-                List<Тарифы> тарифыСотрудниковОбъекта = new List<Тарифы>();
-                foreach (var i in this.Объект.Value.ТаблицаТарифыСотрудников.Rows)
-                {
-                    тарифыСотрудниковОбъекта.Add(i.Тариф);
-                }
+                List<Техника> техникаОбъекта = Объект.Value.СписокТехникиОбъекта().ToList();
+                List<Сотрудники> персоналОбъекта = Объект.Value.СписокПерсонала().Select(x => x.Item1).ToList();
+                List<Тарифы> тарифыОбъекта = Объект.Value.ДействующиеТарифыТехники().AllRows.Select(x => x[РегистрТарифыТехникиОбъекта.Names.Тариф].ToReferent() as Тарифы).ToList();
+                List<Тарифы> тарифыСотрудниковОбъекта = Объект.Value.ДействующиеТарифыПерсонала().AllRows.Select(x => x[РегистрТарифыПерсоналаОбъекта.Names.Тариф].ToReferent() as Тарифы).ToList();
+                
                 Техника_т.SearchCondition.Clear();
                 Техника_т.SearchCondition.Add(Мониторинг.Техника.Names.Идентификатор, техникаОбъекта.ToArray(), NsgComparison.In);
                 Сотрудник_т.SearchCondition.Clear();
@@ -222,14 +209,14 @@ namespace TechControl.Метаданные.Мониторинг
             }
             if (this.Объект.Selected)
             {
-                var tariff = this.Объект.Value.ТаблицаТарифы.FindRow(new NsgCompare()
-                    .Add(МониторингОбъектыТаблицаТарифы.Names.Тариф, i.Тариф)
-                    .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                var tariff = this.Объект.Value.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                    .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
+                    .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
                 if (tariff == null)
                 {
-                    tariff = this.Объект.Value.ТаблицаТарифы.FindRow(new NsgCompare()
-                        .Add(МониторингОбъектыТаблицаТарифы.Names.Тариф, i.Тариф)
-                        .Add(МониторингОбъектыТаблицаТарифы.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                    tariff = this.Объект.Value.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                        .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
+                        .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
                 }
                 if (tariff == null)
                 {
@@ -252,14 +239,14 @@ namespace TechControl.Метаданные.Мониторинг
             }
             if (this.Объект.Selected)
             {
-                var tariff = this.Объект.Value.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
-                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, i.Тариф)
-                .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Должность, i.Сотрудник.Должность));
+                var tariff = this.Объект.Value.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+                .Add(РегистрТарифыПерсоналаОбъекта.Names.Тариф, i.Тариф)
+                .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, i.Сотрудник.Должность));
                 if (tariff == null)
                 {
-                    tariff = this.Объект.Value.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
-                        .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Тариф, i.Тариф)
-                        .Add(МониторингОбъектыТаблицаТарифыСотрудников.Names.Должность, Должности.Новый()));
+                    tariff = this.Объект.Value.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+                        .Add(РегистрТарифыПерсоналаОбъекта.Names.Тариф, i.Тариф)
+                        .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, Должности.Новый()));
                 }
                 if (tariff == null)
                 {
