@@ -15,6 +15,7 @@ using TechControl.Метаданные._SystemTables;
 using TechControl.Метаданные.Документы;
 using TechControl.Метаданные.Мониторинг;
 using TechControl.Метаданные.Регистры;
+using static NsgSoft.UI.WinControls.UI.ValueMapper;
 
 namespace TechControl.Метаданные.УчетСотрудников
 {
@@ -588,7 +589,9 @@ namespace TechControl.Метаданные.УчетСотрудников
             var таблицаТехники = объект.СписокТехникиОбъекта().ToList();
 
             var всегоДней = NsgService.EndOfMonth(месяцИтогов).Day;
-            for (int i = 1; i <= всегоДней; i++)
+            var началоПериода = rdb1Decade.Checked ? 1 : rdb2Decade.Checked ? 2 : 3;
+            var конецПериода = rdb1Decade.Checked ? 10 : rdb2Decade.Checked ? 20 : месяцИтогов.DaysInMonth();
+            for (int i = началоПериода; i <= конецПериода; i++)
             {
                 var дата = new DateTime(месяцИтогов.Year, месяцИтогов.Month, i);
 
@@ -596,18 +599,20 @@ namespace TechControl.Метаданные.УчетСотрудников
                 if (графикРаботыОбъекта.Selected)
                 {
                     var параметры = графикРаботыОбъекта.ПараметрыВыходаНАСменуНаДату(дата);
-                    foreach (var item in параметры)
+                    foreach (var key in параметры.Keys)
                     {
-                        if (item.Value.Item1 && (item.Key.Item2.Selected || item.Key.Item3.Selected))
+                        var value = параметры[key];
+
+                        if (value.Item1 && (key.Item2.Selected || key.Item3.Selected))
                         {
-                            var количество = item.Key.Item4 == 0 ? 1 : item.Key.Item4;
+                            var количество = key.Item4 == 0 ? 1 : key.Item4;
 
                             var строки = vmoТаблицаИтогов.Data.MemoryTable
                                 .FindRows(new NsgCompare()
-                                .Add(КодГруппы_vmoТаблицаИтогов.Name, item.Key.Item1)
-                                .Add(ГруппаСпТехн_vmoТаблицаИтогов.Name, item.Key.Item3)
-                                .Add(Должность_vmoТаблицаИтогов.Name, item.Key.Item2)
-                                .Add(КоличествоДляСравнения_vmoТаблицаИтогов.Name, item.Key.Item4));
+                                .Add(КодГруппы_vmoТаблицаИтогов.Name, key.Item1)
+                                .Add(ГруппаСпТехн_vmoТаблицаИтогов.Name, key.Item3)
+                                .Add(Должность_vmoТаблицаИтогов.Name, key.Item2)
+                                .Add(КоличествоДляСравнения_vmoТаблицаИтогов.Name, key.Item4));
 
                             for (int j = 0; j < количество; j++)
                             {
@@ -616,28 +621,66 @@ namespace TechControl.Метаданные.УчетСотрудников
                                 if (строки != null && строки.Length > 0 && строки.Length > j)
                                 {
                                     row = строки[j];
-                                    row[суммируемаяКолонка].Value = row[суммируемаяКолонка].ToDecimal() + item.Value.Item3;
+                                    row[суммируемаяКолонка].Value = row[суммируемаяКолонка].ToDecimal() + value.Item3;
                                 }
                                 else
                                 {
                                     row = vmoТаблицаИтогов.Data.MemoryTable.NewRow();
-                                    row[суммируемаяКолонка].Value = item.Value.Item3;
-                                    row[КодГруппы_vmoТаблицаИтогов].Value = item.Key.Item1;
-                                    row[ГруппаСпТехн_vmoТаблицаИтогов].Value = item.Key.Item3;
-                                    if (item.Key.Item3.Selected)
-                                    {
-                                        row[Техника_vmoТаблицаИтогов].Value = ВыбратьТехнику(таблицаТехники, row);
-                                    }
-                                    row[Должность_vmoТаблицаИтогов].Value = item.Key.Item2;
-                                    row[КоличествоДляСравнения_vmoТаблицаИтогов].Value = item.Key.Item4;
-                                    if (item.Key.Item2.Selected || item.Key.Item3.Selected)
-                                    {
-                                        row[Сотрудник_vmoТаблицаИтогов].Value = ВыбратьСотрудника(таблицаСотрудников, row);
-                                    }
+                                    row[суммируемаяКолонка].Value = value.Item3;
+                                    row[КодГруппы_vmoТаблицаИтогов].Value = key.Item1;
+                                    row[ГруппаСпТехн_vmoТаблицаИтогов].Value = key.Item3;
+                                    row[Должность_vmoТаблицаИтогов].Value = key.Item2;
+                                    row[КоличествоДляСравнения_vmoТаблицаИтогов].Value = key.Item4;
                                     
+
                                     row.Post();
                                 }
                             }
+                        }
+                    }
+                }
+            }
+
+            foreach (var item in vmoТаблицаИтогов.Data.MemoryTable.AllRows)
+            {
+                var грСпТех = item[ГруппаСпТехн_vmoТаблицаИтогов].ToReferent() as ГруппыСпецТехники;
+                if (грСпТех != null && грСпТех.Selected)
+                {
+                    var тар = объект.ДействующиеТарифыТехники()
+                                            .AllRows
+                                            .FirstOrDefault(x => (x[РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники].ToReferent() as ГруппыСпецТехники) == грСпТех);
+                    if (тар != null)
+                    {
+                        item[Тариф_vmoТаблицаИтогов].Value = тар[РегистрТарифыТехникиОбъекта.Names.Тариф].ToReferent() as Тарифы;
+                    }
+                    var техн = ВыбратьТехнику(таблицаТехники, item);
+                    if (техн.Selected)
+                    {
+                        item[Техника_vmoТаблицаИтогов].Value = техн;
+                        var сотр = объект.СписокПерсонала().FirstOrDefault(x => x.Item1.ДопущенКУправлению(техн));
+                        if (сотр != null && сотр.Item1.Selected)
+                        {
+                            item[Сотрудник_vmoТаблицаИтогов].Value = сотр.Item1;
+                            item[Должность_vmoТаблицаИтогов].Value = сотр.Item2;
+                        }
+                    }
+                }
+                else
+                {
+                    var должн = item[Должность_vmoТаблицаИтогов].ToReferent() as Должности;
+                    if (должн != null && должн.Selected)
+                    {
+                        var сотр = ВыбратьСотрудника(таблицаСотрудников, item);
+                        if (сотр != null)
+                        {
+                            item[Сотрудник_vmoТаблицаИтогов].Value = сотр;
+                        }
+                        var тариф = объект.ДействующиеТарифыПерсонала()
+                                        .AllRows
+                                        .FirstOrDefault(x => (x[РегистрТарифыПерсоналаОбъекта.Names.Должность].ToReferent() as Должности) == должн);
+                        if (тариф != null)
+                        {
+                            item[Тариф_vmoТаблицаИтогов].Value = тариф[РегистрТарифыПерсоналаОбъекта.Names.Тариф].ToReferent() as Тарифы;
                         }
                     }
                 }
@@ -804,7 +847,9 @@ namespace TechControl.Метаданные.УчетСотрудников
             cmpСменыСНовыми.Add(ФормированиеСмены.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
             var всеСменыСНовыми = ФормированиеСмены.Новый().FindAll(cmpСменыСНовыми);
 
-            for (int i = 1; i <= всегоДней; i++)
+            var началоДекады = rdb1Decade.Checked ? 1 : rdb2Decade.Checked ? 2 : 3;
+            var конецДекады = rdb1Decade.Checked ? 10 : rdb2Decade.Checked ? 20 : месяцИтогов.DaysInMonth();
+            for (int i = началоДекады; i <= конецДекады; i++)
             {
                 var колонкаДаты = i.ToString();
                 var датаСмены = new DateTime(месяцИтогов.Year, месяцИтогов.Month, i);
@@ -894,7 +939,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             var месяцИтогов = МесяцИтогов_vmoИтоги.Value;
             var всеКолонкиВМО = vmoТаблицаИтогов.Columns;
 
-            for (int i = 1; i <= месяцИтогов.DaysInMonth(); i++)
+            for (int i = 1; i <= 31; i++)
             {
                 foreach (var item in всеКолонкиВМО.Collection)
                 {
@@ -908,9 +953,13 @@ namespace TechControl.Метаданные.УчетСотрудников
                         {
                             item.Visible = rdb2Decade.Checked;
                         }
-                        else
+                        else if (i >= 21 && i <= месяцИтогов.DaysInMonth())
                         {
                             item.Visible = rdb3Decade.Checked;
+                        }
+                        else
+                        {
+                            item.Visible = false;
                         }
                         break;
                     }
@@ -929,6 +978,9 @@ namespace TechControl.Метаданные.УчетСотрудников
             var дата = Дата.Value.Date;
             if (объект.Selected && дата == NsgService.MinDate) 
             {
+                var копияТаблицы = new NsgMemoryTable(Метаданные.Новый());
+                vmoТаблица.Data.MemoryTable.CopyTo(копияТаблицы);
+
                 foreach (var item in vmoТаблица.Data.MemoryTable.AllRows)
                 {
                     var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as Сотрудники;

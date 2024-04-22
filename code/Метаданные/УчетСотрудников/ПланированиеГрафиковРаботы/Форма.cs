@@ -91,7 +91,8 @@ namespace TechControl.Метаданные.УчетСотрудников
             foreach (var item in сотрудники)
             {
                 var row = vmoТаблицаМесяца.Data.MemoryTable.NewRow();
-                row[Сотрудник_vmoТаблицаМесяца].Value = item;
+                row[Сотрудник_vmoТаблицаМесяца].Value = item.Item1;
+                row[Должность_vmoТаблицаМесяца].Value = item.Item2;
                 row.Post();
             }
 
@@ -111,7 +112,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                     var row = vmoТаблицаМесяца.Data.MemoryTable.FindRow(cmpСтрока);
                     if (row != null)
                     {
-                        ЗаполнитьСтроку(row, график, месяц, объект);
+                        ЗаполнитьСтрокуПоГрафику(row, график);
                     }
                 }
             }
@@ -136,6 +137,43 @@ namespace TechControl.Метаданные.УчетСотрудников
                             ЗаполнитьСтроку(row, график, месяц, объект);
                         }
                     }
+                }
+                else
+                {
+                    //var графикРаботыОбъекта = объект.ДействующийНаДатуГрафикРаботы(NsgService.EndOfMonth(месяц).Date);
+                    //if (графикРаботыОбъекта.Selected)
+                    //{
+                    //    int первыйРабочийДеньГрафика = графикРаботыОбъекта.ДатаНачалаДействияГрафика <= NsgService.BeginOfMonth(месяц) ? 1 : графикРаботыОбъекта.ДатаНачалаДействияГрафика.Day;
+
+                    //    List<Сотрудники> обработанныеСотрудники = new List<Сотрудники>();
+                    //    var всеДолжности = vmoТаблицаМесяца.Data.MemoryTable.AllRows.Select(x => x[Должность_vmoТаблицаМесяца].ToReferent() as Должности).ToArray();
+                    //    foreach (var должн in всеДолжности)
+                    //    {
+                    //        foreach (var item in vmoТаблицаМесяца.Data.MemoryTable.AllRows.Where(x => (x[Должность_vmoТаблицаМесяца].ToReferent() as Должности) == должн).ToArray())
+                    //        {
+                    //            foreach (var строкаГрафика in графикРаботыОбъекта.Таблица.AllRows.Where(x => x.Должность == должн).ToArray())
+                    //            {
+                    //                if (!строкаГрафика.ГруппаСпецТехники.Selected)
+                    //                {
+                    //                    var cmpСтрока = new NsgCompare();
+                    //                    cmpСтрока.Add(Должность_vmoТаблицаМесяца.Name, item.Должность);
+                    //                    cmpСтрока.Add(Сотрудник_vmoТаблицаМесяца.Name, обработанныеСотрудники.ToArray(), NsgComparison.NotIn);
+                    //                    var row = vmoТаблицаМесяца.Data.MemoryTable.FindRow(cmpСтрока);
+                    //                    if (row != null)
+                    //                    {
+                    //                        for (int i = 1; i <= месяц.DaysInMonth(); i++)
+                    //                        {
+                    //                            if (i >= первыйРабочийДеньГрафика)
+                    //                            {
+                    //                                графикРаботыОбъекта.Таблица.AllRows.Where(x => x.Должность);
+                    //                            }
+                    //                        }
+                    //                    }
+                    //                }
+                    //            }
+                    //        }
+                    //    }
+                    //}
                 }
             }
             vmoТаблицаМесяца.Data.UpdateDataSync(this);
@@ -254,42 +292,16 @@ namespace TechControl.Метаданные.УчетСотрудников
             }
         }
 
-        private void ЗаполнитьСтрокуПоГрафику(NsgMemoryTableRow row, ПлановыйГрафикРаботы график, DateTime месяц, Объекты объект)
+        private void ЗаполнитьСтрокуПоГрафику(NsgMemoryTableRow row, ПлановыйГрафикРаботы график)
         {
-            int деньНачала = 1;
-            var началоОтсчета = 1;
-            bool первый = true;
-
-            if (график != null && график.Selected)
+            for (int i = 1; i <= график.МесяцГрафика.DaysInMonth(); i++)
             {
-                row[ВидРежимаРаботы_vmoТаблицаМесяца].Value = график.ВидРежимаРаботы;
-                if (график.МесяцГрафика.Month != месяц.Month && график.ВидРежимаРаботы == ВидыРежимовРаботы.ДваЧерезДва)
+                var строкаГрафика = график.ТаблицаПодробныйГрафик.AllRows.FirstOrDefault(x => x.ДеньМесяца == i);
+                if (строкаГрафика != null)
                 {
-                    первый = график.ДатаПоследнегоРабочегоДня.Day != график.МесяцГрафика.DaysInMonth();
-                }
-                else
-                {
-                    деньНачала = график.ДатаПервогоРабочегоДня.Day;
-                }
-
-                //foreach (var item in график.та)
-                //{
-
-                //}
-            }
-
-            for (int i = 1; i <= месяц.DaysInMonth(); i++)
-            {
-                if (row[i.ToString()].ToBoolean())
-                {
-                    началоОтсчета = i;
-                    break;
+                    row[i.ToString()].Value = строкаГрафика.РабочийДень;
                 }
             }
-
-            var видРежимаРаботы = row[ВидРежимаРаботы_vmoТаблицаМесяца].ToReferent() as ВидыРежимовРаботы;
-
-            
         }
 
         private void nsgInput2_Selected(object sender, EventArgs e)
@@ -340,6 +352,74 @@ namespace TechControl.Метаданные.УчетСотрудников
                 {
                     ЗаполнитьСтроку(e.RowObject as NsgMemoryTableRow, null, МесяцГрафика.Value, Объект.Value);
                 }
+            }
+        }
+
+        private void nbСохранить_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            var объект = Объект.Value;
+            var месяц = МесяцГрафика.Value;
+            if (объект == null || !объект.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Не выбран объект");
+                return;
+            }
+
+            if (месяц == null || месяц == NsgService.MinDate)
+            {
+                NsgSettings.MainForm.ShowMessage("Не выбран месяц");
+                return;
+            }
+
+            try
+            {
+                NsgSettings.BeginTransaction();
+
+                foreach (var item in vmoТаблицаМесяца.Data.MemoryTable.AllRows)
+                {
+                    var cmp = new NsgCompare();
+                    cmp.Add(ПлановыйГрафикРаботы.Names.Объект, объект);
+                    cmp.Add(ПлановыйГрафикРаботы.Names.Сотрудник, item[Сотрудник_vmoТаблицаМесяца].ToReferent() as Сотрудники);
+                    //cmp.Add(ПлановыйГрафикРаботы.Names., объект);
+                    cmp.Add(ПлановыйГрафикРаботы.Names.МесяцГрафика, NsgService.BeginOfMonth(месяц), NsgComparison.GreaterOrEqual);
+                    cmp.Add(ПлановыйГрафикРаботы.Names.МесяцГрафика, NsgService.EndOfMonth(месяц), NsgComparison.LessOrEqual);
+                    cmp.Add(ПлановыйГрафикРаботы.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+
+                    var график = ПлановыйГрафикРаботы.Новый();
+                    if (график.Find(cmp))
+                    {
+                        график.Edit();
+                    }
+                    else
+                    {
+                        график.New();
+                    }
+
+                    график.Объект = объект;
+                    график.МесяцГрафика = месяц;
+                    график.Сотрудник = item[Сотрудник_vmoТаблицаМесяца].ToReferent() as Сотрудники;
+
+                    график.ТаблицаПодробныйГрафик.DeleteAll();
+
+                    for (int i = 1; i <= месяц.DaysInMonth(); i++)
+                    {
+                        var row = график.ТаблицаПодробныйГрафик.NewRow();
+                        row.ДеньМесяца = i;
+                        row.РабочийДень = item[i.ToString()].ToBoolean();
+                        row.Post();
+                    }
+
+                    график.Post();
+
+                }
+
+                NsgSettings.MainForm.ShowMessage("График сохранен");
+                NsgSettings.CommitTransaction();
+            }
+            catch (Exception ee)
+            {
+                NsgSettings.RollbackTransaction();
+                NsgSettings.MainForm.ShowMessage("Не удалось сохранить график" + ee.Message);
             }
         }
     }
