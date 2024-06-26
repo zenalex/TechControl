@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2024.3.26.0</ProductVersion>
+    <ProductVersion>2024.4.23.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -4855,5 +4855,216 @@
       <NsgOwnerGuid>fadceb33-62e1-4645-ae76-a636f791cd35</NsgOwnerGuid>
       <NsgOwnerName>ДокументыПлановыйГрафикРаботыТаблицаПодробныйГрафик</NsgOwnerName>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППНакопления.NsgInit.cs">
+      <NsgOwnerGuid>10f944c9-ac7b-456e-93c0-1949b7ea34a9</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППНакопления</NsgOwnerName>
+      <DependentUpon>ГрузыРегистрПеремещениеЧерезКППНакопления.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППНакопления.cs">
+      <NsgOwnerGuid>10f944c9-ac7b-456e-93c0-1949b7ea34a9</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППНакопления.Строка.NsgInit.cs">
+      <NsgOwnerGuid>10f944c9-ac7b-456e-93c0-1949b7ea34a9</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППНакопления</NsgOwnerName>
+      <DependentUpon>ГрузыРегистрПеремещениеЧерезКППНакопления.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППНакопления.Строка.cs">
+      <NsgOwnerGuid>10f944c9-ac7b-456e-93c0-1949b7ea34a9</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППНакопления</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВъезда\ДокументыВъезда.NsgInit.cs">
+      <NsgOwnerGuid>81cb21d2-8f84-411f-8ecd-2a0d70706b1b</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыВъезда</NsgOwnerName>
+      <DependentUpon>ДокументыВъезда.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВъезда\ДокументыВъезда.cs">
+      <NsgOwnerGuid>81cb21d2-8f84-411f-8ecd-2a0d70706b1b</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыВъезда</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\ФизЛица\ФизЛица.NsgInit.cs">
+      <NsgOwnerGuid>96e7eeb4-b8ad-4aaf-a60f-06f4a83f6221</NsgOwnerGuid>
+      <NsgOwnerName>ФизЛица</NsgOwnerName>
+      <DependentUpon>ФизЛица.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\ФизЛица\ФизЛица.cs">
+      <NsgOwnerGuid>96e7eeb4-b8ad-4aaf-a60f-06f4a83f6221</NsgOwnerGuid>
+      <NsgOwnerName>ФизЛица</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\ФизЛица\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>96e7eeb4-b8ad-4aaf-a60f-06f4a83f6221</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\УчетСотрудников\ФизЛица\ФормаЭлемента.cs">
+      <NsgOwnerGuid>96e7eeb4-b8ad-4aaf-a60f-06f4a83f6221</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\УчетСотрудников\ФизЛица\ФормаЭлемента.resx">
+      <NsgOwnerGuid>96e7eeb4-b8ad-4aaf-a60f-06f4a83f6221</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Грузы\КонтрольноПропускныеПункты\КонтрольноПропускныеПункты.NsgInit.cs">
+      <NsgOwnerGuid>738fa15c-3259-4879-8e0c-034c5c3c41bb</NsgOwnerGuid>
+      <NsgOwnerName>КонтрольноПропускныеПункты</NsgOwnerName>
+      <DependentUpon>КонтрольноПропускныеПункты.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\КонтрольноПропускныеПункты\КонтрольноПропускныеПункты.cs">
+      <NsgOwnerGuid>738fa15c-3259-4879-8e0c-034c5c3c41bb</NsgOwnerGuid>
+      <NsgOwnerName>КонтрольноПропускныеПункты</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВыезда\ГрузыДокументыВыездаТаблицаФотографии.NsgInit.cs">
+      <NsgOwnerGuid>cf0f7797-1053-400e-8dc7-dd76e13a7b3c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыДокументыВыездаТаблицаФотографии</NsgOwnerName>
+      <DependentUpon>ГрузыДокументыВыездаТаблицаФотографии.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВыезда\ГрузыДокументыВыездаТаблицаФотографии.cs">
+      <NsgOwnerGuid>cf0f7797-1053-400e-8dc7-dd76e13a7b3c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыДокументыВыездаТаблицаФотографии</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВыезда\ГрузыДокументыВыездаТаблицаФотографии.Строка.NsgInit.cs">
+      <NsgOwnerGuid>cf0f7797-1053-400e-8dc7-dd76e13a7b3c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыДокументыВыездаТаблицаФотографии</NsgOwnerName>
+      <DependentUpon>ГрузыДокументыВыездаТаблицаФотографии.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВыезда\ГрузыДокументыВыездаТаблицаФотографии.Строка.cs">
+      <NsgOwnerGuid>cf0f7797-1053-400e-8dc7-dd76e13a7b3c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыДокументыВыездаТаблицаФотографии</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВыезда\ДокументыВыезда.NsgInit.cs">
+      <NsgOwnerGuid>276d5a4e-8707-46ae-b278-c452fc832f5b</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыВыезда</NsgOwnerName>
+      <DependentUpon>ДокументыВыезда.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВыезда\ДокументыВыезда.cs">
+      <NsgOwnerGuid>276d5a4e-8707-46ae-b278-c452fc832f5b</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыВыезда</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВыезда\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>276d5a4e-8707-46ae-b278-c452fc832f5b</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВыезда\ФормаЭлемента.cs">
+      <NsgOwnerGuid>276d5a4e-8707-46ae-b278-c452fc832f5b</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Грузы\ДокументыВыезда\ФормаЭлемента.resx">
+      <NsgOwnerGuid>276d5a4e-8707-46ae-b278-c452fc832f5b</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППНакопления_1.NsgInit.cs">
+      <NsgOwnerGuid>87c59be8-57a0-4d5d-a988-c0fa67bc478c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППНакопления_1</NsgOwnerName>
+      <DependentUpon>ГрузыРегистрПеремещениеЧерезКППНакопления_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППНакопления_1.cs">
+      <NsgOwnerGuid>87c59be8-57a0-4d5d-a988-c0fa67bc478c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППНакопления_1.Строка.NsgInit.cs">
+      <NsgOwnerGuid>87c59be8-57a0-4d5d-a988-c0fa67bc478c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППНакопления_1</NsgOwnerName>
+      <DependentUpon>ГрузыРегистрПеремещениеЧерезКППНакопления_1.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППНакопления_1.Строка.cs">
+      <NsgOwnerGuid>87c59be8-57a0-4d5d-a988-c0fa67bc478c</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ВидыГрузов\ВидыГрузов.NsgInit.cs">
+      <NsgOwnerGuid>1c04f903-5f58-4ce5-ac9a-3aeb5d5b4315</NsgOwnerGuid>
+      <NsgOwnerName>ВидыГрузов</NsgOwnerName>
+      <DependentUpon>ВидыГрузов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ВидыГрузов\ВидыГрузов.cs">
+      <NsgOwnerGuid>1c04f903-5f58-4ce5-ac9a-3aeb5d5b4315</NsgOwnerGuid>
+      <NsgOwnerName>ВидыГрузов</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\РегистрПеремещениеЧерезКПП.NsgInit.cs">
+      <NsgOwnerGuid>b5bc8d01-aede-4260-8455-3b9730a065ff</NsgOwnerGuid>
+      <NsgOwnerName>РегистрПеремещениеЧерезКПП</NsgOwnerName>
+      <DependentUpon>РегистрПеремещениеЧерезКПП.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\РегистрПеремещениеЧерезКПП.cs">
+      <NsgOwnerGuid>b5bc8d01-aede-4260-8455-3b9730a065ff</NsgOwnerGuid>
+      <NsgOwnerName>РегистрПеремещениеЧерезКПП</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППДвижения.NsgInit.cs">
+      <NsgOwnerGuid>ab3b364c-77bd-46ac-b1a1-46a66febd61a</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППДвижения</NsgOwnerName>
+      <DependentUpon>ГрузыРегистрПеремещениеЧерезКППДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППДвижения.cs">
+      <NsgOwnerGuid>ab3b364c-77bd-46ac-b1a1-46a66febd61a</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>ab3b364c-77bd-46ac-b1a1-46a66febd61a</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППДвижения</NsgOwnerName>
+      <DependentUpon>ГрузыРегистрПеремещениеЧерезКППДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\РегистрПеремещениеЧерезКПП\ГрузыРегистрПеремещениеЧерезКППДвижения.Строка.cs">
+      <NsgOwnerGuid>ab3b364c-77bd-46ac-b1a1-46a66febd61a</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыРегистрПеремещениеЧерезКППДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВъезда\ГрузыДокументыВъездаТаблицаФотографии.NsgInit.cs">
+      <NsgOwnerGuid>6fee2877-e97a-447a-ba4f-cd5887be6e17</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыДокументыВъездаТаблицаФотографии</NsgOwnerName>
+      <DependentUpon>ГрузыДокументыВъездаТаблицаФотографии.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВъезда\ГрузыДокументыВъездаТаблицаФотографии.cs">
+      <NsgOwnerGuid>6fee2877-e97a-447a-ba4f-cd5887be6e17</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыДокументыВъездаТаблицаФотографии</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВъезда\ГрузыДокументыВъездаТаблицаФотографии.Строка.NsgInit.cs">
+      <NsgOwnerGuid>6fee2877-e97a-447a-ba4f-cd5887be6e17</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыДокументыВъездаТаблицаФотографии</NsgOwnerName>
+      <DependentUpon>ГрузыДокументыВъездаТаблицаФотографии.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВъезда\ГрузыДокументыВъездаТаблицаФотографии.Строка.cs">
+      <NsgOwnerGuid>6fee2877-e97a-447a-ba4f-cd5887be6e17</NsgOwnerGuid>
+      <NsgOwnerName>ГрузыДокументыВъездаТаблицаФотографии</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Грузы\ДокументыВъезда\ФормаЭлемента.Designer.cs">
+      <NsgOwnerGuid>81cb21d2-8f84-411f-8ecd-2a0d70706b1b</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\ДокументыВъезда\ФормаЭлемента.cs">
+      <NsgOwnerGuid>81cb21d2-8f84-411f-8ecd-2a0d70706b1b</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Грузы\ДокументыВъезда\ФормаЭлемента.resx">
+      <NsgOwnerGuid>81cb21d2-8f84-411f-8ecd-2a0d70706b1b</NsgOwnerGuid>
+      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Грузы\УправлениеВъездамиВыездами\УправлениеВъездамиВыездами.NsgInit.cs">
+      <NsgOwnerGuid>e440ebca-0079-465c-85f1-cb956f5613bd</NsgOwnerGuid>
+      <NsgOwnerName>УправлениеВъездамиВыездами</NsgOwnerName>
+      <DependentUpon>УправлениеВъездамиВыездами.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\УправлениеВъездамиВыездами\УправлениеВъездамиВыездами.cs">
+      <NsgOwnerGuid>e440ebca-0079-465c-85f1-cb956f5613bd</NsgOwnerGuid>
+      <NsgOwnerName>УправлениеВъездамиВыездами</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\УправлениеВъездамиВыездами\Форма.Designer.cs">
+      <NsgOwnerGuid>e440ebca-0079-465c-85f1-cb956f5613bd</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Грузы\УправлениеВъездамиВыездами\Форма.cs">
+      <NsgOwnerGuid>e440ebca-0079-465c-85f1-cb956f5613bd</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Грузы\УправлениеВъездамиВыездами\Форма.resx">
+      <NsgOwnerGuid>e440ebca-0079-465c-85f1-cb956f5613bd</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

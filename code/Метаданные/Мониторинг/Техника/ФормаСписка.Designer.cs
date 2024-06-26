@@ -439,7 +439,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid1.ShowLineNumbers = false;
             this.nsgIGrid1.ShowPanel = true;
             this.nsgIGrid1.ShowTotals = false;
-            this.nsgIGrid1.ShowTree = false;
+            this.nsgIGrid1.ShowTree = true;
             this.nsgIGrid1.Size = new System.Drawing.Size(621, 417);
             this.nsgIGrid1.SourceObject = this.nsgVisualMultipleObject;
             this.nsgIGrid1.TabIndex = 9;
