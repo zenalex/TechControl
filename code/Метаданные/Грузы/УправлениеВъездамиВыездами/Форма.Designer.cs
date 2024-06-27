@@ -60,12 +60,12 @@ namespace TechControl.Метаданные.Грузы
             this.label1 = new System.Windows.Forms.Label();
             this.tpТехника = new System.Windows.Forms.TabPage();
             this.ГосНомер = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.ВодительСтрока = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.КПП = new TechControl.Метаданные.Грузы.КонтрольноПропускныеПункты.ColumnDescriptor();
-            this.Водитель = new TechControl.Метаданные.УчетСотрудников.ФизЛица.ColumnDescriptor();
-            this.Дата = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.ПроезжающаяТехника = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
+            this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
+            this.Дата = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.ВодительСтрока = new NsgSoft.Forms.NsgColumnDescriptor.String();
+            this.Водитель = new TechControl.Метаданные.УчетСотрудников.ФизЛица.ColumnDescriptor();
+            this.КПП = new TechControl.Метаданные.Грузы.КонтрольноПропускныеПункты.ColumnDescriptor();
             this.СтатусТехники = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ВидГруза = new TechControl.Метаданные.Грузы.ВидыГрузов.ColumnDescriptor();
             this.ОбъемГруза = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
@@ -115,7 +115,7 @@ namespace TechControl.Метаданные.Грузы
             this.panelButtonReportForm.Controls.Add(this.printButton);
             this.panelButtonReportForm.Controls.Add(this.btnCreateReport);
             this.panelButtonReportForm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 404);
+            this.panelButtonReportForm.Location = new System.Drawing.Point(0, 424);
             this.panelButtonReportForm.Name = "panelButtonReportForm";
             this.panelButtonReportForm.Size = new System.Drawing.Size(643, 30);
             this.panelButtonReportForm.TabIndex = 0;
@@ -186,6 +186,9 @@ namespace TechControl.Метаданные.Грузы
             // tabControl1
             // 
             this.tabControl1.AllowDrop = true;
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tpОформление);
             this.tabControl1.Controls.Add(this.tpТехника);
             this.tabControl1.Location = new System.Drawing.Point(6, 12);
@@ -234,7 +237,7 @@ namespace TechControl.Метаданные.Грузы
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(9, 210);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(535, 83);
+            this.groupBox1.Size = new System.Drawing.Size(546, 83);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Груз";
@@ -273,7 +276,7 @@ namespace TechControl.Метаданные.Грузы
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(7, 52);
-            this.label9.Name = "label5";
+            this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Объем м3";
@@ -303,7 +306,7 @@ namespace TechControl.Метаданные.Грузы
             this.nsgInput8.SearchFieldName = "";
             this.nsgInput8.ShowMultipleObjectInComboBox = false;
             this.nsgInput8.ShowRowCount = 10;
-            this.nsgInput8.Size = new System.Drawing.Size(429, 20);
+            this.nsgInput8.Size = new System.Drawing.Size(442, 20);
             this.nsgInput8.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput8.TabIndex = 19;
             this.nsgInput8.VerticalAlignment = System.Drawing.StringAlignment.Center;
@@ -313,7 +316,7 @@ namespace TechControl.Метаданные.Грузы
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(7, 23);
-            this.label8.Name = "label5";
+            this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(26, 13);
             this.label8.TabIndex = 18;
             this.label8.Text = "Вид";
@@ -346,6 +349,7 @@ namespace TechControl.Метаданные.Грузы
             this.nbВыезд.TabIndex = 15;
             this.nbВыезд.Text = "Оформить Выезд";
             this.nbВыезд.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nbВыезд.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbВыезд_AsyncClick);
             // 
             // nbВъезд
             // 
@@ -360,6 +364,7 @@ namespace TechControl.Метаданные.Грузы
             this.nbВъезд.TabIndex = 14;
             this.nbВъезд.Text = "Оформить Въезд";
             this.nbВъезд.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nbВъезд.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbВъезд_AsyncClick);
             // 
             // nsgInput7
             // 
@@ -660,46 +665,15 @@ namespace TechControl.Метаданные.Грузы
             this.ГосНомер.SearchCondition.OwnerComponent = this.ГосНомер;
             this.ГосНомер.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // ВодительСтрока
+            // ПроезжающаяТехника
             // 
-            this.ВодительСтрока.Caption = "ВодительСтрока";
-            this.ВодительСтрока.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ВодительСтрока.Name = "ВодительСтрока";
-            this.ВодительСтрока.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
-            this.ВодительСтрока.PropertyType = typeof(string);
-            this.ВодительСтрока.SearchCondition.OwnerComponent = this.ВодительСтрока;
-            this.ВодительСтрока.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // КПП
-            // 
-            this.КПП.Caption = "КПП";
-            this.КПП.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.КПП.Dependency = "Объект";
-            this.КПП.Name = "КПП";
-            this.КПП.NSGType = typeof(TechControl.Метаданные.Грузы.КонтрольноПропускныеПункты);
-            this.КПП.PropertyType = typeof(TechControl.Метаданные.Грузы.КонтрольноПропускныеПункты);
-            this.КПП.SearchCondition.OwnerComponent = this.КПП;
-            this.КПП.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Водитель
-            // 
-            this.Водитель.Caption = "Водитель";
-            this.Водитель.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Водитель.Name = "Водитель";
-            this.Водитель.NSGType = typeof(TechControl.Метаданные.УчетСотрудников.ФизЛица);
-            this.Водитель.PropertyType = typeof(TechControl.Метаданные.УчетСотрудников.ФизЛица);
-            this.Водитель.SearchCondition.OwnerComponent = this.Водитель;
-            this.Водитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // Дата
-            // 
-            this.Дата.Caption = "Дата";
-            this.Дата.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.Дата.Name = "Дата";
-            this.Дата.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
-            this.Дата.PropertyType = typeof(System.DateTime);
-            this.Дата.SearchCondition.OwnerComponent = this.Дата;
-            this.Дата.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.ПроезжающаяТехника.Caption = "ПроезжающаяТехника";
+            this.ПроезжающаяТехника.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ПроезжающаяТехника.Name = "ПроезжающаяТехника";
+            this.ПроезжающаяТехника.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.ПроезжающаяТехника.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
+            this.ПроезжающаяТехника.SearchCondition.OwnerComponent = this.ПроезжающаяТехника;
+            this.ПроезжающаяТехника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // Объект
             // 
@@ -711,15 +685,46 @@ namespace TechControl.Метаданные.Грузы
             this.Объект.SearchCondition.OwnerComponent = this.Объект;
             this.Объект.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // ПроезжающаяТехника
+            // Дата
             // 
-            this.ПроезжающаяТехника.Caption = "ПроезжающаяТехника";
-            this.ПроезжающаяТехника.Creator = typeof(NsgSoft.Forms.NsgReportForm);
-            this.ПроезжающаяТехника.Name = "ПроезжающаяТехника";
-            this.ПроезжающаяТехника.NSGType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.ПроезжающаяТехника.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Техника);
-            this.ПроезжающаяТехника.SearchCondition.OwnerComponent = this.ПроезжающаяТехника;
-            this.ПроезжающаяТехника.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            this.Дата.Caption = "Дата";
+            this.Дата.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Дата.Name = "Дата";
+            this.Дата.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.Дата.PropertyType = typeof(System.DateTime);
+            this.Дата.SearchCondition.OwnerComponent = this.Дата;
+            this.Дата.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // ВодительСтрока
+            // 
+            this.ВодительСтрока.Caption = "ВодительСтрока";
+            this.ВодительСтрока.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.ВодительСтрока.Name = "ВодительСтрока";
+            this.ВодительСтрока.NSGType = typeof(NsgSoft.DataObjects.NsgDataString);
+            this.ВодительСтрока.PropertyType = typeof(string);
+            this.ВодительСтрока.SearchCondition.OwnerComponent = this.ВодительСтрока;
+            this.ВодительСтрока.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Водитель
+            // 
+            this.Водитель.Caption = "Водитель";
+            this.Водитель.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Водитель.Name = "Водитель";
+            this.Водитель.NSGType = typeof(TechControl.Метаданные.УчетСотрудников.ФизЛица);
+            this.Водитель.PropertyType = typeof(TechControl.Метаданные.УчетСотрудников.ФизЛица);
+            this.Водитель.SearchCondition.OwnerComponent = this.Водитель;
+            this.Водитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // КПП
+            // 
+            this.КПП.Caption = "КПП";
+            this.КПП.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.КПП.Dependency = "Объект";
+            this.КПП.Name = "КПП";
+            this.КПП.NSGType = typeof(TechControl.Метаданные.Грузы.КонтрольноПропускныеПункты);
+            this.КПП.PropertyType = typeof(TechControl.Метаданные.Грузы.КонтрольноПропускныеПункты);
+            this.КПП.SearchCondition.OwnerComponent = this.КПП;
+            this.КПП.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
             // СтатусТехники
             // 
@@ -803,10 +808,6 @@ namespace TechControl.Метаданные.Грузы
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tpОформление;
-        private System.Windows.Forms.TabPage tpТехника;
         protected NsgColumnDescriptor.String ГосНомер;
         protected Мониторинг.Техника.ColumnDescriptor ПроезжающаяТехника;
         protected NsgColumnDescriptor.String ВодительСтрока;
@@ -829,15 +830,18 @@ namespace TechControl.Метаданные.Грузы
         protected NsgInput nsgInput2;
         protected System.Windows.Forms.Label label2;
         protected NsgInput nsgInput1;
-        private System.Windows.Forms.Label label1;
         protected NsgColumnDescriptor.String СтатусТехники;
-        private NsgLabel nLblСтатус;
         protected ВидыГрузов.ColumnDescriptor ВидГруза;
         protected NsgColumnDescriptor.Decimal ОбъемГруза;
-        private System.Windows.Forms.GroupBox groupBox1;
         protected NsgInput nsgInput9;
         protected System.Windows.Forms.Label label9;
         protected NsgInput nsgInput8;
         protected System.Windows.Forms.Label label8;
+        protected System.Windows.Forms.TabControl tabControl1;
+        protected System.Windows.Forms.TabPage tpОформление;
+        protected System.Windows.Forms.TabPage tpТехника;
+        protected System.Windows.Forms.Label label1;
+        protected NsgLabel nLblСтатус;
+        protected System.Windows.Forms.GroupBox groupBox1;
     }
 }

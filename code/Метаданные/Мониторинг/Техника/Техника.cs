@@ -24,7 +24,11 @@ namespace TechControl.Метаданные.Мониторинг
                 var cmpOr = new NsgCompare(NsgLogicalOperator.Or);
                 cmpOr.Add(Техника.Names.ГосНомер, госНомер);
                 cmpOr.Add(Техника.Names.ГосНомер, госНомер.Replace(" ", ""));
-                cmpOr.Add(Техника.Names.ГосНомер, ФорматироватьГосномер(госНомер.Replace(" ", "")));
+
+                var форматированныйНомер = ФорматироватьГосномер(госНомер.Replace(" ", ""));
+                cmpOr.Add(Техника.Names.ГосНомер, форматированныйНомер);
+                cmpOr.Add(Техника.Names.Наименование, форматированныйНомер, NsgComparison.Contain);
+                cmpOr.Add(Техника.Names.Наименование, форматированныйНомер, NsgComparison.ContainWords);
                 cmp.Add(cmpOr);
                 cmp.Add(Техника.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
 

@@ -16,10 +16,13 @@ namespace TechControl.Метаданные.Грузы
         protected override bool Handling()
         {
             var reg = РегистрПеремещениеЧерезКПП.Новый(this);
+            reg.New();
             reg.Объект = Объект;
             reg.Техника = Техника;
             reg.НахождениеНаОбъекте = 1;
             reg.КПП = КПП;
+            reg.ВидГруза = ВидГруза;
+            reg.ОбъемГруза = ОбъемГруза;
             reg.ВидДвижения = Сервис.ВидыДвижений.Расход;
             reg.AddMovement();
             

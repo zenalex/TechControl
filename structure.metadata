@@ -18115,6 +18115,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="430a768e-f438-4ae7-bd38-86e5239bfafd" type="NsgDataTypedReference" editoraccess="Full" name="ВидГруза" visible="true" description="Вид груза" field="VidGruza" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Грузы" refname="ВидыГрузов">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="4fac0488-d8b2-49df-ba0a-39f7572ce47a" type="NsgDataFloat" editoraccess="Full" name="ОбъемГруза" visible="true" description="Объем груза" field="ObemGruza" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -18127,6 +18137,8 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="ВидГруза" />
+            <container name="ОбъемГруза" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -18325,6 +18337,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="a1892029-7a0e-4cc4-bb04-167c8d354a30" type="NsgDataTypedReference" editoraccess="Full" name="ВидГруза" visible="true" description="Вид груза" field="VidGruza" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Грузы" refname="ВидыГрузов">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="f16b8afd-1983-4aba-b83a-0d866781fcd0" type="NsgDataFloat" editoraccess="Full" name="ОбъемГруза" visible="true" description="Объем груза" field="ObemGruza" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -18337,6 +18359,8 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="ВидГруза" />
+            <container name="ОбъемГруза" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -18514,6 +18538,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="3c8790ca-e729-4177-a355-1566a636c5f4" type="NsgDataTypedReference" editoraccess="Full" name="ВидГруза" visible="true" description="Вид груза" field="VidGruza" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Грузы" refname="ВидыГрузов">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="5b792bce-a3ef-4f64-93de-4208ef785e8f" type="NsgDataFloat" editoraccess="Full" name="ОбъемГруза" visible="true" description="Объем груза" field="ObemGruza" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers />
         </NsgMultipleObject>
@@ -18668,6 +18702,16 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="8d2ea08f-7c7b-48ac-a5dc-6f565b55a4e6" type="NsgDataTypedReference" editoraccess="Full" name="КПП" visible="true" description="КПП" field="KPP" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Грузы" refname="КонтрольноПропускныеПункты">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="3c8790ca-e729-4177-a355-1566a636c5f4" type="NsgDataTypedReference" editoraccess="Full" name="ВидГруза" visible="true" description="Вид груза" field="VidGruza" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Грузы" refname="ВидыГрузов">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="5b792bce-a3ef-4f64-93de-4208ef785e8f" type="NsgDataFloat" editoraccess="Full" name="ОбъемГруза" visible="true" description="Объем груза" field="ObemGruza" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
