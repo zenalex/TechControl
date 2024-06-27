@@ -1964,6 +1964,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="f367ed54-f6d5-42f5-924d-fa895ff7cd48" type="NsgDataFloat" editoraccess="Full" name="ПолезныйОбъемМКуб" visible="true" description="Полезный объем МКуб" field="PoleznyijObemMKub" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -1991,6 +1996,7 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
+            <container name="ПолезныйОбъемМКуб" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -5000,13 +5006,13 @@
             <container name="КартинкаПодпись" />
             <container name="ФИО" />
             <container name="ФИОРодительныйПадеж" />
+            <container name="ФизЛицо" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="ФизЛицо" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -11431,11 +11437,11 @@
             <container name="ОбъемГруза" />
             <container name="ТипГруза" />
             <container name="Контрагент" />
+            <container name="ВидГруза" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ВидГруза" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -11552,11 +11558,11 @@
             <container name="НомерАвто" />
             <container name="ОбъемГруза" />
             <container name="Контрагент" />
+            <container name="ВидГруза" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ВидГруза" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -18111,16 +18117,16 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
-            <container name="ПрефиксКода" />
-            <container name="НомерКода" />
-            <container name="Техника" />
             <container name="ДатаДокумента" />
-            <container name="Индекс" />
-            <container name="ДокументОснование" />
             <container name="Комментарий" />
+            <container name="Техника" />
             <container name="Объект" />
             <container name="Водитель" />
             <container name="КПП" />
+            <container name="ПрефиксКода" />
+            <container name="НомерКода" />
+            <container name="Индекс" />
+            <container name="ДокументОснование" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -18213,16 +18219,16 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="Наименование" />
+            <container name="Фамилия" />
+            <container name="Отчество" />
+            <container name="Имя" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Наименование" />
-            <container name="Фамилия" />
-            <container name="Отчество" />
-            <container name="Имя" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -18321,16 +18327,16 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
-            <container name="ПрефиксКода" />
-            <container name="НомерКода" />
-            <container name="Техника" />
             <container name="ДатаДокумента" />
-            <container name="Индекс" />
-            <container name="ДокументОснование" />
             <container name="Комментарий" />
+            <container name="Техника" />
             <container name="КПП" />
             <container name="Объект" />
             <container name="Водитель" />
+            <container name="ПрефиксКода" />
+            <container name="НомерКода" />
+            <container name="Индекс" />
+            <container name="ДокументОснование" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -18347,6 +18353,14 @@
             <presentation lang="(Default)" value="{Наименование}" />
           </NsgLanguageString>
           <ObjectList>
+            <NsgSimpleObject Guid="33282a24-1509-438b-ae14-a569b251fb0b" type="NsgDataUntypedReference" editoraccess="Limited" name="Владелец" visible="true" description="Владелец" field="_Owner" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="Владелец" />
+              </NsgLanguageString>
+              <NsgObjectsFilter filter_type="List">
+                <param name="Мониторинг.Объекты" />
+              </NsgObjectsFilter>
+            </NsgSimpleObject>
             <NsgSimpleObject Guid="addc1de5-8de0-4a6e-97f9-135f1a019f62" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
@@ -18416,14 +18430,6 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="33282a24-1509-438b-ae14-a569b251fb0b" type="NsgDataUntypedReference" editoraccess="Limited" name="Владелец" visible="true" description="Владелец" field="_Owner" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="Владелец" />
-              </NsgLanguageString>
-              <NsgObjectsFilter filter_type="List">
-                <param name="Мониторинг.Объекты" />
-              </NsgObjectsFilter>
-            </NsgSimpleObject>
             <NsgSimpleObject Guid="bbb6860c-6d3c-44f8-aef0-2cf93a2476c7" type="NsgDataFloat" editoraccess="Full" name="Широта" visible="true" description="Широта" field="SHirota" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
@@ -18431,17 +18437,17 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="Наименование" />
+            <container name="ВыездРазрешен" />
+            <container name="Долгота" />
+            <container name="ВъездРазрешен" />
+            <container name="Широта" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Наименование" />
-            <container name="ВыездРазрешен" />
-            <container name="Долгота" />
-            <container name="ВъездРазрешен" />
-            <container name="Широта" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -18730,15 +18736,23 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="a852358c-6c14-44e6-8d5f-7be433a709ac" type="NsgDataPredefinedReference" editoraccess="Full" name="Пустой" visible="true" description="Пустой" field="Pustoij" index="None" subtype="Predefined" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+              <NsgPropertyCollection type="rekvisit_values">
+                <property name="Наименование" typename="String" value="Пустой" />
+              </NsgPropertyCollection>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="Наименование" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Наименование" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
