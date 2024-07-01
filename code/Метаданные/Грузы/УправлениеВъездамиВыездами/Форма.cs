@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using NsgSoft.Common;
@@ -11,6 +12,7 @@ using NsgSoft.DataObjects;
 using NsgSoft.Forms;
 using TechControl.Метаданные.Мониторинг;
 using TechControl.Метаданные.Перечисления;
+using TechControl.Метаданные.Учет;
 
 
 
@@ -115,30 +117,40 @@ namespace TechControl.Метаданные.Грузы
 
             var техника = ПроезжающаяТехника.Value;
             var объект = Объект.Value;
-            var дата = Дата.Value;
+            var дата = DateTime.Now;
             if (техника.Selected && объект.Selected && дата != NsgService.MinDate)
             {
                 var reg = РегистрПеремещениеЧерезКПП.Новый();
                 reg.Техника = техника;
                 reg.Объект = объект;
-                reg.GetRest(дата);
+                reg.GetRest(NsgService.MaxDate);
+
+                nbВъезд.Enabled = true;
+                nbВыезд.Enabled = true;
+
                 if (reg.НахождениеНаОбъекте == 0)
                 {
                     СтатусТехники.Value = "Въезжает";
+                    nbВыезд.Enabled = false;
                 }
                 else if (reg.НахождениеНаОбъекте == 1)
                 {
-                    СтатусТехники.Value = "Выезжает";
+                    СтатусТехники.Value = $"На объекте {(Дата.Value - reg.ДатаДокумента).TotalMinutes} минут";
+                    nbВыезд.Enabled = false;
                 }
                 else if (reg.НахождениеНаОбъекте < 0)
                 {
                     СтатусТехники.Value = $"На {дата} оформлено несколько выездов без въездов";
                     nLblСтатус.ForeColor = Color.Red;
+                    nbВъезд.Enabled = false;
+                    nbВыезд.Enabled = false;
                 }
                 else if (reg.НахождениеНаОбъекте > 1)
                 {
                     СтатусТехники.Value = $"На {дата} оформлено несколько въездов без выездов";
                     nLblСтатус.ForeColor = Color.Red;
+                    nbВъезд.Enabled = false;
+                    nbВыезд.Enabled = false;
                 }
             }
             else
@@ -164,11 +176,12 @@ namespace TechControl.Метаданные.Грузы
         {
             var техника = ПроезжающаяТехника.Value;
             var объект = Объект.Value;
-            var дата = Дата.Value;
+            var дата = DateTime.Now;
             var кпп = КПП.Value;
             var водитель = Водитель.Value;
             var видГруза = ВидГруза.Value;
             var объемГруза = ОбъемГруза.Value;
+            var комментарий = КомментарийПроезд.Value;
 
             if (!техника.Selected)
             {
@@ -179,12 +192,6 @@ namespace TechControl.Метаданные.Грузы
             if (!объект.Selected)
             {
                 NsgSettings.MainForm.ShowMessage("Укажите объект");
-                return;
-            }
-
-            if (дата == NsgService.MinDate)
-            {
-                NsgSettings.MainForm.ShowMessage("Укажите дату");
                 return;
             }
 
@@ -215,8 +222,9 @@ namespace TechControl.Метаданные.Грузы
             var reg = РегистрПеремещениеЧерезКПП.Новый();
             reg.Техника = техника;
             reg.Объект = объект;
-            reg.GetRest(дата);
-            if (reg.НахождениеНаОбъекте == 0)
+            reg.GetRest(NsgService.MaxDate);
+
+            if (reg.НахождениеНаОбъекте <= 0)
             {
                 var документВъезда = ДокументыВъезда.Новый();
                 документВъезда.New();
@@ -227,73 +235,24 @@ namespace TechControl.Метаданные.Грузы
                 документВъезда.Техника = техника;
                 документВъезда.ВидГруза = видГруза;
                 документВъезда.ОбъемГруза = объемГруза;
+                документВъезда.Комментарий = комментарий;
+
+                foreach (var item in vmoФотографии.Data.MemoryTable.AllRows)
+                {
+                    var row = документВъезда.ТаблицаФотографии.NewRow();
+                    row.Фотография = item[Фото_vmoФотографии].ToReferent() as Фотографии;
+                    row.Post();
+                }
                 документВъезда.Handle();
 
                 NsgSettings.MainForm.ShowObject(документВъезда, this);
-
-                //if (видГруза.Selected && видГруза != ВидыГрузов.Пустой)
-                //{
-                //    var документПривозГруза = ПривозГруза.Новый();
-                //    документПривозГруза.New();
-                //    документПривозГруза.ДатаДокумента = дата;
-                //    документПривозГруза.Объект = объект;
-                //    документПривозГруза.ВидГруза = видГруза;
-                //    документПривозГруза.ОбъемГруза = объемГруза;
-                //    документПривозГруза.НомерАвто = техника.ГосНомер;
-                //    документПривозГруза.Контрагент = техника.Подрядчик;
-                //    документПривозГруза.Handle();
-
-                //    NsgSettings.MainForm.ShowObject(документПривозГруза, this);
-                //}
             }
             else
             {
                 string сообщение = string.Empty;
-                if (reg.НахождениеНаОбъекте >= 1)
-                {
-                    сообщение = $"На {дата} уже оформлены выезды. Оформить еще 1?";
-                }
-                else
-                {
-                    сообщение = $"На {дата} {техника} уже на объекте. Продолжить оформление Въезда?";
-                }
+                сообщение = $"Данная техника уже на объекте.";
 
-                var dialRes = MessageBox.Show(сообщение, "Сообщение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-                if (dialRes == DialogResult.Yes)
-                {
-                    var документВъезда = ДокументыВъезда.Новый();
-                    документВъезда.New();
-                    документВъезда.ДатаДокумента = дата;
-                    документВъезда.Объект = объект;
-                    документВъезда.КПП = кпп;
-                    документВъезда.Водитель = водитель;
-                    документВъезда.Техника = техника;
-                    документВъезда.ВидГруза = видГруза;
-                    документВъезда.ОбъемГруза = объемГруза;
-                    документВъезда.Handle();
-
-                    NsgSettings.MainForm.ShowObject(документВъезда, this);
-
-                    //if (видГруза.Selected && видГруза != ВидыГрузов.Пустой)
-                    //{
-                    //    var документПривозГруза = ПривозГруза.Новый();
-                    //    документПривозГруза.New();
-                    //    документПривозГруза.ДатаДокумента = дата;
-                    //    документПривозГруза.Объект = объект;
-                    //    документПривозГруза.ВидГруза = видГруза;
-                    //    документПривозГруза.ОбъемГруза = объемГруза;
-                    //    документПривозГруза.НомерАвто = техника.ГосНомер;
-                    //    документПривозГруза.Контрагент = техника.Подрядчик;
-                    //    документПривозГруза.Handle();
-
-                    //    NsgSettings.MainForm.ShowObject(документПривозГруза, this);
-                    //}
-                }
-                else
-                {
-                    e.Cancel = true;
-                    return;
-                }
+                var dialRes = MessageBox.Show(сообщение, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
             }
 
             ОбновитьСтатус();
@@ -303,11 +262,13 @@ namespace TechControl.Метаданные.Грузы
         {
             var техника = ПроезжающаяТехника.Value;
             var объект = Объект.Value;
-            var дата = Дата.Value;
+            var дата = DateTime.Now;
             var кпп = КПП.Value;
             var водитель = Водитель.Value;
             var видГруза = ВидГруза.Value;
             var объемГруза = ОбъемГруза.Value;
+            var комментарий = КомментарийПроезд.Value;
+            var комментарийГруз = КомментарийГруз.Value;
 
             if (!техника.Selected)
             {
@@ -318,12 +279,6 @@ namespace TechControl.Метаданные.Грузы
             if (!объект.Selected)
             {
                 NsgSettings.MainForm.ShowMessage("Укажите объект");
-                return;
-            }
-
-            if (дата == NsgService.MinDate)
-            {
-                NsgSettings.MainForm.ShowMessage("Укажите дату");
                 return;
             }
 
@@ -354,8 +309,8 @@ namespace TechControl.Метаданные.Грузы
             var reg = РегистрПеремещениеЧерезКПП.Новый();
             reg.Техника = техника;
             reg.Объект = объект;
-            reg.GetRest(дата);
-            if (reg.НахождениеНаОбъекте == 1)
+            reg.GetRest(NsgService.MaxDate);
+            if (reg.НахождениеНаОбъекте >= 1)
             {
                 var документВыезда = ДокументыВыезда.Новый();
                 документВыезда.New();
@@ -366,76 +321,102 @@ namespace TechControl.Метаданные.Грузы
                 документВыезда.Техника = техника;
                 документВыезда.ВидГруза = видГруза;
                 документВыезда.ОбъемГруза = объемГруза;
+                документВыезда.Комментарий = комментарий;
+
+                foreach (var item in vmoФотографии.Data.MemoryTable.AllRows)
+                {
+                    var row = документВыезда.ТаблицаФотографии.NewRow();
+                    row.Фотография = item[Фото_vmoФотографии].ToReferent() as Фотографии;
+                    row.Post();
+                }
+
+                if (видГруза.Selected && видГруза != reg.ВидГруза)
+                {
+                    var cmp = new NsgCompare();
+                    cmp.Add(ПривозГруза.Names.ДатаДокумента, reg.ДатаДокумента, NsgComparison.GreaterOrEqual);
+                    cmp.Add(ПривозГруза.Names.ДатаДокумента, дата, NsgComparison.LessOrEqual);
+                    cmp.Add(ПривозГруза.Names.ВидГруза, reg.ВидГруза);
+                    cmp.Add(ПривозГруза.Names.Объект, объект);
+                    cmp.Add(ПривозГруза.Names.НомерАвто, техника.ГосНомер);
+                    cmp.Add(ПривозГруза.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+
+                    var документПривозГруза = ПривозГруза.Новый();
+
+                    if (!документПривозГруза.Find(cmp))
+                    {
+                        документПривозГруза.New();
+                        документПривозГруза.ДокументОснование = документВыезда;
+                        документПривозГруза.ДатаДокумента = дата;
+                        документПривозГруза.Объект = объект;
+                        документПривозГруза.ВидГруза = reg.ВидГруза;
+                        документПривозГруза.ОбъемГруза = reg.ОбъемГруза;
+                        документПривозГруза.НомерАвто = техника.ГосНомер;
+                        документПривозГруза.Контрагент = техника.Подрядчик;
+                        документПривозГруза.Комментарий = "Создано автоматически на основании выезда";
+                        документПривозГруза.Handle();
+
+                        NsgSettings.MainForm.ShowObject(документПривозГруза, this);
+                    }
+
+                    if (видГруза != ВидыГрузов.Пустой)
+                    {
+                        cmp = new NsgCompare();
+                        cmp.Add(ВывозГруза.Names.ДатаДокумента, reg.ДатаДокумента, NsgComparison.GreaterOrEqual);
+                        cmp.Add(ВывозГруза.Names.ДатаДокумента, дата, NsgComparison.LessOrEqual);
+                        cmp.Add(ВывозГруза.Names.ВидГруза, видГруза);
+                        cmp.Add(ВывозГруза.Names.Объект, объект);
+                        cmp.Add(ВывозГруза.Names.НомерАвто, техника.ГосНомер);
+                        cmp.Add(ВывозГруза.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+
+                        var документВывозГруза = ВывозГруза.Новый();
+
+                        if (!документВывозГруза.Find(cmp))
+                        {
+                            документВывозГруза.New();
+                            документВывозГруза.ДокументОснование = документВыезда;
+                            документВывозГруза.ДатаДокумента = дата;
+                            документВывозГруза.Объект = объект;
+                            документВывозГруза.ВидГруза = видГруза;
+                            документВывозГруза.ОбъемГруза = объемГруза;
+                            документВывозГруза.НомерАвто = техника.ГосНомер;
+                            документВывозГруза.Контрагент = техника.Подрядчик;
+                            документВывозГруза.Комментарий = комментарийГруз;
+                            документВывозГруза.Handle();
+
+                            NsgSettings.MainForm.ShowObject(документВывозГруза, this);
+                        }
+                    }
+                }
+                else
+                {
+                    документВыезда.ТребуетПроверки = true;
+                }
+
                 документВыезда.Handle();
 
                 NsgSettings.MainForm.ShowObject(документВыезда, this);
-
-                //if (видГруза.Selected && видГруза != ВидыГрузов.Пустой)
-                //{
-                //    var документВывозГруза = ВывозГруза.Новый();
-                //    документВывозГруза.New();
-                //    документВывозГруза.ДатаДокумента = дата;
-                //    документВывозГруза.Объект = объект;
-                //    документВывозГруза.ВидГруза = видГруза;
-                //    документВывозГруза.ОбъемГруза = объемГруза;
-                //    документВывозГруза.НомерАвто = техника.ГосНомер;
-                //    документВывозГруза.Контрагент = техника.Подрядчик;
-                //    документВывозГруза.Handle();
-
-                //    NsgSettings.MainForm.ShowObject(документВывозГруза, this);
-                //}
             }
             else
             {
                 string сообщение = string.Empty;
-                if (reg.НахождениеНаОбъекте <= 0)
-                {
-                    сообщение = $"На {дата} уже оформлены въезды. Оформить еще 1?";
-                }
-                else
-                {
-                    сообщение = $"На {дата} {техника} уже выехал. Продолжить оформление Выезда?";
-                }
+                сообщение = $"Данная техника уже уехала.";
 
-                var dialRes = MessageBox.Show(сообщение, "Сообщение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-                if (dialRes == DialogResult.Yes)
-                {
-                    var документВыезда = ДокументыВыезда.Новый();
-                    документВыезда.New();
-                    документВыезда.ДатаДокумента = дата;
-                    документВыезда.Объект = объект;
-                    документВыезда.КПП = кпп;
-                    документВыезда.Водитель = водитель;
-                    документВыезда.Техника = техника;
-                    документВыезда.ВидГруза = видГруза;
-                    документВыезда.ОбъемГруза = объемГруза;
-                    документВыезда.Handle();
-
-                    NsgSettings.MainForm.ShowObject(документВыезда, this);
-
-                    //if (видГруза.Selected && видГруза != ВидыГрузов.Пустой)
-                    //{
-                    //    var документВывозГруза = ВывозГруза.Новый();
-                    //    документВывозГруза.New();
-                    //    документВывозГруза.ДатаДокумента = дата;
-                    //    документВывозГруза.Объект = объект;
-                    //    документВывозГруза.ВидГруза = видГруза;
-                    //    документВывозГруза.ОбъемГруза = объемГруза;
-                    //    документВывозГруза.НомерАвто = техника.ГосНомер;
-                    //    документВывозГруза.Контрагент = техника.Подрядчик;
-                    //    документВывозГруза.Handle();
-
-                    //    NsgSettings.MainForm.ShowObject(документВывозГруза, this);
-                    //}
-                }
-                else
-                {
-                    e.Cancel = true;
-                    return;
-                }
+                var dialRes = MessageBox.Show(сообщение, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
             }
 
             ОбновитьСтатус();
+        }
+
+        private void vmoФотографии_CurrentRowChanged(object sender, NsgMultipleObject oldRow, NsgMultipleObject newRow)
+        {
+            if (vmoФотографии.Data.CurrentRow != null)
+            {
+                //MemoryStream stream = (MemoryStream)Фото_vmoФотографии.Value;
+                //stream.Seek(0, SeekOrigin.Begin);
+                //Image img = System.Drawing.Image.FromStream(stream);
+
+                pictureBox1.Image = Фото_vmoФотографии.Value.Фотография;
+            }
         }
     }
     

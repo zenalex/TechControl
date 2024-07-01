@@ -1987,6 +1987,7 @@
             <container name="Иконка" />
             <container name="АккаунтПользователя" />
             <container name="ОтслеживатьХодки" />
+            <container name="ПолезныйОбъемМКуб" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -1996,7 +1997,6 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
-            <container name="ПолезныйОбъемМКуб" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -18133,12 +18133,12 @@
             <container name="Объект" />
             <container name="Водитель" />
             <container name="КПП" />
+            <container name="ВидГруза" />
+            <container name="ОбъемГруза" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ВидГруза" />
-            <container name="ОбъемГруза" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -18347,6 +18347,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="d618bd97-8a1d-42e7-9009-dbe427161d88" type="NsgDataBoolean" editoraccess="Full" name="ТребуетПроверки" visible="true" description="Требует проверки" field="TrebuetProverki" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -18355,12 +18360,13 @@
             <container name="КПП" />
             <container name="Объект" />
             <container name="Водитель" />
+            <container name="ВидГруза" />
+            <container name="ОбъемГруза" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ВидГруза" />
-            <container name="ОбъемГруза" />
+            <container name="ТребуетПроверки" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -18860,6 +18866,31 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="2dc4217f-e17f-411f-8d93-5a541d330d52" type="NsgDataForm" editoraccess="Full" name="Форма" visible="true" description="Форма" field="Forma" index="None" subtype="ElementForm" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" class="TechControl.Метаданные.Грузы.УправлениеВъездамиВыездамиФорма">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+          </ObjectList>
+        </NsgMultipleObject>
+        <NsgMultipleObject Guid="e01c35cd-6cc2-4ad2-b58b-0cd0f91d4380" type="NsgReportObject" editoraccess="Full" name="УправлениеПогрузкойРазгрузкой" visible="true" description="Отчет" group="Грузы" table="_report_UpravleniePogruz" useFullTextIndex="true" visibleadminonly="false">
+          <NsgLanguageString type="presentation">
+            <presentation lang="(Default)" value="" />
+          </NsgLanguageString>
+          <NsgLanguageString type="valuemask">
+            <presentation lang="(Default)" value="{Представление}" />
+          </NsgLanguageString>
+          <ObjectList>
+            <NsgSimpleObject Guid="7e4ffec2-e2b6-4a64-a39a-dcc30311b9db" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="859ce4eb-c127-4868-b6ee-26d88ca2959e" type="NsgDataInteger" editoraccess="Hidden" name="Автоинкремент" visible="true" description="Автоинкремент" field="_AutoInc" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="bc48226f-09d5-4bf5-b580-c5be0c951a95" type="NsgDataForm" editoraccess="Full" name="Форма" visible="true" description="Форма" field="Forma" index="None" subtype="ElementForm" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" class="TechControl.Метаданные.Грузы.УправлениеПогрузкойРазгрузкойФорма">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
