@@ -34,11 +34,12 @@ namespace TechControl.Метаданные.Грузы
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ДокументыВыездаФормаЭлемента));
-            NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding1 = new NsgSoft.Forms.NsgMasterDetailBinding();
-            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor1 = new NsgSoft.DataObjects.NsgObjectDescriptor();
-            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor2 = new NsgSoft.DataObjects.NsgObjectDescriptor();
+            NsgSoft.Forms.NsgMasterDetailBinding nsgMasterDetailBinding2 = new NsgSoft.Forms.NsgMasterDetailBinding();
+            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor3 = new NsgSoft.DataObjects.NsgObjectDescriptor();
+            NsgSoft.DataObjects.NsgObjectDescriptor nsgObjectDescriptor4 = new NsgSoft.DataObjects.NsgObjectDescriptor();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.nsgInput7 = new NsgSoft.Forms.NsgInput();
             this.nsgInput6 = new NsgSoft.Forms.NsgInput();
             this.label1 = new System.Windows.Forms.Label();
             this.nsgInput5 = new NsgSoft.Forms.NsgInput();
@@ -77,7 +78,10 @@ namespace TechControl.Метаданные.Грузы
             this.ВидГруза = new TechControl.Метаданные.Грузы.ВидыГрузов.ColumnDescriptor();
             this.ОбъемГруза = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.ТребуетПроверки = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
-            this.nsgInput7 = new NsgSoft.Forms.NsgInput();
+            this.nsgInput8 = new NsgSoft.Forms.NsgInput();
+            this.label7 = new System.Windows.Forms.Label();
+            this.nsgInput9 = new NsgSoft.Forms.NsgInput();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -98,6 +102,7 @@ namespace TechControl.Метаданные.Грузы
             ((System.ComponentModel.ISupportInitialize)(this.nsgVisualMultipleObject)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).BeginInit();
@@ -107,7 +112,8 @@ namespace TechControl.Метаданные.Грузы
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoФотографии)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput9)).BeginInit();
             this.SuspendLayout();
             // 
             // nsgEdit
@@ -423,6 +429,10 @@ namespace TechControl.Метаданные.Грузы
             // tabPage1
             // 
             this.tabPage1.AllowDrop = true;
+            this.tabPage1.Controls.Add(this.nsgInput8);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.nsgInput9);
+            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.nsgInput7);
             this.tabPage1.Controls.Add(this.nsgInput6);
             this.tabPage1.Controls.Add(this.label1);
@@ -446,6 +456,36 @@ namespace TechControl.Метаданные.Грузы
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Visible = true;
             // 
+            // nsgInput7
+            // 
+            this.nsgInput7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nsgInput7.BackColor = System.Drawing.SystemColors.Control;
+            this.nsgInput7.ConfigurationName = "TechControl";
+            this.nsgInput7.DisableLeaveControlEvent = false;
+            this.nsgInput7.FullName = "Грузы.ДокументыВыезда.ТребуетПроверки";
+            this.nsgInput7.FullTextSearch = false;
+            this.nsgInput7.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput7.IsButton = false;
+            this.nsgInput7.IsInitialized = true;
+            this.nsgInput7.IsPassword = false;
+            this.nsgInput7.Location = new System.Drawing.Point(573, 3);
+            this.nsgInput7.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput7.Mask = "";
+            this.nsgInput7.MetaDataName = "Метаданные";
+            this.nsgInput7.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput7.Name = "NsgInput";
+            this.nsgInput7.ObjectImages = null;
+            this.nsgInput7.ObjectIndex = null;
+            this.nsgInput7.ObjectStrings = null;
+            this.nsgInput7.Requsite = "ТребуетПроверки";
+            this.nsgInput7.SearchFieldName = "";
+            this.nsgInput7.ShowMultipleObjectInComboBox = false;
+            this.nsgInput7.ShowRowCount = 10;
+            this.nsgInput7.Size = new System.Drawing.Size(126, 20);
+            this.nsgInput7.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput7.TabIndex = 24;
+            this.nsgInput7.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // nsgInput6
             // 
             this.nsgInput6.BackColor = System.Drawing.SystemColors.Window;
@@ -459,7 +499,7 @@ namespace TechControl.Метаданные.Грузы
             this.nsgInput6.IsInitialized = true;
             this.nsgInput6.IsMultiline = true;
             this.nsgInput6.IsPassword = false;
-            this.nsgInput6.Location = new System.Drawing.Point(116, 161);
+            this.nsgInput6.Location = new System.Drawing.Point(116, 221);
             this.nsgInput6.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput6.Mask = "";
             this.nsgInput6.MetaDataName = "Метаданные";
@@ -472,7 +512,7 @@ namespace TechControl.Метаданные.Грузы
             this.nsgInput6.SearchFieldName = "";
             this.nsgInput6.ShowMultipleObjectInComboBox = false;
             this.nsgInput6.ShowRowCount = 10;
-            this.nsgInput6.Size = new System.Drawing.Size(583, 105);
+            this.nsgInput6.Size = new System.Drawing.Size(583, 52);
             this.nsgInput6.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput6.TabIndex = 23;
             this.nsgInput6.VerticalAlignment = System.Drawing.StringAlignment.Center;
@@ -480,7 +520,7 @@ namespace TechControl.Метаданные.Грузы
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 168);
+            this.label1.Location = new System.Drawing.Point(7, 228);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 22;
@@ -736,20 +776,20 @@ namespace TechControl.Метаданные.Грузы
             this.nsgIGrid1.TabIndex = 0;
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
             this.vmoФотографии.DataSourceType = NsgSoft.Forms.NsgDataSourceType.MasterComponent;
-            nsgObjectDescriptor2.ConfigurationName = "TechControl";
+            nsgObjectDescriptor4.ConfigurationName = "TechControl";
             this.vmoФотографии.MetaDataName = "Метаданные";
             this.vmoФотографии.FullName = "_SystemTables.ГрузыДокументыВыездаТаблицаФотографии.Владелец";
             // 
             // vmoФотографии
             // 
-            nsgObjectDescriptor1.ConfigurationName = "TechControl";
-            nsgObjectDescriptor1.FullName = "_SystemTables.ГрузыДокументыВыездаТаблицаФотографии.Владелец";
-            nsgObjectDescriptor1.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding1.DetailField = nsgObjectDescriptor1;
-            nsgObjectDescriptor2.FullName = "Грузы.ДокументыВыезда.ТаблицаФотографии";
-            nsgObjectDescriptor2.MetaDataName = "Метаданные";
-            nsgMasterDetailBinding1.MasterField = nsgObjectDescriptor2;
-            nsgMasterDetailBinding1.Type = NsgSoft.Forms.NsgBindingType.Tables;
+            nsgObjectDescriptor3.ConfigurationName = "TechControl";
+            nsgObjectDescriptor3.FullName = "_SystemTables.ГрузыДокументыВыездаТаблицаФотографии.Владелец";
+            nsgObjectDescriptor3.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding2.DetailField = nsgObjectDescriptor3;
+            nsgObjectDescriptor4.FullName = "Грузы.ДокументыВыезда.ТаблицаФотографии";
+            nsgObjectDescriptor4.MetaDataName = "Метаданные";
+            nsgMasterDetailBinding2.MasterField = nsgObjectDescriptor4;
+            nsgMasterDetailBinding2.Type = NsgSoft.Forms.NsgBindingType.Tables;
             this.vmoФотографии.Columns.Collection.Add(this.Идентификатор_vmoФотографии);
             this.vmoФотографии.Columns.Collection.Add(this.Автоинкремент_vmoФотографии);
             this.vmoФотографии.Columns.Collection.Add(this.Владелец);
@@ -757,7 +797,7 @@ namespace TechControl.Метаданные.Грузы
             this.vmoФотографии.Columns.Collection.Add(this.Фотография);
             this.vmoФотографии.IsActive = true;
             this.vmoФотографии.MasterComponent = this.nsgVisualMultipleObject;
-            this.vmoФотографии.Binding = nsgMasterDetailBinding1;
+            this.vmoФотографии.Binding = nsgMasterDetailBinding2;
             // 
             // Идентификатор_vmoФотографии
             // 
@@ -1026,35 +1066,83 @@ namespace TechControl.Метаданные.Грузы
             this.ТребуетПроверки.SearchCondition.OwnerComponent = this.ТребуетПроверки;
             this.ТребуетПроверки.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
-            // nsgInput7
+            // nsgInput8
             // 
-            this.nsgInput7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nsgInput7.BackColor = System.Drawing.SystemColors.Control;
-            this.nsgInput7.ConfigurationName = "";
-            this.nsgInput7.DisableLeaveControlEvent = false;
-            this.nsgInput7.FullName = "ТребуетПроверки";
-            this.nsgInput7.FullTextSearch = false;
-            this.nsgInput7.HorizontalAlignment = System.Drawing.StringAlignment.Near;
-            this.nsgInput7.IsButton = false;
-            this.nsgInput7.IsInitialized = true;
-            this.nsgInput7.IsPassword = false;
-            this.nsgInput7.Location = new System.Drawing.Point(573, 3);
-            this.nsgInput7.Margin = new System.Windows.Forms.Padding(0);
-            this.nsgInput7.Mask = "";
-            this.nsgInput7.MetaDataName = "";
-            this.nsgInput7.MinimumSize = new System.Drawing.Size(4, 20);
-            this.nsgInput7.Name = "NsgInput";
-            this.nsgInput7.ObjectImages = null;
-            this.nsgInput7.ObjectIndex = null;
-            this.nsgInput7.ObjectStrings = null;
-            this.nsgInput7.Requsite = "ТребуетПроверки";
-            this.nsgInput7.SearchFieldName = "";
-            this.nsgInput7.ShowMultipleObjectInComboBox = false;
-            this.nsgInput7.ShowRowCount = 10;
-            this.nsgInput7.Size = new System.Drawing.Size(126, 20);
-            this.nsgInput7.SourceObject = this.nsgVisualMultipleObject;
-            this.nsgInput7.TabIndex = 24;
-            this.nsgInput7.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.nsgInput8.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput8.ConfigurationName = "";
+            this.nsgInput8.DisableLeaveControlEvent = false;
+            this.nsgInput8.FullName = "ОбъемГруза";
+            this.nsgInput8.FullTextSearch = false;
+            this.nsgInput8.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput8.IsButton = false;
+            this.nsgInput8.IsInitialized = true;
+            this.nsgInput8.IsPassword = false;
+            this.nsgInput8.Location = new System.Drawing.Point(116, 191);
+            this.nsgInput8.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput8.Mask = "";
+            this.nsgInput8.MetaDataName = "";
+            this.nsgInput8.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput8.Name = "NsgInput";
+            this.nsgInput8.ObjectImages = null;
+            this.nsgInput8.ObjectIndex = null;
+            this.nsgInput8.ObjectStrings = null;
+            this.nsgInput8.Requsite = "ОбъемГруза";
+            this.nsgInput8.SearchFieldName = "";
+            this.nsgInput8.ShowMultipleObjectInComboBox = false;
+            this.nsgInput8.ShowRowCount = 10;
+            this.nsgInput8.Size = new System.Drawing.Size(130, 20);
+            this.nsgInput8.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput8.TabIndex = 28;
+            this.nsgInput8.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 198);
+            this.label7.Name = "label5";
+            this.label7.Size = new System.Drawing.Size(42, 13);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Объем";
+            // 
+            // nsgInput9
+            // 
+            this.nsgInput9.BackColor = System.Drawing.SystemColors.Window;
+            this.nsgInput9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nsgInput9.ConfigurationName = "";
+            this.nsgInput9.DisableLeaveControlEvent = false;
+            this.nsgInput9.FullName = "ВидГруза";
+            this.nsgInput9.FullTextSearch = false;
+            this.nsgInput9.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.nsgInput9.IsButton = false;
+            this.nsgInput9.IsInitialized = true;
+            this.nsgInput9.IsPassword = false;
+            this.nsgInput9.Location = new System.Drawing.Point(116, 161);
+            this.nsgInput9.Margin = new System.Windows.Forms.Padding(0);
+            this.nsgInput9.Mask = "";
+            this.nsgInput9.MetaDataName = "";
+            this.nsgInput9.MinimumSize = new System.Drawing.Size(4, 20);
+            this.nsgInput9.Name = "NsgInput";
+            this.nsgInput9.ObjectImages = null;
+            this.nsgInput9.ObjectIndex = null;
+            this.nsgInput9.ObjectStrings = null;
+            this.nsgInput9.Requsite = "ВидГруза";
+            this.nsgInput9.SearchFieldName = "";
+            this.nsgInput9.ShowMultipleObjectInComboBox = false;
+            this.nsgInput9.ShowRowCount = 10;
+            this.nsgInput9.Size = new System.Drawing.Size(284, 20);
+            this.nsgInput9.SourceObject = this.nsgVisualMultipleObject;
+            this.nsgInput9.TabIndex = 26;
+            this.nsgInput9.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 168);
+            this.label8.Name = "label4";
+            this.label8.Size = new System.Drawing.Size(30, 13);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Груз";
             // 
             // ДокументыВыездаФормаЭлемента
             // 
@@ -1101,6 +1189,7 @@ namespace TechControl.Метаданные.Грузы
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput4)).EndInit();
@@ -1110,7 +1199,8 @@ namespace TechControl.Метаданные.Грузы
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoФотографии)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nsgInput7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgInput9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1137,6 +1227,8 @@ namespace TechControl.Метаданные.Грузы
         protected NsgInput nsgInput1;
         protected System.Windows.Forms.Label label6;
         protected NsgIGrid nsgIGrid1;
+        protected NsgInput nsgInput7;
+        private NsgVisualMultipleObject vmoФотографии;
         protected NsgColumnDescriptor.Guid Идентификатор;
         protected NsgColumnDescriptor.Int64 Автоинкремент;
         protected NsgColumnDescriptor.String ПрефиксКода;
@@ -1155,7 +1247,9 @@ namespace TechControl.Метаданные.Грузы
         protected ВидыГрузов.ColumnDescriptor ВидГруза;
         protected NsgColumnDescriptor.Decimal ОбъемГруза;
         protected NsgColumnDescriptor.Boolean ТребуетПроверки;
-        protected NsgInput nsgInput7;
-        private NsgVisualMultipleObject vmoФотографии;
+        protected NsgInput nsgInput8;
+        protected System.Windows.Forms.Label label7;
+        protected NsgInput nsgInput9;
+        protected System.Windows.Forms.Label label8;
     }
 }

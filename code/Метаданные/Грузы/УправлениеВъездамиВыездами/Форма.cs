@@ -10,6 +10,7 @@ using NsgSoft.Common;
 using NsgSoft.Database;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
+using TechControl.Метаданные._SystemTables;
 using TechControl.Метаданные.Мониторинг;
 using TechControl.Метаданные.Перечисления;
 using TechControl.Метаданные.Учет;
@@ -125,37 +126,46 @@ namespace TechControl.Метаданные.Грузы
                 reg.Объект = объект;
                 reg.GetRest(NsgService.MaxDate);
 
-                nbВъезд.Enabled = true;
-                nbВыезд.Enabled = true;
-
                 if (reg.НахождениеНаОбъекте == 0)
                 {
                     СтатусТехники.Value = "Въезжает";
-                    nbВыезд.Enabled = false;
+                    ДоступностьКнопок(false, true);
                 }
                 else if (reg.НахождениеНаОбъекте == 1)
                 {
                     СтатусТехники.Value = $"На объекте {(Дата.Value - reg.ДатаДокумента).TotalMinutes} минут";
-                    nbВыезд.Enabled = false;
+                    ДоступностьКнопок(true, false);
                 }
                 else if (reg.НахождениеНаОбъекте < 0)
                 {
                     СтатусТехники.Value = $"На {дата} оформлено несколько выездов без въездов";
                     nLblСтатус.ForeColor = Color.Red;
-                    nbВъезд.Enabled = false;
-                    nbВыезд.Enabled = false;
+                    ДоступностьКнопок(false, false);
                 }
                 else if (reg.НахождениеНаОбъекте > 1)
                 {
                     СтатусТехники.Value = $"На {дата} оформлено несколько въездов без выездов";
                     nLblСтатус.ForeColor = Color.Red;
-                    nbВъезд.Enabled = false;
-                    nbВыезд.Enabled = false;
+                    ДоступностьКнопок(false, false);
                 }
             }
             else
             {
                 СтатусТехники.Value = $"";
+            }
+        }
+
+        private void ДоступностьКнопок(bool выездДоступен, bool въездДоступен) 
+        {
+            if (nbВъезд.InvokeRequired || nbВыезд.InvokeRequired)
+            {
+                nbВъезд.Invoke(new MethodInvoker(() => nbВъезд.Enabled = въездДоступен));
+                nbВыезд.Invoke(new MethodInvoker(() => nbВыезд.Enabled = выездДоступен));
+            }
+            else
+            {
+                nbВъезд.Enabled = въездДоступен;
+                nbВыезд.Enabled = выездДоступен;
             }
         }
 
@@ -312,6 +322,14 @@ namespace TechControl.Метаданные.Грузы
             reg.GetRest(NsgService.MaxDate);
             if (reg.НахождениеНаОбъекте >= 1)
             {
+                var cmpДвижения = new NsgCompare();
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Объект, объект);
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Техника, техника);
+                var sort = new NsgSorting();
+                sort.Add(new NsgSortingParam(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, NsgSortDirection.Descending));
+                int count = 1;
+                var движение = ГрузыРегистрПеремещениеЧерезКППДвижения.Новый().FindAll(ref count, 0, sort, cmpДвижения)[0];
+
                 var документВыезда = ДокументыВыезда.Новый();
                 документВыезда.New();
                 документВыезда.ДатаДокумента = дата;
@@ -333,9 +351,9 @@ namespace TechControl.Метаданные.Грузы
                 if (видГруза.Selected && видГруза != reg.ВидГруза)
                 {
                     var cmp = new NsgCompare();
-                    cmp.Add(ПривозГруза.Names.ДатаДокумента, reg.ДатаДокумента, NsgComparison.GreaterOrEqual);
+                    cmp.Add(ПривозГруза.Names.ДатаДокумента, движение.ДатаДокумента, NsgComparison.GreaterOrEqual);
                     cmp.Add(ПривозГруза.Names.ДатаДокумента, дата, NsgComparison.LessOrEqual);
-                    cmp.Add(ПривозГруза.Names.ВидГруза, reg.ВидГруза);
+                    cmp.Add(ПривозГруза.Names.ВидГруза, движение.ВидГруза);
                     cmp.Add(ПривозГруза.Names.Объект, объект);
                     cmp.Add(ПривозГруза.Names.НомерАвто, техника.ГосНомер);
                     cmp.Add(ПривозГруза.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
@@ -348,8 +366,8 @@ namespace TechControl.Метаданные.Грузы
                         документПривозГруза.ДокументОснование = документВыезда;
                         документПривозГруза.ДатаДокумента = дата;
                         документПривозГруза.Объект = объект;
-                        документПривозГруза.ВидГруза = reg.ВидГруза;
-                        документПривозГруза.ОбъемГруза = reg.ОбъемГруза;
+                        документПривозГруза.ВидГруза = движение.ВидГруза;
+                        документПривозГруза.ОбъемГруза = движение.ОбъемГруза;
                         документПривозГруза.НомерАвто = техника.ГосНомер;
                         документПривозГруза.Контрагент = техника.Подрядчик;
                         документПривозГруза.Комментарий = "Создано автоматически на основании выезда";
@@ -361,7 +379,7 @@ namespace TechControl.Метаданные.Грузы
                     if (видГруза != ВидыГрузов.Пустой)
                     {
                         cmp = new NsgCompare();
-                        cmp.Add(ВывозГруза.Names.ДатаДокумента, reg.ДатаДокумента, NsgComparison.GreaterOrEqual);
+                        cmp.Add(ВывозГруза.Names.ДатаДокумента, движение.ДатаДокумента, NsgComparison.GreaterOrEqual);
                         cmp.Add(ВывозГруза.Names.ДатаДокумента, дата, NsgComparison.LessOrEqual);
                         cmp.Add(ВывозГруза.Names.ВидГруза, видГруза);
                         cmp.Add(ВывозГруза.Names.Объект, объект);
