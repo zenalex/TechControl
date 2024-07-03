@@ -504,6 +504,115 @@ namespace TechControl.Метаданные.Грузы
         {
             УстановитьФильтр();
         }
+
+        private void nbОформитьЗаднимЧислом_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void nsgInput13_Selected(object sender, EventArgs e)
+        {
+            var объект = Объект.Value;
+            var техника = Техника_vmoЗаднимЧислом.Value;
+            var дата = ДатаВъезда_vmoЗаднимЧислом.Value;
+            ДатаПредыдущейЗаписи_vmoЗаднимЧислом.Value = NsgService.MinDate;
+            ДатаСледующейЗаписи_vmoЗаднимЧислом.Value = NsgService.MinDate;
+            if (объект != null && объект.Selected && техника != null && техника.Selected && дата != NsgService.MinDate)
+            {
+                //предыдущее движение
+                var cmpДвижения = new NsgCompare();
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, дата, NsgComparison.Less);
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Объект, объект);
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Техника, техника);
+                var sort = new NsgSorting();
+                sort.Add(new NsgSortingParam(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, NsgSortDirection.Descending));
+                int count = 1;
+                var движения = ГрузыРегистрПеремещениеЧерезКППДвижения.Новый().FindAll(ref count, 0, sort, cmpДвижения);
+                if (движения.Length > 0)
+                {
+                    var движение = движения[0];
+                    ДатаПредыдущейЗаписи_vmoЗаднимЧислом.Value = движение.ДатаДокумента;
+                    if (движение.ВидДвижения == Сервис.ВидыДвижений.Приход)
+                    {
+                        ДатаВыезда_vmoЗаднимЧислом.Value = дата;
+                        NsgSettings.MainForm.ShowMessage("Перед выбранной датой был въезд на объект. На выбранную дату можно оформить только выезд.");
+                    }
+                }
+                //следующее движение
+                cmpДвижения = new NsgCompare();
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, дата, NsgComparison.Greater);
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Объект, объект);
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Техника, техника);
+                sort = new NsgSorting();
+                sort.Add(new NsgSortingParam(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, NsgSortDirection.Ascending));
+                count = 1;
+                движения = ГрузыРегистрПеремещениеЧерезКППДвижения.Новый().FindAll(ref count, 0, sort, cmpДвижения);
+
+                if (движения.Length > 0)
+                {
+                    var движение = движения[0];
+                    ДатаСледующейЗаписи_vmoЗаднимЧислом.Value = движение.ДатаДокумента;
+                    if (движение.ВидДвижения == Сервис.ВидыДвижений.Расход)
+                    {
+                        ДатаВъезда_vmoЗаднимЧислом.Value = движение.ДатаДокумента.AddMinutes(-10);
+                        NsgSettings.MainForm.ShowMessage($"Дата въезда изменена на 10 минут до следующего выезда в {движение.ДатаДокумента}");
+                    }
+                }
+                else
+                {
+                    ДатаВыезда_vmoЗаднимЧислом.Value = NsgService.MinDate;
+                }
+            }
+        }
+
+        private void nsgInput20_Selected(object sender, EventArgs e)
+        {
+            var объект = Объект.Value;
+            var техника = Техника_vmoЗаднимЧислом.Value;
+            var дата = ДатаВыезда_vmoЗаднимЧислом.Value;
+            ДатаПредыдущейЗаписи_vmoЗаднимЧислом.Value = NsgService.MinDate;
+            ДатаСледующейЗаписи_vmoЗаднимЧислом.Value = NsgService.MinDate;
+            if (объект != null && объект.Selected && техника != null && техника.Selected && дата != NsgService.MinDate)
+            {
+                var cmpДвижения = new NsgCompare();
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, дата, NsgComparison.Greater);
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Объект, объект);
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Техника, техника);
+                var sort = new NsgSorting();
+                sort.Add(new NsgSortingParam(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, NsgSortDirection.Ascending));
+                int count = 1;
+                var движения = ГрузыРегистрПеремещениеЧерезКППДвижения.Новый().FindAll(ref count, 0, sort, cmpДвижения);
+                if (движения.Length > 0)
+                {
+                    var движение = движения[0];
+                    ДатаСледующейЗаписи_vmoЗаднимЧислом.Value = движение.ДатаДокумента;
+                    if (движение.ВидДвижения == Сервис.ВидыДвижений.Расход)
+                    {
+                        ДатаВъезда_vmoЗаднимЧислом.Value = дата;
+                        NsgSettings.MainForm.ShowMessage("После выбранной даты уже оформлен выезд. На выбранную дату можно оформить только въезд.");
+                    }
+                }
+                cmpДвижения = new NsgCompare();
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, дата, NsgComparison.Less);
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Объект, объект);
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Техника, техника);
+                sort = new NsgSorting();
+                sort.Add(new NsgSortingParam(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, NsgSortDirection.Descending));
+                count = 1;
+                движения = ГрузыРегистрПеремещениеЧерезКППДвижения.Новый().FindAll(ref count, 0, sort, cmpДвижения);
+
+                if (движения.Length > 0)
+                {
+                    var движение = движения[0];
+                    ДатаПредыдущейЗаписи_vmoЗаднимЧислом.Value = движение.ДатаДокумента;
+                    if (движение.ВидДвижения == Сервис.ВидыДвижений.Приход) 
+                    {
+                        ДатаВыезда_vmoЗаднимЧислом.Value = движение.ДатаДокумента.AddMinutes(10);
+                        NsgSettings.MainForm.ShowMessage($"Дата выезда изменена на 10 минут после прошлого въезда в {движение.ДатаДокумента}");
+                    }
+                }
+            }
+        }
     }
     
 
