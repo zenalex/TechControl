@@ -78,6 +78,8 @@ namespace TechControl.Метаданные.Грузы
                 Объект.Value = Объекты.Новый();
                 КПП.Value = КонтрольноПропускныеПункты.Новый();
             }
+
+            УстановитьФильтр();
         }
 
         private void nsgInput2_EndEdit(object sender, EndEditEventArgs e)
@@ -435,6 +437,72 @@ namespace TechControl.Метаданные.Грузы
 
                 pictureBox1.Image = Фото_vmoФотографии.Value.Фотография;
             }
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            if (tabControl1.SelectedTab == tpТехника)
+            {
+                nbwЗаполнениеСостояния.Run();
+            }
+        }
+
+        private void nbwЗаполнениеСостояния_DoWork(object sender, DoWorkEventArgs e)
+        {
+            var reg = РегистрПеремещениеЧерезКПП.Новый();
+            var состояния = reg.GetRests(NsgService.MaxDate);
+
+            vmoСостояние.Data.BeginUpdateData();
+            vmoСостояние.Data.MemoryTable.Clear();
+            foreach (var состояние in состояния.AllRows)
+            {
+                var объект = состояние[РегистрПеремещениеЧерезКПП.Names.Объект].ToReferent() as Объекты;
+                var техника = состояние[РегистрПеремещениеЧерезКПП.Names.Техника].ToReferent() as Техника;
+                var нахождениеНаОбъекте = состояние[РегистрПеремещениеЧерезКПП.Names.НахождениеНаОбъекте].ToBegin();
+
+                var cmpДвижения = new NsgCompare();
+                cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Техника, техника);
+                var sort = new NsgSorting();
+                sort.Add(new NsgSortingParam(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, NsgSortDirection.Descending));
+                int count = 1;
+                var движение = ГрузыРегистрПеремещениеЧерезКППДвижения.Новый().FindAll(ref count, 0, sort, cmpДвижения)[0];
+
+                var row = vmoСостояние.Data.MemoryTable.NewRow();
+                row[ТекущаяТехника_vmoСостояние].Value = техника;
+                if (нахождениеНаОбъекте >= 1)
+                {
+                    row[ВремяПриезда_vmoСостояние].Value = движение.ДатаДокумента;
+                    row[Объект_vmoСостояние].Value = объект;
+                }
+                else
+                {
+                    row[ВремяПриезда_vmoСостояние].Value = NsgService.MinDate;
+                    row[Объект_vmoСостояние].Value = Объекты.Новый();
+                }
+                row[Груз_vmoСостояние].Value = движение.ВидГруза;
+                row[Объем_vmoСостояние].Value = движение.ОбъемГруза;
+
+                row.Post();
+            }
+
+            vmoСостояние.Data.UpdateDataSync(this);
+            УстановитьФильтр();
+        }
+
+        private void УстановитьФильтр() 
+        {
+            var cmp = vmoСостояние.Data.GetComparison(this);
+            cmp.Clear();
+            if (!cbПоказатьВсе.Checked)
+            {
+                cmp.Add(Объект_vmoСостояние.Name, Объект.Value);
+            }
+            vmoСостояние.Data.UpdateDataAsync(this);
+        }
+
+        private void cbПоказатьВсе_CheckedChanged(object sender, EventArgs e)
+        {
+            УстановитьФильтр();
         }
     }
     

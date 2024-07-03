@@ -70,7 +70,9 @@ namespace TechControl.Метаданные.Мониторинг
             }
             else
             {
-                throw new Exception("необходимо указать гос номер техники или номер слишком короткий");
+                
+                return string.Empty;
+                //throw new Exception("необходимо указать гос номер техники или номер слишком короткий");
             }
         }
     }
