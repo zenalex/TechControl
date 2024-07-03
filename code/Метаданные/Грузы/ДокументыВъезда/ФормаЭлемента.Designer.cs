@@ -72,7 +72,7 @@ namespace TechControl.Метаданные.Грузы
             this.Техника = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.ТаблицаФотографии = new TechControl.Метаданные._SystemTables.ГрузыДокументыВъездаТаблицаФотографии.ColumnDescriptor();
-            this.Водитель = new TechControl.Метаданные.УчетСотрудников.ФизЛица.ColumnDescriptor();
+            this.Водитель = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
             this.КПП = new TechControl.Метаданные.Грузы.КонтрольноПропускныеПункты.ColumnDescriptor();
             this.ВидГруза = new TechControl.Метаданные.Грузы.ВидыГрузов.ColumnDescriptor();
             this.ОбъемГруза = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
@@ -981,8 +981,8 @@ namespace TechControl.Метаданные.Грузы
             this.Водитель.Caption = "Водитель";
             this.Водитель.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Водитель.Name = "Водитель";
-            this.Водитель.NSGType = typeof(TechControl.Метаданные.УчетСотрудников.ФизЛица);
-            this.Водитель.PropertyType = typeof(TechControl.Метаданные.УчетСотрудников.ФизЛица);
+            this.Водитель.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Водитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
             this.Водитель.SearchCondition.OwnerComponent = this.Водитель;
             this.Водитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1194,7 +1194,7 @@ namespace TechControl.Метаданные.Грузы
         protected Мониторинг.Техника.ColumnDescriptor Техника;
         protected Мониторинг.Объекты.ColumnDescriptor Объект;
         protected _SystemTables.ГрузыДокументыВъездаТаблицаФотографии.ColumnDescriptor ТаблицаФотографии;
-        protected УчетСотрудников.ФизЛица.ColumnDescriptor Водитель;
+        protected Мониторинг.Сотрудники.ColumnDescriptor Водитель;
         protected КонтрольноПропускныеПункты.ColumnDescriptor КПП;
         protected ВидыГрузов.ColumnDescriptor ВидГруза;
         protected NsgColumnDescriptor.Decimal ОбъемГруза;

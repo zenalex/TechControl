@@ -103,7 +103,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.ДатаВыдачи = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.ДействуетДо = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.СсылкаНаДокумент = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.Родитель_nsgVisualMultipleObject1_1 = new TechControl.Метаданные.УчетСотрудников.Документы.ColumnDescriptor();
+            this.Родитель_nsgVisualMultipleObject1_1 = new TechControl.Метаданные.УчетСотрудников.ДокументыФизЛиц.ColumnDescriptor();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -1528,8 +1528,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Родитель_nsgVisualMultipleObject1_1.Caption = "Родитель";
             this.Родитель_nsgVisualMultipleObject1_1.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Родитель_nsgVisualMultipleObject1_1.Name = "Родитель";
-            this.Родитель_nsgVisualMultipleObject1_1.NSGType = typeof(TechControl.Метаданные.УчетСотрудников.Документы);
-            this.Родитель_nsgVisualMultipleObject1_1.PropertyType = typeof(TechControl.Метаданные.УчетСотрудников.Документы);
+            this.Родитель_nsgVisualMultipleObject1_1.NSGType = typeof(TechControl.Метаданные.УчетСотрудников.ДокументыФизЛиц);
+            this.Родитель_nsgVisualMultipleObject1_1.PropertyType = typeof(TechControl.Метаданные.УчетСотрудников.ДокументыФизЛиц);
             this.Родитель_nsgVisualMultipleObject1_1.SearchCondition.OwnerComponent = this.Родитель_nsgVisualMultipleObject1_1;
             this.Родитель_nsgVisualMultipleObject1_1.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -3814,7 +3814,7 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.DateTime ДатаВыдачи;
         protected NsgColumnDescriptor.DateTime ДействуетДо;
         protected NsgColumnDescriptor.String СсылкаНаДокумент;
-        protected УчетСотрудников.Документы.ColumnDescriptor Родитель_nsgVisualMultipleObject1_1;
+        protected УчетСотрудников.ДокументыФизЛиц.ColumnDescriptor Родитель_nsgVisualMultipleObject1_1;
         private System.Windows.Forms.TabPage tpДокументы;
         private NsgVisualMultipleObject vmoДокументы;
         private NsgIGrid nsgIGrid4;

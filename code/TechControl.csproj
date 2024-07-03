@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2024.4.23.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -4521,24 +4521,24 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\УчетСотрудников\Документы\Документы.NsgInit.cs">
+    <Compile Include="Метаданные\УчетСотрудников\ДокументыФизЛиц\ДокументыФизЛиц.NsgInit.cs">
       <NsgOwnerGuid>3cc6be40-1caa-4254-858e-0d394a5c2b42</NsgOwnerGuid>
-      <NsgOwnerName>Документы</NsgOwnerName>
-      <DependentUpon>Документы.cs</DependentUpon>
+      <NsgOwnerName>ДокументыФизЛиц</NsgOwnerName>
+      <DependentUpon>ДокументыФизЛиц.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\УчетСотрудников\Документы\Документы.cs">
+    <Compile Include="Метаданные\УчетСотрудников\ДокументыФизЛиц\ДокументыФизЛиц.cs">
       <NsgOwnerGuid>3cc6be40-1caa-4254-858e-0d394a5c2b42</NsgOwnerGuid>
-      <NsgOwnerName>Документы</NsgOwnerName>
+      <NsgOwnerName>ДокументыФизЛиц</NsgOwnerName>
     </Compile>
-    <Compile Include="Метаданные\УчетСотрудников\Документы\ФормаЭлемента.Designer.cs">
+    <Compile Include="Метаданные\УчетСотрудников\ДокументыФизЛиц\ФормаЭлемента.Designer.cs">
       <NsgOwnerGuid>3cc6be40-1caa-4254-858e-0d394a5c2b42</NsgOwnerGuid>
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\УчетСотрудников\Документы\ФормаЭлемента.cs">
+    <Compile Include="Метаданные\УчетСотрудников\ДокументыФизЛиц\ФормаЭлемента.cs">
       <NsgOwnerGuid>3cc6be40-1caa-4254-858e-0d394a5c2b42</NsgOwnerGuid>
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="Метаданные\УчетСотрудников\Документы\ФормаЭлемента.resx">
+    <EmbeddedResource Include="Метаданные\УчетСотрудников\ДокументыФизЛиц\ФормаЭлемента.resx">
       <NsgOwnerGuid>3cc6be40-1caa-4254-858e-0d394a5c2b42</NsgOwnerGuid>
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -4884,28 +4884,6 @@
       <NsgOwnerGuid>81cb21d2-8f84-411f-8ecd-2a0d70706b1b</NsgOwnerGuid>
       <NsgOwnerName>ДокументыВъезда</NsgOwnerName>
     </Compile>
-    <Compile Include="Метаданные\УчетСотрудников\ФизЛица\ФизЛица.NsgInit.cs">
-      <NsgOwnerGuid>96e7eeb4-b8ad-4aaf-a60f-06f4a83f6221</NsgOwnerGuid>
-      <NsgOwnerName>ФизЛица</NsgOwnerName>
-      <DependentUpon>ФизЛица.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\УчетСотрудников\ФизЛица\ФизЛица.cs">
-      <NsgOwnerGuid>96e7eeb4-b8ad-4aaf-a60f-06f4a83f6221</NsgOwnerGuid>
-      <NsgOwnerName>ФизЛица</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\УчетСотрудников\ФизЛица\ФормаЭлемента.Designer.cs">
-      <NsgOwnerGuid>96e7eeb4-b8ad-4aaf-a60f-06f4a83f6221</NsgOwnerGuid>
-      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\УчетСотрудников\ФизЛица\ФормаЭлемента.cs">
-      <NsgOwnerGuid>96e7eeb4-b8ad-4aaf-a60f-06f4a83f6221</NsgOwnerGuid>
-      <SubType>Form</SubType>
-    </Compile>
-    <EmbeddedResource Include="Метаданные\УчетСотрудников\ФизЛица\ФормаЭлемента.resx">
-      <NsgOwnerGuid>96e7eeb4-b8ad-4aaf-a60f-06f4a83f6221</NsgOwnerGuid>
-      <DependentUpon>ФормаЭлемента.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Compile Include="Метаданные\Грузы\КонтрольноПропускныеПункты\КонтрольноПропускныеПункты.NsgInit.cs">
       <NsgOwnerGuid>738fa15c-3259-4879-8e0c-034c5c3c41bb</NsgOwnerGuid>
       <NsgOwnerName>КонтрольноПропускныеПункты</NsgOwnerName>
