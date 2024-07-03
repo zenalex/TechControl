@@ -424,7 +424,7 @@ namespace TechControl.Метаданные.Мониторинг
             }), null);
             if (ofdResult != DialogResult.OK) return;
 
-            Сотрудники сотрудники = Сотрудники.Новый();
+            ФизЛица сотрудники = ФизЛица.Новый();
 
             string fileNames = "Загрузка из JSON - сотрудники - ";
             List<Guid> guids = new List<Guid>();
@@ -447,8 +447,8 @@ namespace TechControl.Метаданные.Мониторинг
                     foreach (var i in dict["sotrudniki"])
                         сотрудникиList.Add((i as Newtonsoft.Json.Linq.JObject)?.ToObject<Служебные.Сотрудник>());
 
-                    Dictionary<Guid, Сотрудники> всеСотрудники = new Dictionary<Guid, Сотрудники>();
-                    var all = сотрудники.FindAll(new NsgCompare().Add(Сотрудники.Names.Идентификатор,
+                    Dictionary<Guid, ФизЛица> всеСотрудники = new Dictionary<Guid, ФизЛица>();
+                    var all = сотрудники.FindAll(new NsgCompare().Add(ФизЛица.Names.Идентификатор,
                         сотрудникиList.Select(i => i.Id).ToArray(), NsgComparison.In));
                     //var allKA = контрагенты.FindAll(new NsgCompare(NsgLogicalOperator.Or)
                     //    .Add(Контрагенты.Names.Идентификатор, сотрудникиList.Select(i => i.Zakazchik).ToArray(), NsgComparison.In)
@@ -483,7 +483,7 @@ namespace TechControl.Метаданные.Мониторинг
                         row[Телефон_с].Value = i.Phone;
                         row[ТабельныйНомер_с].Value = i.PersonnelNumber;
 
-                        if (всеСотрудники.TryGetValue(i.Id, out Сотрудники найдено))
+                        if (всеСотрудники.TryGetValue(i.Id, out ФизЛица найдено))
                         {
                             row[Найдено_с].Value = найдено;
                             row[Выбор_с].Value = ПовторноСотр_.Value;
@@ -513,16 +513,16 @@ namespace TechControl.Метаданные.Мониторинг
 
             NsgTracer.WriteInfo("Загрузка из JSON - сотрудники, начало");
 
-            Сотрудники сотрудники = Сотрудники.Новый();
+            ФизЛица сотрудники = ФизЛица.Новый();
 
             var goodsIds = vmoСотрудники.Data.MemoryTable.ColumnToArray(Идентификатор_с.Name, new NsgCompare()
                 .Add(Выбор_с.Name, true), true);
 
             var сотрудникиСущ = сотрудники.FindAll(new NsgCompare()
-                .Add(Сотрудники.Names.СостояниеДокумента, СостоянияОбъекта.Удален, NsgComparison.NotEqual)
-                .Add(Сотрудники.Names.Идентификатор, goodsIds, NsgComparison.In));
-            Dictionary<Guid, Сотрудники> сотрудникиDict = new Dictionary<Guid, Сотрудники>();
-            foreach (Сотрудники i in сотрудникиСущ)
+                .Add(ФизЛица.Names.СостояниеДокумента, СостоянияОбъекта.Удален, NsgComparison.NotEqual)
+                .Add(ФизЛица.Names.Идентификатор, goodsIds, NsgComparison.In));
+            Dictionary<Guid, ФизЛица> сотрудникиDict = new Dictionary<Guid, ФизЛица>();
+            foreach (ФизЛица i in сотрудникиСущ)
             {
                 сотрудникиDict.Add(i.Идентификатор, i);
             }
@@ -543,12 +543,12 @@ namespace TechControl.Метаданные.Мониторинг
                     }
                     else if (row[Найдено_с].ToReferent().Selected)
                     {
-                        сотрудники = row[Найдено_с].ToReferent() as Сотрудники;
+                        сотрудники = row[Найдено_с].ToReferent() as ФизЛица;
                         сотрудники.Edit();
                     }
                     else
                     {
-                        сотрудники = Сотрудники.Новый();
+                        сотрудники = ФизЛица.Новый();
                         сотрудники.New();
                         сотрудники.Идентификатор = (Guid)row[Идентификатор_с].Value;
                     }
@@ -611,7 +611,7 @@ namespace TechControl.Метаданные.Мониторинг
             string fileNames = "Загрузка из JSON - сотрудники - ";
             List<Guid> guids = new List<Guid>();
 
-            Сотрудники сотрудники = Сотрудники.Новый();
+            ФизЛица сотрудники = ФизЛица.Новый();
             Объекты объекты = Объекты.Новый();
 
             vmoТарифы.Data.BeginUpdateData();
@@ -634,7 +634,7 @@ namespace TechControl.Метаданные.Мониторинг
                     var all = тарифы.FindAll(new NsgCompare().Add(Тарифы.Names.Наименование,
                         тарифыList.Select(i => i.Tariff).ToArray(), NsgComparison.In));
                     var allSotr = сотрудники.FindAll(new NsgCompare(NsgLogicalOperator.Or)
-                        .Add(Сотрудники.Names.Идентификатор, тарифыList.Select(i => i.Sotrudnik).ToArray(), NsgComparison.In));
+                        .Add(ФизЛица.Names.Идентификатор, тарифыList.Select(i => i.Sotrudnik).ToArray(), NsgComparison.In));
                     var allWO = объекты.FindAll(new NsgCompare(NsgLogicalOperator.Or)
                         .Add(Объекты.Names.Идентификатор, тарифыList.Select(i => i.WorkObject).ToArray(), NsgComparison.In));
                     foreach (var i in all)
@@ -696,8 +696,8 @@ namespace TechControl.Метаданные.Мониторинг
                 .Add(Выбор_т.Name, true), true);
 
             var тарифыСущ = тарифы.FindAll(new NsgCompare()
-                .Add(Сотрудники.Names.СостояниеДокумента, СостоянияОбъекта.Удален, NsgComparison.NotEqual)
-                .Add(Сотрудники.Names.Наименование, goodsIds, NsgComparison.In));
+                .Add(ФизЛица.Names.СостояниеДокумента, СостоянияОбъекта.Удален, NsgComparison.NotEqual)
+                .Add(ФизЛица.Names.Наименование, goodsIds, NsgComparison.In));
             Dictionary<string, Тарифы> тарифыDict = new Dictionary<string, Тарифы>();
             foreach (Тарифы i in тарифыСущ)
             {

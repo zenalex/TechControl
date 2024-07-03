@@ -117,7 +117,7 @@ namespace TechControl.Метаданные.Мониторинг
                     System.Windows.Forms.MessageBoxIcon.Error);
                 return false;
             }
-            List<Сотрудники> s = new List<Сотрудники>();
+            List<ФизЛица> s = new List<ФизЛица>();
             error = false;
             ts.Clear();
             foreach (var i in this.ТаблицаПерсонал.Rows)
@@ -327,7 +327,7 @@ namespace TechControl.Метаданные.Мониторинг
             //        техникаОбъекта.Add(i.Техника);
             //    }
             //}
-            List<Сотрудники> персоналОбъекта = Объект.СписокПерсонала().Select(x => x.Item1).ToList();
+            List<ФизЛица> персоналОбъекта = Объект.СписокПерсонала().Select(x => x.Item1).ToList();
             //List<Сотрудники> персоналОбъекта = new List<Сотрудники>();
             //foreach (var i in this.Объект.ТаблицаПерсонал.Rows)
             //{

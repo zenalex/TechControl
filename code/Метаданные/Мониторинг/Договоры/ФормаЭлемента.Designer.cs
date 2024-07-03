@@ -47,7 +47,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.СостояниеДокумента = new TechControl.Метаданные.Сервис.СостоянияОбъекта.ColumnDescriptor();
             this.АккаунтПользователя = new TechControl.Метаданные.СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor();
             this.ЗагрузочныйИдентификатор = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.СотрудникПодписант = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.СотрудникПодписант = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.ДолжностьПодписанта = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
             this.Родитель = new TechControl.Метаданные.Мониторинг.Договоры.ColumnDescriptor();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -533,8 +533,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.СотрудникПодписант.Caption = "СотрудникПодписант";
             this.СотрудникПодписант.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.СотрудникПодписант.Name = "СотрудникПодписант";
-            this.СотрудникПодписант.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникПодписант.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникПодписант.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникПодписант.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникПодписант.SearchCondition.OwnerComponent = this.СотрудникПодписант;
             this.СотрудникПодписант.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -762,7 +762,7 @@ namespace TechControl.Метаданные.Мониторинг
         protected Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
         protected СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor АккаунтПользователя;
         protected NsgColumnDescriptor.String ЗагрузочныйИдентификатор;
-        protected Сотрудники.ColumnDescriptor СотрудникПодписант;
+        protected ФизЛица.ColumnDescriptor СотрудникПодписант;
         protected Должности.ColumnDescriptor ДолжностьПодписанта;
         private System.Windows.Forms.GroupBox groupBox1;
         protected NsgInput nsgInput3;

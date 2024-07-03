@@ -103,7 +103,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             var техника = объект.СписокТехникиОбъекта();
 
             List<Техника> техникаВТаблице = new List<Техника>();
-            List<Сотрудники> сотрудникиВТаблице = new List<Сотрудники>();
+            List<ФизЛица> сотрудникиВТаблице = new List<ФизЛица>();
             foreach (var item in vmoТаблица.Data.MemoryTable.AllRows)
             {
                 var группаСпТехн = item[ГруппаСпецТехники_vmoТаблица].ToReferent() as ГруппыСпецТехники;
@@ -122,7 +122,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                 }
                 else
                 {
-                    var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as Сотрудники;
+                    var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as ФизЛица;
                     if ((сотрудник != null && !сотрудник.Selected) || сотрудник == null)
                     {
                         var должность = item[Должность_vmoТаблица].ToReferent() as Должности;
@@ -179,7 +179,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                     }
                     var cmp = Сотрудник_vmoТаблица.SearchCondition;
                     cmp.Clear();
-                    cmp.Add(Сотрудники.Names.Идентификатор, сотрудникиНаОбъекте, NsgComparison.In);
+                    cmp.Add(ФизЛица.Names.Идентификатор, сотрудникиНаОбъекте, NsgComparison.In);
                 }
             }
 
@@ -231,11 +231,11 @@ namespace TechControl.Метаданные.УчетСотрудников
                 фомированиеСмены.Объект = объект;
 
                 var заполняемТехнику = vmoТаблица.Data.MemoryTable.AllRows.Any(x => (x[Техника_vmoТаблица].ToReferent() as Техника).Selected);
-                var заполняемПерсонал = vmoТаблица.Data.MemoryTable.AllRows.Any(x => (x[Сотрудник_vmoТаблица].ToReferent() as Сотрудники).Selected);
+                var заполняемПерсонал = vmoТаблица.Data.MemoryTable.AllRows.Any(x => (x[Сотрудник_vmoТаблица].ToReferent() as ФизЛица).Selected);
                 foreach (var item in vmoТаблица.Data.MemoryTable.AllRows)
                 {
                     var техника = item[Техника_vmoТаблица].ToReferent() as Техника;
-                    var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as Сотрудники;
+                    var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as ФизЛица;
                     var должность = item[Должность_vmoТаблица].ToReferent() as Должности;
                     if (заполняемТехнику)
                     {
@@ -336,7 +336,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                 {
                     var row = отработанныйМесяц.Таблица.NewRow();
                     row.Должность = item[Должность_vmoТаблицаИтогов].ToReferent() as Должности;
-                    row.Сотрудник = item[Сотрудник_vmoТаблицаИтогов].ToReferent() as Сотрудники;
+                    row.Сотрудник = item[Сотрудник_vmoТаблицаИтогов].ToReferent() as ФизЛица;
                     row.Тариф = item[Тариф_vmoТаблицаИтогов].ToReferent() as Тарифы;
                     row.КодГруппы = item[КодГруппы_vmoТаблицаИтогов].ToString();
                     //row.Объект = объект;
@@ -393,20 +393,20 @@ namespace TechControl.Метаданные.УчетСотрудников
                 if (объект.Selected)
                 {
                     var idСотрудниковОбъекта = объект.СписокПерсонала().Select(x => x.Item1.Идентификатор).ToArray();
-                    cmp.Add(Сотрудники.Names.Идентификатор, idСотрудниковОбъекта, NsgComparison.In);
+                    cmp.Add(ФизЛица.Names.Идентификатор, idСотрудниковОбъекта, NsgComparison.In);
                     var должн = e.RowObject[Должность_vmoТаблицаИтогов].ToReferent() as Должности;
                     if (должн != null && должн.Selected)
                     {
                         var cmpДолжн = new NsgCompare(NsgLogicalOperator.Or);
-                        cmpДолжн.Add(Сотрудники.Names.Должность, должн);
+                        cmpДолжн.Add(ФизЛица.Names.Должность, должн);
 
                         var cmpСписокСотрудников = new NsgCompare();
-                        cmpСписокСотрудников.Add(МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Names.Должность, должн);
-                        var idСотрудниковССовмещаемыми = МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Новый().FindAllRequisits(cmpСписокСотрудников, МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Names.Владелец)
+                        cmpСписокСотрудников.Add(МониторингФизЛицаТаблицаСовмещаемыхДолжностей.Names.Должность, должн);
+                        var idСотрудниковССовмещаемыми = МониторингФизЛицаТаблицаСовмещаемыхДолжностей.Новый().FindAllRequisits(cmpСписокСотрудников, МониторингФизЛицаТаблицаСовмещаемыхДолжностей.Names.Владелец)
                             .AllRows
-                            .Select(x => (x[МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Names.Владелец] as NsgDataUntypedReference).RefID)
+                            .Select(x => (x[МониторингФизЛицаТаблицаСовмещаемыхДолжностей.Names.Владелец] as NsgDataUntypedReference).RefID)
                             .ToArray();
-                        cmpДолжн.Add(Сотрудники.Names.Идентификатор, idСотрудниковССовмещаемыми, NsgComparison.In);
+                        cmpДолжн.Add(ФизЛица.Names.Идентификатор, idСотрудниковССовмещаемыми, NsgComparison.In);
                         cmp.Add(cmpДолжн);
                     }
                 }
@@ -424,7 +424,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                         .Select(x => x[РегистрПерсоналОбъекта.Names.Сотрудники].ToReferent().Guid)
                         .ToArray();
 
-                    cmp.Add(Сотрудники.Names.Идентификатор, idСотрудниковОбъекта, NsgComparison.In);
+                    cmp.Add(ФизЛица.Names.Идентификатор, idСотрудниковОбъекта, NsgComparison.In);
                 }
             }
 
@@ -509,17 +509,17 @@ namespace TechControl.Метаданные.УчетСотрудников
             vmoТаблицаИтогов.Data.BeginUpdateData();
             vmoТаблицаИтогов.Data.MemoryTable.Clear();
 
-            HashSet<Tuple<string, Техника, Сотрудники, Должности, Тарифы>> рабочаяТехника = new HashSet<Tuple<string, Техника, Сотрудники, Должности, Тарифы>>();
+            HashSet<Tuple<string, Техника, ФизЛица, Должности, Тарифы>> рабочаяТехника = new HashSet<Tuple<string, Техника, ФизЛица, Должности, Тарифы>>();
             foreach (var item in сменыТехники)
             {
-                рабочаяТехника.Add(new Tuple<string, Техника, Сотрудники, Должности, Тарифы>(item.КодГруппы, item.Техника, item.Сотрудник, item.Должность, item.Тариф));
+                рабочаяТехника.Add(new Tuple<string, Техника, ФизЛица, Должности, Тарифы>(item.КодГруппы, item.Техника, item.Сотрудник, item.Должность, item.Тариф));
             }
 
-            HashSet<Tuple<string, Должности, Сотрудники, Тарифы>> рабочийПерсонал = new HashSet<Tuple<string, Должности, Сотрудники, Тарифы>>();
+            HashSet<Tuple<string, Должности, ФизЛица, Тарифы>> рабочийПерсонал = new HashSet<Tuple<string, Должности, ФизЛица, Тарифы>>();
 
             foreach (var item in сменыПерсонала)
             {
-                рабочийПерсонал.Add(new Tuple<string, Должности, Сотрудники, Тарифы>(item.КодГруппы, item.Должность, item.Сотрудник, item.Тариф));
+                рабочийПерсонал.Add(new Tuple<string, Должности, ФизЛица, Тарифы>(item.КодГруппы, item.Должность, item.Сотрудник, item.Тариф));
             }
 
             var всегоДней = NsgService.EndOfMonth(месяцИтогов).Day;
@@ -585,7 +585,7 @@ namespace TechControl.Метаданные.УчетСотрудников
 
             vmoТаблицаИтогов.Data.BeginUpdateData();
             vmoТаблицаИтогов.Data.MemoryTable.Clear();
-            var таблицаСотрудников = new List<Tuple<Сотрудники, Должности>> (объект.СписокПерсонала());
+            var таблицаСотрудников = new List<Tuple<ФизЛица, Должности>> (объект.СписокПерсонала());
             var таблицаТехники = объект.СписокТехникиОбъекта().ToList();
 
             var всегоДней = NsgService.EndOfMonth(месяцИтогов).Day;
@@ -705,9 +705,9 @@ namespace TechControl.Метаданные.УчетСотрудников
             return техника;
         }
 
-        private Сотрудники ВыбратьСотрудника(List<Tuple<Сотрудники, Должности>> table, NsgMemoryTableRow row) 
+        private ФизЛица ВыбратьСотрудника(List<Tuple<ФизЛица, Должности>> table, NsgMemoryTableRow row) 
         {
-            var сотрудник = Сотрудники.Новый();
+            var сотрудник = ФизЛица.Новый();
             var группаСпТехн = row[ГруппаСпТехн_vmoТаблицаИтогов].ToReferent() as ГруппыСпецТехники;
             if (группаСпТехн != null && группаСпТехн.Selected)
             {
@@ -800,7 +800,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                         var техника = item[Техника_vmoТаблицаИтогов].ToReferent() as Техника;
                         var группаСпТехн = item[ГруппаСпТехн_vmoТаблицаИтогов].ToReferent() as ГруппыСпецТехники;
                         var должность = item[Должность_vmoТаблицаИтогов].ToReferent() as Должности;
-                        var сотрудник = item[Сотрудник_vmoТаблицаИтогов].ToReferent() as Сотрудники;
+                        var сотрудник = item[Сотрудник_vmoТаблицаИтогов].ToReferent() as ФизЛица;
                         var тариф = item[Тариф_vmoТаблицаИтогов].ToReferent() as Тарифы;
                         var кодГруппы = item[КодГруппы_vmoТаблицаИтогов].ToString();
                         var длительность = item[колонкаДаты].ToDecimal();
@@ -983,7 +983,7 @@ namespace TechControl.Метаданные.УчетСотрудников
 
                 foreach (var item in vmoТаблица.Data.MemoryTable.AllRows)
                 {
-                    var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as Сотрудники;
+                    var сотрудник = item[Сотрудник_vmoТаблица].ToReferent() as ФизЛица;
                     var техника = item[Техника_vmoТаблица].ToReferent() as Техника;
                     var длительность = item[Длительность_vmoТаблица].ToDecimal();
                 }

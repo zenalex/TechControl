@@ -637,10 +637,10 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         private void nsgButton1_AsyncClick(object sender, DoWorkEventArgs e)
         {
             var cmp = new NsgCompare();
-            cmp.Add(Сотрудники.Names.ДатаУвольнения, NsgService.MinDate);
-            cmp.Add(Сотрудники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            cmp.Add(ФизЛица.Names.ДатаУвольнения, NsgService.MinDate);
+            cmp.Add(ФизЛица.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
 
-            var всеСотрудники = Сотрудники.Новый().FindAll(cmp);
+            var всеСотрудники = ФизЛица.Новый().FindAll(cmp);
 
             if (всеСотрудники.Length > 0)
             {
@@ -1119,7 +1119,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             
             if (Подразделение.Value.Selected)
             {
-                cmp.Add(ЗаявкаНаСотрудника.Names.Сотрудник + "." + Сотрудники.Names.Подразделение, Подразделение.Value);
+                cmp.Add(ЗаявкаНаСотрудника.Names.Сотрудник + "." + ФизЛица.Names.Подразделение, Подразделение.Value);
             }
 
             var всеЗаявки = ЗаявкаНаСотрудника.Новый().FindAll(cmp);
@@ -1178,15 +1178,15 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             var дата = ДатаОпределенияПотребностейДляЗаказа.Value != NsgService.MinDate ? ДатаОпределенияПотребностейДляЗаказа.Value : DateTime.Now;
 
             var cmp = new NsgCompare();
-            cmp.Add(Сотрудники.Names.ДатаУвольнения, NsgService.MinDate);
-            cmp.Add(Сотрудники.Names.ОбъектВыдачиСпецодежды, ОбъектДляЗаказов.Value);
+            cmp.Add(ФизЛица.Names.ДатаУвольнения, NsgService.MinDate);
+            cmp.Add(ФизЛица.Names.ОбъектВыдачиСпецодежды, ОбъектДляЗаказов.Value);
 
             if (Подразделение.Value.Selected)
             {
-                cmp.Add(Сотрудники.Names.Подразделение, Подразделение.Value);
+                cmp.Add(ФизЛица.Names.Подразделение, Подразделение.Value);
             }
 
-            var всеСотрудники = Сотрудники.Новый().FindAll(cmp);
+            var всеСотрудники = ФизЛица.Новый().FindAll(cmp);
 
             var регРезервы = РегистрРезерваЗП.Новый();
             регРезервы.Объект = ОбъектДляЗаказов.Value;

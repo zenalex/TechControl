@@ -69,7 +69,7 @@ namespace TechControl.Метаданные.Отчеты
 
                 if (!cmpСотрудник.IsEmpty)
                 {
-                    var сотрудники = Сотрудники.Новый().FindAll(cmpСотрудник);
+                    var сотрудники = ФизЛица.Новый().FindAll(cmpСотрудник);
                     var серийникиПоСотруднику = УчетИнструментаРегистрУчетИнструментаДвижения
                         .Новый()
                         .FindAllRequisits(new NsgCompare()
@@ -143,7 +143,7 @@ namespace TechControl.Метаданные.Отчеты
                 var row = vmoДанные.Data.MemoryTable.NewRow();
                 row[Номенклатура_vmoДанные].Value = item.Value[РегистрУчетИнструмента.Names.НоменклатураИнструмента].ToReferent() as Номенклатура;
                 row[Объект_vmoДанные].Value = item.Value[РегистрУчетИнструмента.Names.Объект].ToReferent() as Объекты;
-                row[Сотрудник_vmoДанные].Value = item.Value[РегистрУчетИнструмента.Names.Сотрудник].ToReferent() as Сотрудники;
+                row[Сотрудник_vmoДанные].Value = item.Value[РегистрУчетИнструмента.Names.Сотрудник].ToReferent() as ФизЛица;
                 row[СерийныйНомер_vmoДанные].Value = item.Value[РегистрУчетИнструмента.Names.СерийныйНомер].ToString();
                 row[Количество_vmoДанные].Value = 1;
                 row.Post();

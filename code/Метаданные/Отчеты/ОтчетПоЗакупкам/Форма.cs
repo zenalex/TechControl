@@ -67,21 +67,21 @@ namespace TechControl.Метаданные.Отчеты
             var cmpПодразделение = nsgObjectFilter1.GetCompare(Подразделение_vmoФильтр.Name);
             if (!cmpПодразделение.IsEmpty)
             {
-                cmpПодразделение.ReplaceParametersNames(Подразделение_vmoФильтр.Name, Сотрудники.Names.Подразделение + "." + Подразделения.Names.Идентификатор);
+                cmpПодразделение.ReplaceParametersNames(Подразделение_vmoФильтр.Name, ФизЛица.Names.Подразделение + "." + Подразделения.Names.Идентификатор);
                 cmp.Add(cmpПодразделение);
             }
 
             var cmpОбъект = nsgObjectFilter1.GetCompare(Объект_vmoФильтр.Name);
             if (!cmpОбъект.IsEmpty)
             {
-                cmpОбъект.ReplaceParametersNames(Объект_vmoФильтр.Name, Сотрудники.Names.ОбъектВыдачиСпецодежды + "." + Объекты.Names.Идентификатор);
+                cmpОбъект.ReplaceParametersNames(Объект_vmoФильтр.Name, ФизЛица.Names.ОбъектВыдачиСпецодежды + "." + Объекты.Names.Идентификатор);
                 cmp.Add(cmpОбъект);
             }
 
             cmp.Add(nsgObjectFilter1.Compare);
-            cmp.Add(Сотрудники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            cmp.Add(ФизЛица.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
 
-            var всеСотрудники = Сотрудники.Новый().FindAll(cmp);
+            var всеСотрудники = ФизЛица.Новый().FindAll(cmp);
 
             РегистрУчетСпецодежды рег = РегистрУчетСпецодежды.Новый();
             var cmpРег = new NsgCompare();
@@ -96,7 +96,7 @@ namespace TechControl.Метаданные.Отчеты
             nsgVisualMultipleObject.Data.BeginUpdateData();
             nsgVisualMultipleObject.Data.MemoryTable.Clear();
 
-            Dictionary<Tuple<Номенклатура, Размеры, Сотрудники>, int> всегоТребуетсяСпецодежды = new Dictionary<Tuple<Номенклатура, Размеры, Сотрудники>, int>();
+            Dictionary<Tuple<Номенклатура, Размеры, ФизЛица>, int> всегоТребуетсяСпецодежды = new Dictionary<Tuple<Номенклатура, Размеры, ФизЛица>, int>();
 
             foreach (var сотрудник in всеСотрудники)
             {
@@ -116,7 +116,7 @@ namespace TechControl.Метаданные.Отчеты
 
                             if (размер.Selected)
                             {
-                                var key = new Tuple<Номенклатура, Размеры, Сотрудники>(ном, размер, сотрудник);
+                                var key = new Tuple<Номенклатура, Размеры, ФизЛица>(ном, размер, сотрудник);
 
                                 for (int i = 0; i < item.Количество; i++)
                                 {

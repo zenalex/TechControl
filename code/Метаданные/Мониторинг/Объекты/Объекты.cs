@@ -61,22 +61,22 @@ namespace TechControl.Метаданные.Мониторинг
             }
         }
 
-        public List<Tuple<Сотрудники, Должности>> СписокПерсонала() 
+        public List<Tuple<ФизЛица, Должности>> СписокПерсонала() 
         {
-            List<Tuple<Сотрудники, Должности>> сотрудники = new List<Tuple<Сотрудники, Должности>>();
+            List<Tuple<ФизЛица, Должности>> сотрудники = new List<Tuple<ФизЛица, Должности>>();
             var reg = РегистрПерсоналОбъекта.Новый();
             reg.Объект = this;
             var список = reg.GetRests();
 
             сотрудники = список.AllRows
-                .Select(x => new Tuple<Сотрудники, Должности>(x[РегистрПерсоналОбъекта.Names.Сотрудники].ToReferent() as Сотрудники, x[РегистрПерсоналОбъекта.Names.Должности].ToReferent() as Должности))
+                .Select(x => new Tuple<ФизЛица, Должности>(x[РегистрПерсоналОбъекта.Names.Сотрудники].ToReferent() as ФизЛица, x[РегистрПерсоналОбъекта.Names.Должности].ToReferent() as Должности))
                 .ToList();
             return сотрудники;
         }
 
-        public Dictionary<Сотрудники, bool> ПланируемыеПараметрыВыходаСотрудниковНаРаботу(DateTime дата) 
+        public Dictionary<ФизЛица, bool> ПланируемыеПараметрыВыходаСотрудниковНаРаботу(DateTime дата) 
         {
-            Dictionary<Сотрудники, bool> параметры = new Dictionary<Сотрудники, bool>();
+            Dictionary<ФизЛица, bool> параметры = new Dictionary<ФизЛица, bool>();
             var персонал = СписокПерсонала();
             if (персонал != null && персонал.Count > 0)
             {
@@ -89,7 +89,7 @@ namespace TechControl.Метаданные.Мониторинг
 
                 if (графики != null && графики.Length > 0)
                 {
-                    параметры = new Dictionary<Сотрудники, bool>();
+                    параметры = new Dictionary<ФизЛица, bool>();
                     foreach (var item in персонал)
                     {
                         var график = графики.FirstOrDefault(x => x.Сотрудник == item.Item1);

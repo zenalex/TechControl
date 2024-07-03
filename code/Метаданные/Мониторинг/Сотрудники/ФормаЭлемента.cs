@@ -26,7 +26,7 @@ namespace TechControl.Метаданные.Мониторинг
             base.OnSetFormObject(formObject);
             if (formObject != null)
             {
-                var мерка = (formObject as Сотрудники).ПолучитьМерку(true);
+                var мерка = (formObject as ФизЛица).ПолучитьМерку(true);
                 vmoМерки.Data.CurrentRow = мерка;
             }
         }
@@ -72,7 +72,7 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 vmoТаблицаРазмеров.Data.BeginUpdateData();
 
-                var сотрудник = FormObject as Сотрудники;
+                var сотрудник = FormObject as ФизЛица;
                 сотрудник.ЗаполнитьТаблицуРазмеров();
 
                 vmoТаблицаРазмеров.Data.UpdateDataSync(this);
@@ -86,7 +86,7 @@ namespace TechControl.Метаданные.Мониторинг
 
         private void ЗаполнитьТаблицуМатЦенностей() 
         {
-            if (FormObject != null && FormObject is Сотрудники сотрудник)
+            if (FormObject != null && FormObject is ФизЛица сотрудник)
             {
                 vmoМатЦенности.Data.BeginUpdateData();
                 vmoМатЦенности.Data.MemoryTable.Clear();

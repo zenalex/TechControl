@@ -38,7 +38,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.vmoФильтр = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Владелец_ф = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.Объект_ф = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.Сотрудник_ф = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_ф = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Техника_ф = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             this.nsgGroupsList1 = new NsgSoft.ReportBuilder.NsgGroupsList();
             this.nsgReportНовый = new NsgSoft.ReportBuilder.NsgReport(this.components);
@@ -103,7 +103,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.Арендатор_ = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Тариф_ = new TechControl.Метаданные.Мониторинг.Тарифы.ColumnDescriptor();
             this.Техника_ = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
-            this.Сотрудник_ = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_ = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -293,8 +293,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Сотрудник_ф.Caption = "Сотрудник";
             this.Сотрудник_ф.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_ф.Name = "Сотрудник";
-            this.Сотрудник_ф.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_ф.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_ф.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_ф.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_ф.SearchCondition.OwnerComponent = this.Сотрудник_ф;
             this.Сотрудник_ф.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1000,8 +1000,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Сотрудник_.Caption = "Сотрудник";
             this.Сотрудник_.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_.Name = "Сотрудник";
-            this.Сотрудник_.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_.SearchCondition.OwnerComponent = this.Сотрудник_;
             this.Сотрудник_.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1100,14 +1100,14 @@ namespace TechControl.Метаданные.Мониторинг
         protected Техника.ColumnDescriptor Техника_ф;
         protected NsgColumnDescriptor.MultipleObject Владелец_ф;
         protected Объекты.ColumnDescriptor Объект_ф;
-        protected Сотрудники.ColumnDescriptor Сотрудник_ф;
+        protected ФизЛица.ColumnDescriptor Сотрудник_ф;
         protected NsgSoft.Forms.NsgIGridView.NsgObjectFilter nsgObjectFilter1;
         protected NsgColumnDescriptor.DateTime Время_;
         protected NsgPeriodPicker nsgPeriodPicker1;
         protected Техника.ColumnDescriptor Техника_;
         protected NsgColumnDescriptor.Int64 НомерСмены_;
         protected NsgColumnDescriptor.String СменаСтрока_;
-        protected Сотрудники.ColumnDescriptor Сотрудник_;
+        protected ФизЛица.ColumnDescriptor Сотрудник_;
         private NsgSoft.ReportBuilder.NsgReport nsgReportНовый;
         private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource4;
         private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource5;

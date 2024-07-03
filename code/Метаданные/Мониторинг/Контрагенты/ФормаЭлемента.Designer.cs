@@ -94,7 +94,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.АккаунтПользователя = new TechControl.Метаданные.СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor();
             this.ЯвляетсяПоставщикомСпецодежды = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.ЗагрузочныйИдентификатор = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.СотрудникПодписант = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.СотрудникПодписант = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.ДолжностьПодписанта = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
             this.КартинкаПечать = new TechControl.Метаданные.Мониторинг.Картинки.ColumnDescriptor();
             this.Родитель = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
@@ -1316,8 +1316,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.СотрудникПодписант.Caption = "СотрудникПодписант";
             this.СотрудникПодписант.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.СотрудникПодписант.Name = "СотрудникПодписант";
-            this.СотрудникПодписант.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникПодписант.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникПодписант.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникПодписант.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникПодписант.SearchCondition.OwnerComponent = this.СотрудникПодписант;
             this.СотрудникПодписант.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1646,7 +1646,7 @@ namespace TechControl.Метаданные.Мониторинг
         protected СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor АккаунтПользователя;
         protected NsgColumnDescriptor.Boolean ЯвляетсяПоставщикомСпецодежды;
         protected NsgColumnDescriptor.String ЗагрузочныйИдентификатор;
-        protected Сотрудники.ColumnDescriptor СотрудникПодписант;
+        protected ФизЛица.ColumnDescriptor СотрудникПодписант;
         protected Должности.ColumnDescriptor ДолжностьПодписанта;
         protected Картинки.ColumnDescriptor КартинкаПечать;
         protected Контрагенты.ColumnDescriptor Родитель;

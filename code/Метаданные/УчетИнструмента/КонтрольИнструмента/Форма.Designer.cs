@@ -55,12 +55,12 @@ namespace TechControl.Метаданные.УчетИнструмента
             this.Номенклатура_vmoТаблицаПодтверждения = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
             this.ПодтвердитьПолучение_vmoТаблицаПодтверждения = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.ОформитьВозврать_vmoТаблицаПодтверждения = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
-            this.Сотрудник_vmoТаблицаПодтверждения = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoТаблицаПодтверждения = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Объект_vmoТаблицаПодтверждения = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.nsgIGrid3 = new NsgSoft.Forms.NsgIGrid();
             this.vmoСменаСерийников = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Объект_vmoСменаСерийников = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.Сотрудник_vmoСменаСерийников = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoСменаСерийников = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.ТекущийСерийник_vmoСменаСерийников = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.НовыйСерийник_vmoСменаСерийников = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Подтвердить_vmoСменаСерийников = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
@@ -98,14 +98,14 @@ namespace TechControl.Метаданные.УчетИнструмента
             this.label6 = new System.Windows.Forms.Label();
             this.nsgInput7 = new NsgSoft.Forms.NsgInput();
             this.label7 = new System.Windows.Forms.Label();
-            this.СотрудникПолучатель = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.СотрудникПолучатель = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.ОбъектПолучатель = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.ОбъектВыдачи = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.ОбъектПодтверждения = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.СотрудникПодтверждение = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
-            this.СотрудникСерийники = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.СотрудникПодтверждение = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
+            this.СотрудникСерийники = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.ОбъектСерийники = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.СотрудникВыдачи = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.СотрудникВыдачи = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -421,8 +421,8 @@ namespace TechControl.Метаданные.УчетИнструмента
             this.Сотрудник_vmoТаблицаПодтверждения.Caption = "Сотрудник";
             this.Сотрудник_vmoТаблицаПодтверждения.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoТаблицаПодтверждения.Name = "Сотрудник";
-            this.Сотрудник_vmoТаблицаПодтверждения.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoТаблицаПодтверждения.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoТаблицаПодтверждения.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoТаблицаПодтверждения.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoТаблицаПодтверждения.SearchCondition.OwnerComponent = this.Сотрудник_vmoТаблицаПодтверждения;
             this.Сотрудник_vmoТаблицаПодтверждения.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -603,8 +603,8 @@ namespace TechControl.Метаданные.УчетИнструмента
             this.Сотрудник_vmoСменаСерийников.Caption = "Сотрудник";
             this.Сотрудник_vmoСменаСерийников.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoСменаСерийников.Name = "Сотрудник";
-            this.Сотрудник_vmoСменаСерийников.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoСменаСерийников.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoСменаСерийников.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoСменаСерийников.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoСменаСерийников.ReadOnly = true;
             this.Сотрудник_vmoСменаСерийников.SearchCondition.OwnerComponent = this.Сотрудник_vmoСменаСерийников;
             this.Сотрудник_vmoСменаСерийников.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
@@ -1284,8 +1284,8 @@ namespace TechControl.Метаданные.УчетИнструмента
             this.СотрудникПолучатель.Caption = "СотрудникПолучатель";
             this.СотрудникПолучатель.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.СотрудникПолучатель.Name = "СотрудникПолучатель";
-            this.СотрудникПолучатель.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникПолучатель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникПолучатель.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникПолучатель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникПолучатель.SearchCondition.OwnerComponent = this.СотрудникПолучатель;
             this.СотрудникПолучатель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1324,8 +1324,8 @@ namespace TechControl.Метаданные.УчетИнструмента
             this.СотрудникПодтверждение.Caption = "СотрудникПодтверждение";
             this.СотрудникПодтверждение.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.СотрудникПодтверждение.Name = "СотрудникПодтверждение";
-            this.СотрудникПодтверждение.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникПодтверждение.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникПодтверждение.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникПодтверждение.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникПодтверждение.SearchCondition.OwnerComponent = this.СотрудникПодтверждение;
             this.СотрудникПодтверждение.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1334,8 +1334,8 @@ namespace TechControl.Метаданные.УчетИнструмента
             this.СотрудникСерийники.Caption = "СотрудникСерийники";
             this.СотрудникСерийники.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.СотрудникСерийники.Name = "СотрудникСерийники";
-            this.СотрудникСерийники.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникСерийники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникСерийники.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникСерийники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникСерийники.SearchCondition.OwnerComponent = this.СотрудникСерийники;
             this.СотрудникСерийники.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1354,8 +1354,8 @@ namespace TechControl.Метаданные.УчетИнструмента
             this.СотрудникВыдачи.Caption = "СотрудникВыдачи";
             this.СотрудникВыдачи.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.СотрудникВыдачи.Name = "СотрудникВыдачи";
-            this.СотрудникВыдачи.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникВыдачи.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникВыдачи.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникВыдачи.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникВыдачи.SearchCondition.OwnerComponent = this.СотрудникВыдачи;
             this.СотрудникВыдачи.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1431,7 +1431,7 @@ namespace TechControl.Метаданные.УчетИнструмента
         protected NsgInput nsgInput1;
         private System.Windows.Forms.Label label1;
         protected Мониторинг.Объекты.ColumnDescriptor ОбъектПолучатель;
-        protected Мониторинг.Сотрудники.ColumnDescriptor СотрудникПолучатель;
+        protected Мониторинг.ФизЛица.ColumnDescriptor СотрудникПолучатель;
         protected NsgInput nsgInput3;
         protected System.Windows.Forms.Label label3;
         protected NsgInput nsgInput2;
@@ -1448,7 +1448,7 @@ namespace TechControl.Метаданные.УчетИнструмента
         protected NsgColumnDescriptor.Boolean ПодтвердитьПолучение_vmoТаблицаПодтверждения;
         protected NsgColumnDescriptor.Boolean ОформитьВозврать_vmoТаблицаПодтверждения;
         protected Мониторинг.Объекты.ColumnDescriptor ОбъектПодтверждения;
-        protected Мониторинг.Сотрудники.ColumnDescriptor СотрудникПодтверждение;
+        protected Мониторинг.ФизЛица.ColumnDescriptor СотрудникПодтверждение;
         protected NsgSoft.Design.NsgButton nbЗаполнитьПодтверждения;
         protected NsgInput nsgInput5;
         protected System.Windows.Forms.Label label5;
@@ -1457,11 +1457,11 @@ namespace TechControl.Метаданные.УчетИнструмента
         private NsgVisualMultipleObject vmoТаблицаПодтверждения;
         private NsgIGrid nsgIGrid2;
         protected NsgSoft.Design.NsgButton nbОбработатьПодтверждения;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoТаблицаПодтверждения;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoТаблицаПодтверждения;
         private Мониторинг.Объекты.ColumnDescriptor Объект_vmoТаблицаПодтверждения;
         private System.Windows.Forms.TabPage tpСерийники;
         protected Мониторинг.Объекты.ColumnDescriptor ОбъектСерийники;
-        protected Мониторинг.Сотрудники.ColumnDescriptor СотрудникСерийники;
+        protected Мониторинг.ФизЛица.ColumnDescriptor СотрудникСерийники;
         protected NsgSoft.Design.NsgButton nbПоказатьИнструменты;
         protected NsgInput nsgInput6;
         protected System.Windows.Forms.Label label6;
@@ -1470,14 +1470,14 @@ namespace TechControl.Метаданные.УчетИнструмента
         protected Мониторинг.Объекты.ColumnDescriptor Объект_vmoСменаСерийников;
         protected NsgColumnDescriptor.String ТекущийСерийник_vmoСменаСерийников;
         protected NsgColumnDescriptor.String НовыйСерийник_vmoСменаСерийников;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoСменаСерийников;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoСменаСерийников;
         protected NsgColumnDescriptor.Boolean Подтвердить_vmoСменаСерийников;
         protected Учет.Номенклатура.ColumnDescriptor Номенклатура_vmoСменаСерийников;
         protected NsgSoft.Design.NsgButton nbНовыеСерийники;
         private NsgVisualMultipleObject vmoСменаСерийников;
         private NsgIGrid nsgIGrid3;
         private NsgIGrid nsgIGrid1;
-        protected Мониторинг.Сотрудники.ColumnDescriptor СотрудникВыдачи;
+        protected Мониторинг.ФизЛица.ColumnDescriptor СотрудникВыдачи;
         protected NsgSoft.Design.NsgButton nbЗаполнитьПоОбъекту;
         protected NsgInput nsgInput8;
         protected System.Windows.Forms.Label label8;

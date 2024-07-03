@@ -217,7 +217,7 @@ namespace TechControl.Метаданные.Мониторинг
                     System.Windows.Forms.MessageBoxIcon.Error);
                 return false;
             }
-            List<Сотрудники> s = new List<Сотрудники>();
+            List<ФизЛица> s = new List<ФизЛица>();
             error = false;
             ts.Clear();
             foreach (var i in this.ТаблицаПерсонал.Rows)
@@ -514,7 +514,7 @@ namespace TechControl.Метаданные.Мониторинг
             //    return;
             //}
             List<Техника> техникаОбъекта = Объект.СписокТехникиОбъекта().ToList();
-            List<Сотрудники> персоналОбъекта = Объект.СписокПерсонала().Select(x => x.Item1).ToList();
+            List<ФизЛица> персоналОбъекта = Объект.СписокПерсонала().Select(x => x.Item1).ToList();
             ФиксацияИстории фиксацияИстории = ФиксацияИстории.Новый();
             NsgCompare cmp = new NsgCompare()
                 .Add(ФиксацияИстории.Names.Объект, this.Объект)

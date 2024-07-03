@@ -37,14 +37,14 @@ namespace TechControl.Метаданные.Отчеты
             this.vmoДанные = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.vmoФильтр = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Номенклатура_vmoФильтр = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
-            this.Сотрудник_vmoФильтр = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoФильтр = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Объект_vmoФильтр = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.nsgObjectFilter1 = new NsgSoft.Forms.NsgIGridView.NsgObjectFilter();
             this.nsgPeriodPicker1 = new NsgSoft.Forms.NsgPeriodPicker();
             this.nsgGroupsList1 = new NsgSoft.ReportBuilder.NsgGroupsList();
             this.СерийныйНомер_vmoДанные = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Количество_vmoДанные = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Сотрудник_vmoДанные = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoДанные = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Объект_vmoДанные = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Номенклатура_vmoДанные = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
             this.Период = new NsgSoft.Forms.NsgColumnDescriptor.String();
@@ -187,8 +187,8 @@ namespace TechControl.Метаданные.Отчеты
             this.Сотрудник_vmoФильтр.Caption = "Сотрудник";
             this.Сотрудник_vmoФильтр.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoФильтр.Name = "Сотрудник";
-            this.Сотрудник_vmoФильтр.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoФильтр.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoФильтр.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoФильтр.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoФильтр.SearchCondition.OwnerComponent = this.Сотрудник_vmoФильтр;
             this.Сотрудник_vmoФильтр.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -280,8 +280,8 @@ namespace TechControl.Метаданные.Отчеты
             this.Сотрудник_vmoДанные.Caption = "Сотрудник";
             this.Сотрудник_vmoДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoДанные.Name = "Сотрудник";
-            this.Сотрудник_vmoДанные.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoДанные.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoДанные.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoДанные.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoДанные.SearchCondition.OwnerComponent = this.Сотрудник_vmoДанные;
             this.Сотрудник_vmoДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -423,7 +423,7 @@ namespace TechControl.Метаданные.Отчеты
         protected NsgVisualMultipleObject vmoДанные;
         protected NsgVisualMultipleObject vmoФильтр;
         protected Мониторинг.Объекты.ColumnDescriptor Объект_vmoФильтр;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoФильтр;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoФильтр;
         protected Учет.Номенклатура.ColumnDescriptor Номенклатура_vmoФильтр;
         protected Учет.Номенклатура.ColumnDescriptor Номенклатура_vmoДанные;
         protected NsgColumnDescriptor.String СерийныйНомер_vmoДанные;
@@ -431,7 +431,7 @@ namespace TechControl.Метаданные.Отчеты
         protected NsgPeriodPicker nsgPeriodPicker1;
         private NsgSoft.ReportBuilder.NsgGroupsList nsgGroupsList1;
         protected Мониторинг.Объекты.ColumnDescriptor Объект_vmoДанные;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoДанные;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoДанные;
         protected NsgColumnDescriptor.Int64 Количество_vmoДанные;
         protected NsgColumnDescriptor.String Период;
         protected NsgSoft.ReportBuilder.NsgReportDataSource rdsДанные;

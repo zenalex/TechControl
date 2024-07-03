@@ -55,9 +55,9 @@ namespace TechControl.Метаданные.Администрирование
         private void nbУдалениеСотрудников_AsyncClick(object sender, DoWorkEventArgs e)
         {
             var cmp = new NsgCompare();
-            cmp.Add(Сотрудники.Names.ЗагрузочныйИдентификатор, string.Empty, NsgComparison.NotEqual);
+            cmp.Add(ФизЛица.Names.ЗагрузочныйИдентификатор, string.Empty, NsgComparison.NotEqual);
 
-            var всеСотрудники = Сотрудники.Новый().FindAll(cmp);
+            var всеСотрудники = ФизЛица.Новый().FindAll(cmp);
             foreach (var item in всеСотрудники)
             {
                 NsgSettings.MainForm.ShowMessage($"Удаляется {item}");
@@ -68,9 +68,9 @@ namespace TechControl.Метаданные.Администрирование
         private void nsgButton1_AsyncClick(object sender, DoWorkEventArgs e)
         {
             var cmp = new NsgCompare();
-            cmp.Add(Сотрудники.Names.ЗагрузочныйИдентификатор, string.Empty, NsgComparison.NotEqual);
+            cmp.Add(ФизЛица.Names.ЗагрузочныйИдентификатор, string.Empty, NsgComparison.NotEqual);
 
-            var всеСотрудники = Сотрудники.Новый().FindAll(cmp);
+            var всеСотрудники = ФизЛица.Новый().FindAll(cmp);
 
             var всеПодразделения = всеСотрудники.Where(x => x.Подразделение.Selected).Select(x => x.Подразделение).ToArray();
 

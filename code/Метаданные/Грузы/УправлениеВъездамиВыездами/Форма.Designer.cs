@@ -82,7 +82,7 @@ namespace TechControl.Метаданные.Грузы
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Дата = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.ВодительСтрока = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.Водитель = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Водитель = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.КПП = new TechControl.Метаданные.Грузы.КонтрольноПропускныеПункты.ColumnDescriptor();
             this.СтатусТехники = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ВидГруза = new TechControl.Метаданные.Грузы.ВидыГрузов.ColumnDescriptor();
@@ -1062,8 +1062,8 @@ namespace TechControl.Метаданные.Грузы
             this.Водитель.Caption = "Водитель";
             this.Водитель.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Водитель.Name = "Водитель";
-            this.Водитель.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Водитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Водитель.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Водитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Водитель.SearchCondition.OwnerComponent = this.Водитель;
             this.Водитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1273,7 +1273,7 @@ namespace TechControl.Метаданные.Грузы
         protected NsgColumnDescriptor.String ВодительСтрока;
         protected Мониторинг.Объекты.ColumnDescriptor Объект;
         protected NsgColumnDescriptor.DateTime Дата;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Водитель;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Водитель;
         protected КонтрольноПропускныеПункты.ColumnDescriptor КПП;
         protected NsgSoft.Design.NsgButton nbВыезд;
         protected NsgSoft.Design.NsgButton nbВъезд;

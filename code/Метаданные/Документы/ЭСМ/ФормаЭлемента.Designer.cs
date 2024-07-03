@@ -95,11 +95,11 @@ namespace TechControl.Метаданные.Документы
             this.Контрагент = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Фирма = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Таблица = new TechControl.Метаданные._SystemTables.ДокументыЭСМТаблица.ColumnDescriptor();
             this.По = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.ТаблицаДокументов = new TechControl.Метаданные._SystemTables.ДокументыЭСМТаблицаДокументов.ColumnDescriptor();
-            this.СотрудникПодписант = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.СотрудникПодписант = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.ДолжностьПодписанта = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
             this.НеПечататьПодписи = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.С = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
@@ -1351,8 +1351,8 @@ namespace TechControl.Метаданные.Документы
             this.Сотрудник.Caption = "Сотрудник";
             this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
             this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1397,8 +1397,8 @@ namespace TechControl.Метаданные.Документы
             this.СотрудникПодписант.Caption = "СотрудникПодписант";
             this.СотрудникПодписант.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.СотрудникПодписант.Name = "СотрудникПодписант";
-            this.СотрудникПодписант.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникПодписант.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникПодписант.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникПодписант.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникПодписант.SearchCondition.OwnerComponent = this.СотрудникПодписант;
             this.СотрудникПодписант.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1718,11 +1718,11 @@ namespace TechControl.Метаданные.Документы
         private Мониторинг.Контрагенты.ColumnDescriptor Контрагент;
         private Мониторинг.Контрагенты.ColumnDescriptor Фирма;
         private Мониторинг.Объекты.ColumnDescriptor Объект;
-        private Мониторинг.Сотрудники.ColumnDescriptor Сотрудник;
+        private Мониторинг.ФизЛица.ColumnDescriptor Сотрудник;
         private _SystemTables.ДокументыЭСМТаблица.ColumnDescriptor Таблица;
         private NsgColumnDescriptor.DateTime По;
         private _SystemTables.ДокументыЭСМТаблицаДокументов.ColumnDescriptor ТаблицаДокументов;
-        private Мониторинг.Сотрудники.ColumnDescriptor СотрудникПодписант;
+        private Мониторинг.ФизЛица.ColumnDescriptor СотрудникПодписант;
         private Мониторинг.Должности.ColumnDescriptor ДолжностьПодписанта;
         private NsgColumnDescriptor.Boolean НеПечататьПодписи;
         protected NsgColumnDescriptor.DateTime С;

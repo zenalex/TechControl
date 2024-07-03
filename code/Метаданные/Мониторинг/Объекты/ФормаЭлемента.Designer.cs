@@ -143,7 +143,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.Владелец_vmoРегПерсонал = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.Дата = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.КонецПериода = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.Сотрудники = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудники = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Должности = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
             this.nsgIGrid9 = new NsgSoft.Forms.NsgIGrid();
@@ -195,7 +195,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.Автоинкремент_vmoПерсонал = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.Владелец = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.НомерСтроки = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Приоритет = new TechControl.Метаданные.Сервис.Приоритет.ColumnDescriptor();
             this.Должность_vmoПерсонал = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
             this.Идентификатор_vmoТехника = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
@@ -305,13 +305,13 @@ namespace TechControl.Метаданные.Мониторинг
             this.СобственностьТехники = new TechControl.Метаданные.Мониторинг.ТипСобственности.ColumnDescriptor();
             this.ГраницаОбъектаМониторинга = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.НачалоРабочейСмены = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.Ответственный = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Ответственный = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.КонецРабочейСмены = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.Фирма = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.РежимРаботы = new TechControl.Метаданные.Мониторинг.РежимыРаботы.ColumnDescriptor();
             this.Договор = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Включен = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
-            this.Руководитель = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Руководитель = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.СменаОткрыта = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.ПоставщикТоплива_nsgVisualMultipleObject = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.МашинВРаботе = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
@@ -1546,8 +1546,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Сотрудники.Caption = "Сотрудники";
             this.Сотрудники.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Сотрудники.Name = "Сотрудники";
-            this.Сотрудники.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудники.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудники.SearchCondition.OwnerComponent = this.Сотрудники;
             this.Сотрудники.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -2706,8 +2706,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Сотрудник.Caption = "Сотрудник";
             this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
             this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -4508,8 +4508,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Ответственный.Caption = "Ответственный";
             this.Ответственный.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Ответственный.Name = "Ответственный";
-            this.Ответственный.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Ответственный.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Ответственный.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Ответственный.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Ответственный.SearchCondition.OwnerComponent = this.Ответственный;
             this.Ответственный.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -4574,8 +4574,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Руководитель.Caption = "Руководитель";
             this.Руководитель.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Руководитель.Name = "Руководитель";
-            this.Руководитель.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Руководитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Руководитель.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Руководитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Руководитель.SearchCondition.OwnerComponent = this.Руководитель;
             this.Руководитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -5712,7 +5712,7 @@ namespace TechControl.Метаданные.Мониторинг
         private NsgColumnDescriptor.Int64 Автоинкремент_vmoПерсонал;
         private NsgColumnDescriptor.MultipleObject Владелец;
         private NsgColumnDescriptor.Int64 НомерСтроки;
-        private Сотрудники.ColumnDescriptor Сотрудник;
+        private ФизЛица.ColumnDescriptor Сотрудник;
         private Сервис.Приоритет.ColumnDescriptor Приоритет;
         private Должности.ColumnDescriptor Должность_vmoПерсонал;
         private NsgColumnDescriptor.Int64 Автоинкремент_vmoСистемыСлежения;
@@ -5746,13 +5746,13 @@ namespace TechControl.Метаданные.Мониторинг
         protected ТипСобственности.ColumnDescriptor СобственностьТехники;
         protected NsgColumnDescriptor.String ГраницаОбъектаМониторинга;
         protected NsgColumnDescriptor.DateTime НачалоРабочейСмены;
-        protected Сотрудники.ColumnDescriptor Ответственный;
+        protected ФизЛица.ColumnDescriptor Ответственный;
         protected NsgColumnDescriptor.DateTime КонецРабочейСмены;
         protected Контрагенты.ColumnDescriptor Фирма;
         protected РежимыРаботы.ColumnDescriptor РежимРаботы;
         protected NsgColumnDescriptor.String Договор;
         protected NsgColumnDescriptor.Boolean Включен;
-        protected Сотрудники.ColumnDescriptor Руководитель;
+        protected ФизЛица.ColumnDescriptor Руководитель;
         protected NsgColumnDescriptor.Boolean СменаОткрыта;
         protected Контрагенты.ColumnDescriptor ПоставщикТоплива_nsgVisualMultipleObject;
         protected NsgColumnDescriptor.Int64 МашинВРаботе;
@@ -5773,7 +5773,7 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.MultipleObject Владелец_vmoРегПерсонал;
         protected NsgColumnDescriptor.DateTime Дата;
         protected NsgColumnDescriptor.DateTime КонецПериода;
-        protected Сотрудники.ColumnDescriptor Сотрудники;
+        protected ФизЛица.ColumnDescriptor Сотрудники;
         protected Объекты.ColumnDescriptor Объект;
         protected Должности.ColumnDescriptor Должности;
         private NsgColumnDescriptor.Guid Идентификатор_vmoРегТехника;

@@ -72,7 +72,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.СостояниеДокумента = new TechControl.Метаданные.Сервис.СостоянияОбъекта.ColumnDescriptor();
             this.Таблица = new TechControl.Метаданные._SystemTables.УчетСпецодеждыИСИЗЗаявкиПоставщикамТаблица.ColumnDescriptor();
             this.Поставщик = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Статус = new TechControl.Метаданные.Перечисления.СтатусыЗаявок.ColumnDescriptor();
             this.label2 = new System.Windows.Forms.Label();
@@ -963,8 +963,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.Сотрудник.Caption = "Сотрудник";
             this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
             this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1244,7 +1244,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         protected Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
         protected _SystemTables.УчетСпецодеждыИСИЗЗаявкиПоставщикамТаблица.ColumnDescriptor Таблица;
         protected Мониторинг.Контрагенты.ColumnDescriptor Поставщик;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник;
         protected Мониторинг.Объекты.ColumnDescriptor Объект;
         protected Перечисления.СтатусыЗаявок.ColumnDescriptor Статус;
         protected System.Windows.Forms.Label label2;

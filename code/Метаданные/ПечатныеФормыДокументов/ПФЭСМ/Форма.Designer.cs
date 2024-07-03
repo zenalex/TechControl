@@ -35,7 +35,7 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ПФЭСМФорма));
             this.vmoПодписант = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Подписант_vmoПодписанты = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Подписант_vmoПодписанты = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Должность_vmoПодписанты = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
             this.Подпись_vmoПодписанты = new NsgSoft.Forms.NsgColumnDescriptor();
             this.Печать_vmoПодписанты = new NsgSoft.Forms.NsgColumnDescriptor();
@@ -93,11 +93,11 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.Контрагент = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Фирма = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Таблица = new TechControl.Метаданные._SystemTables.ДокументыЭСМТаблица.ColumnDescriptor();
             this.По = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.ТаблицаДокументов = new TechControl.Метаданные._SystemTables.ДокументыЭСМТаблицаДокументов.ColumnDescriptor();
-            this.СотрудникПодписант = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.СотрудникПодписант = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.ДолжностьПодписанта = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
             this.НеПечататьПодписи = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.С = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
@@ -237,8 +237,8 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.Подписант_vmoПодписанты.Caption = "Подписант";
             this.Подписант_vmoПодписанты.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Подписант_vmoПодписанты.Name = "Подписант";
-            this.Подписант_vmoПодписанты.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Подписант_vmoПодписанты.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Подписант_vmoПодписанты.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Подписант_vmoПодписанты.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Подписант_vmoПодписанты.SearchCondition.OwnerComponent = this.Подписант_vmoПодписанты;
             this.Подписант_vmoПодписанты.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -881,8 +881,8 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.Сотрудник.Caption = "Сотрудник";
             this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
             this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -927,8 +927,8 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.СотрудникПодписант.Caption = "СотрудникПодписант";
             this.СотрудникПодписант.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.СотрудникПодписант.Name = "СотрудникПодписант";
-            this.СотрудникПодписант.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникПодписант.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникПодписант.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникПодписант.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникПодписант.SearchCondition.OwnerComponent = this.СотрудникПодписант;
             this.СотрудникПодписант.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1033,11 +1033,11 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
         protected Мониторинг.Контрагенты.ColumnDescriptor Контрагент;
         protected Мониторинг.Контрагенты.ColumnDescriptor Фирма;
         protected Мониторинг.Объекты.ColumnDescriptor Объект;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник;
         protected _SystemTables.ДокументыЭСМТаблица.ColumnDescriptor Таблица;
         protected NsgColumnDescriptor.DateTime По;
         protected _SystemTables.ДокументыЭСМТаблицаДокументов.ColumnDescriptor ТаблицаДокументов;
-        protected Мониторинг.Сотрудники.ColumnDescriptor СотрудникПодписант;
+        protected Мониторинг.ФизЛица.ColumnDescriptor СотрудникПодписант;
         protected Мониторинг.Должности.ColumnDescriptor ДолжностьПодписанта;
         protected NsgColumnDescriptor.Boolean НеПечататьПодписи;
         protected NsgColumnDescriptor.DateTime Дата_vmoТаблица;
@@ -1045,7 +1045,7 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
         protected NsgColumnDescriptor Подпись_vmoПодписанты;
         protected NsgColumnDescriptor Печать_vmoПодписанты;
         protected NsgColumnDescriptor.Boolean НеПечататьПодписи_vmoПодписанты;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Подписант_vmoПодписанты;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Подписант_vmoПодписанты;
         protected NsgColumnDescriptor.Decimal ОтработаноЧасов_vmoТаблица;
         protected NsgColumnDescriptor.Int64 ДеньМесяца_vmoТаблица;
         protected Мониторинг.Тарифы.ColumnDescriptor Тариф_vmoТаблица;

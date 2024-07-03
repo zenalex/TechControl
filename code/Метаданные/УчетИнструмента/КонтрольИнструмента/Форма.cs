@@ -345,7 +345,7 @@ namespace TechControl.Метаданные.УчетИнструмента
                     var row = vmoТаблицаПодтверждения.Data.MemoryTable.NewRow();
                     row[СерийныйНомер_vmoТаблицаПодтверждения].Value = item[РегистрУчетИнструмента.Names.СерийныйНомер].ToString();
                     row[Номенклатура_vmoТаблицаПодтверждения].Value = item[РегистрУчетИнструмента.Names.НоменклатураИнструмента].ToReferent() as Номенклатура;
-                    row[Сотрудник_vmoТаблицаПодтверждения].Value = item[РегистрУчетИнструмента.Names.Сотрудник].ToReferent() as Сотрудники;
+                    row[Сотрудник_vmoТаблицаПодтверждения].Value = item[РегистрУчетИнструмента.Names.Сотрудник].ToReferent() as ФизЛица;
                     row[Объект_vmoТаблицаПодтверждения].Value = item[РегистрУчетИнструмента.Names.Объект].ToReferent() as Объекты;
                     row.Post();
                 }
@@ -453,7 +453,7 @@ namespace TechControl.Метаданные.УчетИнструмента
                 row[Номенклатура_vmoСменаСерийников].Value = item.Value[РегистрУчетИнструмента.Names.НоменклатураИнструмента].ToReferent() as Номенклатура;
                 row[ТекущийСерийник_vmoСменаСерийников].Value = item.Value[РегистрУчетИнструмента.Names.СерийныйНомер].ToString();
                 row[Объект_vmoСменаСерийников].Value = item.Value[РегистрУчетИнструмента.Names.Объект].ToReferent() as Объекты;
-                row[Сотрудник_vmoСменаСерийников].Value = item.Value[РегистрУчетИнструмента.Names.Сотрудник].ToReferent() as Сотрудники;
+                row[Сотрудник_vmoСменаСерийников].Value = item.Value[РегистрУчетИнструмента.Names.Сотрудник].ToReferent() as ФизЛица;
                 row.Post();
             }
             vmoСменаСерийников.Data.UpdateDataSync(this);

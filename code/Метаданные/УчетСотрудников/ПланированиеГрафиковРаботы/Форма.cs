@@ -379,7 +379,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                 {
                     var cmp = new NsgCompare();
                     cmp.Add(ПлановыйГрафикРаботы.Names.Объект, объект);
-                    cmp.Add(ПлановыйГрафикРаботы.Names.Сотрудник, item[Сотрудник_vmoТаблицаМесяца].ToReferent() as Сотрудники);
+                    cmp.Add(ПлановыйГрафикРаботы.Names.Сотрудник, item[Сотрудник_vmoТаблицаМесяца].ToReferent() as ФизЛица);
                     //cmp.Add(ПлановыйГрафикРаботы.Names., объект);
                     cmp.Add(ПлановыйГрафикРаботы.Names.МесяцГрафика, NsgService.BeginOfMonth(месяц), NsgComparison.GreaterOrEqual);
                     cmp.Add(ПлановыйГрафикРаботы.Names.МесяцГрафика, NsgService.EndOfMonth(месяц), NsgComparison.LessOrEqual);
@@ -397,7 +397,7 @@ namespace TechControl.Метаданные.УчетСотрудников
 
                     график.Объект = объект;
                     график.МесяцГрафика = месяц;
-                    график.Сотрудник = item[Сотрудник_vmoТаблицаМесяца].ToReferent() as Сотрудники;
+                    график.Сотрудник = item[Сотрудник_vmoТаблицаМесяца].ToReferent() as ФизЛица;
 
                     график.ТаблицаПодробныйГрафик.DeleteAll();
 

@@ -79,13 +79,13 @@ namespace TechControl.Метаданные.Учет
             this.СостояниеДокумента = new TechControl.Метаданные.Сервис.СостоянияОбъекта.ColumnDescriptor();
             this.АккаунтПользователя = new TechControl.Метаданные.СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Таблица = new TechControl.Метаданные._SystemTables.УчетПодтверждениеПеремещенияТаблица.ColumnDescriptor();
             this.Подтверждено = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.Отправитель = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.Получатель = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.ОбъектПередавший = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.СотрудникПередавший = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.СотрудникПередавший = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -1173,8 +1173,8 @@ namespace TechControl.Метаданные.Учет
             this.Сотрудник.Caption = "Сотрудник";
             this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
             this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1240,8 +1240,8 @@ namespace TechControl.Метаданные.Учет
             this.СотрудникПередавший.Caption = "СотрудникПередавший";
             this.СотрудникПередавший.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.СотрудникПередавший.Name = "СотрудникПередавший";
-            this.СотрудникПередавший.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникПередавший.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникПередавший.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникПередавший.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникПередавший.SearchCondition.OwnerComponent = this.СотрудникПередавший;
             this.СотрудникПередавший.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1345,12 +1345,12 @@ namespace TechControl.Метаданные.Учет
         private Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
         private СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor АккаунтПользователя;
         private Мониторинг.Объекты.ColumnDescriptor Объект;
-        private Мониторинг.Сотрудники.ColumnDescriptor Сотрудник;
+        private Мониторинг.ФизЛица.ColumnDescriptor Сотрудник;
         private _SystemTables.УчетПодтверждениеПеремещенияТаблица.ColumnDescriptor Таблица;
         private NsgColumnDescriptor.Boolean Подтверждено;
         private NsgColumnDescriptor.MultipleObject Отправитель;
         private NsgColumnDescriptor.MultipleObject Получатель;
         private Мониторинг.Объекты.ColumnDescriptor ОбъектПередавший;
-        protected Мониторинг.Сотрудники.ColumnDescriptor СотрудникПередавший;
+        protected Мониторинг.ФизЛица.ColumnDescriptor СотрудникПередавший;
     }
 }

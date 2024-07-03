@@ -76,8 +76,8 @@ namespace TechControl.Метаданные.Мониторинг
         {
             if (e.ColumnName == Сотрудник.Name)
             {
-                e.RowObject[Должность_vmoПерсонал].Value = (e.RowObject[Сотрудник].ToReferent() as Сотрудники).Должность;
-                e.RowObject[Приоритет].Value = (e.RowObject[Сотрудник].ToReferent() as Сотрудники).Должность.ГруппаДолжностей.Приоритет;
+                e.RowObject[Должность_vmoПерсонал].Value = (e.RowObject[Сотрудник].ToReferent() as ФизЛица).Должность;
+                e.RowObject[Приоритет].Value = (e.RowObject[Сотрудник].ToReferent() as ФизЛица).Должность.ГруппаДолжностей.Приоритет;
             }
         }
 

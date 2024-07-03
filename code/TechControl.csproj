@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2024.4.23.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
+    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
@@ -1451,14 +1451,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\Сотрудники.NsgInit.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\ФизЛица.NsgInit.cs">
       <NsgOwnerGuid>f786c300-0c59-4ced-9998-affd2704a408</NsgOwnerGuid>
-      <NsgOwnerName>Сотрудники</NsgOwnerName>
-      <DependentUpon>Сотрудники.cs</DependentUpon>
+      <NsgOwnerName>ФизЛица</NsgOwnerName>
+      <DependentUpon>ФизЛица.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\Сотрудники.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\ФизЛица.cs">
       <NsgOwnerGuid>f786c300-0c59-4ced-9998-affd2704a408</NsgOwnerGuid>
-      <NsgOwnerName>Сотрудники</NsgOwnerName>
+      <NsgOwnerName>ФизЛица</NsgOwnerName>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2044,15 +2044,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\ФормаЭлемента.Designer.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\ФормаЭлемента.Designer.cs">
       <NsgOwnerGuid>f786c300-0c59-4ced-9998-affd2704a408</NsgOwnerGuid>
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\ФормаЭлемента.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\ФормаЭлемента.cs">
       <NsgOwnerGuid>f786c300-0c59-4ced-9998-affd2704a408</NsgOwnerGuid>
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="Метаданные\Мониторинг\Сотрудники\ФормаЭлемента.resx">
+    <EmbeddedResource Include="Метаданные\Мониторинг\ФизЛица\ФормаЭлемента.resx">
       <NsgOwnerGuid>f786c300-0c59-4ced-9998-affd2704a408</NsgOwnerGuid>
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -3405,23 +3405,23 @@
       <DependentUpon>ФормаЭлемента.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаРазмеров.NsgInit.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\МониторингФизЛицаТаблицаРазмеров.NsgInit.cs">
       <NsgOwnerGuid>ae846c19-3ebd-4fa0-8ed7-c9bf6dae9f93</NsgOwnerGuid>
-      <NsgOwnerName>МониторингСотрудникиТаблицаРазмеров</NsgOwnerName>
-      <DependentUpon>МониторингСотрудникиТаблицаРазмеров.cs</DependentUpon>
+      <NsgOwnerName>МониторингФизЛицаТаблицаРазмеров</NsgOwnerName>
+      <DependentUpon>МониторингФизЛицаТаблицаРазмеров.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаРазмеров.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\МониторингФизЛицаТаблицаРазмеров.cs">
       <NsgOwnerGuid>ae846c19-3ebd-4fa0-8ed7-c9bf6dae9f93</NsgOwnerGuid>
-      <NsgOwnerName>МониторингСотрудникиТаблицаРазмеров</NsgOwnerName>
+      <NsgOwnerName>МониторингФизЛицаТаблицаРазмеров</NsgOwnerName>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаРазмеров.Строка.NsgInit.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\МониторингФизЛицаТаблицаРазмеров.Строка.NsgInit.cs">
       <NsgOwnerGuid>ae846c19-3ebd-4fa0-8ed7-c9bf6dae9f93</NsgOwnerGuid>
-      <NsgOwnerName>МониторингСотрудникиТаблицаРазмеров</NsgOwnerName>
-      <DependentUpon>МониторингСотрудникиТаблицаРазмеров.Строка.cs</DependentUpon>
+      <NsgOwnerName>МониторингФизЛицаТаблицаРазмеров</NsgOwnerName>
+      <DependentUpon>МониторингФизЛицаТаблицаРазмеров.Строка.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаРазмеров.Строка.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\МониторингФизЛицаТаблицаРазмеров.Строка.cs">
       <NsgOwnerGuid>ae846c19-3ebd-4fa0-8ed7-c9bf6dae9f93</NsgOwnerGuid>
-      <NsgOwnerName>МониторингСотрудникиТаблицаРазмеров</NsgOwnerName>
+      <NsgOwnerName>МониторингФизЛицаТаблицаРазмеров</NsgOwnerName>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -3780,23 +3780,23 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаСовмещаемыхДолжностей.NsgInit.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\МониторингФизЛицаТаблицаСовмещаемыхДолжностей.NsgInit.cs">
       <NsgOwnerGuid>d738009d-0e85-41f8-a21d-ca969d66576d</NsgOwnerGuid>
-      <NsgOwnerName>МониторингСотрудникиТаблицаСовмещаемыхДолжностей</NsgOwnerName>
-      <DependentUpon>МониторингСотрудникиТаблицаСовмещаемыхДолжностей.cs</DependentUpon>
+      <NsgOwnerName>МониторингФизЛицаТаблицаСовмещаемыхДолжностей</NsgOwnerName>
+      <DependentUpon>МониторингФизЛицаТаблицаСовмещаемыхДолжностей.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаСовмещаемыхДолжностей.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\МониторингФизЛицаТаблицаСовмещаемыхДолжностей.cs">
       <NsgOwnerGuid>d738009d-0e85-41f8-a21d-ca969d66576d</NsgOwnerGuid>
-      <NsgOwnerName>МониторингСотрудникиТаблицаСовмещаемыхДолжностей</NsgOwnerName>
+      <NsgOwnerName>МониторингФизЛицаТаблицаСовмещаемыхДолжностей</NsgOwnerName>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Строка.NsgInit.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\МониторингФизЛицаТаблицаСовмещаемыхДолжностей.Строка.NsgInit.cs">
       <NsgOwnerGuid>d738009d-0e85-41f8-a21d-ca969d66576d</NsgOwnerGuid>
-      <NsgOwnerName>МониторингСотрудникиТаблицаСовмещаемыхДолжностей</NsgOwnerName>
-      <DependentUpon>МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Строка.cs</DependentUpon>
+      <NsgOwnerName>МониторингФизЛицаТаблицаСовмещаемыхДолжностей</NsgOwnerName>
+      <DependentUpon>МониторингФизЛицаТаблицаСовмещаемыхДолжностей.Строка.cs</DependentUpon>
     </Compile>
-    <Compile Include="Метаданные\Мониторинг\Сотрудники\МониторингСотрудникиТаблицаСовмещаемыхДолжностей.Строка.cs">
+    <Compile Include="Метаданные\Мониторинг\ФизЛица\МониторингФизЛицаТаблицаСовмещаемыхДолжностей.Строка.cs">
       <NsgOwnerGuid>d738009d-0e85-41f8-a21d-ca969d66576d</NsgOwnerGuid>
-      <NsgOwnerName>МониторингСотрудникиТаблицаСовмещаемыхДолжностей</NsgOwnerName>
+      <NsgOwnerName>МониторингФизЛицаТаблицаСовмещаемыхДолжностей</NsgOwnerName>
     </Compile>
   </ItemGroup>
   <ItemGroup>

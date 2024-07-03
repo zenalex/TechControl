@@ -53,7 +53,7 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.МесяцИтогов = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.vmoДанные = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Объект_vmoДанные = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.Сотрудник_vmoДанные = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoДанные = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Тариф_vmoДанные = new TechControl.Метаданные.Мониторинг.Тарифы.ColumnDescriptor();
             this.Техника_vmoДанные = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             this.ОтработанноеВремя_vmoДанные = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
@@ -64,7 +64,7 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.НомерСтроки = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.Техника = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             this.Объект_vmoТаблица = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Д2 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Тариф = new TechControl.Метаданные.Мониторинг.Тарифы.ColumnDescriptor();
             this.Д3 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
@@ -402,8 +402,8 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.Сотрудник_vmoДанные.Caption = "Сотрудник";
             this.Сотрудник_vmoДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoДанные.Name = "Сотрудник";
-            this.Сотрудник_vmoДанные.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoДанные.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoДанные.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoДанные.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoДанные.SearchCondition.OwnerComponent = this.Сотрудник_vmoДанные;
             this.Сотрудник_vmoДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -572,8 +572,8 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.Сотрудник.Caption = "Сотрудник";
             this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
             this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1101,7 +1101,7 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
         protected Мониторинг.Объекты.ColumnDescriptor Объект;
         protected NsgColumnDescriptor.DateTime МесяцИтогов;
         protected Мониторинг.Объекты.ColumnDescriptor Объект_vmoДанные;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoДанные;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoДанные;
         protected Мониторинг.Тарифы.ColumnDescriptor Тариф_vmoДанные;
         protected Мониторинг.Техника.ColumnDescriptor Техника_vmoДанные;
         protected NsgColumnDescriptor.Decimal ОтработанноеВремя_vmoДанные;
@@ -1111,7 +1111,7 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
         private NsgColumnDescriptor.Int64 НомерСтроки;
         private Мониторинг.Техника.ColumnDescriptor Техника;
         private Мониторинг.Объекты.ColumnDescriptor Объект_vmoТаблица;
-        private Мониторинг.Сотрудники.ColumnDescriptor Сотрудник;
+        private Мониторинг.ФизЛица.ColumnDescriptor Сотрудник;
         private NsgColumnDescriptor.Decimal Д2;
         private Мониторинг.Тарифы.ColumnDescriptor Тариф;
         private NsgColumnDescriptor.Decimal Д3;

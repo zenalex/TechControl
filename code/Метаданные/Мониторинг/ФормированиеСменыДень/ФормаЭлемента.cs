@@ -64,16 +64,16 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 previousWO = this.Объект.Value.Идентификатор;
                 List<Техника> техникаОбъекта = Объект.Value.СписокТехникиОбъекта().ToList();
-                List<Сотрудники> персоналОбъекта = Объект.Value.СписокПерсонала().Select(x => x.Item1).ToList();
+                List<ФизЛица> персоналОбъекта = Объект.Value.СписокПерсонала().Select(x => x.Item1).ToList();
                 List<Тарифы> тарифыОбъекта = Объект.Value.ДействующиеТарифыТехники().AllRows.Select(x => x[РегистрТарифыТехникиОбъекта.Names.Тариф].ToReferent() as Тарифы).ToList();
                 List<Тарифы> тарифыСотрудниковОбъекта = Объект.Value.ДействующиеТарифыПерсонала().AllRows.Select(x => x[РегистрТарифыПерсоналаОбъекта.Names.Тариф].ToReferent() as Тарифы).ToList();
                 
                 Техника_т.SearchCondition.Clear();
                 Техника_т.SearchCondition.Add(Мониторинг.Техника.Names.Идентификатор, техникаОбъекта.ToArray(), NsgComparison.In);
                 Сотрудник_т.SearchCondition.Clear();
-                Сотрудник_т.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
+                Сотрудник_т.SearchCondition.Add(ФизЛица.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
                 Сотрудник_vmoТаблицаПерсонал.SearchCondition.Clear();
-                Сотрудник_vmoТаблицаПерсонал.SearchCondition.Add(Сотрудники.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
+                Сотрудник_vmoТаблицаПерсонал.SearchCondition.Add(ФизЛица.Names.Идентификатор, персоналОбъекта.ToArray(), NsgComparison.In);
                 Тариф_т.SearchCondition.Clear();
                 Тариф_т.SearchCondition.Add(Тарифы.Names.Идентификатор, тарифыОбъекта.ToArray(), NsgComparison.In);
                 Тариф_vmoТаблицаПерсонал.SearchCondition.Clear();
@@ -167,8 +167,8 @@ namespace TechControl.Метаданные.Мониторинг
             if (!this.Объект.Selected || this.ТаблицаПерсонал.Value.Count == 0) return;
 
             bool error = false;
-            List<Сотрудники> s = new List<Сотрудники>();
-            List<Сотрудники> ss = new List<Сотрудники>();
+            List<ФизЛица> s = new List<ФизЛица>();
+            List<ФизЛица> ss = new List<ФизЛица>();
             foreach (var i in this.ТаблицаПерсонал.Value.Rows)
             {
                 ПодсветкаСтроки(i);

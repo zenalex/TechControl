@@ -99,7 +99,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.ДатаУвольнения_с = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Телефон_с = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ТабельныйНомер_с = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.Найдено_с = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Найдено_с = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Идентификатор_с = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
             this.Наименование_с = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.nsgIGrid4 = new NsgSoft.Forms.NsgIGrid();
@@ -107,7 +107,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.Выбор_т = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.Наименование_т = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.Объект_т = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.Сотрудник_т = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_т = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Стоимость_т = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Найдено_т = new TechControl.Метаданные.Мониторинг.Тарифы.ColumnDescriptor();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -1120,8 +1120,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Найдено_с.Caption = "Найдено";
             this.Найдено_с.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Найдено_с.Name = "Найдено";
-            this.Найдено_с.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Найдено_с.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Найдено_с.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Найдено_с.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Найдено_с.SearchCondition.OwnerComponent = this.Найдено_с;
             this.Найдено_с.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1324,8 +1324,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Сотрудник_т.Caption = "Сотрудник";
             this.Сотрудник_т.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_т.Name = "Сотрудник";
-            this.Сотрудник_т.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_т.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_т.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_т.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_т.SearchCondition.OwnerComponent = this.Сотрудник_т;
             this.Сотрудник_т.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1893,11 +1893,11 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.String ТабельныйНомер_с;
         protected NsgColumnDescriptor.DateTime ДатаРождения_с;
         protected NsgColumnDescriptor.DateTime ДатаПриемаНаРаботу_с;
-        protected Сотрудники.ColumnDescriptor Найдено_с;
+        protected ФизЛица.ColumnDescriptor Найдено_с;
         protected NsgColumnDescriptor.Boolean Выбор_т;
         protected NsgColumnDescriptor.String Наименование_т;
         protected Объекты.ColumnDescriptor Объект_т;
-        protected Сотрудники.ColumnDescriptor Сотрудник_т;
+        protected ФизЛица.ColumnDescriptor Сотрудник_т;
         protected NsgColumnDescriptor.Decimal Стоимость_т;
         protected Тарифы.ColumnDescriptor Найдено_т;
         protected NsgColumnDescriptor.Guid Идентификатор_к;

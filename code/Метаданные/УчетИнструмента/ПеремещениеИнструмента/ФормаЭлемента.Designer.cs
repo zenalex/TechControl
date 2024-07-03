@@ -76,7 +76,7 @@ namespace TechControl.Метаданные.УчетИнструмента
             this.ТребуетсяПодтверждение = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.ЭтоВозврат = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.ОбъектПередавший = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.СотрудникПередавший = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.СотрудникПередавший = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.nsgInput6 = new NsgSoft.Forms.NsgInput();
             this.nsgInput7 = new NsgSoft.Forms.NsgInput();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
@@ -1007,8 +1007,8 @@ namespace TechControl.Метаданные.УчетИнструмента
             this.СотрудникПередавший.Caption = "СотрудникПередавший";
             this.СотрудникПередавший.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.СотрудникПередавший.Name = "СотрудникПередавший";
-            this.СотрудникПередавший.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникПередавший.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникПередавший.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникПередавший.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникПередавший.ReadOnly = true;
             this.СотрудникПередавший.SearchCondition.OwnerComponent = this.СотрудникПередавший;
             this.СотрудникПередавший.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
@@ -1182,7 +1182,7 @@ namespace TechControl.Метаданные.УчетИнструмента
         protected NsgColumnDescriptor.Boolean ТребуетсяПодтверждение;
         protected NsgColumnDescriptor.Boolean ЭтоВозврат;
         protected Мониторинг.Объекты.ColumnDescriptor ОбъектПередавший;
-        protected Мониторинг.Сотрудники.ColumnDescriptor СотрудникПередавший;
+        protected Мониторинг.ФизЛица.ColumnDescriptor СотрудникПередавший;
         protected NsgInput nsgInput4;
         protected System.Windows.Forms.Label label4;
         protected NsgInput nsgInput5;

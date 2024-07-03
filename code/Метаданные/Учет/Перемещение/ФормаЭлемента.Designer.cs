@@ -76,7 +76,7 @@ namespace TechControl.Метаданные.Учет
             this.ДокументОснование = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.Комментарий = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.СостояниеДокумента = new TechControl.Метаданные.Сервис.СостоянияОбъекта.ColumnDescriptor();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Таблица = new TechControl.Метаданные._SystemTables.УчетПеремещениеТаблица.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.АккаунтПользователя = new TechControl.Метаданные.СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor();
@@ -1075,8 +1075,8 @@ namespace TechControl.Метаданные.Учет
             this.Сотрудник.Caption = "Сотрудник";
             this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
             this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1258,7 +1258,7 @@ namespace TechControl.Метаданные.Учет
         private NsgColumnDescriptor.MultipleObject ДокументОснование;
         private NsgColumnDescriptor.String Комментарий;
         private Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
-        private Мониторинг.Сотрудники.ColumnDescriptor Сотрудник;
+        private Мониторинг.ФизЛица.ColumnDescriptor Сотрудник;
         private _SystemTables.УчетПеремещениеТаблица.ColumnDescriptor Таблица;
         private Мониторинг.Объекты.ColumnDescriptor Объект;
         private СлужебныеСправочники.АккаунтПользователя.ColumnDescriptor АккаунтПользователя;

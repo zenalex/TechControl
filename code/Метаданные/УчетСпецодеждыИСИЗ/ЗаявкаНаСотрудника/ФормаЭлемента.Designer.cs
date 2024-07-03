@@ -65,7 +65,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.Комментарий = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.СостояниеДокумента = new TechControl.Метаданные.Сервис.СостоянияОбъекта.ColumnDescriptor();
             this.Таблица = new TechControl.Метаданные._SystemTables.УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица.ColumnDescriptor();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Контрагент = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
             this.Статус = new TechControl.Метаданные.Перечисления.СтатусыЗаявок.ColumnDescriptor();
@@ -828,8 +828,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.Сотрудник.Caption = "Сотрудник";
             this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
             this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1260,7 +1260,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         protected NsgColumnDescriptor.String Комментарий;
         protected Сервис.СостоянияОбъекта.ColumnDescriptor СостояниеДокумента;
         protected _SystemTables.УчетСпецодеждыИСИЗЗаявкаНаСотрудникаТаблица.ColumnDescriptor Таблица;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник;
         protected Мониторинг.Объекты.ColumnDescriptor Объект;
         protected Мониторинг.Контрагенты.ColumnDescriptor Контрагент;
         protected Перечисления.СтатусыЗаявок.ColumnDescriptor Статус;

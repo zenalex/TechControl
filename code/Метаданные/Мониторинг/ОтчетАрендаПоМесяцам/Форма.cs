@@ -64,7 +64,7 @@ namespace TechControl.Метаданные.Мониторинг
                     DateTime dateTime = i[NsgSoft.Common.NsgDataFixedFields._Period].ToDateTime();
                     Объекты объект = hasDimОбъект ? i[РегистрСмен.Names.Объект].ToReferent() as Объекты : Объекты.Новый();
                     Техника техника = hasDimТехника ? i[РегистрСмен.Names.Техника].ToReferent() as Техника : Техника.Новый();
-                    Сотрудники сотрудник = hasDimСотрудник ? i[РегистрСмен.Names.Сотрудник].ToReferent() as Сотрудники : Сотрудники.Новый();
+                    ФизЛица сотрудник = hasDimСотрудник ? i[РегистрСмен.Names.Сотрудник].ToReferent() as ФизЛица : ФизЛица.Новый();
                     Контрагенты арендатор = hasDimАрендатор ? i[ЗАКАЗЧИК].ToReferent() as Контрагенты : Контрагенты.Новый();
                     NsgCompare cmp = new NsgCompare()
                         .Add(Арендатор_.Name, арендатор)

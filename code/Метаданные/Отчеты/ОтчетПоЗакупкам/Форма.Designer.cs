@@ -49,13 +49,13 @@ namespace TechControl.Метаданные.Отчеты
             this.stiReportDataSource2 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsДоп", this.rdsДоп);
             this.ДатаОтчета_vmoДопДанные = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.Подразделение_vmoФильтр = new TechControl.Метаданные.Мониторинг.Подразделения.ColumnDescriptor();
-            this.Сотрудник_vmoФильтр = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoФильтр = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Объект_vmoФильтр = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Номенклатура = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
             this.Цена = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Количество = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Должность = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
             this.КоличествоНаОбъекте = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.Размер = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
@@ -359,8 +359,8 @@ namespace TechControl.Метаданные.Отчеты
             this.Сотрудник_vmoФильтр.Caption = "Сотрудник";
             this.Сотрудник_vmoФильтр.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoФильтр.Name = "Сотрудник";
-            this.Сотрудник_vmoФильтр.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoФильтр.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoФильтр.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoФильтр.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoФильтр.SearchCondition.OwnerComponent = this.Сотрудник_vmoФильтр;
             this.Сотрудник_vmoФильтр.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -421,8 +421,8 @@ namespace TechControl.Метаданные.Отчеты
             this.Сотрудник.Caption = "Сотрудник";
             this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
             this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -508,13 +508,13 @@ namespace TechControl.Метаданные.Отчеты
         protected NsgColumnDescriptor.DateTime ДатаОтчета_vmoДопДанные;
         protected Учет.Номенклатура.ColumnDescriptor Номенклатура;
         protected Мониторинг.Подразделения.ColumnDescriptor Подразделение_vmoФильтр;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoФильтр;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoФильтр;
         protected NsgInput nsgInput1;
         private NsgSoft.ReportBuilder.NsgGroupsList nsgGroupsList1;
         protected NsgColumnDescriptor.Decimal Цена;
         protected Мониторинг.Объекты.ColumnDescriptor Объект;
         protected NsgColumnDescriptor.Int64 Количество;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник;
         protected Мониторинг.Должности.ColumnDescriptor Должность;
         protected NsgColumnDescriptor.Int64 КоличествоНаОбъекте;
         protected Учет.Размеры.ColumnDescriptor Размер;

@@ -223,17 +223,17 @@ namespace TechControl.Метаданные.Мониторинг
             this.ДатаРождения = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.ДатаПриемаНаРаботу = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.ДатаУвольнения = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.ТаблицаРазмеров = new TechControl.Метаданные._SystemTables.МониторингСотрудникиТаблицаРазмеров.ColumnDescriptor();
+            this.ТаблицаРазмеров = new TechControl.Метаданные._SystemTables.МониторингФизЛицаТаблицаРазмеров.ColumnDescriptor();
             this.ОбъектВыдачиСпецодежды = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.ОсновнойОбъект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.ЗагрузочныйИдентификатор = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ДокументКонтроляСпецодежды = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды.ColumnDescriptor();
             this.Подразделение = new TechControl.Метаданные.Мониторинг.Подразделения.ColumnDescriptor();
-            this.ТаблицаСовмещаемыхДолжностей = new TechControl.Метаданные._SystemTables.МониторингСотрудникиТаблицаСовмещаемыхДолжностей.ColumnDescriptor();
+            this.ТаблицаСовмещаемыхДолжностей = new TechControl.Метаданные._SystemTables.МониторингФизЛицаТаблицаСовмещаемыхДолжностей.ColumnDescriptor();
             this.КартинкаПодпись = new TechControl.Метаданные.Мониторинг.Картинки.ColumnDescriptor();
             this.ФИО = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ФИОРодительныйПадеж = new NsgSoft.Forms.NsgColumnDescriptor.String();
-            this.Родитель = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Родитель = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             ((System.ComponentModel.ISupportInitialize)(this.nsgEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgToolStrip2)).BeginInit();
@@ -3478,8 +3478,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.ТаблицаРазмеров.Caption = "ТаблицаРазмеров";
             this.ТаблицаРазмеров.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.ТаблицаРазмеров.Name = "ТаблицаРазмеров";
-            this.ТаблицаРазмеров.NSGType = typeof(TechControl.Метаданные._SystemTables.МониторингСотрудникиТаблицаРазмеров);
-            this.ТаблицаРазмеров.PropertyType = typeof(TechControl.Метаданные._SystemTables.МониторингСотрудникиТаблицаРазмеров);
+            this.ТаблицаРазмеров.NSGType = typeof(TechControl.Метаданные._SystemTables.МониторингФизЛицаТаблицаРазмеров);
+            this.ТаблицаРазмеров.PropertyType = typeof(TechControl.Метаданные._SystemTables.МониторингФизЛицаТаблицаРазмеров);
             this.ТаблицаРазмеров.SearchCondition.OwnerComponent = this.ТаблицаРазмеров;
             this.ТаблицаРазмеров.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             this.ТаблицаРазмеров.Visible = false;
@@ -3545,8 +3545,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.ТаблицаСовмещаемыхДолжностей.Caption = "ТаблицаСовмещаемыхДолжностей";
             this.ТаблицаСовмещаемыхДолжностей.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.ТаблицаСовмещаемыхДолжностей.Name = "ТаблицаСовмещаемыхДолжностей";
-            this.ТаблицаСовмещаемыхДолжностей.NSGType = typeof(TechControl.Метаданные._SystemTables.МониторингСотрудникиТаблицаСовмещаемыхДолжностей);
-            this.ТаблицаСовмещаемыхДолжностей.PropertyType = typeof(TechControl.Метаданные._SystemTables.МониторингСотрудникиТаблицаСовмещаемыхДолжностей);
+            this.ТаблицаСовмещаемыхДолжностей.NSGType = typeof(TechControl.Метаданные._SystemTables.МониторингФизЛицаТаблицаСовмещаемыхДолжностей);
+            this.ТаблицаСовмещаемыхДолжностей.PropertyType = typeof(TechControl.Метаданные._SystemTables.МониторингФизЛицаТаблицаСовмещаемыхДолжностей);
             this.ТаблицаСовмещаемыхДолжностей.SearchCondition.OwnerComponent = this.ТаблицаСовмещаемыхДолжностей;
             this.ТаблицаСовмещаемыхДолжностей.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             this.ТаблицаСовмещаемыхДолжностей.Visible = false;
@@ -3590,8 +3590,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Родитель.Caption = "Родитель";
             this.Родитель.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Родитель.Name = "Родитель";
-            this.Родитель.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Родитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Родитель.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Родитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Родитель.SearchCondition.OwnerComponent = this.Родитель;
             this.Родитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -3818,7 +3818,7 @@ namespace TechControl.Метаданные.Мониторинг
         private System.Windows.Forms.TabPage tpДокументы;
         private NsgVisualMultipleObject vmoДокументы;
         private NsgIGrid nsgIGrid4;
-        protected Сотрудники.ColumnDescriptor Родитель;
+        protected ФизЛица.ColumnDescriptor Родитель;
         protected NsgColumnDescriptor.Guid Идентификатор;
         protected NsgColumnDescriptor.Int64 Автоинкремент;
         protected NsgColumnDescriptor.Boolean ЭтоГруппа;
@@ -3843,13 +3843,13 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.DateTime ДатаРождения;
         protected NsgColumnDescriptor.DateTime ДатаПриемаНаРаботу;
         protected NsgColumnDescriptor.DateTime ДатаУвольнения;
-        protected _SystemTables.МониторингСотрудникиТаблицаРазмеров.ColumnDescriptor ТаблицаРазмеров;
+        protected _SystemTables.МониторингФизЛицаТаблицаРазмеров.ColumnDescriptor ТаблицаРазмеров;
         protected Объекты.ColumnDescriptor ОбъектВыдачиСпецодежды;
         protected Объекты.ColumnDescriptor ОсновнойОбъект;
         protected NsgColumnDescriptor.String ЗагрузочныйИдентификатор;
         protected УчетСпецодеждыИСИЗ.ПеремещениеСпецодежды.ColumnDescriptor ДокументКонтроляСпецодежды;
         protected Подразделения.ColumnDescriptor Подразделение;
-        protected _SystemTables.МониторингСотрудникиТаблицаСовмещаемыхДолжностей.ColumnDescriptor ТаблицаСовмещаемыхДолжностей;
+        protected _SystemTables.МониторингФизЛицаТаблицаСовмещаемыхДолжностей.ColumnDescriptor ТаблицаСовмещаемыхДолжностей;
         protected Картинки.ColumnDescriptor КартинкаПодпись;
         protected NsgColumnDescriptor.String ФИО;
         protected NsgColumnDescriptor.String ФИОРодительныйПадеж;

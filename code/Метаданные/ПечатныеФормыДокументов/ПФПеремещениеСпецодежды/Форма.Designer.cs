@@ -59,7 +59,7 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.rdsДопДанные = new NsgSoft.ReportBuilder.NsgReportDataSource(this.components);
             this.vmoДопДанные = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Фирма_vmoДопДанные = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
-            this.ПредставительФирмы_vmoДопДанные = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.ПредставительФирмы_vmoДопДанные = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.stiReportDataSource4 = new NsgSoft.ReportBuilder.Design.StiReportDataSource("rdsДопДанные", this.rdsДопДанные);
             this.Идентификатор = new NsgSoft.Forms.NsgColumnDescriptor.Guid();
             this.Автоинкремент = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
@@ -75,7 +75,7 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.Получатель = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.Отправитель = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.ДатаНачалаЭксплуатации = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.СотрудникПолучатель_vmoДопДанные = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.СотрудникПолучатель_vmoДопДанные = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -449,8 +449,8 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.ПредставительФирмы_vmoДопДанные.Caption = "ПредставительФирмы";
             this.ПредставительФирмы_vmoДопДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.ПредставительФирмы_vmoДопДанные.Name = "ПредставительФирмы";
-            this.ПредставительФирмы_vmoДопДанные.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.ПредставительФирмы_vmoДопДанные.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.ПредставительФирмы_vmoДопДанные.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.ПредставительФирмы_vmoДопДанные.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.ПредставительФирмы_vmoДопДанные.SearchCondition.OwnerComponent = this.ПредставительФирмы_vmoДопДанные;
             this.ПредставительФирмы_vmoДопДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -626,8 +626,8 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
             this.СотрудникПолучатель_vmoДопДанные.Caption = "СотрудникПолучатель";
             this.СотрудникПолучатель_vmoДопДанные.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.СотрудникПолучатель_vmoДопДанные.Name = "СотрудникПолучатель";
-            this.СотрудникПолучатель_vmoДопДанные.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникПолучатель_vmoДопДанные.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникПолучатель_vmoДопДанные.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникПолучатель_vmoДопДанные.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникПолучатель_vmoДопДанные.SearchCondition.OwnerComponent = this.СотрудникПолучатель_vmoДопДанные;
             this.СотрудникПолучатель_vmoДопДанные.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -707,11 +707,11 @@ namespace TechControl.Метаданные.ПечатныеФормыДокум�
         private NsgSoft.ReportBuilder.Design.StiReportDataSource stiReportDataSource4;
         protected NsgSoft.ReportBuilder.NsgReportDataSource rdsДопДанные;
         protected Мониторинг.Контрагенты.ColumnDescriptor Фирма_vmoДопДанные;
-        private Мониторинг.Сотрудники.ColumnDescriptor ПредставительФирмы_vmoДопДанные;
+        private Мониторинг.ФизЛица.ColumnDescriptor ПредставительФирмы_vmoДопДанные;
         private NsgVisualMultipleObject vmoТаблицаАмортизации;
         private NsgSoft.ReportBuilder.NsgReport nsgReport1;
         private NsgVisualMultipleObject vmoТабличныеДанные;
-        protected Мониторинг.Сотрудники.ColumnDescriptor СотрудникПолучатель_vmoДопДанные;
+        protected Мониторинг.ФизЛица.ColumnDescriptor СотрудникПолучатель_vmoДопДанные;
         private NsgVisualMultipleObject vmoДопДанные;
     }
 }

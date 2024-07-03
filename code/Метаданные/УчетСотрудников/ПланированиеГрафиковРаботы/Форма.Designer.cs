@@ -70,7 +70,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn34 = new NsgSoft.Forms.NsgIGridColumn();
             this.nsgIGrid1 = new NsgSoft.Forms.NsgIGrid();
             this.vmoТаблицаМесяца = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Сотрудник_vmoТаблицаМесяца = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoТаблицаМесяца = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.ВидРежимаРаботы_vmoТаблицаМесяца = new TechControl.Метаданные.Перечисления.ВидыРежимовРаботы.ColumnDescriptor();
             this.Д1_vmoТаблицаМесяца = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
             this.Д2_vmoТаблицаМесяца = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
@@ -849,8 +849,8 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.Сотрудник_vmoТаблицаМесяца.Caption = "Сотрудник";
             this.Сотрудник_vmoТаблицаМесяца.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoТаблицаМесяца.Name = "Сотрудник";
-            this.Сотрудник_vmoТаблицаМесяца.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoТаблицаМесяца.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoТаблицаМесяца.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoТаблицаМесяца.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoТаблицаМесяца.SearchCondition.OwnerComponent = this.Сотрудник_vmoТаблицаМесяца;
             this.Сотрудник_vmoТаблицаМесяца.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1403,7 +1403,7 @@ namespace TechControl.Метаданные.УчетСотрудников
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpПланирование;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoТаблицаМесяца;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoТаблицаМесяца;
         protected Перечисления.ВидыРежимовРаботы.ColumnDescriptor ВидРежимаРаботы_vmoТаблицаМесяца;
         protected NsgColumnDescriptor.Boolean Д1_vmoТаблицаМесяца;
         protected NsgColumnDescriptor.Boolean Д2_vmoТаблицаМесяца;

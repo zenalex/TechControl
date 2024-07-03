@@ -81,7 +81,7 @@ namespace TechControl.Метаданные.Документы
             this.Владелец = new NsgSoft.Forms.NsgColumnDescriptor.MultipleObject();
             this.НомерСтроки = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
             this.Техника = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Д2 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.Тариф = new TechControl.Метаданные.Мониторинг.Тарифы.ColumnDescriptor();
             this.Д3 = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
@@ -1325,8 +1325,8 @@ namespace TechControl.Метаданные.Документы
             this.Сотрудник.Caption = "Сотрудник";
             this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
             this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -2563,7 +2563,7 @@ namespace TechControl.Метаданные.Документы
         private NsgColumnDescriptor.MultipleObject Владелец;
         private NsgColumnDescriptor.Int64 НомерСтроки;
         private Мониторинг.Техника.ColumnDescriptor Техника;
-        private Мониторинг.Сотрудники.ColumnDescriptor Сотрудник;
+        private Мониторинг.ФизЛица.ColumnDescriptor Сотрудник;
         private NsgColumnDescriptor.Decimal Д2;
         private Мониторинг.Тарифы.ColumnDescriptor Тариф;
         protected NsgColumnDescriptor.Decimal Д3;

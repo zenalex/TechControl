@@ -82,7 +82,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn29 = new NsgSoft.Forms.NsgIGridColumn();
             this.nsgIGrid2 = new NsgSoft.Forms.NsgIGrid();
             this.vmoСотрудники = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Сотрудник_vmoСотрудники = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoСотрудники = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Подразделение_vmoСотрудники = new TechControl.Метаданные.Мониторинг.Подразделения.ColumnDescriptor();
             this.Проблема_vmoСотрудники = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.nsgIGrid3 = new NsgSoft.Forms.NsgIGrid();
@@ -124,7 +124,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.Комплект_vmoЗаказы = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды.ColumnDescriptor();
             this.nsgIGrid6 = new NsgSoft.Forms.NsgIGrid();
             this.vmoГотовыеКВыдаче = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Сотрудник_vmoГотовыеКВыдаче = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoГотовыеКВыдаче = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Номенклатура_vmoГотовыеКВыдаче = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
             this.Размер_vmoГотовыеКВыдаче = new TechControl.Метаданные.Учет.Размеры.ColumnDescriptor();
             this.Комплект_vmoГотовыеКВыдаче = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды.ColumnDescriptor();
@@ -133,7 +133,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.ДатаОповещения_vmoГотовыеКВыдаче = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.nsgObjectFilter1 = new NsgSoft.Forms.NsgIGridView.NsgObjectFilter();
             this.vmoФильтр = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Сотрудник_vmoФильтр = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoФильтр = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Подразделение_vmoФильтр = new TechControl.Метаданные.Мониторинг.Подразделения.ColumnDescriptor();
             this.Объект_vmoФильтр = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -185,10 +185,10 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.nsgInput10 = new NsgSoft.Forms.NsgInput();
             this.label9 = new System.Windows.Forms.Label();
             this.nsgIGrid7 = new NsgSoft.Forms.NsgIGrid();
-            this.Сотрудник = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.ДатаНачалаЭксплуатации = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.СотрудникВозврат = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.СотрудникВозврат = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.ОбъектВозврат = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.ОбъектДляЗаказов = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Подразделение = new TechControl.Метаданные.Мониторинг.Подразделения.ColumnDescriptor();
@@ -443,8 +443,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.Сотрудник_vmoСотрудники.Caption = "Сотрудник";
             this.Сотрудник_vmoСотрудники.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoСотрудники.Name = "Сотрудник";
-            this.Сотрудник_vmoСотрудники.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoСотрудники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoСотрудники.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoСотрудники.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoСотрудники.ReadOnly = true;
             this.Сотрудник_vmoСотрудники.SearchCondition.OwnerComponent = this.Сотрудник_vmoСотрудники;
             this.Сотрудник_vmoСотрудники.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
@@ -1649,8 +1649,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.Сотрудник_vmoГотовыеКВыдаче.Caption = "Сотрудник";
             this.Сотрудник_vmoГотовыеКВыдаче.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoГотовыеКВыдаче.Name = "Сотрудник";
-            this.Сотрудник_vmoГотовыеКВыдаче.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoГотовыеКВыдаче.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoГотовыеКВыдаче.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoГотовыеКВыдаче.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoГотовыеКВыдаче.ReadOnly = true;
             this.Сотрудник_vmoГотовыеКВыдаче.SearchCondition.OwnerComponent = this.Сотрудник_vmoГотовыеКВыдаче;
             this.Сотрудник_vmoГотовыеКВыдаче.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
@@ -1783,8 +1783,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.Сотрудник_vmoФильтр.Caption = "Сотрудник";
             this.Сотрудник_vmoФильтр.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoФильтр.Name = "Сотрудник";
-            this.Сотрудник_vmoФильтр.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoФильтр.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoФильтр.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoФильтр.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoФильтр.SearchCondition.OwnerComponent = this.Сотрудник_vmoФильтр;
             this.Сотрудник_vmoФильтр.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -2762,8 +2762,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.Сотрудник.Caption = "Сотрудник";
             this.Сотрудник.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник.Name = "Сотрудник";
-            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник.SearchCondition.OwnerComponent = this.Сотрудник;
             this.Сотрудник.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -2792,8 +2792,8 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
             this.СотрудникВозврат.Caption = "СотрудникВозврат";
             this.СотрудникВозврат.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.СотрудникВозврат.Name = "СотрудникВозврат";
-            this.СотрудникВозврат.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.СотрудникВозврат.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.СотрудникВозврат.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.СотрудникВозврат.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.СотрудникВозврат.SearchCondition.OwnerComponent = this.СотрудникВозврат;
             this.СотрудникВозврат.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -3050,13 +3050,13 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         protected NsgSoft.Design.NsgButton nbСормироватьЗаказы;
         protected NsgColumnDescriptor.Boolean Заказать_vmoСписокСпецодежды;
         protected NsgColumnDescriptor.Int64 КоличествоЗаказать_vmoСписокСпецодежды;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник;
         protected КомплектыСпецодежды.ColumnDescriptor Комплект_vmoСписокСпецодежды;
         protected NsgInput nsgInput1;
         protected Учет.Номенклатура.ColumnDescriptor Номенклатура_vmoСписокСпецодежды;
         protected NsgSoft.Design.NsgButton nbЗаполнить;
         protected NsgSoft.Design.NsgButton nbВыдать;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoФильтр;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoФильтр;
         protected NsgInput nsgInput2;
         protected System.Windows.Forms.Label label1;
         protected Мониторинг.Объекты.ColumnDescriptor Объект;
@@ -3069,7 +3069,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         protected System.Windows.Forms.Label label3;
         protected NsgInput nsgInput4;
         protected NsgColumnDescriptor.Int64 КоличествоНаСкладе_vmoСписокСпецодежды;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoСотрудники;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoСотрудники;
         protected NsgSoft.Design.NsgButton nbПроблемныеСотрудники;
         protected NsgColumnDescriptor.String Проблема_vmoСотрудники;
         protected Мониторинг.Подразделения.ColumnDescriptor Подразделение_vmoСотрудники;
@@ -3081,7 +3081,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         protected NsgColumnDescriptor.Boolean Выдать_vmoСписокСпецодежды;
         protected NsgColumnDescriptor.Int64 УжеЗаказаноНаСотрудникаКоличество_vmoСписокСпецодежды;
         protected NsgColumnDescriptor.Int64 ЗаказаноУПоставщикаКоличество_vmoСписокСпецодежды;
-        protected Мониторинг.Сотрудники.ColumnDescriptor СотрудникВозврат;
+        protected Мониторинг.ФизЛица.ColumnDescriptor СотрудникВозврат;
         protected NsgInput nsgInput6;
         protected System.Windows.Forms.Label label5;
         protected NsgInput nsgInput5;
@@ -3097,7 +3097,7 @@ namespace TechControl.Метаданные.УчетСпецодеждыИСИЗ
         protected System.Windows.Forms.RadioButton rdbНаДолжности;
         protected NsgColumnDescriptor.Int64 ЗаказатьКоличество_vmoЗаказы;
         protected КомплектыСпецодежды.ColumnDescriptor Комплект_vmoЗаказы;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoГотовыеКВыдаче;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoГотовыеКВыдаче;
         protected NsgColumnDescriptor.DateTime ДатаОповещения_vmoГотовыеКВыдаче;
         private NsgIGrid nsgIGrid6;
         protected NsgColumnDescriptor.Boolean СвободнаяВыдача_vmoСписокСпецодежды;

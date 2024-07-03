@@ -52,12 +52,12 @@ namespace TechControl.Метаданные.Отчеты
             this.cbПоказыватьНевыданные = new System.Windows.Forms.CheckBox();
             this.ДатаОтчета_vmoДопДанные = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.Подразделение_vmoФильтр = new TechControl.Метаданные.Мониторинг.Подразделения.ColumnDescriptor();
-            this.Сотрудник_vmoФильтр = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoФильтр = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Объект_vmoФильтр = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Номенклатура_осн = new TechControl.Метаданные.Учет.Номенклатура.ColumnDescriptor();
             this.Комплект_осн = new TechControl.Метаданные.УчетСпецодеждыИСИЗ.КомплектыСпецодежды.ColumnDescriptor();
             this.Количество_осн = new NsgSoft.Forms.NsgColumnDescriptor.Int64();
-            this.Сотрудник_осн = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_осн = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Подразделение_осн = new TechControl.Метаданные.Мониторинг.Подразделения.ColumnDescriptor();
             this.Должность_осн = new TechControl.Метаданные.Мониторинг.Должности.ColumnDescriptor();
             this.ДатаВыдачи_осн = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
@@ -417,8 +417,8 @@ namespace TechControl.Метаданные.Отчеты
             this.Сотрудник_vmoФильтр.Caption = "Сотрудник";
             this.Сотрудник_vmoФильтр.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoФильтр.Name = "Сотрудник";
-            this.Сотрудник_vmoФильтр.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoФильтр.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoФильтр.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoФильтр.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoФильтр.SearchCondition.OwnerComponent = this.Сотрудник_vmoФильтр;
             this.Сотрудник_vmoФильтр.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -468,8 +468,8 @@ namespace TechControl.Метаданные.Отчеты
             this.Сотрудник_осн.Caption = "Сотрудник";
             this.Сотрудник_осн.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_осн.Name = "Сотрудник";
-            this.Сотрудник_осн.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_осн.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_осн.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_осн.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_осн.SearchCondition.OwnerComponent = this.Сотрудник_осн;
             this.Сотрудник_осн.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -622,7 +622,7 @@ namespace TechControl.Метаданные.Отчеты
         protected NsgVisualMultipleObject vmoФильтр;
         protected Мониторинг.Подразделения.ColumnDescriptor Подразделение_vmoФильтр;
         private NsgSoft.Forms.NsgIGridView.NsgObjectFilter nsgObjectFilter1;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoФильтр;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoФильтр;
         protected Мониторинг.Объекты.ColumnDescriptor Объект_vmoФильтр;
         protected NsgInput nsgInput1;
         private NsgSoft.ReportBuilder.NsgGroupsList nsgGroupsList1;
@@ -635,7 +635,7 @@ namespace TechControl.Метаданные.Отчеты
         private System.Windows.Forms.CheckBox cbПоказыватьНевыданные;
         protected УчетСпецодеждыИСИЗ.КомплектыСпецодежды.ColumnDescriptor Комплект_осн;
         protected NsgColumnDescriptor.Int64 Количество_осн;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_осн;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_осн;
         protected Мониторинг.Подразделения.ColumnDescriptor Подразделение_осн;
         protected Мониторинг.Должности.ColumnDescriptor Должность_осн;
         protected NsgSoft.ReportBuilder.NsgReport nsgReport1;

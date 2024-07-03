@@ -301,12 +301,12 @@ namespace TechControl.Метаданные._SystemTables
         [NsgView(NsgViewTypes.DesignTime)]
         [NsgTypeName("NsgDataDictionary")]
         
-        public Мониторинг.Сотрудники Сотрудник
+        public Мониторинг.ФизЛица Сотрудник
         {
             get
             {
 				 NsgDataTypedReference __Сотрудник = ObjectList["Сотрудник"] as NsgDataTypedReference;
-                 return (Мониторинг.Сотрудники)__Сотрудник.Referent;
+                 return (Мониторинг.ФизЛица)__Сотрудник.Referent;
             }
             set
             {

@@ -49,7 +49,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.ВремяПрибытия = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.Геозона = new TechControl.Метаданные.Мониторинг.Геозоны.ColumnDescriptor();
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
-            this.Водитель = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Водитель = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -542,8 +542,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.Водитель.Caption = "Водитель";
             this.Водитель.Creator = typeof(NsgSoft.Forms.NsgMultipleObjectElementForm);
             this.Водитель.Name = "Водитель";
-            this.Водитель.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Водитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Водитель.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Водитель.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Водитель.SearchCondition.OwnerComponent = this.Водитель;
             this.Водитель.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -907,7 +907,7 @@ namespace TechControl.Метаданные.Мониторинг
         protected NsgColumnDescriptor.DateTime ВремяПрибытия;
         protected Геозоны.ColumnDescriptor Геозона;
         protected Объекты.ColumnDescriptor Объект;
-        protected Сотрудники.ColumnDescriptor Водитель;
+        protected ФизЛица.ColumnDescriptor Водитель;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

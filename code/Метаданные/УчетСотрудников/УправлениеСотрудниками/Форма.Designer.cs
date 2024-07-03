@@ -82,7 +82,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.vmoТаблица = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.НачалоСмены_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.Длительность_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
-            this.Сотрудник_vmoТаблица = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoТаблица = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Тариф_vmoТаблица = new TechControl.Метаданные.Мониторинг.Тарифы.ColumnDescriptor();
             this.Техника_vmoТаблица = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             this.Объект_vmoТаблица = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
@@ -92,7 +92,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.КодГруппы_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.nsgIGrid2 = new NsgSoft.Forms.NsgIGrid();
             this.vmoТаблицаИтогов = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
-            this.Сотрудник_vmoТаблицаИтогов = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoТаблицаИтогов = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Техника_vmoТаблицаИтогов = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             this.Тариф_vmoТаблицаИтогов = new TechControl.Метаданные.Мониторинг.Тарифы.ColumnDescriptor();
             this.Дл1_vmoТаблицаИтогов = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
@@ -149,7 +149,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.vmoИтоги = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.Объект_vmoИтоги = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Контрагент_vmoИтоги = new TechControl.Метаданные.Мониторинг.Контрагенты.ColumnDescriptor();
-            this.Сотрудник_vmoИтоги = new TechControl.Метаданные.Мониторинг.Сотрудники.ColumnDescriptor();
+            this.Сотрудник_vmoИтоги = new TechControl.Метаданные.Мониторинг.ФизЛица.ColumnDescriptor();
             this.Техника_vmoИтоги = new TechControl.Метаданные.Мониторинг.Техника.ColumnDescriptor();
             this.МесяцИтогов_vmoИтоги = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.label8 = new System.Windows.Forms.Label();
@@ -496,8 +496,8 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.Сотрудник_vmoТаблица.Caption = "Сотрудник";
             this.Сотрудник_vmoТаблица.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoТаблица.Name = "Сотрудник";
-            this.Сотрудник_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoТаблица.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoТаблица.SearchCondition.OwnerComponent = this.Сотрудник_vmoТаблица;
             this.Сотрудник_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1278,8 +1278,8 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.Сотрудник_vmoТаблицаИтогов.Caption = "Сотрудник";
             this.Сотрудник_vmoТаблицаИтогов.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoТаблицаИтогов.Name = "Сотрудник";
-            this.Сотрудник_vmoТаблицаИтогов.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoТаблицаИтогов.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoТаблицаИтогов.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoТаблицаИтогов.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoТаблицаИтогов.SearchCondition.OwnerComponent = this.Сотрудник_vmoТаблицаИтогов;
             this.Сотрудник_vmoТаблицаИтогов.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -1995,8 +1995,8 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.Сотрудник_vmoИтоги.Caption = "Сотрудник";
             this.Сотрудник_vmoИтоги.Creator = typeof(NsgSoft.Forms.NsgReportForm);
             this.Сотрудник_vmoИтоги.Name = "Сотрудник";
-            this.Сотрудник_vmoИтоги.NSGType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
-            this.Сотрудник_vmoИтоги.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Сотрудники);
+            this.Сотрудник_vmoИтоги.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
+            this.Сотрудник_vmoИтоги.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФизЛица);
             this.Сотрудник_vmoИтоги.SearchCondition.OwnerComponent = this.Сотрудник_vmoИтоги;
             this.Сотрудник_vmoИтоги.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
@@ -2196,7 +2196,7 @@ namespace TechControl.Метаданные.УчетСотрудников
         protected NsgSoft.Design.NsgButton nbЗаполнить;
         protected NsgColumnDescriptor.DateTime НачалоСмены_vmoТаблица;
         protected NsgColumnDescriptor.Decimal Длительность_vmoТаблица;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoТаблица;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoТаблица;
         protected Мониторинг.Тарифы.ColumnDescriptor Тариф_vmoТаблица;
         protected Мониторинг.Техника.ColumnDescriptor Техника_vmoТаблица;
         protected Мониторинг.Объекты.ColumnDescriptor Объект_vmoТаблица;
@@ -2209,8 +2209,8 @@ namespace TechControl.Метаданные.УчетСотрудников
         protected Мониторинг.ГруппыСпецТехники.ColumnDescriptor ГруппаСпецТехники_vmoТаблица;
         protected Мониторинг.Объекты.ColumnDescriptor Объект_vmoИтоги;
         protected Мониторинг.Контрагенты.ColumnDescriptor Контрагент_vmoИтоги;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoИтоги;
-        protected Мониторинг.Сотрудники.ColumnDescriptor Сотрудник_vmoТаблицаИтогов;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoИтоги;
+        protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoТаблицаИтогов;
         protected Мониторинг.Техника.ColumnDescriptor Техника_vmoИтоги;
         protected Мониторинг.Техника.ColumnDescriptor Техника_vmoТаблицаИтогов;
         protected Мониторинг.Тарифы.ColumnDescriptor Тариф_vmoТаблицаИтогов;

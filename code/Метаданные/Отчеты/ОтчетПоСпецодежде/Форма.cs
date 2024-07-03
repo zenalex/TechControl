@@ -75,9 +75,9 @@ namespace TechControl.Метаданные.Отчеты
                 var cmpОбъектФильтр1 = nsgObjectFilter1.GetCompare(Объект_vmoФильтр.Name);
                 var cmpОбъектФильтр2 = nsgObjectFilter1.GetCompare(Объект_vmoФильтр.Name);
                 var cmpОбъект = new NsgCompare(NsgLogicalOperator.Or);
-                var cmpОснОбъект = cmpОбъектФильтр1.ReplaceParametersNames(Объект_vmoФильтр.Name, Сотрудники.Names.ОсновнойОбъект);
+                var cmpОснОбъект = cmpОбъектФильтр1.ReplaceParametersNames(Объект_vmoФильтр.Name, ФизЛица.Names.ОсновнойОбъект);
                 cmpОбъект.Add(cmpОснОбъект);
-                var cmpОбъектВыдачи = cmpОбъектФильтр2.ReplaceParametersNames(Объект_vmoФильтр.Name, Сотрудники.Names.ОбъектВыдачиСпецодежды);
+                var cmpОбъектВыдачи = cmpОбъектФильтр2.ReplaceParametersNames(Объект_vmoФильтр.Name, ФизЛица.Names.ОбъектВыдачиСпецодежды);
                 cmpОбъект.Add(cmpОбъектВыдачи);
 
                 cmp.Add(cmpОбъект);
@@ -85,14 +85,14 @@ namespace TechControl.Метаданные.Отчеты
 
             if (!nsgObjectFilter1.GetCompare(Подразделение_vmoФильтр.Name).IsEmpty)
             {
-                var cmpПодразделениеФильтр = nsgObjectFilter1.GetCompare(Подразделение_vmoФильтр.Name).ReplaceParametersNames(Подразделение_vmoФильтр.Name, Сотрудники.Names.Подразделение);
+                var cmpПодразделениеФильтр = nsgObjectFilter1.GetCompare(Подразделение_vmoФильтр.Name).ReplaceParametersNames(Подразделение_vmoФильтр.Name, ФизЛица.Names.Подразделение);
                 
                 cmp.Add(cmpПодразделениеФильтр);
             }
 
-            cmp.Add(Сотрудники.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+            cmp.Add(ФизЛица.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
 
-            var всеСотрудники = Сотрудники.Новый().FindAll(cmp);
+            var всеСотрудники = ФизЛица.Новый().FindAll(cmp);
 
             РегистрУчетСпецодежды рег = РегистрУчетСпецодежды.Новый();
             var cmpРег = new NsgCompare();
@@ -113,7 +113,7 @@ namespace TechControl.Метаданные.Отчеты
                             var компл = срокаТаблицыКомплектов.КомплектСпецодежды;
                             var остаткиПоСотруднику = остатки.AllRows.Where(x => (x[РегистрУчетСпецодежды.Names.НоменклатураСпецодеждыИСИЗ].ToReferent() as Номенклатура) == ном
                                  && (x[РегистрУчетСпецодежды.Names.КомплектСпецодежды].ToReferent() as КомплектыСпецодежды) == компл
-                                 && (x[РегистрУчетСпецодежды.Names.Сотрудник].ToReferent() as Сотрудники) == сотрудник).ToArray();
+                                 && (x[РегистрУчетСпецодежды.Names.Сотрудник].ToReferent() as ФизЛица) == сотрудник).ToArray();
                             if (остаткиПоСотруднику.Length > 0)
                             {
                                 var размер = сотрудник.РазмерНоменклатуры(ном);
@@ -195,7 +195,7 @@ namespace TechControl.Метаданные.Отчеты
             {
                 foreach (var item in остатки.AllRows)
                 {
-                    var сотрудник = item[РегистрУчетСпецодежды.Names.Сотрудник].ToReferent() as Сотрудники;
+                    var сотрудник = item[РегистрУчетСпецодежды.Names.Сотрудник].ToReferent() as ФизЛица;
                     var ном = item[РегистрУчетСпецодежды.Names.НоменклатураСпецодеждыИСИЗ].ToReferent() as Номенклатура;
                     var комплект = item[РегистрУчетСпецодежды.Names.КомплектСпецодежды].ToReferent() as КомплектыСпецодежды;
                     var размер = item[РегистрУчетСпецодежды.Names.Размер].ToReferent() as Размеры;
