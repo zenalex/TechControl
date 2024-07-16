@@ -437,8 +437,14 @@ namespace TechControl.Метаданные.Грузы
                 //MemoryStream stream = (MemoryStream)Фото_vmoФотографии.Value;
                 //stream.Seek(0, SeekOrigin.Begin);
                 //Image img = System.Drawing.Image.FromStream(stream);
-
-                pictureBox1.Image = Фото_vmoФотографии.Value.Фотография;
+                try
+                {
+                    pictureBox1.Image = Фото_vmoФотографии.Value.ПолучитьФото();
+                }
+                catch
+                {
+                    pictureBox1.Image = null;
+                }
             }
         }
 

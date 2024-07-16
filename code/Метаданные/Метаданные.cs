@@ -68,6 +68,10 @@ namespace TechControl.Метаданные
         #endregion //Конструкторы
 
         #region Свойства
+        public static string FilesDirectory { get; private set; }
+            = System.Configuration.ConfigurationManager.AppSettings["FilesDirectory"] ?? "images";
+        public static string ExternalFileSource { get; set; }
+            = System.Configuration.ConfigurationManager.AppSettings["ExternalFileSource"];
         #endregion //Свойства
 
         #region Методы
