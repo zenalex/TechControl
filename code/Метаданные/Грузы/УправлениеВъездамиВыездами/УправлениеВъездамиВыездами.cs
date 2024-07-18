@@ -49,8 +49,10 @@ namespace TechControl.Метаданные.Грузы
             var объемГруза = документВыезда.ОбъемГруза;
 
             var cmpДвижения = new NsgCompare();
+            cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, дата, NsgComparison.LessOrEqual);
             cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Объект, объект);
             cmpДвижения.Add(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.Техника, техника);
+            
             var sort = new NsgSorting();
             sort.Add(new NsgSortingParam(ГрузыРегистрПеремещениеЧерезКППДвижения.Names.ДатаДокумента, NsgSortDirection.Descending));
             int count = 1;
@@ -62,7 +64,7 @@ namespace TechControl.Метаданные.Грузы
                 if (движение.ВидГруза != ВидыГрузов.Пустой)
                 {
                     cmp.Add(ПривозГруза.Names.ДатаДокумента, движение.ДатаДокумента, NsgComparison.GreaterOrEqual);
-                    cmp.Add(ПривозГруза.Names.ДатаДокумента, дата, NsgComparison.LessOrEqual);
+                    cmp.Add(ПривозГруза.Names.ДатаДокумента, дата, NsgComparison.Less);
                     cmp.Add(ПривозГруза.Names.ВидГруза, движение.ВидГруза);
                     cmp.Add(ПривозГруза.Names.Объект, объект);
                     cmp.Add(ПривозГруза.Names.НомерАвто, техника.ГосНомер);
@@ -89,7 +91,7 @@ namespace TechControl.Метаданные.Грузы
                 {
                     cmp = new NsgCompare();
                     cmp.Add(ВывозГруза.Names.ДатаДокумента, движение.ДатаДокумента, NsgComparison.GreaterOrEqual);
-                    cmp.Add(ВывозГруза.Names.ДатаДокумента, дата, NsgComparison.LessOrEqual);
+                    cmp.Add(ВывозГруза.Names.ДатаДокумента, дата, NsgComparison.Less);
                     cmp.Add(ВывозГруза.Names.ВидГруза, видГруза);
                     cmp.Add(ВывозГруза.Names.Объект, объект);
                     cmp.Add(ВывозГруза.Names.НомерАвто, техника.ГосНомер);
