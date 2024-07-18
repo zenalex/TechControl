@@ -5069,4 +5069,19 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Учет\Фотографии\ФормаСписка.Designer.cs">
+      <NsgOwnerGuid>feeb7e32-730b-451c-8370-5b2928485c18</NsgOwnerGuid>
+      <DependentUpon>ФормаСписка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\Фотографии\ФормаСписка.cs">
+      <NsgOwnerGuid>feeb7e32-730b-451c-8370-5b2928485c18</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Учет\Фотографии\ФормаСписка.resx">
+      <NsgOwnerGuid>feeb7e32-730b-451c-8370-5b2928485c18</NsgOwnerGuid>
+      <DependentUpon>ФормаСписка.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
