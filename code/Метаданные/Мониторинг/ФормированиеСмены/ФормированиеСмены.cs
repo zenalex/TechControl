@@ -176,34 +176,35 @@ namespace TechControl.Метаданные.Мониторинг
                         System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
                 }
-                if (!i.Тариф.Selected)
-                {
-                    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран тариф",
-                        System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
-                }
-                var tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
-                    .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
-                    .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
-                if (tariff == null)
-                {
-                    tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
-                        .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
-                        .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
-                }
-                if (tariff == null)
-                {
-                    NsgSettings.MainForm.ShowMessage(
-                        $"Техника: {i.Техника} - выбранный тариф на задан на объекте для группы техники {i.Техника.ГруппаСпецТехники}",
-                        System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
-                }
-                if (!i.Сотрудник.Selected && tariff[РегистрТарифыТехникиОбъекта.Names.ТребуетсяСотрудник].ToBoolean())
-                {
-                    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран сотрудник",
-                        System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
-                }
+                // 01.07.2025 закомментированно для запуска функц. хранения фотографий
+                //if (!i.Тариф.Selected)
+                //{
+                //    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран тариф",
+                //        System.Windows.Forms.MessageBoxIcon.Error);
+                //    return false;
+                //}
+                //var tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                //    .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
+                //    .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                //if (tariff == null)
+                //{
+                //    tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                //        .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
+                //        .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                //}
+                //if (tariff == null)
+                //{
+                //    NsgSettings.MainForm.ShowMessage(
+                //        $"Техника: {i.Техника} - выбранный тариф на задан на объекте для группы техники {i.Техника.ГруппаСпецТехники}",
+                //        System.Windows.Forms.MessageBoxIcon.Error);
+                //    return false;
+                //}
+                //if (!i.Сотрудник.Selected && tariff[РегистрТарифыТехникиОбъекта.Names.ТребуетсяСотрудник].ToBoolean())
+                //{
+                //    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран сотрудник",
+                //        System.Windows.Forms.MessageBoxIcon.Error);
+                //    return false;
+                //}
                 if (t.Contains(i.Техника))
                 {
                     error = !this.ЭтоИтоговыйДокумент;
@@ -211,12 +212,12 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 t.Add(i.Техника);
             }
-            if (error)
-            {
-                NsgSettings.MainForm.ShowMessage($"Техника не должна встречаться более одного раза:" + ts.ToString(),
-                    System.Windows.Forms.MessageBoxIcon.Error);
-                return false;
-            }
+            //if (error)
+            //{
+            //    NsgSettings.MainForm.ShowMessage($"Техника не должна встречаться более одного раза:" + ts.ToString(),
+            //        System.Windows.Forms.MessageBoxIcon.Error);
+            //    return false;
+            //}
             List<ФизЛица> s = new List<ФизЛица>();
             error = false;
             ts.Clear();
@@ -225,12 +226,13 @@ namespace TechControl.Метаданные.Мониторинг
                 if (this.ЭтоИтоговыйДокумент && i.Длительность == 0)
                     continue;
 
-                if (!i.Тариф.Selected)
-                {
-                    NsgSettings.MainForm.ShowMessage($"Сотрудник: {i.Сотрудник} - не выбран тариф",
-                        System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
-                }
+                // 01.07.2025 закомментированно для запуска функц. хранения фотографий
+                //if (!i.Тариф.Selected)
+                //{
+                //    NsgSettings.MainForm.ShowMessage($"Сотрудник: {i.Сотрудник} - не выбран тариф",
+                //        System.Windows.Forms.MessageBoxIcon.Error);
+                //    return false;
+                //}
 
                 //TODO требуется разобраться с тарифами и почему один человек не может встречаться дважды
                 //var tariff = this.Объект.ТаблицаТарифыСотрудников.FindRow(new NsgCompare()
