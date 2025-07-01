@@ -76,34 +76,35 @@ namespace TechControl.Метаданные.Мониторинг
                         System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
                 }
-                if (!i.Тариф.Selected)
-                {
-                    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран тариф",
-                        System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
-                }
-                var tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
-                    .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
-                    .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
-                if (tariff == null)
-                {
-                    tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
-                        .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
-                        .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
-                }
-                if (tariff == null)
-                {
-                    NsgSettings.MainForm.ShowMessage(
-                        $"Техника: {i.Техника} - выбранный тариф на задан на объекте для группы техники {i.Техника.ГруппаСпецТехники}",
-                        System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
-                }
-                if (!i.Сотрудник.Selected)
-                {
-                    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран сотрудник",
-                        System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
-                }
+                // 01.07.2025 закомментированно для запуска функц. хранения фотографий
+                //if (!i.Тариф.Selected)
+                //{
+                //    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран тариф",
+                //        System.Windows.Forms.MessageBoxIcon.Error);
+                //    return false;
+                //}
+                //var tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                //    .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
+                //    .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+                //if (tariff == null)
+                //{
+                //    tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+                //        .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
+                //        .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+                //}
+                //if (tariff == null)
+                //{
+                //    NsgSettings.MainForm.ShowMessage(
+                //        $"Техника: {i.Техника} - выбранный тариф на задан на объекте для группы техники {i.Техника.ГруппаСпецТехники}",
+                //        System.Windows.Forms.MessageBoxIcon.Error);
+                //    return false;
+                //}
+                //if (!i.Сотрудник.Selected)
+                //{
+                //    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран сотрудник",
+                //        System.Windows.Forms.MessageBoxIcon.Error);
+                //    return false;
+                //}
                 if (t.Contains(i.Техника))
                 {
                     error = true;
@@ -111,45 +112,45 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 t.Add(i.Техника);
             }
-            if (error)
-            {
-                NsgSettings.MainForm.ShowMessage($"Техника не должна встречаться более одного раза:" + ts.ToString(),
-                    System.Windows.Forms.MessageBoxIcon.Error);
-                return false;
-            }
+            //if (error)
+            //{
+            //    NsgSettings.MainForm.ShowMessage($"Техника не должна встречаться более одного раза:" + ts.ToString(),
+            //        System.Windows.Forms.MessageBoxIcon.Error);
+            //    return false;
+            //}
             List<ФизЛица> s = new List<ФизЛица>();
             error = false;
             ts.Clear();
             foreach (var i in this.ТаблицаПерсонал.Rows)
             {
-                if (!i.Тариф.Selected)
-                {
-                    NsgSettings.MainForm.ShowMessage($"Сотрудник: {i.Сотрудник} - не выбран тариф",
-                        System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
-                }
-                var tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
-                    .Add(РегистрТарифыПерсоналаОбъекта.Names.Тариф, i.Тариф)
-                    .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, i.Сотрудник.Должность));
-                if (tariff == null)
-                {
-                    tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
-                        .Add(РегистрТарифыПерсоналаОбъекта.Names.Тариф, i.Тариф)
-                        .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, Должности.Новый()));
-                }
-                if (tariff == null)
-                {
-                    NsgSettings.MainForm.ShowMessage(
-                        $"Сотрудник: {i.Сотрудник} - выбранный тариф на задан на объекте для должности {i.Сотрудник.Должность}",
-                        System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
-                }
-                if (!i.Сотрудник.Selected)
-                {
-                    NsgSettings.MainForm.ShowMessage($"Таблица персонала: В некоторых строках не выбран сотрудник",
-                        System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
-                }
+                //if (!i.Тариф.Selected)
+                //{
+                //    NsgSettings.MainForm.ShowMessage($"Сотрудник: {i.Сотрудник} - не выбран тариф",
+                //        System.Windows.Forms.MessageBoxIcon.Error);
+                //    return false;
+                //}
+                //var tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+                //    .Add(РегистрТарифыПерсоналаОбъекта.Names.Тариф, i.Тариф)
+                //    .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, i.Сотрудник.Должность));
+                //if (tariff == null)
+                //{
+                //    tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+                //        .Add(РегистрТарифыПерсоналаОбъекта.Names.Тариф, i.Тариф)
+                //        .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, Должности.Новый()));
+                //}
+                //if (tariff == null)
+                //{
+                //    NsgSettings.MainForm.ShowMessage(
+                //        $"Сотрудник: {i.Сотрудник} - выбранный тариф на задан на объекте для должности {i.Сотрудник.Должность}",
+                //        System.Windows.Forms.MessageBoxIcon.Error);
+                //    return false;
+                //}
+                //if (!i.Сотрудник.Selected)
+                //{
+                //    NsgSettings.MainForm.ShowMessage($"Таблица персонала: В некоторых строках не выбран сотрудник",
+                //        System.Windows.Forms.MessageBoxIcon.Error);
+                //    return false;
+                //}
                 if (s.Contains(i.Сотрудник))
                 {
                     error = true;
@@ -157,12 +158,12 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 s.Add(i.Сотрудник);
             }
-            if (error)
-            {
-                NsgSettings.MainForm.ShowMessage($"Сотрудник не должен встречаться более одного раза:" + ts.ToString(),
-                    System.Windows.Forms.MessageBoxIcon.Error);
-                return false;
-            }
+            //if (error)
+            //{
+            //    NsgSettings.MainForm.ShowMessage($"Сотрудник не должен встречаться более одного раза:" + ts.ToString(),
+            //        System.Windows.Forms.MessageBoxIcon.Error);
+            //    return false;
+            //}
 
             //Get rest по ФиксацияИстории на дату документа - тик. Оттуда берем время работы. Если статус в работе не менялся в ФиксацияИстории пишем старое время.
             //в РегистрСмен пишем время в работе 
