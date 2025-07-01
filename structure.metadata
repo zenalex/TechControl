@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2024.7.16.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2025.7.1.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2024.7.16.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2024.7.16.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2025.7.1.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2025.7.1.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -434,7 +434,7 @@
                 <param name="NsgDataDictionary" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="9aba49db-ab3d-4a0b-b2fb-3b9be2c119cc" type="NsgDataBoolean" editoraccess="Limited" name="ВыгрузкаЗависимыхОбъектов" visible="true" description="Выгрузка зависимых объектов" field="_ExportBindedObjects" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+            <NsgSimpleObject Guid="9aba49db-ab3d-4a0b-b2fb-3b9be2c119cc" type="NsgDataBoolean" editoraccess="Limited" name="ВыгрузкаЗависимыхОбъектов" visible="true" description="Выгрузка зависимых объектов" field="_ExportBindedObjects" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" defaultValue="true">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="Выгрузка зависимых объектов" />
               </NsgLanguageString>
@@ -2615,6 +2615,26 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="1b6dfafd-20fd-4a5a-88b8-8c337cf451e5" type="NsgDataFloat" editoraccess="Full" name="Долгота" visible="true" description="Долгота" field="Dolgota" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="8" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="be49ec91-76bc-471f-93fb-271da5b1af52" type="NsgDataFloat" editoraccess="Full" name="ПлощадьЗданий" visible="true" description="Площадь зданий" field="PloschadZdaniij" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="e585f88d-1bd8-4026-aade-795d130798f5" type="NsgDataInteger" editoraccess="Full" name="КоличествоЗданий" visible="true" description="Количество зданий" field="KolichestvoZdaniij" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="15aafe1a-f02e-4828-a040-4d20a0b7732e" type="NsgDataFloat" editoraccess="Full" name="Широта" visible="true" description="Широта" field="SHirota" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="8" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -2647,6 +2667,10 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="Долгота" />
+            <container name="ПлощадьЗданий" />
+            <container name="КоличествоЗданий" />
+            <container name="Широта" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
