@@ -17,6 +17,10 @@ namespace TechControl.Метаданные.Мониторинг
     {
         protected override List<Guid> BasePost()
         {
+            if (this.ObjectState == NsgObjectStates.New)
+            {
+                ДатаСоздания = DateTime.Now;
+            }
             if (this.ObjectState != NsgObjectStates.New && !ЗаправочнаяЕмкость.Selected)
             {
                 var r = FindAllRequisits(new NsgCompare().Add(Names.Идентификатор, Идентификатор), Names.ЗаправочнаяЕмкость)
@@ -38,6 +42,8 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 ЗаправочнаяЕмкость = r;
             }
+
+            ДатаПоследнегоИзменения = DateTime.Now;
             return base.BasePost();
         }
 

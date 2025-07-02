@@ -159,6 +159,7 @@ namespace TechControl.Метаданные.Мониторинг
                 }
             }
 
+            ДатаПоследнегоИзменения = DateTime.Now;
             return base.BasePost();
         }
 
