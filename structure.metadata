@@ -8043,6 +8043,16 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="679e56c6-ff8e-4786-a7f9-2ef4e787f6a9" type="NsgDataTypedReference" editoraccess="Full" name="Должность" visible="true" description="Должность" field="Dolzhnost" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Должности">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="180cecc4-f6f7-4eff-bc66-6336283889e7" type="NsgDataFloat" editoraccess="Full" name="Длительность" visible="true" description="Длительность" field="Dlitelnost" index="None" subtype="Common" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="СтатусСотрудника" />
@@ -8050,6 +8060,8 @@
             <container name="НомерСмены" />
             <container name="Сотрудник" />
             <container name="Тариф" />
+            <container name="Должность" />
+            <container name="Длительность" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="c6fe5227-728c-45ee-bb2b-38c7b2246d9c" type="NsgDataTable" editoraccess="Full" name="МониторингФормированиеСменыДеньТаблицаТехника" visible="true" description="Мониторинг формирование смены переходное таблица техники" group="_SystemTables" table="_tab_MonitoringFormirova3" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="TablePart" registerPeriod="None" registerPeriodCount="0">
@@ -8266,11 +8278,11 @@
             <container name="Ответственный" />
             <container name="АккаунтПользователя" />
             <container name="ДатаПоследнгегоИзменения" />
+            <container name="ЗавершаетСмену" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ЗавершаетСмену" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
