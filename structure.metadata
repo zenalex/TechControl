@@ -8248,6 +8248,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="87ecf06f-f635-4c74-ada1-5ac0f87520e9" type="NsgDataBoolean" editoraccess="Full" name="ЗавершаетСмену" visible="true" description="Завершает смену" field="ZavershaetSmenu" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -8265,6 +8270,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="ЗавершаетСмену" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
