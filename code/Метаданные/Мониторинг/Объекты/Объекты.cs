@@ -136,6 +136,29 @@ namespace TechControl.Метаданные.Мониторинг
             reg.Объект = this;
             return reg.GetRests();
         }
+
+        public ФормированиеСмены ПолучитьСменуНаДату(DateTime дата) 
+        {
+            var cmp = new NsgCompare();
+            cmp.Add(ФормированиеСмены.Names.ДатаДокумента, дата, NsgComparison.LessOrEqual);
+            var cmpOr = new NsgCompare(NsgLogicalOperator.Or);
+            cmpOr.Add(ФормированиеСмены.Names.ДатаОкончанияСмены, NsgService.MinDate);
+            cmpOr.Add(ФормированиеСмены.Names.ДатаОкончанияСмены, дата, NsgComparison.Greater);
+            cmp.Add(cmpOr);
+            cmp.Add(ФормированиеСмены.Names.Объект, this);
+            cmp.Add(ФормированиеСмены.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+
+            var смена = ФормированиеСмены.Новый();
+            if (!смена.Find(cmp)) 
+            {
+                смена.New();
+                смена.ДатаДокумента = дата;
+                смена.Объект = this;
+                смена.Ответственный = Ответственный;
+                смена.Post();
+            }
+            return смена;
+        }
     }
 
 }

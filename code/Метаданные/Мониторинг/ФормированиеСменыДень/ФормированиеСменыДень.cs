@@ -16,6 +16,11 @@ namespace TechControl.Метаданные.Мониторинг
     {
         protected override List<Guid> BasePost()
         {
+            if (Объект == null || !Объект.Selected)
+            {
+                throw new Exception("Запрещено создавать документ без указания Объекта");
+            }
+
             foreach (var i in this.ТаблицаТехника.Rows)
             {
                 i.Время = this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
@@ -59,6 +64,11 @@ namespace TechControl.Метаданные.Мониторинг
                     }
                 }
                 i.Post();
+            }
+
+            if (ДокументОснование == null || !ДокументОснование.Selected)
+            {
+                ДокументОснование = Объект.ПолучитьСменуНаДату(ДатаДокумента);
             }
 
             ДатаПоследнгегоИзменения = DateTime.Now;
@@ -318,7 +328,7 @@ namespace TechControl.Метаданные.Мониторинг
             //    NsgSettings.MainForm.ShowMessage("Не выбран объект", MessageBoxIcon.Exclamation);
             //    return;
             //}
-            List<Техника> техникаОбъекта = Объект.СписокТехникиОбъекта().ToList();
+            //List<Техника> техникаОбъекта = Объект.СписокТехникиОбъекта().ToList();
             //List<Техника> техникаОбъекта = new List<Техника>();
             //foreach (var i in this.Объект.ТаблицаТехника.Rows)
             //{
@@ -330,7 +340,7 @@ namespace TechControl.Метаданные.Мониторинг
             //        техникаОбъекта.Add(i.Техника);
             //    }
             //}
-            List<ФизЛица> персоналОбъекта = Объект.СписокПерсонала().Select(x => x.Item1).ToList();
+            //List<ФизЛица> персоналОбъекта = Объект.СписокПерсонала().Select(x => x.Item1).ToList();
             //List<Сотрудники> персоналОбъекта = new List<Сотрудники>();
             //foreach (var i in this.Объект.ТаблицаПерсонал.Rows)
             //{
@@ -339,11 +349,12 @@ namespace TechControl.Метаданные.Мониторинг
             //        персоналОбъекта.Add(i.Сотрудник);
             //    }
             //}
+            
             ФиксацияИстории фиксацияИстории = ФиксацияИстории.Новый();
             NsgCompare cmp = new NsgCompare()
-                .Add(ФиксацияИстории.Names.Объект, this.Объект)
-                .Add(ФиксацияИстории.Names.Техника, техникаОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In)
-                .Add(ФиксацияИстории.Names.Сотрудник, персоналОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In);
+                .Add(ФиксацияИстории.Names.Объект, this.Объект);
+                //.Add(ФиксацияИстории.Names.Техника, техникаОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In)
+                //.Add(ФиксацияИстории.Names.Сотрудник, персоналОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In);
             var rsts = фиксацияИстории.GetRests(this.ДатаДокумента, cmp);
             this.ТаблицаТехника.FullClear();
             foreach (var i in rsts.Rows)
@@ -388,21 +399,21 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 row.Post();
             }
-            foreach (var i in техникаОбъекта)
-            {
-                if (this.ТаблицаТехника.FindRow(new NsgCompare()
-                    .Add(МониторингФормированиеСменыДеньТаблицаТехника.Names.Техника, i)) == null)
-                {
-                    var row = this.ТаблицаТехника.NewRow();
-                    row[МониторингФормированиеСменыДеньТаблицаТехника.Names.Техника].Value = i;
-                    row.Post();
-                }
-            }
+            //foreach (var i in техникаОбъекта)
+            //{
+            //    if (this.ТаблицаТехника.FindRow(new NsgCompare()
+            //        .Add(МониторингФормированиеСменыДеньТаблицаТехника.Names.Техника, i)) == null)
+            //    {
+            //        var row = this.ТаблицаТехника.NewRow();
+            //        row[МониторингФормированиеСменыДеньТаблицаТехника.Names.Техника].Value = i;
+            //        row.Post();
+            //    }
+            //}
 
             ФиксацияИсторииСотрудников фиксацияИсторииСотрудников = ФиксацияИсторииСотрудников.Новый();
             cmp = new NsgCompare()
-                .Add(ФиксацияИсторииСотрудников.Names.Объект, this.Объект)
-                .Add(ФиксацияИсторииСотрудников.Names.Сотрудник, персоналОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In);
+                .Add(ФиксацияИсторииСотрудников.Names.Объект, this.Объект);
+                //.Add(ФиксацияИсторииСотрудников.Names.Сотрудник, персоналОбъекта.ToArray(), NsgSoft.Database.NsgComparison.In);
             rsts = фиксацияИсторииСотрудников.GetRests(this.ДатаДокумента, cmp);
             this.ТаблицаПерсонал.FullClear();
             foreach (var i in rsts.Rows)
@@ -447,16 +458,16 @@ namespace TechControl.Метаданные.Мониторинг
                 }
                 row.Post();
             }
-            foreach (var i in персоналОбъекта)
-            {
-                if (this.ТаблицаПерсонал.FindRow(new NsgCompare()
-                    .Add(МониторингФормированиеСменыДеньТаблицаПерсонал.Names.Сотрудник, i)) == null)
-                {
-                    var row = this.ТаблицаПерсонал.NewRow();
-                    row[МониторингФормированиеСменыДеньТаблицаПерсонал.Names.Сотрудник].Value = i;
-                    row.Post();
-                }
-            }
+            //foreach (var i in персоналОбъекта)
+            //{
+            //    if (this.ТаблицаПерсонал.FindRow(new NsgCompare()
+            //        .Add(МониторингФормированиеСменыДеньТаблицаПерсонал.Names.Сотрудник, i)) == null)
+            //    {
+            //        var row = this.ТаблицаПерсонал.NewRow();
+            //        row[МониторингФормированиеСменыДеньТаблицаПерсонал.Names.Сотрудник].Value = i;
+            //        row.Post();
+            //    }
+            //}
         }
     }
 
