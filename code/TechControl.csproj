@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2025.7.3.0</ProductVersion>
+    <ProductVersion>2025.7.7.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -5091,6 +5091,17 @@
     <Compile Include="Метаданные\Учет\ТипыФотографий\ТипыФотографий.cs">
       <NsgOwnerGuid>63cc539a-9550-4fe3-8258-a8784b5c194e</NsgOwnerGuid>
       <NsgOwnerName>ТипыФотографий</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Учет\ИсточникФотографииКлиента\ИсточникФотографииКлиента.NsgInit.cs">
+      <NsgOwnerGuid>39081bad-f4c4-4779-992d-a5816eb4b3f9</NsgOwnerGuid>
+      <NsgOwnerName>ИсточникФотографииКлиента</NsgOwnerName>
+      <DependentUpon>ИсточникФотографииКлиента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Учет\ИсточникФотографииКлиента\ИсточникФотографииКлиента.cs">
+      <NsgOwnerGuid>39081bad-f4c4-4779-992d-a5816eb4b3f9</NsgOwnerGuid>
+      <NsgOwnerName>ИсточникФотографииКлиента</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
