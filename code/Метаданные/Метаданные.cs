@@ -72,6 +72,8 @@ namespace TechControl.Метаданные
             = System.Configuration.ConfigurationManager.AppSettings["FilesDirectory"] ?? "images";
         public static string ExternalFileSource { get; set; }
             = System.Configuration.ConfigurationManager.AppSettings["ExternalFileSource"];
+        public static string MinioBucketName { get; set; }
+            = System.Configuration.ConfigurationManager.AppSettings["MinioBucketName"];
         #endregion //Свойства
 
         #region Методы

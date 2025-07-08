@@ -9,6 +9,7 @@ using System.Net;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Drawing.Imaging;
+using System.Threading.Tasks;
 
 
 
@@ -26,7 +27,7 @@ namespace TechControl.Метаданные.Учет
         #region Свойства
         #endregion //Свойства
 
-        #region Методы
+        #region Download
         private static WebClient _webClient;
         public WebClient WebClient
         {
@@ -38,10 +39,11 @@ namespace TechControl.Метаданные.Учет
                 return _webClient;
             }
         }
+
         public Image ПолучитьФото() => ПолучитьФото(out _);
-        public Image ПолучитьФото(out string fullPath)
+        public Image ПолучитьФото(out FileAdditionalInfo info)
         {
-            fullPath = null;
+            info = new FileAdditionalInfo();
             if (string.IsNullOrWhiteSpace(this.Путь)) return null;
 
             Image img = null;
@@ -49,21 +51,55 @@ namespace TechControl.Метаданные.Учет
 
             try
             {
+                if (!string.IsNullOrWhiteSpace(Метаданные.MinioBucketName))
+                {
+                    Stream stream = null;
+                    try
+                    {
+                        var storage = new MinioFileStorage();
+                        byte[] bytes = null;
+                        Task.Run(async () =>
+                        {
+                            using (var content = await storage.DownloadFileAsync(path))
+                            {
+                                stream = await content.ReadAsStreamAsync();
+                                img = Image.FromStream(stream);
+                                using (MemoryStream ms = new MemoryStream())
+                                {
+                                    stream.CopyTo(ms);
+                                    bytes = ms.ToArray();
+                                }
+                            }
+                        }).Wait();
+                        info.FullPath = path;
+                        info.MimeType = MimeSniffer.GetMime(bytes);
+                        info.BytesLength = bytes.Length;
+
+                        return img;
+                    }
+                    finally
+                    {
+                        stream?.Dispose();
+                    }
+                }
                 var localPath = Path.Combine(Метаданные.FilesDirectory, path);
                 if (File.Exists(localPath))
                 {
                     img = Image.FromFile(localPath);
-                    fullPath = localPath;
+                    info.FullPath = localPath;
+                    var bytes = File.ReadAllBytes(localPath);
+                    info.MimeType = MimeSniffer.GetMime(bytes);
+                    info.BytesLength = bytes.Length;
                 }
                 else if (!string.IsNullOrWhiteSpace(Метаданные.ExternalFileSource))
                 {
                     var remotePath = Метаданные.ExternalFileSource + path;
                     var bytes = WebClient.DownloadData(remotePath);
                     using (MemoryStream stream = new MemoryStream(bytes))
-                    {
                         img = Image.FromStream(stream);
-                        fullPath = remotePath;
-                    }
+                    info.FullPath = remotePath;
+                    info.MimeType = MimeSniffer.GetMime(bytes);
+                    info.BytesLength = bytes.Length;
                 }
             }
             catch
@@ -75,7 +111,14 @@ namespace TechControl.Метаданные.Учет
 
             return img;
         }
-        #endregion //Методы
+
+        public struct FileAdditionalInfo
+        {
+            public string FullPath { get; set; }
+            public string MimeType { get; set; }
+            public long BytesLength { get; set; }
+        }
+        #endregion Download
 
         #region MimeSniffer
         public static Dictionary<string, ImageFormat> ImageFormatDict = new Dictionary<string, ImageFormat>
