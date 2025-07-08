@@ -22,50 +22,52 @@ namespace TechControl.Метаданные.Мониторинг
                 throw new Exception("Запрещено создавать документ без указания Объекта");
             }
 
-            foreach (var i in this.ТаблицаТехника.Rows)
-            {
-                i.Время = this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
-                if (i.НомерСмены < 0 || i.НомерСмены > 3) i.НомерСмены = 0;
-                if (!i.Тариф.Selected)
-                {
-                    var tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
-                        .Add(РегистрТарифыТехникиОбъекта.Names.ИспользоватьПоУмолчанию, true)
-                        .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
-                    if (tariff == null)
-                    {
-                        tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
-                            .Add(РегистрТарифыТехникиОбъекта.Names.ИспользоватьПоУмолчанию, true)
-                            .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
-                    }
-                    if (tariff != null)
-                    {
-                        i.Тариф = tariff[РегистрТарифыТехникиОбъекта.Names.Тариф].ToReferent() as Тарифы;
-                    }
-                }
-                i.Post();
-            }
-            foreach (var i in this.ТаблицаПерсонал.Rows)
-            {
-                i.Время = this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
-                if (i.НомерСмены < 0 || i.НомерСмены > 3) i.НомерСмены = 0;
-                if (!i.Тариф.Selected)
-                {
-                    var tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
-                        .Add(РегистрТарифыПерсоналаОбъекта.Names.ИспоьзоватьПоУмолчанию, true)
-                        .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, i.Сотрудник.Должность));
-                    if (tariff == null)
-                    {
-                        tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
-                            .Add(РегистрТарифыПерсоналаОбъекта.Names.ИспоьзоватьПоУмолчанию, true)
-                            .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, Должности.Новый()));
-                    }
-                    if (tariff != null)
-                    {
-                        i.Тариф = tariff[РегистрТарифыПерсоналаОбъекта.Names.Тариф].ToReferent() as Тарифы;
-                    }
-                }
-                i.Post();
-            }
+            //foreach (var i in this.ТаблицаТехника.Rows)
+            //{
+            //    i.Время = this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
+            //    if (i.НомерСмены < 0 || i.НомерСмены > 3) i.НомерСмены = 0;
+            //    if (!i.Тариф.Selected)
+            //    {
+            //        var tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+            //            .Add(РегистрТарифыТехникиОбъекта.Names.ИспользоватьПоУмолчанию, true)
+            //            .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+            //        if (tariff == null)
+            //        {
+            //            tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+            //                .Add(РегистрТарифыТехникиОбъекта.Names.ИспользоватьПоУмолчанию, true)
+            //                .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+            //        }
+            //        if (tariff != null)
+            //        {
+            //            i.Тариф = tariff[РегистрТарифыТехникиОбъекта.Names.Тариф].ToReferent() as Тарифы;
+            //        }
+            //    }
+            //    i.Post();
+            //}
+            //foreach (var i in this.ТаблицаПерсонал.Rows)
+            //{
+            //    i.Время = this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
+            //    if (i.НомерСмены < 0 || i.НомерСмены > 3) i.НомерСмены = 0;
+            //    if (!i.Тариф.Selected)
+            //    {
+            //        var tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+            //            .Add(РегистрТарифыПерсоналаОбъекта.Names.ИспоьзоватьПоУмолчанию, true)
+            //            .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, i.Сотрудник.Должность));
+            //        if (tariff == null)
+            //        {
+            //            tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+            //                .Add(РегистрТарифыПерсоналаОбъекта.Names.ИспоьзоватьПоУмолчанию, true)
+            //                .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, Должности.Новый()));
+            //        }
+            //        if (tariff != null)
+            //        {
+            //            i.Тариф = tariff[РегистрТарифыПерсоналаОбъекта.Names.Тариф].ToReferent() as Тарифы;
+            //        }
+            //    }
+            //    i.Post();
+            //}
+
+            
 
             if (ДокументОснование == null || !ДокументОснование.Selected)
             {
@@ -83,10 +85,10 @@ namespace TechControl.Метаданные.Мониторинг
 
             ДатаПоследнгегоИзменения = DateTime.Now;
 
+            var смена = ДокументОснование as ФормированиеСмены;
+
             if (ЗавершаетСмену)
             {
-                var смена = ДокументОснование as ФормированиеСмены;
-                
                 if (смена != null && смена.Selected && смена.ДатаОкончанияСмены != ДатаДокумента) 
                 {
                     смена.ДатаОкончанияСмены = ДатаДокумента;
@@ -94,7 +96,19 @@ namespace TechControl.Метаданные.Мониторинг
                         смена.ObjectList[ФормированиеСмены.Names.ДатаОкончанияСмены]);
                 }
 
-                foreach (var item in ТаблицаПерсонал.AllRows)
+                //foreach (var item in ТаблицаПерсонал.AllRows)
+                //{
+                //    item.СтатусСотрудника = СтатусСотрудника.Отсутствует;
+                //}
+            }
+
+            foreach (var item in ТаблицаПерсонал.AllRows)
+            {
+                if (item.Время == NsgService.MinDate || item.Время < смена.ДатаДокумента) 
+                {
+                    item.Время = ДатаДокумента;
+                }
+                if (ЗавершаетСмену)
                 {
                     item.СтатусСотрудника = СтатусСотрудника.Отсутствует;
                 }
@@ -105,99 +119,99 @@ namespace TechControl.Метаданные.Мониторинг
 
         protected override bool Handling()
         {
-            List<Техника> t = new List<Техника>();
-            bool error = false;
-            StringBuilder ts = new StringBuilder();
-            foreach (var i in this.ТаблицаТехника.Rows)
-            {
-                if (!i.Техника.Selected)
-                {
-                    NsgSettings.MainForm.ShowMessage($"Таблица техники: В некоторых строках не выбрана техника",
-                        System.Windows.Forms.MessageBoxIcon.Error);
-                    return false;
-                }
-                // 01.07.2025 закомментированно для запуска функц. хранения фотографий
-                //if (!i.Тариф.Selected)
-                //{
-                //    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран тариф",
-                //        System.Windows.Forms.MessageBoxIcon.Error);
-                //    return false;
-                //}
-                //var tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
-                //    .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
-                //    .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
-                //if (tariff == null)
-                //{
-                //    tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
-                //        .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
-                //        .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
-                //}
-                //if (tariff == null)
-                //{
-                //    NsgSettings.MainForm.ShowMessage(
-                //        $"Техника: {i.Техника} - выбранный тариф на задан на объекте для группы техники {i.Техника.ГруппаСпецТехники}",
-                //        System.Windows.Forms.MessageBoxIcon.Error);
-                //    return false;
-                //}
-                //if (!i.Сотрудник.Selected)
-                //{
-                //    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран сотрудник",
-                //        System.Windows.Forms.MessageBoxIcon.Error);
-                //    return false;
-                //}
-                if (t.Contains(i.Техника))
-                {
-                    error = true;
-                    ts.Append('\n' + i.Техника.ToString());
-                }
-                t.Add(i.Техника);
-            }
+            //List<Техника> t = new List<Техника>();
+            //bool error = false;
+            //StringBuilder ts = new StringBuilder();
+            //foreach (var i in this.ТаблицаТехника.Rows)
+            //{
+            //    if (!i.Техника.Selected)
+            //    {
+            //        NsgSettings.MainForm.ShowMessage($"Таблица техники: В некоторых строках не выбрана техника",
+            //            System.Windows.Forms.MessageBoxIcon.Error);
+            //        return false;
+            //    }
+            //    // 01.07.2025 закомментированно для запуска функц. хранения фотографий
+            //    //if (!i.Тариф.Selected)
+            //    //{
+            //    //    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран тариф",
+            //    //        System.Windows.Forms.MessageBoxIcon.Error);
+            //    //    return false;
+            //    //}
+            //    //var tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+            //    //    .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
+            //    //    .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, i.Техника.ГруппаСпецТехники));
+            //    //if (tariff == null)
+            //    //{
+            //    //    tariff = this.Объект.ДействующиеТарифыТехники().FindRow(new NsgCompare()
+            //    //        .Add(РегистрТарифыТехникиОбъекта.Names.Тариф, i.Тариф)
+            //    //        .Add(РегистрТарифыТехникиОбъекта.Names.ГруппаСпецТехники, ГруппыСпецТехники.Новый()));
+            //    //}
+            //    //if (tariff == null)
+            //    //{
+            //    //    NsgSettings.MainForm.ShowMessage(
+            //    //        $"Техника: {i.Техника} - выбранный тариф на задан на объекте для группы техники {i.Техника.ГруппаСпецТехники}",
+            //    //        System.Windows.Forms.MessageBoxIcon.Error);
+            //    //    return false;
+            //    //}
+            //    //if (!i.Сотрудник.Selected)
+            //    //{
+            //    //    NsgSettings.MainForm.ShowMessage($"Техника: {i.Техника} - не выбран сотрудник",
+            //    //        System.Windows.Forms.MessageBoxIcon.Error);
+            //    //    return false;
+            //    //}
+            //    if (t.Contains(i.Техника))
+            //    {
+            //        error = true;
+            //        ts.Append('\n' + i.Техника.ToString());
+            //    }
+            //    t.Add(i.Техника);
+            //}
             //if (error)
             //{
             //    NsgSettings.MainForm.ShowMessage($"Техника не должна встречаться более одного раза:" + ts.ToString(),
             //        System.Windows.Forms.MessageBoxIcon.Error);
             //    return false;
             //}
-            List<ФизЛица> s = new List<ФизЛица>();
-            error = false;
-            ts.Clear();
-            foreach (var i in this.ТаблицаПерсонал.Rows)
-            {
-                //if (!i.Тариф.Selected)
-                //{
-                //    NsgSettings.MainForm.ShowMessage($"Сотрудник: {i.Сотрудник} - не выбран тариф",
-                //        System.Windows.Forms.MessageBoxIcon.Error);
-                //    return false;
-                //}
-                //var tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
-                //    .Add(РегистрТарифыПерсоналаОбъекта.Names.Тариф, i.Тариф)
-                //    .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, i.Сотрудник.Должность));
-                //if (tariff == null)
-                //{
-                //    tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
-                //        .Add(РегистрТарифыПерсоналаОбъекта.Names.Тариф, i.Тариф)
-                //        .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, Должности.Новый()));
-                //}
-                //if (tariff == null)
-                //{
-                //    NsgSettings.MainForm.ShowMessage(
-                //        $"Сотрудник: {i.Сотрудник} - выбранный тариф на задан на объекте для должности {i.Сотрудник.Должность}",
-                //        System.Windows.Forms.MessageBoxIcon.Error);
-                //    return false;
-                //}
-                //if (!i.Сотрудник.Selected)
-                //{
-                //    NsgSettings.MainForm.ShowMessage($"Таблица персонала: В некоторых строках не выбран сотрудник",
-                //        System.Windows.Forms.MessageBoxIcon.Error);
-                //    return false;
-                //}
-                if (s.Contains(i.Сотрудник))
-                {
-                    error = true;
-                    ts.Append('\n' + i.Сотрудник.ToString());
-                }
-                s.Add(i.Сотрудник);
-            }
+            //List<ФизЛица> s = new List<ФизЛица>();
+            //error = false;
+            //ts.Clear();
+            //foreach (var i in this.ТаблицаПерсонал.Rows)
+            //{
+            //    //if (!i.Тариф.Selected)
+            //    //{
+            //    //    NsgSettings.MainForm.ShowMessage($"Сотрудник: {i.Сотрудник} - не выбран тариф",
+            //    //        System.Windows.Forms.MessageBoxIcon.Error);
+            //    //    return false;
+            //    //}
+            //    //var tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+            //    //    .Add(РегистрТарифыПерсоналаОбъекта.Names.Тариф, i.Тариф)
+            //    //    .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, i.Сотрудник.Должность));
+            //    //if (tariff == null)
+            //    //{
+            //    //    tariff = this.Объект.ДействующиеТарифыПерсонала().FindRow(new NsgCompare()
+            //    //        .Add(РегистрТарифыПерсоналаОбъекта.Names.Тариф, i.Тариф)
+            //    //        .Add(РегистрТарифыПерсоналаОбъекта.Names.Должность, Должности.Новый()));
+            //    //}
+            //    //if (tariff == null)
+            //    //{
+            //    //    NsgSettings.MainForm.ShowMessage(
+            //    //        $"Сотрудник: {i.Сотрудник} - выбранный тариф на задан на объекте для должности {i.Сотрудник.Должность}",
+            //    //        System.Windows.Forms.MessageBoxIcon.Error);
+            //    //    return false;
+            //    //}
+            //    //if (!i.Сотрудник.Selected)
+            //    //{
+            //    //    NsgSettings.MainForm.ShowMessage($"Таблица персонала: В некоторых строках не выбран сотрудник",
+            //    //        System.Windows.Forms.MessageBoxIcon.Error);
+            //    //    return false;
+            //    //}
+            //    if (s.Contains(i.Сотрудник))
+            //    {
+            //        error = true;
+            //        ts.Append('\n' + i.Сотрудник.ToString());
+            //    }
+            //    s.Add(i.Сотрудник);
+            //}
             //if (error)
             //{
             //    NsgSettings.MainForm.ShowMessage($"Сотрудник не должен встречаться более одного раза:" + ts.ToString(),
@@ -207,61 +221,61 @@ namespace TechControl.Метаданные.Мониторинг
 
             //Get rest по ФиксацияИстории на дату документа - тик. Оттуда берем время работы. Если статус в работе не менялся в ФиксацияИстории пишем старое время.
             //в РегистрСмен пишем время в работе 
-            var рег = ФиксацияИстории.Новый(this);
-            рег.New();
-            рег.Объект = this.Объект;
-            рег.Владелец = this;
+            //var рег = ФиксацияИстории.Новый(this);
+            //рег.New();
+            //рег.Объект = this.Объект;
+            //рег.Владелец = this;
             var регС = ФиксацияИсторииСотрудников.Новый(this);
             регС.New();
             регС.Объект = this.Объект;
             регС.Владелец = this;
 
-            var регСмены = РегистрСмен.Новый(this);
-            регСмены.New();
+            //var регСмены = РегистрСмен.Новый(this);
+            //регСмены.New();
 
             #region техника
-            foreach (var i in this.ТаблицаТехника.Rows)
-            {
-                рег.Сотрудник = i.Сотрудник;
-                рег.Техника = i.Техника;
-                рег.НомерСмены = i.НомерСмены;
-                рег.GetRest(i.Время.AddTicks(-1));
-                var предСтатусТехники = рег.СтатусТехники.Clone as СтатусТехники;
-                рег.Тариф = i.Тариф;
-                рег.СтатусТехники = i.СтатусТехники;
-                if (i.СтатусТехники != СтатусТехники.ВРаботе && предСтатусТехники == СтатусТехники.ВРаботе)
-                {
-                    if (i.Время == i.Время.Date)
-                        i.Время = i.Время.AddSeconds(-1);
-                    var предВремя = рег.Время;
-                    рег.Дата = рег.Время = i.Время == NsgService.MinDate ?
-                        this.ДатаДокумента :
-                        this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
-                    регСмены.ДатаДокумента = предВремя;
-                    регСмены.Объект = this.Объект;
-                    регСмены.Сотрудник = i.Сотрудник;
-                    регСмены.Техника = i.Техника;
-                    регСмены.НомерСмены = i.НомерСмены;
-                    регСмены.ОтработанноеВремя = (предВремя == NsgService.MinDate) ? 0 : (decimal)(рег.Время - предВремя).TotalHours;
-                    регСмены.Сумма = рег.Тариф.Стоимость * регСмены.ОтработанноеВремя;
-                    регСмены.ВидДвижения = Сервис.ВидыДвижений.Приход;
-                    регСмены.AddMovement();
-                }
-                else
-                {
-                    if (i.Время == i.Время.Date)
-                        i.Время = i.Время.AddSeconds(1);
-                    рег.Дата = рег.Время = i.Время == NsgService.MinDate ?
-                        this.ДатаДокумента :
-                        this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
-                }
-                рег.Владелец = this;
-                рег.AddMovement();
-            }
+            //foreach (var i in this.ТаблицаТехника.Rows)
+            //{
+            //    рег.Сотрудник = i.Сотрудник;
+            //    рег.Техника = i.Техника;
+            //    рег.НомерСмены = i.НомерСмены;
+            //    рег.GetRest(i.Время.AddTicks(-1));
+            //    var предСтатусТехники = рег.СтатусТехники.Clone as СтатусТехники;
+            //    рег.Тариф = i.Тариф;
+            //    рег.СтатусТехники = i.СтатусТехники;
+            //    if (i.СтатусТехники != СтатусТехники.ВРаботе && предСтатусТехники == СтатусТехники.ВРаботе)
+            //    {
+            //        if (i.Время == i.Время.Date)
+            //            i.Время = i.Время.AddSeconds(-1);
+            //        var предВремя = рег.Время;
+            //        рег.Дата = рег.Время = i.Время == NsgService.MinDate ?
+            //            this.ДатаДокумента :
+            //            this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
+            //        регСмены.ДатаДокумента = предВремя;
+            //        регСмены.Объект = this.Объект;
+            //        регСмены.Сотрудник = i.Сотрудник;
+            //        регСмены.Техника = i.Техника;
+            //        регСмены.НомерСмены = i.НомерСмены;
+            //        регСмены.ОтработанноеВремя = (предВремя == NsgService.MinDate) ? 0 : (decimal)(рег.Время - предВремя).TotalHours;
+            //        регСмены.Сумма = рег.Тариф.Стоимость * регСмены.ОтработанноеВремя;
+            //        регСмены.ВидДвижения = Сервис.ВидыДвижений.Приход;
+            //        регСмены.AddMovement();
+            //    }
+            //    else
+            //    {
+            //        if (i.Время == i.Время.Date)
+            //            i.Время = i.Время.AddSeconds(1);
+            //        рег.Дата = рег.Время = i.Время == NsgService.MinDate ?
+            //            this.ДатаДокумента :
+            //            this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
+            //    }
+            //    рег.Владелец = this;
+            //    рег.AddMovement();
+            //}
             #endregion
-            if (регСмены.MovementTable.Count > 0 && !регСмены.Post()) return false;
+            //if (регСмены.MovementTable.Count > 0 && !регСмены.Post()) return false;
             #region персонал
-            регСмены.New();
+            //регСмены.New();
             foreach (var i in this.ТаблицаПерсонал.Rows)
             {
                 регС.Сотрудник = i.Сотрудник;
@@ -270,39 +284,46 @@ namespace TechControl.Метаданные.Мониторинг
                 регС.GetRest(i.Время.AddTicks(-1));
                 var предСтатусСотрудника = регС.СтатусСотрудника.Clone as СтатусСотрудника;
                 регС.Тариф = i.Тариф;
-                if (i.СтатусСотрудника != СтатусСотрудника.НаРаботе && предСтатусСотрудника == СтатусСотрудника.НаРаботе)
+                //if (i.СтатусСотрудника != СтатусСотрудника.НаРаботе && предСтатусСотрудника == СтатусСотрудника.НаРаботе)
+                if (i.СтатусСотрудника != предСтатусСотрудника)
                 {
                     if (i.Время == i.Время.Date)
                         i.Время = i.Время.AddSeconds(-1);
-                    var предВремя = рег.Время;
-                    регС.Дата = регС.Время = i.Время == NsgService.MinDate ?
-                        this.ДатаДокумента :
-                        this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
-                    регСмены.ДатаДокумента = предВремя;
-                    регСмены.Объект = this.Объект;
-                    регСмены.Сотрудник = i.Сотрудник;
-                    регСмены.НомерСмены = i.НомерСмены;
-                    регСмены.ОтработанноеВремя = (предВремя == NsgService.MinDate) ? 0 : (decimal)(регС.Время - предВремя).TotalHours;
-                    регСмены.Сумма = i.Тариф.Стоимость * регСмены.ОтработанноеВремя;
-                    регСмены.ВидДвижения = Сервис.ВидыДвижений.Приход;
-                    регСмены.AddMovement();
+                    var предВремя = регС.Время;
+                    регС.Дата = ДатаДокумента;
+                    регС.Дата = регС.Время = i.Время == NsgService.MinDate ? this.ДатаДокумента : i.Время;
+                    //регС.Дата = регС.Время = i.Время == NsgService.MinDate ?
+                    //    this.ДатаДокумента :
+                    //    this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
+                    //регСмены.ДатаДокумента = предВремя;
+                    //регСмены.Объект = this.Объект;
+                    //регСмены.Сотрудник = i.Сотрудник;
+                    //регСмены.НомерСмены = i.НомерСмены;
+                    //регСмены.ОтработанноеВремя = (предВремя == NsgService.MinDate) ? 0 : (decimal)(регС.Время - предВремя).TotalHours;
+                    //регСмены.Сумма = i.Тариф.Стоимость * регСмены.ОтработанноеВремя;
+                    //регСмены.ВидДвижения = Сервис.ВидыДвижений.Приход;
+                    //регСмены.AddMovement();
+
+                    регС.Владелец = this;
+                    регС.AddMovement();
                 }
-                else
-                {
-                    if (i.Время == i.Время.Date)
-                        i.Время = i.Время.AddSeconds(1);
-                    регС.Дата = регС.Время = i.Время == NsgService.MinDate ?
-                        this.ДатаДокумента :
-                        this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
-                }
-                регС.Владелец = this;
-                регС.AddMovement();
+                //else
+                //{
+                //    if (i.Время == i.Время.Date)
+                //        i.Время = i.Время.AddSeconds(1);
+                //    регС.Дата = регС.Время = i.Время == NsgService.MinDate ?
+                //        this.ДатаДокумента :
+                //        this.ДатаДокумента.Date.Add(i.Время.Subtract(i.Время.Date));
+                //}
+                //регС.Владелец = this;
+                //регС.AddMovement();
             }
             #endregion
-            if (регСмены.MovementTable.Count > 0 && !регСмены.Post()) return false;
-            рег.Владелец = регС.Владелец = this;
+            //if (регСмены.MovementTable.Count > 0 && !регСмены.Post()) return false;
+            //рег.Владелец = регС.Владелец = this;
 
-            return регС.Post() && рег.Post();
+            return регС.Post();
+            //return регС.Post() && рег.Post();
         }
 
         protected override void OnAfterHandle(HandleEventArgs e)
