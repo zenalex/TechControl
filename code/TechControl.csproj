@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2025.7.15.0</ProductVersion>
+    <ProductVersion>2025.7.21.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -5104,6 +5104,53 @@
     <Compile Include="Метаданные\Учет\ИсточникФотографииКлиента\ИсточникФотографииКлиента.cs">
       <NsgOwnerGuid>39081bad-f4c4-4779-992d-a5816eb4b3f9</NsgOwnerGuid>
       <NsgOwnerName>ИсточникФотографииКлиента</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Документы\ДокументСменыТекущегоВидаРабот\ДокументСменыТекущегоВидаРабот.NsgInit.cs">
+      <NsgOwnerGuid>101021ce-185e-489c-aca6-613c239ff21f</NsgOwnerGuid>
+      <NsgOwnerName>ДокументСменыТекущегоВидаРабот</NsgOwnerName>
+      <DependentUpon>ДокументСменыТекущегоВидаРабот.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ДокументСменыТекущегоВидаРабот\ДокументСменыТекущегоВидаРабот.cs">
+      <NsgOwnerGuid>101021ce-185e-489c-aca6-613c239ff21f</NsgOwnerGuid>
+      <NsgOwnerName>ДокументСменыТекущегоВидаРабот</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Справочники\ВидыРабот\ВидыРабот.NsgInit.cs">
+      <NsgOwnerGuid>efc64d82-62f9-4226-ac23-9974342dfb0e</NsgOwnerGuid>
+      <NsgOwnerName>ВидыРабот</NsgOwnerName>
+      <DependentUpon>ВидыРабот.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Справочники\ВидыРабот\ВидыРабот.cs">
+      <NsgOwnerGuid>efc64d82-62f9-4226-ac23-9974342dfb0e</NsgOwnerGuid>
+      <NsgOwnerName>ВидыРабот</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЗаявкиНаРаботы\ДокументыЗаявкиНаРаботыТаблицаВидыРабот.NsgInit.cs">
+      <NsgOwnerGuid>18e58fad-d057-40e2-adb9-bdbb40eaaa67</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЗаявкиНаРаботыТаблицаВидыРабот</NsgOwnerName>
+      <DependentUpon>ДокументыЗаявкиНаРаботыТаблицаВидыРабот.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЗаявкиНаРаботы\ДокументыЗаявкиНаРаботыТаблицаВидыРабот.cs">
+      <NsgOwnerGuid>18e58fad-d057-40e2-adb9-bdbb40eaaa67</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЗаявкиНаРаботыТаблицаВидыРабот</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЗаявкиНаРаботы\ДокументыЗаявкиНаРаботыТаблицаВидыРабот.Строка.NsgInit.cs">
+      <NsgOwnerGuid>18e58fad-d057-40e2-adb9-bdbb40eaaa67</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЗаявкиНаРаботыТаблицаВидыРабот</NsgOwnerName>
+      <DependentUpon>ДокументыЗаявкиНаРаботыТаблицаВидыРабот.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЗаявкиНаРаботы\ДокументыЗаявкиНаРаботыТаблицаВидыРабот.Строка.cs">
+      <NsgOwnerGuid>18e58fad-d057-40e2-adb9-bdbb40eaaa67</NsgOwnerGuid>
+      <NsgOwnerName>ДокументыЗаявкиНаРаботыТаблицаВидыРабот</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЗаявкиНаРаботы\ЗаявкиНаРаботы.NsgInit.cs">
+      <NsgOwnerGuid>3185b88c-749d-48ca-bea3-de5cec1b1b2c</NsgOwnerGuid>
+      <NsgOwnerName>ЗаявкиНаРаботы</NsgOwnerName>
+      <DependentUpon>ЗаявкиНаРаботы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЗаявкиНаРаботы\ЗаявкиНаРаботы.cs">
+      <NsgOwnerGuid>3185b88c-749d-48ca-bea3-de5cec1b1b2c</NsgOwnerGuid>
+      <NsgOwnerName>ЗаявкиНаРаботы</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
