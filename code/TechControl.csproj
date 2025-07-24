@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2025.7.24.1</ProductVersion>
+    <ProductVersion>2025.7.24.2</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -5189,6 +5189,17 @@
     <Compile Include="Метаданные\Документы\ЗаявкиНаТехнику\ЗаявкиНаТехнику.cs">
       <NsgOwnerGuid>b2f24728-e1c6-4843-813a-a5316e5c24e8</NsgOwnerGuid>
       <NsgOwnerName>ЗаявкиНаТехнику</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\ВидыКузовов\ВидыКузовов.NsgInit.cs">
+      <NsgOwnerGuid>71504a28-e703-48cc-a49f-53db244ddb77</NsgOwnerGuid>
+      <NsgOwnerName>ВидыКузовов</NsgOwnerName>
+      <DependentUpon>ВидыКузовов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ВидыКузовов\ВидыКузовов.cs">
+      <NsgOwnerGuid>71504a28-e703-48cc-a49f-53db244ddb77</NsgOwnerGuid>
+      <NsgOwnerName>ВидыКузовов</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>

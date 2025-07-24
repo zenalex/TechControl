@@ -98,24 +98,24 @@ namespace TechControl.Метаданные.Мониторинг
         void ВидимостьКолонок()
         {
             ФормированиеСмены формированиеСмены = FormObject as ФормированиеСмены;
-            vmoТаблица.Columns[Длительность_т.Name].Visible = ЭтоИтоговыйДокумент.Value;
-            gridТехника.Columns[Длительность_т.Name].Visible = true;
-            vmoТаблица.Columns[СтатусТехники_т.Name].Visible = true;
-            gridТехника.Columns[СтатусТехники_т.Name].Visible = true;
-            vmoТаблица.Columns[Время_т.Name].Visible = true;
-            vmoТаблица.Columns[Сотрудник_т.Name].Visible = true;
-            Время_т.Caption = ЭтоИтоговыйДокумент.Value ? "Время начала" : "Время";
+            //vmoТаблица.Columns[Длительность_т.Name].Visible = ЭтоИтоговыйДокумент.Value;
+            //gridТехника.Columns[Длительность_т.Name].Visible = true;
+            //vmoТаблица.Columns[СтатусТехники_т.Name].Visible = true;
+            //gridТехника.Columns[СтатусТехники_т.Name].Visible = true;
+            //vmoТаблица.Columns[Время_т.Name].Visible = true;
+            //vmoТаблица.Columns[Сотрудник_т.Name].Visible = true;
+            //Время_т.Caption = ЭтоИтоговыйДокумент.Value ? "Время начала" : "Время";
             foreach (var i in формированиеСмены.Таблица.Rows)
             {
                 ПодсветкаСтроки(i);
             }
-            vmoТаблицаПерсонал.Columns[Длительность_vmoТаблицаПерсонал.Name].Visible = ЭтоИтоговыйДокумент.Value;
-            gridПерсонал.Columns[Длительность_vmoТаблицаПерсонал.Name].Visible = true;
-            vmoТаблицаПерсонал.Columns[СтатусСотрудника.Name].Visible = true;
-            gridПерсонал.Columns[СтатусСотрудника.Name].Visible = true;
-            vmoТаблицаПерсонал.Columns[Время_vmoТаблицаПерсонал.Name].Visible = true;
-            vmoТаблицаПерсонал.Columns[Сотрудник_vmoТаблицаПерсонал.Name].Visible = true;
-            Время_vmoТаблицаПерсонал.Caption = ЭтоИтоговыйДокумент.Value ? "Время начала" : "Время";
+            //vmoТаблицаПерсонал.Columns[Длительность_vmoТаблицаПерсонал.Name].Visible = ЭтоИтоговыйДокумент.Value;
+            //gridПерсонал.Columns[Длительность_vmoТаблицаПерсонал.Name].Visible = true;
+            //vmoТаблицаПерсонал.Columns[СтатусСотрудника.Name].Visible = true;
+            //gridПерсонал.Columns[СтатусСотрудника.Name].Visible = true;
+            //vmoТаблицаПерсонал.Columns[Время_vmoТаблицаПерсонал.Name].Visible = true;
+            //vmoТаблицаПерсонал.Columns[Сотрудник_vmoТаблицаПерсонал.Name].Visible = true;
+            //Время_vmoТаблицаПерсонал.Caption = ЭтоИтоговыйДокумент.Value ? "Время начала" : "Время";
             foreach (var i in формированиеСмены.ТаблицаПерсонал.Rows)
             {
                 ПодсветкаСтроки(i);
