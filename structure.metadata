@@ -19672,6 +19672,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="4285cf93-0616-400d-8cfb-f1780b55bc1a" type="NsgDataEnumReference" editoraccess="Full" name="СтатусЗаявки" visible="true" description="Статус заявки" field="StatusZajavki" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="СтатусыЗаявокНаТехнику">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ПрефиксКода" />
@@ -19693,6 +19698,7 @@
             <container name="ТребуемыйОбъемКузова" />
             <container name="Водитель" />
             <container name="ДатаОтправкиЗаявки" />
+            <container name="СтатусЗаявки" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
