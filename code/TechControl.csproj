@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2025.7.21.0</ProductVersion>
+    <ProductVersion>2025.7.24.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -5151,6 +5151,44 @@
     <Compile Include="Метаданные\Документы\ЗаявкиНаРаботы\ЗаявкиНаРаботы.cs">
       <NsgOwnerGuid>3185b88c-749d-48ca-bea3-de5cec1b1b2c</NsgOwnerGuid>
       <NsgOwnerName>ЗаявкиНаРаботы</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Мониторинг\СтатусыЗаявокНаТехнику\СтатусыЗаявокНаТехнику.NsgInit.cs">
+      <NsgOwnerGuid>1fbf86e6-f70d-40d1-954a-bf86dfa84549</NsgOwnerGuid>
+      <NsgOwnerName>СтатусыЗаявокНаТехнику</NsgOwnerName>
+      <DependentUpon>СтатусыЗаявокНаТехнику.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\СтатусыЗаявокНаТехнику\СтатусыЗаявокНаТехнику.cs">
+      <NsgOwnerGuid>1fbf86e6-f70d-40d1-954a-bf86dfa84549</NsgOwnerGuid>
+      <NsgOwnerName>СтатусыЗаявокНаТехнику</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ГруппыСпецТехники\МониторингГруппыСпецТехникиТаблицаВидыВыполняемыхРабот.NsgInit.cs">
+      <NsgOwnerGuid>3b253a20-4a1c-498a-8010-f2ed4b66a5ec</NsgOwnerGuid>
+      <NsgOwnerName>МониторингГруппыСпецТехникиТаблицаВидыВыполняемыхРабот</NsgOwnerName>
+      <DependentUpon>МониторингГруппыСпецТехникиТаблицаВидыВыполняемыхРабот.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ГруппыСпецТехники\МониторингГруппыСпецТехникиТаблицаВидыВыполняемыхРабот.cs">
+      <NsgOwnerGuid>3b253a20-4a1c-498a-8010-f2ed4b66a5ec</NsgOwnerGuid>
+      <NsgOwnerName>МониторингГруппыСпецТехникиТаблицаВидыВыполняемыхРабот</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ГруппыСпецТехники\МониторингГруппыСпецТехникиТаблицаВидыВыполняемыхРабот.Строка.NsgInit.cs">
+      <NsgOwnerGuid>3b253a20-4a1c-498a-8010-f2ed4b66a5ec</NsgOwnerGuid>
+      <NsgOwnerName>МониторингГруппыСпецТехникиТаблицаВидыВыполняемыхРабот</NsgOwnerName>
+      <DependentUpon>МониторингГруппыСпецТехникиТаблицаВидыВыполняемыхРабот.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Мониторинг\ГруппыСпецТехники\МониторингГруппыСпецТехникиТаблицаВидыВыполняемыхРабот.Строка.cs">
+      <NsgOwnerGuid>3b253a20-4a1c-498a-8010-f2ed4b66a5ec</NsgOwnerGuid>
+      <NsgOwnerName>МониторингГруппыСпецТехникиТаблицаВидыВыполняемыхРабот</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЗаявкиНаТехнику\ЗаявкиНаТехнику.NsgInit.cs">
+      <NsgOwnerGuid>b2f24728-e1c6-4843-813a-a5316e5c24e8</NsgOwnerGuid>
+      <NsgOwnerName>ЗаявкиНаТехнику</NsgOwnerName>
+      <DependentUpon>ЗаявкиНаТехнику.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Документы\ЗаявкиНаТехнику\ЗаявкиНаТехнику.cs">
+      <NsgOwnerGuid>b2f24728-e1c6-4843-813a-a5316e5c24e8</NsgOwnerGuid>
+      <NsgOwnerName>ЗаявкиНаТехнику</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
