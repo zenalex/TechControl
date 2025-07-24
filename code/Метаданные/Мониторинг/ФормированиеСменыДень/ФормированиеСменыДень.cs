@@ -252,17 +252,21 @@ namespace TechControl.Метаданные.Мониторинг
             {
                 throw new Exception("Не выбрана смена");
             }
-            try
+            if (ЗавершаетСмену)
             {
-                смена.Edit();
-                смена.ЗаполнитьИтоговуюТаблицу();
-                смена.Post();
-            }
-            catch (Exception)
-            {
+                try
+                {
+                    смена.Edit();
+                    смена.ЗаполнитьИтоговуюТаблицу();
+                    смена.Post();
+                }
+                catch (Exception)
+                {
 
-                throw;
+                    throw;
+                }
             }
+            
             base.OnAfterHandle(e);
         }
 
