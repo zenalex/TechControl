@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2025.7.24.2" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2025.8.5.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2025.7.24.2" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2025.7.24.2;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2025.8.5.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2025.8.5.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -2014,6 +2014,7 @@
             <container name="АккаунтПользователя" />
             <container name="ОтслеживатьХодки" />
             <container name="ПолезныйОбъемМКуб" />
+            <container name="ВидКузова" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -2023,7 +2024,6 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
-            <container name="ВидКузова" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -2991,6 +2991,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="82f3326a-686b-4b88-88db-f303503aff03" type="NsgDataTypedReference" editoraccess="Full" name="ЗаявкаНаРаботы" visible="true" description="Заявка на работы" field="ZajavkaNaRaboty" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Документы" refname="ЗаявкиНаРаботы">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="ДатаДокумента" />
@@ -3014,6 +3019,7 @@
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
+            <container name="ЗаявкаНаРаботы" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -19738,11 +19744,11 @@
             <container name="Водитель" />
             <container name="ДатаОтправкиЗаявки" />
             <container name="СтатусЗаявки" />
+            <container name="ВидГруза" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ВидГруза" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -19854,13 +19860,13 @@
             </NsgSimpleObject>
           </ObjectList>
           <Containers>
+            <container name="Наименование" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Наименование" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
