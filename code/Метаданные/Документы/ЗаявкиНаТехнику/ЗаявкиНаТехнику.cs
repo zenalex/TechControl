@@ -13,17 +13,11 @@ namespace TechControl.Метаданные.Документы
     
     public partial class ЗаявкиНаТехнику
     {
-        #region Данные
-        #endregion //Данные
-
-        #region Конструкторы
-        #endregion //Конструкторы
-
-        #region Свойства
-        #endregion //Свойства
-
-        #region Методы
-        #endregion //Методы
+        public override void New()
+        {
+            base.New();
+            this.КолВоМашин = 1;
+        }
     }
 
 }
