@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2025.8.11.0</ProductVersion>
+    <ProductVersion>2025.8.13.1</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -5229,6 +5229,113 @@
     <Compile Include="Метаданные\Справочники\ШаблоныВидовРабот\СправочникиШаблоныВидовРаботВидыРабот.Строка.cs">
       <NsgOwnerGuid>aba146a9-0acf-43e3-a543-59d641a01af9</NsgOwnerGuid>
       <NsgOwnerName>СправочникиШаблоныВидовРаботВидыРабот</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиНакопления_1.NsgInit.cs">
+      <NsgOwnerGuid>e0f06944-2165-40f3-881d-72584426f0e7</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиНакопления_1</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрОборотовТехникиНакопления_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиНакопления_1.cs">
+      <NsgOwnerGuid>e0f06944-2165-40f3-881d-72584426f0e7</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиНакопления_1.Строка.NsgInit.cs">
+      <NsgOwnerGuid>e0f06944-2165-40f3-881d-72584426f0e7</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиНакопления_1</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрОборотовТехникиНакопления_1.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиНакопления_1.Строка.cs">
+      <NsgOwnerGuid>e0f06944-2165-40f3-881d-72584426f0e7</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиНакопления_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрОборотовТехники.NsgInit.cs">
+      <NsgOwnerGuid>79d1e6c0-58c4-4cc7-b932-b64d99e5dd3f</NsgOwnerGuid>
+      <NsgOwnerName>РегистрОборотовТехники</NsgOwnerName>
+      <DependentUpon>РегистрОборотовТехники.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрОборотовТехники.cs">
+      <NsgOwnerGuid>79d1e6c0-58c4-4cc7-b932-b64d99e5dd3f</NsgOwnerGuid>
+      <NsgOwnerName>РегистрОборотовТехники</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиДвижения.NsgInit.cs">
+      <NsgOwnerGuid>c31a0e8c-a47a-46ea-9642-3ec6faaa551c</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиДвижения</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрОборотовТехникиДвижения.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиДвижения.cs">
+      <NsgOwnerGuid>c31a0e8c-a47a-46ea-9642-3ec6faaa551c</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиДвижения</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиДвижения.Строка.NsgInit.cs">
+      <NsgOwnerGuid>c31a0e8c-a47a-46ea-9642-3ec6faaa551c</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиДвижения</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрОборотовТехникиДвижения.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиДвижения.Строка.cs">
+      <NsgOwnerGuid>c31a0e8c-a47a-46ea-9642-3ec6faaa551c</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиДвижения</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты_2.NsgInit.cs">
+      <NsgOwnerGuid>66295f57-a574-4e9a-aa9a-fdfa09aa0732</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_2</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрОборотовТехникиОбороты_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты_2.cs">
+      <NsgOwnerGuid>66295f57-a574-4e9a-aa9a-fdfa09aa0732</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_2</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты_2.Строка.NsgInit.cs">
+      <NsgOwnerGuid>66295f57-a574-4e9a-aa9a-fdfa09aa0732</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_2</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрОборотовТехникиОбороты_2.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты_2.Строка.cs">
+      <NsgOwnerGuid>66295f57-a574-4e9a-aa9a-fdfa09aa0732</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_2</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты.NsgInit.cs">
+      <NsgOwnerGuid>5c8124b8-cc4b-4a56-9b7c-a051c1984992</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрОборотовТехникиОбороты.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты.cs">
+      <NsgOwnerGuid>5c8124b8-cc4b-4a56-9b7c-a051c1984992</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты.Строка.NsgInit.cs">
+      <NsgOwnerGuid>5c8124b8-cc4b-4a56-9b7c-a051c1984992</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрОборотовТехникиОбороты.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты.Строка.cs">
+      <NsgOwnerGuid>5c8124b8-cc4b-4a56-9b7c-a051c1984992</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\_SystemTables\РегистрыРегистрОборотовТехникиОбороты_1\РегистрыРегистрОборотовТехникиОбороты_1.NsgInit.cs">
+      <NsgOwnerGuid>c5d47c0e-0c70-4eb6-b19d-97516bd2afbf</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_1</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрОборотовТехникиОбороты_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\_SystemTables\РегистрыРегистрОборотовТехникиОбороты_1\РегистрыРегистрОборотовТехникиОбороты_1.cs">
+      <NsgOwnerGuid>c5d47c0e-0c70-4eb6-b19d-97516bd2afbf</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_1</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\_SystemTables\РегистрыРегистрОборотовТехникиОбороты_1\РегистрыРегистрОборотовТехникиОбороты_1.Строка.NsgInit.cs">
+      <NsgOwnerGuid>c5d47c0e-0c70-4eb6-b19d-97516bd2afbf</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_1</NsgOwnerName>
+      <DependentUpon>РегистрыРегистрОборотовТехникиОбороты_1.Строка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\_SystemTables\РегистрыРегистрОборотовТехникиОбороты_1\РегистрыРегистрОборотовТехникиОбороты_1.Строка.cs">
+      <NsgOwnerGuid>c5d47c0e-0c70-4eb6-b19d-97516bd2afbf</NsgOwnerGuid>
+      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_1</NsgOwnerName>
     </Compile>
   </ItemGroup>
 </Project>
