@@ -43,156 +43,125 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\log4net.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\SVN\Releases\DLL\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.CityGuide">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.CityGuide.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.CityGuide.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Common, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=447db94fe98f10d5, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.Common.dll</HintPath>
+    <Reference Include="NsgSoft.Common">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Common.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Database, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=1052027ec3662bec, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.Database.dll</HintPath>
+    <Reference Include="NsgSoft.Database">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Database.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Database.FireBird, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=329c008fd3ea84d0, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.Database.FireBird.dll</HintPath>
+    <Reference Include="NsgSoft.Database.FireBird">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Database.FireBird.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.DataObjects, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=591c2a9ad26eb48c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.DataObjects.dll</HintPath>
+    <Reference Include="NsgSoft.DataObjects">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.DataObjects.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Design, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=357d6bf8a0d3c594, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.Design.dll</HintPath>
+    <Reference Include="NsgSoft.Design">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Design.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.EDM">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.EDM.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.EDM.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Equipment, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=69d1d0020208faf8, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.Equipment.dll</HintPath>
+    <Reference Include="NsgSoft.Equipment">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Equipment.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Forms, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=d35134a89d12ecbc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.Forms.dll</HintPath>
+    <Reference Include="NsgSoft.Forms">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.FormsComponents, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=21ed4c4f34baace2, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.FormsComponents.dll</HintPath>
+    <Reference Include="NsgSoft.FormsComponents">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.FormsComponents.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.Graphs">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.Graphs.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Graphs.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.ODBC">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ODBC.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ODBC.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Report, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=8582361bc9fff25a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.Report.dll</HintPath>
+    <Reference Include="NsgSoft.Report">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Report.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportBase, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportBase.dll</HintPath>
+    <Reference Include="NsgSoft.ReportBase">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBase.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportBuilder, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportBuilder.dll</HintPath>
+    <Reference Include="NsgSoft.ReportBuilder">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBuilder.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportBuilder.Check, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportBuilder.Check.dll</HintPath>
+    <Reference Include="NsgSoft.ReportBuilder.Check">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBuilder.Check.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportBuilder.Design, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportBuilder.Design.dll</HintPath>
+    <Reference Include="NsgSoft.ReportBuilder.Design">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBuilder.Design.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportBuilder.Helper, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportBuilder.Helper.dll</HintPath>
+    <Reference Include="NsgSoft.ReportBuilder.Helper">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBuilder.Helper.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportBuilder.Win, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportBuilder.Win.dll</HintPath>
+    <Reference Include="NsgSoft.ReportBuilder.Win">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportBuilder.Win.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportCompression, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=988313eade00fb94, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportCompression.dll</HintPath>
+    <Reference Include="NsgSoft.ReportCompression">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportCompression.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportControls, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportControls.dll</HintPath>
+    <Reference Include="NsgSoft.ReportControls">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportControls.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportData, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportData.dll</HintPath>
+    <Reference Include="NsgSoft.ReportData">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportData.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportDatabase, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportDatabase.dll</HintPath>
+    <Reference Include="NsgSoft.ReportDatabase">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportDatabase.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportDesign, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportDesign.dll</HintPath>
+    <Reference Include="NsgSoft.ReportDesign">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportDesign.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportEditor, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportEditor.dll</HintPath>
+    <Reference Include="NsgSoft.ReportEditor">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportEditor.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ReportMap, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ReportMap.dll</HintPath>
+    <Reference Include="NsgSoft.ReportMap">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.ReportMap.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.ServiceStarter">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ServiceStarter.exe</HintPath>
-    </Reference>
-    <Reference Include="NsgSoft.ShtrihPrint_4_5_Lib">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.ShtrihPrint_4_5_Lib.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="NsgSoft.Tools, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=e30776c925eb128b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.Tools.dll</HintPath>
+    <Reference Include="NsgSoft.Tools">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Tools.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.UI.Adapter">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.UI.Adapter.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.UI.Adapter.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.UI.Common">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.UI.Common.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.UI.Common.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.UI.WinControls">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.UI.WinControls.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.UI.WinControls.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.UI.WinControls.GridView">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.UI.WinControls.GridView.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.UI.WinControls.GridView.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.UI.WinControls.RadChart">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.UI.WinControls.RadChart.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.UI.WinControls.RadChart.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.UI.WinControls.RadDock">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.UI.WinControls.RadDock.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.UI.WinControls.RadDock.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.UI.WinControls.Scheduler">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.UI.WinControls.Scheduler.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.UI.WinControls.Scheduler.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.UI.WinControls.UI">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.UI.WinControls.UI.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.UI.WinControls.UI.dll</HintPath>
     </Reference>
     <Reference Include="NsgSoft.UI.WinControls.UI.Design">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.UI.WinControls.UI.Design.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.UI.WinControls.UI.Design.dll</HintPath>
     </Reference>
-    <Reference Include="NsgSoft.Windows.iGridLib.iGrid, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=0bdf22e5110ec457, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\NsgSoft.Windows.iGridLib.iGrid.dll</HintPath>
+    <Reference Include="NsgSoft.Windows.iGridLib.iGrid">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\NsgSoft.Windows.iGridLib.iGrid.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Controls.Win">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\Stimulsoft.Controls.Win.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\Stimulsoft.Controls.Win.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -204,12 +173,11 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.Ribbon">
-      <HintPath>E:\Users\NSGUser\SVN\Releases\System.Windows.Forms.Ribbon.dll</HintPath>
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\System.Windows.Forms.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
-    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2023.10.31.1, Culture=neutral, PublicKeyToken=62f73409a54f6052, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Users\NSGUser\SVN\Releases\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\..\..\NSG\svn\Customers\Titan\Releases\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -5337,5 +5305,40 @@
       <NsgOwnerGuid>c5d47c0e-0c70-4eb6-b19d-97516bd2afbf</NsgOwnerGuid>
       <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_1</NsgOwnerName>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Перечисления\СтатусыДокументовСмен\СтатусыДокументовСмен.NsgInit.cs">
+      <NsgOwnerGuid>6e3112e7-36f5-48db-89bf-e1702f291cf0</NsgOwnerGuid>
+      <NsgOwnerName>СтатусыДокументовСмен</NsgOwnerName>
+      <DependentUpon>СтатусыДокументовСмен.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Перечисления\СтатусыДокументовСмен\СтатусыДокументовСмен.cs">
+      <NsgOwnerGuid>6e3112e7-36f5-48db-89bf-e1702f291cf0</NsgOwnerGuid>
+      <NsgOwnerName>СтатусыДокументовСмен</NsgOwnerName>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоОтработанномуВремени\ОтчетПоОтработанномуВремени.NsgInit.cs">
+      <NsgOwnerGuid>3f91788c-4e34-4c9a-b733-5ca34259d544</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетПоОтработанномуВремени</NsgOwnerName>
+      <DependentUpon>ОтчетПоОтработанномуВремени.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоОтработанномуВремени\ОтчетПоОтработанномуВремени.cs">
+      <NsgOwnerGuid>3f91788c-4e34-4c9a-b733-5ca34259d544</NsgOwnerGuid>
+      <NsgOwnerName>ОтчетПоОтработанномуВремени</NsgOwnerName>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоОтработанномуВремени\Форма.Designer.cs">
+      <NsgOwnerGuid>3f91788c-4e34-4c9a-b733-5ca34259d544</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Метаданные\Отчеты\ОтчетПоОтработанномуВремени\Форма.cs">
+      <NsgOwnerGuid>3f91788c-4e34-4c9a-b733-5ca34259d544</NsgOwnerGuid>
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Метаданные\Отчеты\ОтчетПоОтработанномуВремени\Форма.resx">
+      <NsgOwnerGuid>3f91788c-4e34-4c9a-b733-5ca34259d544</NsgOwnerGuid>
+      <DependentUpon>Форма.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
