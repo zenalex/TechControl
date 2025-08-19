@@ -13,17 +13,26 @@ namespace TechControl.Метаданные.Документы
     
     public partial class ЗаявкиНаРаботы
     {
-        #region Данные
-        #endregion //Данные
-
-        #region Конструкторы
-        #endregion //Конструкторы
-
-        #region Свойства
-        #endregion //Свойства
-
-        #region Методы
-        #endregion //Методы
+        protected override List<Guid> BasePost()
+        {
+            if (Идентификатор != Guid.Empty && Объект != null && Объект.Selected)
+            {
+                var cmp = new NsgCompare();
+                cmp.Add(ЗаявкиНаРаботы.Names.Идентификатор, Идентификатор, NsgComparison.NotEqual);
+                cmp.Add(ЗаявкиНаРаботы.Names.Объект, Объект);
+                var cmpOr = new NsgCompare();
+                cmpOr.Add(ЗаявкиНаРаботы.Names.ДатаОкончанияРаботПоОбъекту, NsgService.MinDate);
+                cmpOr.Add(ЗаявкиНаРаботы.Names.ДатаОкончанияРаботПоОбъекту, ДатаДокумента, NsgComparison.GreaterOrEqual);
+                cmp.Add(cmpOr);
+                var заявка = ЗаявкиНаРаботы.Новый();
+                if (заявка.Find(cmp))
+                {
+                    throw new Exception($"Уже существует заявка по объекту {Объект}");
+                }
+            }
+            
+            return base.BasePost();
+        }
     }
 
 }
