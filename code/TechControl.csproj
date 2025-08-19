@@ -5249,42 +5249,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты_2.NsgInit.cs">
-      <NsgOwnerGuid>66295f57-a574-4e9a-aa9a-fdfa09aa0732</NsgOwnerGuid>
-      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_2</NsgOwnerName>
-      <DependentUpon>РегистрыРегистрОборотовТехникиОбороты_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты_2.cs">
-      <NsgOwnerGuid>66295f57-a574-4e9a-aa9a-fdfa09aa0732</NsgOwnerGuid>
-      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_2</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты_2.Строка.NsgInit.cs">
-      <NsgOwnerGuid>66295f57-a574-4e9a-aa9a-fdfa09aa0732</NsgOwnerGuid>
-      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_2</NsgOwnerName>
-      <DependentUpon>РегистрыРегистрОборотовТехникиОбороты_2.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты_2.Строка.cs">
-      <NsgOwnerGuid>66295f57-a574-4e9a-aa9a-fdfa09aa0732</NsgOwnerGuid>
-      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты_2</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты.NsgInit.cs">
-      <NsgOwnerGuid>5c8124b8-cc4b-4a56-9b7c-a051c1984992</NsgOwnerGuid>
-      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты</NsgOwnerName>
-      <DependentUpon>РегистрыРегистрОборотовТехникиОбороты.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты.cs">
-      <NsgOwnerGuid>5c8124b8-cc4b-4a56-9b7c-a051c1984992</NsgOwnerGuid>
-      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты</NsgOwnerName>
-    </Compile>
-    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты.Строка.NsgInit.cs">
-      <NsgOwnerGuid>5c8124b8-cc4b-4a56-9b7c-a051c1984992</NsgOwnerGuid>
-      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты</NsgOwnerName>
-      <DependentUpon>РегистрыРегистрОборотовТехникиОбороты.Строка.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Метаданные\Регистры\РегистрОборотовТехники\РегистрыРегистрОборотовТехникиОбороты.Строка.cs">
-      <NsgOwnerGuid>5c8124b8-cc4b-4a56-9b7c-a051c1984992</NsgOwnerGuid>
-      <NsgOwnerName>РегистрыРегистрОборотовТехникиОбороты</NsgOwnerName>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Метаданные\_SystemTables\РегистрыРегистрОборотовТехникиОбороты_1\РегистрыРегистрОборотовТехникиОбороты_1.NsgInit.cs">

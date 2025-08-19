@@ -3028,11 +3028,11 @@
             <container name="ДатаПоследнегоИзменения" />
             <container name="ТребуетПроверки" />
             <container name="ЗаявкаНаРаботы" />
+            <container name="СтатусДокументаСмены" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="СтатусДокументаСмены" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -8421,11 +8421,11 @@
             <container name="ТочностьВозвышения" />
             <container name="ТочностьКоординатGPS" />
             <container name="ТребуетПроверки" />
+            <container name="СтатусДокументаСмены" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="СтатусДокументаСмены" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -15362,13 +15362,13 @@
           <Containers>
             <container name="Наименование" />
             <container name="КоличествоДнейРезервирования" />
+            <container name="МаксимальнаяДлительностьСмены" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="МаксимальнаяДлительностьСмены" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -20143,37 +20143,6 @@
           </ObjectList>
           <Containers />
         </NsgMultipleObject>
-        <NsgMultipleObject Guid="66295f57-a574-4e9a-aa9a-fdfa09aa0732" type="NsgDataTable" editoraccess="Full" name="РегистрыРегистрОборотовТехникиОбороты_2" visible="true" description="Регистры регистр оборотов техники обороты_2" group="_SystemTables" table="_tab_RegistryRegistrObor3" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="RegisterCirculatTable" registerPeriod="Month" registerPeriodCount="1">
-          <NsgLanguageString type="presentation">
-            <presentation lang="(Default)" value="" />
-          </NsgLanguageString>
-          <NsgLanguageString type="valuemask">
-            <presentation lang="(Default)" value="{Представление}" />
-          </NsgLanguageString>
-          <ObjectList>
-            <NsgSimpleObject Guid="7a219525-963f-4f77-8bef-f9a9ddd15fbc" type="NsgDataInteger" editoraccess="Full" name="КоличествоМашин" visible="true" description="Количество машин" field="KolichestvoMashin" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-10000000000000000000" maxValue="10000000000000000000">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="8c1ab21c-1f74-436b-bd30-875f33862587" type="NsgDataInteger" editoraccess="Hidden" name="Автоинкремент" visible="true" description="Автоинкремент" field="_AutoInc" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="6341052f-2b1c-4fcb-91f9-77120ca4e852" type="NsgDataTypedReference" editoraccess="Full" name="ЗаявкаНаТехнику" visible="true" description="Заявка на технику" field="ZajavkaNaTekhniku" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Документы" refname="ЗаявкиНаТехнику">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="00ab50e9-f5b0-4f0b-9f8c-e2d176b1133e" type="NsgDataDateTime" editoraccess="Hidden" name="ДатаДокумента" visible="true" description="Дата документа" field="_Date" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" Format="DateTime">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-          </ObjectList>
-          <Containers />
-        </NsgMultipleObject>
         <NsgMultipleObject Guid="e0f06944-2165-40f3-881d-72584426f0e7" type="NsgDataTable" editoraccess="Full" name="РегистрыРегистрОборотовТехникиНакопления_1" visible="true" description="Регистры регистр оборотов техники накопления_1" group="_SystemTables" table="_tab_RegistryRegistrObor1" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="RegisterAccumTable" registerPeriod="None" registerPeriodCount="1">
           <NsgLanguageString type="presentation">
             <presentation lang="(Default)" value="" />
@@ -20227,7 +20196,7 @@
           </ObjectList>
           <Containers />
         </NsgMultipleObject>
-        <NsgMultipleObject Guid="79d1e6c0-58c4-4cc7-b932-b64d99e5dd3f" type="NsgDataRegister" editoraccess="Full" name="РегистрОборотовТехники" visible="true" description="Регистр" group="Регистры" table="_reg_RegistrOborotovTekh" useFullTextIndex="false" visibleadminonly="false" registerType="CirculatingAccummulate" quantityName="" HandlingWarnings="0">
+        <NsgMultipleObject Guid="79d1e6c0-58c4-4cc7-b932-b64d99e5dd3f" type="NsgDataRegister" editoraccess="Full" name="РегистрОборотовТехники" visible="true" description="Регистр" group="Регистры" table="_reg_RegistrOborotovTekh" useFullTextIndex="false" visibleadminonly="false" registerType="Accummulate" quantityName="" HandlingWarnings="0">
           <NsgLanguageString type="presentation">
             <presentation lang="(Default)" value="" />
           </NsgLanguageString>
@@ -20251,11 +20220,6 @@
               </NsgLanguageString>
             </NsgSimpleObject>
             <NsgSimpleObject Guid="f8aaf657-786c-4298-abba-990b4a97bd72" type="NsgRegisterTable" editoraccess="NonRemovable" name="Накопления" visible="true" description="Накопления" field="Nakoplenija" index="None" subtype="TabAccumulate" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="_SystemTables" refname="РегистрыРегистрОборотовТехникиНакопления_1" registerPeriodCount="1" registerPeriod="0">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="41bf3469-3dda-4205-81a9-5f3e9a5bc135" type="NsgRegisterTable" editoraccess="NonRemovable" name="Обороты" visible="true" description="Обороты" field="Oboroty" index="None" subtype="TabCirculation" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="_SystemTables" refname="РегистрыРегистрОборотовТехникиОбороты" registerPeriodCount="1" registerPeriod="0">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -20294,43 +20258,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="fd1161d9-93f3-4256-8000-6d07600dc45a" type="NsgRegisterTable" editoraccess="Full" name="Обороты_1" visible="true" description="Обороты_1" field="Oboroty_1" index="None" subtype="TabCirculation" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="_SystemTables" refname="РегистрыРегистрОборотовТехникиОбороты_2" registerPeriodCount="1" registerPeriod="3">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
           </ObjectList>
-        </NsgMultipleObject>
-        <NsgMultipleObject Guid="5c8124b8-cc4b-4a56-9b7c-a051c1984992" type="NsgDataTable" editoraccess="Full" name="РегистрыРегистрОборотовТехникиОбороты" visible="true" description="Регистры регистр оборотов техники обороты" group="_SystemTables" table="_tab_RegistryRegistrObor4" searchfield="Идентификатор" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" tableSubType="RegisterCirculatTable" registerPeriod="None" registerPeriodCount="1">
-          <NsgLanguageString type="presentation">
-            <presentation lang="(Default)" value="" />
-          </NsgLanguageString>
-          <NsgLanguageString type="valuemask">
-            <presentation lang="(Default)" value="{Представление}" />
-          </NsgLanguageString>
-          <ObjectList>
-            <NsgSimpleObject Guid="b28ae218-0c46-4af8-8000-583d868eeadf" type="NsgDataGuid" editoraccess="ReadOnly" name="Идентификатор" visible="true" description="Идентификатор" field="_ID" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="c192c035-ef5a-4af5-935c-5cafdc602334" type="NsgDataInteger" editoraccess="Hidden" name="Автоинкремент" visible="true" description="Автоинкремент" field="_AutoInc" index="UniqueControl" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="0" maxValue="0">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="6341052f-2b1c-4fcb-91f9-77120ca4e852" type="NsgDataTypedReference" editoraccess="Full" name="ЗаявкаНаТехнику" visible="true" description="Заявка на технику" field="ZajavkaNaTekhniku" index="Sort" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Документы" refname="ЗаявкиНаТехнику">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-            <NsgSimpleObject Guid="7a219525-963f-4f77-8bef-f9a9ddd15fbc" type="NsgDataInteger" editoraccess="Full" name="КоличествоМашин" visible="true" description="Количество машин" field="KolichestvoMashin" index="None" subtype="Resource" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-10000000000000000000" maxValue="10000000000000000000">
-              <NsgLanguageString type="presentation">
-                <presentation lang="(Default)" value="" />
-              </NsgLanguageString>
-            </NsgSimpleObject>
-          </ObjectList>
-          <Containers />
         </NsgMultipleObject>
         <NsgMultipleObject Guid="3f91788c-4e34-4c9a-b733-5ca34259d544" type="NsgReportObject" editoraccess="Full" name="ОтчетПоОтработанномуВремени" visible="true" description="Отчет" group="Отчеты" table="_report_OtchetPoOtrabota" useFullTextIndex="true" visibleadminonly="false">
           <NsgLanguageString type="presentation">
