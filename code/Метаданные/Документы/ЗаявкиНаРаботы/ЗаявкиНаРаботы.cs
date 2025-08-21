@@ -5,6 +5,7 @@ using NsgSoft.DataObjects;
 using NsgSoft.Database;
 using System.IO;
 using NsgSoft.Common;
+using TechControl.Метаданные.Перечисления;
 
 
 
@@ -20,6 +21,8 @@ namespace TechControl.Метаданные.Документы
                 var cmp = new NsgCompare();
                 cmp.Add(ЗаявкиНаРаботы.Names.Идентификатор, Идентификатор, NsgComparison.NotEqual);
                 cmp.Add(ЗаявкиНаРаботы.Names.Объект, Объект);
+                cmp.Add(ЗаявкиНаРаботы.Names.СтатусЗаявки, СтатусыЗаявок.Отменена, NsgComparison.NotEqual);
+                cmp.Add(ЗаявкиНаРаботы.Names.СтатусЗаявки, СтатусыЗаявок.Выполнена, NsgComparison.NotEqual);
                 var cmpOr = new NsgCompare(NsgLogicalOperator.Or);
                 cmpOr.Add(ЗаявкиНаРаботы.Names.ДатаОкончанияРаботПоОбъекту, NsgService.MinDate);
                 cmpOr.Add(ЗаявкиНаРаботы.Names.ДатаОкончанияРаботПоОбъекту, ДатаДокумента, NsgComparison.GreaterOrEqual);
