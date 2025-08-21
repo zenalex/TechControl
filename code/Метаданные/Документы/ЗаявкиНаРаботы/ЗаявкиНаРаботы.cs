@@ -20,7 +20,7 @@ namespace TechControl.Метаданные.Документы
                 var cmp = new NsgCompare();
                 cmp.Add(ЗаявкиНаРаботы.Names.Идентификатор, Идентификатор, NsgComparison.NotEqual);
                 cmp.Add(ЗаявкиНаРаботы.Names.Объект, Объект);
-                var cmpOr = new NsgCompare();
+                var cmpOr = new NsgCompare(NsgLogicalOperator.Or);
                 cmpOr.Add(ЗаявкиНаРаботы.Names.ДатаОкончанияРаботПоОбъекту, NsgService.MinDate);
                 cmpOr.Add(ЗаявкиНаРаботы.Names.ДатаОкончанияРаботПоОбъекту, ДатаДокумента, NsgComparison.GreaterOrEqual);
                 cmp.Add(cmpOr);
