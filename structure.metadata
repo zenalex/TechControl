@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<NsgConfiguration version="2025.8.21.0" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
+<NsgConfiguration version="2025.8.21.4" CodeLang="ru" name="TechControl" description="Титан Контроль" copyright="NSG ©  2022" dbmanlist="" guid="6b96e818-0212-4542-90b3-d84d13a8d015" CodePath=".\code" CodeWebPath=".\codeWeb" UseWebCode="False" Prefix="" Type="Base" languages="" dll="">
   <MetaDataList>
-    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2025.8.21.0" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2025.8.21.0;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
+    <NsgMetaData Guid="2dbd2646-52ef-4d89-8d8e-ef1f94e39426" version="2025.8.21.4" FullVersion="NsgSoft.DataObjects=2016.4.18.0;TT=2022.2.17.0;TechControl=2025.8.21.4;" name="Метаданные" typename="Метаданные" userinfo="True" userlog="True" usermenu="True" PeriodicTable="_SystemTables.PeriodicTable" languages="">
       <Groups>
         <group name="Сервис" />
         <group name="Мониторинг" />
@@ -3433,6 +3433,21 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="939cc26f-61f3-4cac-ae02-79c90a8f9911" type="NsgDataBoolean" editoraccess="Full" name="НеПустой" visible="true" description="Не пустой" field="NePustoij" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="21759edb-f38a-4251-840b-390932aad89d" type="NsgDataFloat" editoraccess="Full" name="ОбъемКузова" visible="true" description="Объем кузова" field="ObemKuzova" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="d79f6831-abdd-4b1f-b126-def2bfd39aaa" type="NsgDataTypedReference" editoraccess="Full" name="ВидКузова" visible="true" description="Вид кузова" field="VidKuzova" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="ВидыКузовов">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Техника" />
@@ -3446,6 +3461,9 @@
             <container name="КодГруппы" />
             <container name="ВремяОкончанияСменыТехники" />
             <container name="ЗаявкиНаТехнику" />
+            <container name="НеПустой" />
+            <container name="ОбъемКузова" />
+            <container name="ВидКузова" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="ffe6bf09-fabd-4222-9c49-62163ad6a753" type="NsgDataDictionary" editoraccess="Limited" name="Пользователи" visible="true" description="Пользователи" group="Сервис" table="UserDictionary" searchfield="Наименование" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" maxgrouplevel="100" hasOwner="false">
@@ -4916,6 +4934,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="82d25ca1-7988-4df4-a56e-d8fa7e5706b2" type="NsgDataTypedReference" editoraccess="Full" name="СтандартныйШаблон" visible="true" description="Стандартный шаблон" field="StandartnyijSHablon" index="None" subtype="Element" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Справочники" refname="ШаблоныВидовРабот">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -4931,13 +4954,14 @@
             <container name="СотрудникПодписант" />
             <container name="ДолжностьПодписанта" />
             <container name="КартинкаПечать" />
+            <container name="Ответственный" />
+            <container name="СтандартныйШаблон" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="Ответственный" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -8231,6 +8255,21 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="189b155d-bf25-4716-8fae-1c3bd77af697" type="NsgDataBoolean" editoraccess="Full" name="НеПустой" visible="true" description="Не пустой" field="NePustoij" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="59210cbb-d452-417c-b6ea-e0af738781da" type="NsgDataFloat" editoraccess="Full" name="ОбъемКузова" visible="true" description="Объем кузова" field="ObemKuzova" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" minValue="-100000000000000000" maxValue="100000000000000000" precision="2" hidezero="True">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="b9a3cd54-7677-44b0-bd09-32c0aff54cd6" type="NsgDataTypedReference" editoraccess="Full" name="ВидКузова" visible="true" description="Вид кузова" field="VidKuzova" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="ВидыКузовов">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="СтатусТехники" />
@@ -8240,6 +8279,9 @@
             <container name="Техника" />
             <container name="Тариф" />
             <container name="ЗаявкиНаТехнику" />
+            <container name="НеПустой" />
+            <container name="ОбъемКузова" />
+            <container name="ВидКузова" />
           </Containers>
         </NsgMultipleObject>
         <NsgMultipleObject Guid="f316f894-ac6d-4180-a789-b7af7194acf7" type="NsgDataDocument" editoraccess="Full" name="ФормированиеСменыДень" visible="true" description="Формирование смены (день)" group="Мониторинг" table="_doc_FormirovanieSmenyDen" searchfield="_Code" useFullTextIndex="true" visibleadminonly="false" entitytype="Object" hashistory="False" NumberPeriod="None" HandleWithoutTransaction="False" usecommonjournal="true">
@@ -10707,6 +10749,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="f69ed224-5c3f-45c1-a514-c663dc0ef074" type="NsgDataTypedReference" editoraccess="Full" name="ЗаявкаНаТехнику" visible="true" description="Заявка на технику" field="ZajavkaNaTekhniku" index="None" subtype="Common" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Документы" refname="ЗаявкиНаТехнику">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
@@ -10728,6 +10775,7 @@
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
+            <container name="ЗаявкаНаТехнику" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -19847,12 +19895,12 @@
             <container name="ВидГруза" />
             <container name="КолВоМашин" />
             <container name="СделаноХодок" />
+            <container name="ВидКузова" />
+            <container name="Объем" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="Индекс" />
             <container name="ДокументОснование" />
-            <container name="ВидКузова" />
-            <container name="Объем" />
           </Containers>
           <DataInterfaces>
             <Interface name="Сервис.ОбщийЖурнал" history="False" rows="AllRows" />
@@ -19970,13 +20018,13 @@
           </ObjectList>
           <Containers>
             <container name="Наименование" />
+            <container name="СтандартныйОбъем" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="СтандартныйОбъем" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
