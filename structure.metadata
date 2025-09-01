@@ -2021,6 +2021,7 @@
             <container name="ОтслеживатьХодки" />
             <container name="ПолезныйОбъемМКуб" />
             <container name="ВидКузова" />
+            <container name="ТекущийОбъект" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
@@ -2030,7 +2031,6 @@
             <container name="Пароль" />
             <container name="Адрес" />
             <container name="Логин" />
-            <container name="ТекущийОбъект" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -19172,13 +19172,13 @@
             <container name="КартинкаПодпись" />
             <container name="ФИО" />
             <container name="ФИОРодительныйПадеж" />
+            <container name="ТекущийОбъект" />
             <container name="ЭтоГруппа" />
             <container name="ИдентификаторРодителя" />
             <container name="Уровень" />
             <container name="ПрефиксКода" />
             <container name="НомерКода" />
             <container name="СостояниеДокумента" />
-            <container name="ТекущийОбъект" />
           </Containers>
           <DataInterfaces />
         </NsgMultipleObject>
@@ -19258,6 +19258,30 @@
               </NsgLanguageString>
               <NsgPropertyCollection type="rekvisit_values">
                 <property name="Наименование" typename="String" value="Конечное состояние объекта" />
+              </NsgPropertyCollection>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="ac99adce-11c0-4aa3-908c-c8a11a10ff27" type="NsgDataPredefinedReference" editoraccess="Full" name="Техника" visible="true" description="Техника" field="Tekhnika" index="None" subtype="Predefined" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+              <NsgPropertyCollection type="rekvisit_values">
+                <property name="Наименование" typename="String" value="Техника" />
+              </NsgPropertyCollection>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="c409fe6a-d97e-4670-88fd-73ba019c785b" type="NsgDataPredefinedReference" editoraccess="Full" name="Сотрудник" visible="true" description="Сотрудник" field="Sotrudnik" index="None" subtype="Predefined" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+              <NsgPropertyCollection type="rekvisit_values">
+                <property name="Наименование" typename="String" value="Сотрудник" />
+              </NsgPropertyCollection>
+            </NsgSimpleObject>
+            <NsgSimpleObject Guid="5e032cfd-8e8a-4a88-9a6a-08fbbe761449" type="NsgDataPredefinedReference" editoraccess="Full" name="ГосНомер" visible="true" description="Гос номер" field="GosNomer" index="None" subtype="Predefined" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+              <NsgPropertyCollection type="rekvisit_values">
+                <property name="Наименование" typename="String" value="Гос номер" />
               </NsgPropertyCollection>
             </NsgSimpleObject>
           </ObjectList>
