@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Drawing.Imaging;
 using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
 
 
 
@@ -18,14 +19,137 @@ namespace TechControl.Метаданные.Учет
     
     public partial class Фотографии
     {
-        #region Данные
-        #endregion //Данные
+        #region Compress
+        public static Dictionary<int, string> photoTypeSizes = new Dictionary<int, string>()
+        {
+            [150] = Фотографии.Names.ПутьМаленькийРазмер,
+            [300] = Фотографии.Names.ПутьСреднийРазмер,
+            [1200] = Фотографии.Names.ПутьБольшойРазмер
+        };
 
-        #region Конструкторы
-        #endregion //Конструкторы
+        public static string GenerateFileNameWithSize(string origName, int width)
+        {
+            var origNameWOExt = Path.GetFileNameWithoutExtension(origName);
+            var onExt = Path.GetExtension(origName).Trim('.');
+            string name = $"{origNameWOExt}_{width}.{onExt}";
+            return name;
+        }
 
-        #region Свойства
-        #endregion //Свойства
+        public static MemoryStream CompressImageToMemory(MemoryStream fileStream, ref int width, ref int height, bool cropAndCenter = false)
+        {
+            var bytes = fileStream.ToArray();
+            var mimeType = MimeSniffer.GetMime(bytes);
+            if (!ImageFormatDict.ContainsKey(mimeType)) return null;
+
+            long bytesLength = bytes.Length;
+            using (var image = Image.FromStream(fileStream))
+            using (Bitmap bitmap = ResizeImageKeepRatio(image, width, height, cropAndCenter, false))
+            {
+                height = bitmap.Height;
+                width = bitmap.Width;
+                image.Dispose();
+                var imageFormat = GetImageFormat(mimeType, null);
+                var compressed = Фотографии.Compress(bitmap, imageFormat, 50);
+                return compressed;
+            }
+        }
+
+        public static MemoryStream Compress(Image image, ImageFormat imageFormat, int quality)
+        {
+            ImageCodecInfo jpgEncoder = GetEncoder(imageFormat);
+            EncoderParameters encoderParameters = new EncoderParameters(1);
+            encoderParameters.Param[0] = new EncoderParameter(
+                System.Drawing.Imaging.Encoder.Quality, quality);
+            var stream = new MemoryStream();
+            image.Save(stream, jpgEncoder, encoderParameters);
+            return stream;
+        }
+
+        public static Bitmap ResizeImageKeepRatio(Image image, int width, int height, bool cropAndCenter = false, bool allowUpscale = true)
+        {
+            int newWidth;
+            int newHeight;
+            if (cropAndCenter)
+            {
+                if ((double)image.Width / image.Height > (double)width / height)
+                {
+                    newWidth = (int)(height * ((double)image.Width / image.Height));
+                    newHeight = height;
+                }
+                else
+                {
+                    newWidth = width;
+                    newHeight = (int)(width * ((double)image.Height / image.Width));
+                }
+            }
+            else if ((double)image.Width / image.Height < (double)width / height)
+            {
+                newWidth = (int)(height * ((double)image.Width / image.Height));
+                newHeight = height;
+            }
+            else
+            {
+                newWidth = width;
+                newHeight = (int)(width * ((double)image.Height / image.Width));
+            }
+            int iWidth = image.Width;
+            int iHeight = image.Height;
+            Bitmap bitmap = Фотографии.ResizeImage(image, newWidth, newHeight, allowUpscale);
+            if (cropAndCenter && (bitmap.Width != width || bitmap.Height != height))
+            {
+                width = Math.Min(bitmap.Width, width);
+                height = Math.Min(bitmap.Height, height);
+                var cropX = (int)((double)Math.Abs(bitmap.Width - width) / 2);
+                var cropY = (int)((double)Math.Abs(bitmap.Height - height) / 2);
+                var rect = new Rectangle(cropX, cropY, width, height);
+                var bitmap1 = bitmap.Clone(rect, bitmap.PixelFormat);
+                bitmap.Dispose();
+                bitmap = bitmap1;
+            }
+
+            return bitmap;
+        }
+
+        /// <summary>
+        /// Пережать изображение БЕЗ сохранения пропорции
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="allowUpscale"></param>
+        /// <returns></returns>
+        public static Bitmap ResizeImage(Image image, int width, int height, bool allowUpscale = false)
+        {
+            if (!allowUpscale)
+            {
+                width = Math.Min(image.Width, width);
+                height = Math.Min(image.Height, height);
+            }
+
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height, image.PixelFormat);
+            {
+                destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+                using (var graphics = Graphics.FromImage(destImage))
+                {
+                    graphics.CompositingMode = CompositingMode.SourceOver;
+                    graphics.CompositingQuality = CompositingQuality.HighQuality;
+                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    graphics.SmoothingMode = SmoothingMode.HighQuality;
+                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                    using (var wrapMode = new ImageAttributes())
+                    {
+                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                        graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                    }
+                }
+            }
+
+            return destImage;
+        }
+        #endregion Compress
 
         #region Download
         private static WebClient _webClient;
@@ -121,6 +245,21 @@ namespace TechControl.Метаданные.Учет
         #endregion Download
 
         #region MimeSniffer
+        public static ImageFormat GetImageFormat(string mimeType, string path)
+        {
+            var imageFormat = ImageFormat.Jpeg;
+            if (ImageFormatDict.TryGetValue(mimeType, out ImageFormat _imageFormat))
+            {
+                imageFormat = _imageFormat;
+            }
+            else if (!string.IsNullOrWhiteSpace(path) &&
+                path.Contains(".") && ImageFormatDict.TryGetValue(path.Substring(path.LastIndexOf('.') + 1), out ImageFormat _format))
+            {
+                imageFormat = _format;
+            }
+            return imageFormat;
+        }
+
         public static Dictionary<string, ImageFormat> ImageFormatDict = new Dictionary<string, ImageFormat>
         {
             ["jpg"] = ImageFormat.Jpeg,
