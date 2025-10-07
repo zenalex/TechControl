@@ -19165,6 +19165,11 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
+            <NsgSimpleObject Guid="b0a9ac66-047b-43d5-8ea8-3db725964948" type="NsgDataForm" editoraccess="Full" name="ФормаСписка" visible="true" description="Форма списка" field="FormaSpiska" index="None" subtype="ListForm" nullAllow="False" SaveInDatabase="false" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" class="TechControl.Метаданные.Мониторинг.ФизЛицаФормаСписка">
+              <NsgLanguageString type="presentation">
+                <presentation lang="(Default)" value="" />
+              </NsgLanguageString>
+            </NsgSimpleObject>
           </ObjectList>
           <Containers>
             <container name="Наименование" />
