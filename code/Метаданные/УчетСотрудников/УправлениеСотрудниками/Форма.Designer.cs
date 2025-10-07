@@ -160,6 +160,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Дата = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.bgwАнализТаблицы = new NsgSoft.Forms.NsgBackgroundWorker(this.components);
+            this.cbShowAll = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -1704,6 +1705,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             // tpФормирование
             // 
             this.tpФормирование.AllowDrop = true;
+            this.tpФормирование.Controls.Add(this.cbShowAll);
             this.tpФормирование.Controls.Add(this.nbСформироватьСмену);
             this.tpФормирование.Controls.Add(this.nbЗаполнить);
             this.tpФормирование.Controls.Add(this.nsgInput2);
@@ -2130,6 +2132,16 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.bgwАнализТаблицы.ProgressProcentage = 0;
             this.bgwАнализТаблицы.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwАнализТаблицы_DoWork);
             // 
+            // cbShowAll
+            // 
+            this.cbShowAll.AutoSize = true;
+            this.cbShowAll.Location = new System.Drawing.Point(609, 10);
+            this.cbShowAll.Name = "cbShowAll";
+            this.cbShowAll.Size = new System.Drawing.Size(115, 17);
+            this.cbShowAll.TabIndex = 7;
+            this.cbShowAll.Text = "Показывать всех";
+            this.cbShowAll.UseVisualStyleBackColor = true;
+            // 
             // УправлениеСотрудникамиФорма
             // 
             this.AllowDrop = true;
@@ -2270,5 +2282,6 @@ namespace TechControl.Метаданные.УчетСотрудников
         protected System.Windows.Forms.RadioButton rdb2Decade;
         private System.Windows.Forms.RadioButton rdb1Decade;
         protected NsgBackgroundWorker bgwАнализТаблицы;
+        private System.Windows.Forms.CheckBox cbShowAll;
     }
 }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using NsgSoft.DataObjects;
 using NsgSoft.Forms;
+using TechControl.Метаданные._SystemTables;
 
 
 
@@ -23,23 +24,35 @@ namespace TechControl.Метаданные.Мониторинг
             InitializeComponent();
 		}
 
-		#region #Comments_Data# NsgSoft.Forms.NsgMultipleObjectBaseForm
-		
-		#endregion //#Comments_Data# NsgSoft.Forms.NsgMultipleObjectBaseForm
+        private NsgCompare _внешняяКомпара = null;
 
-		#region #Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectBaseForm
-		
-		#endregion //#Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectBaseForm
+        protected override void OnSetFormObject(NsgMultipleObject formObject)
+        {
+            _внешняяКомпара = null;
+            base.OnSetFormObject(formObject);
+        }
 
-		#region #Comments_Methods# NsgSoft.Forms.NsgMultipleObjectBaseForm
-		
-		#endregion //#Comments_Methods# NsgSoft.Forms.NsgMultipleObjectBaseForm
+        #region #Comments_Data# NsgSoft.Forms.NsgMultipleObjectBaseForm
 
-		#region #Comments_Properties# NsgSoft.Forms.NsgMultipleObjectBaseForm
-		
-		#endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectBaseForm
+        #endregion //#Comments_Data# NsgSoft.Forms.NsgMultipleObjectBaseForm
 
-	}
+        #region #Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectBaseForm
+
+        #endregion //#Comments_Constructors# NsgSoft.Forms.NsgMultipleObjectBaseForm
+
+        #region #Comments_Methods# NsgSoft.Forms.NsgMultipleObjectBaseForm
+
+        #endregion //#Comments_Methods# NsgSoft.Forms.NsgMultipleObjectBaseForm
+
+        #region #Comments_Properties# NsgSoft.Forms.NsgMultipleObjectBaseForm
+
+        #endregion //#Comments_Properties# NsgSoft.Forms.NsgMultipleObjectBaseForm
+
+        private void cbФильтр_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
     
 
 

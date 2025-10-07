@@ -159,49 +159,58 @@ namespace TechControl.Метаданные.УчетСотрудников
         {
             if (e.ColumnName == Сотрудник_vmoТаблица.Name)
             {
-                var объект = e.RowObject[Объект_vmoТаблица.Name].ToReferent() as Объекты;
-                var должность = e.RowObject[Должность_vmoТаблица.Name].ToReferent() as Должности;
-                var техника = e.RowObject[Техника_vmoТаблица.Name].ToReferent() as Техника;
-                if (объект.Selected)
+                var cmp = Сотрудник_vmoТаблица.SearchCondition;
+                cmp.Clear();
+                if (!cbShowAll.Checked) 
                 {
-                    Guid[] сотрудникиНаОбъекте = null;
-                    if (должность.Selected)
+                    var объект = e.RowObject[Объект_vmoТаблица.Name].ToReferent() as Объекты;
+                    var должность = e.RowObject[Должность_vmoТаблица.Name].ToReferent() as Должности;
+                    var техника = e.RowObject[Техника_vmoТаблица.Name].ToReferent() as Техника;
+                    if (объект.Selected)
                     {
-                        сотрудникиНаОбъекте = объект.СписокПерсонала().Select(x => x.Item1.Идентификатор).ToArray();
+                        Guid[] сотрудникиНаОбъекте = null;
+                        if (должность.Selected)
+                        {
+                            сотрудникиНаОбъекте = объект.СписокПерсонала().Select(x => x.Item1.Идентификатор).ToArray();
+                        }
+                        else if (техника.Selected)
+                        {
+                            сотрудникиНаОбъекте = объект.СписокПерсонала().Where(x => x.Item1.ДопущенКУправлению(техника)).Select(x => x.Item1.Идентификатор).ToArray();
+                        }
+                        else
+                        {
+                            сотрудникиНаОбъекте = объект.СписокПерсонала().Select(x => x.Item1.Идентификатор).ToArray();
+                        }
+
+                        cmp.Add(ФизЛица.Names.Идентификатор, сотрудникиНаОбъекте, NsgComparison.In);
                     }
-                    else if (техника.Selected)
-                    {
-                        сотрудникиНаОбъекте = объект.СписокПерсонала().Where(x => x.Item1.ДопущенКУправлению(техника)).Select(x => x.Item1.Идентификатор).ToArray();
-                    }
-                    else
-                    {
-                        сотрудникиНаОбъекте = объект.СписокПерсонала().Select(x => x.Item1.Идентификатор).ToArray();
-                    }
-                    var cmp = Сотрудник_vmoТаблица.SearchCondition;
-                    cmp.Clear();
-                    cmp.Add(ФизЛица.Names.Идентификатор, сотрудникиНаОбъекте, NsgComparison.In);
                 }
+                
             }
 
             if (e.ColumnName == Техника_vmoТаблица.Name)
             {
-                var объект = e.RowObject[Объект_vmoТаблица.Name].ToReferent() as Объекты;
-                var грСпТех = e.RowObject[ГруппаСпецТехники_vmoТаблица.Name].ToReferent() as ГруппыСпецТехники;
-                var техника = e.RowObject[Техника_vmoТаблица.Name].ToReferent() as Техника;
-                if (объект.Selected)
+                var cmp = Техника_vmoТаблица.SearchCondition;
+                cmp.Clear();
+                if (!cbShowAll.Checked)
                 {
-                    Guid[] техникаНаОбъекте = null;
-                    if (грСпТех.Selected)
+                    var объект = e.RowObject[Объект_vmoТаблица.Name].ToReferent() as Объекты;
+                    var грСпТех = e.RowObject[ГруппаСпецТехники_vmoТаблица.Name].ToReferent() as ГруппыСпецТехники;
+                    var техника = e.RowObject[Техника_vmoТаблица.Name].ToReferent() as Техника;
+                    if (объект.Selected)
                     {
-                        техникаНаОбъекте = объект.СписокТехникиОбъекта().Where(x => x.ГруппаСпецТехники == грСпТех).Select(x => x.Идентификатор).ToArray();
+                        Guid[] техникаНаОбъекте = null;
+                        if (грСпТех.Selected)
+                        {
+                            техникаНаОбъекте = объект.СписокТехникиОбъекта().Where(x => x.ГруппаСпецТехники == грСпТех).Select(x => x.Идентификатор).ToArray();
+                        }
+                        else
+                        {
+                            техникаНаОбъекте = объект.СписокТехникиОбъекта().Select(x => x.Идентификатор).ToArray();
+                        }
+
+                        cmp.Add(Техника.Names.Идентификатор, техникаНаОбъекте, NsgComparison.In);
                     }
-                    else 
-                    {
-                        техникаНаОбъекте = объект.СписокТехникиОбъекта().Select(x => x.Идентификатор).ToArray();
-                    }
-                    var cmp = Техника_vmoТаблица.SearchCondition;
-                    cmp.Clear();
-                    cmp.Add(Техника.Names.Идентификатор, техникаНаОбъекте, NsgComparison.In);
                 }
             }
         }

@@ -589,6 +589,30 @@ namespace TechControl.Метаданные.Мониторинг
                 NsgSettings.MainForm.ShowObject(тарифыПерсоналаОбъекта, this);
             }
         }
+
+        private void nsgIGrid10_BeforeAction(object sender, NsgIGrid.NsgIGridCellEventArgs e, NsgSoft.Design.NsgWorkToolPanel.InvokeToolProcessingEventArgs args)
+        {
+            if (args.ToolType == NsgWorkPanelTools.CreateNewElement)
+            {
+                e.Cancel = true;
+                РегистрТехникаОбъекта техникаОбъекта = РегистрТехникаОбъекта.Новый();
+                техникаОбъекта.New();
+                техникаОбъекта.Объект = nsgVisualMultipleObject.Data.CurrentRow as Объекты;
+                NsgSettings.MainForm.ShowObject(техникаОбъекта, this);
+            }
+        }
+
+        private void nsgIGrid1_BeforeAction(object sender, NsgIGrid.NsgIGridCellEventArgs e, NsgSoft.Design.NsgWorkToolPanel.InvokeToolProcessingEventArgs args)
+        {
+            if (args.ToolType == NsgWorkPanelTools.CreateNewElement)
+            {
+                e.Cancel = true;
+                РегистрТарифыТехникиОбъекта тарифыТехникиОбъекта = РегистрТарифыТехникиОбъекта.Новый();
+                тарифыТехникиОбъекта.New();
+                тарифыТехникиОбъекта.Объект = nsgVisualMultipleObject.Data.CurrentRow as Объекты;
+                NsgSettings.MainForm.ShowObject(тарифыТехникиОбъекта, this);
+            }
+        }
     }
     
 
