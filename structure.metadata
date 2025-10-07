@@ -17535,12 +17535,12 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="e2cf7bd7-1b6b-4bb8-bc57-ea77afaad96b" type="NsgDataTypedReference" editoraccess="Full" name="Сотрудники" visible="true" description="Сотрудники" field="Sotrudniki" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="ФизЛица">
+            <NsgSimpleObject Guid="e2cf7bd7-1b6b-4bb8-bc57-ea77afaad96b" type="NsgDataTypedReference" editoraccess="Full" name="Сотрудники" visible="true" description="Сотрудники" field="Sotrudniki" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="ФизЛица">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="cffaebc3-f7de-4933-adba-ad3cb6e78878" type="NsgDataTypedReference" editoraccess="Full" name="Должности" visible="true" description="Должности" field="Dolzhnosti" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Должности">
+            <NsgSimpleObject Guid="cffaebc3-f7de-4933-adba-ad3cb6e78878" type="NsgDataTypedReference" editoraccess="Full" name="Должности" visible="true" description="Должности" field="Dolzhnosti" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Должности">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -17589,7 +17589,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="5334c1f4-bc7d-432e-816c-edd8f18f0aa1" type="NsgDataTypedReference" editoraccess="Full" name="Техника" visible="true" description="Техника" field="Tekhnika" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Техника">
+            <NsgSimpleObject Guid="5334c1f4-bc7d-432e-816c-edd8f18f0aa1" type="NsgDataTypedReference" editoraccess="Full" name="Техника" visible="true" description="Техника" field="Tekhnika" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Техника">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -17638,7 +17638,7 @@
                 <param name="Сервис.КорректировкаРегистра" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="e2cf7bd7-1b6b-4bb8-bc57-ea77afaad96b" type="NsgDataTypedReference" editoraccess="Full" name="Сотрудники" visible="true" description="Сотрудники" field="Sotrudniki" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="ФизЛица">
+            <NsgSimpleObject Guid="cb4c11b7-5796-411d-8de5-52146bfa2d0d" type="NsgDataTypedReference" editoraccess="Full" name="Сотрудники" visible="true" description="Сотрудники" field="Sotrudniki" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="ФизЛица">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -17648,7 +17648,7 @@
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="cffaebc3-f7de-4933-adba-ad3cb6e78878" type="NsgDataTypedReference" editoraccess="Full" name="Должности" visible="true" description="Должности" field="Dolzhnosti" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Должности">
+            <NsgSimpleObject Guid="0d2984c1-85a5-4f0e-8cd6-1a7aae50c380" type="NsgDataTypedReference" editoraccess="Full" name="Должности" visible="true" description="Должности" field="Dolzhnosti" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Должности">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
@@ -17760,7 +17760,7 @@
                 <param name="Сервис.КорректировкаРегистра" />
               </NsgObjectsFilter>
             </NsgSimpleObject>
-            <NsgSimpleObject Guid="5334c1f4-bc7d-432e-816c-edd8f18f0aa1" type="NsgDataTypedReference" editoraccess="Full" name="Техника" visible="true" description="Техника" field="Tekhnika" index="None" subtype="Property" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Техника">
+            <NsgSimpleObject Guid="1f0f9723-1d7c-46df-b497-0725124d730e" type="NsgDataTypedReference" editoraccess="Full" name="Техника" visible="true" description="Техника" field="Tekhnika" index="None" subtype="Dimension" nullAllow="False" SaveInDatabase="true" includeInPredefined="false" required="false" characteristicCompareType="Equal" characteristicWeight="1" stringFormat="" refgroup="Мониторинг" refname="Техника">
               <NsgLanguageString type="presentation">
                 <presentation lang="(Default)" value="" />
               </NsgLanguageString>
