@@ -217,12 +217,15 @@ namespace TechControl.Метаданные.УчетСотрудников
 
         private void nsgIGrid1_AfterAction(object sender, NsgIGrid.NsgIGridCellEventArgs e, NsgSoft.Design.NsgWorkToolPanel.InvokeToolProcessingEventArgs args)
         {
-            if (args.ToolType == NsgWorkPanelTools.CreateNewElement)
+            if (e.RowObject != null) 
             {
-                var объект = Объект.Value;
-                var дата = Дата.Value;
-                e.RowObject[Объект_vmoТаблица].Value = объект;
-                e.RowObject[дата_vmoТаблица].Value = дата;
+                if (args.ToolType == NsgWorkPanelTools.CreateNewElement)
+                {
+                    var объект = Объект.Value;
+                    var дата = Дата.Value;
+                    e.RowObject[Объект_vmoТаблица].Value = объект;
+                    e.RowObject[дата_vmoТаблица].Value = дата;
+                }
             }
         }
 
@@ -996,6 +999,18 @@ namespace TechControl.Метаданные.УчетСотрудников
                     var техника = item[Техника_vmoТаблица].ToReferent() as Техника;
                     var длительность = item[Длительность_vmoТаблица].ToDecimal();
                 }
+            }
+        }
+
+        private void nsgIGrid1_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            var объект = Объект.Value;
+            if (объект != null && объект.Selected && e.RowObject[Объект_vmoТаблица].ToReferent() as Объекты != объект)
+            {
+                e.RowObject[Объект_vmoТаблица].Value = объект;
+
+                var дата = Дата.Value;
+                e.RowObject[дата_vmoТаблица].Value = дата;
             }
         }
     }

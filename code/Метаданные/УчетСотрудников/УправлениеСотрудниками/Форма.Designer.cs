@@ -132,6 +132,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.КодГруппы_vmoТаблицаИтогов = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpФормирование = new System.Windows.Forms.TabPage();
+            this.cbShowAll = new System.Windows.Forms.CheckBox();
             this.nbСформироватьСмену = new NsgSoft.Design.NsgButton();
             this.nbЗаполнить = new NsgSoft.Design.NsgButton();
             this.nsgInput2 = new NsgSoft.Forms.NsgInput();
@@ -157,10 +158,9 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nbЗаполнитьИтоги = new NsgSoft.Design.NsgButton();
             this.nsgInput5 = new NsgSoft.Forms.NsgInput();
             this.label5 = new System.Windows.Forms.Label();
+            this.bgwАнализТаблицы = new NsgSoft.Forms.NsgBackgroundWorker(this.components);
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Дата = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
-            this.bgwАнализТаблицы = new NsgSoft.Forms.NsgBackgroundWorker(this.components);
-            this.cbShowAll = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -451,6 +451,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgIGrid1.SourceObject = this.vmoТаблица;
             this.nsgIGrid1.TabIndex = 0;
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            this.nsgIGrid1.CellEndEdit += new NsgSoft.Forms.NsgIGrid.NsgIGridCellEventHandler(this.nsgIGrid1_CellEndEdit);
             this.nsgIGrid1.CellRequestEdit += new NsgSoft.Forms.NsgIGrid.NsgIGridCellEventHandler(this.nsgIGrid1_CellRequestEdit);
             this.nsgIGrid1.AfterAction += new NsgSoft.Forms.NsgIGrid.NsgIGridCellActionEventHandler(this.nsgIGrid1_AfterAction);
             // 
@@ -531,7 +532,6 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.Объект_vmoТаблица.PropertyType = typeof(TechControl.Метаданные.Мониторинг.Объекты);
             this.Объект_vmoТаблица.SearchCondition.OwnerComponent = this.Объект_vmoТаблица;
             this.Объект_vmoТаблица.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            this.Объект_vmoТаблица.Visible = false;
             // 
             // дата_vmoТаблица
             // 
@@ -1723,6 +1723,16 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.tpФормирование.UseVisualStyleBackColor = true;
             this.tpФормирование.Visible = true;
             // 
+            // cbShowAll
+            // 
+            this.cbShowAll.AutoSize = true;
+            this.cbShowAll.Location = new System.Drawing.Point(609, 10);
+            this.cbShowAll.Name = "cbShowAll";
+            this.cbShowAll.Size = new System.Drawing.Size(115, 17);
+            this.cbShowAll.TabIndex = 7;
+            this.cbShowAll.Text = "Показывать всех";
+            this.cbShowAll.UseVisualStyleBackColor = true;
+            // 
             // nbСформироватьСмену
             // 
             this.nbСформироватьСмену.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -2098,6 +2108,20 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.label5.TabIndex = 3;
             this.label5.Text = "Объект";
             // 
+            // bgwАнализТаблицы
+            // 
+            this.bgwАнализТаблицы.CancelForbidden = false;
+            this.bgwАнализТаблицы.CurrentProgressValue = 0;
+            this.bgwАнализТаблицы.Description = "";
+            this.bgwАнализТаблицы.EventGeneratorObject = null;
+            this.bgwАнализТаблицы.MaxProgressValue = 100;
+            this.bgwАнализТаблицы.Name = "bgwАнализТаблицы";
+            this.bgwАнализТаблицы.OwnerForm = this;
+            this.bgwАнализТаблицы.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
+            this.bgwАнализТаблицы.ProgressObject = null;
+            this.bgwАнализТаблицы.ProgressProcentage = 0;
+            this.bgwАнализТаблицы.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwАнализТаблицы_DoWork);
+            // 
             // Объект
             // 
             this.Объект.Caption = "Объект";
@@ -2117,30 +2141,6 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.Дата.PropertyType = typeof(System.DateTime);
             this.Дата.SearchCondition.OwnerComponent = this.Дата;
             this.Дата.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
-            // 
-            // bgwАнализТаблицы
-            // 
-            this.bgwАнализТаблицы.CancelForbidden = false;
-            this.bgwАнализТаблицы.CurrentProgressValue = 0;
-            this.bgwАнализТаблицы.Description = "";
-            this.bgwАнализТаблицы.EventGeneratorObject = null;
-            this.bgwАнализТаблицы.MaxProgressValue = 100;
-            this.bgwАнализТаблицы.Name = "bgwАнализТаблицы";
-            this.bgwАнализТаблицы.OwnerForm = this;
-            this.bgwАнализТаблицы.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
-            this.bgwАнализТаблицы.ProgressObject = null;
-            this.bgwАнализТаблицы.ProgressProcentage = 0;
-            this.bgwАнализТаблицы.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwАнализТаблицы_DoWork);
-            // 
-            // cbShowAll
-            // 
-            this.cbShowAll.AutoSize = true;
-            this.cbShowAll.Location = new System.Drawing.Point(609, 10);
-            this.cbShowAll.Name = "cbShowAll";
-            this.cbShowAll.Size = new System.Drawing.Size(115, 17);
-            this.cbShowAll.TabIndex = 7;
-            this.cbShowAll.Text = "Показывать всех";
-            this.cbShowAll.UseVisualStyleBackColor = true;
             // 
             // УправлениеСотрудникамиФорма
             // 
@@ -2271,17 +2271,17 @@ namespace TechControl.Метаданные.УчетСотрудников
         protected Мониторинг.ГруппыСпецТехники.ColumnDescriptor ГруппаСпТехн_vmoТаблицаИтогов;
         protected NsgColumnDescriptor.Int64 КоличествоДляСравнения_vmoТаблицаИтогов;
         protected NsgColumnDescriptor.String КодГруппы_vmoТаблица;
+        protected NsgColumnDescriptor.String КодГруппы_vmoТаблицаИтогов;
+        protected NsgSoft.Design.NsgButton nbСформироватьСменыИЭСМ;
+        protected System.Windows.Forms.RadioButton rdb3Decade;
+        protected System.Windows.Forms.RadioButton rdb2Decade;
+        private System.Windows.Forms.CheckBox cbShowAll;
+        protected System.Windows.Forms.GroupBox groupBox1;
+        protected System.Windows.Forms.RadioButton rdb1Decade;
+        private NsgBackgroundWorker bgwАнализТаблицы;
         private NsgVisualMultipleObject vmoТаблица;
         private System.Windows.Forms.TabControl tabControl1;
         private NsgVisualMultipleObject vmoИтоги;
         private NsgVisualMultipleObject vmoТаблицаИтогов;
-        protected NsgColumnDescriptor.String КодГруппы_vmoТаблицаИтогов;
-        protected NsgSoft.Design.NsgButton nbСформироватьСменыИЭСМ;
-        private System.Windows.Forms.GroupBox groupBox1;
-        protected System.Windows.Forms.RadioButton rdb3Decade;
-        protected System.Windows.Forms.RadioButton rdb2Decade;
-        private System.Windows.Forms.RadioButton rdb1Decade;
-        protected NsgBackgroundWorker bgwАнализТаблицы;
-        private System.Windows.Forms.CheckBox cbShowAll;
     }
 }

@@ -455,7 +455,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgEdit.DisabledImageKey = "disabled_EditElement";
             this.nsgEdit.Dock = System.Windows.Forms.DockStyle.Right;
             this.nsgEdit.ImageKey = "EditElement";
-            this.nsgEdit.Location = new System.Drawing.Point(1061, 1);
+            this.nsgEdit.Location = new System.Drawing.Point(621, 1);
             this.nsgEdit.Name = "nsgEdit";
             this.nsgEdit.NsgToolStrip = this.nsgToolStrip2;
             this.nsgEdit.Size = new System.Drawing.Size(116, 26);
@@ -472,7 +472,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgClose.DisabledImageKey = "disabled_Exit";
             this.nsgClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.nsgClose.ImageKey = "Exit";
-            this.nsgClose.Location = new System.Drawing.Point(1177, 1);
+            this.nsgClose.Location = new System.Drawing.Point(737, 1);
             this.nsgClose.Name = "nsgClose";
             this.nsgClose.NsgToolStrip = this.nsgToolStrip2;
             this.nsgClose.Size = new System.Drawing.Size(78, 26);
@@ -503,7 +503,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgToolStrip2.Location = new System.Drawing.Point(0, 2);
             this.nsgToolStrip2.Name = "nsgToolStrip2";
             this.nsgToolStrip2.Padding = new System.Windows.Forms.Padding(1);
-            this.nsgToolStrip2.Size = new System.Drawing.Size(1256, 28);
+            this.nsgToolStrip2.Size = new System.Drawing.Size(816, 28);
             this.nsgToolStrip2.TabIndex = 1;
             this.nsgToolStrip2.TabStop = false;
             this.nsgToolStrip2.Text = "nsgToolStrip2";
@@ -514,7 +514,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgAll.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.nsgAll.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.nsgAll.Dock = System.Windows.Forms.DockStyle.Right;
-            this.nsgAll.Location = new System.Drawing.Point(791, 1);
+            this.nsgAll.Location = new System.Drawing.Point(351, 1);
             this.nsgAll.Name = "nsgAll";
             this.nsgAll.NsgToolStrip = this.nsgToolStrip2;
             this.nsgAll.Size = new System.Drawing.Size(95, 26);
@@ -531,7 +531,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgHandling.DisabledImageKey = "disabled_Handle";
             this.nsgHandling.Dock = System.Windows.Forms.DockStyle.Right;
             this.nsgHandling.ImageKey = "Handle";
-            this.nsgHandling.Location = new System.Drawing.Point(886, 1);
+            this.nsgHandling.Location = new System.Drawing.Point(446, 1);
             this.nsgHandling.Name = "nsgHandling";
             this.nsgHandling.NsgToolStrip = this.nsgToolStrip2;
             this.nsgHandling.Size = new System.Drawing.Size(84, 26);
@@ -548,7 +548,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgSave.DisabledImageKey = "disabled_Save";
             this.nsgSave.Dock = System.Windows.Forms.DockStyle.Right;
             this.nsgSave.ImageKey = "Save";
-            this.nsgSave.Location = new System.Drawing.Point(970, 1);
+            this.nsgSave.Location = new System.Drawing.Point(530, 1);
             this.nsgSave.Name = "nsgSave";
             this.nsgSave.NsgToolStrip = this.nsgToolStrip2;
             this.nsgSave.Size = new System.Drawing.Size(91, 26);
@@ -564,7 +564,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelButtons.Location = new System.Drawing.Point(0, 453);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(1256, 30);
+            this.panelButtons.Size = new System.Drawing.Size(816, 30);
             this.panelButtons.TabIndex = 2;
             // 
             // nsgButtonBasic
@@ -574,7 +574,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgButtonBasic.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.nsgButtonBasic.Container = this.documentButton;
             this.nsgButtonBasic.Dock = System.Windows.Forms.DockStyle.Right;
-            this.nsgButtonBasic.Location = new System.Drawing.Point(791, 1);
+            this.nsgButtonBasic.Location = new System.Drawing.Point(351, 1);
             this.nsgButtonBasic.Name = "nsgButtonBasic";
             this.nsgButtonBasic.Size = new System.Drawing.Size(0, 26);
             this.nsgButtonBasic.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
@@ -685,7 +685,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.Comment.SearchFieldName = "";
             this.Comment.ShowMultipleObjectInComboBox = false;
             this.Comment.ShowRowCount = 10;
-            this.Comment.Size = new System.Drawing.Size(1256, 23);
+            this.Comment.Size = new System.Drawing.Size(816, 23);
             this.Comment.SourceObject = this.nsgVisualMultipleObject;
             this.Comment.TabIndex = 0;
             this.Comment.VerticalAlignment = System.Drawing.StringAlignment.Center;
@@ -795,6 +795,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn1.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn1.DateFormat = null;
+            nsgIGridColumn1.ImportedFromVMO = false;
             nsgIGridColumn1.Name = "Должность";
             nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn1.Root = this.nsgIGrid6.Columns.Collection;
@@ -809,6 +810,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn2.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn2.DateFormat = null;
+            nsgIGridColumn2.ImportedFromVMO = false;
             nsgIGridColumn2.Name = "ГруппаСпецТехники";
             nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn2.Root = this.nsgIGrid6.Columns.Collection;
@@ -823,6 +825,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn3.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn3.DateFormat = null;
+            nsgIGridColumn3.ImportedFromVMO = false;
             nsgIGridColumn3.Name = "ДеньНедели";
             nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn3.Root = this.nsgIGrid6.Columns.Collection;
@@ -837,6 +840,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn4.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn4.DateFormat = null;
+            nsgIGridColumn4.ImportedFromVMO = false;
             nsgIGridColumn4.Name = "ДатаКонкретныйДень";
             nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn4.Root = this.nsgIGrid6.Columns.Collection;
@@ -851,6 +855,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn5.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn5.DateFormat = null;
+            nsgIGridColumn5.ImportedFromVMO = false;
             nsgIGridColumn5.Name = "Выходной";
             nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn5.Root = this.nsgIGrid6.Columns.Collection;
@@ -867,6 +872,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Format"};
             nsgIGridColumn6.DateFormat = null;
             nsgIGridColumn6.Format = "HH:mm";
+            nsgIGridColumn6.ImportedFromVMO = false;
             nsgIGridColumn6.Name = "ВремяНачалаСмены1";
             nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn6.Root = this.nsgIGrid6.Columns.Collection;
@@ -881,6 +887,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn7.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn7.DateFormat = null;
+            nsgIGridColumn7.ImportedFromVMO = false;
             nsgIGridColumn7.Name = "ДлительностьСмены1Часы";
             nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn7.Root = this.nsgIGrid6.Columns.Collection;
@@ -895,6 +902,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn8.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn8.DateFormat = null;
+            nsgIGridColumn8.ImportedFromVMO = false;
             nsgIGridColumn8.Name = "Количество";
             nsgIGridColumn8.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn8.Root = this.nsgIGrid6.Columns.Collection;
@@ -910,6 +918,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn9.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn9.DateFormat = null;
+            nsgIGridColumn9.ImportedFromVMO = false;
             nsgIGridColumn9.Name = "КодГруппы";
             nsgIGridColumn9.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn9.Root = this.nsgIGrid6.Columns.Collection;
@@ -925,6 +934,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn10.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn10.DateFormat = null;
+            nsgIGridColumn10.ImportedFromVMO = false;
             nsgIGridColumn10.Name = "ВидРежимаРаботы";
             nsgIGridColumn10.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn10.Root = this.nsgIGrid6.Columns.Collection;
@@ -966,7 +976,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid6.ShowPanel = true;
             this.nsgIGrid6.ShowTotals = false;
             this.nsgIGrid6.ShowTree = false;
-            this.nsgIGrid6.Size = new System.Drawing.Size(1213, 135);
+            this.nsgIGrid6.Size = new System.Drawing.Size(773, 135);
             this.nsgIGrid6.SourceObject = this.vmoТаблицаГрафикаРаботы;
             this.nsgIGrid6.TabIndex = 0;
             this.nsgIGrid6.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -1109,6 +1119,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn11.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn11.DateFormat = null;
+            nsgIGridColumn11.ImportedFromVMO = false;
             nsgIGridColumn11.Name = "Должность";
             nsgIGridColumn11.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn11.Root = this.nsgIGrid7.Columns.Collection;
@@ -1123,6 +1134,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn12.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn12.DateFormat = null;
+            nsgIGridColumn12.ImportedFromVMO = false;
             nsgIGridColumn12.Name = "ГруппаСпецТехники";
             nsgIGridColumn12.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn12.Root = this.nsgIGrid7.Columns.Collection;
@@ -1137,6 +1149,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn13.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn13.DateFormat = null;
+            nsgIGridColumn13.ImportedFromVMO = false;
             nsgIGridColumn13.Name = "Количество";
             nsgIGridColumn13.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn13.Root = this.nsgIGrid7.Columns.Collection;
@@ -1154,6 +1167,7 @@ namespace TechControl.Метаданные.Мониторинг
         "Format"};
             nsgIGridColumn14.DateFormat = null;
             nsgIGridColumn14.Format = "HH:mm";
+            nsgIGridColumn14.ImportedFromVMO = false;
             nsgIGridColumn14.Name = "ВремяНачалаСмены1";
             nsgIGridColumn14.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn14.Root = this.nsgIGrid7.Columns.Collection;
@@ -1168,6 +1182,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn15.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn15.DateFormat = null;
+            nsgIGridColumn15.ImportedFromVMO = false;
             nsgIGridColumn15.Name = "ДлительностьСмены1";
             nsgIGridColumn15.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn15.Root = this.nsgIGrid7.Columns.Collection;
@@ -1182,6 +1197,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn16.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn16.DateFormat = null;
+            nsgIGridColumn16.ImportedFromVMO = false;
             nsgIGridColumn16.Name = "КодГруппы";
             nsgIGridColumn16.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn16.Root = this.nsgIGrid7.Columns.Collection;
@@ -1197,6 +1213,7 @@ namespace TechControl.Метаданные.Мониторинг
             nsgIGridColumn17.ChangedProperties = new string[] {
         "Visible"};
             nsgIGridColumn17.DateFormat = null;
+            nsgIGridColumn17.ImportedFromVMO = false;
             nsgIGridColumn17.Name = "ВидРежимаРаботы";
             nsgIGridColumn17.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
             nsgIGridColumn17.Root = this.nsgIGrid7.Columns.Collection;
@@ -1235,7 +1252,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid7.ShowPanel = true;
             this.nsgIGrid7.ShowTotals = false;
             this.nsgIGrid7.ShowTree = false;
-            this.nsgIGrid7.Size = new System.Drawing.Size(1208, 137);
+            this.nsgIGrid7.Size = new System.Drawing.Size(768, 137);
             this.nsgIGrid7.SourceObject = this.vmoГруппировкаГрафикаРаботы;
             this.nsgIGrid7.TabIndex = 0;
             this.nsgIGrid7.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -1453,7 +1470,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid8.ShowPanel = true;
             this.nsgIGrid8.ShowTotals = false;
             this.nsgIGrid8.ShowTree = false;
-            this.nsgIGrid8.Size = new System.Drawing.Size(1213, 200);
+            this.nsgIGrid8.Size = new System.Drawing.Size(773, 200);
             this.nsgIGrid8.SourceObject = this.vmoРегПерсонал;
             this.nsgIGrid8.TabIndex = 0;
             this.nsgIGrid8.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -1746,7 +1763,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid9.ShowPanel = true;
             this.nsgIGrid9.ShowTotals = false;
             this.nsgIGrid9.ShowTree = false;
-            this.nsgIGrid9.Size = new System.Drawing.Size(1213, 186);
+            this.nsgIGrid9.Size = new System.Drawing.Size(773, 186);
             this.nsgIGrid9.SourceObject = this.vmoРегТарифыПерсонала;
             this.nsgIGrid9.TabIndex = 0;
             this.nsgIGrid9.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -2013,7 +2030,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid10.ShowPanel = true;
             this.nsgIGrid10.ShowTotals = false;
             this.nsgIGrid10.ShowTree = false;
-            this.nsgIGrid10.Size = new System.Drawing.Size(1227, 171);
+            this.nsgIGrid10.Size = new System.Drawing.Size(787, 171);
             this.nsgIGrid10.SourceObject = this.vmoРегТехника;
             this.nsgIGrid10.TabIndex = 0;
             this.nsgIGrid10.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -2497,7 +2514,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid1.ShowPanel = true;
             this.nsgIGrid1.ShowTotals = false;
             this.nsgIGrid1.ShowTree = false;
-            this.nsgIGrid1.Size = new System.Drawing.Size(1227, 225);
+            this.nsgIGrid1.Size = new System.Drawing.Size(787, 225);
             this.nsgIGrid1.SourceObject = this.vmoРегТарифыТехники;
             this.nsgIGrid1.TabIndex = 0;
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -3227,7 +3244,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.nsgIGrid3.ShowPanel = true;
             this.nsgIGrid3.ShowTotals = false;
             this.nsgIGrid3.ShowTree = false;
-            this.nsgIGrid3.Size = new System.Drawing.Size(1219, 402);
+            this.nsgIGrid3.Size = new System.Drawing.Size(779, 402);
             this.nsgIGrid3.SourceObject = this.vmoКартинки;
             this.nsgIGrid3.TabIndex = 0;
             this.nsgIGrid3.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -4494,8 +4511,8 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControl1.Controls.Add(this.tpФото);
             this.tabControl1.Location = new System.Drawing.Point(6, 12);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 2;
-            this.tabControl1.Size = new System.Drawing.Size(1241, 438);
+            this.tabControl1.SelectedIndex = 3;
+            this.tabControl1.Size = new System.Drawing.Size(801, 438);
             this.tabControl1.TabIndex = 45;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -4540,7 +4557,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpОсновные.Location = new System.Drawing.Point(4, 22);
             this.tpОсновные.Name = "tabPage4";
             this.tpОсновные.Padding = new System.Windows.Forms.Padding(3);
-            this.tpОсновные.Size = new System.Drawing.Size(1233, 412);
+            this.tpОсновные.Size = new System.Drawing.Size(793, 412);
             this.tpОсновные.TabIndex = 0;
             this.tpОсновные.Text = "Основные данные";
             this.tpОсновные.UseVisualStyleBackColor = true;
@@ -4557,7 +4574,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tabControlТарифы.Location = new System.Drawing.Point(12, 190);
             this.tabControlТарифы.Name = "tabControlТарифы";
             this.tabControlТарифы.SelectedIndex = 1;
-            this.tabControlТарифы.Size = new System.Drawing.Size(1218, 216);
+            this.tabControlТарифы.Size = new System.Drawing.Size(778, 216);
             this.tabControlТарифы.TabIndex = 40;
             // 
             // tabPage3
@@ -4638,7 +4655,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpПерсонал.Enabled = true;
             this.tpПерсонал.Location = new System.Drawing.Point(4, 22);
             this.tpПерсонал.Name = "tpПерсонал";
-            this.tpПерсонал.Size = new System.Drawing.Size(1233, 412);
+            this.tpПерсонал.Size = new System.Drawing.Size(793, 412);
             this.tpПерсонал.TabIndex = 2;
             this.tpПерсонал.Text = "Персонал";
             this.tpПерсонал.UseVisualStyleBackColor = true;
@@ -4663,7 +4680,7 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.splitContainer4.Panel2.AllowDrop = true;
             this.splitContainer4.Panel2.Controls.Add(this.nsgIGrid9);
-            this.splitContainer4.Size = new System.Drawing.Size(1219, 402);
+            this.splitContainer4.Size = new System.Drawing.Size(779, 402);
             this.splitContainer4.SplitterDistance = 206;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -4674,11 +4691,11 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpТехника.Enabled = true;
             this.tpТехника.Location = new System.Drawing.Point(4, 22);
             this.tpТехника.Name = "tpТехника";
-            this.tpТехника.Size = new System.Drawing.Size(1233, 412);
+            this.tpТехника.Size = new System.Drawing.Size(793, 412);
             this.tpТехника.TabIndex = 3;
             this.tpТехника.Text = "Техника";
             this.tpТехника.UseVisualStyleBackColor = true;
-            this.tpТехника.Visible = true;
+            this.tpТехника.Visible = false;
             // 
             // splitContainer5
             // 
@@ -4697,7 +4714,7 @@ namespace TechControl.Метаданные.Мониторинг
             // 
             this.splitContainer5.Panel2.AllowDrop = true;
             this.splitContainer5.Panel2.Controls.Add(this.nsgIGrid1);
-            this.splitContainer5.Size = new System.Drawing.Size(1233, 412);
+            this.splitContainer5.Size = new System.Drawing.Size(793, 412);
             this.splitContainer5.SplitterDistance = 177;
             this.splitContainer5.TabIndex = 0;
             // 
@@ -4720,11 +4737,11 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpНастройкаГрафикаРаботы.Location = new System.Drawing.Point(4, 22);
             this.tpНастройкаГрафикаРаботы.Name = "tabPage5";
             this.tpНастройкаГрафикаРаботы.Padding = new System.Windows.Forms.Padding(3);
-            this.tpНастройкаГрафикаРаботы.Size = new System.Drawing.Size(1233, 412);
+            this.tpНастройкаГрафикаРаботы.Size = new System.Drawing.Size(793, 412);
             this.tpНастройкаГрафикаРаботы.TabIndex = 1;
             this.tpНастройкаГрафикаРаботы.Text = "НастройкаГрафикаРаботы";
             this.tpНастройкаГрафикаРаботы.UseVisualStyleBackColor = true;
-            this.tpНастройкаГрафикаРаботы.Visible = false;
+            this.tpНастройкаГрафикаРаботы.Visible = true;
             // 
             // nbЗаполнитьПоПерсоналу
             // 
@@ -4775,7 +4792,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.splitContainer3.Panel2.AllowDrop = true;
             this.splitContainer3.Panel2.Controls.Add(this.nsgIGrid6);
             this.splitContainer3.Panel2MinSize = 100;
-            this.splitContainer3.Size = new System.Drawing.Size(1221, 286);
+            this.splitContainer3.Size = new System.Drawing.Size(781, 286);
             this.splitContainer3.SplitterDistance = 143;
             this.splitContainer3.TabIndex = 10;
             // 
@@ -5020,7 +5037,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.tpФото.Enabled = true;
             this.tpФото.Location = new System.Drawing.Point(4, 22);
             this.tpФото.Name = "tpФото";
-            this.tpФото.Size = new System.Drawing.Size(1233, 412);
+            this.tpФото.Size = new System.Drawing.Size(793, 412);
             this.tpФото.TabIndex = 4;
             this.tpФото.Text = "Фото";
             this.tpФото.UseVisualStyleBackColor = true;
@@ -5536,7 +5553,7 @@ namespace TechControl.Метаданные.Мониторинг
             this.AutoPostOnClose = false;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1256, 526);
+            this.ClientSize = new System.Drawing.Size(816, 526);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.nsgLabel7);
             this.Controls.Add(this.panelButtons);
