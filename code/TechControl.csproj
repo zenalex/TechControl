@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2025.9.2.0</ProductVersion>
+    <ProductVersion>2025.10.8.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B96E818-0212-4542-90B3-D84D13A8D015}</ProjectGuid>
+    <ProjectGuid>6b96e818-0212-4542-90b3-d84d13a8d015</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TechControl</RootNamespace>
