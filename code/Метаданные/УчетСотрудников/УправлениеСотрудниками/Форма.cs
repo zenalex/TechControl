@@ -14,6 +14,7 @@ using NsgSoft.ReportData.Extensions;
 using TechControl.Метаданные._SystemTables;
 using TechControl.Метаданные.Документы;
 using TechControl.Метаданные.Мониторинг;
+using TechControl.Метаданные.Перечисления;
 using TechControl.Метаданные.Регистры;
 using static NsgSoft.UI.WinControls.UI.ValueMapper;
 
@@ -286,11 +287,6 @@ namespace TechControl.Метаданные.УчетСотрудников
             }
         }
 
-        private void nsgInput3_EndEdit(object sender, EndEditEventArgs e)
-        {
-            
-        }
-
         protected override void OnSetFormObject(NsgMultipleObject formObject)
         {
             nbСохрнитьИтоги.Visible = false;
@@ -298,6 +294,11 @@ namespace TechControl.Метаданные.УчетСотрудников
             if (vmoИтоги.Data.CurrentRow == null)
             {
                 vmoИтоги.Data.CurrentRow = vmoИтоги.Data.MemoryTable.NewRow();
+            }
+
+            if (vmoПараметрыЗаполнения.Data.CurrentRow == null)
+            {
+                vmoПараметрыЗаполнения.Data.CurrentRow = vmoПараметрыЗаполнения.Data.MemoryTable.NewRow();
             }
         }
 
@@ -1011,6 +1012,665 @@ namespace TechControl.Метаданные.УчетСотрудников
 
                 var дата = Дата.Value;
                 e.RowObject[дата_vmoТаблица].Value = дата;
+            }
+        }
+
+        private void nBwЗаполнениеДаннымиСмен_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (ДатаПодекадная.Value == NsgService.MinDate || !ОбъектПодекадный.Value.Selected)
+            {
+                vmoПодробности.Data.BeginUpdateData();
+                vmoПодробности.Data.MemoryTable.Clear();
+                vmoПодробности.Data.UpdateDataAsync(this);
+
+                vmoСводка.Data.BeginUpdateData();
+                vmoСводка.Data.MemoryTable.Clear();
+                vmoСводка.Data.UpdateDataAsync(this);
+            }
+
+            nsgIGrid3.BeginLongOperation();
+            nsgIGrid4.BeginLongOperation();
+
+            var объект = ОбъектПодекадный.Value;
+
+            var начало = NsgService.BeginOfMonth( ДатаПодекадная.Value);
+            var конец = NsgService.EndOfMonth(ДатаПодекадная.Value) > DateTime.Now ? DateTime.Now : NsgService.EndOfMonth(ДатаПодекадная.Value);
+
+            var cmp = new NsgCompare();
+            cmp.Add(ФормированиеСмены.Names.ДатаДокумента, начало, NsgComparison.GreaterOrEqual);
+            cmp.Add(ФормированиеСмены.Names.ДатаДокумента, конец, NsgComparison.LessOrEqual);
+            cmp.Add(ФормированиеСмены.Names.Объект, объект);
+            cmp.Add(ФормированиеСмены.Names.ДатаОкончанияСмены, NsgService.MinDate, NsgComparison.NotEqual);
+            cmp.Add(ФормированиеСмены.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+
+            var сменыВПериоде = ФормированиеСмены.Новый().FindAll(cmp);
+
+            var днейВМесяце = ДатаПодекадная.Value.DaysInMonth();
+
+            vmoПодробности.Data.BeginUpdateData();
+            vmoПодробности.Data.MemoryTable.Clear();
+            
+            vmoСводка.Data.BeginUpdateData();
+            vmoСводка.Data.MemoryTable.Clear();
+            
+            foreach (var смена in сменыВПериоде)
+            {
+                var данныеСмены = смена.ПолучитьСгруппированныеДанныеТаблиц();
+                foreach (var данные in данныеСмены)
+                {
+                    var строкаСводки = vmoСводка.Data.MemoryTable.AllRows
+                        .FirstOrDefault(x => (x[Техника_vmoСводка].ToReferent() as Техника) == данные.Item2
+                        && (x[Сотрудник_vmoСводка].ToReferent() as ФизЛица) == данные.Item3
+                        && (x[Должность_vmoСводка].ToReferent() as Должности) == данные.Item4
+                        && (x[Тариф_vmoСводка].ToReferent() as Тарифы) == данные.Item5);
+                    if (строкаСводки == null)
+                    {
+                        строкаСводки = vmoСводка.Data.MemoryTable.NewRow();
+                        var объедГуид = Guid.NewGuid().ToString();
+                        строкаСводки[ОбъедГуид_vmoСводка].Value = объедГуид;
+                        строкаСводки[Загружено_vmoСводка].Value = true;
+
+                        строкаСводки[Техника_vmoСводка].Value = данные.Item2;
+                        строкаСводки[Сотрудник_vmoСводка].Value = данные.Item3;
+                        строкаСводки[Должность_vmoСводка].Value = данные.Item4;
+                        строкаСводки[Тариф_vmoСводка].Value = данные.Item5;
+
+                        строкаСводки[Техника_vmoСводка].AddUserProperty(NsgSoft.Forms.NsgIGrid.BACKCOLOR, Color.LightGray);
+                        строкаСводки[Сотрудник_vmoСводка].AddUserProperty(NsgSoft.Forms.NsgIGrid.BACKCOLOR, Color.LightGray);
+                        строкаСводки[Должность_vmoСводка].AddUserProperty(NsgSoft.Forms.NsgIGrid.BACKCOLOR, Color.LightGray);
+                        //строкаСводки[Тариф_vmoСводка].AddUserProperty(NsgSoft.Forms.NsgIGrid.BACKCOLOR, Color.LightSlateGray);
+
+                        строкаСводки[данные.Item1.Day.ToString()].Value = Math.Round( данные.Item6,0);
+                        if (данные.Item1.DayOfWeek == DayOfWeek.Sunday || данные.Item1.DayOfWeek == DayOfWeek.Saturday)
+                        {
+                            строкаСводки[данные.Item1.Day.ToString()].AddUserProperty(NsgSoft.Forms.NsgIGrid.BACKCOLOR, Color.MistyRose);
+                        }
+
+                        строкаСводки.Post();
+                        for (int i = 1; i <= днейВМесяце; i++)
+                        {
+                            var строкаПодробностей = vmoПодробности.Data.MemoryTable.NewRow();
+                            строкаПодробностей[ОбъедГуид_vmoПодробности].Value = объедГуид;
+                            if (данные.Item1.Day == i)
+                            {
+                                строкаПодробностей[ДатаСмены_vmoПодробности].Value = new DateTime(начало.Year, начало.Month, i, данные.Item1.Hour, данные.Item1.Minute, данные.Item1.Second);
+                                строкаПодробностей[Длительность_vmoПодробности].Value = данные.Item6;
+                                строкаПодробностей[ИзЗаполненногоДокумента_vmoПодробности].Value = true;
+                                строкаСводки[данные.Item1.Day.ToString()].AddUserProperty(NsgSoft.Forms.NsgIGrid.BACKCOLOR, Color.LightGray);
+                            }
+                            else
+                            {
+                                строкаПодробностей[ДатаСмены_vmoПодробности].Value = new DateTime(начало.Year, начало.Month, i);
+                            }
+                            
+                            строкаПодробностей[Техника_vmoПодробности].Value = данные.Item2;
+                            строкаПодробностей[Сотрудник_vmoПодробности].Value = данные.Item3;
+                            строкаПодробностей[Должность_vmoПодробности].Value = данные.Item4;
+                            строкаПодробностей[Тариф_vmoПодробности].Value = данные.Item5;
+
+                            строкаПодробностей.Post();
+                        }
+                    }
+                    else
+                    {
+                        строкаСводки[данные.Item1.Day.ToString()].Value = Math.Round(данные.Item6, 0);
+                        if (данные.Item1.DayOfWeek == DayOfWeek.Sunday || данные.Item1.DayOfWeek == DayOfWeek.Saturday)
+                        {
+                            строкаСводки[данные.Item1.Day.ToString()].AddUserProperty(NsgSoft.Forms.NsgIGrid.BACKCOLOR, Color.MistyRose);
+                        }
+                        var объедГуид = строкаСводки[ОбъедГуид_vmoСводка].ToString();
+                        var строкаПодробностей = vmoПодробности.Data.MemoryTable.AllRows
+                            .FirstOrDefault(x => x[ОбъедГуид_vmoПодробности].ToString() == объедГуид 
+                            && x[ДатаСмены_vmoПодробности].ToDateTime().Day == данные.Item1.Day);
+                        if (строкаПодробностей != null)
+                        {
+                            строкаПодробностей[ДатаСмены_vmoПодробности].Value = new DateTime(начало.Year, начало.Month, данные.Item1.Day, данные.Item1.Hour, данные.Item1.Minute, данные.Item1.Second);
+                            строкаПодробностей[Длительность_vmoПодробности].Value = данные.Item6;
+                            строкаПодробностей[ИзЗаполненногоДокумента_vmoПодробности].Value = true;
+                            строкаПодробностей.Post();
+                        }
+                    }
+                }
+            }
+
+            foreach (var item in vmoСводка.Data.MemoryTable.AllRows)
+            {
+                foreach (var col in nsgIGrid3.Columns.Collection)
+                {
+                    if (int.TryParse(col.Name, out int result) && result <= начало.DaysInMonth())
+                    {
+                        if (string.IsNullOrWhiteSpace(item[col.Name].ToString()))
+                        {
+                            item[col.Name].Value = _пустоеЗначение;
+                        }
+                        var дата = new DateTime(начало.Year, начало.Month, result);
+                        var объедГуид = item[ОбъедГуид_vmoСводка].ToString();
+
+                        var строкаПодробностей = vmoПодробности.Data.MemoryTable.AllRows
+                            .FirstOrDefault(x => x[ОбъедГуид_vmoПодробности].ToString() == объедГуид
+                            && x[ДатаСмены_vmoПодробности].ToDateTime().Day == дата.Day);
+                        if (строкаПодробностей != null && !строкаПодробностей[ИзЗаполненногоДокумента_vmoПодробности].ToBoolean())
+                        {
+                            if (дата.DayOfWeek == DayOfWeek.Sunday || дата.DayOfWeek == DayOfWeek.Saturday)
+                            {
+                                item[col.Name].AddUserProperty(NsgSoft.Forms.NsgIGrid.BACKCOLOR, Color.MistyRose);
+                            }
+                        }
+
+                    }
+                }
+            }
+            ВидимостьКолонокСводка();
+            ФильтрНаПодробности();
+            vmoПодробности.Data.UpdateDataAsync(this);
+            vmoСводка.Data.UpdateDataAsync(this);
+
+            nsgIGrid3.EndLongOperation();
+            nsgIGrid4.EndLongOperation();
+        }
+
+        private string _пустоеЗначение = "н";
+
+        private void ФильтрНаПодробности() 
+        {
+            var объедГуид = ОбъедГуид_vmoСводка.Value;
+            var период = ВыбранныйПериод();
+            var начало = период.Begin;
+            var конец = период.End;
+            
+            var cmp = vmoПодробности.Data.GetComparison(this);
+            cmp.Clear();
+            cmp.Add(ОбъедГуид_vmoПодробности.Name, объедГуид);
+            cmp.Add(ДатаСмены_vmoПодробности.Name, начало, NsgComparison.GreaterOrEqual);
+            cmp.Add(ДатаСмены_vmoПодробности.Name, конец, NsgComparison.LessOrEqual);
+        }
+
+        private NsgDateTimePeriod ВыбранныйПериод() 
+        {
+            var начало = NsgService.BeginOfMonth(ДатаПодекадная.Value);
+            var конец = NsgService.EndOfMonth(ДатаПодекадная.Value) > DateTime.Now ? DateTime.Now : NsgService.EndOfMonth(ДатаПодекадная.Value);
+            if (rdb1Декада.Checked)
+            {
+                начало = new DateTime(ДатаПодекадная.Value.Year, ДатаПодекадная.Value.Month, 1);
+                var конецДекады = NsgService.EndOfDay(new DateTime(ДатаПодекадная.Value.Year, ДатаПодекадная.Value.Month, 10));
+                конец = конецДекады > DateTime.Now ? DateTime.Now : конецДекады;
+            }
+            else if (rdb2Декада.Checked)
+            {
+                начало = new DateTime(ДатаПодекадная.Value.Year, ДатаПодекадная.Value.Month, 11);
+                var конецДекады = NsgService.EndOfDay(new DateTime(ДатаПодекадная.Value.Year, ДатаПодекадная.Value.Month, 20));
+                конец = конецДекады > DateTime.Now ? DateTime.Now : конецДекады;
+            }
+            else if (rdb3Декада.Checked)
+            {
+                начало = new DateTime(ДатаПодекадная.Value.Year, ДатаПодекадная.Value.Month, 21);
+                var конецДекады = NsgService.EndOfDay(new DateTime(ДатаПодекадная.Value.Year, ДатаПодекадная.Value.Month, ДатаПодекадная.Value.DaysInMonth()));
+                конец = конецДекады > DateTime.Now ? DateTime.Now : конецДекады;
+            }
+
+            return new NsgDateTimePeriod(начало, конец);
+        }
+
+        private void ВидимостьКолонокСводка() 
+        {
+            for (int i = 1; i <= 31; i++)
+            {
+                var colvmoСводка = vmoСводка.Columns.Collection.First(x => x.Name == i.ToString());
+                if (i <= 10)
+                {
+                    colvmoСводка.Visible = rdb1Декада.Checked || rdbВесьМесяц.Checked;
+                }
+                else if (i >= 11 && i <= 20)
+                {
+                    colvmoСводка.Visible = rdb2Декада.Checked || rdbВесьМесяц.Checked;
+                }
+                else if (i >= 21 && i <= ДатаПодекадная.Value.DaysInMonth())
+                {
+                    colvmoСводка.Visible = rdb3Декада.Checked || rdbВесьМесяц.Checked;
+                }
+                else
+                {
+                    colvmoСводка.Visible = false;
+                }
+            }
+        }
+
+        private void nsgInput3_Selected(object sender, EventArgs e)
+        {
+            if (nBwЗаполнениеДаннымиСмен.IsProcessing)
+            {
+                nBwЗаполнениеДаннымиСмен.Cancel();
+            }
+            nBwЗаполнениеДаннымиСмен.Run();
+        }
+
+        private void nsgInput4_Selected(object sender, EventArgs e)
+        {
+            if (nBwЗаполнениеДаннымиСмен.IsProcessing)
+            {
+                nBwЗаполнениеДаннымиСмен.Cancel();
+            }
+            nBwЗаполнениеДаннымиСмен.Run();
+        }
+
+        private void rdbВесьМесяц_CheckedChanged(object sender, EventArgs e)
+        {
+            ВидимостьКолонокСводка();
+            ФильтрНаПодробности();
+            vmoПодробности.Data.UpdateDataAsync(this);
+            vmoСводка.Data.UpdateDataAsync(this);
+        }
+
+        private void rdb2Декада_CheckedChanged(object sender, EventArgs e)
+        {
+            ВидимостьКолонокСводка();
+            ФильтрНаПодробности();
+            vmoПодробности.Data.UpdateDataAsync(this);
+            vmoСводка.Data.UpdateDataAsync(this);
+        }
+
+        private void rdb1Декада_CheckedChanged(object sender, EventArgs e)
+        {
+            ВидимостьКолонокСводка();
+            ФильтрНаПодробности();
+            vmoПодробности.Data.UpdateDataAsync(this);
+            vmoСводка.Data.UpdateDataAsync(this);
+        }
+
+        private void rdb3Декада_CheckedChanged(object sender, EventArgs e)
+        {
+            ВидимостьКолонокСводка();
+            ФильтрНаПодробности();
+            vmoПодробности.Data.UpdateDataAsync(this);
+            vmoСводка.Data.UpdateDataAsync(this);
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            if (tabControl1.SelectedTab == tpПодекадное && !rdbВесьМесяц.Checked && !rdb1Декада.Checked && !rdb2Декада.Checked && !rdb3Декада.Checked)
+            {
+                rdbВесьМесяц.Checked = true;
+            }
+        }
+
+        private void nsgIGrid3_CellActivated(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (int.TryParse(e.ColumnName, out int day))
+            {
+                var период = ВыбранныйПериод();
+                var начало = период.Begin;
+                var конец = период.End;
+                if (начало.Day < day)
+                {
+                    начало = new DateTime(начало.Year, начало.Month, day);
+                }
+
+                var объедГуид = e.RowObject[ОбъедГуид_vmoСводка].ToString();
+
+                var строкаПодробностей = vmoПодробности.Data.MemoryTable.AllRows
+                        .FirstOrDefault(x => x[ОбъедГуид_vmoПодробности].ToString() == объедГуид
+                        && x[ДатаСмены_vmoПодробности].ToDateTime().Date == new DateTime(начало.Year, начало.Month, day));
+                if (строкаПодробностей != null)
+                {
+                    var запрещеноРедактирование = строкаПодробностей[ИзЗаполненногоДокумента_vmoПодробности].ToBoolean();
+                    if (!запрещеноРедактирование)
+                    {
+                        var длительность = ДлительностьСмены_vmoПараметрыЗаполнения.Value;
+                        if (int.TryParse(e.RowObject[day.ToString()].ToString(), out int часы))
+                        {
+                            строкаПодробностей[Длительность_vmoПодробности].Value = 0;
+                            строкаПодробностей[ДатаСмены_vmoПодробности].Value = new DateTime(начало.Year, начало.Month, day);
+                            e.RowObject[e.ColumnName].Value = _пустоеЗначение;
+                        }
+                        else if (длительность != 0)
+                        {
+                            var режим = РежимРаботы_vmoПараметрыЗаполнения.Value;
+                            var времяНачала = НачалоСмены_vmoПараметрыЗаполнения.Value;
+
+                            if (vmoПодробности.Data.MemoryTable.AllRows.Any(x => x[ОбъедГуид_vmoПодробности].ToString() == объедГуид 
+                                && x[ДатаСмены_vmoПодробности].ToDateTime() > NsgService.EndOfDay(начало) 
+                                && x[Длительность_vmoПодробности].ToDecimal() != 0))
+                            {
+                                строкаПодробностей[Длительность_vmoПодробности].Value = длительность;
+                                строкаПодробностей[ДатаСмены_vmoПодробности].Value = new DateTime(начало.Year, начало.Month, day, времяНачала.Hour, времяНачала.Minute, времяНачала.Second);
+                                e.RowObject[day.ToString()].Value = Math.Round(длительность, 0);
+                            }
+                            else
+                            {
+                                for (int i = day; i <= конец.Day; i++)
+                                {
+                                    if (ТекущийДеньВРежимеРабочий(day, i, режим, начало))
+                                    {
+                                        строкаПодробностей = vmoПодробности.Data.MemoryTable.AllRows
+                                            .FirstOrDefault(x => x[ОбъедГуид_vmoПодробности].ToString() == объедГуид
+                                            && x[ДатаСмены_vmoПодробности].ToDateTime().Date == new DateTime(начало.Year, начало.Month, i));
+                                        if (строкаПодробностей != null && !строкаПодробностей[ИзЗаполненногоДокумента_vmoПодробности].ToBoolean())
+                                        {
+                                            строкаПодробностей[Длительность_vmoПодробности].Value = длительность;
+                                            строкаПодробностей[ДатаСмены_vmoПодробности].Value = new DateTime(начало.Year, начало.Month, i, времяНачала.Hour, времяНачала.Minute, времяНачала.Second);
+                                            e.RowObject[i.ToString()].Value = Math.Round(длительность, 0);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private bool ТекущийДеньВРежимеРабочий(int первыйДень, int текущийДень, ВидыРежимовРаботы режим, DateTime месяцРаботы) 
+        {
+            int погрешность = 0;
+            if (первыйДень <= 0)
+            {
+                int temp = первыйДень;
+                while (temp <= 0)
+                {
+                    погрешность++;
+                    temp++;
+                }
+            }
+            первыйДень = первыйДень + погрешность;
+
+            if (режим == ВидыРежимовРаботы.ДваЧерезДва)
+            {
+                bool первый = погрешность == 0;
+                bool второй = погрешность == 1;
+                bool третий = погрешность == 2;
+                bool четвертый = погрешность == 3;
+
+                int j = погрешность;
+                int i = первыйДень;
+                
+                while (i < текущийДень)
+                {
+                    if (первый)
+                    {
+                        первый = false;
+                        второй = true;
+                        третий = false;
+                        четвертый = false;
+                    }
+                    else if (второй)
+                    {
+                        первый = false;
+                        второй = false;
+                        третий = true;
+                        четвертый = false;
+                    }
+                    else if (третий)
+                    {
+                        первый = false;
+                        второй = false;
+                        третий = false;
+                        четвертый = true;
+                    }
+                    else if (четвертый)
+                    {
+                        первый = true;
+                        второй = false;
+                        третий = false;
+                        четвертый = false;
+                    }
+                    j++;
+                    i++;
+                }
+                
+
+                return первый || второй;
+            }
+            else if (режим == ВидыРежимовРаботы.Ежедневно)
+            {
+                return true;
+            }
+            else if (режим == ВидыРежимовРаботы.ПятьЧерезДва)
+            {
+                var дата = new DateTime(месяцРаботы.Year, месяцРаботы.Month, текущийДень);
+                return !(дата.DayOfWeek == DayOfWeek.Sunday || дата.DayOfWeek == DayOfWeek.Saturday);
+            }
+            else if (режим == ВидыРежимовРаботы.СуткиЧерезДвое)
+            {
+                int j = погрешность;
+                int i = первыйДень;
+                
+                while (i < текущийДень)
+                {
+                    j++;
+                    i++;
+                }
+
+                return j == 0 || j % 3 == 0;
+            }
+            else if (режим == ВидыРежимовРаботы.СуткиЧерезСутки)
+            {
+                int j = погрешность;
+                int i = первыйДень;
+                
+                while (i < текущийДень)
+                {
+                    j++;
+                    i++;
+                }
+                return j % 2 == 0;
+            }
+            else if (режим == ВидыРежимовРаботы.СуткиЧерезТрое)
+            {
+                int j = погрешность;
+                int i = первыйДень;
+                
+                while (i < текущийДень)
+                {
+                    j++;
+                    i++;
+                }
+                return j == 0 || j % 4 == 0;
+            }
+            else if (режим == ВидыРежимовРаботы.ШестьЧерезОдин)
+            {
+                var дата = new DateTime(месяцРаботы.Year, месяцРаботы.Month, текущийДень);
+                return дата.DayOfWeek != DayOfWeek.Sunday;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void vmoСводка_CurrentRowChanged(object sender, NsgMultipleObject oldRow, NsgMultipleObject newRow)
+        {
+            ФильтрНаПодробности();
+            vmoПодробности.Data.UpdateDataAsync(this);
+        }
+
+        private void nsgIGrid3_CellRequestEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.RowObject[Загружено_vmoСводка].ToBoolean() && e.ColumnName != Тариф_vmoСводка.Name)
+            {
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void nsgIGrid3_CellEndEdit(object sender, NsgIGrid.NsgIGridCellEventArgs e)
+        {
+            if (e.ColumnName == Сотрудник_vmoСводка.Name 
+                || e.ColumnName == Техника_vmoСводка.Name 
+                || e.ColumnName == Должность_vmoСводка.Name 
+                || e.ColumnName == Тариф_vmoСводка.Name)
+            {
+                vmoПодробности.Data.BeginUpdateData();
+
+                if (e.RowObject[e.ColumnName].ToReferent().Selected)
+                {
+                    var объедГуид = e.RowObject[ОбъедГуид_vmoСводка].ToString();
+                    if (string.IsNullOrWhiteSpace(объедГуид))
+                    {
+                        объедГуид = Guid.NewGuid().ToString();
+                        e.RowObject[ОбъедГуид_vmoСводка].Value = объедГуид;
+                        var месяцЗаполнения = ДатаПодекадная.Value;
+                        var днейВМесяце = месяцЗаполнения.DaysInMonth();
+                        for (int i = 1; i <= днейВМесяце; i++)
+                        {
+                            var дата = new DateTime(месяцЗаполнения.Year, месяцЗаполнения.Month, i);
+                            var строкаПодробностей = vmoПодробности.Data.MemoryTable.NewRow();
+                            строкаПодробностей[ОбъедГуид_vmoПодробности].Value = объедГуид;
+                            строкаПодробностей[ДатаСмены_vmoПодробности].Value = дата;
+
+                            e.RowObject[i.ToString()].Value = _пустоеЗначение;
+                            if (дата.DayOfWeek == DayOfWeek.Sunday || дата.DayOfWeek == DayOfWeek.Saturday)
+                            {
+                                e.RowObject[i.ToString()].AddUserProperty(NsgSoft.Forms.NsgIGrid.BACKCOLOR, Color.MistyRose);
+                            }
+
+                            строкаПодробностей[Техника_vmoПодробности].Value = e.RowObject[Техника_vmoСводка].ToReferent() as Техника;
+                            строкаПодробностей[Сотрудник_vmoПодробности].Value = e.RowObject[Сотрудник_vmoСводка].ToReferent() as ФизЛица;
+                            строкаПодробностей[Должность_vmoПодробности].Value = e.RowObject[Должность_vmoСводка].ToReferent() as Должности;
+                            строкаПодробностей[Тариф_vmoПодробности].Value = e.RowObject[Тариф_vmoСводка].ToReferent() as Тарифы;
+
+                            строкаПодробностей.Post();
+                        }
+                    }
+                    else
+                    {
+                        var всеПодробности = vmoПодробности.Data.MemoryTable.AllRows.Where(x => x[ОбъедГуид_vmoПодробности].ToString() == объедГуид).ToArray();
+                        foreach (var строкаПодробностей in всеПодробности)
+                        {
+                            строкаПодробностей[Техника_vmoПодробности].Value = e.RowObject[Техника_vmoСводка].ToReferent() as Техника;
+                            строкаПодробностей[Сотрудник_vmoПодробности].Value = e.RowObject[Сотрудник_vmoСводка].ToReferent() as ФизЛица;
+                            строкаПодробностей[Должность_vmoПодробности].Value = e.RowObject[Должность_vmoСводка].ToReferent() as Должности;
+                            строкаПодробностей[Тариф_vmoПодробности].Value = e.RowObject[Тариф_vmoСводка].ToReferent() as Тарифы;
+                        }
+                    }
+                }
+                else
+                {
+                    if (!e.RowObject[Сотрудник_vmoСводка].ToReferent().Selected 
+                        && !e.RowObject[Техника_vmoСводка].ToReferent().Selected
+                        && !e.RowObject[Должность_vmoСводка].ToReferent().Selected
+                        && !e.RowObject[Тариф_vmoСводка].ToReferent().Selected)
+                    {
+                        var объедГуид = e.RowObject[ОбъедГуид_vmoСводка].ToString();
+                        vmoПодробности.Data.MemoryTable.DeleteRows(new NsgCompare().Add(ОбъедГуид_vmoПодробности.Name, объедГуид));
+                        e.RowObject[ОбъедГуид_vmoСводка].Value = string.Empty;
+                    }
+                }
+                ФильтрНаПодробности();
+                vmoПодробности.Data.UpdateDataAsync(this);
+            }
+        }
+
+        private void nbСохранитьСмены_AsyncClick(object sender, DoWorkEventArgs e)
+        {
+            if (vmoПодробности.Data.MemoryTable.AllRowsCount == 0)
+            {
+                NsgSettings.MainForm.ShowMessage("Нет данных для сохранения");
+                return;
+            }
+
+            var объект = ОбъектПодекадный.Value;
+
+            if (!объект.Selected)
+            {
+                NsgSettings.MainForm.ShowMessage("Не выбран объект");
+                return;
+            }
+
+            Dictionary<DateTime, List<NsgMemoryTableRow>> словарьСмен = new Dictionary<DateTime, List<NsgMemoryTableRow>>();
+            foreach (var item in vmoПодробности.Data.MemoryTable.AllRows)
+            {
+                if (item[Длительность_vmoПодробности].ToDecimal() != 0)
+                {
+                    var дата = item[ДатаСмены_vmoПодробности].ToDateTime().Date;
+                    List<NsgMemoryTableRow> строки = null;
+                    if (!словарьСмен.TryGetValue(дата, out строки))
+                    {
+                        строки = new List<NsgMemoryTableRow>();
+                    }
+                    словарьСмен[дата].Add(item);
+                }
+            }
+
+            try
+            {
+                NsgSettings.BeginTransaction();
+                foreach (var дата in словарьСмен.Keys)
+                {
+                    var cmp = new NsgCompare();
+                    cmp.Add(ФормированиеСмены.Names.ДатаДокумента, NsgService.BeginOfMonth(дата), NsgComparison.GreaterOrEqual);
+                    cmp.Add(ФормированиеСмены.Names.ДатаДокумента, NsgService.EndOfDay(дата), NsgComparison.LessOrEqual);
+                    cmp.Add(ФормированиеСмены.Names.Объект, объект);
+                    cmp.Add(ФормированиеСмены.Names.ДатаОкончанияСмены, NsgService.MinDate, NsgComparison.NotEqual);
+                    cmp.Add(ФормированиеСмены.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+
+                    var смена = ФормированиеСмены.Новый();
+                    if (смена.Find(cmp))
+                    {
+                        смена.Edit();
+                    }
+                    else
+                    {
+                        смена.New();
+                    }
+                    смена.ДатаДокумента = словарьСмен[дата].OrderBy(x => x[ДатаСмены_vmoПодробности].ToDateTime()).First()[ДатаСмены_vmoПодробности].ToDateTime();
+                    смена.ДатаОкончанияСмены = смена.ДатаДокумента.AddHours((double)словарьСмен[дата].Max(x => x[Длительность_vmoПодробности].ToDecimal()));
+                    смена.Таблица.DeleteAll();
+                    смена.ТаблицаПерсонал.DeleteAll();
+
+                    foreach (var item in словарьСмен[дата])
+                    {
+                        var техника = item[Техника_vmoПодробности].ToReferent() as Техника;
+                        if (техника != null && техника.Selected)
+                        {
+                            var row = смена.Таблица.NewRow();
+                            row.Техника = техника;
+                            row.Сотрудник = item[Сотрудник_vmoПодробности].ToReferent() as ФизЛица;
+                            row.Должность = item[Должность_vmoПодробности].ToReferent() as Должности;
+                            row.Время = item[ДатаСмены_vmoПодробности].ToDateTime();
+                            row.Длительность = item[Длительность_vmoПодробности].ToDecimal();
+                            row.Тариф = item[Тариф_vmoПодробности].ToReferent() as Тарифы;
+                            row.Post();
+                        }
+                        else
+                        {
+                            var row = смена.ТаблицаПерсонал.NewRow();
+                            row.Сотрудник = item[Сотрудник_vmoПодробности].ToReferent() as ФизЛица;
+                            row.Должность = item[Должность_vmoПодробности].ToReferent() as Должности;
+                            row.Время = item[ДатаСмены_vmoПодробности].ToDateTime();
+                            row.Длительность = item[Длительность_vmoПодробности].ToDecimal();
+                            row.Тариф = item[Тариф_vmoПодробности].ToReferent() as Тарифы;
+                            row.Post();
+                        }
+                    }
+
+                    смена.Post();
+                }
+                NsgSettings.CommitTransaction();
+
+                if (nBwЗаполнениеДаннымиСмен.IsProcessing)
+                {
+                    nBwЗаполнениеДаннымиСмен.Cancel();
+                }
+                nBwЗаполнениеДаннымиСмен.Run();
+            }
+            catch (Exception ee)
+            {
+                NsgSettings.RollbackTransaction();
+                NsgSettings.MainForm.ShowMessage(ee.Message);
+            }
+            
+        }
+
+        private void nsgIGrid3_BeforeAction(object sender, NsgIGrid.NsgIGridCellEventArgs e, NsgSoft.Design.NsgWorkToolPanel.InvokeToolProcessingEventArgs args)
+        {
+            if (args.ToolType == NsgWorkPanelTools.Delete)
+            {
+                if (e.RowObject != null)
+                {
+                    var объедГуид = e.RowObject[ОбъедГуид_vmoСводка].ToString();
+                    vmoПодробности.Data.MemoryTable.DeleteRows(new NsgCompare().Add(ОбъедГуид_vmoПодробности.Name, объедГуид));
+                    vmoПодробности.Data.UpdateDataAsync(this);
+                }
             }
         }
     }

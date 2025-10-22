@@ -764,6 +764,69 @@ namespace TechControl.Метаданные.Мониторинг
 
         }
 
+
+        public List<Tuple<DateTime, Техника, ФизЛица, Должности, Тарифы, decimal>> ПолучитьСгруппированныеДанныеТаблиц() 
+        {
+            var result = new List<Tuple<DateTime, Техника, ФизЛица, Должности, Тарифы, decimal>>();
+
+            foreach (var item in Таблица.AllRows)
+            {
+                if (item.Техника.Selected || item.Сотрудник.Selected || item.Должность.Selected || item.Тариф.Selected)
+                {
+                    var группировкаТехники = result.FirstOrDefault(x => x.Item2 == item.Техника && x.Item3 == item.Сотрудник && x.Item4 == item.Должность && x.Item5 == item.Тариф);
+                    var длительность = item.Длительность;
+                    var время = new DateTime(ДатаДокумента.Year, ДатаДокумента.Month, ДатаДокумента.Day, item.Время.Hour, item.Время.Minute, item.Время.Second);
+                    Tuple<DateTime, Техника, ФизЛица, Должности, Тарифы, decimal> гр = null;
+                    if (группировкаТехники == null)
+                    {
+                        гр = new Tuple<DateTime, Техника, ФизЛица, Должности, Тарифы, decimal>(время, item.Техника, item.Сотрудник, item.Должность, item.Тариф, длительность);
+                    }
+                    else
+                    {
+                        if (группировкаТехники.Item1 < время)
+                        {
+                            время = группировкаТехники.Item1;
+                        }
+
+                        гр = new Tuple<DateTime, Техника, ФизЛица, Должности, Тарифы, decimal>(время, item.Техника, item.Сотрудник, item.Должность, item.Тариф, длительность + группировкаТехники.Item6);
+
+                        result.Remove(группировкаТехники);
+                    }
+
+                    result.Add(гр);
+                }
+            }
+
+            foreach (var item in ТаблицаПерсонал.AllRows)
+            {
+                if (item.Сотрудник.Selected || item.Должность.Selected || item.Тариф.Selected)
+                {
+                    var группировкаПерсонал = result.FirstOrDefault(x => x.Item2 == Техника.Новый() && x.Item3 == item.Сотрудник && x.Item4 == item.Должность && x.Item5 == item.Тариф);
+                    var длительность = item.Длительность;
+                    var время = new DateTime(ДатаДокумента.Year, ДатаДокумента.Month, ДатаДокумента.Day, item.Время.Hour, item.Время.Minute, item.Время.Second);
+                    Tuple<DateTime, Техника, ФизЛица, Должности, Тарифы, decimal> гр = null;
+                    if (группировкаПерсонал == null)
+                    {
+                        гр = new Tuple<DateTime, Техника, ФизЛица, Должности, Тарифы, decimal>(время, Техника.Новый(), item.Сотрудник, item.Должность, item.Тариф, длительность);
+                    }
+                    else
+                    {
+                        if (группировкаПерсонал.Item1 < время)
+                        {
+                            время = группировкаПерсонал.Item1;
+                        }
+
+                        гр = new Tuple<DateTime, Техника, ФизЛица, Должности, Тарифы, decimal>(время, Техника.Новый(), item.Сотрудник, item.Должность, item.Тариф, длительность + группировкаПерсонал.Item6);
+
+                        result.Remove(группировкаПерсонал);
+                    }
+
+                    result.Add(гр);
+                }
+            }
+
+            return result;
+        }
     }
 
 }
