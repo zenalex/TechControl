@@ -176,7 +176,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                         }
                         else if (техника.Selected)
                         {
-                            сотрудникиНаОбъекте = объект.СписокПерсонала().Where(x => x.Item1.ДопущенКУправлению(техника)).Select(x => x.Item1.Идентификатор).ToArray();
+                            сотрудникиНаОбъекте = объект.СписокПерсонала().Where(x => x.Item1.ДопущенКУправлению(техника, x.Item2)).Select(x => x.Item1.Идентификатор).ToArray();
                         }
                         else
                         {
@@ -239,6 +239,16 @@ namespace TechControl.Метаданные.УчетСотрудников
                 var объект = перваяСтрока[Объект_vmoТаблица].ToReferent() as Объекты;
 
                 var фомированиеСмены = ФормированиеСмены.Новый();
+                var cmp = new NsgCompare();
+                cmp.Add(ФормированиеСмены.Names.ДатаДокумента, NsgService.BeginOfDay(дата), NsgComparison.GreaterOrEqual);
+                cmp.Add(ФормированиеСмены.Names.ДатаДокумента, NsgService.EndOfDay(дата), NsgComparison.LessOrEqual);
+                cmp.Add(ФормированиеСмены.Names.Объект, объект);
+                cmp.Add(ФормированиеСмены.Names.СостояниеДокумента, Сервис.СостоянияОбъекта.Удален, NsgComparison.NotEqual);
+                if (фомированиеСмены.Find(cmp))
+                {
+                    фомированиеСмены.Edit();
+                }
+
                 фомированиеСмены.New();
                 фомированиеСмены.ДатаДокумента = дата;
                 фомированиеСмены.Объект = объект;
@@ -670,7 +680,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                     if (техн.Selected)
                     {
                         item[Техника_vmoТаблицаИтогов].Value = техн;
-                        var сотр = объект.СписокПерсонала().FirstOrDefault(x => x.Item1.ДопущенКУправлению(техн));
+                        var сотр = объект.СписокПерсонала().FirstOrDefault(x => x.Item1.ДопущенКУправлению(техн, x.Item2));
                         if (сотр != null && сотр.Item1.Selected)
                         {
                             item[Сотрудник_vmoТаблицаИтогов].Value = сотр.Item1;
@@ -727,7 +737,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                 var техника = row[Техника_vmoТаблицаИтогов].ToReferent() as Техника;
                 if (техника != null && техника.Selected)
                 {
-                    var tehn = table.FirstOrDefault(x => x.Item1.ДопущенКУправлению(техника));
+                    var tehn = table.FirstOrDefault(x => x.Item1.ДопущенКУправлению(техника, x.Item2));
                     if (tehn != null)
                     {
                         сотрудник = tehn.Item1;
@@ -1013,6 +1023,27 @@ namespace TechControl.Метаданные.УчетСотрудников
                 var дата = Дата.Value;
                 e.RowObject[дата_vmoТаблица].Value = дата;
             }
+
+            if (e.ColumnName == Сотрудник_vmoТаблица.Name)
+            {
+                if (объект != null && объект.Selected)
+                {
+                    var сотрудник = e.RowObject[Сотрудник_vmoТаблица].ToReferent() as ФизЛица;
+                    Должности должность = Должности.Новый();
+                    if (сотрудник != null && сотрудник.Selected)
+                    {
+                        var сотрудники = объект.СписокПерсонала();
+                        var текущийСотрудник = сотрудники.FirstOrDefault(x => x.Item1 == сотрудник);
+
+                        if (текущийСотрудник != null)
+                        {
+                            должность = текущийСотрудник.Item2;
+                        }
+                    }
+                    e.RowObject[Должность_vmoТаблица].Value = должность;
+                }
+            }
+
         }
 
         private void nBwЗаполнениеДаннымиСмен_DoWork(object sender, DoWorkEventArgs e)
@@ -1508,6 +1539,27 @@ namespace TechControl.Метаданные.УчетСотрудников
                     {
                         объедГуид = Guid.NewGuid().ToString();
                         e.RowObject[ОбъедГуид_vmoСводка].Value = объедГуид;
+                        if (e.ColumnName == Сотрудник_vmoСводка.Name)
+                        {
+                            var объект = ОбъектПодекадный.Value;
+                            if (объект != null && объект.Selected)
+                            {
+                                var сотрудник = e.RowObject[Сотрудник_vmoСводка].ToReferent() as ФизЛица;
+                                Должности должность = Должности.Новый();
+                                if (сотрудник != null && сотрудник.Selected)
+                                {
+                                    var сотрудники = объект.СписокПерсонала();
+                                    var текущийСотрудник = сотрудники.FirstOrDefault(x => x.Item1 == сотрудник);
+                                    
+                                    if (текущийСотрудник != null)
+                                    {
+                                        должность = текущийСотрудник.Item2;
+                                    }
+                                }
+                                e.RowObject[Должность_vmoСводка].Value = должность;
+                            }
+                        }
+
                         var месяцЗаполнения = ДатаПодекадная.Value;
                         var днейВМесяце = месяцЗаполнения.DaysInMonth();
                         for (int i = 1; i <= днейВМесяце; i++)
