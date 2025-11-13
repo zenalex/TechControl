@@ -16,7 +16,6 @@ using TechControl.Метаданные.Документы;
 using TechControl.Метаданные.Мониторинг;
 using TechControl.Метаданные.Перечисления;
 using TechControl.Метаданные.Регистры;
-using static NsgSoft.UI.WinControls.UI.ValueMapper;
 
 namespace TechControl.Метаданные.УчетСотрудников
 {
@@ -1638,6 +1637,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                     if (!словарьСмен.TryGetValue(дата, out строки))
                     {
                         строки = new List<NsgMemoryTableRow>();
+                        словарьСмен[дата] = строки;
                     }
                     словарьСмен[дата].Add(item);
                 }
@@ -1664,6 +1664,7 @@ namespace TechControl.Метаданные.УчетСотрудников
                     {
                         смена.New();
                     }
+                    смена.Объект = объект;
                     смена.ДатаДокумента = словарьСмен[дата].OrderBy(x => x[ДатаСмены_vmoПодробности].ToDateTime()).First()[ДатаСмены_vmoПодробности].ToDateTime();
                     смена.ДатаОкончанияСмены = смена.ДатаДокумента.AddHours((double)словарьСмен[дата].Max(x => x[Длительность_vmoПодробности].ToDecimal()));
                     смена.Таблица.DeleteAll();
