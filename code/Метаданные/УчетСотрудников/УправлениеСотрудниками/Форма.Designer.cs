@@ -34,6 +34,14 @@ namespace TechControl.Метаданные.УчетСотрудников
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(УправлениеСотрудникамиФорма));
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn88 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn89 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn90 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn91 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn92 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn93 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn94 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn95 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn1 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn2 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn3 = new NsgSoft.Forms.NsgIGridColumn();
@@ -42,6 +50,34 @@ namespace TechControl.Метаданные.УчетСотрудников
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn6 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn7 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn8 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn96 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn97 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn98 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn99 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn100 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn101 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn102 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn103 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn104 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn105 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn106 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn107 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn108 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn109 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn110 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn111 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn112 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn113 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn114 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn115 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn116 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn117 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn118 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn119 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn120 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn121 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn122 = new NsgSoft.Forms.NsgIGridColumn();
+            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn123 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn9 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn10 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn11 = new NsgSoft.Forms.NsgIGridColumn();
@@ -85,40 +121,6 @@ namespace TechControl.Метаданные.УчетСотрудников
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn49 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn50 = new NsgSoft.Forms.NsgIGridColumn();
             NsgSoft.Forms.NsgIGridColumn nsgIGridColumn51 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn52 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn53 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn54 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn55 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn56 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn57 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn58 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn59 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn60 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn61 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn62 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn63 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn64 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn65 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn66 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn67 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn68 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn69 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn70 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn71 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn72 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn73 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn74 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn75 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn76 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn77 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn78 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn79 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn80 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn81 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn82 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn83 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn84 = new NsgSoft.Forms.NsgIGridColumn();
-            NsgSoft.Forms.NsgIGridColumn nsgIGridColumn85 = new NsgSoft.Forms.NsgIGridColumn();
             this.nsgIGrid1 = new NsgSoft.Forms.NsgIGrid();
             this.vmoТаблица = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
             this.НачалоСмены_vmoТаблица = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
@@ -220,8 +222,13 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.Длительность_vmoПодробности = new NsgSoft.Forms.NsgColumnDescriptor.Decimal();
             this.ОбъедГуид_vmoПодробности = new NsgSoft.Forms.NsgColumnDescriptor.String();
             this.ИзЗаполненногоДокумента_vmoПодробности = new NsgSoft.Forms.NsgColumnDescriptor.Boolean();
+            this.nsgIGrid5 = new NsgSoft.Forms.NsgIGrid();
+            this.vmoПрошлыеСмены = new NsgSoft.Forms.NsgVisualMultipleObject(this.components);
+            this.Дата_vmoПрошлыеСмены = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
+            this.Смена_vmoПрошлыеСмены = new TechControl.Метаданные.Мониторинг.ФормированиеСмены.ColumnDescriptor();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpФормирование = new System.Windows.Forms.TabPage();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.cbShowAll = new System.Windows.Forms.CheckBox();
             this.nbСформироватьСмену = new NsgSoft.Design.NsgButton();
             this.nbЗаполнить = new NsgSoft.Design.NsgButton();
@@ -273,10 +280,12 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.label5 = new System.Windows.Forms.Label();
             this.bgwАнализТаблицы = new NsgSoft.Forms.NsgBackgroundWorker(this.components);
             this.nBwЗаполнениеДаннымиСмен = new NsgSoft.Forms.NsgBackgroundWorker(this.components);
+            this.nbwПрошлыеСмены = new NsgSoft.Forms.NsgBackgroundWorker(this.components);
             this.Объект = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
             this.Дата = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.ДатаПодекадная = new NsgSoft.Forms.NsgColumnDescriptor.DateTime();
             this.ОбъектПодекадный = new TechControl.Метаданные.Мониторинг.Объекты.ColumnDescriptor();
+            this.nbЗаполнПоВыбранной = new NsgSoft.Design.NsgButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnCreateReport)).BeginInit();
             this.panelButtonReportForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
@@ -291,8 +300,14 @@ namespace TechControl.Метаданные.УчетСотрудников
             ((System.ComponentModel.ISupportInitialize)(this.vmoСводка)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoПодробности)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoПрошлыеСмены)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tpФормирование.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbСформироватьСмену)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнить)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).BeginInit();
@@ -324,6 +339,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             ((System.ComponentModel.ISupportInitialize)(this.nbСохрнитьИтоги)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнитьИтоги)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнПоВыбранной)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreateReport
@@ -425,152 +441,144 @@ namespace TechControl.Метаданные.УчетСотрудников
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nsgIGrid1.AutoResizeCols = true;
-            nsgIGridColumn1.AllowFilter = true;
-            nsgIGridColumn1.AllowGroupSelect = false;
-            nsgIGridColumn1.AllowResize = true;
-            nsgIGridColumn1.AutoResize = true;
-            nsgIGridColumn1.Caption = "";
-            nsgIGridColumn1.ChangedProperties = new string[] {
+            nsgIGridColumn88.AllowFilter = true;
+            nsgIGridColumn88.AllowGroupSelect = false;
+            nsgIGridColumn88.AllowResize = true;
+            nsgIGridColumn88.AutoResize = true;
+            nsgIGridColumn88.Caption = "";
+            nsgIGridColumn88.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn1.DateFormat = null;
-            nsgIGridColumn1.ImportedFromVMO = false;
-            nsgIGridColumn1.Name = "Должность";
-            nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn1.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn1.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn1.UseAsHeaderImage = false;
-            nsgIGridColumn1.Width = 100;
-            nsgIGridColumn2.AllowFilter = true;
-            nsgIGridColumn2.AllowGroupSelect = false;
-            nsgIGridColumn2.AllowResize = true;
-            nsgIGridColumn2.AutoResize = true;
-            nsgIGridColumn2.Caption = "";
-            nsgIGridColumn2.ChangedProperties = new string[] {
+            nsgIGridColumn88.DateFormat = null;
+            nsgIGridColumn88.Name = "Должность";
+            nsgIGridColumn88.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn88.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn88.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn88.UseAsHeaderImage = false;
+            nsgIGridColumn88.Width = 100;
+            nsgIGridColumn89.AllowFilter = true;
+            nsgIGridColumn89.AllowGroupSelect = false;
+            nsgIGridColumn89.AllowResize = true;
+            nsgIGridColumn89.AutoResize = true;
+            nsgIGridColumn89.Caption = "";
+            nsgIGridColumn89.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn2.DateFormat = null;
-            nsgIGridColumn2.ImportedFromVMO = false;
-            nsgIGridColumn2.Name = "Сотрудник";
-            nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn2.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn2.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn2.UseAsHeaderImage = false;
-            nsgIGridColumn2.Width = 100;
-            nsgIGridColumn3.AllowFilter = true;
-            nsgIGridColumn3.AllowGroupSelect = false;
-            nsgIGridColumn3.AllowResize = true;
-            nsgIGridColumn3.AutoResize = true;
-            nsgIGridColumn3.Caption = "";
-            nsgIGridColumn3.ChangedProperties = new string[] {
+            nsgIGridColumn89.DateFormat = null;
+            nsgIGridColumn89.Name = "Сотрудник";
+            nsgIGridColumn89.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn89.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn89.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn89.UseAsHeaderImage = false;
+            nsgIGridColumn89.Width = 100;
+            nsgIGridColumn90.AllowFilter = true;
+            nsgIGridColumn90.AllowGroupSelect = false;
+            nsgIGridColumn90.AllowResize = true;
+            nsgIGridColumn90.AutoResize = true;
+            nsgIGridColumn90.Caption = "";
+            nsgIGridColumn90.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn3.DateFormat = null;
-            nsgIGridColumn3.ImportedFromVMO = false;
-            nsgIGridColumn3.Name = "ГруппаСпецТехники";
-            nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn3.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn3.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn3.UseAsHeaderImage = false;
-            nsgIGridColumn3.Width = 100;
-            nsgIGridColumn4.AllowFilter = true;
-            nsgIGridColumn4.AllowGroupSelect = false;
-            nsgIGridColumn4.AllowResize = true;
-            nsgIGridColumn4.AutoResize = true;
-            nsgIGridColumn4.Caption = "";
-            nsgIGridColumn4.ChangedProperties = new string[] {
+            nsgIGridColumn90.DateFormat = null;
+            nsgIGridColumn90.Name = "ГруппаСпецТехники";
+            nsgIGridColumn90.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn90.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn90.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn90.UseAsHeaderImage = false;
+            nsgIGridColumn90.Width = 100;
+            nsgIGridColumn91.AllowFilter = true;
+            nsgIGridColumn91.AllowGroupSelect = false;
+            nsgIGridColumn91.AllowResize = true;
+            nsgIGridColumn91.AutoResize = true;
+            nsgIGridColumn91.Caption = "";
+            nsgIGridColumn91.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn4.DateFormat = null;
-            nsgIGridColumn4.ImportedFromVMO = false;
-            nsgIGridColumn4.Name = "Техника";
-            nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn4.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn4.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn4.UseAsHeaderImage = false;
-            nsgIGridColumn4.Width = 100;
-            nsgIGridColumn5.AllowFilter = true;
-            nsgIGridColumn5.AllowGroupSelect = false;
-            nsgIGridColumn5.AllowResize = true;
-            nsgIGridColumn5.AutoResize = true;
-            nsgIGridColumn5.Caption = "";
-            nsgIGridColumn5.ChangedProperties = new string[] {
+            nsgIGridColumn91.DateFormat = null;
+            nsgIGridColumn91.Name = "Техника";
+            nsgIGridColumn91.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn91.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn91.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn91.UseAsHeaderImage = false;
+            nsgIGridColumn91.Width = 100;
+            nsgIGridColumn92.AllowFilter = true;
+            nsgIGridColumn92.AllowGroupSelect = false;
+            nsgIGridColumn92.AllowResize = true;
+            nsgIGridColumn92.AutoResize = true;
+            nsgIGridColumn92.Caption = "";
+            nsgIGridColumn92.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn5.DateFormat = null;
-            nsgIGridColumn5.ImportedFromVMO = false;
-            nsgIGridColumn5.Name = "Тариф";
-            nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn5.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn5.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn5.UseAsHeaderImage = false;
-            nsgIGridColumn5.Width = 100;
-            nsgIGridColumn6.AllowFilter = true;
-            nsgIGridColumn6.AllowGroupSelect = false;
-            nsgIGridColumn6.AllowResize = true;
-            nsgIGridColumn6.AutoResize = true;
-            nsgIGridColumn6.Caption = "";
-            nsgIGridColumn6.ChangedProperties = new string[] {
+            nsgIGridColumn92.DateFormat = null;
+            nsgIGridColumn92.Name = "Тариф";
+            nsgIGridColumn92.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn92.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn92.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn92.UseAsHeaderImage = false;
+            nsgIGridColumn92.Width = 100;
+            nsgIGridColumn93.AllowFilter = true;
+            nsgIGridColumn93.AllowGroupSelect = false;
+            nsgIGridColumn93.AllowResize = true;
+            nsgIGridColumn93.AutoResize = true;
+            nsgIGridColumn93.Caption = "";
+            nsgIGridColumn93.ChangedProperties = new string[] {
         "Visible",
         "Index",
         "Format"};
-            nsgIGridColumn6.DateFormat = null;
-            nsgIGridColumn6.Format = "HH:mm";
-            nsgIGridColumn6.ImportedFromVMO = false;
-            nsgIGridColumn6.Name = "НачалоСмены";
-            nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn6.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn6.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn6.UseAsHeaderImage = false;
-            nsgIGridColumn6.Width = 100;
-            nsgIGridColumn7.AllowFilter = true;
-            nsgIGridColumn7.AllowGroupSelect = false;
-            nsgIGridColumn7.AllowResize = true;
-            nsgIGridColumn7.AutoResize = true;
-            nsgIGridColumn7.Caption = "";
-            nsgIGridColumn7.ChangedProperties = new string[] {
+            nsgIGridColumn93.DateFormat = null;
+            nsgIGridColumn93.Format = "HH:mm";
+            nsgIGridColumn93.Name = "НачалоСмены";
+            nsgIGridColumn93.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn93.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn93.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn93.UseAsHeaderImage = false;
+            nsgIGridColumn93.Width = 100;
+            nsgIGridColumn94.AllowFilter = true;
+            nsgIGridColumn94.AllowGroupSelect = false;
+            nsgIGridColumn94.AllowResize = true;
+            nsgIGridColumn94.AutoResize = true;
+            nsgIGridColumn94.Caption = "";
+            nsgIGridColumn94.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn7.DateFormat = null;
-            nsgIGridColumn7.ImportedFromVMO = false;
-            nsgIGridColumn7.Name = "Длительность ч.";
-            nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn7.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn7.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn7.UseAsHeaderImage = false;
-            nsgIGridColumn7.Width = 100;
-            nsgIGridColumn8.AllowFilter = true;
-            nsgIGridColumn8.AllowGroupSelect = false;
-            nsgIGridColumn8.AllowResize = true;
-            nsgIGridColumn8.AutoResize = true;
-            nsgIGridColumn8.Caption = "";
-            nsgIGridColumn8.ChangedProperties = new string[] {
+            nsgIGridColumn94.DateFormat = null;
+            nsgIGridColumn94.Name = "Длительность ч.";
+            nsgIGridColumn94.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn94.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn94.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn94.UseAsHeaderImage = false;
+            nsgIGridColumn94.Width = 100;
+            nsgIGridColumn95.AllowFilter = true;
+            nsgIGridColumn95.AllowGroupSelect = false;
+            nsgIGridColumn95.AllowResize = true;
+            nsgIGridColumn95.AutoResize = true;
+            nsgIGridColumn95.Caption = "";
+            nsgIGridColumn95.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn8.DateFormat = null;
-            nsgIGridColumn8.ImportedFromVMO = false;
-            nsgIGridColumn8.Name = "Объект";
-            nsgIGridColumn8.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn8.Root = this.nsgIGrid1.Columns.Collection;
-            nsgIGridColumn8.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn8.UseAsHeaderImage = false;
-            nsgIGridColumn8.Width = 100;
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn1);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn2);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn3);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn4);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn5);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn6);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn7);
-            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn8);
+            nsgIGridColumn95.DateFormat = null;
+            nsgIGridColumn95.Name = "Объект";
+            nsgIGridColumn95.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn95.Root = this.nsgIGrid1.Columns.Collection;
+            nsgIGridColumn95.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn95.UseAsHeaderImage = false;
+            nsgIGridColumn95.Width = 100;
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn88);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn89);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn90);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn91);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn92);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn93);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn94);
+            this.nsgIGrid1.Columns.Collection.Add(nsgIGridColumn95);
             this.nsgIGrid1.Filter = false;
             this.nsgIGrid1.FrozenColumns = 0;
-            this.nsgIGrid1.Grouping = true;
+            this.nsgIGrid1.Grouping = false;
             this.nsgIGrid1.Hierarhy = true;
             this.nsgIGrid1.ImageList = null;
             this.nsgIGrid1.IsCanMultiSelect = false;
             this.nsgIGrid1.IsCanSingleSelect = false;
             this.nsgIGrid1.LineHeight = 20;
-            this.nsgIGrid1.Location = new System.Drawing.Point(6, 70);
+            this.nsgIGrid1.Location = new System.Drawing.Point(3, 3);
             this.nsgIGrid1.MarkReadOnly = false;
             this.nsgIGrid1.MasterObject = null;
             this.nsgIGrid1.Name = "NsgIGrid";
@@ -587,7 +595,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgIGrid1.ShowPanel = true;
             this.nsgIGrid1.ShowTotals = false;
             this.nsgIGrid1.ShowTree = false;
-            this.nsgIGrid1.Size = new System.Drawing.Size(762, 337);
+            this.nsgIGrid1.Size = new System.Drawing.Size(356, 331);
             this.nsgIGrid1.SourceObject = this.vmoТаблица;
             this.nsgIGrid1.TabIndex = 0;
             this.nsgIGrid1.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
@@ -726,618 +734,582 @@ namespace TechControl.Метаданные.УчетСотрудников
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nsgIGrid2.AutoResizeCols = true;
-            nsgIGridColumn9.AllowFilter = true;
-            nsgIGridColumn9.AllowGroupSelect = false;
-            nsgIGridColumn9.AllowResize = true;
-            nsgIGridColumn9.AutoResize = true;
-            nsgIGridColumn9.Caption = "";
-            nsgIGridColumn9.ChangedProperties = new string[] {
+            nsgIGridColumn1.AllowFilter = true;
+            nsgIGridColumn1.AllowGroupSelect = false;
+            nsgIGridColumn1.AllowResize = true;
+            nsgIGridColumn1.AutoResize = true;
+            nsgIGridColumn1.Caption = "";
+            nsgIGridColumn1.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn9.DateFormat = null;
-            nsgIGridColumn9.ImportedFromVMO = false;
-            nsgIGridColumn9.Name = "Должность";
-            nsgIGridColumn9.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn9.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn9.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn9.UseAsHeaderImage = false;
-            nsgIGridColumn9.Width = 100;
-            nsgIGridColumn10.AllowFilter = true;
-            nsgIGridColumn10.AllowGroupSelect = false;
-            nsgIGridColumn10.AllowResize = true;
-            nsgIGridColumn10.AutoResize = true;
-            nsgIGridColumn10.Caption = "";
-            nsgIGridColumn10.ChangedProperties = new string[] {
+            nsgIGridColumn1.DateFormat = null;
+            nsgIGridColumn1.Name = "Должность";
+            nsgIGridColumn1.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn1.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn1.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn1.UseAsHeaderImage = false;
+            nsgIGridColumn1.Width = 100;
+            nsgIGridColumn2.AllowFilter = true;
+            nsgIGridColumn2.AllowGroupSelect = false;
+            nsgIGridColumn2.AllowResize = true;
+            nsgIGridColumn2.AutoResize = true;
+            nsgIGridColumn2.Caption = "";
+            nsgIGridColumn2.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn10.DateFormat = null;
-            nsgIGridColumn10.ImportedFromVMO = false;
-            nsgIGridColumn10.Name = "Сотрудник";
-            nsgIGridColumn10.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn10.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn10.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn10.UseAsHeaderImage = false;
-            nsgIGridColumn10.Width = 100;
-            nsgIGridColumn11.AllowFilter = true;
-            nsgIGridColumn11.AllowGroupSelect = false;
-            nsgIGridColumn11.AllowResize = true;
-            nsgIGridColumn11.AutoResize = true;
-            nsgIGridColumn11.Caption = "";
-            nsgIGridColumn11.ChangedProperties = new string[] {
+            nsgIGridColumn2.DateFormat = null;
+            nsgIGridColumn2.Name = "Сотрудник";
+            nsgIGridColumn2.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn2.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn2.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn2.UseAsHeaderImage = false;
+            nsgIGridColumn2.Width = 100;
+            nsgIGridColumn3.AllowFilter = true;
+            nsgIGridColumn3.AllowGroupSelect = false;
+            nsgIGridColumn3.AllowResize = true;
+            nsgIGridColumn3.AutoResize = true;
+            nsgIGridColumn3.Caption = "";
+            nsgIGridColumn3.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn11.DateFormat = null;
-            nsgIGridColumn11.ImportedFromVMO = false;
-            nsgIGridColumn11.Name = "ГруппаСпТехн";
-            nsgIGridColumn11.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn11.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn11.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn11.UseAsHeaderImage = false;
-            nsgIGridColumn11.Width = 100;
-            nsgIGridColumn12.AllowFilter = true;
-            nsgIGridColumn12.AllowGroupSelect = false;
-            nsgIGridColumn12.AllowResize = true;
-            nsgIGridColumn12.AutoResize = true;
-            nsgIGridColumn12.Caption = "";
-            nsgIGridColumn12.ChangedProperties = new string[] {
+            nsgIGridColumn3.DateFormat = null;
+            nsgIGridColumn3.Name = "ГруппаСпТехн";
+            nsgIGridColumn3.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn3.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn3.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn3.UseAsHeaderImage = false;
+            nsgIGridColumn3.Width = 100;
+            nsgIGridColumn4.AllowFilter = true;
+            nsgIGridColumn4.AllowGroupSelect = false;
+            nsgIGridColumn4.AllowResize = true;
+            nsgIGridColumn4.AutoResize = true;
+            nsgIGridColumn4.Caption = "";
+            nsgIGridColumn4.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn12.DateFormat = null;
-            nsgIGridColumn12.ImportedFromVMO = false;
-            nsgIGridColumn12.Name = "Техника";
-            nsgIGridColumn12.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn12.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn12.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn12.UseAsHeaderImage = false;
-            nsgIGridColumn12.Width = 100;
-            nsgIGridColumn13.AllowFilter = true;
-            nsgIGridColumn13.AllowGroupSelect = false;
-            nsgIGridColumn13.AllowResize = true;
-            nsgIGridColumn13.AutoResize = true;
-            nsgIGridColumn13.Caption = "";
-            nsgIGridColumn13.ChangedProperties = new string[] {
+            nsgIGridColumn4.DateFormat = null;
+            nsgIGridColumn4.Name = "Техника";
+            nsgIGridColumn4.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn4.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn4.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn4.UseAsHeaderImage = false;
+            nsgIGridColumn4.Width = 100;
+            nsgIGridColumn5.AllowFilter = true;
+            nsgIGridColumn5.AllowGroupSelect = false;
+            nsgIGridColumn5.AllowResize = true;
+            nsgIGridColumn5.AutoResize = true;
+            nsgIGridColumn5.Caption = "";
+            nsgIGridColumn5.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn13.DateFormat = null;
-            nsgIGridColumn13.ImportedFromVMO = false;
-            nsgIGridColumn13.Name = "Тариф";
-            nsgIGridColumn13.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn13.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn13.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn13.UseAsHeaderImage = false;
-            nsgIGridColumn13.Width = 100;
-            nsgIGridColumn14.AllowFilter = true;
-            nsgIGridColumn14.AllowGroupSelect = false;
-            nsgIGridColumn14.AllowResize = true;
-            nsgIGridColumn14.AutoResize = true;
-            nsgIGridColumn14.Caption = "";
-            nsgIGridColumn14.ChangedProperties = new string[] {
+            nsgIGridColumn5.DateFormat = null;
+            nsgIGridColumn5.Name = "Тариф";
+            nsgIGridColumn5.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn5.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn5.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn5.UseAsHeaderImage = false;
+            nsgIGridColumn5.Width = 100;
+            nsgIGridColumn6.AllowFilter = true;
+            nsgIGridColumn6.AllowGroupSelect = false;
+            nsgIGridColumn6.AllowResize = true;
+            nsgIGridColumn6.AutoResize = true;
+            nsgIGridColumn6.Caption = "";
+            nsgIGridColumn6.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn14.DateFormat = null;
-            nsgIGridColumn14.ImportedFromVMO = false;
-            nsgIGridColumn14.Name = "1";
-            nsgIGridColumn14.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn14.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn14.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn14.UseAsHeaderImage = false;
-            nsgIGridColumn14.Width = 100;
-            nsgIGridColumn15.AllowFilter = true;
-            nsgIGridColumn15.AllowGroupSelect = false;
-            nsgIGridColumn15.AllowResize = true;
-            nsgIGridColumn15.AutoResize = true;
-            nsgIGridColumn15.Caption = "";
-            nsgIGridColumn15.ChangedProperties = new string[] {
+            nsgIGridColumn6.DateFormat = null;
+            nsgIGridColumn6.Name = "1";
+            nsgIGridColumn6.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn6.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn6.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn6.UseAsHeaderImage = false;
+            nsgIGridColumn6.Width = 100;
+            nsgIGridColumn7.AllowFilter = true;
+            nsgIGridColumn7.AllowGroupSelect = false;
+            nsgIGridColumn7.AllowResize = true;
+            nsgIGridColumn7.AutoResize = true;
+            nsgIGridColumn7.Caption = "";
+            nsgIGridColumn7.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn15.DateFormat = null;
-            nsgIGridColumn15.ImportedFromVMO = false;
-            nsgIGridColumn15.Name = "2";
-            nsgIGridColumn15.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn15.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn15.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn15.UseAsHeaderImage = false;
-            nsgIGridColumn15.Width = 100;
-            nsgIGridColumn16.AllowFilter = true;
-            nsgIGridColumn16.AllowGroupSelect = false;
-            nsgIGridColumn16.AllowResize = true;
-            nsgIGridColumn16.AutoResize = true;
-            nsgIGridColumn16.Caption = "";
-            nsgIGridColumn16.ChangedProperties = new string[] {
+            nsgIGridColumn7.DateFormat = null;
+            nsgIGridColumn7.Name = "2";
+            nsgIGridColumn7.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn7.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn7.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn7.UseAsHeaderImage = false;
+            nsgIGridColumn7.Width = 100;
+            nsgIGridColumn8.AllowFilter = true;
+            nsgIGridColumn8.AllowGroupSelect = false;
+            nsgIGridColumn8.AllowResize = true;
+            nsgIGridColumn8.AutoResize = true;
+            nsgIGridColumn8.Caption = "";
+            nsgIGridColumn8.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn16.DateFormat = null;
-            nsgIGridColumn16.ImportedFromVMO = false;
-            nsgIGridColumn16.Name = "3";
-            nsgIGridColumn16.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn16.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn16.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn16.UseAsHeaderImage = false;
-            nsgIGridColumn16.Width = 100;
-            nsgIGridColumn17.AllowFilter = true;
-            nsgIGridColumn17.AllowGroupSelect = false;
-            nsgIGridColumn17.AllowResize = true;
-            nsgIGridColumn17.AutoResize = true;
-            nsgIGridColumn17.Caption = "";
-            nsgIGridColumn17.ChangedProperties = new string[] {
+            nsgIGridColumn8.DateFormat = null;
+            nsgIGridColumn8.Name = "3";
+            nsgIGridColumn8.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn8.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn8.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn8.UseAsHeaderImage = false;
+            nsgIGridColumn8.Width = 100;
+            nsgIGridColumn96.AllowFilter = true;
+            nsgIGridColumn96.AllowGroupSelect = false;
+            nsgIGridColumn96.AllowResize = true;
+            nsgIGridColumn96.AutoResize = true;
+            nsgIGridColumn96.Caption = "";
+            nsgIGridColumn96.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn17.DateFormat = null;
-            nsgIGridColumn17.ImportedFromVMO = false;
-            nsgIGridColumn17.Name = "4";
-            nsgIGridColumn17.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn17.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn17.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn17.UseAsHeaderImage = false;
-            nsgIGridColumn17.Width = 100;
-            nsgIGridColumn18.AllowFilter = true;
-            nsgIGridColumn18.AllowGroupSelect = false;
-            nsgIGridColumn18.AllowResize = true;
-            nsgIGridColumn18.AutoResize = true;
-            nsgIGridColumn18.Caption = "";
-            nsgIGridColumn18.ChangedProperties = new string[] {
+            nsgIGridColumn96.DateFormat = null;
+            nsgIGridColumn96.Name = "4";
+            nsgIGridColumn96.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn96.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn96.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn96.UseAsHeaderImage = false;
+            nsgIGridColumn96.Width = 100;
+            nsgIGridColumn97.AllowFilter = true;
+            nsgIGridColumn97.AllowGroupSelect = false;
+            nsgIGridColumn97.AllowResize = true;
+            nsgIGridColumn97.AutoResize = true;
+            nsgIGridColumn97.Caption = "";
+            nsgIGridColumn97.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn18.DateFormat = null;
-            nsgIGridColumn18.ImportedFromVMO = false;
-            nsgIGridColumn18.Name = "5";
-            nsgIGridColumn18.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn18.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn18.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn18.UseAsHeaderImage = false;
-            nsgIGridColumn18.Width = 100;
-            nsgIGridColumn19.AllowFilter = true;
-            nsgIGridColumn19.AllowGroupSelect = false;
-            nsgIGridColumn19.AllowResize = true;
-            nsgIGridColumn19.AutoResize = true;
-            nsgIGridColumn19.Caption = "";
-            nsgIGridColumn19.ChangedProperties = new string[] {
+            nsgIGridColumn97.DateFormat = null;
+            nsgIGridColumn97.Name = "5";
+            nsgIGridColumn97.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn97.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn97.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn97.UseAsHeaderImage = false;
+            nsgIGridColumn97.Width = 100;
+            nsgIGridColumn98.AllowFilter = true;
+            nsgIGridColumn98.AllowGroupSelect = false;
+            nsgIGridColumn98.AllowResize = true;
+            nsgIGridColumn98.AutoResize = true;
+            nsgIGridColumn98.Caption = "";
+            nsgIGridColumn98.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn19.DateFormat = null;
-            nsgIGridColumn19.ImportedFromVMO = false;
-            nsgIGridColumn19.Name = "6";
-            nsgIGridColumn19.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn19.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn19.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn19.UseAsHeaderImage = false;
-            nsgIGridColumn19.Width = 100;
-            nsgIGridColumn20.AllowFilter = true;
-            nsgIGridColumn20.AllowGroupSelect = false;
-            nsgIGridColumn20.AllowResize = true;
-            nsgIGridColumn20.AutoResize = true;
-            nsgIGridColumn20.Caption = "";
-            nsgIGridColumn20.ChangedProperties = new string[] {
+            nsgIGridColumn98.DateFormat = null;
+            nsgIGridColumn98.Name = "6";
+            nsgIGridColumn98.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn98.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn98.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn98.UseAsHeaderImage = false;
+            nsgIGridColumn98.Width = 100;
+            nsgIGridColumn99.AllowFilter = true;
+            nsgIGridColumn99.AllowGroupSelect = false;
+            nsgIGridColumn99.AllowResize = true;
+            nsgIGridColumn99.AutoResize = true;
+            nsgIGridColumn99.Caption = "";
+            nsgIGridColumn99.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn20.DateFormat = null;
-            nsgIGridColumn20.ImportedFromVMO = false;
-            nsgIGridColumn20.Name = "7";
-            nsgIGridColumn20.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn20.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn20.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn20.UseAsHeaderImage = false;
-            nsgIGridColumn20.Width = 100;
-            nsgIGridColumn21.AllowFilter = true;
-            nsgIGridColumn21.AllowGroupSelect = false;
-            nsgIGridColumn21.AllowResize = true;
-            nsgIGridColumn21.AutoResize = true;
-            nsgIGridColumn21.Caption = "";
-            nsgIGridColumn21.ChangedProperties = new string[] {
+            nsgIGridColumn99.DateFormat = null;
+            nsgIGridColumn99.Name = "7";
+            nsgIGridColumn99.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn99.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn99.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn99.UseAsHeaderImage = false;
+            nsgIGridColumn99.Width = 100;
+            nsgIGridColumn100.AllowFilter = true;
+            nsgIGridColumn100.AllowGroupSelect = false;
+            nsgIGridColumn100.AllowResize = true;
+            nsgIGridColumn100.AutoResize = true;
+            nsgIGridColumn100.Caption = "";
+            nsgIGridColumn100.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn21.DateFormat = null;
-            nsgIGridColumn21.ImportedFromVMO = false;
-            nsgIGridColumn21.Name = "8";
-            nsgIGridColumn21.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn21.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn21.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn21.UseAsHeaderImage = false;
-            nsgIGridColumn21.Width = 100;
-            nsgIGridColumn22.AllowFilter = true;
-            nsgIGridColumn22.AllowGroupSelect = false;
-            nsgIGridColumn22.AllowResize = true;
-            nsgIGridColumn22.AutoResize = true;
-            nsgIGridColumn22.Caption = "";
-            nsgIGridColumn22.ChangedProperties = new string[] {
+            nsgIGridColumn100.DateFormat = null;
+            nsgIGridColumn100.Name = "8";
+            nsgIGridColumn100.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn100.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn100.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn100.UseAsHeaderImage = false;
+            nsgIGridColumn100.Width = 100;
+            nsgIGridColumn101.AllowFilter = true;
+            nsgIGridColumn101.AllowGroupSelect = false;
+            nsgIGridColumn101.AllowResize = true;
+            nsgIGridColumn101.AutoResize = true;
+            nsgIGridColumn101.Caption = "";
+            nsgIGridColumn101.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn22.DateFormat = null;
-            nsgIGridColumn22.ImportedFromVMO = false;
-            nsgIGridColumn22.Name = "9";
-            nsgIGridColumn22.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn22.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn22.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn22.UseAsHeaderImage = false;
-            nsgIGridColumn22.Width = 100;
-            nsgIGridColumn23.AllowFilter = true;
-            nsgIGridColumn23.AllowGroupSelect = false;
-            nsgIGridColumn23.AllowResize = true;
-            nsgIGridColumn23.AutoResize = true;
-            nsgIGridColumn23.Caption = "";
-            nsgIGridColumn23.ChangedProperties = new string[] {
+            nsgIGridColumn101.DateFormat = null;
+            nsgIGridColumn101.Name = "9";
+            nsgIGridColumn101.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn101.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn101.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn101.UseAsHeaderImage = false;
+            nsgIGridColumn101.Width = 100;
+            nsgIGridColumn102.AllowFilter = true;
+            nsgIGridColumn102.AllowGroupSelect = false;
+            nsgIGridColumn102.AllowResize = true;
+            nsgIGridColumn102.AutoResize = true;
+            nsgIGridColumn102.Caption = "";
+            nsgIGridColumn102.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn23.DateFormat = null;
-            nsgIGridColumn23.ImportedFromVMO = false;
-            nsgIGridColumn23.Name = "10";
-            nsgIGridColumn23.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn23.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn23.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn23.UseAsHeaderImage = false;
-            nsgIGridColumn23.Width = 100;
-            nsgIGridColumn24.AllowFilter = true;
-            nsgIGridColumn24.AllowGroupSelect = false;
-            nsgIGridColumn24.AllowResize = true;
-            nsgIGridColumn24.AutoResize = true;
-            nsgIGridColumn24.Caption = "";
-            nsgIGridColumn24.ChangedProperties = new string[] {
+            nsgIGridColumn102.DateFormat = null;
+            nsgIGridColumn102.Name = "10";
+            nsgIGridColumn102.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn102.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn102.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn102.UseAsHeaderImage = false;
+            nsgIGridColumn102.Width = 100;
+            nsgIGridColumn103.AllowFilter = true;
+            nsgIGridColumn103.AllowGroupSelect = false;
+            nsgIGridColumn103.AllowResize = true;
+            nsgIGridColumn103.AutoResize = true;
+            nsgIGridColumn103.Caption = "";
+            nsgIGridColumn103.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn24.DateFormat = null;
-            nsgIGridColumn24.ImportedFromVMO = false;
-            nsgIGridColumn24.Name = "11";
-            nsgIGridColumn24.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn24.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn24.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn24.UseAsHeaderImage = false;
-            nsgIGridColumn24.Width = 100;
-            nsgIGridColumn25.AllowFilter = true;
-            nsgIGridColumn25.AllowGroupSelect = false;
-            nsgIGridColumn25.AllowResize = true;
-            nsgIGridColumn25.AutoResize = true;
-            nsgIGridColumn25.Caption = "";
-            nsgIGridColumn25.ChangedProperties = new string[] {
+            nsgIGridColumn103.DateFormat = null;
+            nsgIGridColumn103.Name = "11";
+            nsgIGridColumn103.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn103.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn103.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn103.UseAsHeaderImage = false;
+            nsgIGridColumn103.Width = 100;
+            nsgIGridColumn104.AllowFilter = true;
+            nsgIGridColumn104.AllowGroupSelect = false;
+            nsgIGridColumn104.AllowResize = true;
+            nsgIGridColumn104.AutoResize = true;
+            nsgIGridColumn104.Caption = "";
+            nsgIGridColumn104.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn25.DateFormat = null;
-            nsgIGridColumn25.ImportedFromVMO = false;
-            nsgIGridColumn25.Name = "12";
-            nsgIGridColumn25.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn25.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn25.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn25.UseAsHeaderImage = false;
-            nsgIGridColumn25.Width = 100;
-            nsgIGridColumn26.AllowFilter = true;
-            nsgIGridColumn26.AllowGroupSelect = false;
-            nsgIGridColumn26.AllowResize = true;
-            nsgIGridColumn26.AutoResize = true;
-            nsgIGridColumn26.Caption = "";
-            nsgIGridColumn26.ChangedProperties = new string[] {
+            nsgIGridColumn104.DateFormat = null;
+            nsgIGridColumn104.Name = "12";
+            nsgIGridColumn104.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn104.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn104.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn104.UseAsHeaderImage = false;
+            nsgIGridColumn104.Width = 100;
+            nsgIGridColumn105.AllowFilter = true;
+            nsgIGridColumn105.AllowGroupSelect = false;
+            nsgIGridColumn105.AllowResize = true;
+            nsgIGridColumn105.AutoResize = true;
+            nsgIGridColumn105.Caption = "";
+            nsgIGridColumn105.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn26.DateFormat = null;
-            nsgIGridColumn26.ImportedFromVMO = false;
-            nsgIGridColumn26.Name = "13";
-            nsgIGridColumn26.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn26.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn26.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn26.UseAsHeaderImage = false;
-            nsgIGridColumn26.Width = 100;
-            nsgIGridColumn27.AllowFilter = true;
-            nsgIGridColumn27.AllowGroupSelect = false;
-            nsgIGridColumn27.AllowResize = true;
-            nsgIGridColumn27.AutoResize = true;
-            nsgIGridColumn27.Caption = "";
-            nsgIGridColumn27.ChangedProperties = new string[] {
+            nsgIGridColumn105.DateFormat = null;
+            nsgIGridColumn105.Name = "13";
+            nsgIGridColumn105.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn105.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn105.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn105.UseAsHeaderImage = false;
+            nsgIGridColumn105.Width = 100;
+            nsgIGridColumn106.AllowFilter = true;
+            nsgIGridColumn106.AllowGroupSelect = false;
+            nsgIGridColumn106.AllowResize = true;
+            nsgIGridColumn106.AutoResize = true;
+            nsgIGridColumn106.Caption = "";
+            nsgIGridColumn106.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn27.DateFormat = null;
-            nsgIGridColumn27.ImportedFromVMO = false;
-            nsgIGridColumn27.Name = "14";
-            nsgIGridColumn27.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn27.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn27.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn27.UseAsHeaderImage = false;
-            nsgIGridColumn27.Width = 100;
-            nsgIGridColumn28.AllowFilter = true;
-            nsgIGridColumn28.AllowGroupSelect = false;
-            nsgIGridColumn28.AllowResize = true;
-            nsgIGridColumn28.AutoResize = true;
-            nsgIGridColumn28.Caption = "";
-            nsgIGridColumn28.ChangedProperties = new string[] {
+            nsgIGridColumn106.DateFormat = null;
+            nsgIGridColumn106.Name = "14";
+            nsgIGridColumn106.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn106.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn106.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn106.UseAsHeaderImage = false;
+            nsgIGridColumn106.Width = 100;
+            nsgIGridColumn107.AllowFilter = true;
+            nsgIGridColumn107.AllowGroupSelect = false;
+            nsgIGridColumn107.AllowResize = true;
+            nsgIGridColumn107.AutoResize = true;
+            nsgIGridColumn107.Caption = "";
+            nsgIGridColumn107.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn28.DateFormat = null;
-            nsgIGridColumn28.ImportedFromVMO = false;
-            nsgIGridColumn28.Name = "15";
-            nsgIGridColumn28.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn28.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn28.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn28.UseAsHeaderImage = false;
-            nsgIGridColumn28.Width = 100;
-            nsgIGridColumn29.AllowFilter = true;
-            nsgIGridColumn29.AllowGroupSelect = false;
-            nsgIGridColumn29.AllowResize = true;
-            nsgIGridColumn29.AutoResize = true;
-            nsgIGridColumn29.Caption = "";
-            nsgIGridColumn29.ChangedProperties = new string[] {
+            nsgIGridColumn107.DateFormat = null;
+            nsgIGridColumn107.Name = "15";
+            nsgIGridColumn107.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn107.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn107.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn107.UseAsHeaderImage = false;
+            nsgIGridColumn107.Width = 100;
+            nsgIGridColumn108.AllowFilter = true;
+            nsgIGridColumn108.AllowGroupSelect = false;
+            nsgIGridColumn108.AllowResize = true;
+            nsgIGridColumn108.AutoResize = true;
+            nsgIGridColumn108.Caption = "";
+            nsgIGridColumn108.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn29.DateFormat = null;
-            nsgIGridColumn29.ImportedFromVMO = false;
-            nsgIGridColumn29.Name = "16";
-            nsgIGridColumn29.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn29.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn29.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn29.UseAsHeaderImage = false;
-            nsgIGridColumn29.Width = 100;
-            nsgIGridColumn30.AllowFilter = true;
-            nsgIGridColumn30.AllowGroupSelect = false;
-            nsgIGridColumn30.AllowResize = true;
-            nsgIGridColumn30.AutoResize = true;
-            nsgIGridColumn30.Caption = "";
-            nsgIGridColumn30.ChangedProperties = new string[] {
+            nsgIGridColumn108.DateFormat = null;
+            nsgIGridColumn108.Name = "16";
+            nsgIGridColumn108.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn108.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn108.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn108.UseAsHeaderImage = false;
+            nsgIGridColumn108.Width = 100;
+            nsgIGridColumn109.AllowFilter = true;
+            nsgIGridColumn109.AllowGroupSelect = false;
+            nsgIGridColumn109.AllowResize = true;
+            nsgIGridColumn109.AutoResize = true;
+            nsgIGridColumn109.Caption = "";
+            nsgIGridColumn109.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn30.DateFormat = null;
-            nsgIGridColumn30.ImportedFromVMO = false;
-            nsgIGridColumn30.Name = "17";
-            nsgIGridColumn30.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn30.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn30.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn30.UseAsHeaderImage = false;
-            nsgIGridColumn30.Width = 100;
-            nsgIGridColumn31.AllowFilter = true;
-            nsgIGridColumn31.AllowGroupSelect = false;
-            nsgIGridColumn31.AllowResize = true;
-            nsgIGridColumn31.AutoResize = true;
-            nsgIGridColumn31.Caption = "";
-            nsgIGridColumn31.ChangedProperties = new string[] {
+            nsgIGridColumn109.DateFormat = null;
+            nsgIGridColumn109.Name = "17";
+            nsgIGridColumn109.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn109.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn109.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn109.UseAsHeaderImage = false;
+            nsgIGridColumn109.Width = 100;
+            nsgIGridColumn110.AllowFilter = true;
+            nsgIGridColumn110.AllowGroupSelect = false;
+            nsgIGridColumn110.AllowResize = true;
+            nsgIGridColumn110.AutoResize = true;
+            nsgIGridColumn110.Caption = "";
+            nsgIGridColumn110.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn31.DateFormat = null;
-            nsgIGridColumn31.ImportedFromVMO = false;
-            nsgIGridColumn31.Name = "18";
-            nsgIGridColumn31.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn31.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn31.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn31.UseAsHeaderImage = false;
-            nsgIGridColumn31.Width = 100;
-            nsgIGridColumn32.AllowFilter = true;
-            nsgIGridColumn32.AllowGroupSelect = false;
-            nsgIGridColumn32.AllowResize = true;
-            nsgIGridColumn32.AutoResize = true;
-            nsgIGridColumn32.Caption = "";
-            nsgIGridColumn32.ChangedProperties = new string[] {
+            nsgIGridColumn110.DateFormat = null;
+            nsgIGridColumn110.Name = "18";
+            nsgIGridColumn110.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn110.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn110.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn110.UseAsHeaderImage = false;
+            nsgIGridColumn110.Width = 100;
+            nsgIGridColumn111.AllowFilter = true;
+            nsgIGridColumn111.AllowGroupSelect = false;
+            nsgIGridColumn111.AllowResize = true;
+            nsgIGridColumn111.AutoResize = true;
+            nsgIGridColumn111.Caption = "";
+            nsgIGridColumn111.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn32.DateFormat = null;
-            nsgIGridColumn32.ImportedFromVMO = false;
-            nsgIGridColumn32.Name = "19";
-            nsgIGridColumn32.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn32.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn32.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn32.UseAsHeaderImage = false;
-            nsgIGridColumn32.Width = 100;
-            nsgIGridColumn33.AllowFilter = true;
-            nsgIGridColumn33.AllowGroupSelect = false;
-            nsgIGridColumn33.AllowResize = true;
-            nsgIGridColumn33.AutoResize = true;
-            nsgIGridColumn33.Caption = "";
-            nsgIGridColumn33.ChangedProperties = new string[] {
+            nsgIGridColumn111.DateFormat = null;
+            nsgIGridColumn111.Name = "19";
+            nsgIGridColumn111.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn111.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn111.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn111.UseAsHeaderImage = false;
+            nsgIGridColumn111.Width = 100;
+            nsgIGridColumn112.AllowFilter = true;
+            nsgIGridColumn112.AllowGroupSelect = false;
+            nsgIGridColumn112.AllowResize = true;
+            nsgIGridColumn112.AutoResize = true;
+            nsgIGridColumn112.Caption = "";
+            nsgIGridColumn112.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn33.DateFormat = null;
-            nsgIGridColumn33.ImportedFromVMO = false;
-            nsgIGridColumn33.Name = "20";
-            nsgIGridColumn33.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn33.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn33.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn33.UseAsHeaderImage = false;
-            nsgIGridColumn33.Width = 100;
-            nsgIGridColumn34.AllowFilter = true;
-            nsgIGridColumn34.AllowGroupSelect = false;
-            nsgIGridColumn34.AllowResize = true;
-            nsgIGridColumn34.AutoResize = true;
-            nsgIGridColumn34.Caption = "";
-            nsgIGridColumn34.ChangedProperties = new string[] {
+            nsgIGridColumn112.DateFormat = null;
+            nsgIGridColumn112.Name = "20";
+            nsgIGridColumn112.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn112.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn112.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn112.UseAsHeaderImage = false;
+            nsgIGridColumn112.Width = 100;
+            nsgIGridColumn113.AllowFilter = true;
+            nsgIGridColumn113.AllowGroupSelect = false;
+            nsgIGridColumn113.AllowResize = true;
+            nsgIGridColumn113.AutoResize = true;
+            nsgIGridColumn113.Caption = "";
+            nsgIGridColumn113.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn34.DateFormat = null;
-            nsgIGridColumn34.ImportedFromVMO = false;
-            nsgIGridColumn34.Name = "21";
-            nsgIGridColumn34.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn34.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn34.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn34.UseAsHeaderImage = false;
-            nsgIGridColumn34.Width = 100;
-            nsgIGridColumn35.AllowFilter = true;
-            nsgIGridColumn35.AllowGroupSelect = false;
-            nsgIGridColumn35.AllowResize = true;
-            nsgIGridColumn35.AutoResize = true;
-            nsgIGridColumn35.Caption = "";
-            nsgIGridColumn35.ChangedProperties = new string[] {
+            nsgIGridColumn113.DateFormat = null;
+            nsgIGridColumn113.Name = "21";
+            nsgIGridColumn113.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn113.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn113.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn113.UseAsHeaderImage = false;
+            nsgIGridColumn113.Width = 100;
+            nsgIGridColumn114.AllowFilter = true;
+            nsgIGridColumn114.AllowGroupSelect = false;
+            nsgIGridColumn114.AllowResize = true;
+            nsgIGridColumn114.AutoResize = true;
+            nsgIGridColumn114.Caption = "";
+            nsgIGridColumn114.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn35.DateFormat = null;
-            nsgIGridColumn35.ImportedFromVMO = false;
-            nsgIGridColumn35.Name = "22";
-            nsgIGridColumn35.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn35.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn35.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn35.UseAsHeaderImage = false;
-            nsgIGridColumn35.Width = 100;
-            nsgIGridColumn36.AllowFilter = true;
-            nsgIGridColumn36.AllowGroupSelect = false;
-            nsgIGridColumn36.AllowResize = true;
-            nsgIGridColumn36.AutoResize = true;
-            nsgIGridColumn36.Caption = "";
-            nsgIGridColumn36.ChangedProperties = new string[] {
+            nsgIGridColumn114.DateFormat = null;
+            nsgIGridColumn114.Name = "22";
+            nsgIGridColumn114.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn114.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn114.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn114.UseAsHeaderImage = false;
+            nsgIGridColumn114.Width = 100;
+            nsgIGridColumn115.AllowFilter = true;
+            nsgIGridColumn115.AllowGroupSelect = false;
+            nsgIGridColumn115.AllowResize = true;
+            nsgIGridColumn115.AutoResize = true;
+            nsgIGridColumn115.Caption = "";
+            nsgIGridColumn115.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn36.DateFormat = null;
-            nsgIGridColumn36.ImportedFromVMO = false;
-            nsgIGridColumn36.Name = "23";
-            nsgIGridColumn36.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn36.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn36.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn36.UseAsHeaderImage = false;
-            nsgIGridColumn36.Width = 100;
-            nsgIGridColumn37.AllowFilter = true;
-            nsgIGridColumn37.AllowGroupSelect = false;
-            nsgIGridColumn37.AllowResize = true;
-            nsgIGridColumn37.AutoResize = true;
-            nsgIGridColumn37.Caption = "";
-            nsgIGridColumn37.ChangedProperties = new string[] {
+            nsgIGridColumn115.DateFormat = null;
+            nsgIGridColumn115.Name = "23";
+            nsgIGridColumn115.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn115.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn115.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn115.UseAsHeaderImage = false;
+            nsgIGridColumn115.Width = 100;
+            nsgIGridColumn116.AllowFilter = true;
+            nsgIGridColumn116.AllowGroupSelect = false;
+            nsgIGridColumn116.AllowResize = true;
+            nsgIGridColumn116.AutoResize = true;
+            nsgIGridColumn116.Caption = "";
+            nsgIGridColumn116.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn37.DateFormat = null;
-            nsgIGridColumn37.ImportedFromVMO = false;
-            nsgIGridColumn37.Name = "24";
-            nsgIGridColumn37.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn37.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn37.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn37.UseAsHeaderImage = false;
-            nsgIGridColumn37.Width = 100;
-            nsgIGridColumn38.AllowFilter = true;
-            nsgIGridColumn38.AllowGroupSelect = false;
-            nsgIGridColumn38.AllowResize = true;
-            nsgIGridColumn38.AutoResize = true;
-            nsgIGridColumn38.Caption = "";
-            nsgIGridColumn38.ChangedProperties = new string[] {
+            nsgIGridColumn116.DateFormat = null;
+            nsgIGridColumn116.Name = "24";
+            nsgIGridColumn116.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn116.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn116.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn116.UseAsHeaderImage = false;
+            nsgIGridColumn116.Width = 100;
+            nsgIGridColumn117.AllowFilter = true;
+            nsgIGridColumn117.AllowGroupSelect = false;
+            nsgIGridColumn117.AllowResize = true;
+            nsgIGridColumn117.AutoResize = true;
+            nsgIGridColumn117.Caption = "";
+            nsgIGridColumn117.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn38.DateFormat = null;
-            nsgIGridColumn38.ImportedFromVMO = false;
-            nsgIGridColumn38.Name = "25";
-            nsgIGridColumn38.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn38.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn38.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn38.UseAsHeaderImage = false;
-            nsgIGridColumn38.Width = 100;
-            nsgIGridColumn39.AllowFilter = true;
-            nsgIGridColumn39.AllowGroupSelect = false;
-            nsgIGridColumn39.AllowResize = true;
-            nsgIGridColumn39.AutoResize = true;
-            nsgIGridColumn39.Caption = "";
-            nsgIGridColumn39.ChangedProperties = new string[] {
+            nsgIGridColumn117.DateFormat = null;
+            nsgIGridColumn117.Name = "25";
+            nsgIGridColumn117.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn117.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn117.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn117.UseAsHeaderImage = false;
+            nsgIGridColumn117.Width = 100;
+            nsgIGridColumn118.AllowFilter = true;
+            nsgIGridColumn118.AllowGroupSelect = false;
+            nsgIGridColumn118.AllowResize = true;
+            nsgIGridColumn118.AutoResize = true;
+            nsgIGridColumn118.Caption = "";
+            nsgIGridColumn118.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn39.DateFormat = null;
-            nsgIGridColumn39.ImportedFromVMO = false;
-            nsgIGridColumn39.Name = "26";
-            nsgIGridColumn39.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn39.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn39.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn39.UseAsHeaderImage = false;
-            nsgIGridColumn39.Width = 100;
-            nsgIGridColumn40.AllowFilter = true;
-            nsgIGridColumn40.AllowGroupSelect = false;
-            nsgIGridColumn40.AllowResize = true;
-            nsgIGridColumn40.AutoResize = true;
-            nsgIGridColumn40.Caption = "";
-            nsgIGridColumn40.ChangedProperties = new string[] {
+            nsgIGridColumn118.DateFormat = null;
+            nsgIGridColumn118.Name = "26";
+            nsgIGridColumn118.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn118.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn118.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn118.UseAsHeaderImage = false;
+            nsgIGridColumn118.Width = 100;
+            nsgIGridColumn119.AllowFilter = true;
+            nsgIGridColumn119.AllowGroupSelect = false;
+            nsgIGridColumn119.AllowResize = true;
+            nsgIGridColumn119.AutoResize = true;
+            nsgIGridColumn119.Caption = "";
+            nsgIGridColumn119.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn40.DateFormat = null;
-            nsgIGridColumn40.ImportedFromVMO = false;
-            nsgIGridColumn40.Name = "27";
-            nsgIGridColumn40.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn40.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn40.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn40.UseAsHeaderImage = false;
-            nsgIGridColumn40.Width = 100;
-            nsgIGridColumn41.AllowFilter = true;
-            nsgIGridColumn41.AllowGroupSelect = false;
-            nsgIGridColumn41.AllowResize = true;
-            nsgIGridColumn41.AutoResize = true;
-            nsgIGridColumn41.Caption = "";
-            nsgIGridColumn41.ChangedProperties = new string[] {
+            nsgIGridColumn119.DateFormat = null;
+            nsgIGridColumn119.Name = "27";
+            nsgIGridColumn119.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn119.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn119.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn119.UseAsHeaderImage = false;
+            nsgIGridColumn119.Width = 100;
+            nsgIGridColumn120.AllowFilter = true;
+            nsgIGridColumn120.AllowGroupSelect = false;
+            nsgIGridColumn120.AllowResize = true;
+            nsgIGridColumn120.AutoResize = true;
+            nsgIGridColumn120.Caption = "";
+            nsgIGridColumn120.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn41.DateFormat = null;
-            nsgIGridColumn41.ImportedFromVMO = false;
-            nsgIGridColumn41.Name = "28";
-            nsgIGridColumn41.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn41.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn41.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn41.UseAsHeaderImage = false;
-            nsgIGridColumn41.Width = 100;
-            nsgIGridColumn42.AllowFilter = true;
-            nsgIGridColumn42.AllowGroupSelect = false;
-            nsgIGridColumn42.AllowResize = true;
-            nsgIGridColumn42.AutoResize = true;
-            nsgIGridColumn42.Caption = "";
-            nsgIGridColumn42.ChangedProperties = new string[] {
+            nsgIGridColumn120.DateFormat = null;
+            nsgIGridColumn120.Name = "28";
+            nsgIGridColumn120.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn120.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn120.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn120.UseAsHeaderImage = false;
+            nsgIGridColumn120.Width = 100;
+            nsgIGridColumn121.AllowFilter = true;
+            nsgIGridColumn121.AllowGroupSelect = false;
+            nsgIGridColumn121.AllowResize = true;
+            nsgIGridColumn121.AutoResize = true;
+            nsgIGridColumn121.Caption = "";
+            nsgIGridColumn121.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn42.DateFormat = null;
-            nsgIGridColumn42.ImportedFromVMO = false;
-            nsgIGridColumn42.Name = "29";
-            nsgIGridColumn42.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn42.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn42.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn42.UseAsHeaderImage = false;
-            nsgIGridColumn42.Width = 100;
-            nsgIGridColumn43.AllowFilter = true;
-            nsgIGridColumn43.AllowGroupSelect = false;
-            nsgIGridColumn43.AllowResize = true;
-            nsgIGridColumn43.AutoResize = true;
-            nsgIGridColumn43.Caption = "";
-            nsgIGridColumn43.ChangedProperties = new string[] {
+            nsgIGridColumn121.DateFormat = null;
+            nsgIGridColumn121.Name = "29";
+            nsgIGridColumn121.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn121.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn121.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn121.UseAsHeaderImage = false;
+            nsgIGridColumn121.Width = 100;
+            nsgIGridColumn122.AllowFilter = true;
+            nsgIGridColumn122.AllowGroupSelect = false;
+            nsgIGridColumn122.AllowResize = true;
+            nsgIGridColumn122.AutoResize = true;
+            nsgIGridColumn122.Caption = "";
+            nsgIGridColumn122.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn43.DateFormat = null;
-            nsgIGridColumn43.ImportedFromVMO = false;
-            nsgIGridColumn43.Name = "30";
-            nsgIGridColumn43.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn43.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn43.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn43.UseAsHeaderImage = false;
-            nsgIGridColumn43.Width = 100;
-            nsgIGridColumn44.AllowFilter = true;
-            nsgIGridColumn44.AllowGroupSelect = false;
-            nsgIGridColumn44.AllowResize = true;
-            nsgIGridColumn44.AutoResize = true;
-            nsgIGridColumn44.Caption = "";
-            nsgIGridColumn44.ChangedProperties = new string[] {
+            nsgIGridColumn122.DateFormat = null;
+            nsgIGridColumn122.Name = "30";
+            nsgIGridColumn122.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn122.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn122.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn122.UseAsHeaderImage = false;
+            nsgIGridColumn122.Width = 100;
+            nsgIGridColumn123.AllowFilter = true;
+            nsgIGridColumn123.AllowGroupSelect = false;
+            nsgIGridColumn123.AllowResize = true;
+            nsgIGridColumn123.AutoResize = true;
+            nsgIGridColumn123.Caption = "";
+            nsgIGridColumn123.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn44.DateFormat = null;
-            nsgIGridColumn44.ImportedFromVMO = false;
-            nsgIGridColumn44.Name = "31";
-            nsgIGridColumn44.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn44.Root = this.nsgIGrid2.Columns.Collection;
-            nsgIGridColumn44.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn44.UseAsHeaderImage = false;
-            nsgIGridColumn44.Width = 100;
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn9);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn10);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn11);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn12);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn13);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn14);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn15);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn16);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn17);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn18);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn19);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn20);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn21);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn22);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn23);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn24);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn25);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn26);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn27);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn28);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn29);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn30);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn31);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn32);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn33);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn34);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn35);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn36);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn37);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn38);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn39);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn40);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn41);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn42);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn43);
-            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn44);
+            nsgIGridColumn123.DateFormat = null;
+            nsgIGridColumn123.Name = "31";
+            nsgIGridColumn123.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn123.Root = this.nsgIGrid2.Columns.Collection;
+            nsgIGridColumn123.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn123.UseAsHeaderImage = false;
+            nsgIGridColumn123.Width = 100;
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn1);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn2);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn3);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn4);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn5);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn6);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn7);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn8);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn96);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn97);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn98);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn99);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn100);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn101);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn102);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn103);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn104);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn105);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn106);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn107);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn108);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn109);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn110);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn111);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn112);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn113);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn114);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn115);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn116);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn117);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn118);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn119);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn120);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn121);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn122);
+            this.nsgIGrid2.Columns.Collection.Add(nsgIGridColumn123);
             this.nsgIGrid2.Filter = false;
             this.nsgIGrid2.FrozenColumns = 0;
             this.nsgIGrid2.Grouping = true;
@@ -1839,722 +1811,687 @@ namespace TechControl.Метаданные.УчетСотрудников
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nsgIGrid3.AutoResizeCols = false;
-            nsgIGridColumn45.AllowFilter = true;
-            nsgIGridColumn45.AllowGroupSelect = false;
-            nsgIGridColumn45.AllowResize = true;
-            nsgIGridColumn45.AutoResize = true;
-            nsgIGridColumn45.Caption = "";
-            nsgIGridColumn45.ChangedProperties = new string[] {
+            nsgIGridColumn9.AllowFilter = true;
+            nsgIGridColumn9.AllowGroupSelect = false;
+            nsgIGridColumn9.AllowResize = true;
+            nsgIGridColumn9.AutoResize = true;
+            nsgIGridColumn9.Caption = "";
+            nsgIGridColumn9.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn45.DateFormat = null;
-            nsgIGridColumn45.ImportedFromVMO = false;
-            nsgIGridColumn45.Name = "Сотрудник";
-            nsgIGridColumn45.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn45.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn45.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn45.UseAsHeaderImage = false;
-            nsgIGridColumn45.Width = 100;
-            nsgIGridColumn46.AllowFilter = true;
-            nsgIGridColumn46.AllowGroupSelect = false;
-            nsgIGridColumn46.AllowResize = true;
-            nsgIGridColumn46.AutoResize = true;
-            nsgIGridColumn46.Caption = "";
-            nsgIGridColumn46.ChangedProperties = new string[] {
+            nsgIGridColumn9.DateFormat = null;
+            nsgIGridColumn9.Name = "Сотрудник";
+            nsgIGridColumn9.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn9.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn9.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn9.UseAsHeaderImage = false;
+            nsgIGridColumn9.Width = 100;
+            nsgIGridColumn10.AllowFilter = true;
+            nsgIGridColumn10.AllowGroupSelect = false;
+            nsgIGridColumn10.AllowResize = true;
+            nsgIGridColumn10.AutoResize = true;
+            nsgIGridColumn10.Caption = "";
+            nsgIGridColumn10.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn46.DateFormat = null;
-            nsgIGridColumn46.ImportedFromVMO = false;
-            nsgIGridColumn46.Name = "Техника";
-            nsgIGridColumn46.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn46.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn46.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn46.UseAsHeaderImage = false;
-            nsgIGridColumn46.Width = 100;
-            nsgIGridColumn47.AllowFilter = true;
-            nsgIGridColumn47.AllowGroupSelect = false;
-            nsgIGridColumn47.AllowResize = true;
-            nsgIGridColumn47.AutoResize = true;
-            nsgIGridColumn47.Caption = "";
-            nsgIGridColumn47.ChangedProperties = new string[] {
+            nsgIGridColumn10.DateFormat = null;
+            nsgIGridColumn10.Name = "Техника";
+            nsgIGridColumn10.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn10.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn10.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn10.UseAsHeaderImage = false;
+            nsgIGridColumn10.Width = 100;
+            nsgIGridColumn11.AllowFilter = true;
+            nsgIGridColumn11.AllowGroupSelect = false;
+            nsgIGridColumn11.AllowResize = true;
+            nsgIGridColumn11.AutoResize = true;
+            nsgIGridColumn11.Caption = "";
+            nsgIGridColumn11.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn47.DateFormat = null;
-            nsgIGridColumn47.ImportedFromVMO = false;
-            nsgIGridColumn47.Name = "Должность";
-            nsgIGridColumn47.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn47.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn47.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn47.UseAsHeaderImage = false;
-            nsgIGridColumn47.Width = 100;
-            nsgIGridColumn48.AllowFilter = true;
-            nsgIGridColumn48.AllowGroupSelect = false;
-            nsgIGridColumn48.AllowResize = true;
-            nsgIGridColumn48.AutoResize = true;
-            nsgIGridColumn48.Caption = "";
-            nsgIGridColumn48.ChangedProperties = new string[] {
+            nsgIGridColumn11.DateFormat = null;
+            nsgIGridColumn11.Name = "Должность";
+            nsgIGridColumn11.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn11.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn11.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn11.UseAsHeaderImage = false;
+            nsgIGridColumn11.Width = 100;
+            nsgIGridColumn12.AllowFilter = true;
+            nsgIGridColumn12.AllowGroupSelect = false;
+            nsgIGridColumn12.AllowResize = true;
+            nsgIGridColumn12.AutoResize = true;
+            nsgIGridColumn12.Caption = "";
+            nsgIGridColumn12.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn48.DateFormat = null;
-            nsgIGridColumn48.ImportedFromVMO = false;
-            nsgIGridColumn48.Name = "Тариф";
-            nsgIGridColumn48.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn48.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn48.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn48.UseAsHeaderImage = false;
-            nsgIGridColumn48.Width = 100;
-            nsgIGridColumn49.AllowFilter = true;
-            nsgIGridColumn49.AllowGroupSelect = false;
-            nsgIGridColumn49.AllowResize = false;
-            nsgIGridColumn49.AllowSorting = false;
-            nsgIGridColumn49.AutoResize = false;
-            nsgIGridColumn49.Caption = "";
-            nsgIGridColumn49.ChangedProperties = new string[] {
+            nsgIGridColumn12.DateFormat = null;
+            nsgIGridColumn12.Name = "Тариф";
+            nsgIGridColumn12.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn12.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn12.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn12.UseAsHeaderImage = false;
+            nsgIGridColumn12.Width = 100;
+            nsgIGridColumn13.AllowFilter = true;
+            nsgIGridColumn13.AllowGroupSelect = false;
+            nsgIGridColumn13.AllowResize = false;
+            nsgIGridColumn13.AllowSorting = false;
+            nsgIGridColumn13.AutoResize = false;
+            nsgIGridColumn13.Caption = "";
+            nsgIGridColumn13.ChangedProperties = new string[] {
         "Visible",
         "AutoResize",
         "TextPosition",
         "AllowSorting",
         "Width",
         "AllowResize"};
-            nsgIGridColumn49.DateFormat = null;
-            nsgIGridColumn49.ImportedFromVMO = false;
-            nsgIGridColumn49.Name = "1";
-            nsgIGridColumn49.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn49.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn49.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn49.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
-            nsgIGridColumn49.UseAsHeaderImage = false;
-            nsgIGridColumn49.Width = 23;
-            nsgIGridColumn50.AllowFilter = true;
-            nsgIGridColumn50.AllowGroupSelect = false;
-            nsgIGridColumn50.AllowResize = false;
-            nsgIGridColumn50.AllowSorting = false;
-            nsgIGridColumn50.AutoResize = false;
-            nsgIGridColumn50.Caption = "";
-            nsgIGridColumn50.ChangedProperties = new string[] {
+            nsgIGridColumn13.DateFormat = null;
+            nsgIGridColumn13.Name = "1";
+            nsgIGridColumn13.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn13.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn13.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn13.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            nsgIGridColumn13.UseAsHeaderImage = false;
+            nsgIGridColumn13.Width = 23;
+            nsgIGridColumn14.AllowFilter = true;
+            nsgIGridColumn14.AllowGroupSelect = false;
+            nsgIGridColumn14.AllowResize = false;
+            nsgIGridColumn14.AllowSorting = false;
+            nsgIGridColumn14.AutoResize = false;
+            nsgIGridColumn14.Caption = "";
+            nsgIGridColumn14.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AutoResize",
         "AllowSorting",
         "AllowResize"};
-            nsgIGridColumn50.DateFormat = null;
-            nsgIGridColumn50.ImportedFromVMO = false;
-            nsgIGridColumn50.Name = "2";
-            nsgIGridColumn50.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn50.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn50.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn50.UseAsHeaderImage = false;
-            nsgIGridColumn50.Width = 23;
-            nsgIGridColumn51.AllowFilter = true;
-            nsgIGridColumn51.AllowGroupSelect = false;
-            nsgIGridColumn51.AllowResize = false;
-            nsgIGridColumn51.AllowSorting = false;
-            nsgIGridColumn51.AutoResize = false;
-            nsgIGridColumn51.Caption = "";
-            nsgIGridColumn51.ChangedProperties = new string[] {
+            nsgIGridColumn14.DateFormat = null;
+            nsgIGridColumn14.Name = "2";
+            nsgIGridColumn14.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn14.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn14.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn14.UseAsHeaderImage = false;
+            nsgIGridColumn14.Width = 23;
+            nsgIGridColumn15.AllowFilter = true;
+            nsgIGridColumn15.AllowGroupSelect = false;
+            nsgIGridColumn15.AllowResize = false;
+            nsgIGridColumn15.AllowSorting = false;
+            nsgIGridColumn15.AutoResize = false;
+            nsgIGridColumn15.Caption = "";
+            nsgIGridColumn15.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AutoResize",
         "AllowResize"};
-            nsgIGridColumn51.DateFormat = null;
-            nsgIGridColumn51.ImportedFromVMO = false;
-            nsgIGridColumn51.Name = "3";
-            nsgIGridColumn51.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn51.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn51.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn51.UseAsHeaderImage = false;
-            nsgIGridColumn51.Width = 23;
-            nsgIGridColumn52.AllowFilter = true;
-            nsgIGridColumn52.AllowGroupSelect = false;
-            nsgIGridColumn52.AllowResize = false;
-            nsgIGridColumn52.AllowSorting = false;
-            nsgIGridColumn52.AutoResize = true;
-            nsgIGridColumn52.Caption = "";
-            nsgIGridColumn52.ChangedProperties = new string[] {
+            nsgIGridColumn15.DateFormat = null;
+            nsgIGridColumn15.Name = "3";
+            nsgIGridColumn15.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn15.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn15.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn15.UseAsHeaderImage = false;
+            nsgIGridColumn15.Width = 23;
+            nsgIGridColumn16.AllowFilter = true;
+            nsgIGridColumn16.AllowGroupSelect = false;
+            nsgIGridColumn16.AllowResize = false;
+            nsgIGridColumn16.AllowSorting = false;
+            nsgIGridColumn16.AutoResize = true;
+            nsgIGridColumn16.Caption = "";
+            nsgIGridColumn16.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowResize",
         "AllowSorting"};
-            nsgIGridColumn52.DateFormat = null;
-            nsgIGridColumn52.ImportedFromVMO = false;
-            nsgIGridColumn52.Name = "4";
-            nsgIGridColumn52.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn52.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn52.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn52.UseAsHeaderImage = false;
-            nsgIGridColumn52.Width = 23;
-            nsgIGridColumn53.AllowFilter = true;
-            nsgIGridColumn53.AllowGroupSelect = false;
-            nsgIGridColumn53.AllowResize = false;
-            nsgIGridColumn53.AllowSorting = false;
-            nsgIGridColumn53.AutoResize = false;
-            nsgIGridColumn53.Caption = "";
-            nsgIGridColumn53.ChangedProperties = new string[] {
+            nsgIGridColumn16.DateFormat = null;
+            nsgIGridColumn16.Name = "4";
+            nsgIGridColumn16.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn16.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn16.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn16.UseAsHeaderImage = false;
+            nsgIGridColumn16.Width = 23;
+            nsgIGridColumn17.AllowFilter = true;
+            nsgIGridColumn17.AllowGroupSelect = false;
+            nsgIGridColumn17.AllowResize = false;
+            nsgIGridColumn17.AllowSorting = false;
+            nsgIGridColumn17.AutoResize = false;
+            nsgIGridColumn17.Caption = "";
+            nsgIGridColumn17.ChangedProperties = new string[] {
         "Visible",
         "AutoResize",
         "Width",
         "AllowSorting",
         "AllowResize"};
-            nsgIGridColumn53.DateFormat = null;
-            nsgIGridColumn53.ImportedFromVMO = false;
-            nsgIGridColumn53.Name = "5";
-            nsgIGridColumn53.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn53.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn53.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn53.UseAsHeaderImage = false;
-            nsgIGridColumn53.Width = 23;
-            nsgIGridColumn54.AllowFilter = true;
-            nsgIGridColumn54.AllowGroupSelect = false;
-            nsgIGridColumn54.AllowResize = false;
-            nsgIGridColumn54.AllowSorting = false;
-            nsgIGridColumn54.AutoResize = false;
-            nsgIGridColumn54.Caption = "";
-            nsgIGridColumn54.ChangedProperties = new string[] {
+            nsgIGridColumn17.DateFormat = null;
+            nsgIGridColumn17.Name = "5";
+            nsgIGridColumn17.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn17.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn17.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn17.UseAsHeaderImage = false;
+            nsgIGridColumn17.Width = 23;
+            nsgIGridColumn18.AllowFilter = true;
+            nsgIGridColumn18.AllowGroupSelect = false;
+            nsgIGridColumn18.AllowResize = false;
+            nsgIGridColumn18.AllowSorting = false;
+            nsgIGridColumn18.AutoResize = false;
+            nsgIGridColumn18.Caption = "";
+            nsgIGridColumn18.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn54.DateFormat = null;
-            nsgIGridColumn54.ImportedFromVMO = false;
-            nsgIGridColumn54.Name = "6";
-            nsgIGridColumn54.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn54.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn54.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn54.UseAsHeaderImage = false;
-            nsgIGridColumn54.Width = 23;
-            nsgIGridColumn55.AllowFilter = true;
-            nsgIGridColumn55.AllowGroupSelect = false;
-            nsgIGridColumn55.AllowResize = false;
-            nsgIGridColumn55.AllowSorting = false;
-            nsgIGridColumn55.AutoResize = false;
-            nsgIGridColumn55.Caption = "";
-            nsgIGridColumn55.ChangedProperties = new string[] {
+            nsgIGridColumn18.DateFormat = null;
+            nsgIGridColumn18.Name = "6";
+            nsgIGridColumn18.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn18.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn18.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn18.UseAsHeaderImage = false;
+            nsgIGridColumn18.Width = 23;
+            nsgIGridColumn19.AllowFilter = true;
+            nsgIGridColumn19.AllowGroupSelect = false;
+            nsgIGridColumn19.AllowResize = false;
+            nsgIGridColumn19.AllowSorting = false;
+            nsgIGridColumn19.AutoResize = false;
+            nsgIGridColumn19.Caption = "";
+            nsgIGridColumn19.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn55.DateFormat = null;
-            nsgIGridColumn55.ImportedFromVMO = false;
-            nsgIGridColumn55.Name = "7";
-            nsgIGridColumn55.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn55.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn55.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn55.UseAsHeaderImage = false;
-            nsgIGridColumn55.Width = 23;
-            nsgIGridColumn56.AllowFilter = true;
-            nsgIGridColumn56.AllowGroupSelect = false;
-            nsgIGridColumn56.AllowResize = false;
-            nsgIGridColumn56.AllowSorting = false;
-            nsgIGridColumn56.AutoResize = false;
-            nsgIGridColumn56.Caption = "";
-            nsgIGridColumn56.ChangedProperties = new string[] {
+            nsgIGridColumn19.DateFormat = null;
+            nsgIGridColumn19.Name = "7";
+            nsgIGridColumn19.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn19.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn19.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn19.UseAsHeaderImage = false;
+            nsgIGridColumn19.Width = 23;
+            nsgIGridColumn20.AllowFilter = true;
+            nsgIGridColumn20.AllowGroupSelect = false;
+            nsgIGridColumn20.AllowResize = false;
+            nsgIGridColumn20.AllowSorting = false;
+            nsgIGridColumn20.AutoResize = false;
+            nsgIGridColumn20.Caption = "";
+            nsgIGridColumn20.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn56.DateFormat = null;
-            nsgIGridColumn56.ImportedFromVMO = false;
-            nsgIGridColumn56.Name = "8";
-            nsgIGridColumn56.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn56.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn56.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn56.UseAsHeaderImage = false;
-            nsgIGridColumn56.Width = 23;
-            nsgIGridColumn57.AllowFilter = true;
-            nsgIGridColumn57.AllowGroupSelect = false;
-            nsgIGridColumn57.AllowResize = false;
-            nsgIGridColumn57.AllowSorting = false;
-            nsgIGridColumn57.AutoResize = false;
-            nsgIGridColumn57.Caption = "";
-            nsgIGridColumn57.ChangedProperties = new string[] {
+            nsgIGridColumn20.DateFormat = null;
+            nsgIGridColumn20.Name = "8";
+            nsgIGridColumn20.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn20.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn20.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn20.UseAsHeaderImage = false;
+            nsgIGridColumn20.Width = 23;
+            nsgIGridColumn21.AllowFilter = true;
+            nsgIGridColumn21.AllowGroupSelect = false;
+            nsgIGridColumn21.AllowResize = false;
+            nsgIGridColumn21.AllowSorting = false;
+            nsgIGridColumn21.AutoResize = false;
+            nsgIGridColumn21.Caption = "";
+            nsgIGridColumn21.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn57.DateFormat = null;
-            nsgIGridColumn57.ImportedFromVMO = false;
-            nsgIGridColumn57.Name = "9";
-            nsgIGridColumn57.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn57.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn57.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn57.UseAsHeaderImage = false;
-            nsgIGridColumn57.Width = 23;
-            nsgIGridColumn58.AllowFilter = true;
-            nsgIGridColumn58.AllowGroupSelect = false;
-            nsgIGridColumn58.AllowResize = false;
-            nsgIGridColumn58.AllowSorting = false;
-            nsgIGridColumn58.AutoResize = false;
-            nsgIGridColumn58.Caption = "";
-            nsgIGridColumn58.ChangedProperties = new string[] {
+            nsgIGridColumn21.DateFormat = null;
+            nsgIGridColumn21.Name = "9";
+            nsgIGridColumn21.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn21.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn21.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn21.UseAsHeaderImage = false;
+            nsgIGridColumn21.Width = 23;
+            nsgIGridColumn22.AllowFilter = true;
+            nsgIGridColumn22.AllowGroupSelect = false;
+            nsgIGridColumn22.AllowResize = false;
+            nsgIGridColumn22.AllowSorting = false;
+            nsgIGridColumn22.AutoResize = false;
+            nsgIGridColumn22.Caption = "";
+            nsgIGridColumn22.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn58.DateFormat = null;
-            nsgIGridColumn58.ImportedFromVMO = false;
-            nsgIGridColumn58.Name = "10";
-            nsgIGridColumn58.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn58.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn58.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn58.UseAsHeaderImage = false;
-            nsgIGridColumn58.Width = 23;
-            nsgIGridColumn59.AllowFilter = true;
-            nsgIGridColumn59.AllowGroupSelect = false;
-            nsgIGridColumn59.AllowResize = false;
-            nsgIGridColumn59.AllowSorting = false;
-            nsgIGridColumn59.AutoResize = false;
-            nsgIGridColumn59.Caption = "";
-            nsgIGridColumn59.ChangedProperties = new string[] {
+            nsgIGridColumn22.DateFormat = null;
+            nsgIGridColumn22.Name = "10";
+            nsgIGridColumn22.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn22.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn22.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn22.UseAsHeaderImage = false;
+            nsgIGridColumn22.Width = 23;
+            nsgIGridColumn23.AllowFilter = true;
+            nsgIGridColumn23.AllowGroupSelect = false;
+            nsgIGridColumn23.AllowResize = false;
+            nsgIGridColumn23.AllowSorting = false;
+            nsgIGridColumn23.AutoResize = false;
+            nsgIGridColumn23.Caption = "";
+            nsgIGridColumn23.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn59.DateFormat = null;
-            nsgIGridColumn59.ImportedFromVMO = false;
-            nsgIGridColumn59.Name = "11";
-            nsgIGridColumn59.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn59.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn59.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn59.UseAsHeaderImage = false;
-            nsgIGridColumn59.Width = 23;
-            nsgIGridColumn60.AllowFilter = true;
-            nsgIGridColumn60.AllowGroupSelect = false;
-            nsgIGridColumn60.AllowResize = false;
-            nsgIGridColumn60.AllowSorting = false;
-            nsgIGridColumn60.AutoResize = false;
-            nsgIGridColumn60.Caption = "";
-            nsgIGridColumn60.ChangedProperties = new string[] {
+            nsgIGridColumn23.DateFormat = null;
+            nsgIGridColumn23.Name = "11";
+            nsgIGridColumn23.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn23.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn23.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn23.UseAsHeaderImage = false;
+            nsgIGridColumn23.Width = 23;
+            nsgIGridColumn24.AllowFilter = true;
+            nsgIGridColumn24.AllowGroupSelect = false;
+            nsgIGridColumn24.AllowResize = false;
+            nsgIGridColumn24.AllowSorting = false;
+            nsgIGridColumn24.AutoResize = false;
+            nsgIGridColumn24.Caption = "";
+            nsgIGridColumn24.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn60.DateFormat = null;
-            nsgIGridColumn60.ImportedFromVMO = false;
-            nsgIGridColumn60.Name = "12";
-            nsgIGridColumn60.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn60.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn60.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn60.UseAsHeaderImage = false;
-            nsgIGridColumn60.Width = 23;
-            nsgIGridColumn61.AllowFilter = true;
-            nsgIGridColumn61.AllowGroupSelect = false;
-            nsgIGridColumn61.AllowResize = false;
-            nsgIGridColumn61.AllowSorting = false;
-            nsgIGridColumn61.AutoResize = false;
-            nsgIGridColumn61.Caption = "";
-            nsgIGridColumn61.ChangedProperties = new string[] {
+            nsgIGridColumn24.DateFormat = null;
+            nsgIGridColumn24.Name = "12";
+            nsgIGridColumn24.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn24.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn24.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn24.UseAsHeaderImage = false;
+            nsgIGridColumn24.Width = 23;
+            nsgIGridColumn25.AllowFilter = true;
+            nsgIGridColumn25.AllowGroupSelect = false;
+            nsgIGridColumn25.AllowResize = false;
+            nsgIGridColumn25.AllowSorting = false;
+            nsgIGridColumn25.AutoResize = false;
+            nsgIGridColumn25.Caption = "";
+            nsgIGridColumn25.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn61.DateFormat = null;
-            nsgIGridColumn61.ImportedFromVMO = false;
-            nsgIGridColumn61.Name = "13";
-            nsgIGridColumn61.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn61.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn61.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn61.UseAsHeaderImage = false;
-            nsgIGridColumn61.Width = 23;
-            nsgIGridColumn62.AllowFilter = true;
-            nsgIGridColumn62.AllowGroupSelect = false;
-            nsgIGridColumn62.AllowResize = false;
-            nsgIGridColumn62.AllowSorting = false;
-            nsgIGridColumn62.AutoResize = false;
-            nsgIGridColumn62.Caption = "";
-            nsgIGridColumn62.ChangedProperties = new string[] {
+            nsgIGridColumn25.DateFormat = null;
+            nsgIGridColumn25.Name = "13";
+            nsgIGridColumn25.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn25.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn25.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn25.UseAsHeaderImage = false;
+            nsgIGridColumn25.Width = 23;
+            nsgIGridColumn26.AllowFilter = true;
+            nsgIGridColumn26.AllowGroupSelect = false;
+            nsgIGridColumn26.AllowResize = false;
+            nsgIGridColumn26.AllowSorting = false;
+            nsgIGridColumn26.AutoResize = false;
+            nsgIGridColumn26.Caption = "";
+            nsgIGridColumn26.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowResize",
         "AllowSorting",
         "AutoResize"};
-            nsgIGridColumn62.DateFormat = null;
-            nsgIGridColumn62.ImportedFromVMO = false;
-            nsgIGridColumn62.Name = "14";
-            nsgIGridColumn62.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn62.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn62.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn62.UseAsHeaderImage = false;
-            nsgIGridColumn62.Width = 23;
-            nsgIGridColumn63.AllowFilter = true;
-            nsgIGridColumn63.AllowGroupSelect = false;
-            nsgIGridColumn63.AllowResize = false;
-            nsgIGridColumn63.AllowSorting = false;
-            nsgIGridColumn63.AutoResize = false;
-            nsgIGridColumn63.Caption = "";
-            nsgIGridColumn63.ChangedProperties = new string[] {
+            nsgIGridColumn26.DateFormat = null;
+            nsgIGridColumn26.Name = "14";
+            nsgIGridColumn26.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn26.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn26.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn26.UseAsHeaderImage = false;
+            nsgIGridColumn26.Width = 23;
+            nsgIGridColumn27.AllowFilter = true;
+            nsgIGridColumn27.AllowGroupSelect = false;
+            nsgIGridColumn27.AllowResize = false;
+            nsgIGridColumn27.AllowSorting = false;
+            nsgIGridColumn27.AutoResize = false;
+            nsgIGridColumn27.Caption = "";
+            nsgIGridColumn27.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowResize",
         "AllowSorting",
         "AutoResize"};
-            nsgIGridColumn63.DateFormat = null;
-            nsgIGridColumn63.ImportedFromVMO = false;
-            nsgIGridColumn63.Name = "15";
-            nsgIGridColumn63.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn63.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn63.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn63.UseAsHeaderImage = false;
-            nsgIGridColumn63.Width = 23;
-            nsgIGridColumn64.AllowFilter = true;
-            nsgIGridColumn64.AllowGroupSelect = false;
-            nsgIGridColumn64.AllowResize = false;
-            nsgIGridColumn64.AllowSorting = false;
-            nsgIGridColumn64.AutoResize = false;
-            nsgIGridColumn64.Caption = "";
-            nsgIGridColumn64.ChangedProperties = new string[] {
+            nsgIGridColumn27.DateFormat = null;
+            nsgIGridColumn27.Name = "15";
+            nsgIGridColumn27.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn27.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn27.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn27.UseAsHeaderImage = false;
+            nsgIGridColumn27.Width = 23;
+            nsgIGridColumn28.AllowFilter = true;
+            nsgIGridColumn28.AllowGroupSelect = false;
+            nsgIGridColumn28.AllowResize = false;
+            nsgIGridColumn28.AllowSorting = false;
+            nsgIGridColumn28.AutoResize = false;
+            nsgIGridColumn28.Caption = "";
+            nsgIGridColumn28.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn64.DateFormat = null;
-            nsgIGridColumn64.ImportedFromVMO = false;
-            nsgIGridColumn64.Name = "16";
-            nsgIGridColumn64.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn64.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn64.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn64.UseAsHeaderImage = false;
-            nsgIGridColumn64.Width = 23;
-            nsgIGridColumn65.AllowFilter = true;
-            nsgIGridColumn65.AllowGroupSelect = false;
-            nsgIGridColumn65.AllowResize = false;
-            nsgIGridColumn65.AllowSorting = false;
-            nsgIGridColumn65.AutoResize = false;
-            nsgIGridColumn65.Caption = "";
-            nsgIGridColumn65.ChangedProperties = new string[] {
+            nsgIGridColumn28.DateFormat = null;
+            nsgIGridColumn28.Name = "16";
+            nsgIGridColumn28.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn28.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn28.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn28.UseAsHeaderImage = false;
+            nsgIGridColumn28.Width = 23;
+            nsgIGridColumn29.AllowFilter = true;
+            nsgIGridColumn29.AllowGroupSelect = false;
+            nsgIGridColumn29.AllowResize = false;
+            nsgIGridColumn29.AllowSorting = false;
+            nsgIGridColumn29.AutoResize = false;
+            nsgIGridColumn29.Caption = "";
+            nsgIGridColumn29.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn65.DateFormat = null;
-            nsgIGridColumn65.ImportedFromVMO = false;
-            nsgIGridColumn65.Name = "17";
-            nsgIGridColumn65.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn65.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn65.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn65.UseAsHeaderImage = false;
-            nsgIGridColumn65.Width = 23;
-            nsgIGridColumn66.AllowFilter = true;
-            nsgIGridColumn66.AllowGroupSelect = false;
-            nsgIGridColumn66.AllowResize = false;
-            nsgIGridColumn66.AllowSorting = false;
-            nsgIGridColumn66.AutoResize = false;
-            nsgIGridColumn66.Caption = "";
-            nsgIGridColumn66.ChangedProperties = new string[] {
+            nsgIGridColumn29.DateFormat = null;
+            nsgIGridColumn29.Name = "17";
+            nsgIGridColumn29.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn29.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn29.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn29.UseAsHeaderImage = false;
+            nsgIGridColumn29.Width = 23;
+            nsgIGridColumn30.AllowFilter = true;
+            nsgIGridColumn30.AllowGroupSelect = false;
+            nsgIGridColumn30.AllowResize = false;
+            nsgIGridColumn30.AllowSorting = false;
+            nsgIGridColumn30.AutoResize = false;
+            nsgIGridColumn30.Caption = "";
+            nsgIGridColumn30.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn66.DateFormat = null;
-            nsgIGridColumn66.ImportedFromVMO = false;
-            nsgIGridColumn66.Name = "18";
-            nsgIGridColumn66.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn66.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn66.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn66.UseAsHeaderImage = false;
-            nsgIGridColumn66.Width = 23;
-            nsgIGridColumn67.AllowFilter = true;
-            nsgIGridColumn67.AllowGroupSelect = false;
-            nsgIGridColumn67.AllowResize = false;
-            nsgIGridColumn67.AllowSorting = false;
-            nsgIGridColumn67.AutoResize = false;
-            nsgIGridColumn67.Caption = "";
-            nsgIGridColumn67.ChangedProperties = new string[] {
+            nsgIGridColumn30.DateFormat = null;
+            nsgIGridColumn30.Name = "18";
+            nsgIGridColumn30.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn30.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn30.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn30.UseAsHeaderImage = false;
+            nsgIGridColumn30.Width = 23;
+            nsgIGridColumn31.AllowFilter = true;
+            nsgIGridColumn31.AllowGroupSelect = false;
+            nsgIGridColumn31.AllowResize = false;
+            nsgIGridColumn31.AllowSorting = false;
+            nsgIGridColumn31.AutoResize = false;
+            nsgIGridColumn31.Caption = "";
+            nsgIGridColumn31.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn67.DateFormat = null;
-            nsgIGridColumn67.ImportedFromVMO = false;
-            nsgIGridColumn67.Name = "19";
-            nsgIGridColumn67.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn67.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn67.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn67.UseAsHeaderImage = false;
-            nsgIGridColumn67.Width = 23;
-            nsgIGridColumn68.AllowFilter = true;
-            nsgIGridColumn68.AllowGroupSelect = false;
-            nsgIGridColumn68.AllowResize = false;
-            nsgIGridColumn68.AllowSorting = false;
-            nsgIGridColumn68.AutoResize = false;
-            nsgIGridColumn68.Caption = "";
-            nsgIGridColumn68.ChangedProperties = new string[] {
+            nsgIGridColumn31.DateFormat = null;
+            nsgIGridColumn31.Name = "19";
+            nsgIGridColumn31.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn31.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn31.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn31.UseAsHeaderImage = false;
+            nsgIGridColumn31.Width = 23;
+            nsgIGridColumn32.AllowFilter = true;
+            nsgIGridColumn32.AllowGroupSelect = false;
+            nsgIGridColumn32.AllowResize = false;
+            nsgIGridColumn32.AllowSorting = false;
+            nsgIGridColumn32.AutoResize = false;
+            nsgIGridColumn32.Caption = "";
+            nsgIGridColumn32.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn68.DateFormat = null;
-            nsgIGridColumn68.ImportedFromVMO = false;
-            nsgIGridColumn68.Name = "20";
-            nsgIGridColumn68.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn68.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn68.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn68.UseAsHeaderImage = false;
-            nsgIGridColumn68.Width = 23;
-            nsgIGridColumn69.AllowFilter = true;
-            nsgIGridColumn69.AllowGroupSelect = false;
-            nsgIGridColumn69.AllowResize = false;
-            nsgIGridColumn69.AllowSorting = false;
-            nsgIGridColumn69.AutoResize = false;
-            nsgIGridColumn69.Caption = "";
-            nsgIGridColumn69.ChangedProperties = new string[] {
+            nsgIGridColumn32.DateFormat = null;
+            nsgIGridColumn32.Name = "20";
+            nsgIGridColumn32.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn32.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn32.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn32.UseAsHeaderImage = false;
+            nsgIGridColumn32.Width = 23;
+            nsgIGridColumn33.AllowFilter = true;
+            nsgIGridColumn33.AllowGroupSelect = false;
+            nsgIGridColumn33.AllowResize = false;
+            nsgIGridColumn33.AllowSorting = false;
+            nsgIGridColumn33.AutoResize = false;
+            nsgIGridColumn33.Caption = "";
+            nsgIGridColumn33.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn69.DateFormat = null;
-            nsgIGridColumn69.ImportedFromVMO = false;
-            nsgIGridColumn69.Name = "21";
-            nsgIGridColumn69.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn69.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn69.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn69.UseAsHeaderImage = false;
-            nsgIGridColumn69.Width = 23;
-            nsgIGridColumn70.AllowFilter = true;
-            nsgIGridColumn70.AllowGroupSelect = false;
-            nsgIGridColumn70.AllowResize = false;
-            nsgIGridColumn70.AllowSorting = false;
-            nsgIGridColumn70.AutoResize = false;
-            nsgIGridColumn70.Caption = "";
-            nsgIGridColumn70.ChangedProperties = new string[] {
+            nsgIGridColumn33.DateFormat = null;
+            nsgIGridColumn33.Name = "21";
+            nsgIGridColumn33.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn33.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn33.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn33.UseAsHeaderImage = false;
+            nsgIGridColumn33.Width = 23;
+            nsgIGridColumn34.AllowFilter = true;
+            nsgIGridColumn34.AllowGroupSelect = false;
+            nsgIGridColumn34.AllowResize = false;
+            nsgIGridColumn34.AllowSorting = false;
+            nsgIGridColumn34.AutoResize = false;
+            nsgIGridColumn34.Caption = "";
+            nsgIGridColumn34.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn70.DateFormat = null;
-            nsgIGridColumn70.ImportedFromVMO = false;
-            nsgIGridColumn70.Name = "22";
-            nsgIGridColumn70.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn70.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn70.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn70.UseAsHeaderImage = false;
-            nsgIGridColumn70.Width = 23;
-            nsgIGridColumn71.AllowFilter = true;
-            nsgIGridColumn71.AllowGroupSelect = false;
-            nsgIGridColumn71.AllowResize = false;
-            nsgIGridColumn71.AllowSorting = false;
-            nsgIGridColumn71.AutoResize = false;
-            nsgIGridColumn71.Caption = "";
-            nsgIGridColumn71.ChangedProperties = new string[] {
+            nsgIGridColumn34.DateFormat = null;
+            nsgIGridColumn34.Name = "22";
+            nsgIGridColumn34.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn34.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn34.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn34.UseAsHeaderImage = false;
+            nsgIGridColumn34.Width = 23;
+            nsgIGridColumn35.AllowFilter = true;
+            nsgIGridColumn35.AllowGroupSelect = false;
+            nsgIGridColumn35.AllowResize = false;
+            nsgIGridColumn35.AllowSorting = false;
+            nsgIGridColumn35.AutoResize = false;
+            nsgIGridColumn35.Caption = "";
+            nsgIGridColumn35.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn71.DateFormat = null;
-            nsgIGridColumn71.ImportedFromVMO = false;
-            nsgIGridColumn71.Name = "23";
-            nsgIGridColumn71.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn71.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn71.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn71.UseAsHeaderImage = false;
-            nsgIGridColumn71.Width = 23;
-            nsgIGridColumn72.AllowFilter = true;
-            nsgIGridColumn72.AllowGroupSelect = false;
-            nsgIGridColumn72.AllowResize = false;
-            nsgIGridColumn72.AllowSorting = false;
-            nsgIGridColumn72.AutoResize = false;
-            nsgIGridColumn72.Caption = "";
-            nsgIGridColumn72.ChangedProperties = new string[] {
+            nsgIGridColumn35.DateFormat = null;
+            nsgIGridColumn35.Name = "23";
+            nsgIGridColumn35.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn35.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn35.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn35.UseAsHeaderImage = false;
+            nsgIGridColumn35.Width = 23;
+            nsgIGridColumn36.AllowFilter = true;
+            nsgIGridColumn36.AllowGroupSelect = false;
+            nsgIGridColumn36.AllowResize = false;
+            nsgIGridColumn36.AllowSorting = false;
+            nsgIGridColumn36.AutoResize = false;
+            nsgIGridColumn36.Caption = "";
+            nsgIGridColumn36.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn72.DateFormat = null;
-            nsgIGridColumn72.ImportedFromVMO = false;
-            nsgIGridColumn72.Name = "24";
-            nsgIGridColumn72.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn72.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn72.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn72.UseAsHeaderImage = false;
-            nsgIGridColumn72.Width = 23;
-            nsgIGridColumn73.AllowFilter = true;
-            nsgIGridColumn73.AllowGroupSelect = false;
-            nsgIGridColumn73.AllowResize = false;
-            nsgIGridColumn73.AllowSorting = false;
-            nsgIGridColumn73.AutoResize = false;
-            nsgIGridColumn73.Caption = "";
-            nsgIGridColumn73.ChangedProperties = new string[] {
+            nsgIGridColumn36.DateFormat = null;
+            nsgIGridColumn36.Name = "24";
+            nsgIGridColumn36.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn36.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn36.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn36.UseAsHeaderImage = false;
+            nsgIGridColumn36.Width = 23;
+            nsgIGridColumn37.AllowFilter = true;
+            nsgIGridColumn37.AllowGroupSelect = false;
+            nsgIGridColumn37.AllowResize = false;
+            nsgIGridColumn37.AllowSorting = false;
+            nsgIGridColumn37.AutoResize = false;
+            nsgIGridColumn37.Caption = "";
+            nsgIGridColumn37.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn73.DateFormat = null;
-            nsgIGridColumn73.ImportedFromVMO = false;
-            nsgIGridColumn73.Name = "25";
-            nsgIGridColumn73.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn73.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn73.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn73.UseAsHeaderImage = false;
-            nsgIGridColumn73.Width = 23;
-            nsgIGridColumn74.AllowFilter = true;
-            nsgIGridColumn74.AllowGroupSelect = false;
-            nsgIGridColumn74.AllowResize = false;
-            nsgIGridColumn74.AllowSorting = false;
-            nsgIGridColumn74.AutoResize = false;
-            nsgIGridColumn74.Caption = "";
-            nsgIGridColumn74.ChangedProperties = new string[] {
+            nsgIGridColumn37.DateFormat = null;
+            nsgIGridColumn37.Name = "25";
+            nsgIGridColumn37.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn37.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn37.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn37.UseAsHeaderImage = false;
+            nsgIGridColumn37.Width = 23;
+            nsgIGridColumn38.AllowFilter = true;
+            nsgIGridColumn38.AllowGroupSelect = false;
+            nsgIGridColumn38.AllowResize = false;
+            nsgIGridColumn38.AllowSorting = false;
+            nsgIGridColumn38.AutoResize = false;
+            nsgIGridColumn38.Caption = "";
+            nsgIGridColumn38.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn74.DateFormat = null;
-            nsgIGridColumn74.ImportedFromVMO = false;
-            nsgIGridColumn74.Name = "26";
-            nsgIGridColumn74.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn74.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn74.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn74.UseAsHeaderImage = false;
-            nsgIGridColumn74.Width = 23;
-            nsgIGridColumn75.AllowFilter = true;
-            nsgIGridColumn75.AllowGroupSelect = false;
-            nsgIGridColumn75.AllowResize = false;
-            nsgIGridColumn75.AllowSorting = false;
-            nsgIGridColumn75.AutoResize = false;
-            nsgIGridColumn75.Caption = "";
-            nsgIGridColumn75.ChangedProperties = new string[] {
+            nsgIGridColumn38.DateFormat = null;
+            nsgIGridColumn38.Name = "26";
+            nsgIGridColumn38.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn38.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn38.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn38.UseAsHeaderImage = false;
+            nsgIGridColumn38.Width = 23;
+            nsgIGridColumn39.AllowFilter = true;
+            nsgIGridColumn39.AllowGroupSelect = false;
+            nsgIGridColumn39.AllowResize = false;
+            nsgIGridColumn39.AllowSorting = false;
+            nsgIGridColumn39.AutoResize = false;
+            nsgIGridColumn39.Caption = "";
+            nsgIGridColumn39.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn75.DateFormat = null;
-            nsgIGridColumn75.ImportedFromVMO = false;
-            nsgIGridColumn75.Name = "27";
-            nsgIGridColumn75.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn75.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn75.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn75.UseAsHeaderImage = false;
-            nsgIGridColumn75.Width = 23;
-            nsgIGridColumn76.AllowFilter = true;
-            nsgIGridColumn76.AllowGroupSelect = false;
-            nsgIGridColumn76.AllowResize = false;
-            nsgIGridColumn76.AllowSorting = false;
-            nsgIGridColumn76.AutoResize = false;
-            nsgIGridColumn76.Caption = "";
-            nsgIGridColumn76.ChangedProperties = new string[] {
+            nsgIGridColumn39.DateFormat = null;
+            nsgIGridColumn39.Name = "27";
+            nsgIGridColumn39.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn39.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn39.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn39.UseAsHeaderImage = false;
+            nsgIGridColumn39.Width = 23;
+            nsgIGridColumn40.AllowFilter = true;
+            nsgIGridColumn40.AllowGroupSelect = false;
+            nsgIGridColumn40.AllowResize = false;
+            nsgIGridColumn40.AllowSorting = false;
+            nsgIGridColumn40.AutoResize = false;
+            nsgIGridColumn40.Caption = "";
+            nsgIGridColumn40.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn76.DateFormat = null;
-            nsgIGridColumn76.ImportedFromVMO = false;
-            nsgIGridColumn76.Name = "28";
-            nsgIGridColumn76.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn76.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn76.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn76.UseAsHeaderImage = false;
-            nsgIGridColumn76.Width = 23;
-            nsgIGridColumn77.AllowFilter = true;
-            nsgIGridColumn77.AllowGroupSelect = false;
-            nsgIGridColumn77.AllowResize = false;
-            nsgIGridColumn77.AllowSorting = false;
-            nsgIGridColumn77.AutoResize = false;
-            nsgIGridColumn77.Caption = "";
-            nsgIGridColumn77.ChangedProperties = new string[] {
+            nsgIGridColumn40.DateFormat = null;
+            nsgIGridColumn40.Name = "28";
+            nsgIGridColumn40.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn40.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn40.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn40.UseAsHeaderImage = false;
+            nsgIGridColumn40.Width = 23;
+            nsgIGridColumn41.AllowFilter = true;
+            nsgIGridColumn41.AllowGroupSelect = false;
+            nsgIGridColumn41.AllowResize = false;
+            nsgIGridColumn41.AllowSorting = false;
+            nsgIGridColumn41.AutoResize = false;
+            nsgIGridColumn41.Caption = "";
+            nsgIGridColumn41.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn77.DateFormat = null;
-            nsgIGridColumn77.ImportedFromVMO = false;
-            nsgIGridColumn77.Name = "29";
-            nsgIGridColumn77.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn77.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn77.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn77.UseAsHeaderImage = false;
-            nsgIGridColumn77.Width = 23;
-            nsgIGridColumn78.AllowFilter = true;
-            nsgIGridColumn78.AllowGroupSelect = false;
-            nsgIGridColumn78.AllowResize = false;
-            nsgIGridColumn78.AllowSorting = false;
-            nsgIGridColumn78.AutoResize = false;
-            nsgIGridColumn78.Caption = "";
-            nsgIGridColumn78.ChangedProperties = new string[] {
+            nsgIGridColumn41.DateFormat = null;
+            nsgIGridColumn41.Name = "29";
+            nsgIGridColumn41.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn41.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn41.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn41.UseAsHeaderImage = false;
+            nsgIGridColumn41.Width = 23;
+            nsgIGridColumn42.AllowFilter = true;
+            nsgIGridColumn42.AllowGroupSelect = false;
+            nsgIGridColumn42.AllowResize = false;
+            nsgIGridColumn42.AllowSorting = false;
+            nsgIGridColumn42.AutoResize = false;
+            nsgIGridColumn42.Caption = "";
+            nsgIGridColumn42.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn78.DateFormat = null;
-            nsgIGridColumn78.ImportedFromVMO = false;
-            nsgIGridColumn78.Name = "30";
-            nsgIGridColumn78.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn78.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn78.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn78.UseAsHeaderImage = false;
-            nsgIGridColumn78.Width = 23;
-            nsgIGridColumn79.AllowFilter = true;
-            nsgIGridColumn79.AllowGroupSelect = false;
-            nsgIGridColumn79.AllowResize = false;
-            nsgIGridColumn79.AllowSorting = false;
-            nsgIGridColumn79.AutoResize = false;
-            nsgIGridColumn79.Caption = "";
-            nsgIGridColumn79.ChangedProperties = new string[] {
+            nsgIGridColumn42.DateFormat = null;
+            nsgIGridColumn42.Name = "30";
+            nsgIGridColumn42.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn42.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn42.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn42.UseAsHeaderImage = false;
+            nsgIGridColumn42.Width = 23;
+            nsgIGridColumn43.AllowFilter = true;
+            nsgIGridColumn43.AllowGroupSelect = false;
+            nsgIGridColumn43.AllowResize = false;
+            nsgIGridColumn43.AllowSorting = false;
+            nsgIGridColumn43.AutoResize = false;
+            nsgIGridColumn43.Caption = "";
+            nsgIGridColumn43.ChangedProperties = new string[] {
         "Visible",
         "Width",
         "AllowSorting",
         "AllowResize",
         "AutoResize"};
-            nsgIGridColumn79.DateFormat = null;
-            nsgIGridColumn79.ImportedFromVMO = false;
-            nsgIGridColumn79.Name = "31";
-            nsgIGridColumn79.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn79.Root = this.nsgIGrid3.Columns.Collection;
-            nsgIGridColumn79.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn79.UseAsHeaderImage = false;
-            nsgIGridColumn79.Width = 23;
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn45);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn46);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn47);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn48);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn49);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn50);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn51);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn52);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn53);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn54);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn55);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn56);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn57);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn58);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn59);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn60);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn61);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn62);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn63);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn64);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn65);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn66);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn67);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn68);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn69);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn70);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn71);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn72);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn73);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn74);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn75);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn76);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn77);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn78);
-            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn79);
+            nsgIGridColumn43.DateFormat = null;
+            nsgIGridColumn43.Name = "31";
+            nsgIGridColumn43.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn43.Root = this.nsgIGrid3.Columns.Collection;
+            nsgIGridColumn43.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn43.UseAsHeaderImage = false;
+            nsgIGridColumn43.Width = 23;
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn9);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn10);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn11);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn12);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn13);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn14);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn15);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn16);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn17);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn18);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn19);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn20);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn21);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn22);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn23);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn24);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn25);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn26);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn27);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn28);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn29);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn30);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn31);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn32);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn33);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn34);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn35);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn36);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn37);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn38);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn39);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn40);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn41);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn42);
+            this.nsgIGrid3.Columns.Collection.Add(nsgIGridColumn43);
             this.nsgIGrid3.Filter = false;
             this.nsgIGrid3.FrozenColumns = 0;
             this.nsgIGrid3.Grouping = false;
@@ -3049,107 +2986,101 @@ namespace TechControl.Метаданные.УчетСотрудников
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nsgIGrid4.AutoResizeCols = true;
-            nsgIGridColumn80.AllowFilter = true;
-            nsgIGridColumn80.AllowGroupSelect = false;
-            nsgIGridColumn80.AllowResize = true;
-            nsgIGridColumn80.AutoResize = true;
-            nsgIGridColumn80.Caption = "";
-            nsgIGridColumn80.ChangedProperties = new string[] {
+            nsgIGridColumn44.AllowFilter = true;
+            nsgIGridColumn44.AllowGroupSelect = false;
+            nsgIGridColumn44.AllowResize = true;
+            nsgIGridColumn44.AutoResize = true;
+            nsgIGridColumn44.Caption = "";
+            nsgIGridColumn44.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn80.DateFormat = null;
-            nsgIGridColumn80.ImportedFromVMO = false;
-            nsgIGridColumn80.Name = "ДатаСмены";
-            nsgIGridColumn80.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn80.Root = this.nsgIGrid4.Columns.Collection;
-            nsgIGridColumn80.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn80.UseAsHeaderImage = false;
-            nsgIGridColumn80.Width = 100;
-            nsgIGridColumn81.AllowFilter = true;
-            nsgIGridColumn81.AllowGroupSelect = false;
-            nsgIGridColumn81.AllowResize = true;
-            nsgIGridColumn81.AutoResize = true;
-            nsgIGridColumn81.Caption = "";
-            nsgIGridColumn81.ChangedProperties = new string[] {
+            nsgIGridColumn44.DateFormat = null;
+            nsgIGridColumn44.Name = "ДатаСмены";
+            nsgIGridColumn44.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn44.Root = this.nsgIGrid4.Columns.Collection;
+            nsgIGridColumn44.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn44.UseAsHeaderImage = false;
+            nsgIGridColumn44.Width = 100;
+            nsgIGridColumn45.AllowFilter = true;
+            nsgIGridColumn45.AllowGroupSelect = false;
+            nsgIGridColumn45.AllowResize = true;
+            nsgIGridColumn45.AutoResize = true;
+            nsgIGridColumn45.Caption = "";
+            nsgIGridColumn45.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn81.DateFormat = null;
-            nsgIGridColumn81.ImportedFromVMO = false;
-            nsgIGridColumn81.Name = "Сотрудник";
-            nsgIGridColumn81.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn81.Root = this.nsgIGrid4.Columns.Collection;
-            nsgIGridColumn81.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn81.UseAsHeaderImage = false;
-            nsgIGridColumn81.Width = 100;
-            nsgIGridColumn82.AllowFilter = true;
-            nsgIGridColumn82.AllowGroupSelect = false;
-            nsgIGridColumn82.AllowResize = true;
-            nsgIGridColumn82.AutoResize = true;
-            nsgIGridColumn82.Caption = "";
-            nsgIGridColumn82.ChangedProperties = new string[] {
+            nsgIGridColumn45.DateFormat = null;
+            nsgIGridColumn45.Name = "Сотрудник";
+            nsgIGridColumn45.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn45.Root = this.nsgIGrid4.Columns.Collection;
+            nsgIGridColumn45.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn45.UseAsHeaderImage = false;
+            nsgIGridColumn45.Width = 100;
+            nsgIGridColumn46.AllowFilter = true;
+            nsgIGridColumn46.AllowGroupSelect = false;
+            nsgIGridColumn46.AllowResize = true;
+            nsgIGridColumn46.AutoResize = true;
+            nsgIGridColumn46.Caption = "";
+            nsgIGridColumn46.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn82.DateFormat = null;
-            nsgIGridColumn82.ImportedFromVMO = false;
-            nsgIGridColumn82.Name = "Техника";
-            nsgIGridColumn82.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn82.Root = this.nsgIGrid4.Columns.Collection;
-            nsgIGridColumn82.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn82.UseAsHeaderImage = false;
-            nsgIGridColumn82.Width = 100;
-            nsgIGridColumn83.AllowFilter = true;
-            nsgIGridColumn83.AllowGroupSelect = false;
-            nsgIGridColumn83.AllowResize = true;
-            nsgIGridColumn83.AutoResize = true;
-            nsgIGridColumn83.Caption = "";
-            nsgIGridColumn83.ChangedProperties = new string[] {
+            nsgIGridColumn46.DateFormat = null;
+            nsgIGridColumn46.Name = "Техника";
+            nsgIGridColumn46.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn46.Root = this.nsgIGrid4.Columns.Collection;
+            nsgIGridColumn46.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn46.UseAsHeaderImage = false;
+            nsgIGridColumn46.Width = 100;
+            nsgIGridColumn47.AllowFilter = true;
+            nsgIGridColumn47.AllowGroupSelect = false;
+            nsgIGridColumn47.AllowResize = true;
+            nsgIGridColumn47.AutoResize = true;
+            nsgIGridColumn47.Caption = "";
+            nsgIGridColumn47.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn83.DateFormat = null;
-            nsgIGridColumn83.ImportedFromVMO = false;
-            nsgIGridColumn83.Name = "Тариф";
-            nsgIGridColumn83.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn83.Root = this.nsgIGrid4.Columns.Collection;
-            nsgIGridColumn83.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn83.UseAsHeaderImage = false;
-            nsgIGridColumn83.Width = 100;
-            nsgIGridColumn84.AllowFilter = true;
-            nsgIGridColumn84.AllowGroupSelect = false;
-            nsgIGridColumn84.AllowResize = true;
-            nsgIGridColumn84.AutoResize = true;
-            nsgIGridColumn84.Caption = "";
-            nsgIGridColumn84.ChangedProperties = new string[] {
+            nsgIGridColumn47.DateFormat = null;
+            nsgIGridColumn47.Name = "Тариф";
+            nsgIGridColumn47.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn47.Root = this.nsgIGrid4.Columns.Collection;
+            nsgIGridColumn47.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn47.UseAsHeaderImage = false;
+            nsgIGridColumn47.Width = 100;
+            nsgIGridColumn48.AllowFilter = true;
+            nsgIGridColumn48.AllowGroupSelect = false;
+            nsgIGridColumn48.AllowResize = true;
+            nsgIGridColumn48.AutoResize = true;
+            nsgIGridColumn48.Caption = "";
+            nsgIGridColumn48.ChangedProperties = new string[] {
         "Visible",
         "Index"};
-            nsgIGridColumn84.DateFormat = null;
-            nsgIGridColumn84.ImportedFromVMO = false;
-            nsgIGridColumn84.Name = "Должность";
-            nsgIGridColumn84.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn84.Root = this.nsgIGrid4.Columns.Collection;
-            nsgIGridColumn84.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn84.UseAsHeaderImage = false;
-            nsgIGridColumn84.Width = 100;
-            nsgIGridColumn85.AllowFilter = true;
-            nsgIGridColumn85.AllowGroupSelect = false;
-            nsgIGridColumn85.AllowResize = true;
-            nsgIGridColumn85.AutoResize = true;
-            nsgIGridColumn85.Caption = "";
-            nsgIGridColumn85.ChangedProperties = new string[] {
+            nsgIGridColumn48.DateFormat = null;
+            nsgIGridColumn48.Name = "Должность";
+            nsgIGridColumn48.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn48.Root = this.nsgIGrid4.Columns.Collection;
+            nsgIGridColumn48.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn48.UseAsHeaderImage = false;
+            nsgIGridColumn48.Width = 100;
+            nsgIGridColumn49.AllowFilter = true;
+            nsgIGridColumn49.AllowGroupSelect = false;
+            nsgIGridColumn49.AllowResize = true;
+            nsgIGridColumn49.AutoResize = true;
+            nsgIGridColumn49.Caption = "";
+            nsgIGridColumn49.ChangedProperties = new string[] {
         "Visible"};
-            nsgIGridColumn85.DateFormat = null;
-            nsgIGridColumn85.ImportedFromVMO = false;
-            nsgIGridColumn85.Name = "Длительность";
-            nsgIGridColumn85.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
-            nsgIGridColumn85.Root = this.nsgIGrid4.Columns.Collection;
-            nsgIGridColumn85.SortDirection = NsgSoft.Database.NsgSortDirection.None;
-            nsgIGridColumn85.UseAsHeaderImage = false;
-            nsgIGridColumn85.Width = 100;
-            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn80);
-            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn81);
-            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn82);
-            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn83);
-            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn84);
-            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn85);
+            nsgIGridColumn49.DateFormat = null;
+            nsgIGridColumn49.Name = "Длительность";
+            nsgIGridColumn49.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn49.Root = this.nsgIGrid4.Columns.Collection;
+            nsgIGridColumn49.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn49.UseAsHeaderImage = false;
+            nsgIGridColumn49.Width = 100;
+            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn44);
+            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn45);
+            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn46);
+            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn47);
+            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn48);
+            this.nsgIGrid4.Columns.Collection.Add(nsgIGridColumn49);
             this.nsgIGrid4.Filter = false;
             this.nsgIGrid4.FrozenColumns = 0;
             this.nsgIGrid4.Grouping = false;
@@ -3278,6 +3209,107 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.ИзЗаполненногоДокумента_vmoПодробности.SearchCondition.OwnerComponent = this.ИзЗаполненногоДокумента_vmoПодробности;
             this.ИзЗаполненногоДокумента_vmoПодробности.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // nsgIGrid5
+            // 
+            this.nsgIGrid5.Action = NsgSoft.DataObjects.FormShowMode.None;
+            this.nsgIGrid5.AllowSaveColParamsToXML = true;
+            this.nsgIGrid5.AllowSaveColPositionToXML = true;
+            this.nsgIGrid5.AllowSaveColWidthToXML = true;
+            this.nsgIGrid5.AllowSaveSettingsToXML = true;
+            this.nsgIGrid5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nsgIGrid5.AutoResizeCols = true;
+            nsgIGridColumn50.AllowFilter = true;
+            nsgIGridColumn50.AllowGroupSelect = false;
+            nsgIGridColumn50.AllowResize = true;
+            nsgIGridColumn50.AutoResize = true;
+            nsgIGridColumn50.Caption = "";
+            nsgIGridColumn50.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn50.DateFormat = null;
+            nsgIGridColumn50.Name = "Дата";
+            nsgIGridColumn50.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn50.Root = this.nsgIGrid5.Columns.Collection;
+            nsgIGridColumn50.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn50.UseAsHeaderImage = false;
+            nsgIGridColumn50.Width = 100;
+            nsgIGridColumn51.AllowFilter = true;
+            nsgIGridColumn51.AllowGroupSelect = false;
+            nsgIGridColumn51.AllowResize = true;
+            nsgIGridColumn51.AutoResize = true;
+            nsgIGridColumn51.Caption = "";
+            nsgIGridColumn51.ChangedProperties = new string[] {
+        "Visible"};
+            nsgIGridColumn51.DateFormat = null;
+            nsgIGridColumn51.Name = "Смена";
+            nsgIGridColumn51.Position = ((NsgSoft.Forms.NsgIGrid.ColumnPosition)(NsgSoft.Forms.NsgIGrid.ColumnPosition.NextColumn));
+            nsgIGridColumn51.Root = this.nsgIGrid5.Columns.Collection;
+            nsgIGridColumn51.SortDirection = NsgSoft.Database.NsgSortDirection.None;
+            nsgIGridColumn51.UseAsHeaderImage = false;
+            nsgIGridColumn51.Width = 100;
+            this.nsgIGrid5.Columns.Collection.Add(nsgIGridColumn50);
+            this.nsgIGrid5.Columns.Collection.Add(nsgIGridColumn51);
+            this.nsgIGrid5.Filter = false;
+            this.nsgIGrid5.FrozenColumns = 0;
+            this.nsgIGrid5.Grouping = false;
+            this.nsgIGrid5.Hierarhy = true;
+            this.nsgIGrid5.ImageList = null;
+            this.nsgIGrid5.IsCanMultiSelect = false;
+            this.nsgIGrid5.IsCanSingleSelect = false;
+            this.nsgIGrid5.LineHeight = 20;
+            this.nsgIGrid5.Location = new System.Drawing.Point(3, 34);
+            this.nsgIGrid5.MarkReadOnly = false;
+            this.nsgIGrid5.MasterObject = null;
+            this.nsgIGrid5.Name = "NsgIGrid";
+            this.nsgIGrid5.PageSelector = false;
+            this.nsgIGrid5.ReadOnly = false;
+            this.nsgIGrid5.RowChangeInterval = 200;
+            this.nsgIGrid5.RowHeaderImageList = null;
+            this.nsgIGrid5.RowMode = false;
+            this.nsgIGrid5.ScrollWidth = 0;
+            this.nsgIGrid5.SelectedRow = -1;
+            this.nsgIGrid5.ShowHeader = true;
+            this.nsgIGrid5.ShowLineImages = true;
+            this.nsgIGrid5.ShowLineNumbers = false;
+            this.nsgIGrid5.ShowPanel = true;
+            this.nsgIGrid5.ShowTotals = false;
+            this.nsgIGrid5.ShowTree = false;
+            this.nsgIGrid5.Size = new System.Drawing.Size(391, 300);
+            this.nsgIGrid5.SourceObject = this.vmoПрошлыеСмены;
+            this.nsgIGrid5.TabIndex = 0;
+            this.nsgIGrid5.TableType = NsgSoft.Forms.NsgIGrid.TableTypes.Journal;
+            this.nsgIGrid5.GetAvailableTools += new NsgSoft.Forms.GetActionToolsEventHandler(this.nsgIGrid5_GetAvailableTools);
+            // 
+            // vmoПрошлыеСмены
+            // 
+            this.vmoПрошлыеСмены.Columns.Collection.Add(this.Дата_vmoПрошлыеСмены);
+            this.vmoПрошлыеСмены.Columns.Collection.Add(this.Смена_vmoПрошлыеСмены);
+            this.vmoПрошлыеСмены.IsActive = true;
+            this.vmoПрошлыеСмены.DataSourceType = NsgSoft.Forms.NsgDataSourceType.DynamicObject;
+            this.vmoПрошлыеСмены.MetaDataName = "";
+            this.vmoПрошлыеСмены.FullName = "";
+            // 
+            // Дата_vmoПрошлыеСмены
+            // 
+            this.Дата_vmoПрошлыеСмены.Caption = "Дата";
+            this.Дата_vmoПрошлыеСмены.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Дата_vmoПрошлыеСмены.Name = "Дата";
+            this.Дата_vmoПрошлыеСмены.NSGType = typeof(NsgSoft.DataObjects.NsgDataDateTime);
+            this.Дата_vmoПрошлыеСмены.PropertyType = typeof(System.DateTime);
+            this.Дата_vmoПрошлыеСмены.SearchCondition.OwnerComponent = this.Дата_vmoПрошлыеСмены;
+            this.Дата_vmoПрошлыеСмены.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
+            // Смена_vmoПрошлыеСмены
+            // 
+            this.Смена_vmoПрошлыеСмены.Caption = "Смена";
+            this.Смена_vmoПрошлыеСмены.Creator = typeof(NsgSoft.Forms.NsgReportForm);
+            this.Смена_vmoПрошлыеСмены.Name = "Смена";
+            this.Смена_vmoПрошлыеСмены.NSGType = typeof(TechControl.Метаданные.Мониторинг.ФормированиеСмены);
+            this.Смена_vmoПрошлыеСмены.PropertyType = typeof(TechControl.Метаданные.Мониторинг.ФормированиеСмены);
+            this.Смена_vmoПрошлыеСмены.SearchCondition.OwnerComponent = this.Смена_vmoПрошлыеСмены;
+            this.Смена_vmoПрошлыеСмены.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
+            // 
             // tabControl1
             // 
             this.tabControl1.AllowDrop = true;
@@ -3297,6 +3329,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             // tpФормирование
             // 
             this.tpФормирование.AllowDrop = true;
+            this.tpФормирование.Controls.Add(this.splitContainer3);
             this.tpФормирование.Controls.Add(this.cbShowAll);
             this.tpФормирование.Controls.Add(this.nbСформироватьСмену);
             this.tpФормирование.Controls.Add(this.nbЗаполнить);
@@ -3304,7 +3337,6 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.tpФормирование.Controls.Add(this.nsgInput1);
             this.tpФормирование.Controls.Add(this.label2);
             this.tpФормирование.Controls.Add(this.label1);
-            this.tpФормирование.Controls.Add(this.nsgIGrid1);
             this.tpФормирование.Enabled = true;
             this.tpФормирование.Location = new System.Drawing.Point(4, 22);
             this.tpФормирование.Name = "tpФормирование";
@@ -3314,6 +3346,29 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.tpФормирование.Text = "Ежедневное заполнение";
             this.tpФормирование.UseVisualStyleBackColor = true;
             this.tpФормирование.Visible = true;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.AllowDrop = true;
+            this.splitContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer3.Location = new System.Drawing.Point(3, 70);
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.AllowDrop = true;
+            this.splitContainer3.Panel1.Controls.Add(this.nsgIGrid1);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.AllowDrop = true;
+            this.splitContainer3.Panel2.Controls.Add(this.nbЗаполнПоВыбранной);
+            this.splitContainer3.Panel2.Controls.Add(this.nsgIGrid5);
+            this.splitContainer3.Size = new System.Drawing.Size(763, 337);
+            this.splitContainer3.SplitterDistance = 362;
+            this.splitContainer3.TabIndex = 8;
             // 
             // cbShowAll
             // 
@@ -3365,7 +3420,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgInput2.IsButton = false;
             this.nsgInput2.IsInitialized = true;
             this.nsgInput2.IsPassword = false;
-            this.nsgInput2.Location = new System.Drawing.Point(88, 39);
+            this.nsgInput2.Location = new System.Drawing.Point(88, 7);
             this.nsgInput2.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput2.Mask = "";
             this.nsgInput2.MetaDataName = "";
@@ -3382,6 +3437,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgInput2.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput2.TabIndex = 4;
             this.nsgInput2.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.nsgInput2.EndEdit += new NsgSoft.Forms.NsgInput.EndEditEventHandler(this.nsgInput2_EndEdit);
             // 
             // nsgInput1
             // 
@@ -3396,7 +3452,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgInput1.IsButton = false;
             this.nsgInput1.IsInitialized = true;
             this.nsgInput1.IsPassword = false;
-            this.nsgInput1.Location = new System.Drawing.Point(88, 7);
+            this.nsgInput1.Location = new System.Drawing.Point(88, 39);
             this.nsgInput1.Margin = new System.Windows.Forms.Padding(0);
             this.nsgInput1.Mask = "";
             this.nsgInput1.MetaDataName = "";
@@ -3413,11 +3469,12 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nsgInput1.SourceObject = this.nsgVisualMultipleObject;
             this.nsgInput1.TabIndex = 3;
             this.nsgInput1.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.nsgInput1.Selected += new System.EventHandler(this.nsgInput1_Selected);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 39);
+            this.label2.Location = new System.Drawing.Point(40, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 2;
@@ -3426,7 +3483,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 7);
+            this.label1.Location = new System.Drawing.Point(52, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 1;
@@ -4123,6 +4180,20 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.nBwЗаполнениеДаннымиСмен.ProgressProcentage = 0;
             this.nBwЗаполнениеДаннымиСмен.DoWork += new System.ComponentModel.DoWorkEventHandler(this.nBwЗаполнениеДаннымиСмен_DoWork);
             // 
+            // nbwПрошлыеСмены
+            // 
+            this.nbwПрошлыеСмены.CancelForbidden = false;
+            this.nbwПрошлыеСмены.CurrentProgressValue = 0;
+            this.nbwПрошлыеСмены.Description = "";
+            this.nbwПрошлыеСмены.EventGeneratorObject = null;
+            this.nbwПрошлыеСмены.MaxProgressValue = 100;
+            this.nbwПрошлыеСмены.Name = "NsgBackgroundWorker";
+            this.nbwПрошлыеСмены.OwnerForm = this;
+            this.nbwПрошлыеСмены.ProgressEventType = NsgSoft.DataObjects.NsgThread.ProgressEventsType.Asynchronous;
+            this.nbwПрошлыеСмены.ProgressObject = null;
+            this.nbwПрошлыеСмены.ProgressProcentage = 0;
+            this.nbwПрошлыеСмены.DoWork += new System.ComponentModel.DoWorkEventHandler(this.nbwПрошлыеСмены_DoWork);
+            // 
             // Объект
             // 
             this.Объект.Caption = "Объект";
@@ -4163,6 +4234,20 @@ namespace TechControl.Метаданные.УчетСотрудников
             this.ОбъектПодекадный.SearchCondition.OwnerComponent = this.ОбъектПодекадный;
             this.ОбъектПодекадный.SearchCondition.Parameters = new NsgSoft.DataObjects.NsgCompareParam[0];
             // 
+            // nbЗаполнПоВыбранной
+            // 
+            this.nbЗаполнПоВыбранной.ActiveBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.nbЗаполнПоВыбранной.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nbЗаполнПоВыбранной.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nbЗаполнПоВыбранной.Location = new System.Drawing.Point(3, 3);
+            this.nbЗаполнПоВыбранной.Name = "NsgButton";
+            this.nbЗаполнПоВыбранной.Size = new System.Drawing.Size(205, 25);
+            this.nbЗаполнПоВыбранной.StatesCollection = new NsgSoft.Design.NsgButton.StateCollectionElemnt[0];
+            this.nbЗаполнПоВыбранной.TabIndex = 1;
+            this.nbЗаполнПоВыбранной.Text = "Заполнить по выбранной смене";
+            this.nbЗаполнПоВыбранной.TextPosition = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nbЗаполнПоВыбранной.AsyncClick += new System.ComponentModel.DoWorkEventHandler(this.nbЗаполнПоВыбранной_AsyncClick);
+            // 
             // УправлениеСотрудникамиФорма
             // 
             this.AllowDrop = true;
@@ -4202,9 +4287,15 @@ namespace TechControl.Метаданные.УчетСотрудников
             ((System.ComponentModel.ISupportInitialize)(this.vmoСводка)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmoПодробности)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nsgIGrid5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vmoПрошлыеСмены)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tpФормирование.ResumeLayout(false);
             this.tpФормирование.PerformLayout();
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nbСформироватьСмену)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнить)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput2)).EndInit();
@@ -4240,6 +4331,7 @@ namespace TechControl.Метаданные.УчетСотрудников
             ((System.ComponentModel.ISupportInitialize)(this.nbСохрнитьИтоги)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнитьИтоги)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nsgInput5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nbЗаполнПоВыбранной)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4320,7 +4412,6 @@ namespace TechControl.Метаданные.УчетСотрудников
         protected NsgSoft.Design.NsgButton nbСформироватьСменыИЭСМ;
         protected System.Windows.Forms.RadioButton rdb3Decade;
         protected System.Windows.Forms.RadioButton rdb2Decade;
-        private System.Windows.Forms.CheckBox cbShowAll;
         protected System.Windows.Forms.GroupBox groupBox1;
         protected System.Windows.Forms.RadioButton rdb1Decade;
         protected Мониторинг.ФизЛица.ColumnDescriptor Сотрудник_vmoСводка;
@@ -4391,8 +4482,12 @@ namespace TechControl.Метаданные.УчетСотрудников
         protected NsgColumnDescriptor.Boolean ИзЗаполненногоДокумента_vmoПодробности;
         protected NsgColumnDescriptor.Boolean Загружено_vmoСводка;
         protected NsgSoft.Design.NsgButton nbСохранитьСмены;
-        private NsgBackgroundWorker bgwАнализТаблицы;
-        private NsgBackgroundWorker nBwЗаполнениеДаннымиСмен;
+        protected NsgColumnDescriptor.DateTime Дата_vmoПрошлыеСмены;
+        protected Мониторинг.ФормированиеСмены.ColumnDescriptor Смена_vmoПрошлыеСмены;
+        private NsgIGrid nsgIGrid5;
+        protected System.Windows.Forms.CheckBox cbShowAll;
+        protected System.Windows.Forms.SplitContainer splitContainer3;
+        private NsgBackgroundWorker nbwПрошлыеСмены;
         private NsgVisualMultipleObject vmoПараметрыЗаполнения;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -4403,5 +4498,9 @@ namespace TechControl.Метаданные.УчетСотрудников
         private System.Windows.Forms.TabPage tpПодекадное;
         private NsgVisualMultipleObject vmoСводка;
         private NsgVisualMultipleObject vmoПодробности;
+        private NsgVisualMultipleObject vmoПрошлыеСмены;
+        private NsgBackgroundWorker bgwАнализТаблицы;
+        private NsgBackgroundWorker nBwЗаполнениеДаннымиСмен;
+        protected NsgSoft.Design.NsgButton nbЗаполнПоВыбранной;
     }
 }
